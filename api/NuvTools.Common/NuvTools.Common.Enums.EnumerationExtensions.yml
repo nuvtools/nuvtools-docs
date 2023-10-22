@@ -1,0 +1,1145 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Common.Enums.EnumerationExtensions
+  commentId: T:NuvTools.Common.Enums.EnumerationExtensions
+  id: EnumerationExtensions
+  parent: NuvTools.Common.Enums
+  children:
+  - NuvTools.Common.Enums.EnumerationExtensions.GetDescription(System.Enum)
+  - NuvTools.Common.Enums.EnumerationExtensions.GetDisplayAttributes(System.Enum)
+  - NuvTools.Common.Enums.EnumerationExtensions.GetEnumerator``1(System.Enum)
+  - NuvTools.Common.Enums.EnumerationExtensions.GetGroupName(System.Enum)
+  - NuvTools.Common.Enums.EnumerationExtensions.GetName(System.Enum)
+  - NuvTools.Common.Enums.EnumerationExtensions.GetOrder(System.Enum)
+  - NuvTools.Common.Enums.EnumerationExtensions.GetPrompt(System.Enum)
+  - NuvTools.Common.Enums.EnumerationExtensions.GetShortName(System.Enum)
+  - NuvTools.Common.Enums.EnumerationExtensions.GetValueAsString(System.Enum)
+  - NuvTools.Common.Enums.EnumerationExtensions.IsInGroup(System.Enum,System.String)
+  - NuvTools.Common.Enums.EnumerationExtensions.ToListEnumFromSeparatorDelimited(System.String,System.Type,System.Char)
+  - NuvTools.Common.Enums.EnumerationExtensions.ToListEnumFromSeparatorDelimited``1(System.String,System.Char)
+  - NuvTools.Common.Enums.EnumerationExtensions.ToStringSeparatorDelimited``1(System.Collections.Generic.IEnumerable{``0},System.Char)
+  langs:
+  - csharp
+  - vb
+  name: EnumerationExtensions
+  nameWithType: EnumerationExtensions
+  fullName: NuvTools.Common.Enums.EnumerationExtensions
+  type: Class
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.Enums
+  summary: Helpers to interact with the Enumerations.
+  example: []
+  syntax:
+    content: public static class EnumerationExtensions
+    content.vb: Public Module EnumerationExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: NuvTools.Common.Enums.EnumerationExtensions.GetGroupName(System.Enum)
+  commentId: M:NuvTools.Common.Enums.EnumerationExtensions.GetGroupName(System.Enum)
+  id: GetGroupName(System.Enum)
+  isExtensionMethod: true
+  parent: NuvTools.Common.Enums.EnumerationExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetGroupName(Enum)
+  nameWithType: EnumerationExtensions.GetGroupName(Enum)
+  fullName: NuvTools.Common.Enums.EnumerationExtensions.GetGroupName(System.Enum)
+  type: Method
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.Enums
+  summary: Returns the group name of enum item. Work with <xref href="System.ComponentModel.DataAnnotations.DisplayAttribute" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static string GetGroupName(this Enum value)
+    parameters:
+    - id: value
+      type: System.Enum
+      description: Enum item.
+    return:
+      type: System.String
+      description: Enum item description.
+    content.vb: Public Shared Function GetGroupName(value As [Enum]) As String
+  overload: NuvTools.Common.Enums.EnumerationExtensions.GetGroupName*
+- uid: NuvTools.Common.Enums.EnumerationExtensions.IsInGroup(System.Enum,System.String)
+  commentId: M:NuvTools.Common.Enums.EnumerationExtensions.IsInGroup(System.Enum,System.String)
+  id: IsInGroup(System.Enum,System.String)
+  isExtensionMethod: true
+  parent: NuvTools.Common.Enums.EnumerationExtensions
+  langs:
+  - csharp
+  - vb
+  name: IsInGroup(Enum, string)
+  nameWithType: EnumerationExtensions.IsInGroup(Enum, string)
+  fullName: NuvTools.Common.Enums.EnumerationExtensions.IsInGroup(System.Enum, string)
+  type: Method
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.Enums
+  summary: Checks whether the value belongs to a group.
+  example: []
+  syntax:
+    content: public static bool IsInGroup(this Enum value, string groupName)
+    parameters:
+    - id: value
+      type: System.Enum
+      description: Enum item.
+    - id: groupName
+      type: System.String
+      description: Group name.
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Public Shared Function IsInGroup(value As [Enum], groupName As String) As Boolean
+  overload: NuvTools.Common.Enums.EnumerationExtensions.IsInGroup*
+  nameWithType.vb: EnumerationExtensions.IsInGroup(Enum, String)
+  fullName.vb: NuvTools.Common.Enums.EnumerationExtensions.IsInGroup(System.Enum, String)
+  name.vb: IsInGroup(Enum, String)
+- uid: NuvTools.Common.Enums.EnumerationExtensions.GetShortName(System.Enum)
+  commentId: M:NuvTools.Common.Enums.EnumerationExtensions.GetShortName(System.Enum)
+  id: GetShortName(System.Enum)
+  isExtensionMethod: true
+  parent: NuvTools.Common.Enums.EnumerationExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetShortName(Enum)
+  nameWithType: EnumerationExtensions.GetShortName(Enum)
+  fullName: NuvTools.Common.Enums.EnumerationExtensions.GetShortName(System.Enum)
+  type: Method
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.Enums
+  summary: Returns the short name of enum item. Work with <xref href="System.ComponentModel.DataAnnotations.DisplayAttribute" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static string GetShortName(this Enum value)
+    parameters:
+    - id: value
+      type: System.Enum
+      description: Enum item.
+    return:
+      type: System.String
+      description: Enum item description.
+    content.vb: Public Shared Function GetShortName(value As [Enum]) As String
+  overload: NuvTools.Common.Enums.EnumerationExtensions.GetShortName*
+- uid: NuvTools.Common.Enums.EnumerationExtensions.GetName(System.Enum)
+  commentId: M:NuvTools.Common.Enums.EnumerationExtensions.GetName(System.Enum)
+  id: GetName(System.Enum)
+  isExtensionMethod: true
+  parent: NuvTools.Common.Enums.EnumerationExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetName(Enum)
+  nameWithType: EnumerationExtensions.GetName(Enum)
+  fullName: NuvTools.Common.Enums.EnumerationExtensions.GetName(System.Enum)
+  type: Method
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.Enums
+  summary: Returns the name of enum item. Work with <xref href="System.ComponentModel.DataAnnotations.DisplayAttribute" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static string GetName(this Enum value)
+    parameters:
+    - id: value
+      type: System.Enum
+      description: Enum item.
+    return:
+      type: System.String
+      description: Enum item description.
+    content.vb: Public Shared Function GetName(value As [Enum]) As String
+  overload: NuvTools.Common.Enums.EnumerationExtensions.GetName*
+- uid: NuvTools.Common.Enums.EnumerationExtensions.GetDescription(System.Enum)
+  commentId: M:NuvTools.Common.Enums.EnumerationExtensions.GetDescription(System.Enum)
+  id: GetDescription(System.Enum)
+  isExtensionMethod: true
+  parent: NuvTools.Common.Enums.EnumerationExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetDescription(Enum)
+  nameWithType: EnumerationExtensions.GetDescription(Enum)
+  fullName: NuvTools.Common.Enums.EnumerationExtensions.GetDescription(System.Enum)
+  type: Method
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.Enums
+  summary: Returns the description of enum item. Work with <xref href="System.ComponentModel.DataAnnotations.DisplayAttribute" data-throw-if-not-resolved="false"></xref> or <xref href="System.ComponentModel.DescriptionAttribute" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static string GetDescription(this Enum value)
+    parameters:
+    - id: value
+      type: System.Enum
+      description: Enum item.
+    return:
+      type: System.String
+      description: Enum item description.
+    content.vb: Public Shared Function GetDescription(value As [Enum]) As String
+  overload: NuvTools.Common.Enums.EnumerationExtensions.GetDescription*
+- uid: NuvTools.Common.Enums.EnumerationExtensions.GetValueAsString(System.Enum)
+  commentId: M:NuvTools.Common.Enums.EnumerationExtensions.GetValueAsString(System.Enum)
+  id: GetValueAsString(System.Enum)
+  isExtensionMethod: true
+  parent: NuvTools.Common.Enums.EnumerationExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetValueAsString(Enum)
+  nameWithType: EnumerationExtensions.GetValueAsString(Enum)
+  fullName: NuvTools.Common.Enums.EnumerationExtensions.GetValueAsString(System.Enum)
+  type: Method
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.Enums
+  summary: Returns the enum value as string.
+  example: []
+  syntax:
+    content: public static string GetValueAsString(this Enum value)
+    parameters:
+    - id: value
+      type: System.Enum
+      description: Enum item.
+    return:
+      type: System.String
+      description: Enum value as string.
+    content.vb: Public Shared Function GetValueAsString(value As [Enum]) As String
+  overload: NuvTools.Common.Enums.EnumerationExtensions.GetValueAsString*
+- uid: NuvTools.Common.Enums.EnumerationExtensions.GetEnumerator``1(System.Enum)
+  commentId: M:NuvTools.Common.Enums.EnumerationExtensions.GetEnumerator``1(System.Enum)
+  id: GetEnumerator``1(System.Enum)
+  isExtensionMethod: true
+  parent: NuvTools.Common.Enums.EnumerationExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetEnumerator<TUEnum>(Enum)
+  nameWithType: EnumerationExtensions.GetEnumerator<TUEnum>(Enum)
+  fullName: NuvTools.Common.Enums.EnumerationExtensions.GetEnumerator<TUEnum>(System.Enum)
+  type: Method
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.Enums
+  summary: Returns the enum item description.
+  example: []
+  syntax:
+    content: 'public static IEnumerator<TUEnum> GetEnumerator<TUEnum>(this Enum value) where TUEnum : IEquatable<TUEnum>'
+    parameters:
+    - id: value
+      type: System.Enum
+      description: Enum item.
+    typeParameters:
+    - id: TUEnum
+      description: Id type that should be the same as enum underlyting type.
+    return:
+      type: NuvTools.Common.Enums.IEnumerator{{TUEnum}}
+      description: Enum item description.
+    content.vb: Public Shared Function GetEnumerator(Of TUEnum As IEquatable(Of TUEnum))(value As [Enum]) As IEnumerator(Of TUEnum)
+  overload: NuvTools.Common.Enums.EnumerationExtensions.GetEnumerator*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: ''
+  - type: System.InvalidCastException
+    commentId: T:System.InvalidCastException
+    description: ''
+  nameWithType.vb: EnumerationExtensions.GetEnumerator(Of TUEnum)(Enum)
+  fullName.vb: NuvTools.Common.Enums.EnumerationExtensions.GetEnumerator(Of TUEnum)(System.Enum)
+  name.vb: GetEnumerator(Of TUEnum)(Enum)
+- uid: NuvTools.Common.Enums.EnumerationExtensions.ToStringSeparatorDelimited``1(System.Collections.Generic.IEnumerable{``0},System.Char)
+  commentId: M:NuvTools.Common.Enums.EnumerationExtensions.ToStringSeparatorDelimited``1(System.Collections.Generic.IEnumerable{``0},System.Char)
+  id: ToStringSeparatorDelimited``1(System.Collections.Generic.IEnumerable{``0},System.Char)
+  isExtensionMethod: true
+  parent: NuvTools.Common.Enums.EnumerationExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToStringSeparatorDelimited<TEnum>(IEnumerable<TEnum>, char)
+  nameWithType: EnumerationExtensions.ToStringSeparatorDelimited<TEnum>(IEnumerable<TEnum>, char)
+  fullName: NuvTools.Common.Enums.EnumerationExtensions.ToStringSeparatorDelimited<TEnum>(System.Collections.Generic.IEnumerable<TEnum>, char)
+  type: Method
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.Enums
+  summary: Returns the enum list as string with separators.
+  example: []
+  syntax:
+    content: 'public static string ToStringSeparatorDelimited<TEnum>(this IEnumerable<TEnum> list, char separator) where TEnum : Enum'
+    parameters:
+    - id: list
+      type: System.Collections.Generic.IEnumerable{{TEnum}}
+      description: Enumerate list
+    - id: separator
+      type: System.Char
+      description: Item separator
+    typeParameters:
+    - id: TEnum
+      description: Enum type
+    return:
+      type: System.String
+      description: List as string with separators.
+    content.vb: Public Shared Function ToStringSeparatorDelimited(Of TEnum As [Enum])(list As IEnumerable(Of TEnum), separator As Char) As String
+  overload: NuvTools.Common.Enums.EnumerationExtensions.ToStringSeparatorDelimited*
+  nameWithType.vb: EnumerationExtensions.ToStringSeparatorDelimited(Of TEnum)(IEnumerable(Of TEnum), Char)
+  fullName.vb: NuvTools.Common.Enums.EnumerationExtensions.ToStringSeparatorDelimited(Of TEnum)(System.Collections.Generic.IEnumerable(Of TEnum), Char)
+  name.vb: ToStringSeparatorDelimited(Of TEnum)(IEnumerable(Of TEnum), Char)
+- uid: NuvTools.Common.Enums.EnumerationExtensions.ToListEnumFromSeparatorDelimited``1(System.String,System.Char)
+  commentId: M:NuvTools.Common.Enums.EnumerationExtensions.ToListEnumFromSeparatorDelimited``1(System.String,System.Char)
+  id: ToListEnumFromSeparatorDelimited``1(System.String,System.Char)
+  isExtensionMethod: true
+  parent: NuvTools.Common.Enums.EnumerationExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToListEnumFromSeparatorDelimited<TEnum>(string, char)
+  nameWithType: EnumerationExtensions.ToListEnumFromSeparatorDelimited<TEnum>(string, char)
+  fullName: NuvTools.Common.Enums.EnumerationExtensions.ToListEnumFromSeparatorDelimited<TEnum>(string, char)
+  type: Method
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.Enums
+  summary: Returns the enum list from string with separators.
+  example: []
+  syntax:
+    content: 'public static IEnumerable<TEnum> ToListEnumFromSeparatorDelimited<TEnum>(this string value, char separator) where TEnum : Enum'
+    parameters:
+    - id: value
+      type: System.String
+      description: Value string with enums values separated by delimited char.
+    - id: separator
+      type: System.Char
+      description: Item separator.
+    typeParameters:
+    - id: TEnum
+      description: Enum type.
+    return:
+      type: System.Collections.Generic.IEnumerable{{TEnum}}
+      description: Enum list.
+    content.vb: Public Shared Function ToListEnumFromSeparatorDelimited(Of TEnum As [Enum])(value As String, separator As Char) As IEnumerable(Of TEnum)
+  overload: NuvTools.Common.Enums.EnumerationExtensions.ToListEnumFromSeparatorDelimited*
+  nameWithType.vb: EnumerationExtensions.ToListEnumFromSeparatorDelimited(Of TEnum)(String, Char)
+  fullName.vb: NuvTools.Common.Enums.EnumerationExtensions.ToListEnumFromSeparatorDelimited(Of TEnum)(String, Char)
+  name.vb: ToListEnumFromSeparatorDelimited(Of TEnum)(String, Char)
+- uid: NuvTools.Common.Enums.EnumerationExtensions.ToListEnumFromSeparatorDelimited(System.String,System.Type,System.Char)
+  commentId: M:NuvTools.Common.Enums.EnumerationExtensions.ToListEnumFromSeparatorDelimited(System.String,System.Type,System.Char)
+  id: ToListEnumFromSeparatorDelimited(System.String,System.Type,System.Char)
+  isExtensionMethod: true
+  parent: NuvTools.Common.Enums.EnumerationExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToListEnumFromSeparatorDelimited(string, Type, char)
+  nameWithType: EnumerationExtensions.ToListEnumFromSeparatorDelimited(string, Type, char)
+  fullName: NuvTools.Common.Enums.EnumerationExtensions.ToListEnumFromSeparatorDelimited(string, System.Type, char)
+  type: Method
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.Enums
+  summary: Returns the enum list from string with separators.
+  example: []
+  syntax:
+    content: public static IEnumerable<Enum> ToListEnumFromSeparatorDelimited(this string value, Type enumType, char separator)
+    parameters:
+    - id: value
+      type: System.String
+      description: Value string with enums values separated by delimited char.
+    - id: enumType
+      type: System.Type
+      description: Enum type
+    - id: separator
+      type: System.Char
+      description: Item separator.
+    return:
+      type: System.Collections.Generic.IEnumerable{System.Enum}
+      description: Enum list.
+    content.vb: Public Shared Function ToListEnumFromSeparatorDelimited(value As String, enumType As Type, separator As Char) As IEnumerable(Of [Enum])
+  overload: NuvTools.Common.Enums.EnumerationExtensions.ToListEnumFromSeparatorDelimited*
+  nameWithType.vb: EnumerationExtensions.ToListEnumFromSeparatorDelimited(String, Type, Char)
+  fullName.vb: NuvTools.Common.Enums.EnumerationExtensions.ToListEnumFromSeparatorDelimited(String, System.Type, Char)
+  name.vb: ToListEnumFromSeparatorDelimited(String, Type, Char)
+- uid: NuvTools.Common.Enums.EnumerationExtensions.GetDisplayAttributes(System.Enum)
+  commentId: M:NuvTools.Common.Enums.EnumerationExtensions.GetDisplayAttributes(System.Enum)
+  id: GetDisplayAttributes(System.Enum)
+  isExtensionMethod: true
+  parent: NuvTools.Common.Enums.EnumerationExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetDisplayAttributes(Enum)
+  nameWithType: EnumerationExtensions.GetDisplayAttributes(Enum)
+  fullName: NuvTools.Common.Enums.EnumerationExtensions.GetDisplayAttributes(System.Enum)
+  type: Method
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.Enums
+  syntax:
+    content: public static DisplayAttribute[] GetDisplayAttributes(this Enum value)
+    parameters:
+    - id: value
+      type: System.Enum
+    return:
+      type: System.ComponentModel.DataAnnotations.DisplayAttribute[]
+    content.vb: Public Shared Function GetDisplayAttributes(value As [Enum]) As DisplayAttribute()
+  overload: NuvTools.Common.Enums.EnumerationExtensions.GetDisplayAttributes*
+- uid: NuvTools.Common.Enums.EnumerationExtensions.GetOrder(System.Enum)
+  commentId: M:NuvTools.Common.Enums.EnumerationExtensions.GetOrder(System.Enum)
+  id: GetOrder(System.Enum)
+  isExtensionMethod: true
+  parent: NuvTools.Common.Enums.EnumerationExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetOrder(Enum)
+  nameWithType: EnumerationExtensions.GetOrder(Enum)
+  fullName: NuvTools.Common.Enums.EnumerationExtensions.GetOrder(System.Enum)
+  type: Method
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.Enums
+  summary: Returns the Order value from DisplayAttribute.
+  example: []
+  syntax:
+    content: public static int GetOrder(this Enum value)
+    parameters:
+    - id: value
+      type: System.Enum
+      description: Enum with DisplayAttribute.
+    return:
+      type: System.Int32
+      description: ''
+    content.vb: Public Shared Function GetOrder(value As [Enum]) As Integer
+  overload: NuvTools.Common.Enums.EnumerationExtensions.GetOrder*
+- uid: NuvTools.Common.Enums.EnumerationExtensions.GetPrompt(System.Enum)
+  commentId: M:NuvTools.Common.Enums.EnumerationExtensions.GetPrompt(System.Enum)
+  id: GetPrompt(System.Enum)
+  isExtensionMethod: true
+  parent: NuvTools.Common.Enums.EnumerationExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetPrompt(Enum)
+  nameWithType: EnumerationExtensions.GetPrompt(Enum)
+  fullName: NuvTools.Common.Enums.EnumerationExtensions.GetPrompt(System.Enum)
+  type: Method
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.Enums
+  summary: Returns the Order value from DisplayAttribute.
+  example: []
+  syntax:
+    content: public static string GetPrompt(this Enum value)
+    parameters:
+    - id: value
+      type: System.Enum
+      description: Enum with DisplayAttribute.
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public Shared Function GetPrompt(value As [Enum]) As String
+  overload: NuvTools.Common.Enums.EnumerationExtensions.GetPrompt*
+references:
+- uid: NuvTools.Common.Enums
+  commentId: N:NuvTools.Common.Enums
+  isExternal: true
+  href: NuvTools.html
+  name: NuvTools.Common.Enums
+  nameWithType: NuvTools.Common.Enums
+  fullName: NuvTools.Common.Enums
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Common
+    name: Common
+    isExternal: true
+    href: NuvTools.Common.html
+  - name: .
+  - uid: NuvTools.Common.Enums
+    name: Enums
+    isExternal: true
+    href: NuvTools.Common.Enums.html
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Common
+    name: Common
+    isExternal: true
+    href: NuvTools.Common.html
+  - name: .
+  - uid: NuvTools.Common.Enums
+    name: Enums
+    isExternal: true
+    href: NuvTools.Common.Enums.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.ComponentModel.DataAnnotations.DisplayAttribute
+  commentId: T:System.ComponentModel.DataAnnotations.DisplayAttribute
+  parent: System.ComponentModel.DataAnnotations
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.dataannotations.displayattribute
+  name: DisplayAttribute
+  nameWithType: DisplayAttribute
+  fullName: System.ComponentModel.DataAnnotations.DisplayAttribute
+- uid: NuvTools.Common.Enums.EnumerationExtensions.GetGroupName*
+  commentId: Overload:NuvTools.Common.Enums.EnumerationExtensions.GetGroupName
+  isExternal: true
+  href: NuvTools.Common.Enums.EnumerationExtensions.html#NuvTools_Common_Enums_EnumerationExtensions_GetGroupName_System_Enum_
+  name: GetGroupName
+  nameWithType: EnumerationExtensions.GetGroupName
+  fullName: NuvTools.Common.Enums.EnumerationExtensions.GetGroupName
+- uid: System.Enum
+  commentId: T:System.Enum
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.enum
+  name: Enum
+  nameWithType: Enum
+  fullName: System.Enum
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.ComponentModel.DataAnnotations
+  commentId: N:System.ComponentModel.DataAnnotations
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.ComponentModel.DataAnnotations
+  nameWithType: System.ComponentModel.DataAnnotations
+  fullName: System.ComponentModel.DataAnnotations
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+  - name: .
+  - uid: System.ComponentModel.DataAnnotations
+    name: DataAnnotations
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel.dataannotations
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.ComponentModel
+    name: ComponentModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel
+  - name: .
+  - uid: System.ComponentModel.DataAnnotations
+    name: DataAnnotations
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel.dataannotations
+- uid: NuvTools.Common.Enums.EnumerationExtensions.IsInGroup*
+  commentId: Overload:NuvTools.Common.Enums.EnumerationExtensions.IsInGroup
+  isExternal: true
+  href: NuvTools.Common.Enums.EnumerationExtensions.html#NuvTools_Common_Enums_EnumerationExtensions_IsInGroup_System_Enum_System_String_
+  name: IsInGroup
+  nameWithType: EnumerationExtensions.IsInGroup
+  fullName: NuvTools.Common.Enums.EnumerationExtensions.IsInGroup
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: NuvTools.Common.Enums.EnumerationExtensions.GetShortName*
+  commentId: Overload:NuvTools.Common.Enums.EnumerationExtensions.GetShortName
+  isExternal: true
+  href: NuvTools.Common.Enums.EnumerationExtensions.html#NuvTools_Common_Enums_EnumerationExtensions_GetShortName_System_Enum_
+  name: GetShortName
+  nameWithType: EnumerationExtensions.GetShortName
+  fullName: NuvTools.Common.Enums.EnumerationExtensions.GetShortName
+- uid: NuvTools.Common.Enums.EnumerationExtensions.GetName*
+  commentId: Overload:NuvTools.Common.Enums.EnumerationExtensions.GetName
+  isExternal: true
+  href: NuvTools.Common.Enums.EnumerationExtensions.html#NuvTools_Common_Enums_EnumerationExtensions_GetName_System_Enum_
+  name: GetName
+  nameWithType: EnumerationExtensions.GetName
+  fullName: NuvTools.Common.Enums.EnumerationExtensions.GetName
+- uid: System.ComponentModel.DescriptionAttribute
+  commentId: T:System.ComponentModel.DescriptionAttribute
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.descriptionattribute
+  name: DescriptionAttribute
+  nameWithType: DescriptionAttribute
+  fullName: System.ComponentModel.DescriptionAttribute
+- uid: NuvTools.Common.Enums.EnumerationExtensions.GetDescription*
+  commentId: Overload:NuvTools.Common.Enums.EnumerationExtensions.GetDescription
+  isExternal: true
+  href: NuvTools.Common.Enums.EnumerationExtensions.html#NuvTools_Common_Enums_EnumerationExtensions_GetDescription_System_Enum_
+  name: GetDescription
+  nameWithType: EnumerationExtensions.GetDescription
+  fullName: NuvTools.Common.Enums.EnumerationExtensions.GetDescription
+- uid: NuvTools.Common.Enums.EnumerationExtensions.GetValueAsString*
+  commentId: Overload:NuvTools.Common.Enums.EnumerationExtensions.GetValueAsString
+  isExternal: true
+  href: NuvTools.Common.Enums.EnumerationExtensions.html#NuvTools_Common_Enums_EnumerationExtensions_GetValueAsString_System_Enum_
+  name: GetValueAsString
+  nameWithType: EnumerationExtensions.GetValueAsString
+  fullName: NuvTools.Common.Enums.EnumerationExtensions.GetValueAsString
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
+- uid: System.InvalidCastException
+  commentId: T:System.InvalidCastException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.invalidcastexception
+  name: InvalidCastException
+  nameWithType: InvalidCastException
+  fullName: System.InvalidCastException
+- uid: NuvTools.Common.Enums.EnumerationExtensions.GetEnumerator*
+  commentId: Overload:NuvTools.Common.Enums.EnumerationExtensions.GetEnumerator
+  isExternal: true
+  href: NuvTools.Common.Enums.EnumerationExtensions.html#NuvTools_Common_Enums_EnumerationExtensions_GetEnumerator__1_System_Enum_
+  name: GetEnumerator
+  nameWithType: EnumerationExtensions.GetEnumerator
+  fullName: NuvTools.Common.Enums.EnumerationExtensions.GetEnumerator
+- uid: NuvTools.Common.Enums.IEnumerator{{TUEnum}}
+  commentId: T:NuvTools.Common.Enums.IEnumerator{``0}
+  parent: NuvTools.Common.Enums
+  definition: NuvTools.Common.Enums.IEnumerator`1
+  href: NuvTools.Common.Enums.IEnumerator-1.html
+  name: IEnumerator<TUEnum>
+  nameWithType: IEnumerator<TUEnum>
+  fullName: NuvTools.Common.Enums.IEnumerator<TUEnum>
+  nameWithType.vb: IEnumerator(Of TUEnum)
+  fullName.vb: NuvTools.Common.Enums.IEnumerator(Of TUEnum)
+  name.vb: IEnumerator(Of TUEnum)
+  spec.csharp:
+  - uid: NuvTools.Common.Enums.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: NuvTools.Common.Enums.IEnumerator-1.html
+  - name: <
+  - name: TUEnum
+  - name: '>'
+  spec.vb:
+  - uid: NuvTools.Common.Enums.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: NuvTools.Common.Enums.IEnumerator-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TUEnum
+  - name: )
+- uid: NuvTools.Common.Enums.IEnumerator`1
+  commentId: T:NuvTools.Common.Enums.IEnumerator`1
+  isExternal: true
+  href: NuvTools.Common.Enums.IEnumerator-1.html
+  name: IEnumerator<TKey>
+  nameWithType: IEnumerator<TKey>
+  fullName: NuvTools.Common.Enums.IEnumerator<TKey>
+  nameWithType.vb: IEnumerator(Of TKey)
+  fullName.vb: NuvTools.Common.Enums.IEnumerator(Of TKey)
+  name.vb: IEnumerator(Of TKey)
+  spec.csharp:
+  - uid: NuvTools.Common.Enums.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: NuvTools.Common.Enums.IEnumerator-1.html
+  - name: <
+  - name: TKey
+  - name: '>'
+  spec.vb:
+  - uid: NuvTools.Common.Enums.IEnumerator`1
+    name: IEnumerator
+    isExternal: true
+    href: NuvTools.Common.Enums.IEnumerator-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: )
+- uid: NuvTools.Common.Enums.EnumerationExtensions.ToStringSeparatorDelimited*
+  commentId: Overload:NuvTools.Common.Enums.EnumerationExtensions.ToStringSeparatorDelimited
+  isExternal: true
+  href: NuvTools.Common.Enums.EnumerationExtensions.html#NuvTools_Common_Enums_EnumerationExtensions_ToStringSeparatorDelimited__1_System_Collections_Generic_IEnumerable___0__System_Char_
+  name: ToStringSeparatorDelimited
+  nameWithType: EnumerationExtensions.ToStringSeparatorDelimited
+  fullName: NuvTools.Common.Enums.EnumerationExtensions.ToStringSeparatorDelimited
+- uid: System.Collections.Generic.IEnumerable{{TEnum}}
+  commentId: T:System.Collections.Generic.IEnumerable{``0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<TEnum>
+  nameWithType: IEnumerable<TEnum>
+  fullName: System.Collections.Generic.IEnumerable<TEnum>
+  nameWithType.vb: IEnumerable(Of TEnum)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of TEnum)
+  name.vb: IEnumerable(Of TEnum)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: TEnum
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TEnum
+  - name: )
+- uid: System.Char
+  commentId: T:System.Char
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.char
+  name: char
+  nameWithType: char
+  fullName: char
+  nameWithType.vb: Char
+  fullName.vb: Char
+  name.vb: Char
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: NuvTools.Common.Enums.EnumerationExtensions.ToListEnumFromSeparatorDelimited*
+  commentId: Overload:NuvTools.Common.Enums.EnumerationExtensions.ToListEnumFromSeparatorDelimited
+  isExternal: true
+  href: NuvTools.Common.Enums.EnumerationExtensions.html#NuvTools_Common_Enums_EnumerationExtensions_ToListEnumFromSeparatorDelimited__1_System_String_System_Char_
+  name: ToListEnumFromSeparatorDelimited
+  nameWithType: EnumerationExtensions.ToListEnumFromSeparatorDelimited
+  fullName: NuvTools.Common.Enums.EnumerationExtensions.ToListEnumFromSeparatorDelimited
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: System.Collections.Generic.IEnumerable{System.Enum}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Enum}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<Enum>
+  nameWithType: IEnumerable<Enum>
+  fullName: System.Collections.Generic.IEnumerable<System.Enum>
+  nameWithType.vb: IEnumerable(Of Enum)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Enum)
+  name.vb: IEnumerable(Of Enum)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: System.Enum
+    name: Enum
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.enum
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Enum
+    name: Enum
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.enum
+  - name: )
+- uid: NuvTools.Common.Enums.EnumerationExtensions.GetDisplayAttributes*
+  commentId: Overload:NuvTools.Common.Enums.EnumerationExtensions.GetDisplayAttributes
+  isExternal: true
+  href: NuvTools.Common.Enums.EnumerationExtensions.html#NuvTools_Common_Enums_EnumerationExtensions_GetDisplayAttributes_System_Enum_
+  name: GetDisplayAttributes
+  nameWithType: EnumerationExtensions.GetDisplayAttributes
+  fullName: NuvTools.Common.Enums.EnumerationExtensions.GetDisplayAttributes
+- uid: System.ComponentModel.DataAnnotations.DisplayAttribute[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.componentmodel.dataannotations.displayattribute
+  name: DisplayAttribute[]
+  nameWithType: DisplayAttribute[]
+  fullName: System.ComponentModel.DataAnnotations.DisplayAttribute[]
+  nameWithType.vb: DisplayAttribute()
+  fullName.vb: System.ComponentModel.DataAnnotations.DisplayAttribute()
+  name.vb: DisplayAttribute()
+  spec.csharp:
+  - uid: System.ComponentModel.DataAnnotations.DisplayAttribute
+    name: DisplayAttribute
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel.dataannotations.displayattribute
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.ComponentModel.DataAnnotations.DisplayAttribute
+    name: DisplayAttribute
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.componentmodel.dataannotations.displayattribute
+  - name: (
+  - name: )
+- uid: NuvTools.Common.Enums.EnumerationExtensions.GetOrder*
+  commentId: Overload:NuvTools.Common.Enums.EnumerationExtensions.GetOrder
+  isExternal: true
+  href: NuvTools.Common.Enums.EnumerationExtensions.html#NuvTools_Common_Enums_EnumerationExtensions_GetOrder_System_Enum_
+  name: GetOrder
+  nameWithType: EnumerationExtensions.GetOrder
+  fullName: NuvTools.Common.Enums.EnumerationExtensions.GetOrder
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: NuvTools.Common.Enums.EnumerationExtensions.GetPrompt*
+  commentId: Overload:NuvTools.Common.Enums.EnumerationExtensions.GetPrompt
+  isExternal: true
+  href: NuvTools.Common.Enums.EnumerationExtensions.html#NuvTools_Common_Enums_EnumerationExtensions_GetPrompt_System_Enum_
+  name: GetPrompt
+  nameWithType: EnumerationExtensions.GetPrompt
+  fullName: NuvTools.Common.Enums.EnumerationExtensions.GetPrompt

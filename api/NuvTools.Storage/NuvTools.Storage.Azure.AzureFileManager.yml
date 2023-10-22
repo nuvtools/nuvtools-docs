@@ -1,0 +1,1218 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Storage.Azure.AzureFileManager
+  commentId: T:NuvTools.Storage.Azure.AzureFileManager
+  id: AzureFileManager
+  parent: NuvTools.Storage.Azure
+  children:
+  - NuvTools.Storage.Azure.AzureFileManager.#ctor(System.String,System.String)
+  - NuvTools.Storage.Azure.AzureFileManager.AddFileAsync(NuvTools.Storage.IFile[])
+  - NuvTools.Storage.Azure.AzureFileManager.AddFileAsync(System.String,NuvTools.Storage.IFile[])
+  - NuvTools.Storage.Azure.AzureFileManager.Credencial
+  - NuvTools.Storage.Azure.AzureFileManager.FileExistsAsync(System.String)
+  - NuvTools.Storage.Azure.AzureFileManager.GetAccessRepositoryUri(NuvTools.Storage.AccessPermissions)
+  - NuvTools.Storage.Azure.AzureFileManager.GetFileAsync(System.String,System.Boolean)
+  - NuvTools.Storage.Azure.AzureFileManager.GetFilesAsync(System.Nullable{System.Int32})
+  - NuvTools.Storage.Azure.AzureFileManager.RemoveFileAsync(System.String)
+  langs:
+  - csharp
+  - vb
+  name: AzureFileManager
+  nameWithType: AzureFileManager
+  fullName: NuvTools.Storage.Azure.AzureFileManager
+  type: Class
+  assemblies:
+  - NuvTools.Storage.Azure
+  namespace: NuvTools.Storage.Azure
+  syntax:
+    content: 'public class AzureFileManager : IFileManager'
+    content.vb: Public Class AzureFileManager Implements IFileManager
+  inheritance:
+  - System.Object
+  implements:
+  - NuvTools.Storage.IFileManager
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: NuvTools.Storage.Azure.AzureFileManager.#ctor(System.String,System.String)
+  commentId: M:NuvTools.Storage.Azure.AzureFileManager.#ctor(System.String,System.String)
+  id: '#ctor(System.String,System.String)'
+  parent: NuvTools.Storage.Azure.AzureFileManager
+  langs:
+  - csharp
+  - vb
+  name: AzureFileManager(string, string)
+  nameWithType: AzureFileManager.AzureFileManager(string, string)
+  fullName: NuvTools.Storage.Azure.AzureFileManager.AzureFileManager(string, string)
+  type: Constructor
+  assemblies:
+  - NuvTools.Storage.Azure
+  namespace: NuvTools.Storage.Azure
+  syntax:
+    content: public AzureFileManager(string connectionString, string repositoryName = null)
+    parameters:
+    - id: connectionString
+      type: System.String
+    - id: repositoryName
+      type: System.String
+    content.vb: Public Sub New(connectionString As String, repositoryName As String = Nothing)
+  overload: NuvTools.Storage.Azure.AzureFileManager.#ctor*
+  nameWithType.vb: AzureFileManager.New(String, String)
+  fullName.vb: NuvTools.Storage.Azure.AzureFileManager.New(String, String)
+  name.vb: New(String, String)
+- uid: NuvTools.Storage.Azure.AzureFileManager.GetAccessRepositoryUri(NuvTools.Storage.AccessPermissions)
+  commentId: M:NuvTools.Storage.Azure.AzureFileManager.GetAccessRepositoryUri(NuvTools.Storage.AccessPermissions)
+  id: GetAccessRepositoryUri(NuvTools.Storage.AccessPermissions)
+  parent: NuvTools.Storage.Azure.AzureFileManager
+  langs:
+  - csharp
+  - vb
+  name: GetAccessRepositoryUri(AccessPermissions)
+  nameWithType: AzureFileManager.GetAccessRepositoryUri(AccessPermissions)
+  fullName: NuvTools.Storage.Azure.AzureFileManager.GetAccessRepositoryUri(NuvTools.Storage.AccessPermissions)
+  type: Method
+  assemblies:
+  - NuvTools.Storage.Azure
+  namespace: NuvTools.Storage.Azure
+  example: []
+  syntax:
+    content: public Uri GetAccessRepositoryUri(AccessPermissions permissions = AccessPermissions.Read)
+    parameters:
+    - id: permissions
+      type: NuvTools.Storage.AccessPermissions
+    return:
+      type: System.Uri
+    content.vb: Public Function GetAccessRepositoryUri(permissions As AccessPermissions = AccessPermissions.Read) As Uri
+  overload: NuvTools.Storage.Azure.AzureFileManager.GetAccessRepositoryUri*
+  implements:
+  - NuvTools.Storage.IFileManager.GetAccessRepositoryUri(NuvTools.Storage.AccessPermissions)
+- uid: NuvTools.Storage.Azure.AzureFileManager.GetFileAsync(System.String,System.Boolean)
+  commentId: M:NuvTools.Storage.Azure.AzureFileManager.GetFileAsync(System.String,System.Boolean)
+  id: GetFileAsync(System.String,System.Boolean)
+  parent: NuvTools.Storage.Azure.AzureFileManager
+  langs:
+  - csharp
+  - vb
+  name: GetFileAsync(string, bool)
+  nameWithType: AzureFileManager.GetFileAsync(string, bool)
+  fullName: NuvTools.Storage.Azure.AzureFileManager.GetFileAsync(string, bool)
+  type: Method
+  assemblies:
+  - NuvTools.Storage.Azure
+  namespace: NuvTools.Storage.Azure
+  example: []
+  syntax:
+    content: public Task<IFile> GetFileAsync(string id, bool download = false)
+    parameters:
+    - id: id
+      type: System.String
+    - id: download
+      type: System.Boolean
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Storage.IFile}
+    content.vb: Public Function GetFileAsync(id As String, download As Boolean = False) As Task(Of IFile)
+  overload: NuvTools.Storage.Azure.AzureFileManager.GetFileAsync*
+  implements:
+  - NuvTools.Storage.IFileManager.GetFileAsync(System.String,System.Boolean)
+  nameWithType.vb: AzureFileManager.GetFileAsync(String, Boolean)
+  fullName.vb: NuvTools.Storage.Azure.AzureFileManager.GetFileAsync(String, Boolean)
+  name.vb: GetFileAsync(String, Boolean)
+- uid: NuvTools.Storage.Azure.AzureFileManager.GetFilesAsync(System.Nullable{System.Int32})
+  commentId: M:NuvTools.Storage.Azure.AzureFileManager.GetFilesAsync(System.Nullable{System.Int32})
+  id: GetFilesAsync(System.Nullable{System.Int32})
+  parent: NuvTools.Storage.Azure.AzureFileManager
+  langs:
+  - csharp
+  - vb
+  name: GetFilesAsync(int?)
+  nameWithType: AzureFileManager.GetFilesAsync(int?)
+  fullName: NuvTools.Storage.Azure.AzureFileManager.GetFilesAsync(int?)
+  type: Method
+  assemblies:
+  - NuvTools.Storage.Azure
+  namespace: NuvTools.Storage.Azure
+  example: []
+  syntax:
+    content: public Task<IReadOnlyList<IFile>> GetFilesAsync(int? pageSize)
+    parameters:
+    - id: pageSize
+      type: System.Nullable{System.Int32}
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{NuvTools.Storage.IFile}}
+    content.vb: Public Function GetFilesAsync(pageSize As Integer?) As Task(Of IReadOnlyList(Of IFile))
+  overload: NuvTools.Storage.Azure.AzureFileManager.GetFilesAsync*
+  implements:
+  - NuvTools.Storage.IFileManager.GetFilesAsync(System.Nullable{System.Int32})
+  nameWithType.vb: AzureFileManager.GetFilesAsync(Integer?)
+  fullName.vb: NuvTools.Storage.Azure.AzureFileManager.GetFilesAsync(Integer?)
+  name.vb: GetFilesAsync(Integer?)
+- uid: NuvTools.Storage.Azure.AzureFileManager.RemoveFileAsync(System.String)
+  commentId: M:NuvTools.Storage.Azure.AzureFileManager.RemoveFileAsync(System.String)
+  id: RemoveFileAsync(System.String)
+  parent: NuvTools.Storage.Azure.AzureFileManager
+  langs:
+  - csharp
+  - vb
+  name: RemoveFileAsync(string)
+  nameWithType: AzureFileManager.RemoveFileAsync(string)
+  fullName: NuvTools.Storage.Azure.AzureFileManager.RemoveFileAsync(string)
+  type: Method
+  assemblies:
+  - NuvTools.Storage.Azure
+  namespace: NuvTools.Storage.Azure
+  example: []
+  syntax:
+    content: public Task RemoveFileAsync(string id)
+    parameters:
+    - id: id
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function RemoveFileAsync(id As String) As Task
+  overload: NuvTools.Storage.Azure.AzureFileManager.RemoveFileAsync*
+  implements:
+  - NuvTools.Storage.IFileManager.RemoveFileAsync(System.String)
+  nameWithType.vb: AzureFileManager.RemoveFileAsync(String)
+  fullName.vb: NuvTools.Storage.Azure.AzureFileManager.RemoveFileAsync(String)
+  name.vb: RemoveFileAsync(String)
+- uid: NuvTools.Storage.Azure.AzureFileManager.AddFileAsync(NuvTools.Storage.IFile[])
+  commentId: M:NuvTools.Storage.Azure.AzureFileManager.AddFileAsync(NuvTools.Storage.IFile[])
+  id: AddFileAsync(NuvTools.Storage.IFile[])
+  parent: NuvTools.Storage.Azure.AzureFileManager
+  langs:
+  - csharp
+  - vb
+  name: AddFileAsync(params IFile[])
+  nameWithType: AzureFileManager.AddFileAsync(params IFile[])
+  fullName: NuvTools.Storage.Azure.AzureFileManager.AddFileAsync(params NuvTools.Storage.IFile[])
+  type: Method
+  assemblies:
+  - NuvTools.Storage.Azure
+  namespace: NuvTools.Storage.Azure
+  syntax:
+    content: public Task<IReadOnlyList<IFile>> AddFileAsync(params IFile[] files)
+    parameters:
+    - id: files
+      type: NuvTools.Storage.IFile[]
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{NuvTools.Storage.IFile}}
+    content.vb: Public Function AddFileAsync(ParamArray files As IFile()) As Task(Of IReadOnlyList(Of IFile))
+  overload: NuvTools.Storage.Azure.AzureFileManager.AddFileAsync*
+  nameWithType.vb: AzureFileManager.AddFileAsync(ParamArray IFile())
+  fullName.vb: NuvTools.Storage.Azure.AzureFileManager.AddFileAsync(ParamArray NuvTools.Storage.IFile())
+  name.vb: AddFileAsync(ParamArray IFile())
+- uid: NuvTools.Storage.Azure.AzureFileManager.AddFileAsync(System.String,NuvTools.Storage.IFile[])
+  commentId: M:NuvTools.Storage.Azure.AzureFileManager.AddFileAsync(System.String,NuvTools.Storage.IFile[])
+  id: AddFileAsync(System.String,NuvTools.Storage.IFile[])
+  parent: NuvTools.Storage.Azure.AzureFileManager
+  langs:
+  - csharp
+  - vb
+  name: AddFileAsync(string, params IFile[])
+  nameWithType: AzureFileManager.AddFileAsync(string, params IFile[])
+  fullName: NuvTools.Storage.Azure.AzureFileManager.AddFileAsync(string, params NuvTools.Storage.IFile[])
+  type: Method
+  assemblies:
+  - NuvTools.Storage.Azure
+  namespace: NuvTools.Storage.Azure
+  example: []
+  syntax:
+    content: public Task<IReadOnlyList<IFile>> AddFileAsync(string rootDir, params IFile[] files)
+    parameters:
+    - id: rootDir
+      type: System.String
+    - id: files
+      type: NuvTools.Storage.IFile[]
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{NuvTools.Storage.IFile}}
+    content.vb: Public Function AddFileAsync(rootDir As String, ParamArray files As IFile()) As Task(Of IReadOnlyList(Of IFile))
+  overload: NuvTools.Storage.Azure.AzureFileManager.AddFileAsync*
+  implements:
+  - NuvTools.Storage.IFileManager.AddFileAsync(System.String,NuvTools.Storage.IFile[])
+  nameWithType.vb: AzureFileManager.AddFileAsync(String, ParamArray IFile())
+  fullName.vb: NuvTools.Storage.Azure.AzureFileManager.AddFileAsync(String, ParamArray NuvTools.Storage.IFile())
+  name.vb: AddFileAsync(String, ParamArray IFile())
+- uid: NuvTools.Storage.Azure.AzureFileManager.FileExistsAsync(System.String)
+  commentId: M:NuvTools.Storage.Azure.AzureFileManager.FileExistsAsync(System.String)
+  id: FileExistsAsync(System.String)
+  parent: NuvTools.Storage.Azure.AzureFileManager
+  langs:
+  - csharp
+  - vb
+  name: FileExistsAsync(string)
+  nameWithType: AzureFileManager.FileExistsAsync(string)
+  fullName: NuvTools.Storage.Azure.AzureFileManager.FileExistsAsync(string)
+  type: Method
+  assemblies:
+  - NuvTools.Storage.Azure
+  namespace: NuvTools.Storage.Azure
+  example: []
+  syntax:
+    content: public Task<bool> FileExistsAsync(string id)
+    parameters:
+    - id: id
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+    content.vb: Public Function FileExistsAsync(id As String) As Task(Of Boolean)
+  overload: NuvTools.Storage.Azure.AzureFileManager.FileExistsAsync*
+  implements:
+  - NuvTools.Storage.IFileManager.FileExistsAsync(System.String)
+  nameWithType.vb: AzureFileManager.FileExistsAsync(String)
+  fullName.vb: NuvTools.Storage.Azure.AzureFileManager.FileExistsAsync(String)
+  name.vb: FileExistsAsync(String)
+- uid: NuvTools.Storage.Azure.AzureFileManager.Credencial
+  commentId: P:NuvTools.Storage.Azure.AzureFileManager.Credencial
+  id: Credencial
+  parent: NuvTools.Storage.Azure.AzureFileManager
+  langs:
+  - csharp
+  - vb
+  name: Credencial
+  nameWithType: AzureFileManager.Credencial
+  fullName: NuvTools.Storage.Azure.AzureFileManager.Credencial
+  type: Property
+  assemblies:
+  - NuvTools.Storage.Azure
+  namespace: NuvTools.Storage.Azure
+  syntax:
+    content: protected BlobServiceClient Credencial { get; }
+    parameters: []
+    return:
+      type: Azure.Storage.Blobs.BlobServiceClient
+    content.vb: Protected ReadOnly Property Credencial As BlobServiceClient
+  overload: NuvTools.Storage.Azure.AzureFileManager.Credencial*
+references:
+- uid: NuvTools.Storage.Azure
+  commentId: N:NuvTools.Storage.Azure
+  isExternal: true
+  href: NuvTools.html
+  name: NuvTools.Storage.Azure
+  nameWithType: NuvTools.Storage.Azure
+  fullName: NuvTools.Storage.Azure
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Storage
+    name: Storage
+    isExternal: true
+    href: NuvTools.Storage.html
+  - name: .
+  - uid: NuvTools.Storage.Azure
+    name: Azure
+    isExternal: true
+    href: NuvTools.Storage.Azure.html
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Storage
+    name: Storage
+    isExternal: true
+    href: NuvTools.Storage.html
+  - name: .
+  - uid: NuvTools.Storage.Azure
+    name: Azure
+    isExternal: true
+    href: NuvTools.Storage.Azure.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: NuvTools.Storage.IFileManager
+  commentId: T:NuvTools.Storage.IFileManager
+  parent: NuvTools.Storage
+  isExternal: true
+  href: NuvTools.Storage.IFileManager.html
+  name: IFileManager
+  nameWithType: IFileManager
+  fullName: NuvTools.Storage.IFileManager
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NuvTools.Storage
+  commentId: N:NuvTools.Storage
+  isExternal: true
+  href: NuvTools.html
+  name: NuvTools.Storage
+  nameWithType: NuvTools.Storage
+  fullName: NuvTools.Storage
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Storage
+    name: Storage
+    isExternal: true
+    href: NuvTools.Storage.html
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Storage
+    name: Storage
+    isExternal: true
+    href: NuvTools.Storage.html
+- uid: NuvTools.Storage.Azure.AzureFileManager.#ctor*
+  commentId: Overload:NuvTools.Storage.Azure.AzureFileManager.#ctor
+  isExternal: true
+  href: NuvTools.Storage.Azure.AzureFileManager.html#NuvTools_Storage_Azure_AzureFileManager__ctor_System_String_System_String_
+  name: AzureFileManager
+  nameWithType: AzureFileManager.AzureFileManager
+  fullName: NuvTools.Storage.Azure.AzureFileManager.AzureFileManager
+  nameWithType.vb: AzureFileManager.New
+  fullName.vb: NuvTools.Storage.Azure.AzureFileManager.New
+  name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: NuvTools.Storage.Azure.AzureFileManager.GetAccessRepositoryUri*
+  commentId: Overload:NuvTools.Storage.Azure.AzureFileManager.GetAccessRepositoryUri
+  isExternal: true
+  href: NuvTools.Storage.Azure.AzureFileManager.html#NuvTools_Storage_Azure_AzureFileManager_GetAccessRepositoryUri_NuvTools_Storage_AccessPermissions_
+  name: GetAccessRepositoryUri
+  nameWithType: AzureFileManager.GetAccessRepositoryUri
+  fullName: NuvTools.Storage.Azure.AzureFileManager.GetAccessRepositoryUri
+- uid: NuvTools.Storage.IFileManager.GetAccessRepositoryUri(NuvTools.Storage.AccessPermissions)
+  commentId: M:NuvTools.Storage.IFileManager.GetAccessRepositoryUri(NuvTools.Storage.AccessPermissions)
+  parent: NuvTools.Storage.IFileManager
+  isExternal: true
+  name: GetAccessRepositoryUri(AccessPermissions)
+  nameWithType: IFileManager.GetAccessRepositoryUri(AccessPermissions)
+  fullName: NuvTools.Storage.IFileManager.GetAccessRepositoryUri(NuvTools.Storage.AccessPermissions)
+  spec.csharp:
+  - uid: NuvTools.Storage.IFileManager.GetAccessRepositoryUri(NuvTools.Storage.AccessPermissions)
+    name: GetAccessRepositoryUri
+    isExternal: true
+  - name: (
+  - uid: NuvTools.Storage.AccessPermissions
+    name: AccessPermissions
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Storage.IFileManager.GetAccessRepositoryUri(NuvTools.Storage.AccessPermissions)
+    name: GetAccessRepositoryUri
+    isExternal: true
+  - name: (
+  - uid: NuvTools.Storage.AccessPermissions
+    name: AccessPermissions
+    isExternal: true
+  - name: )
+- uid: NuvTools.Storage.AccessPermissions
+  commentId: T:NuvTools.Storage.AccessPermissions
+  parent: NuvTools.Storage
+  isExternal: true
+  href: NuvTools.Storage.AccessPermissions.html
+  name: AccessPermissions
+  nameWithType: AccessPermissions
+  fullName: NuvTools.Storage.AccessPermissions
+- uid: System.Uri
+  commentId: T:System.Uri
+  parent: System
+  isExternal: true
+  name: Uri
+  nameWithType: Uri
+  fullName: System.Uri
+- uid: NuvTools.Storage.Azure.AzureFileManager.GetFileAsync*
+  commentId: Overload:NuvTools.Storage.Azure.AzureFileManager.GetFileAsync
+  isExternal: true
+  href: NuvTools.Storage.Azure.AzureFileManager.html#NuvTools_Storage_Azure_AzureFileManager_GetFileAsync_System_String_System_Boolean_
+  name: GetFileAsync
+  nameWithType: AzureFileManager.GetFileAsync
+  fullName: NuvTools.Storage.Azure.AzureFileManager.GetFileAsync
+- uid: NuvTools.Storage.IFileManager.GetFileAsync(System.String,System.Boolean)
+  commentId: M:NuvTools.Storage.IFileManager.GetFileAsync(System.String,System.Boolean)
+  parent: NuvTools.Storage.IFileManager
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: GetFileAsync(string, bool)
+  nameWithType: IFileManager.GetFileAsync(string, bool)
+  fullName: NuvTools.Storage.IFileManager.GetFileAsync(string, bool)
+  nameWithType.vb: IFileManager.GetFileAsync(String, Boolean)
+  fullName.vb: NuvTools.Storage.IFileManager.GetFileAsync(String, Boolean)
+  name.vb: GetFileAsync(String, Boolean)
+  spec.csharp:
+  - uid: NuvTools.Storage.IFileManager.GetFileAsync(System.String,System.Boolean)
+    name: GetFileAsync
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Storage.IFileManager.GetFileAsync(System.String,System.Boolean)
+    name: GetFileAsync
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Threading.Tasks.Task{NuvTools.Storage.IFile}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Storage.IFile}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IFile>
+  nameWithType: Task<IFile>
+  fullName: System.Threading.Tasks.Task<NuvTools.Storage.IFile>
+  nameWithType.vb: Task(Of IFile)
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Storage.IFile)
+  name.vb: Task(Of IFile)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Storage.IFile
+    name: IFile
+    isExternal: true
+    href: NuvTools.Storage.IFile.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Storage.IFile
+    name: IFile
+    isExternal: true
+    href: NuvTools.Storage.IFile.html
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NuvTools.Storage.Azure.AzureFileManager.GetFilesAsync*
+  commentId: Overload:NuvTools.Storage.Azure.AzureFileManager.GetFilesAsync
+  isExternal: true
+  href: NuvTools.Storage.Azure.AzureFileManager.html#NuvTools_Storage_Azure_AzureFileManager_GetFilesAsync_System_Nullable_System_Int32__
+  name: GetFilesAsync
+  nameWithType: AzureFileManager.GetFilesAsync
+  fullName: NuvTools.Storage.Azure.AzureFileManager.GetFilesAsync
+- uid: NuvTools.Storage.IFileManager.GetFilesAsync(System.Nullable{System.Int32})
+  commentId: M:NuvTools.Storage.IFileManager.GetFilesAsync(System.Nullable{System.Int32})
+  parent: NuvTools.Storage.IFileManager
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: GetFilesAsync(int?)
+  nameWithType: IFileManager.GetFilesAsync(int?)
+  fullName: NuvTools.Storage.IFileManager.GetFilesAsync(int?)
+  nameWithType.vb: IFileManager.GetFilesAsync(Integer?)
+  fullName.vb: NuvTools.Storage.IFileManager.GetFilesAsync(Integer?)
+  name.vb: GetFilesAsync(Integer?)
+  spec.csharp:
+  - uid: NuvTools.Storage.IFileManager.GetFilesAsync(System.Nullable{System.Int32})
+    name: GetFilesAsync
+    isExternal: true
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Storage.IFileManager.GetFilesAsync(System.Nullable{System.Int32})
+    name: GetFilesAsync
+    isExternal: true
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  - name: )
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{NuvTools.Storage.IFile}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{NuvTools.Storage.IFile}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IReadOnlyList<IFile>>
+  nameWithType: Task<IReadOnlyList<IFile>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<NuvTools.Storage.IFile>>
+  nameWithType.vb: Task(Of IReadOnlyList(Of IFile))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IReadOnlyList(Of NuvTools.Storage.IFile))
+  name.vb: Task(Of IReadOnlyList(Of IFile))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: NuvTools.Storage.IFile
+    name: IFile
+    isExternal: true
+    href: NuvTools.Storage.IFile.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Storage.IFile
+    name: IFile
+    isExternal: true
+    href: NuvTools.Storage.IFile.html
+  - name: )
+  - name: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NuvTools.Storage.Azure.AzureFileManager.RemoveFileAsync*
+  commentId: Overload:NuvTools.Storage.Azure.AzureFileManager.RemoveFileAsync
+  isExternal: true
+  href: NuvTools.Storage.Azure.AzureFileManager.html#NuvTools_Storage_Azure_AzureFileManager_RemoveFileAsync_System_String_
+  name: RemoveFileAsync
+  nameWithType: AzureFileManager.RemoveFileAsync
+  fullName: NuvTools.Storage.Azure.AzureFileManager.RemoveFileAsync
+- uid: NuvTools.Storage.IFileManager.RemoveFileAsync(System.String)
+  commentId: M:NuvTools.Storage.IFileManager.RemoveFileAsync(System.String)
+  parent: NuvTools.Storage.IFileManager
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: RemoveFileAsync(string)
+  nameWithType: IFileManager.RemoveFileAsync(string)
+  fullName: NuvTools.Storage.IFileManager.RemoveFileAsync(string)
+  nameWithType.vb: IFileManager.RemoveFileAsync(String)
+  fullName.vb: NuvTools.Storage.IFileManager.RemoveFileAsync(String)
+  name.vb: RemoveFileAsync(String)
+  spec.csharp:
+  - uid: NuvTools.Storage.IFileManager.RemoveFileAsync(System.String)
+    name: RemoveFileAsync
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Storage.IFileManager.RemoveFileAsync(System.String)
+    name: RemoveFileAsync
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: NuvTools.Storage.Azure.AzureFileManager.AddFileAsync*
+  commentId: Overload:NuvTools.Storage.Azure.AzureFileManager.AddFileAsync
+  isExternal: true
+  href: NuvTools.Storage.Azure.AzureFileManager.html#NuvTools_Storage_Azure_AzureFileManager_AddFileAsync_NuvTools_Storage_IFile___
+  name: AddFileAsync
+  nameWithType: AzureFileManager.AddFileAsync
+  fullName: NuvTools.Storage.Azure.AzureFileManager.AddFileAsync
+- uid: NuvTools.Storage.IFile[]
+  isExternal: true
+  href: NuvTools.Storage.IFile.html
+  name: IFile[]
+  nameWithType: IFile[]
+  fullName: NuvTools.Storage.IFile[]
+  nameWithType.vb: IFile()
+  fullName.vb: NuvTools.Storage.IFile()
+  name.vb: IFile()
+  spec.csharp:
+  - uid: NuvTools.Storage.IFile
+    name: IFile
+    isExternal: true
+    href: NuvTools.Storage.IFile.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: NuvTools.Storage.IFile
+    name: IFile
+    isExternal: true
+    href: NuvTools.Storage.IFile.html
+  - name: (
+  - name: )
+- uid: NuvTools.Storage.IFileManager.AddFileAsync(System.String,NuvTools.Storage.IFile[])
+  commentId: M:NuvTools.Storage.IFileManager.AddFileAsync(System.String,NuvTools.Storage.IFile[])
+  parent: NuvTools.Storage.IFileManager
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: AddFileAsync(string, params IFile[])
+  nameWithType: IFileManager.AddFileAsync(string, params IFile[])
+  fullName: NuvTools.Storage.IFileManager.AddFileAsync(string, params NuvTools.Storage.IFile[])
+  nameWithType.vb: IFileManager.AddFileAsync(String, ParamArray IFile())
+  fullName.vb: NuvTools.Storage.IFileManager.AddFileAsync(String, ParamArray NuvTools.Storage.IFile())
+  name.vb: AddFileAsync(String, ParamArray IFile())
+  spec.csharp:
+  - uid: NuvTools.Storage.IFileManager.AddFileAsync(System.String,NuvTools.Storage.IFile[])
+    name: AddFileAsync
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - name: params
+  - name: " "
+  - uid: NuvTools.Storage.IFile
+    name: IFile
+    isExternal: true
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Storage.IFileManager.AddFileAsync(System.String,NuvTools.Storage.IFile[])
+    name: AddFileAsync
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - name: ParamArray
+  - name: " "
+  - uid: NuvTools.Storage.IFile
+    name: IFile
+    isExternal: true
+  - name: (
+  - name: )
+  - name: )
+- uid: NuvTools.Storage.Azure.AzureFileManager.FileExistsAsync*
+  commentId: Overload:NuvTools.Storage.Azure.AzureFileManager.FileExistsAsync
+  isExternal: true
+  href: NuvTools.Storage.Azure.AzureFileManager.html#NuvTools_Storage_Azure_AzureFileManager_FileExistsAsync_System_String_
+  name: FileExistsAsync
+  nameWithType: AzureFileManager.FileExistsAsync
+  fullName: NuvTools.Storage.Azure.AzureFileManager.FileExistsAsync
+- uid: NuvTools.Storage.IFileManager.FileExistsAsync(System.String)
+  commentId: M:NuvTools.Storage.IFileManager.FileExistsAsync(System.String)
+  parent: NuvTools.Storage.IFileManager
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: FileExistsAsync(string)
+  nameWithType: IFileManager.FileExistsAsync(string)
+  fullName: NuvTools.Storage.IFileManager.FileExistsAsync(string)
+  nameWithType.vb: IFileManager.FileExistsAsync(String)
+  fullName.vb: NuvTools.Storage.IFileManager.FileExistsAsync(String)
+  name.vb: FileExistsAsync(String)
+  spec.csharp:
+  - uid: NuvTools.Storage.IFileManager.FileExistsAsync(System.String)
+    name: FileExistsAsync
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Storage.IFileManager.FileExistsAsync(System.String)
+    name: FileExistsAsync
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Threading.Tasks.Task{System.Boolean}
+  commentId: T:System.Threading.Tasks.Task{System.Boolean}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<bool>
+  nameWithType: Task<bool>
+  fullName: System.Threading.Tasks.Task<bool>
+  nameWithType.vb: Task(Of Boolean)
+  fullName.vb: System.Threading.Tasks.Task(Of Boolean)
+  name.vb: Task(Of Boolean)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: NuvTools.Storage.Azure.AzureFileManager.Credencial*
+  commentId: Overload:NuvTools.Storage.Azure.AzureFileManager.Credencial
+  isExternal: true
+  href: NuvTools.Storage.Azure.AzureFileManager.html#NuvTools_Storage_Azure_AzureFileManager_Credencial
+  name: Credencial
+  nameWithType: AzureFileManager.Credencial
+  fullName: NuvTools.Storage.Azure.AzureFileManager.Credencial
+- uid: Azure.Storage.Blobs.BlobServiceClient
+  commentId: T:Azure.Storage.Blobs.BlobServiceClient
+  parent: Azure.Storage.Blobs
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/azure.storage.blobs.blobserviceclient
+  name: BlobServiceClient
+  nameWithType: BlobServiceClient
+  fullName: Azure.Storage.Blobs.BlobServiceClient
+- uid: Azure.Storage.Blobs
+  commentId: N:Azure.Storage.Blobs
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/azure
+  name: Azure.Storage.Blobs
+  nameWithType: Azure.Storage.Blobs
+  fullName: Azure.Storage.Blobs
+  spec.csharp:
+  - uid: Azure
+    name: Azure
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/azure
+  - name: .
+  - uid: Azure.Storage
+    name: Storage
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/azure.storage
+  - name: .
+  - uid: Azure.Storage.Blobs
+    name: Blobs
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/azure.storage.blobs
+  spec.vb:
+  - uid: Azure
+    name: Azure
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/azure
+  - name: .
+  - uid: Azure.Storage
+    name: Storage
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/azure.storage
+  - name: .
+  - uid: Azure.Storage.Blobs
+    name: Blobs
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/azure.storage.blobs

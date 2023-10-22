@@ -1,0 +1,238 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Storage.AccessPermissions
+  commentId: T:NuvTools.Storage.AccessPermissions
+  id: AccessPermissions
+  parent: NuvTools.Storage
+  children:
+  - NuvTools.Storage.AccessPermissions.Add
+  - NuvTools.Storage.AccessPermissions.All
+  - NuvTools.Storage.AccessPermissions.Create
+  - NuvTools.Storage.AccessPermissions.Delete
+  - NuvTools.Storage.AccessPermissions.List
+  - NuvTools.Storage.AccessPermissions.Read
+  - NuvTools.Storage.AccessPermissions.Update
+  - NuvTools.Storage.AccessPermissions.Write
+  langs:
+  - csharp
+  - vb
+  name: AccessPermissions
+  nameWithType: AccessPermissions
+  fullName: NuvTools.Storage.AccessPermissions
+  type: Enum
+  assemblies:
+  - NuvTools.Storage
+  namespace: NuvTools.Storage
+  syntax:
+    content: >-
+      [Flags]
+
+      public enum AccessPermissions
+    content.vb: >-
+      <Flags>
+
+      Public Enum AccessPermissions
+  attributes:
+  - type: System.FlagsAttribute
+    ctor: System.FlagsAttribute.#ctor
+    arguments: []
+- uid: NuvTools.Storage.AccessPermissions.All
+  commentId: F:NuvTools.Storage.AccessPermissions.All
+  id: All
+  parent: NuvTools.Storage.AccessPermissions
+  langs:
+  - csharp
+  - vb
+  name: All
+  nameWithType: AccessPermissions.All
+  fullName: NuvTools.Storage.AccessPermissions.All
+  type: Field
+  assemblies:
+  - NuvTools.Storage
+  namespace: NuvTools.Storage
+  summary: Complete access.
+  example: []
+  syntax:
+    content: All = 0
+    return:
+      type: NuvTools.Storage.AccessPermissions
+- uid: NuvTools.Storage.AccessPermissions.Read
+  commentId: F:NuvTools.Storage.AccessPermissions.Read
+  id: Read
+  parent: NuvTools.Storage.AccessPermissions
+  langs:
+  - csharp
+  - vb
+  name: Read
+  nameWithType: AccessPermissions.Read
+  fullName: NuvTools.Storage.AccessPermissions.Read
+  type: Field
+  assemblies:
+  - NuvTools.Storage
+  namespace: NuvTools.Storage
+  summary: Permission to read resources and list queues and tables granted.
+  example: []
+  syntax:
+    content: Read = 1
+    return:
+      type: NuvTools.Storage.AccessPermissions
+- uid: NuvTools.Storage.AccessPermissions.Add
+  commentId: F:NuvTools.Storage.AccessPermissions.Add
+  id: Add
+  parent: NuvTools.Storage.AccessPermissions
+  langs:
+  - csharp
+  - vb
+  name: Add
+  nameWithType: AccessPermissions.Add
+  fullName: NuvTools.Storage.AccessPermissions.Add
+  type: Field
+  assemblies:
+  - NuvTools.Storage
+  namespace: NuvTools.Storage
+  summary: Permission to add messages, table entities, blobs, and files granted.
+  example: []
+  syntax:
+    content: Add = 2
+    return:
+      type: NuvTools.Storage.AccessPermissions
+- uid: NuvTools.Storage.AccessPermissions.Create
+  commentId: F:NuvTools.Storage.AccessPermissions.Create
+  id: Create
+  parent: NuvTools.Storage.AccessPermissions
+  langs:
+  - csharp
+  - vb
+  name: Create
+  nameWithType: AccessPermissions.Create
+  fullName: NuvTools.Storage.AccessPermissions.Create
+  type: Field
+  assemblies:
+  - NuvTools.Storage
+  namespace: NuvTools.Storage
+  summary: Permission to create containers, blobs, shares, directories, and files granted.
+  example: []
+  syntax:
+    content: Create = Read | Add
+    return:
+      type: NuvTools.Storage.AccessPermissions
+    content.vb: Create = Read Or Add
+- uid: NuvTools.Storage.AccessPermissions.Update
+  commentId: F:NuvTools.Storage.AccessPermissions.Update
+  id: Update
+  parent: NuvTools.Storage.AccessPermissions
+  langs:
+  - csharp
+  - vb
+  name: Update
+  nameWithType: AccessPermissions.Update
+  fullName: NuvTools.Storage.AccessPermissions.Update
+  type: Field
+  assemblies:
+  - NuvTools.Storage
+  namespace: NuvTools.Storage
+  summary: Permissions to update messages and table entities granted.
+  example: []
+  syntax:
+    content: Update = 4
+    return:
+      type: NuvTools.Storage.AccessPermissions
+- uid: NuvTools.Storage.AccessPermissions.Write
+  commentId: F:NuvTools.Storage.AccessPermissions.Write
+  id: Write
+  parent: NuvTools.Storage.AccessPermissions
+  langs:
+  - csharp
+  - vb
+  name: Write
+  nameWithType: AccessPermissions.Write
+  fullName: NuvTools.Storage.AccessPermissions.Write
+  type: Field
+  assemblies:
+  - NuvTools.Storage
+  namespace: NuvTools.Storage
+  summary: Permission to write resources granted.
+  example: []
+  syntax:
+    content: Write = Read | Update
+    return:
+      type: NuvTools.Storage.AccessPermissions
+    content.vb: Write = Read Or Update
+- uid: NuvTools.Storage.AccessPermissions.Delete
+  commentId: F:NuvTools.Storage.AccessPermissions.Delete
+  id: Delete
+  parent: NuvTools.Storage.AccessPermissions
+  langs:
+  - csharp
+  - vb
+  name: Delete
+  nameWithType: AccessPermissions.Delete
+  fullName: NuvTools.Storage.AccessPermissions.Delete
+  type: Field
+  assemblies:
+  - NuvTools.Storage
+  namespace: NuvTools.Storage
+  summary: Permission to delete resources granted.
+  example: []
+  syntax:
+    content: Delete = Add | Update
+    return:
+      type: NuvTools.Storage.AccessPermissions
+    content.vb: Delete = Add Or Update
+- uid: NuvTools.Storage.AccessPermissions.List
+  commentId: F:NuvTools.Storage.AccessPermissions.List
+  id: List
+  parent: NuvTools.Storage.AccessPermissions
+  langs:
+  - csharp
+  - vb
+  name: List
+  nameWithType: AccessPermissions.List
+  fullName: NuvTools.Storage.AccessPermissions.List
+  type: Field
+  assemblies:
+  - NuvTools.Storage
+  namespace: NuvTools.Storage
+  summary: Permission to list blob containers, blobs, shares, directories, and files granted.
+  example: []
+  syntax:
+    content: List = Read | Delete
+    return:
+      type: NuvTools.Storage.AccessPermissions
+    content.vb: List = Read Or Delete
+references:
+- uid: NuvTools.Storage
+  commentId: N:NuvTools.Storage
+  isExternal: true
+  href: NuvTools.html
+  name: NuvTools.Storage
+  nameWithType: NuvTools.Storage
+  fullName: NuvTools.Storage
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Storage
+    name: Storage
+    isExternal: true
+    href: NuvTools.Storage.html
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Storage
+    name: Storage
+    isExternal: true
+    href: NuvTools.Storage.html
+- uid: NuvTools.Storage.AccessPermissions
+  commentId: T:NuvTools.Storage.AccessPermissions
+  parent: NuvTools.Storage
+  isExternal: true
+  href: NuvTools.Storage.AccessPermissions.html
+  name: AccessPermissions
+  nameWithType: AccessPermissions
+  fullName: NuvTools.Storage.AccessPermissions

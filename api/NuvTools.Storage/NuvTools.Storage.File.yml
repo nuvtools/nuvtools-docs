@@ -1,0 +1,784 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Storage.File
+  commentId: T:NuvTools.Storage.File
+  id: File
+  parent: NuvTools.Storage
+  children:
+  - NuvTools.Storage.File.#ctor(System.String,System.String,System.IO.Stream)
+  - NuvTools.Storage.File.#ctor(System.String,System.String,System.String)
+  - NuvTools.Storage.File.#ctor(System.String,System.String,System.Uri)
+  - NuvTools.Storage.File.Base64String
+  - NuvTools.Storage.File.Content
+  - NuvTools.Storage.File.Name
+  - NuvTools.Storage.File.Type
+  - NuvTools.Storage.File.Uri
+  langs:
+  - csharp
+  - vb
+  name: File
+  nameWithType: File
+  fullName: NuvTools.Storage.File
+  type: Class
+  assemblies:
+  - NuvTools.Storage
+  namespace: NuvTools.Storage
+  syntax:
+    content: 'public class File : IFile'
+    content.vb: Public Class File Implements IFile
+  inheritance:
+  - System.Object
+  implements:
+  - NuvTools.Storage.IFile
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  extensionMethods:
+  - NuvTools.Storage.IFile.NuvTools.Storage.FileExtensions.Base64StringFromContent
+  - NuvTools.Storage.IFile.NuvTools.Storage.FileExtensions.ContentFromBase64String
+- uid: NuvTools.Storage.File.#ctor(System.String,System.String,System.Uri)
+  commentId: M:NuvTools.Storage.File.#ctor(System.String,System.String,System.Uri)
+  id: '#ctor(System.String,System.String,System.Uri)'
+  parent: NuvTools.Storage.File
+  langs:
+  - csharp
+  - vb
+  name: File(string, string, Uri)
+  nameWithType: File.File(string, string, Uri)
+  fullName: NuvTools.Storage.File.File(string, string, System.Uri)
+  type: Constructor
+  assemblies:
+  - NuvTools.Storage
+  namespace: NuvTools.Storage
+  syntax:
+    content: public File(string name, string type, Uri uri)
+    parameters:
+    - id: name
+      type: System.String
+    - id: type
+      type: System.String
+    - id: uri
+      type: System.Uri
+    content.vb: Public Sub New(name As String, type As String, uri As Uri)
+  overload: NuvTools.Storage.File.#ctor*
+  nameWithType.vb: File.New(String, String, Uri)
+  fullName.vb: NuvTools.Storage.File.New(String, String, System.Uri)
+  name.vb: New(String, String, Uri)
+- uid: NuvTools.Storage.File.#ctor(System.String,System.String,System.IO.Stream)
+  commentId: M:NuvTools.Storage.File.#ctor(System.String,System.String,System.IO.Stream)
+  id: '#ctor(System.String,System.String,System.IO.Stream)'
+  parent: NuvTools.Storage.File
+  langs:
+  - csharp
+  - vb
+  name: File(string, string, Stream)
+  nameWithType: File.File(string, string, Stream)
+  fullName: NuvTools.Storage.File.File(string, string, System.IO.Stream)
+  type: Constructor
+  assemblies:
+  - NuvTools.Storage
+  namespace: NuvTools.Storage
+  syntax:
+    content: public File(string name, string type, Stream content)
+    parameters:
+    - id: name
+      type: System.String
+    - id: type
+      type: System.String
+    - id: content
+      type: System.IO.Stream
+    content.vb: Public Sub New(name As String, type As String, content As Stream)
+  overload: NuvTools.Storage.File.#ctor*
+  nameWithType.vb: File.New(String, String, Stream)
+  fullName.vb: NuvTools.Storage.File.New(String, String, System.IO.Stream)
+  name.vb: New(String, String, Stream)
+- uid: NuvTools.Storage.File.#ctor(System.String,System.String,System.String)
+  commentId: M:NuvTools.Storage.File.#ctor(System.String,System.String,System.String)
+  id: '#ctor(System.String,System.String,System.String)'
+  parent: NuvTools.Storage.File
+  langs:
+  - csharp
+  - vb
+  name: File(string, string, string)
+  nameWithType: File.File(string, string, string)
+  fullName: NuvTools.Storage.File.File(string, string, string)
+  type: Constructor
+  assemblies:
+  - NuvTools.Storage
+  namespace: NuvTools.Storage
+  syntax:
+    content: public File(string name, string type, string base64String)
+    parameters:
+    - id: name
+      type: System.String
+    - id: type
+      type: System.String
+    - id: base64String
+      type: System.String
+    content.vb: Public Sub New(name As String, type As String, base64String As String)
+  overload: NuvTools.Storage.File.#ctor*
+  nameWithType.vb: File.New(String, String, String)
+  fullName.vb: NuvTools.Storage.File.New(String, String, String)
+  name.vb: New(String, String, String)
+- uid: NuvTools.Storage.File.Name
+  commentId: P:NuvTools.Storage.File.Name
+  id: Name
+  parent: NuvTools.Storage.File
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: File.Name
+  fullName: NuvTools.Storage.File.Name
+  type: Property
+  assemblies:
+  - NuvTools.Storage
+  namespace: NuvTools.Storage
+  example: []
+  syntax:
+    content: public string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Name As String
+  overload: NuvTools.Storage.File.Name*
+  implements:
+  - NuvTools.Storage.IFile.Name
+- uid: NuvTools.Storage.File.Type
+  commentId: P:NuvTools.Storage.File.Type
+  id: Type
+  parent: NuvTools.Storage.File
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: File.Type
+  fullName: NuvTools.Storage.File.Type
+  type: Property
+  assemblies:
+  - NuvTools.Storage
+  namespace: NuvTools.Storage
+  example: []
+  syntax:
+    content: public string Type { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Type As String
+  overload: NuvTools.Storage.File.Type*
+  implements:
+  - NuvTools.Storage.IFile.Type
+- uid: NuvTools.Storage.File.Uri
+  commentId: P:NuvTools.Storage.File.Uri
+  id: Uri
+  parent: NuvTools.Storage.File
+  langs:
+  - csharp
+  - vb
+  name: Uri
+  nameWithType: File.Uri
+  fullName: NuvTools.Storage.File.Uri
+  type: Property
+  assemblies:
+  - NuvTools.Storage
+  namespace: NuvTools.Storage
+  example: []
+  syntax:
+    content: public Uri Uri { get; }
+    parameters: []
+    return:
+      type: System.Uri
+    content.vb: Public ReadOnly Property Uri As Uri
+  overload: NuvTools.Storage.File.Uri*
+  implements:
+  - NuvTools.Storage.IFile.Uri
+- uid: NuvTools.Storage.File.Content
+  commentId: P:NuvTools.Storage.File.Content
+  id: Content
+  parent: NuvTools.Storage.File
+  langs:
+  - csharp
+  - vb
+  name: Content
+  nameWithType: File.Content
+  fullName: NuvTools.Storage.File.Content
+  type: Property
+  assemblies:
+  - NuvTools.Storage
+  namespace: NuvTools.Storage
+  example: []
+  syntax:
+    content: public Stream Content { get; }
+    parameters: []
+    return:
+      type: System.IO.Stream
+    content.vb: Public ReadOnly Property Content As Stream
+  overload: NuvTools.Storage.File.Content*
+  implements:
+  - NuvTools.Storage.IFile.Content
+- uid: NuvTools.Storage.File.Base64String
+  commentId: P:NuvTools.Storage.File.Base64String
+  id: Base64String
+  parent: NuvTools.Storage.File
+  langs:
+  - csharp
+  - vb
+  name: Base64String
+  nameWithType: File.Base64String
+  fullName: NuvTools.Storage.File.Base64String
+  type: Property
+  assemblies:
+  - NuvTools.Storage
+  namespace: NuvTools.Storage
+  example: []
+  syntax:
+    content: public string Base64String { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Base64String As String
+  overload: NuvTools.Storage.File.Base64String*
+  implements:
+  - NuvTools.Storage.IFile.Base64String
+references:
+- uid: NuvTools.Storage
+  commentId: N:NuvTools.Storage
+  isExternal: true
+  href: NuvTools.html
+  name: NuvTools.Storage
+  nameWithType: NuvTools.Storage
+  fullName: NuvTools.Storage
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Storage
+    name: Storage
+    isExternal: true
+    href: NuvTools.Storage.html
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Storage
+    name: Storage
+    isExternal: true
+    href: NuvTools.Storage.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: NuvTools.Storage.IFile
+  commentId: T:NuvTools.Storage.IFile
+  parent: NuvTools.Storage
+  isExternal: true
+  href: NuvTools.Storage.IFile.html
+  name: IFile
+  nameWithType: IFile
+  fullName: NuvTools.Storage.IFile
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: NuvTools.Storage.IFile.NuvTools.Storage.FileExtensions.Base64StringFromContent
+  commentId: M:NuvTools.Storage.FileExtensions.Base64StringFromContent(NuvTools.Storage.IFile)
+  parent: NuvTools.Storage.FileExtensions
+  definition: NuvTools.Storage.FileExtensions.Base64StringFromContent(NuvTools.Storage.IFile)
+  href: NuvTools.Storage.FileExtensions.html#NuvTools_Storage_FileExtensions_Base64StringFromContent_NuvTools_Storage_IFile_
+  name: Base64StringFromContent(IFile)
+  nameWithType: FileExtensions.Base64StringFromContent(IFile)
+  fullName: NuvTools.Storage.FileExtensions.Base64StringFromContent(NuvTools.Storage.IFile)
+  spec.csharp:
+  - uid: NuvTools.Storage.FileExtensions.Base64StringFromContent(NuvTools.Storage.IFile)
+    name: Base64StringFromContent
+    isExternal: true
+    href: NuvTools.Storage.FileExtensions.html#NuvTools_Storage_FileExtensions_Base64StringFromContent_NuvTools_Storage_IFile_
+  - name: (
+  - uid: NuvTools.Storage.IFile
+    name: IFile
+    isExternal: true
+    href: NuvTools.Storage.IFile.html
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Storage.FileExtensions.Base64StringFromContent(NuvTools.Storage.IFile)
+    name: Base64StringFromContent
+    isExternal: true
+    href: NuvTools.Storage.FileExtensions.html#NuvTools_Storage_FileExtensions_Base64StringFromContent_NuvTools_Storage_IFile_
+  - name: (
+  - uid: NuvTools.Storage.IFile
+    name: IFile
+    isExternal: true
+    href: NuvTools.Storage.IFile.html
+  - name: )
+- uid: NuvTools.Storage.IFile.NuvTools.Storage.FileExtensions.ContentFromBase64String
+  commentId: M:NuvTools.Storage.FileExtensions.ContentFromBase64String(NuvTools.Storage.IFile)
+  parent: NuvTools.Storage.FileExtensions
+  definition: NuvTools.Storage.FileExtensions.ContentFromBase64String(NuvTools.Storage.IFile)
+  href: NuvTools.Storage.FileExtensions.html#NuvTools_Storage_FileExtensions_ContentFromBase64String_NuvTools_Storage_IFile_
+  name: ContentFromBase64String(IFile)
+  nameWithType: FileExtensions.ContentFromBase64String(IFile)
+  fullName: NuvTools.Storage.FileExtensions.ContentFromBase64String(NuvTools.Storage.IFile)
+  spec.csharp:
+  - uid: NuvTools.Storage.FileExtensions.ContentFromBase64String(NuvTools.Storage.IFile)
+    name: ContentFromBase64String
+    isExternal: true
+    href: NuvTools.Storage.FileExtensions.html#NuvTools_Storage_FileExtensions_ContentFromBase64String_NuvTools_Storage_IFile_
+  - name: (
+  - uid: NuvTools.Storage.IFile
+    name: IFile
+    isExternal: true
+    href: NuvTools.Storage.IFile.html
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Storage.FileExtensions.ContentFromBase64String(NuvTools.Storage.IFile)
+    name: ContentFromBase64String
+    isExternal: true
+    href: NuvTools.Storage.FileExtensions.html#NuvTools_Storage_FileExtensions_ContentFromBase64String_NuvTools_Storage_IFile_
+  - name: (
+  - uid: NuvTools.Storage.IFile
+    name: IFile
+    isExternal: true
+    href: NuvTools.Storage.IFile.html
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NuvTools.Storage.FileExtensions.Base64StringFromContent(NuvTools.Storage.IFile)
+  commentId: M:NuvTools.Storage.FileExtensions.Base64StringFromContent(NuvTools.Storage.IFile)
+  isExternal: true
+  href: NuvTools.Storage.FileExtensions.html#NuvTools_Storage_FileExtensions_Base64StringFromContent_NuvTools_Storage_IFile_
+  name: Base64StringFromContent(IFile)
+  nameWithType: FileExtensions.Base64StringFromContent(IFile)
+  fullName: NuvTools.Storage.FileExtensions.Base64StringFromContent(NuvTools.Storage.IFile)
+  spec.csharp:
+  - uid: NuvTools.Storage.FileExtensions.Base64StringFromContent(NuvTools.Storage.IFile)
+    name: Base64StringFromContent
+    isExternal: true
+    href: NuvTools.Storage.FileExtensions.html#NuvTools_Storage_FileExtensions_Base64StringFromContent_NuvTools_Storage_IFile_
+  - name: (
+  - uid: NuvTools.Storage.IFile
+    name: IFile
+    isExternal: true
+    href: NuvTools.Storage.IFile.html
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Storage.FileExtensions.Base64StringFromContent(NuvTools.Storage.IFile)
+    name: Base64StringFromContent
+    isExternal: true
+    href: NuvTools.Storage.FileExtensions.html#NuvTools_Storage_FileExtensions_Base64StringFromContent_NuvTools_Storage_IFile_
+  - name: (
+  - uid: NuvTools.Storage.IFile
+    name: IFile
+    isExternal: true
+    href: NuvTools.Storage.IFile.html
+  - name: )
+- uid: NuvTools.Storage.FileExtensions
+  commentId: T:NuvTools.Storage.FileExtensions
+  parent: NuvTools.Storage
+  isExternal: true
+  href: NuvTools.Storage.FileExtensions.html
+  name: FileExtensions
+  nameWithType: FileExtensions
+  fullName: NuvTools.Storage.FileExtensions
+- uid: NuvTools.Storage.FileExtensions.ContentFromBase64String(NuvTools.Storage.IFile)
+  commentId: M:NuvTools.Storage.FileExtensions.ContentFromBase64String(NuvTools.Storage.IFile)
+  isExternal: true
+  href: NuvTools.Storage.FileExtensions.html#NuvTools_Storage_FileExtensions_ContentFromBase64String_NuvTools_Storage_IFile_
+  name: ContentFromBase64String(IFile)
+  nameWithType: FileExtensions.ContentFromBase64String(IFile)
+  fullName: NuvTools.Storage.FileExtensions.ContentFromBase64String(NuvTools.Storage.IFile)
+  spec.csharp:
+  - uid: NuvTools.Storage.FileExtensions.ContentFromBase64String(NuvTools.Storage.IFile)
+    name: ContentFromBase64String
+    isExternal: true
+    href: NuvTools.Storage.FileExtensions.html#NuvTools_Storage_FileExtensions_ContentFromBase64String_NuvTools_Storage_IFile_
+  - name: (
+  - uid: NuvTools.Storage.IFile
+    name: IFile
+    isExternal: true
+    href: NuvTools.Storage.IFile.html
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Storage.FileExtensions.ContentFromBase64String(NuvTools.Storage.IFile)
+    name: ContentFromBase64String
+    isExternal: true
+    href: NuvTools.Storage.FileExtensions.html#NuvTools_Storage_FileExtensions_ContentFromBase64String_NuvTools_Storage_IFile_
+  - name: (
+  - uid: NuvTools.Storage.IFile
+    name: IFile
+    isExternal: true
+    href: NuvTools.Storage.IFile.html
+  - name: )
+- uid: NuvTools.Storage.File.#ctor*
+  commentId: Overload:NuvTools.Storage.File.#ctor
+  isExternal: true
+  href: NuvTools.Storage.File.html#NuvTools_Storage_File__ctor_System_String_System_String_System_Uri_
+  name: File
+  nameWithType: File.File
+  fullName: NuvTools.Storage.File.File
+  nameWithType.vb: File.New
+  fullName.vb: NuvTools.Storage.File.New
+  name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Uri
+  commentId: T:System.Uri
+  parent: System
+  isExternal: true
+  name: Uri
+  nameWithType: Uri
+  fullName: System.Uri
+- uid: System.IO.Stream
+  commentId: T:System.IO.Stream
+  parent: System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  name: Stream
+  nameWithType: Stream
+  fullName: System.IO.Stream
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+- uid: NuvTools.Storage.File.Name*
+  commentId: Overload:NuvTools.Storage.File.Name
+  isExternal: true
+  href: NuvTools.Storage.File.html#NuvTools_Storage_File_Name
+  name: Name
+  nameWithType: File.Name
+  fullName: NuvTools.Storage.File.Name
+- uid: NuvTools.Storage.IFile.Name
+  commentId: P:NuvTools.Storage.IFile.Name
+  parent: NuvTools.Storage.IFile
+  isExternal: true
+  href: NuvTools.Storage.IFile.html#NuvTools_Storage_IFile_Name
+  name: Name
+  nameWithType: IFile.Name
+  fullName: NuvTools.Storage.IFile.Name
+- uid: NuvTools.Storage.File.Type*
+  commentId: Overload:NuvTools.Storage.File.Type
+  isExternal: true
+  href: NuvTools.Storage.File.html#NuvTools_Storage_File_Type
+  name: Type
+  nameWithType: File.Type
+  fullName: NuvTools.Storage.File.Type
+- uid: NuvTools.Storage.IFile.Type
+  commentId: P:NuvTools.Storage.IFile.Type
+  parent: NuvTools.Storage.IFile
+  isExternal: true
+  href: NuvTools.Storage.IFile.html#NuvTools_Storage_IFile_Type
+  name: Type
+  nameWithType: IFile.Type
+  fullName: NuvTools.Storage.IFile.Type
+- uid: NuvTools.Storage.File.Uri*
+  commentId: Overload:NuvTools.Storage.File.Uri
+  isExternal: true
+  href: NuvTools.Storage.File.html#NuvTools_Storage_File_Uri
+  name: Uri
+  nameWithType: File.Uri
+  fullName: NuvTools.Storage.File.Uri
+- uid: NuvTools.Storage.IFile.Uri
+  commentId: P:NuvTools.Storage.IFile.Uri
+  parent: NuvTools.Storage.IFile
+  isExternal: true
+  href: NuvTools.Storage.IFile.html#NuvTools_Storage_IFile_Uri
+  name: Uri
+  nameWithType: IFile.Uri
+  fullName: NuvTools.Storage.IFile.Uri
+- uid: NuvTools.Storage.File.Content*
+  commentId: Overload:NuvTools.Storage.File.Content
+  isExternal: true
+  href: NuvTools.Storage.File.html#NuvTools_Storage_File_Content
+  name: Content
+  nameWithType: File.Content
+  fullName: NuvTools.Storage.File.Content
+- uid: NuvTools.Storage.IFile.Content
+  commentId: P:NuvTools.Storage.IFile.Content
+  parent: NuvTools.Storage.IFile
+  isExternal: true
+  href: NuvTools.Storage.IFile.html#NuvTools_Storage_IFile_Content
+  name: Content
+  nameWithType: IFile.Content
+  fullName: NuvTools.Storage.IFile.Content
+- uid: NuvTools.Storage.File.Base64String*
+  commentId: Overload:NuvTools.Storage.File.Base64String
+  isExternal: true
+  href: NuvTools.Storage.File.html#NuvTools_Storage_File_Base64String
+  name: Base64String
+  nameWithType: File.Base64String
+  fullName: NuvTools.Storage.File.Base64String
+- uid: NuvTools.Storage.IFile.Base64String
+  commentId: P:NuvTools.Storage.IFile.Base64String
+  parent: NuvTools.Storage.IFile
+  isExternal: true
+  href: NuvTools.Storage.IFile.html#NuvTools_Storage_IFile_Base64String
+  name: Base64String
+  nameWithType: IFile.Base64String
+  fullName: NuvTools.Storage.IFile.Base64String

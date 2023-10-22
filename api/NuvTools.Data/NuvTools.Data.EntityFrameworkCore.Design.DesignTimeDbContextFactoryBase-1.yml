@@ -1,0 +1,899 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1
+  commentId: T:NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1
+  id: DesignTimeDbContextFactoryBase`1
+  parent: NuvTools.Data.EntityFrameworkCore.Design
+  children:
+  - NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.#ctor
+  - NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.Configuration
+  - NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.CreateDbContext(System.String[])
+  - NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.CreateNewInstance(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder{`0})
+  - NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.InitializeConfiguration(Microsoft.Extensions.Configuration.Json.JsonConfigurationSource[])
+  langs:
+  - csharp
+  - vb
+  name: DesignTimeDbContextFactoryBase<TContext>
+  nameWithType: DesignTimeDbContextFactoryBase<TContext>
+  fullName: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase<TContext>
+  type: Class
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Design
+  syntax:
+    content: 'public abstract class DesignTimeDbContextFactoryBase<TContext> : IDesignTimeDbContextFactory<TContext> where TContext : DbContext'
+    typeParameters:
+    - id: TContext
+    content.vb: Public MustInherit Class DesignTimeDbContextFactoryBase(Of TContext As DbContext) Implements IDesignTimeDbContextFactory(Of TContext)
+  inheritance:
+  - System.Object
+  implements:
+  - Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory{{TContext}}
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  nameWithType.vb: DesignTimeDbContextFactoryBase(Of TContext)
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase(Of TContext)
+  name.vb: DesignTimeDbContextFactoryBase(Of TContext)
+- uid: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.InitializeConfiguration(Microsoft.Extensions.Configuration.Json.JsonConfigurationSource[])
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.InitializeConfiguration(Microsoft.Extensions.Configuration.Json.JsonConfigurationSource[])
+  id: InitializeConfiguration(Microsoft.Extensions.Configuration.Json.JsonConfigurationSource[])
+  parent: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1
+  langs:
+  - csharp
+  - vb
+  name: InitializeConfiguration(params JsonConfigurationSource[])
+  nameWithType: DesignTimeDbContextFactoryBase<TContext>.InitializeConfiguration(params JsonConfigurationSource[])
+  fullName: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase<TContext>.InitializeConfiguration(params Microsoft.Extensions.Configuration.Json.JsonConfigurationSource[])
+  type: Method
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Design
+  summary: Allows initialize the Configuration settings for later use.
+  example: []
+  syntax:
+    content: protected void InitializeConfiguration(params JsonConfigurationSource[] files)
+    parameters:
+    - id: files
+      type: Microsoft.Extensions.Configuration.Json.JsonConfigurationSource[]
+      description: 'Json file to be added into Configuration settings. Note: The base path is set to the current directory application.'
+    content.vb: Protected Sub InitializeConfiguration(ParamArray files As JsonConfigurationSource())
+  overload: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.InitializeConfiguration*
+  nameWithType.vb: DesignTimeDbContextFactoryBase(Of TContext).InitializeConfiguration(ParamArray JsonConfigurationSource())
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase(Of TContext).InitializeConfiguration(ParamArray Microsoft.Extensions.Configuration.Json.JsonConfigurationSource())
+  name.vb: InitializeConfiguration(ParamArray JsonConfigurationSource())
+- uid: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.CreateDbContext(System.String[])
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.CreateDbContext(System.String[])
+  id: CreateDbContext(System.String[])
+  parent: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1
+  langs:
+  - csharp
+  - vb
+  name: CreateDbContext(string[])
+  nameWithType: DesignTimeDbContextFactoryBase<TContext>.CreateDbContext(string[])
+  fullName: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase<TContext>.CreateDbContext(string[])
+  type: Method
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Design
+  summary: Creates a new instance of a derived context.
+  example: []
+  syntax:
+    content: public TContext CreateDbContext(string[] args)
+    parameters:
+    - id: args
+      type: System.String[]
+      description: Arguments provided by the design-time service.
+    return:
+      type: '{TContext}'
+      description: An instance of TContext.
+    content.vb: Public Function CreateDbContext(args As String()) As TContext
+  overload: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.CreateDbContext*
+  implements:
+  - Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory{{TContext}}.CreateDbContext(System.String[])
+  nameWithType.vb: DesignTimeDbContextFactoryBase(Of TContext).CreateDbContext(String())
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase(Of TContext).CreateDbContext(String())
+  name.vb: CreateDbContext(String())
+- uid: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.CreateNewInstance(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder{`0})
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.CreateNewInstance(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder{`0})
+  id: CreateNewInstance(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder{`0})
+  parent: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1
+  langs:
+  - csharp
+  - vb
+  name: CreateNewInstance(DbContextOptionsBuilder<TContext>)
+  nameWithType: DesignTimeDbContextFactoryBase<TContext>.CreateNewInstance(DbContextOptionsBuilder<TContext>)
+  fullName: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase<TContext>.CreateNewInstance(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder<TContext>)
+  type: Method
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Design
+  syntax:
+    content: protected abstract TContext CreateNewInstance(DbContextOptionsBuilder<TContext> optionsBuilder)
+    parameters:
+    - id: optionsBuilder
+      type: Microsoft.EntityFrameworkCore.DbContextOptionsBuilder{{TContext}}
+    return:
+      type: '{TContext}'
+    content.vb: Protected MustOverride Function CreateNewInstance(optionsBuilder As DbContextOptionsBuilder(Of TContext)) As TContext
+  overload: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.CreateNewInstance*
+  nameWithType.vb: DesignTimeDbContextFactoryBase(Of TContext).CreateNewInstance(DbContextOptionsBuilder(Of TContext))
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase(Of TContext).CreateNewInstance(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder(Of TContext))
+  name.vb: CreateNewInstance(DbContextOptionsBuilder(Of TContext))
+- uid: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.#ctor
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.#ctor
+  id: '#ctor'
+  parent: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1
+  langs:
+  - csharp
+  - vb
+  name: DesignTimeDbContextFactoryBase()
+  nameWithType: DesignTimeDbContextFactoryBase<TContext>.DesignTimeDbContextFactoryBase()
+  fullName: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase<TContext>.DesignTimeDbContextFactoryBase()
+  type: Constructor
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Design
+  syntax:
+    content: protected DesignTimeDbContextFactoryBase()
+    content.vb: Protected Sub New()
+  overload: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.#ctor*
+  nameWithType.vb: DesignTimeDbContextFactoryBase(Of TContext).New()
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase(Of TContext).New()
+  name.vb: New()
+- uid: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.Configuration
+  commentId: P:NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.Configuration
+  id: Configuration
+  parent: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1
+  langs:
+  - csharp
+  - vb
+  name: Configuration
+  nameWithType: DesignTimeDbContextFactoryBase<TContext>.Configuration
+  fullName: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase<TContext>.Configuration
+  type: Property
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Design
+  summary: >-
+    Contains the configuration settings loaded from files.
+
+    <p><xref href="NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase%601.InitializeConfiguration(Microsoft.Extensions.Configuration.Json.JsonConfigurationSource%5b%5d)" data-throw-if-not-resolved="false"></xref></p>
+  example: []
+  syntax:
+    content: protected IConfiguration Configuration { get; }
+    parameters: []
+    return:
+      type: Microsoft.Extensions.Configuration.IConfiguration
+    content.vb: Protected ReadOnly Property Configuration As IConfiguration
+  overload: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.Configuration*
+  nameWithType.vb: DesignTimeDbContextFactoryBase(Of TContext).Configuration
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase(Of TContext).Configuration
+references:
+- uid: NuvTools.Data.EntityFrameworkCore.Design
+  commentId: N:NuvTools.Data.EntityFrameworkCore.Design
+  isExternal: true
+  href: NuvTools.html
+  name: NuvTools.Data.EntityFrameworkCore.Design
+  nameWithType: NuvTools.Data.EntityFrameworkCore.Design
+  fullName: NuvTools.Data.EntityFrameworkCore.Design
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Data
+    name: Data
+    isExternal: true
+    href: NuvTools.Data.html
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: NuvTools.Data.EntityFrameworkCore.html
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore.Design
+    name: Design
+    isExternal: true
+    href: NuvTools.Data.EntityFrameworkCore.Design.html
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Data
+    name: Data
+    isExternal: true
+    href: NuvTools.Data.html
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: NuvTools.Data.EntityFrameworkCore.html
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore.Design
+    name: Design
+    isExternal: true
+    href: NuvTools.Data.EntityFrameworkCore.Design.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory{{TContext}}
+  commentId: T:Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory{`0}
+  parent: Microsoft.EntityFrameworkCore.Design
+  definition: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.design.idesigntimedbcontextfactory-1
+  name: IDesignTimeDbContextFactory<TContext>
+  nameWithType: IDesignTimeDbContextFactory<TContext>
+  fullName: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory<TContext>
+  nameWithType.vb: IDesignTimeDbContextFactory(Of TContext)
+  fullName.vb: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory(Of TContext)
+  name.vb: IDesignTimeDbContextFactory(Of TContext)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory`1
+    name: IDesignTimeDbContextFactory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.design.idesigntimedbcontextfactory-1
+  - name: <
+  - name: TContext
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory`1
+    name: IDesignTimeDbContextFactory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.design.idesigntimedbcontextfactory-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TContext
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory`1
+  commentId: T:Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.design.idesigntimedbcontextfactory-1
+  name: IDesignTimeDbContextFactory<TContext>
+  nameWithType: IDesignTimeDbContextFactory<TContext>
+  fullName: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory<TContext>
+  nameWithType.vb: IDesignTimeDbContextFactory(Of TContext)
+  fullName.vb: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory(Of TContext)
+  name.vb: IDesignTimeDbContextFactory(Of TContext)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory`1
+    name: IDesignTimeDbContextFactory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.design.idesigntimedbcontextfactory-1
+  - name: <
+  - name: TContext
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory`1
+    name: IDesignTimeDbContextFactory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.design.idesigntimedbcontextfactory-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TContext
+  - name: )
+- uid: Microsoft.EntityFrameworkCore.Design
+  commentId: N:Microsoft.EntityFrameworkCore.Design
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.EntityFrameworkCore.Design
+  nameWithType: Microsoft.EntityFrameworkCore.Design
+  fullName: Microsoft.EntityFrameworkCore.Design
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore.Design
+    name: Design
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.design
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore.Design
+    name: Design
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.design
+- uid: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.InitializeConfiguration*
+  commentId: Overload:NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.InitializeConfiguration
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase-1.html#NuvTools_Data_EntityFrameworkCore_Design_DesignTimeDbContextFactoryBase_1_InitializeConfiguration_Microsoft_Extensions_Configuration_Json_JsonConfigurationSource___
+  name: InitializeConfiguration
+  nameWithType: DesignTimeDbContextFactoryBase<TContext>.InitializeConfiguration
+  fullName: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase<TContext>.InitializeConfiguration
+  nameWithType.vb: DesignTimeDbContextFactoryBase(Of TContext).InitializeConfiguration
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase(Of TContext).InitializeConfiguration
+- uid: Microsoft.Extensions.Configuration.Json.JsonConfigurationSource[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.json.jsonconfigurationsource
+  name: JsonConfigurationSource[]
+  nameWithType: JsonConfigurationSource[]
+  fullName: Microsoft.Extensions.Configuration.Json.JsonConfigurationSource[]
+  nameWithType.vb: JsonConfigurationSource()
+  fullName.vb: Microsoft.Extensions.Configuration.Json.JsonConfigurationSource()
+  name.vb: JsonConfigurationSource()
+  spec.csharp:
+  - uid: Microsoft.Extensions.Configuration.Json.JsonConfigurationSource
+    name: JsonConfigurationSource
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.json.jsonconfigurationsource
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: Microsoft.Extensions.Configuration.Json.JsonConfigurationSource
+    name: JsonConfigurationSource
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.json.jsonconfigurationsource
+  - name: (
+  - name: )
+- uid: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.CreateDbContext*
+  commentId: Overload:NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.CreateDbContext
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase-1.html#NuvTools_Data_EntityFrameworkCore_Design_DesignTimeDbContextFactoryBase_1_CreateDbContext_System_String___
+  name: CreateDbContext
+  nameWithType: DesignTimeDbContextFactoryBase<TContext>.CreateDbContext
+  fullName: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase<TContext>.CreateDbContext
+  nameWithType.vb: DesignTimeDbContextFactoryBase(Of TContext).CreateDbContext
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase(Of TContext).CreateDbContext
+- uid: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory{{TContext}}.CreateDbContext(System.String[])
+  commentId: M:Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory{`0}.CreateDbContext(System.String[])
+  parent: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory{{TContext}}
+  definition: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory`1.CreateDbContext(System.String[])
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.design.idesigntimedbcontextfactory-1.createdbcontext
+  name: CreateDbContext(string[])
+  nameWithType: IDesignTimeDbContextFactory<TContext>.CreateDbContext(string[])
+  fullName: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory<TContext>.CreateDbContext(string[])
+  nameWithType.vb: IDesignTimeDbContextFactory(Of TContext).CreateDbContext(String())
+  fullName.vb: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory(Of TContext).CreateDbContext(String())
+  name.vb: CreateDbContext(String())
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory{`0}.CreateDbContext(System.String[])
+    name: CreateDbContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.design.idesigntimedbcontextfactory-1.createdbcontext
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory{`0}.CreateDbContext(System.String[])
+    name: CreateDbContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.design.idesigntimedbcontextfactory-1.createdbcontext
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+  - name: )
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+- uid: '{TContext}'
+  commentId: '!:TContext'
+  definition: TContext
+  name: TContext
+  nameWithType: TContext
+  fullName: TContext
+- uid: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory`1.CreateDbContext(System.String[])
+  commentId: M:Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory`1.CreateDbContext(System.String[])
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.design.idesigntimedbcontextfactory-1.createdbcontext
+  name: CreateDbContext(string[])
+  nameWithType: IDesignTimeDbContextFactory<TContext>.CreateDbContext(string[])
+  fullName: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory<TContext>.CreateDbContext(string[])
+  nameWithType.vb: IDesignTimeDbContextFactory(Of TContext).CreateDbContext(String())
+  fullName.vb: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory(Of TContext).CreateDbContext(String())
+  name.vb: CreateDbContext(String())
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory`1.CreateDbContext(System.String[])
+    name: CreateDbContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.design.idesigntimedbcontextfactory-1.createdbcontext
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.Design.IDesignTimeDbContextFactory`1.CreateDbContext(System.String[])
+    name: CreateDbContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.design.idesigntimedbcontextfactory-1.createdbcontext
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+  - name: )
+- uid: TContext
+  name: TContext
+  nameWithType: TContext
+  fullName: TContext
+- uid: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.CreateNewInstance*
+  commentId: Overload:NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.CreateNewInstance
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase-1.html#NuvTools_Data_EntityFrameworkCore_Design_DesignTimeDbContextFactoryBase_1_CreateNewInstance_Microsoft_EntityFrameworkCore_DbContextOptionsBuilder__0__
+  name: CreateNewInstance
+  nameWithType: DesignTimeDbContextFactoryBase<TContext>.CreateNewInstance
+  fullName: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase<TContext>.CreateNewInstance
+  nameWithType.vb: DesignTimeDbContextFactoryBase(Of TContext).CreateNewInstance
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase(Of TContext).CreateNewInstance
+- uid: Microsoft.EntityFrameworkCore.DbContextOptionsBuilder{{TContext}}
+  commentId: T:Microsoft.EntityFrameworkCore.DbContextOptionsBuilder{`0}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbContextOptionsBuilder`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontextoptionsbuilder-1
+  name: DbContextOptionsBuilder<TContext>
+  nameWithType: DbContextOptionsBuilder<TContext>
+  fullName: Microsoft.EntityFrameworkCore.DbContextOptionsBuilder<TContext>
+  nameWithType.vb: DbContextOptionsBuilder(Of TContext)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbContextOptionsBuilder(Of TContext)
+  name.vb: DbContextOptionsBuilder(Of TContext)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbContextOptionsBuilder`1
+    name: DbContextOptionsBuilder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontextoptionsbuilder-1
+  - name: <
+  - name: TContext
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbContextOptionsBuilder`1
+    name: DbContextOptionsBuilder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontextoptionsbuilder-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TContext
+  - name: )
+- uid: Microsoft.EntityFrameworkCore.DbContextOptionsBuilder`1
+  commentId: T:Microsoft.EntityFrameworkCore.DbContextOptionsBuilder`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontextoptionsbuilder-1
+  name: DbContextOptionsBuilder<TContext>
+  nameWithType: DbContextOptionsBuilder<TContext>
+  fullName: Microsoft.EntityFrameworkCore.DbContextOptionsBuilder<TContext>
+  nameWithType.vb: DbContextOptionsBuilder(Of TContext)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbContextOptionsBuilder(Of TContext)
+  name.vb: DbContextOptionsBuilder(Of TContext)
+  spec.csharp:
+  - uid: Microsoft.EntityFrameworkCore.DbContextOptionsBuilder`1
+    name: DbContextOptionsBuilder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontextoptionsbuilder-1
+  - name: <
+  - name: TContext
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.EntityFrameworkCore.DbContextOptionsBuilder`1
+    name: DbContextOptionsBuilder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontextoptionsbuilder-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TContext
+  - name: )
+- uid: Microsoft.EntityFrameworkCore
+  commentId: N:Microsoft.EntityFrameworkCore
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.EntityFrameworkCore
+  nameWithType: Microsoft.EntityFrameworkCore
+  fullName: Microsoft.EntityFrameworkCore
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
+- uid: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.#ctor*
+  commentId: Overload:NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.#ctor
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase-1.html#NuvTools_Data_EntityFrameworkCore_Design_DesignTimeDbContextFactoryBase_1__ctor
+  name: DesignTimeDbContextFactoryBase
+  nameWithType: DesignTimeDbContextFactoryBase<TContext>.DesignTimeDbContextFactoryBase
+  fullName: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase<TContext>.DesignTimeDbContextFactoryBase
+  nameWithType.vb: DesignTimeDbContextFactoryBase(Of TContext).New
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase(Of TContext).New
+  name.vb: New
+- uid: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.InitializeConfiguration(Microsoft.Extensions.Configuration.Json.JsonConfigurationSource[])
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.InitializeConfiguration(Microsoft.Extensions.Configuration.Json.JsonConfigurationSource[])
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase-1.html#NuvTools_Data_EntityFrameworkCore_Design_DesignTimeDbContextFactoryBase_1_InitializeConfiguration_Microsoft_Extensions_Configuration_Json_JsonConfigurationSource___
+  name: InitializeConfiguration(params JsonConfigurationSource[])
+  nameWithType: DesignTimeDbContextFactoryBase<TContext>.InitializeConfiguration(params JsonConfigurationSource[])
+  fullName: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase<TContext>.InitializeConfiguration(params Microsoft.Extensions.Configuration.Json.JsonConfigurationSource[])
+  nameWithType.vb: DesignTimeDbContextFactoryBase(Of TContext).InitializeConfiguration(ParamArray JsonConfigurationSource())
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase(Of TContext).InitializeConfiguration(ParamArray Microsoft.Extensions.Configuration.Json.JsonConfigurationSource())
+  name.vb: InitializeConfiguration(ParamArray JsonConfigurationSource())
+  spec.csharp:
+  - uid: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.InitializeConfiguration(Microsoft.Extensions.Configuration.Json.JsonConfigurationSource[])
+    name: InitializeConfiguration
+    isExternal: true
+    href: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase-1.html#NuvTools_Data_EntityFrameworkCore_Design_DesignTimeDbContextFactoryBase_1_InitializeConfiguration_Microsoft_Extensions_Configuration_Json_JsonConfigurationSource___
+  - name: (
+  - name: params
+  - name: " "
+  - uid: Microsoft.Extensions.Configuration.Json.JsonConfigurationSource
+    name: JsonConfigurationSource
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.json.jsonconfigurationsource
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.InitializeConfiguration(Microsoft.Extensions.Configuration.Json.JsonConfigurationSource[])
+    name: InitializeConfiguration
+    isExternal: true
+    href: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase-1.html#NuvTools_Data_EntityFrameworkCore_Design_DesignTimeDbContextFactoryBase_1_InitializeConfiguration_Microsoft_Extensions_Configuration_Json_JsonConfigurationSource___
+  - name: (
+  - name: ParamArray
+  - name: " "
+  - uid: Microsoft.Extensions.Configuration.Json.JsonConfigurationSource
+    name: JsonConfigurationSource
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.json.jsonconfigurationsource
+  - name: (
+  - name: )
+  - name: )
+- uid: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.Configuration*
+  commentId: Overload:NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.Configuration
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase-1.html#NuvTools_Data_EntityFrameworkCore_Design_DesignTimeDbContextFactoryBase_1_Configuration
+  name: Configuration
+  nameWithType: DesignTimeDbContextFactoryBase<TContext>.Configuration
+  fullName: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase<TContext>.Configuration
+  nameWithType.vb: DesignTimeDbContextFactoryBase(Of TContext).Configuration
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase(Of TContext).Configuration
+- uid: Microsoft.Extensions.Configuration.IConfiguration
+  commentId: T:Microsoft.Extensions.Configuration.IConfiguration
+  parent: Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration
+  name: IConfiguration
+  nameWithType: IConfiguration
+  fullName: Microsoft.Extensions.Configuration.IConfiguration
+- uid: Microsoft.Extensions.Configuration
+  commentId: N:Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Configuration
+  nameWithType: Microsoft.Extensions.Configuration
+  fullName: Microsoft.Extensions.Configuration
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Configuration
+    name: Configuration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Configuration
+    name: Configuration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration

@@ -1,0 +1,940 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions
+  commentId: T:NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions
+  id: DbContextExtensions
+  parent: NuvTools.Data.EntityFrameworkCore.Extensions
+  children:
+  - NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.AddAndSaveAsync``2(Microsoft.EntityFrameworkCore.DbContext,``0)
+  - NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.AddAndSaveWithCompositeKeyAsync``1(Microsoft.EntityFrameworkCore.DbContext,``0)
+  - NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteResilientTransactionAsync(Microsoft.EntityFrameworkCore.DbContext,System.Func{System.Threading.Tasks.Task})
+  - NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteStrategyAsync(Microsoft.EntityFrameworkCore.DbContext,System.Func{System.Threading.Tasks.Task})
+  - NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.FindPrimaryKeyValues``1(Microsoft.EntityFrameworkCore.DbContext,``0)
+  - NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.RemoveAndSaveAsync``1(Microsoft.EntityFrameworkCore.DbContext,System.Object[])
+  - NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.UpdateAndSaveAsync``1(Microsoft.EntityFrameworkCore.DbContext,``0,System.Object[])
+  langs:
+  - csharp
+  - vb
+  name: DbContextExtensions
+  nameWithType: DbContextExtensions
+  fullName: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions
+  type: Class
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Extensions
+  syntax:
+    content: public static class DbContextExtensions
+    content.vb: Public Module DbContextExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.AddAndSaveAsync``2(Microsoft.EntityFrameworkCore.DbContext,``0)
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.AddAndSaveAsync``2(Microsoft.EntityFrameworkCore.DbContext,``0)
+  id: AddAndSaveAsync``2(Microsoft.EntityFrameworkCore.DbContext,``0)
+  isExtensionMethod: true
+  parent: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddAndSaveAsync<TEntity, TKey>(DbContext, TEntity)
+  nameWithType: DbContextExtensions.AddAndSaveAsync<TEntity, TKey>(DbContext, TEntity)
+  fullName: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.AddAndSaveAsync<TEntity, TKey>(Microsoft.EntityFrameworkCore.DbContext, TEntity)
+  type: Method
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Extensions
+  syntax:
+    content: 'public static Task<IResult<TKey>> AddAndSaveAsync<TEntity, TKey>(this DbContext context, TEntity entity) where TEntity : class'
+    parameters:
+    - id: context
+      type: Microsoft.EntityFrameworkCore.DbContext
+    - id: entity
+      type: '{TEntity}'
+    typeParameters:
+    - id: TEntity
+    - id: TKey
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{{TKey}}}
+    content.vb: Public Shared Function AddAndSaveAsync(Of TEntity As Class, TKey)(context As DbContext, entity As TEntity) As Task(Of IResult(Of TKey))
+  overload: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.AddAndSaveAsync*
+  nameWithType.vb: DbContextExtensions.AddAndSaveAsync(Of TEntity, TKey)(DbContext, TEntity)
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.AddAndSaveAsync(Of TEntity, TKey)(Microsoft.EntityFrameworkCore.DbContext, TEntity)
+  name.vb: AddAndSaveAsync(Of TEntity, TKey)(DbContext, TEntity)
+- uid: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.AddAndSaveWithCompositeKeyAsync``1(Microsoft.EntityFrameworkCore.DbContext,``0)
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.AddAndSaveWithCompositeKeyAsync``1(Microsoft.EntityFrameworkCore.DbContext,``0)
+  id: AddAndSaveWithCompositeKeyAsync``1(Microsoft.EntityFrameworkCore.DbContext,``0)
+  isExtensionMethod: true
+  parent: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddAndSaveWithCompositeKeyAsync<TEntity>(DbContext, TEntity)
+  nameWithType: DbContextExtensions.AddAndSaveWithCompositeKeyAsync<TEntity>(DbContext, TEntity)
+  fullName: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.AddAndSaveWithCompositeKeyAsync<TEntity>(Microsoft.EntityFrameworkCore.DbContext, TEntity)
+  type: Method
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Extensions
+  syntax:
+    content: 'public static Task<IResult<object[]>> AddAndSaveWithCompositeKeyAsync<TEntity>(this DbContext context, TEntity entity) where TEntity : class'
+    parameters:
+    - id: context
+      type: Microsoft.EntityFrameworkCore.DbContext
+    - id: entity
+      type: '{TEntity}'
+    typeParameters:
+    - id: TEntity
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.Object[]}}
+    content.vb: Public Shared Function AddAndSaveWithCompositeKeyAsync(Of TEntity As Class)(context As DbContext, entity As TEntity) As Task(Of IResult(Of Object()))
+  overload: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.AddAndSaveWithCompositeKeyAsync*
+  nameWithType.vb: DbContextExtensions.AddAndSaveWithCompositeKeyAsync(Of TEntity)(DbContext, TEntity)
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.AddAndSaveWithCompositeKeyAsync(Of TEntity)(Microsoft.EntityFrameworkCore.DbContext, TEntity)
+  name.vb: AddAndSaveWithCompositeKeyAsync(Of TEntity)(DbContext, TEntity)
+- uid: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.FindPrimaryKeyValues``1(Microsoft.EntityFrameworkCore.DbContext,``0)
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.FindPrimaryKeyValues``1(Microsoft.EntityFrameworkCore.DbContext,``0)
+  id: FindPrimaryKeyValues``1(Microsoft.EntityFrameworkCore.DbContext,``0)
+  isExtensionMethod: true
+  parent: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions
+  langs:
+  - csharp
+  - vb
+  name: FindPrimaryKeyValues<TEntity>(DbContext, TEntity)
+  nameWithType: DbContextExtensions.FindPrimaryKeyValues<TEntity>(DbContext, TEntity)
+  fullName: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.FindPrimaryKeyValues<TEntity>(Microsoft.EntityFrameworkCore.DbContext, TEntity)
+  type: Method
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Extensions
+  syntax:
+    content: 'public static object[] FindPrimaryKeyValues<TEntity>(this DbContext context, TEntity entity) where TEntity : class'
+    parameters:
+    - id: context
+      type: Microsoft.EntityFrameworkCore.DbContext
+    - id: entity
+      type: '{TEntity}'
+    typeParameters:
+    - id: TEntity
+    return:
+      type: System.Object[]
+    content.vb: Public Shared Function FindPrimaryKeyValues(Of TEntity As Class)(context As DbContext, entity As TEntity) As Object()
+  overload: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.FindPrimaryKeyValues*
+  nameWithType.vb: DbContextExtensions.FindPrimaryKeyValues(Of TEntity)(DbContext, TEntity)
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.FindPrimaryKeyValues(Of TEntity)(Microsoft.EntityFrameworkCore.DbContext, TEntity)
+  name.vb: FindPrimaryKeyValues(Of TEntity)(DbContext, TEntity)
+- uid: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.UpdateAndSaveAsync``1(Microsoft.EntityFrameworkCore.DbContext,``0,System.Object[])
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.UpdateAndSaveAsync``1(Microsoft.EntityFrameworkCore.DbContext,``0,System.Object[])
+  id: UpdateAndSaveAsync``1(Microsoft.EntityFrameworkCore.DbContext,``0,System.Object[])
+  isExtensionMethod: true
+  parent: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions
+  langs:
+  - csharp
+  - vb
+  name: UpdateAndSaveAsync<TEntity>(DbContext, TEntity, params object[])
+  nameWithType: DbContextExtensions.UpdateAndSaveAsync<TEntity>(DbContext, TEntity, params object[])
+  fullName: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.UpdateAndSaveAsync<TEntity>(Microsoft.EntityFrameworkCore.DbContext, TEntity, params object[])
+  type: Method
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Extensions
+  syntax:
+    content: 'public static Task<IResult> UpdateAndSaveAsync<TEntity>(this DbContext context, TEntity entity, params object[] keyValues) where TEntity : class'
+    parameters:
+    - id: context
+      type: Microsoft.EntityFrameworkCore.DbContext
+    - id: entity
+      type: '{TEntity}'
+    - id: keyValues
+      type: System.Object[]
+    typeParameters:
+    - id: TEntity
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+    content.vb: Public Shared Function UpdateAndSaveAsync(Of TEntity As Class)(context As DbContext, entity As TEntity, ParamArray keyValues As Object()) As Task(Of IResult)
+  overload: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.UpdateAndSaveAsync*
+  nameWithType.vb: DbContextExtensions.UpdateAndSaveAsync(Of TEntity)(DbContext, TEntity, ParamArray Object())
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.UpdateAndSaveAsync(Of TEntity)(Microsoft.EntityFrameworkCore.DbContext, TEntity, ParamArray Object())
+  name.vb: UpdateAndSaveAsync(Of TEntity)(DbContext, TEntity, ParamArray Object())
+- uid: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.RemoveAndSaveAsync``1(Microsoft.EntityFrameworkCore.DbContext,System.Object[])
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.RemoveAndSaveAsync``1(Microsoft.EntityFrameworkCore.DbContext,System.Object[])
+  id: RemoveAndSaveAsync``1(Microsoft.EntityFrameworkCore.DbContext,System.Object[])
+  isExtensionMethod: true
+  parent: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions
+  langs:
+  - csharp
+  - vb
+  name: RemoveAndSaveAsync<TEntity>(DbContext, params object[])
+  nameWithType: DbContextExtensions.RemoveAndSaveAsync<TEntity>(DbContext, params object[])
+  fullName: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.RemoveAndSaveAsync<TEntity>(Microsoft.EntityFrameworkCore.DbContext, params object[])
+  type: Method
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Extensions
+  syntax:
+    content: 'public static Task<IResult> RemoveAndSaveAsync<TEntity>(this DbContext context, params object[] keyValues) where TEntity : class'
+    parameters:
+    - id: context
+      type: Microsoft.EntityFrameworkCore.DbContext
+    - id: keyValues
+      type: System.Object[]
+    typeParameters:
+    - id: TEntity
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+    content.vb: Public Shared Function RemoveAndSaveAsync(Of TEntity As Class)(context As DbContext, ParamArray keyValues As Object()) As Task(Of IResult)
+  overload: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.RemoveAndSaveAsync*
+  nameWithType.vb: DbContextExtensions.RemoveAndSaveAsync(Of TEntity)(DbContext, ParamArray Object())
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.RemoveAndSaveAsync(Of TEntity)(Microsoft.EntityFrameworkCore.DbContext, ParamArray Object())
+  name.vb: RemoveAndSaveAsync(Of TEntity)(DbContext, ParamArray Object())
+- uid: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteResilientTransactionAsync(Microsoft.EntityFrameworkCore.DbContext,System.Func{System.Threading.Tasks.Task})
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteResilientTransactionAsync(Microsoft.EntityFrameworkCore.DbContext,System.Func{System.Threading.Tasks.Task})
+  id: ExecuteResilientTransactionAsync(Microsoft.EntityFrameworkCore.DbContext,System.Func{System.Threading.Tasks.Task})
+  isExtensionMethod: true
+  parent: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions
+  langs:
+  - csharp
+  - vb
+  name: ExecuteResilientTransactionAsync(DbContext, Func<Task>)
+  nameWithType: DbContextExtensions.ExecuteResilientTransactionAsync(DbContext, Func<Task>)
+  fullName: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteResilientTransactionAsync(Microsoft.EntityFrameworkCore.DbContext, System.Func<System.Threading.Tasks.Task>)
+  type: Method
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Extensions
+  summary: >-
+    Executes action inside of Execution Strategy and Transaction. Note: Required when use EnableRetryOnFailure option.
+
+    <p>
+
+    <a href="https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency">https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency</a>
+
+    </p>
+  example: []
+  syntax:
+    content: public static Task ExecuteResilientTransactionAsync(this DbContext context, Func<Task> action)
+    parameters:
+    - id: context
+      type: Microsoft.EntityFrameworkCore.DbContext
+      description: ''
+    - id: action
+      type: System.Func{System.Threading.Tasks.Task}
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task
+      description: ''
+    content.vb: Public Shared Function ExecuteResilientTransactionAsync(context As DbContext, action As Func(Of Task)) As Task
+  overload: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteResilientTransactionAsync*
+  nameWithType.vb: DbContextExtensions.ExecuteResilientTransactionAsync(DbContext, Func(Of Task))
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteResilientTransactionAsync(Microsoft.EntityFrameworkCore.DbContext, System.Func(Of System.Threading.Tasks.Task))
+  name.vb: ExecuteResilientTransactionAsync(DbContext, Func(Of Task))
+- uid: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteStrategyAsync(Microsoft.EntityFrameworkCore.DbContext,System.Func{System.Threading.Tasks.Task})
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteStrategyAsync(Microsoft.EntityFrameworkCore.DbContext,System.Func{System.Threading.Tasks.Task})
+  id: ExecuteStrategyAsync(Microsoft.EntityFrameworkCore.DbContext,System.Func{System.Threading.Tasks.Task})
+  isExtensionMethod: true
+  parent: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions
+  langs:
+  - csharp
+  - vb
+  name: ExecuteStrategyAsync(DbContext, Func<Task>)
+  nameWithType: DbContextExtensions.ExecuteStrategyAsync(DbContext, Func<Task>)
+  fullName: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteStrategyAsync(Microsoft.EntityFrameworkCore.DbContext, System.Func<System.Threading.Tasks.Task>)
+  type: Method
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Extensions
+  summary: >-
+    Executes action inside of Execution Strategy.
+
+    <p>
+
+    <a href="https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency">https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency</a>
+
+    </p>
+  example: []
+  syntax:
+    content: public static Task ExecuteStrategyAsync(this DbContext context, Func<Task> action)
+    parameters:
+    - id: context
+      type: Microsoft.EntityFrameworkCore.DbContext
+      description: ''
+    - id: action
+      type: System.Func{System.Threading.Tasks.Task}
+      description: ''
+    return:
+      type: System.Threading.Tasks.Task
+      description: ''
+    content.vb: Public Shared Function ExecuteStrategyAsync(context As DbContext, action As Func(Of Task)) As Task
+  overload: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteStrategyAsync*
+  nameWithType.vb: DbContextExtensions.ExecuteStrategyAsync(DbContext, Func(Of Task))
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteStrategyAsync(Microsoft.EntityFrameworkCore.DbContext, System.Func(Of System.Threading.Tasks.Task))
+  name.vb: ExecuteStrategyAsync(DbContext, Func(Of Task))
+references:
+- uid: NuvTools.Data.EntityFrameworkCore.Extensions
+  commentId: N:NuvTools.Data.EntityFrameworkCore.Extensions
+  isExternal: true
+  href: NuvTools.html
+  name: NuvTools.Data.EntityFrameworkCore.Extensions
+  nameWithType: NuvTools.Data.EntityFrameworkCore.Extensions
+  fullName: NuvTools.Data.EntityFrameworkCore.Extensions
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Data
+    name: Data
+    isExternal: true
+    href: NuvTools.Data.html
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: NuvTools.Data.EntityFrameworkCore.html
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore.Extensions
+    name: Extensions
+    isExternal: true
+    href: NuvTools.Data.EntityFrameworkCore.Extensions.html
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Data
+    name: Data
+    isExternal: true
+    href: NuvTools.Data.html
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: NuvTools.Data.EntityFrameworkCore.html
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore.Extensions
+    name: Extensions
+    isExternal: true
+    href: NuvTools.Data.EntityFrameworkCore.Extensions.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.AddAndSaveAsync*
+  commentId: Overload:NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.AddAndSaveAsync
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.html#NuvTools_Data_EntityFrameworkCore_Extensions_DbContextExtensions_AddAndSaveAsync__2_Microsoft_EntityFrameworkCore_DbContext___0_
+  name: AddAndSaveAsync
+  nameWithType: DbContextExtensions.AddAndSaveAsync
+  fullName: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.AddAndSaveAsync
+- uid: Microsoft.EntityFrameworkCore.DbContext
+  commentId: T:Microsoft.EntityFrameworkCore.DbContext
+  parent: Microsoft.EntityFrameworkCore
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext
+  name: DbContext
+  nameWithType: DbContext
+  fullName: Microsoft.EntityFrameworkCore.DbContext
+- uid: '{TEntity}'
+  commentId: '!:TEntity'
+  definition: TEntity
+  name: TEntity
+  nameWithType: TEntity
+  fullName: TEntity
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{{TKey}}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{``1}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<TKey>>
+  nameWithType: Task<IResult<TKey>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<TKey>>
+  nameWithType.vb: Task(Of IResult(Of TKey))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of TKey))
+  name.vb: Task(Of IResult(Of TKey))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - name: TKey
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: )
+  - name: )
+- uid: Microsoft.EntityFrameworkCore
+  commentId: N:Microsoft.EntityFrameworkCore
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.EntityFrameworkCore
+  nameWithType: Microsoft.EntityFrameworkCore
+  fullName: Microsoft.EntityFrameworkCore
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
+- uid: TEntity
+  name: TEntity
+  nameWithType: TEntity
+  fullName: TEntity
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.AddAndSaveWithCompositeKeyAsync*
+  commentId: Overload:NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.AddAndSaveWithCompositeKeyAsync
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.html#NuvTools_Data_EntityFrameworkCore_Extensions_DbContextExtensions_AddAndSaveWithCompositeKeyAsync__1_Microsoft_EntityFrameworkCore_DbContext___0_
+  name: AddAndSaveWithCompositeKeyAsync
+  nameWithType: DbContextExtensions.AddAndSaveWithCompositeKeyAsync
+  fullName: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.AddAndSaveWithCompositeKeyAsync
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.Object[]}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.Object[]}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<object[]>>
+  nameWithType: Task<IResult<object[]>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<object[]>>
+  nameWithType.vb: Task(Of IResult(Of Object()))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of Object()))
+  name.vb: Task(Of IResult(Of Object()))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '['
+  - name: ']'
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: (
+  - name: )
+  - name: )
+  - name: )
+- uid: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.FindPrimaryKeyValues*
+  commentId: Overload:NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.FindPrimaryKeyValues
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.html#NuvTools_Data_EntityFrameworkCore_Extensions_DbContextExtensions_FindPrimaryKeyValues__1_Microsoft_EntityFrameworkCore_DbContext___0_
+  name: FindPrimaryKeyValues
+  nameWithType: DbContextExtensions.FindPrimaryKeyValues
+  fullName: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.FindPrimaryKeyValues
+- uid: System.Object[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object[]
+  nameWithType: object[]
+  fullName: object[]
+  nameWithType.vb: Object()
+  fullName.vb: Object()
+  name.vb: Object()
+  spec.csharp:
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: (
+  - name: )
+- uid: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.UpdateAndSaveAsync*
+  commentId: Overload:NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.UpdateAndSaveAsync
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.html#NuvTools_Data_EntityFrameworkCore_Extensions_DbContextExtensions_UpdateAndSaveAsync__1_Microsoft_EntityFrameworkCore_DbContext___0_System_Object___
+  name: UpdateAndSaveAsync
+  nameWithType: DbContextExtensions.UpdateAndSaveAsync
+  fullName: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.UpdateAndSaveAsync
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult>
+  nameWithType: Task<IResult>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult>
+  nameWithType.vb: Task(Of IResult)
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult)
+  name.vb: Task(Of IResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult
+    name: IResult
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult
+    name: IResult
+    isExternal: true
+  - name: )
+- uid: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.RemoveAndSaveAsync*
+  commentId: Overload:NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.RemoveAndSaveAsync
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.html#NuvTools_Data_EntityFrameworkCore_Extensions_DbContextExtensions_RemoveAndSaveAsync__1_Microsoft_EntityFrameworkCore_DbContext_System_Object___
+  name: RemoveAndSaveAsync
+  nameWithType: DbContextExtensions.RemoveAndSaveAsync
+  fullName: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.RemoveAndSaveAsync
+- uid: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteResilientTransactionAsync*
+  commentId: Overload:NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteResilientTransactionAsync
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.html#NuvTools_Data_EntityFrameworkCore_Extensions_DbContextExtensions_ExecuteResilientTransactionAsync_Microsoft_EntityFrameworkCore_DbContext_System_Func_System_Threading_Tasks_Task__
+  name: ExecuteResilientTransactionAsync
+  nameWithType: DbContextExtensions.ExecuteResilientTransactionAsync
+  fullName: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteResilientTransactionAsync
+- uid: System.Func{System.Threading.Tasks.Task}
+  commentId: T:System.Func{System.Threading.Tasks.Task}
+  parent: System
+  definition: System.Func`1
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<Task>
+  nameWithType: Func<Task>
+  fullName: System.Func<System.Threading.Tasks.Task>
+  nameWithType.vb: Func(Of Task)
+  fullName.vb: System.Func(Of System.Threading.Tasks.Task)
+  name.vb: Func(Of Task)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: )
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Func`1
+  commentId: T:System.Func`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteStrategyAsync*
+  commentId: Overload:NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteStrategyAsync
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.html#NuvTools_Data_EntityFrameworkCore_Extensions_DbContextExtensions_ExecuteStrategyAsync_Microsoft_EntityFrameworkCore_DbContext_System_Func_System_Threading_Tasks_Task__
+  name: ExecuteStrategyAsync
+  nameWithType: DbContextExtensions.ExecuteStrategyAsync
+  fullName: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteStrategyAsync

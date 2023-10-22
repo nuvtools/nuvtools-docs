@@ -1,0 +1,1081 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class UserServiceBase&lt;TUser, TRole, TKey&gt;
+ | Nuv Tools Framework Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class UserServiceBase&lt;TUser, TRole, TKey&gt;
+ | Nuv Tools Framework Docs ">
+      
+      <link rel="icon" href="../../images/icon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+  </head>
+
+  <script type="module" src="./../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/NuvToolsLogoLandscape.svg" alt="Framework Docs">
+            Framework Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3">
+
+
+
+  <h1 id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3" class="text-break">
+    Class UserServiceBase&lt;TUser, TRole, TKey&gt;
+  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="NuvTools.html">NuvTools</a>.<a class="xref" href="NuvTools.Security.html">Security</a>.<a class="xref" href="NuvTools.Security.Identity.html">Identity</a>.<a class="xref" href="NuvTools.Security.Identity.AspNetCore.html">AspNetCore</a>.<a class="xref" href="NuvTools.Security.Identity.AspNetCore.Services.html">Services</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NuvTools.Security.Identity.AspNetCore.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class UserServiceBase&lt;TUser, TRole, TKey&gt; where TUser : UserBase&lt;TKey&gt; where TRole : IdentityRole&lt;TKey&gt; where TKey : IEquatable&lt;TKey&gt;</code></pre>
+  </div>
+
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TUser</code></dt>
+    <dd></dd>
+    <dt><code>TRole</code></dt>
+    <dd></dd>
+    <dt><code>TKey</code></dt>
+    <dd></dd>
+  </dl>
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">UserServiceBase&lt;TUser, TRole, TKey&gt;</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3__ctor_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.#ctor*"></a>
+
+  <h3 id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3__ctor_Microsoft_AspNetCore_Identity_UserManager__0__Microsoft_AspNetCore_Identity_RoleManager__1__NuvTools_Notification_Mail_IMailService_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.#ctor(Microsoft.AspNetCore.Identity.UserManager{`0},Microsoft.AspNetCore.Identity.RoleManager{`1},NuvTools.Notification.Mail.IMailService)">
+  UserServiceBase(UserManager&lt;TUser&gt;, RoleManager&lt;TRole&gt;, IMailService)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UserServiceBase(UserManager&lt;TUser&gt; userManager, RoleManager&lt;TRole&gt; roleManager, IMailService mailService)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>userManager</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.usermanager-1">UserManager</a>&lt;TUser&gt;</dt>
+    <dd></dd>
+    <dt><code>roleManager</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.rolemanager-1">RoleManager</a>&lt;TRole&gt;</dt>
+    <dd></dd>
+    <dt><code>mailService</code> <a class="xref" href="../NuvTools.Notification/NuvTools.Notification.Mail.IMailService.html">IMailService</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3__mailService" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3._mailService">
+  _mailService
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly IMailService _mailService</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="../NuvTools.Notification/NuvTools.Notification.Mail.IMailService.html">IMailService</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3__roleManager" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3._roleManager">
+  _roleManager
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly RoleManager&lt;TRole&gt; _roleManager</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.rolemanager-1">RoleManager</a>&lt;TRole&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3__userManager" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3._userManager">
+  _userManager
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected readonly UserManager&lt;TUser&gt; _userManager</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.usermanager-1">UserManager</a>&lt;TUser&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_ChangeEmailAsync_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.ChangeEmailAsync*"></a>
+
+  <h3 id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_ChangeEmailAsync__2_NuvTools_Security_Identity_Models_Form_UpdateProfileForm_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.ChangeEmailAsync(`2,NuvTools.Security.Identity.Models.Form.UpdateProfileForm)">
+  ChangeEmailAsync(TKey, UpdateProfileForm)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IResult&gt; ChangeEmailAsync(TKey id, UpdateProfileForm value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <span class="xref">TKey</span></dt>
+    <dd></dd>
+    <dt><code>value</code> <a class="xref" href="NuvTools.Security.Identity.Models.Form.UpdateProfileForm.html">UpdateProfileForm</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_ChangePasswordAsync_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.ChangePasswordAsync*"></a>
+
+  <h3 id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_ChangePasswordAsync__2_NuvTools_Security_Identity_Models_Form_ChangePasswordForm_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.ChangePasswordAsync(`2,NuvTools.Security.Identity.Models.Form.ChangePasswordForm)">
+  ChangePasswordAsync(TKey, ChangePasswordForm)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IResult&gt; ChangePasswordAsync(TKey id, ChangePasswordForm value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <span class="xref">TKey</span></dt>
+    <dd></dd>
+    <dt><code>value</code> <a class="xref" href="NuvTools.Security.Identity.Models.Form.ChangePasswordForm.html">ChangePasswordForm</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_ConfirmEmailAsync_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.ConfirmEmailAsync*"></a>
+
+  <h3 id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_ConfirmEmailAsync__2_System_String_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.ConfirmEmailAsync(`2,System.String)">
+  ConfirmEmailAsync(TKey, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IResult&gt; ConfirmEmailAsync(TKey id, string token)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <span class="xref">TKey</span></dt>
+    <dd></dd>
+    <dt><code>token</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_CreateAndSendConfirmationEmailAsync_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.CreateAndSendConfirmationEmailAsync*"></a>
+
+  <h3 id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_CreateAndSendConfirmationEmailAsync__0_System_String_System_String_System_String_System_String___" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.CreateAndSendConfirmationEmailAsync(`0,System.String,System.String,System.String,System.String[])">
+  CreateAndSendConfirmationEmailAsync(TUser, string, string, string, params string[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IResult&lt;TKey&gt;&gt; CreateAndSendConfirmationEmailAsync(TUser value, string origin, string message = null, string subject = null, params string[] roles)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <span class="xref">TUser</span></dt>
+    <dd></dd>
+    <dt><code>origin</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>message</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>subject</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>roles</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;TKey&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_CreateAsync_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.CreateAsync*"></a>
+
+  <h3 id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_CreateAsync__0_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.CreateAsync(`0)">
+  CreateAsync(TUser)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IResult&lt;TKey&gt;&gt; CreateAsync(TUser value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <span class="xref">TUser</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;TKey&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_CreateWithRolesAsync_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.CreateWithRolesAsync*"></a>
+
+  <h3 id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_CreateWithRolesAsync__0_System_String___" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.CreateWithRolesAsync(`0,System.String[])">
+  CreateWithRolesAsync(TUser, params string[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IResult&lt;TKey&gt;&gt; CreateWithRolesAsync(TUser value, params string[] roles)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <span class="xref">TUser</span></dt>
+    <dd></dd>
+    <dt><code>roles</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;TKey&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_DeleteAsync_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.DeleteAsync*"></a>
+
+  <h3 id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_DeleteAsync__2_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.DeleteAsync(`2)">
+  DeleteAsync(TKey)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IResult&gt; DeleteAsync(TKey id)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <span class="xref">TKey</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_GenerateEmailConfirmationTokenAsync_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.GenerateEmailConfirmationTokenAsync*"></a>
+
+  <h3 id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_GenerateEmailConfirmationTokenAsync__0_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.GenerateEmailConfirmationTokenAsync(`0)">
+  GenerateEmailConfirmationTokenAsync(TUser)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;string&gt; GenerateEmailConfirmationTokenAsync(TUser value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <span class="xref">TUser</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_GenerateEmailConfirmationUriAsync_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.GenerateEmailConfirmationUriAsync*"></a>
+
+  <h3 id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_GenerateEmailConfirmationUriAsync__0_System_String_System_String_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.GenerateEmailConfirmationUriAsync(`0,System.String,System.String)">
+  GenerateEmailConfirmationUriAsync(TUser, string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;string&gt; GenerateEmailConfirmationUriAsync(TUser value, string origin, string route = &quot;login&quot;)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <span class="xref">TUser</span></dt>
+    <dd></dd>
+    <dt><code>origin</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>route</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_GetAllAsync_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.GetAllAsync*"></a>
+
+  <h3 id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_GetAllAsync" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.GetAllAsync">
+  GetAllAsync()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IQueryable&lt;TUser&gt; GetAllAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;TUser&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_GetAsync_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.GetAsync*"></a>
+
+  <h3 id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_GetAsync__2_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.GetAsync(`2)">
+  GetAsync(TKey)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;TUser&gt; GetAsync(TKey id)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <span class="xref">TKey</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TUser&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_GetByEmailAsync_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.GetByEmailAsync*"></a>
+
+  <h3 id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_GetByEmailAsync_System_String_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.GetByEmailAsync(System.String)">
+  GetByEmailAsync(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;TUser&gt; GetByEmailAsync(string email)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>email</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TUser&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_GetRolesAsync_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.GetRolesAsync*"></a>
+
+  <h3 id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_GetRolesAsync_System_Int32_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.GetRolesAsync(System.Int32)">
+  GetRolesAsync(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IList&lt;string&gt;&gt; GetRolesAsync(int id)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_RequestChangeEmailAsync_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.RequestChangeEmailAsync*"></a>
+
+  <h3 id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_RequestChangeEmailAsync_System_String_System_String_System_String_System_String_System_String_System_String_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.RequestChangeEmailAsync(System.String,System.String,System.String,System.String,System.String,System.String)">
+  RequestChangeEmailAsync(string, string, string, string, string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IResult&gt; RequestChangeEmailAsync(string email, string newEmail, string origin, string message = null, string subject = null, string route = &quot;security/change-email&quot;)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>email</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>newEmail</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>origin</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>message</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>subject</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>route</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_RequestResetPasswordAsync_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.RequestResetPasswordAsync*"></a>
+
+  <h3 id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_RequestResetPasswordAsync_System_String_System_String_System_String_System_String_System_String_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.RequestResetPasswordAsync(System.String,System.String,System.String,System.String,System.String)">
+  RequestResetPasswordAsync(string, string, string, string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IResult&gt; RequestResetPasswordAsync(string email, string origin, string message = null, string subject = null, string route = &quot;security/reset-password&quot;)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>email</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>origin</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>message</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>subject</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>route</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_ResetPasswordAsync_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.ResetPasswordAsync*"></a>
+
+  <h3 id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_ResetPasswordAsync_NuvTools_Security_Identity_Models_Form_ResetPasswordForm_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.ResetPasswordAsync(NuvTools.Security.Identity.Models.Form.ResetPasswordForm)">
+  ResetPasswordAsync(ResetPasswordForm)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IResult&gt; ResetPasswordAsync(ResetPasswordForm value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="NuvTools.Security.Identity.Models.Form.ResetPasswordForm.html">ResetPasswordForm</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_SendConfirmationEmailAsync_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.SendConfirmationEmailAsync*"></a>
+
+  <h3 id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_SendConfirmationEmailAsync__0_System_String_System_String_System_String_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.SendConfirmationEmailAsync(`0,System.String,System.String,System.String)">
+  SendConfirmationEmailAsync(TUser, string, string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IResult&lt;TKey&gt;&gt; SendConfirmationEmailAsync(TUser value, string origin, string message = null, string subject = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <span class="xref">TUser</span></dt>
+    <dd></dd>
+    <dt><code>origin</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>message</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>subject</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;TKey&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_ToggleUserStatusAsync_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.ToggleUserStatusAsync*"></a>
+
+  <h3 id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_ToggleUserStatusAsync__2_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.ToggleUserStatusAsync(`2)">
+  ToggleUserStatusAsync(TKey)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Task&lt;IResult&gt; ToggleUserStatusAsync(TKey id)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <span class="xref">TKey</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_UpdateAsync_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.UpdateAsync*"></a>
+
+  <h3 id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_UpdateAsync__0_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.UpdateAsync(`0)">
+  UpdateAsync(TUser)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IResult&gt; UpdateAsync(TUser value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <span class="xref">TUser</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_UpdateRolesAsync_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.UpdateRolesAsync*"></a>
+
+  <h3 id="NuvTools_Security_Identity_AspNetCore_Services_UserServiceBase_3_UpdateRolesAsync_NuvTools_Security_Identity_Models_UserRoles_" data-uid="NuvTools.Security.Identity.AspNetCore.Services.UserServiceBase`3.UpdateRolesAsync(NuvTools.Security.Identity.Models.UserRoles)">
+  UpdateRolesAsync(UserRoles)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IResult&gt; UpdateRolesAsync(UserRoles value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="NuvTools.Security.Identity.Models.UserRoles.html">UserRoles</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Supported by the <a href="https://nuv.tools" target="_blank">Nuv Tools</a>. Documentation generated by <a href="https://dotnet.github.io/docfx" target="_blank">docfx</a></span>.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
