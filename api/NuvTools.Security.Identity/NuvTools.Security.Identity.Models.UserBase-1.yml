@@ -20,6 +20,8 @@ items:
   nameWithType: UserBase<TKey>
   fullName: NuvTools.Security.Identity.Models.UserBase<TKey>
   type: Class
+  source:
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/bfc33d00ec048c7ef8ba757e92d286067d8ebc39/src/NuvTools.Security.Identity.Models/UserBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
@@ -67,6 +69,8 @@ items:
   nameWithType: UserBase<TKey>.UserBase()
   fullName: NuvTools.Security.Identity.Models.UserBase<TKey>.UserBase()
   type: Constructor
+  source:
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/bfc33d00ec048c7ef8ba757e92d286067d8ebc39/src/NuvTools.Security.Identity.Models/UserBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
@@ -88,6 +92,8 @@ items:
   nameWithType: UserBase<TKey>.Email
   fullName: NuvTools.Security.Identity.Models.UserBase<TKey>.Email
   type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/bfc33d00ec048c7ef8ba757e92d286067d8ebc39/src/NuvTools.Security.Identity.Models/UserBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
@@ -96,9 +102,9 @@ items:
     content: >-
       [Display(Name = "Email", ResourceType = typeof(Fields))]
 
-      [Required(ErrorMessageResourceName = "XRequired", ErrorMessageResourceType = typeof(Messages))]
+      [Required(ErrorMessageResourceName = "XRequired", ErrorMessageResourceType = typeof(DynamicValidationMessages))]
 
-      [MaxLength(100, ErrorMessageResourceName = "XMustBeUpToYCharacters", ErrorMessageResourceType = typeof(Messages))]
+      [MaxLength(100, ErrorMessageResourceName = "XMustBeUpToYCharacters", ErrorMessageResourceType = typeof(DynamicValidationMessages))]
 
       [EmailAddress(ErrorMessageResourceName = "InvalidEmail", ErrorMessageResourceType = typeof(Messages))]
 
@@ -109,9 +115,9 @@ items:
     content.vb: >-
       <Display(Name:="Email", ResourceType:=GetType(Fields))>
 
-      <Required(ErrorMessageResourceName:="XRequired", ErrorMessageResourceType:=GetType(Messages))>
+      <Required(ErrorMessageResourceName:="XRequired", ErrorMessageResourceType:=GetType(DynamicValidationMessages))>
 
-      <MaxLength(100, ErrorMessageResourceName:="XMustBeUpToYCharacters", ErrorMessageResourceType:=GetType(Messages))>
+      <MaxLength(100, ErrorMessageResourceName:="XMustBeUpToYCharacters", ErrorMessageResourceType:=GetType(DynamicValidationMessages))>
 
       <EmailAddress(ErrorMessageResourceName:="InvalidEmail", ErrorMessageResourceType:=GetType(Messages))>
 
@@ -138,7 +144,7 @@ items:
       value: XRequired
     - name: ErrorMessageResourceType
       type: System.Type
-      value: NuvTools.Resources.Messages
+      value: NuvTools.Resources.DynamicValidationMessages
   - type: System.ComponentModel.DataAnnotations.MaxLengthAttribute
     ctor: System.ComponentModel.DataAnnotations.MaxLengthAttribute.#ctor(System.Int32)
     arguments:
@@ -150,7 +156,7 @@ items:
       value: XMustBeUpToYCharacters
     - name: ErrorMessageResourceType
       type: System.Type
-      value: NuvTools.Resources.Messages
+      value: NuvTools.Resources.DynamicValidationMessages
   - type: System.ComponentModel.DataAnnotations.EmailAddressAttribute
     ctor: System.ComponentModel.DataAnnotations.EmailAddressAttribute.#ctor
     arguments: []
@@ -174,6 +180,8 @@ items:
   nameWithType: UserBase<TKey>.Name
   fullName: NuvTools.Security.Identity.Models.UserBase<TKey>.Name
   type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/bfc33d00ec048c7ef8ba757e92d286067d8ebc39/src/NuvTools.Security.Identity.Models/UserBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
@@ -181,7 +189,7 @@ items:
     content: >-
       [Display(Name = "Name", ResourceType = typeof(Fields))]
 
-      [MaxLength(50, ErrorMessageResourceName = "XMustBeUpToYCharacters", ErrorMessageResourceType = typeof(Messages))]
+      [MaxLength(50, ErrorMessageResourceName = "XMustBeUpToYCharacters", ErrorMessageResourceType = typeof(DynamicValidationMessages))]
 
       public virtual string Name { get; set; }
     parameters: []
@@ -190,7 +198,7 @@ items:
     content.vb: >-
       <Display(Name:="Name", ResourceType:=GetType(Fields))>
 
-      <MaxLength(50, ErrorMessageResourceName:="XMustBeUpToYCharacters", ErrorMessageResourceType:=GetType(Messages))>
+      <MaxLength(50, ErrorMessageResourceName:="XMustBeUpToYCharacters", ErrorMessageResourceType:=GetType(DynamicValidationMessages))>
 
       Public Overridable Property Name As String
   overload: NuvTools.Security.Identity.Models.UserBase`1.Name*
@@ -216,7 +224,7 @@ items:
       value: XMustBeUpToYCharacters
     - name: ErrorMessageResourceType
       type: System.Type
-      value: NuvTools.Resources.Messages
+      value: NuvTools.Resources.DynamicValidationMessages
   nameWithType.vb: UserBase(Of TKey).Name
   fullName.vb: NuvTools.Security.Identity.Models.UserBase(Of TKey).Name
 - uid: NuvTools.Security.Identity.Models.UserBase`1.Surname
@@ -230,6 +238,8 @@ items:
   nameWithType: UserBase<TKey>.Surname
   fullName: NuvTools.Security.Identity.Models.UserBase<TKey>.Surname
   type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/bfc33d00ec048c7ef8ba757e92d286067d8ebc39/src/NuvTools.Security.Identity.Models/UserBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
@@ -237,7 +247,7 @@ items:
     content: >-
       [Display(Name = "Surname", ResourceType = typeof(Fields))]
 
-      [MaxLength(50, ErrorMessageResourceName = "XMustBeUpToYCharacters", ErrorMessageResourceType = typeof(Messages))]
+      [MaxLength(50, ErrorMessageResourceName = "XMustBeUpToYCharacters", ErrorMessageResourceType = typeof(DynamicValidationMessages))]
 
       public virtual string Surname { get; set; }
     parameters: []
@@ -246,7 +256,7 @@ items:
     content.vb: >-
       <Display(Name:="Surname", ResourceType:=GetType(Fields))>
 
-      <MaxLength(50, ErrorMessageResourceName:="XMustBeUpToYCharacters", ErrorMessageResourceType:=GetType(Messages))>
+      <MaxLength(50, ErrorMessageResourceName:="XMustBeUpToYCharacters", ErrorMessageResourceType:=GetType(DynamicValidationMessages))>
 
       Public Overridable Property Surname As String
   overload: NuvTools.Security.Identity.Models.UserBase`1.Surname*
@@ -272,7 +282,7 @@ items:
       value: XMustBeUpToYCharacters
     - name: ErrorMessageResourceType
       type: System.Type
-      value: NuvTools.Resources.Messages
+      value: NuvTools.Resources.DynamicValidationMessages
   nameWithType.vb: UserBase(Of TKey).Surname
   fullName.vb: NuvTools.Security.Identity.Models.UserBase(Of TKey).Surname
 - uid: NuvTools.Security.Identity.Models.UserBase`1.Status
@@ -286,6 +296,8 @@ items:
   nameWithType: UserBase<TKey>.Status
   fullName: NuvTools.Security.Identity.Models.UserBase<TKey>.Status
   type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/bfc33d00ec048c7ef8ba757e92d286067d8ebc39/src/NuvTools.Security.Identity.Models/UserBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
@@ -326,6 +338,8 @@ items:
   nameWithType: UserBase<TKey>.Password
   fullName: NuvTools.Security.Identity.Models.UserBase<TKey>.Password
   type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/bfc33d00ec048c7ef8ba757e92d286067d8ebc39/src/NuvTools.Security.Identity.Models/UserBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
@@ -335,11 +349,11 @@ items:
 
       [Display(Name = "Password", ResourceType = typeof(Fields))]
 
-      [Required(ErrorMessageResourceName = "XRequired", ErrorMessageResourceType = typeof(Messages))]
+      [Required(ErrorMessageResourceName = "XRequired", ErrorMessageResourceType = typeof(DynamicValidationMessages))]
 
-      [MaxLength(40, ErrorMessageResourceName = "XMustBeUpToYCharacters", ErrorMessageResourceType = typeof(Messages))]
+      [MaxLength(40, ErrorMessageResourceName = "XMustBeUpToYCharacters", ErrorMessageResourceType = typeof(DynamicValidationMessages))]
 
-      [MinLength(6, ErrorMessageResourceName = "XShouldHaveAtLeastYCharacters", ErrorMessageResourceType = typeof(Messages))]
+      [MinLength(6, ErrorMessageResourceName = "XShouldHaveAtLeastYCharacters", ErrorMessageResourceType = typeof(DynamicValidationMessages))]
 
       public virtual string Password { get; set; }
     parameters: []
@@ -350,11 +364,11 @@ items:
 
       <Display(Name:="Password", ResourceType:=GetType(Fields))>
 
-      <Required(ErrorMessageResourceName:="XRequired", ErrorMessageResourceType:=GetType(Messages))>
+      <Required(ErrorMessageResourceName:="XRequired", ErrorMessageResourceType:=GetType(DynamicValidationMessages))>
 
-      <MaxLength(40, ErrorMessageResourceName:="XMustBeUpToYCharacters", ErrorMessageResourceType:=GetType(Messages))>
+      <MaxLength(40, ErrorMessageResourceName:="XMustBeUpToYCharacters", ErrorMessageResourceType:=GetType(DynamicValidationMessages))>
 
-      <MinLength(6, ErrorMessageResourceName:="XShouldHaveAtLeastYCharacters", ErrorMessageResourceType:=GetType(Messages))>
+      <MinLength(6, ErrorMessageResourceName:="XShouldHaveAtLeastYCharacters", ErrorMessageResourceType:=GetType(DynamicValidationMessages))>
 
       Public Overridable Property Password As String
   overload: NuvTools.Security.Identity.Models.UserBase`1.Password*
@@ -381,7 +395,7 @@ items:
       value: XRequired
     - name: ErrorMessageResourceType
       type: System.Type
-      value: NuvTools.Resources.Messages
+      value: NuvTools.Resources.DynamicValidationMessages
   - type: System.ComponentModel.DataAnnotations.MaxLengthAttribute
     ctor: System.ComponentModel.DataAnnotations.MaxLengthAttribute.#ctor(System.Int32)
     arguments:
@@ -393,7 +407,7 @@ items:
       value: XMustBeUpToYCharacters
     - name: ErrorMessageResourceType
       type: System.Type
-      value: NuvTools.Resources.Messages
+      value: NuvTools.Resources.DynamicValidationMessages
   - type: System.ComponentModel.DataAnnotations.MinLengthAttribute
     ctor: System.ComponentModel.DataAnnotations.MinLengthAttribute.#ctor(System.Int32)
     arguments:
@@ -405,7 +419,7 @@ items:
       value: XShouldHaveAtLeastYCharacters
     - name: ErrorMessageResourceType
       type: System.Type
-      value: NuvTools.Resources.Messages
+      value: NuvTools.Resources.DynamicValidationMessages
   nameWithType.vb: UserBase(Of TKey).Password
   fullName.vb: NuvTools.Security.Identity.Models.UserBase(Of TKey).Password
 - uid: NuvTools.Security.Identity.Models.UserBase`1.RefreshToken
@@ -419,6 +433,8 @@ items:
   nameWithType: UserBase<TKey>.RefreshToken
   fullName: NuvTools.Security.Identity.Models.UserBase<TKey>.RefreshToken
   type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/bfc33d00ec048c7ef8ba757e92d286067d8ebc39/src/NuvTools.Security.Identity.Models/UserBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
@@ -452,6 +468,8 @@ items:
   nameWithType: UserBase<TKey>.RefreshTokenExpiryTime
   fullName: NuvTools.Security.Identity.Models.UserBase<TKey>.RefreshTokenExpiryTime
   type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/bfc33d00ec048c7ef8ba757e92d286067d8ebc39/src/NuvTools.Security.Identity.Models/UserBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models

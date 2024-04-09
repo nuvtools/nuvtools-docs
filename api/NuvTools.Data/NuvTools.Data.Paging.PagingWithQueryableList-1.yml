@@ -6,6 +6,17 @@ items:
   parent: NuvTools.Data.Paging
   children:
   - NuvTools.Data.Paging.PagingWithQueryableList`1.#ctor
+  - NuvTools.Data.Paging.PagingWithQueryableList`1.#ctor(NuvTools.Data.Paging.PagingWithQueryableList{`0})
+  - NuvTools.Data.Paging.PagingWithQueryableList`1.EqualityContract
+  - NuvTools.Data.Paging.PagingWithQueryableList`1.Equals(NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{`0},`0})
+  - NuvTools.Data.Paging.PagingWithQueryableList`1.Equals(NuvTools.Data.Paging.PagingWithQueryableList{`0})
+  - NuvTools.Data.Paging.PagingWithQueryableList`1.Equals(System.Object)
+  - NuvTools.Data.Paging.PagingWithQueryableList`1.GetHashCode
+  - NuvTools.Data.Paging.PagingWithQueryableList`1.PrintMembers(System.Text.StringBuilder)
+  - NuvTools.Data.Paging.PagingWithQueryableList`1.ToString
+  - NuvTools.Data.Paging.PagingWithQueryableList`1.op_Equality(NuvTools.Data.Paging.PagingWithQueryableList{`0},NuvTools.Data.Paging.PagingWithQueryableList{`0})
+  - NuvTools.Data.Paging.PagingWithQueryableList`1.op_Inequality(NuvTools.Data.Paging.PagingWithQueryableList{`0},NuvTools.Data.Paging.PagingWithQueryableList{`0})
+  - NuvTools.Data.Paging.PagingWithQueryableList`1.{Clone}$
   langs:
   - csharp
   - vb
@@ -13,33 +24,326 @@ items:
   nameWithType: PagingWithQueryableList<T>
   fullName: NuvTools.Data.Paging.PagingWithQueryableList<T>
   type: Class
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Paging/PagingWithQueryableList.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Paging
   syntax:
-    content: 'public class PagingWithQueryableList<T> : PagingBase<IQueryable<T>, T>'
+    content: 'public record PagingWithQueryableList<T> : PagingBase<IQueryable<T>, T>, IEquatable<PagingBase<IQueryable<T>, T>>, IEquatable<PagingWithQueryableList<T>>'
     typeParameters:
     - id: T
-    content.vb: Public Class PagingWithQueryableList(Of T) Inherits PagingBase(Of IQueryable(Of T), T)
+    content.vb: Public Class PagingWithQueryableList(Of T) Inherits PagingBase(Of IQueryable(Of T), T) Implements IEquatable(Of PagingBase(Of IQueryable(Of T), T)), IEquatable(Of PagingWithQueryableList(Of T))
   inheritance:
   - System.Object
   - NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}
+  implements:
+  - System.IEquatable{NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}}
+  - System.IEquatable{NuvTools.Data.Paging.PagingWithQueryableList`1}
   inheritedMembers:
+  - NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}.ToString
+  - NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}.PrintMembers(System.Text.StringBuilder)
+  - NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}.GetHashCode
+  - NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}.Equals(System.Object)
+  - NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}.Equals(NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}})
+  - NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}.{Clone}$
+  - NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}.EqualityContract
   - NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}.PageNumber
   - NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}.Total
   - NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}.List
   - System.Object.GetType
   - System.Object.MemberwiseClone
-  - System.Object.ToString
-  - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.GetHashCode
   extensionMethods:
   - NuvTools.Data.Paging.PagingWithQueryableList`1.NuvTools.Data.Paging.PagingExtensions.ToPagingEnumerable``1
   nameWithType.vb: PagingWithQueryableList(Of T)
   fullName.vb: NuvTools.Data.Paging.PagingWithQueryableList(Of T)
   name.vb: PagingWithQueryableList(Of T)
+- uid: NuvTools.Data.Paging.PagingWithQueryableList`1.ToString
+  commentId: M:NuvTools.Data.Paging.PagingWithQueryableList`1.ToString
+  id: ToString
+  parent: NuvTools.Data.Paging.PagingWithQueryableList`1
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: PagingWithQueryableList<T>.ToString()
+  fullName: NuvTools.Data.Paging.PagingWithQueryableList<T>.ToString()
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Paging/PagingWithQueryableList.cs
+  assemblies:
+  - NuvTools.Data
+  namespace: NuvTools.Data.Paging
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString() As String
+  overridden: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}.ToString
+  overload: NuvTools.Data.Paging.PagingWithQueryableList`1.ToString*
+  nameWithType.vb: PagingWithQueryableList(Of T).ToString()
+  fullName.vb: NuvTools.Data.Paging.PagingWithQueryableList(Of T).ToString()
+- uid: NuvTools.Data.Paging.PagingWithQueryableList`1.PrintMembers(System.Text.StringBuilder)
+  commentId: M:NuvTools.Data.Paging.PagingWithQueryableList`1.PrintMembers(System.Text.StringBuilder)
+  id: PrintMembers(System.Text.StringBuilder)
+  parent: NuvTools.Data.Paging.PagingWithQueryableList`1
+  langs:
+  - csharp
+  - vb
+  name: PrintMembers(StringBuilder)
+  nameWithType: PagingWithQueryableList<T>.PrintMembers(StringBuilder)
+  fullName: NuvTools.Data.Paging.PagingWithQueryableList<T>.PrintMembers(System.Text.StringBuilder)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Paging/PagingWithQueryableList.cs
+  assemblies:
+  - NuvTools.Data
+  namespace: NuvTools.Data.Paging
+  example: []
+  syntax:
+    content: protected override bool PrintMembers(StringBuilder builder)
+    parameters:
+    - id: builder
+      type: System.Text.StringBuilder
+    return:
+      type: System.Boolean
+    content.vb: Protected Overrides Function PrintMembers(builder As StringBuilder) As Boolean
+  overridden: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}.PrintMembers(System.Text.StringBuilder)
+  overload: NuvTools.Data.Paging.PagingWithQueryableList`1.PrintMembers*
+  nameWithType.vb: PagingWithQueryableList(Of T).PrintMembers(StringBuilder)
+  fullName.vb: NuvTools.Data.Paging.PagingWithQueryableList(Of T).PrintMembers(System.Text.StringBuilder)
+- uid: NuvTools.Data.Paging.PagingWithQueryableList`1.op_Inequality(NuvTools.Data.Paging.PagingWithQueryableList{`0},NuvTools.Data.Paging.PagingWithQueryableList{`0})
+  commentId: M:NuvTools.Data.Paging.PagingWithQueryableList`1.op_Inequality(NuvTools.Data.Paging.PagingWithQueryableList{`0},NuvTools.Data.Paging.PagingWithQueryableList{`0})
+  id: op_Inequality(NuvTools.Data.Paging.PagingWithQueryableList{`0},NuvTools.Data.Paging.PagingWithQueryableList{`0})
+  parent: NuvTools.Data.Paging.PagingWithQueryableList`1
+  langs:
+  - csharp
+  - vb
+  name: operator !=(PagingWithQueryableList<T>?, PagingWithQueryableList<T>?)
+  nameWithType: PagingWithQueryableList<T>.operator !=(PagingWithQueryableList<T>?, PagingWithQueryableList<T>?)
+  fullName: NuvTools.Data.Paging.PagingWithQueryableList<T>.operator !=(NuvTools.Data.Paging.PagingWithQueryableList<T>?, NuvTools.Data.Paging.PagingWithQueryableList<T>?)
+  type: Operator
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Paging/PagingWithQueryableList.cs
+  assemblies:
+  - NuvTools.Data
+  namespace: NuvTools.Data.Paging
+  syntax:
+    content: public static bool operator !=(PagingWithQueryableList<T>? left, PagingWithQueryableList<T>? right)
+    parameters:
+    - id: left
+      type: NuvTools.Data.Paging.PagingWithQueryableList`1
+    - id: right
+      type: NuvTools.Data.Paging.PagingWithQueryableList`1
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator <>(left As PagingWithQueryableList(Of T), right As PagingWithQueryableList(Of T)) As Boolean
+  overload: NuvTools.Data.Paging.PagingWithQueryableList`1.op_Inequality*
+  nameWithType.vb: PagingWithQueryableList(Of T).<>(PagingWithQueryableList(Of T), PagingWithQueryableList(Of T))
+  fullName.vb: NuvTools.Data.Paging.PagingWithQueryableList(Of T).<>(NuvTools.Data.Paging.PagingWithQueryableList(Of T), NuvTools.Data.Paging.PagingWithQueryableList(Of T))
+  name.vb: <>(PagingWithQueryableList(Of T), PagingWithQueryableList(Of T))
+- uid: NuvTools.Data.Paging.PagingWithQueryableList`1.op_Equality(NuvTools.Data.Paging.PagingWithQueryableList{`0},NuvTools.Data.Paging.PagingWithQueryableList{`0})
+  commentId: M:NuvTools.Data.Paging.PagingWithQueryableList`1.op_Equality(NuvTools.Data.Paging.PagingWithQueryableList{`0},NuvTools.Data.Paging.PagingWithQueryableList{`0})
+  id: op_Equality(NuvTools.Data.Paging.PagingWithQueryableList{`0},NuvTools.Data.Paging.PagingWithQueryableList{`0})
+  parent: NuvTools.Data.Paging.PagingWithQueryableList`1
+  langs:
+  - csharp
+  - vb
+  name: operator ==(PagingWithQueryableList<T>?, PagingWithQueryableList<T>?)
+  nameWithType: PagingWithQueryableList<T>.operator ==(PagingWithQueryableList<T>?, PagingWithQueryableList<T>?)
+  fullName: NuvTools.Data.Paging.PagingWithQueryableList<T>.operator ==(NuvTools.Data.Paging.PagingWithQueryableList<T>?, NuvTools.Data.Paging.PagingWithQueryableList<T>?)
+  type: Operator
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Paging/PagingWithQueryableList.cs
+  assemblies:
+  - NuvTools.Data
+  namespace: NuvTools.Data.Paging
+  syntax:
+    content: public static bool operator ==(PagingWithQueryableList<T>? left, PagingWithQueryableList<T>? right)
+    parameters:
+    - id: left
+      type: NuvTools.Data.Paging.PagingWithQueryableList`1
+    - id: right
+      type: NuvTools.Data.Paging.PagingWithQueryableList`1
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator =(left As PagingWithQueryableList(Of T), right As PagingWithQueryableList(Of T)) As Boolean
+  overload: NuvTools.Data.Paging.PagingWithQueryableList`1.op_Equality*
+  nameWithType.vb: PagingWithQueryableList(Of T).=(PagingWithQueryableList(Of T), PagingWithQueryableList(Of T))
+  fullName.vb: NuvTools.Data.Paging.PagingWithQueryableList(Of T).=(NuvTools.Data.Paging.PagingWithQueryableList(Of T), NuvTools.Data.Paging.PagingWithQueryableList(Of T))
+  name.vb: =(PagingWithQueryableList(Of T), PagingWithQueryableList(Of T))
+- uid: NuvTools.Data.Paging.PagingWithQueryableList`1.GetHashCode
+  commentId: M:NuvTools.Data.Paging.PagingWithQueryableList`1.GetHashCode
+  id: GetHashCode
+  parent: NuvTools.Data.Paging.PagingWithQueryableList`1
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: PagingWithQueryableList<T>.GetHashCode()
+  fullName: NuvTools.Data.Paging.PagingWithQueryableList<T>.GetHashCode()
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Paging/PagingWithQueryableList.cs
+  assemblies:
+  - NuvTools.Data
+  namespace: NuvTools.Data.Paging
+  example: []
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode() As Integer
+  overridden: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}.GetHashCode
+  overload: NuvTools.Data.Paging.PagingWithQueryableList`1.GetHashCode*
+  nameWithType.vb: PagingWithQueryableList(Of T).GetHashCode()
+  fullName.vb: NuvTools.Data.Paging.PagingWithQueryableList(Of T).GetHashCode()
+- uid: NuvTools.Data.Paging.PagingWithQueryableList`1.Equals(System.Object)
+  commentId: M:NuvTools.Data.Paging.PagingWithQueryableList`1.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: NuvTools.Data.Paging.PagingWithQueryableList`1
+  langs:
+  - csharp
+  - vb
+  name: Equals(object?)
+  nameWithType: PagingWithQueryableList<T>.Equals(object?)
+  fullName: NuvTools.Data.Paging.PagingWithQueryableList<T>.Equals(object?)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Paging/PagingWithQueryableList.cs
+  assemblies:
+  - NuvTools.Data
+  namespace: NuvTools.Data.Paging
+  example: []
+  syntax:
+    content: public override bool Equals(object? obj)
+    parameters:
+    - id: obj
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}.Equals(System.Object)
+  overload: NuvTools.Data.Paging.PagingWithQueryableList`1.Equals*
+  nameWithType.vb: PagingWithQueryableList(Of T).Equals(Object)
+  fullName.vb: NuvTools.Data.Paging.PagingWithQueryableList(Of T).Equals(Object)
+  name.vb: Equals(Object)
+- uid: NuvTools.Data.Paging.PagingWithQueryableList`1.Equals(NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{`0},`0})
+  commentId: M:NuvTools.Data.Paging.PagingWithQueryableList`1.Equals(NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{`0},`0})
+  id: Equals(NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{`0},`0})
+  parent: NuvTools.Data.Paging.PagingWithQueryableList`1
+  langs:
+  - csharp
+  - vb
+  name: Equals(PagingBase<IQueryable<T>, T>?)
+  nameWithType: PagingWithQueryableList<T>.Equals(PagingBase<IQueryable<T>, T>?)
+  fullName: NuvTools.Data.Paging.PagingWithQueryableList<T>.Equals(NuvTools.Data.Paging.PagingBase<System.Linq.IQueryable<T>, T>?)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Paging/PagingWithQueryableList.cs
+  assemblies:
+  - NuvTools.Data
+  namespace: NuvTools.Data.Paging
+  example: []
+  syntax:
+    content: public override sealed bool Equals(PagingBase<IQueryable<T>, T>? other)
+    parameters:
+    - id: other
+      type: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}
+    return:
+      type: System.Boolean
+    content.vb: Public NotOverridable Overrides Function Equals(other As PagingBase(Of IQueryable(Of T), T)) As Boolean
+  overridden: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}.Equals(NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}})
+  overload: NuvTools.Data.Paging.PagingWithQueryableList`1.Equals*
+  nameWithType.vb: PagingWithQueryableList(Of T).Equals(PagingBase(Of IQueryable(Of T), T))
+  fullName.vb: NuvTools.Data.Paging.PagingWithQueryableList(Of T).Equals(NuvTools.Data.Paging.PagingBase(Of System.Linq.IQueryable(Of T), T))
+  name.vb: Equals(PagingBase(Of IQueryable(Of T), T))
+- uid: NuvTools.Data.Paging.PagingWithQueryableList`1.Equals(NuvTools.Data.Paging.PagingWithQueryableList{`0})
+  commentId: M:NuvTools.Data.Paging.PagingWithQueryableList`1.Equals(NuvTools.Data.Paging.PagingWithQueryableList{`0})
+  id: Equals(NuvTools.Data.Paging.PagingWithQueryableList{`0})
+  parent: NuvTools.Data.Paging.PagingWithQueryableList`1
+  langs:
+  - csharp
+  - vb
+  name: Equals(PagingWithQueryableList<T>?)
+  nameWithType: PagingWithQueryableList<T>.Equals(PagingWithQueryableList<T>?)
+  fullName: NuvTools.Data.Paging.PagingWithQueryableList<T>.Equals(NuvTools.Data.Paging.PagingWithQueryableList<T>?)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Paging/PagingWithQueryableList.cs
+  assemblies:
+  - NuvTools.Data
+  namespace: NuvTools.Data.Paging
+  example: []
+  syntax:
+    content: public virtual bool Equals(PagingWithQueryableList<T>? other)
+    parameters:
+    - id: other
+      type: NuvTools.Data.Paging.PagingWithQueryableList`1
+    return:
+      type: System.Boolean
+    content.vb: Public Overridable Function Equals(other As PagingWithQueryableList(Of T)) As Boolean
+  overload: NuvTools.Data.Paging.PagingWithQueryableList`1.Equals*
+  implements:
+  - System.IEquatable{NuvTools.Data.Paging.PagingWithQueryableList`1}.Equals(NuvTools.Data.Paging.PagingWithQueryableList{{T}})
+  nameWithType.vb: PagingWithQueryableList(Of T).Equals(PagingWithQueryableList(Of T))
+  fullName.vb: NuvTools.Data.Paging.PagingWithQueryableList(Of T).Equals(NuvTools.Data.Paging.PagingWithQueryableList(Of T))
+  name.vb: Equals(PagingWithQueryableList(Of T))
+- uid: NuvTools.Data.Paging.PagingWithQueryableList`1.{Clone}$
+  commentId: M:NuvTools.Data.Paging.PagingWithQueryableList`1.{Clone}$
+  id: '{Clone}$'
+  parent: NuvTools.Data.Paging.PagingWithQueryableList`1
+  langs:
+  - csharp
+  - vb
+  name: <Clone>$()
+  nameWithType: PagingWithQueryableList<T>.<Clone>$()
+  fullName: NuvTools.Data.Paging.PagingWithQueryableList<T>.<Clone>$()
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Paging/PagingWithQueryableList.cs
+  assemblies:
+  - NuvTools.Data
+  namespace: NuvTools.Data.Paging
+  example: []
+  syntax:
+    content: public override PagingWithQueryableList<T> <Clone>$()
+    return:
+      type: NuvTools.Data.Paging.PagingWithQueryableList`1
+    content.vb: Public Overrides Function <Clone>$() As PagingWithQueryableList(Of T)
+  overridden: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}.{Clone}$
+  overload: NuvTools.Data.Paging.PagingWithQueryableList`1.{Clone}$*
+  nameWithType.vb: PagingWithQueryableList(Of T).<Clone>$()
+  fullName.vb: NuvTools.Data.Paging.PagingWithQueryableList(Of T).<Clone>$()
+- uid: NuvTools.Data.Paging.PagingWithQueryableList`1.#ctor(NuvTools.Data.Paging.PagingWithQueryableList{`0})
+  commentId: M:NuvTools.Data.Paging.PagingWithQueryableList`1.#ctor(NuvTools.Data.Paging.PagingWithQueryableList{`0})
+  id: '#ctor(NuvTools.Data.Paging.PagingWithQueryableList{`0})'
+  parent: NuvTools.Data.Paging.PagingWithQueryableList`1
+  langs:
+  - csharp
+  - vb
+  name: PagingWithQueryableList(PagingWithQueryableList<T>)
+  nameWithType: PagingWithQueryableList<T>.PagingWithQueryableList(PagingWithQueryableList<T>)
+  fullName: NuvTools.Data.Paging.PagingWithQueryableList<T>.PagingWithQueryableList(NuvTools.Data.Paging.PagingWithQueryableList<T>)
+  type: Constructor
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Paging/PagingWithQueryableList.cs
+  assemblies:
+  - NuvTools.Data
+  namespace: NuvTools.Data.Paging
+  syntax:
+    content: protected PagingWithQueryableList(PagingWithQueryableList<T> original)
+    parameters:
+    - id: original
+      type: NuvTools.Data.Paging.PagingWithQueryableList`1
+    content.vb: Protected Sub New(original As PagingWithQueryableList(Of T))
+  overload: NuvTools.Data.Paging.PagingWithQueryableList`1.#ctor*
+  nameWithType.vb: PagingWithQueryableList(Of T).New(PagingWithQueryableList(Of T))
+  fullName.vb: NuvTools.Data.Paging.PagingWithQueryableList(Of T).New(NuvTools.Data.Paging.PagingWithQueryableList(Of T))
+  name.vb: New(PagingWithQueryableList(Of T))
 - uid: NuvTools.Data.Paging.PagingWithQueryableList`1.#ctor
   commentId: M:NuvTools.Data.Paging.PagingWithQueryableList`1.#ctor
   id: '#ctor'
@@ -51,6 +355,8 @@ items:
   nameWithType: PagingWithQueryableList<T>.PagingWithQueryableList()
   fullName: NuvTools.Data.Paging.PagingWithQueryableList<T>.PagingWithQueryableList()
   type: Constructor
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Paging/PagingWithQueryableList.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Paging
@@ -61,6 +367,33 @@ items:
   nameWithType.vb: PagingWithQueryableList(Of T).New()
   fullName.vb: NuvTools.Data.Paging.PagingWithQueryableList(Of T).New()
   name.vb: New()
+- uid: NuvTools.Data.Paging.PagingWithQueryableList`1.EqualityContract
+  commentId: P:NuvTools.Data.Paging.PagingWithQueryableList`1.EqualityContract
+  id: EqualityContract
+  parent: NuvTools.Data.Paging.PagingWithQueryableList`1
+  langs:
+  - csharp
+  - vb
+  name: EqualityContract
+  nameWithType: PagingWithQueryableList<T>.EqualityContract
+  fullName: NuvTools.Data.Paging.PagingWithQueryableList<T>.EqualityContract
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Paging/PagingWithQueryableList.cs
+  assemblies:
+  - NuvTools.Data
+  namespace: NuvTools.Data.Paging
+  example: []
+  syntax:
+    content: protected override Type EqualityContract { get; }
+    parameters: []
+    return:
+      type: System.Type
+    content.vb: Protected Overrides ReadOnly Property EqualityContract As Type
+  overridden: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}.EqualityContract
+  overload: NuvTools.Data.Paging.PagingWithQueryableList`1.EqualityContract*
+  nameWithType.vb: PagingWithQueryableList(Of T).EqualityContract
+  fullName.vb: NuvTools.Data.Paging.PagingWithQueryableList(Of T).EqualityContract
 references:
 - uid: NuvTools.Data.Paging
   commentId: N:NuvTools.Data.Paging
@@ -159,6 +492,320 @@ references:
   - name: " "
   - name: T
   - name: )
+- uid: System.IEquatable{NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}}
+  commentId: T:System.IEquatable{NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{`0},`0}}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<PagingBase<IQueryable<T>, T>>
+  nameWithType: IEquatable<PagingBase<IQueryable<T>, T>>
+  fullName: System.IEquatable<NuvTools.Data.Paging.PagingBase<System.Linq.IQueryable<T>, T>>
+  nameWithType.vb: IEquatable(Of PagingBase(Of IQueryable(Of T), T))
+  fullName.vb: System.IEquatable(Of NuvTools.Data.Paging.PagingBase(Of System.Linq.IQueryable(Of T), T))
+  name.vb: IEquatable(Of PagingBase(Of IQueryable(Of T), T))
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: NuvTools.Data.Paging.PagingBase`2
+    name: PagingBase
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html
+  - name: <
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - name: T
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Data.Paging.PagingBase`2
+    name: PagingBase
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: System.IEquatable{NuvTools.Data.Paging.PagingWithQueryableList`1}
+  commentId: T:System.IEquatable{NuvTools.Data.Paging.PagingWithQueryableList`1}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<PagingWithQueryableList<T>>
+  nameWithType: IEquatable<PagingWithQueryableList<T>>
+  fullName: System.IEquatable<NuvTools.Data.Paging.PagingWithQueryableList<T>>
+  nameWithType.vb: IEquatable(Of PagingWithQueryableList(Of T))
+  fullName.vb: System.IEquatable(Of NuvTools.Data.Paging.PagingWithQueryableList(Of T))
+  name.vb: IEquatable(Of PagingWithQueryableList(Of T))
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: NuvTools.Data.Paging.PagingWithQueryableList`1
+    name: PagingWithQueryableList
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingWithQueryableList-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Data.Paging.PagingWithQueryableList`1
+    name: PagingWithQueryableList
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingWithQueryableList-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}.ToString
+  commentId: M:NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{`0},`0}.ToString
+  parent: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}
+  definition: NuvTools.Data.Paging.PagingBase`2.ToString
+  href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_ToString
+  name: ToString()
+  nameWithType: PagingBase<IQueryable<T>, T>.ToString()
+  fullName: NuvTools.Data.Paging.PagingBase<System.Linq.IQueryable<T>, T>.ToString()
+  nameWithType.vb: PagingBase(Of IQueryable(Of T), T).ToString()
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of System.Linq.IQueryable(Of T), T).ToString()
+  spec.csharp:
+  - uid: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{`0},`0}.ToString
+    name: ToString
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_ToString
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{`0},`0}.ToString
+    name: ToString
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_ToString
+  - name: (
+  - name: )
+- uid: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}.PrintMembers(System.Text.StringBuilder)
+  commentId: M:NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{`0},`0}.PrintMembers(System.Text.StringBuilder)
+  parent: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}
+  definition: NuvTools.Data.Paging.PagingBase`2.PrintMembers(System.Text.StringBuilder)
+  href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_PrintMembers_System_Text_StringBuilder_
+  name: PrintMembers(StringBuilder)
+  nameWithType: PagingBase<IQueryable<T>, T>.PrintMembers(StringBuilder)
+  fullName: NuvTools.Data.Paging.PagingBase<System.Linq.IQueryable<T>, T>.PrintMembers(System.Text.StringBuilder)
+  nameWithType.vb: PagingBase(Of IQueryable(Of T), T).PrintMembers(StringBuilder)
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of System.Linq.IQueryable(Of T), T).PrintMembers(System.Text.StringBuilder)
+  spec.csharp:
+  - uid: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{`0},`0}.PrintMembers(System.Text.StringBuilder)
+    name: PrintMembers
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_PrintMembers_System_Text_StringBuilder_
+  - name: (
+  - uid: System.Text.StringBuilder
+    name: StringBuilder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.stringbuilder
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{`0},`0}.PrintMembers(System.Text.StringBuilder)
+    name: PrintMembers
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_PrintMembers_System_Text_StringBuilder_
+  - name: (
+  - uid: System.Text.StringBuilder
+    name: StringBuilder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.stringbuilder
+  - name: )
+- uid: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}.GetHashCode
+  commentId: M:NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{`0},`0}.GetHashCode
+  parent: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}
+  definition: NuvTools.Data.Paging.PagingBase`2.GetHashCode
+  href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_GetHashCode
+  name: GetHashCode()
+  nameWithType: PagingBase<IQueryable<T>, T>.GetHashCode()
+  fullName: NuvTools.Data.Paging.PagingBase<System.Linq.IQueryable<T>, T>.GetHashCode()
+  nameWithType.vb: PagingBase(Of IQueryable(Of T), T).GetHashCode()
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of System.Linq.IQueryable(Of T), T).GetHashCode()
+  spec.csharp:
+  - uid: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{`0},`0}.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_GetHashCode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{`0},`0}.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_GetHashCode
+  - name: (
+  - name: )
+- uid: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}.Equals(System.Object)
+  commentId: M:NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{`0},`0}.Equals(System.Object)
+  parent: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}
+  definition: NuvTools.Data.Paging.PagingBase`2.Equals(System.Object)
+  href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_Equals_System_Object_
+  name: Equals(object)
+  nameWithType: PagingBase<IQueryable<T>, T>.Equals(object)
+  fullName: NuvTools.Data.Paging.PagingBase<System.Linq.IQueryable<T>, T>.Equals(object)
+  nameWithType.vb: PagingBase(Of IQueryable(Of T), T).Equals(Object)
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of System.Linq.IQueryable(Of T), T).Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{`0},`0}.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_Equals_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{`0},`0}.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_Equals_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}.Equals(NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}})
+  commentId: M:NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{`0},`0}.Equals(NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{`0},`0})
+  parent: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}
+  definition: NuvTools.Data.Paging.PagingBase`2.Equals(NuvTools.Data.Paging.PagingBase{`0,`1})
+  href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_Equals_NuvTools_Data_Paging_PagingBase__0__1__
+  name: Equals(PagingBase<IQueryable<T>, T>)
+  nameWithType: PagingBase<IQueryable<T>, T>.Equals(PagingBase<IQueryable<T>, T>)
+  fullName: NuvTools.Data.Paging.PagingBase<System.Linq.IQueryable<T>, T>.Equals(NuvTools.Data.Paging.PagingBase<System.Linq.IQueryable<T>, T>)
+  nameWithType.vb: PagingBase(Of IQueryable(Of T), T).Equals(PagingBase(Of IQueryable(Of T), T))
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of System.Linq.IQueryable(Of T), T).Equals(NuvTools.Data.Paging.PagingBase(Of System.Linq.IQueryable(Of T), T))
+  name.vb: Equals(PagingBase(Of IQueryable(Of T), T))
+  spec.csharp:
+  - uid: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{`0},`0}.Equals(NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{`0},`0})
+    name: Equals
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_Equals_NuvTools_Data_Paging_PagingBase__0__1__
+  - name: (
+  - uid: NuvTools.Data.Paging.PagingBase`2
+    name: PagingBase
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html
+  - name: <
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: ','
+  - name: " "
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{`0},`0}.Equals(NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{`0},`0})
+    name: Equals
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_Equals_NuvTools_Data_Paging_PagingBase__0__1__
+  - name: (
+  - uid: NuvTools.Data.Paging.PagingBase`2
+    name: PagingBase
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: ','
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}.{Clone}$
+  commentId: M:NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{`0},`0}.{Clone}$
+  parent: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}
+  definition: NuvTools.Data.Paging.PagingBase`2.{Clone}$
+  href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2__Clone__
+  name: <Clone>$()
+  nameWithType: PagingBase<IQueryable<T>, T>.<Clone>$()
+  fullName: NuvTools.Data.Paging.PagingBase<System.Linq.IQueryable<T>, T>.<Clone>$()
+  nameWithType.vb: PagingBase(Of IQueryable(Of T), T).<Clone>$()
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of System.Linq.IQueryable(Of T), T).<Clone>$()
+  spec.csharp:
+  - uid: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{`0},`0}.{Clone}$
+    name: <Clone>$
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2__Clone__
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{`0},`0}.{Clone}$
+    name: <Clone>$
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2__Clone__
+  - name: (
+  - name: )
+- uid: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}.EqualityContract
+  commentId: P:NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{`0},`0}.EqualityContract
+  parent: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}
+  definition: NuvTools.Data.Paging.PagingBase`2.EqualityContract
+  href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_EqualityContract
+  name: EqualityContract
+  nameWithType: PagingBase<IQueryable<T>, T>.EqualityContract
+  fullName: NuvTools.Data.Paging.PagingBase<System.Linq.IQueryable<T>, T>.EqualityContract
+  nameWithType.vb: PagingBase(Of IQueryable(Of T), T).EqualityContract
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of System.Linq.IQueryable(Of T), T).EqualityContract
 - uid: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}.PageNumber
   commentId: P:NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{`0},`0}.PageNumber
   parent: NuvTools.Data.Paging.PagingBase{System.Linq.IQueryable{{T}},{T}}
@@ -236,63 +883,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
   - name: (
-  - name: )
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  name: ToString()
-  nameWithType: object.ToString()
-  fullName: object.ToString()
-  nameWithType.vb: Object.ToString()
-  fullName.vb: Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  - name: (
-  - name: )
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  name: Equals(object)
-  nameWithType: object.Equals(object)
-  fullName: object.Equals(object)
-  nameWithType.vb: Object.Equals(Object)
-  fullName.vb: Object.Equals(Object)
-  name.vb: Equals(Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  - name: (
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  - name: (
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
 - uid: System.Object.Equals(System.Object,System.Object)
   commentId: M:System.Object.Equals(System.Object,System.Object)
@@ -384,30 +974,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  name: GetHashCode()
-  nameWithType: object.GetHashCode()
-  fullName: object.GetHashCode()
-  nameWithType.vb: Object.GetHashCode()
-  fullName.vb: Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
-  - name: (
-  - name: )
 - uid: NuvTools.Data.Paging.PagingWithQueryableList`1.NuvTools.Data.Paging.PagingExtensions.ToPagingEnumerable``1
   commentId: M:NuvTools.Data.Paging.PagingExtensions.ToPagingEnumerable``1(NuvTools.Data.Paging.PagingWithQueryableList{``0})
   parent: NuvTools.Data.Paging.PagingExtensions
@@ -466,6 +1032,7 @@ references:
   fullName: System
 - uid: NuvTools.Data.Paging.PagingBase`2
   commentId: T:NuvTools.Data.Paging.PagingBase`2
+  parent: NuvTools.Data.Paging
   isExternal: true
   href: NuvTools.Data.Paging.PagingBase-2.html
   name: PagingBase<T, R>
@@ -498,6 +1065,221 @@ references:
   - name: " "
   - name: R
   - name: )
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NuvTools.Data.Paging.PagingBase`2.ToString
+  commentId: M:NuvTools.Data.Paging.PagingBase`2.ToString
+  isExternal: true
+  href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_ToString
+  name: ToString()
+  nameWithType: PagingBase<T, R>.ToString()
+  fullName: NuvTools.Data.Paging.PagingBase<T, R>.ToString()
+  nameWithType.vb: PagingBase(Of T, R).ToString()
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R).ToString()
+  spec.csharp:
+  - uid: NuvTools.Data.Paging.PagingBase`2.ToString
+    name: ToString
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_ToString
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Data.Paging.PagingBase`2.ToString
+    name: ToString
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_ToString
+  - name: (
+  - name: )
+- uid: NuvTools.Data.Paging.PagingBase`2.PrintMembers(System.Text.StringBuilder)
+  commentId: M:NuvTools.Data.Paging.PagingBase`2.PrintMembers(System.Text.StringBuilder)
+  isExternal: true
+  href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_PrintMembers_System_Text_StringBuilder_
+  name: PrintMembers(StringBuilder)
+  nameWithType: PagingBase<T, R>.PrintMembers(StringBuilder)
+  fullName: NuvTools.Data.Paging.PagingBase<T, R>.PrintMembers(System.Text.StringBuilder)
+  nameWithType.vb: PagingBase(Of T, R).PrintMembers(StringBuilder)
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R).PrintMembers(System.Text.StringBuilder)
+  spec.csharp:
+  - uid: NuvTools.Data.Paging.PagingBase`2.PrintMembers(System.Text.StringBuilder)
+    name: PrintMembers
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_PrintMembers_System_Text_StringBuilder_
+  - name: (
+  - uid: System.Text.StringBuilder
+    name: StringBuilder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.stringbuilder
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Data.Paging.PagingBase`2.PrintMembers(System.Text.StringBuilder)
+    name: PrintMembers
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_PrintMembers_System_Text_StringBuilder_
+  - name: (
+  - uid: System.Text.StringBuilder
+    name: StringBuilder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.stringbuilder
+  - name: )
+- uid: NuvTools.Data.Paging.PagingBase`2.GetHashCode
+  commentId: M:NuvTools.Data.Paging.PagingBase`2.GetHashCode
+  isExternal: true
+  href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_GetHashCode
+  name: GetHashCode()
+  nameWithType: PagingBase<T, R>.GetHashCode()
+  fullName: NuvTools.Data.Paging.PagingBase<T, R>.GetHashCode()
+  nameWithType.vb: PagingBase(Of T, R).GetHashCode()
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R).GetHashCode()
+  spec.csharp:
+  - uid: NuvTools.Data.Paging.PagingBase`2.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_GetHashCode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Data.Paging.PagingBase`2.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_GetHashCode
+  - name: (
+  - name: )
+- uid: NuvTools.Data.Paging.PagingBase`2.Equals(System.Object)
+  commentId: M:NuvTools.Data.Paging.PagingBase`2.Equals(System.Object)
+  isExternal: true
+  href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_Equals_System_Object_
+  name: Equals(object)
+  nameWithType: PagingBase<T, R>.Equals(object)
+  fullName: NuvTools.Data.Paging.PagingBase<T, R>.Equals(object)
+  nameWithType.vb: PagingBase(Of T, R).Equals(Object)
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R).Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: NuvTools.Data.Paging.PagingBase`2.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_Equals_System_Object_
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Data.Paging.PagingBase`2.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_Equals_System_Object_
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: NuvTools.Data.Paging.PagingBase`2.Equals(NuvTools.Data.Paging.PagingBase{`0,`1})
+  commentId: M:NuvTools.Data.Paging.PagingBase`2.Equals(NuvTools.Data.Paging.PagingBase{`0,`1})
+  isExternal: true
+  href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_Equals_NuvTools_Data_Paging_PagingBase__0__1__
+  name: Equals(PagingBase<T, R>)
+  nameWithType: PagingBase<T, R>.Equals(PagingBase<T, R>)
+  fullName: NuvTools.Data.Paging.PagingBase<T, R>.Equals(NuvTools.Data.Paging.PagingBase<T, R>)
+  nameWithType.vb: PagingBase(Of T, R).Equals(PagingBase(Of T, R))
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R).Equals(NuvTools.Data.Paging.PagingBase(Of T, R))
+  name.vb: Equals(PagingBase(Of T, R))
+  spec.csharp:
+  - uid: NuvTools.Data.Paging.PagingBase`2.Equals(NuvTools.Data.Paging.PagingBase{`0,`1})
+    name: Equals
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_Equals_NuvTools_Data_Paging_PagingBase__0__1__
+  - name: (
+  - uid: NuvTools.Data.Paging.PagingBase`2
+    name: PagingBase
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: R
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Data.Paging.PagingBase`2.Equals(NuvTools.Data.Paging.PagingBase{`0,`1})
+    name: Equals
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_Equals_NuvTools_Data_Paging_PagingBase__0__1__
+  - name: (
+  - uid: NuvTools.Data.Paging.PagingBase`2
+    name: PagingBase
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: R
+  - name: )
+  - name: )
+- uid: NuvTools.Data.Paging.PagingBase`2.{Clone}$
+  commentId: M:NuvTools.Data.Paging.PagingBase`2.{Clone}$
+  isExternal: true
+  href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2__Clone__
+  name: <Clone>$()
+  nameWithType: PagingBase<T, R>.<Clone>$()
+  fullName: NuvTools.Data.Paging.PagingBase<T, R>.<Clone>$()
+  nameWithType.vb: PagingBase(Of T, R).<Clone>$()
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R).<Clone>$()
+  spec.csharp:
+  - uid: NuvTools.Data.Paging.PagingBase`2.{Clone}$
+    name: <Clone>$
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2__Clone__
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Data.Paging.PagingBase`2.{Clone}$
+    name: <Clone>$
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2__Clone__
+  - name: (
+  - name: )
+- uid: NuvTools.Data.Paging.PagingBase`2.EqualityContract
+  commentId: P:NuvTools.Data.Paging.PagingBase`2.EqualityContract
+  isExternal: true
+  href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_EqualityContract
+  name: EqualityContract
+  nameWithType: PagingBase<T, R>.EqualityContract
+  fullName: NuvTools.Data.Paging.PagingBase<T, R>.EqualityContract
+  nameWithType.vb: PagingBase(Of T, R).EqualityContract
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R).EqualityContract
 - uid: NuvTools.Data.Paging.PagingBase`2.PageNumber
   commentId: P:NuvTools.Data.Paging.PagingBase`2.PageNumber
   isExternal: true
@@ -581,13 +1363,272 @@ references:
   name: PagingExtensions
   nameWithType: PagingExtensions
   fullName: NuvTools.Data.Paging.PagingExtensions
+- uid: NuvTools.Data.Paging.PagingWithQueryableList`1.ToString*
+  commentId: Overload:NuvTools.Data.Paging.PagingWithQueryableList`1.ToString
+  isExternal: true
+  href: NuvTools.Data.Paging.PagingWithQueryableList-1.html#NuvTools_Data_Paging_PagingWithQueryableList_1_ToString
+  name: ToString
+  nameWithType: PagingWithQueryableList<T>.ToString
+  fullName: NuvTools.Data.Paging.PagingWithQueryableList<T>.ToString
+  nameWithType.vb: PagingWithQueryableList(Of T).ToString
+  fullName.vb: NuvTools.Data.Paging.PagingWithQueryableList(Of T).ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: NuvTools.Data.Paging.PagingWithQueryableList`1.PrintMembers*
+  commentId: Overload:NuvTools.Data.Paging.PagingWithQueryableList`1.PrintMembers
+  isExternal: true
+  href: NuvTools.Data.Paging.PagingWithQueryableList-1.html#NuvTools_Data_Paging_PagingWithQueryableList_1_PrintMembers_System_Text_StringBuilder_
+  name: PrintMembers
+  nameWithType: PagingWithQueryableList<T>.PrintMembers
+  fullName: NuvTools.Data.Paging.PagingWithQueryableList<T>.PrintMembers
+  nameWithType.vb: PagingWithQueryableList(Of T).PrintMembers
+  fullName.vb: NuvTools.Data.Paging.PagingWithQueryableList(Of T).PrintMembers
+- uid: System.Text.StringBuilder
+  commentId: T:System.Text.StringBuilder
+  parent: System.Text
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.text.stringbuilder
+  name: StringBuilder
+  nameWithType: StringBuilder
+  fullName: System.Text.StringBuilder
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Text
+  commentId: N:System.Text
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Text
+  nameWithType: System.Text
+  fullName: System.Text
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Text
+    name: Text
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Text
+    name: Text
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text
+- uid: NuvTools.Data.Paging.PagingWithQueryableList`1.op_Inequality*
+  commentId: Overload:NuvTools.Data.Paging.PagingWithQueryableList`1.op_Inequality
+  isExternal: true
+  href: NuvTools.Data.Paging.PagingWithQueryableList-1.html#NuvTools_Data_Paging_PagingWithQueryableList_1_op_Inequality_NuvTools_Data_Paging_PagingWithQueryableList__0__NuvTools_Data_Paging_PagingWithQueryableList__0__
+  name: operator !=
+  nameWithType: PagingWithQueryableList<T>.operator !=
+  fullName: NuvTools.Data.Paging.PagingWithQueryableList<T>.operator !=
+  nameWithType.vb: PagingWithQueryableList(Of T).<>
+  fullName.vb: NuvTools.Data.Paging.PagingWithQueryableList(Of T).<>
+  name.vb: <>
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: NuvTools.Data.Paging.PagingWithQueryableList`1.op_Inequality*
+    name: '!='
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingWithQueryableList-1.html#NuvTools_Data_Paging_PagingWithQueryableList_1_op_Inequality_NuvTools_Data_Paging_PagingWithQueryableList__0__NuvTools_Data_Paging_PagingWithQueryableList__0__
+- uid: NuvTools.Data.Paging.PagingWithQueryableList`1
+  commentId: T:NuvTools.Data.Paging.PagingWithQueryableList`1
+  parent: NuvTools.Data.Paging
+  isExternal: true
+  href: NuvTools.Data.Paging.PagingWithQueryableList-1.html
+  name: PagingWithQueryableList<T>
+  nameWithType: PagingWithQueryableList<T>
+  fullName: NuvTools.Data.Paging.PagingWithQueryableList<T>
+  nameWithType.vb: PagingWithQueryableList(Of T)
+  fullName.vb: NuvTools.Data.Paging.PagingWithQueryableList(Of T)
+  name.vb: PagingWithQueryableList(Of T)
+  spec.csharp:
+  - uid: NuvTools.Data.Paging.PagingWithQueryableList`1
+    name: PagingWithQueryableList
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingWithQueryableList-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: NuvTools.Data.Paging.PagingWithQueryableList`1
+    name: PagingWithQueryableList
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingWithQueryableList-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NuvTools.Data.Paging.PagingWithQueryableList`1.op_Equality*
+  commentId: Overload:NuvTools.Data.Paging.PagingWithQueryableList`1.op_Equality
+  isExternal: true
+  href: NuvTools.Data.Paging.PagingWithQueryableList-1.html#NuvTools_Data_Paging_PagingWithQueryableList_1_op_Equality_NuvTools_Data_Paging_PagingWithQueryableList__0__NuvTools_Data_Paging_PagingWithQueryableList__0__
+  name: operator ==
+  nameWithType: PagingWithQueryableList<T>.operator ==
+  fullName: NuvTools.Data.Paging.PagingWithQueryableList<T>.operator ==
+  nameWithType.vb: PagingWithQueryableList(Of T).=
+  fullName.vb: NuvTools.Data.Paging.PagingWithQueryableList(Of T).=
+  name.vb: =
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: NuvTools.Data.Paging.PagingWithQueryableList`1.op_Equality*
+    name: ==
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingWithQueryableList-1.html#NuvTools_Data_Paging_PagingWithQueryableList_1_op_Equality_NuvTools_Data_Paging_PagingWithQueryableList__0__NuvTools_Data_Paging_PagingWithQueryableList__0__
+- uid: NuvTools.Data.Paging.PagingWithQueryableList`1.GetHashCode*
+  commentId: Overload:NuvTools.Data.Paging.PagingWithQueryableList`1.GetHashCode
+  isExternal: true
+  href: NuvTools.Data.Paging.PagingWithQueryableList-1.html#NuvTools_Data_Paging_PagingWithQueryableList_1_GetHashCode
+  name: GetHashCode
+  nameWithType: PagingWithQueryableList<T>.GetHashCode
+  fullName: NuvTools.Data.Paging.PagingWithQueryableList<T>.GetHashCode
+  nameWithType.vb: PagingWithQueryableList(Of T).GetHashCode
+  fullName.vb: NuvTools.Data.Paging.PagingWithQueryableList(Of T).GetHashCode
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: NuvTools.Data.Paging.PagingWithQueryableList`1.Equals*
+  commentId: Overload:NuvTools.Data.Paging.PagingWithQueryableList`1.Equals
+  isExternal: true
+  href: NuvTools.Data.Paging.PagingWithQueryableList-1.html#NuvTools_Data_Paging_PagingWithQueryableList_1_Equals_System_Object_
+  name: Equals
+  nameWithType: PagingWithQueryableList<T>.Equals
+  fullName: NuvTools.Data.Paging.PagingWithQueryableList<T>.Equals
+  nameWithType.vb: PagingWithQueryableList(Of T).Equals
+  fullName.vb: NuvTools.Data.Paging.PagingWithQueryableList(Of T).Equals
+- uid: System.IEquatable{NuvTools.Data.Paging.PagingWithQueryableList`1}.Equals(NuvTools.Data.Paging.PagingWithQueryableList{{T}})
+  commentId: M:System.IEquatable{NuvTools.Data.Paging.PagingWithQueryableList`1}.Equals(NuvTools.Data.Paging.PagingWithQueryableList{`0})
+  parent: System.IEquatable{NuvTools.Data.Paging.PagingWithQueryableList`1}
+  definition: System.IEquatable`1.Equals(`0)
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  name: Equals(PagingWithQueryableList<T>)
+  nameWithType: IEquatable<PagingWithQueryableList<T>>.Equals(PagingWithQueryableList<T>)
+  fullName: System.IEquatable<NuvTools.Data.Paging.PagingWithQueryableList<T>>.Equals(NuvTools.Data.Paging.PagingWithQueryableList<T>)
+  nameWithType.vb: IEquatable(Of PagingWithQueryableList(Of T)).Equals(PagingWithQueryableList(Of T))
+  fullName.vb: System.IEquatable(Of NuvTools.Data.Paging.PagingWithQueryableList(Of T)).Equals(NuvTools.Data.Paging.PagingWithQueryableList(Of T))
+  name.vb: Equals(PagingWithQueryableList(Of T))
+  spec.csharp:
+  - uid: System.IEquatable{NuvTools.Data.Paging.PagingWithQueryableList`1}.Equals(NuvTools.Data.Paging.PagingWithQueryableList{`0})
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - uid: NuvTools.Data.Paging.PagingWithQueryableList`1
+    name: PagingWithQueryableList
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingWithQueryableList-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: System.IEquatable{NuvTools.Data.Paging.PagingWithQueryableList`1}.Equals(NuvTools.Data.Paging.PagingWithQueryableList{`0})
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - uid: NuvTools.Data.Paging.PagingWithQueryableList`1
+    name: PagingWithQueryableList
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingWithQueryableList-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - name: T
+  - name: )
+- uid: NuvTools.Data.Paging.PagingWithQueryableList`1.{Clone}$*
+  commentId: Overload:NuvTools.Data.Paging.PagingWithQueryableList`1.{Clone}$
+  isExternal: true
+  href: NuvTools.Data.Paging.PagingWithQueryableList-1.html#NuvTools_Data_Paging_PagingWithQueryableList_1__Clone__
+  name: <Clone>$
+  nameWithType: PagingWithQueryableList<T>.<Clone>$
+  fullName: NuvTools.Data.Paging.PagingWithQueryableList<T>.<Clone>$
+  nameWithType.vb: PagingWithQueryableList(Of T).<Clone>$
+  fullName.vb: NuvTools.Data.Paging.PagingWithQueryableList(Of T).<Clone>$
 - uid: NuvTools.Data.Paging.PagingWithQueryableList`1.#ctor*
   commentId: Overload:NuvTools.Data.Paging.PagingWithQueryableList`1.#ctor
   isExternal: true
-  href: NuvTools.Data.Paging.PagingWithQueryableList-1.html#NuvTools_Data_Paging_PagingWithQueryableList_1__ctor
+  href: NuvTools.Data.Paging.PagingWithQueryableList-1.html#NuvTools_Data_Paging_PagingWithQueryableList_1__ctor_NuvTools_Data_Paging_PagingWithQueryableList__0__
   name: PagingWithQueryableList
   nameWithType: PagingWithQueryableList<T>.PagingWithQueryableList
   fullName: NuvTools.Data.Paging.PagingWithQueryableList<T>.PagingWithQueryableList
   nameWithType.vb: PagingWithQueryableList(Of T).New
   fullName.vb: NuvTools.Data.Paging.PagingWithQueryableList(Of T).New
   name.vb: New
+- uid: NuvTools.Data.Paging.PagingWithQueryableList`1.EqualityContract*
+  commentId: Overload:NuvTools.Data.Paging.PagingWithQueryableList`1.EqualityContract
+  isExternal: true
+  href: NuvTools.Data.Paging.PagingWithQueryableList-1.html#NuvTools_Data_Paging_PagingWithQueryableList_1_EqualityContract
+  name: EqualityContract
+  nameWithType: PagingWithQueryableList<T>.EqualityContract
+  fullName: NuvTools.Data.Paging.PagingWithQueryableList<T>.EqualityContract
+  nameWithType.vb: PagingWithQueryableList(Of T).EqualityContract
+  fullName.vb: NuvTools.Data.Paging.PagingWithQueryableList(Of T).EqualityContract
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type

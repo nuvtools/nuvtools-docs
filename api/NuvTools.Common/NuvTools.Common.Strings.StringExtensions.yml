@@ -5,7 +5,9 @@ items:
   id: StringExtensions
   parent: NuvTools.Common.Strings
   children:
-  - NuvTools.Common.Strings.StringExtensions.Format(System.String,System.String[])
+  - NuvTools.Common.Strings.StringExtensions.Format(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.IFormatProvider)
+  - NuvTools.Common.Strings.StringExtensions.Format(System.String,System.IFormatProvider,System.Object[])
+  - NuvTools.Common.Strings.StringExtensions.Format(System.String,System.Object[])
   - NuvTools.Common.Strings.StringExtensions.FormatJson(System.String)
   - NuvTools.Common.Strings.StringExtensions.IsValidJson(System.String)
   - NuvTools.Common.Strings.StringExtensions.Left(System.String,System.Int32)
@@ -19,6 +21,8 @@ items:
   nameWithType: StringExtensions
   fullName: NuvTools.Common.Strings.StringExtensions
   type: Class
+  source:
+    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/Strings/StringExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Strings
@@ -47,20 +51,31 @@ items:
   nameWithType: StringExtensions.Left(string, int)
   fullName: NuvTools.Common.Strings.StringExtensions.Left(string, int)
   type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/Strings/StringExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Strings
+  summary: Gets the first characters from string.
+  example: []
   syntax:
     content: public static string Left(this string value, int length)
     parameters:
     - id: value
       type: System.String
+      description: String that contains the characters to be extracted.
     - id: length
       type: System.Int32
+      description: The number of characters to be extracted.
     return:
       type: System.String
+      description: ''
     content.vb: Public Shared Function Left(value As String, length As Integer) As String
   overload: NuvTools.Common.Strings.StringExtensions.Left*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: ''
   nameWithType.vb: StringExtensions.Left(String, Integer)
   fullName.vb: NuvTools.Common.Strings.StringExtensions.Left(String, Integer)
   name.vb: Left(String, Integer)
@@ -76,52 +91,160 @@ items:
   nameWithType: StringExtensions.Right(string, int)
   fullName: NuvTools.Common.Strings.StringExtensions.Right(string, int)
   type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/Strings/StringExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Strings
+  summary: Gets the last characters from string.
+  example: []
   syntax:
     content: public static string Right(this string value, int length)
     parameters:
     - id: value
       type: System.String
+      description: String that contains the characters to be extracted.
     - id: length
       type: System.Int32
+      description: The number of characters to be extracted.
     return:
       type: System.String
+      description: ''
     content.vb: Public Shared Function Right(value As String, length As Integer) As String
   overload: NuvTools.Common.Strings.StringExtensions.Right*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: ''
   nameWithType.vb: StringExtensions.Right(String, Integer)
   fullName.vb: NuvTools.Common.Strings.StringExtensions.Right(String, Integer)
   name.vb: Right(String, Integer)
-- uid: NuvTools.Common.Strings.StringExtensions.Format(System.String,System.String[])
-  commentId: M:NuvTools.Common.Strings.StringExtensions.Format(System.String,System.String[])
-  id: Format(System.String,System.String[])
+- uid: NuvTools.Common.Strings.StringExtensions.Format(System.String,System.Object[])
+  commentId: M:NuvTools.Common.Strings.StringExtensions.Format(System.String,System.Object[])
+  id: Format(System.String,System.Object[])
   isExtensionMethod: true
   parent: NuvTools.Common.Strings.StringExtensions
   langs:
   - csharp
   - vb
-  name: Format(string, params string[])
-  nameWithType: StringExtensions.Format(string, params string[])
-  fullName: NuvTools.Common.Strings.StringExtensions.Format(string, params string[])
+  name: Format(string, params object[])
+  nameWithType: StringExtensions.Format(string, params object[])
+  fullName: NuvTools.Common.Strings.StringExtensions.Format(string, params object[])
   type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/Strings/StringExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Strings
+  summary: Replaces the format item in a specified string with the string representation of a corresponding object by the key in the Dictionary.
+  example: []
   syntax:
-    content: public static string Format(this string format, params string[] values)
+    content: public static string Format(this string template, params object[] args)
     parameters:
-    - id: format
+    - id: template
       type: System.String
-    - id: values
-      type: System.String[]
+      description: A composite format string.
+    - id: args
+      type: System.Object[]
+      description: A string array that contains zero or more objects to format.
     return:
       type: System.String
-    content.vb: Public Shared Function Format(format As String, ParamArray values As String()) As String
+      description: A copy of format in which the format items have been replaced by the string representation of the corresponding strings in args.
+    content.vb: Public Shared Function Format(template As String, ParamArray args As Object()) As String
   overload: NuvTools.Common.Strings.StringExtensions.Format*
-  nameWithType.vb: StringExtensions.Format(String, ParamArray String())
-  fullName.vb: NuvTools.Common.Strings.StringExtensions.Format(String, ParamArray String())
-  name.vb: Format(String, ParamArray String())
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: ''
+  nameWithType.vb: StringExtensions.Format(String, ParamArray Object())
+  fullName.vb: NuvTools.Common.Strings.StringExtensions.Format(String, ParamArray Object())
+  name.vb: Format(String, ParamArray Object())
+- uid: NuvTools.Common.Strings.StringExtensions.Format(System.String,System.IFormatProvider,System.Object[])
+  commentId: M:NuvTools.Common.Strings.StringExtensions.Format(System.String,System.IFormatProvider,System.Object[])
+  id: Format(System.String,System.IFormatProvider,System.Object[])
+  isExtensionMethod: true
+  parent: NuvTools.Common.Strings.StringExtensions
+  langs:
+  - csharp
+  - vb
+  name: Format(string, IFormatProvider, params object[])
+  nameWithType: StringExtensions.Format(string, IFormatProvider, params object[])
+  fullName: NuvTools.Common.Strings.StringExtensions.Format(string, System.IFormatProvider, params object[])
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/Strings/StringExtensions.cs
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.Strings
+  summary: Replaces the format item in a specified string with the string representation of a corresponding object by the key in the Dictionary.
+  example: []
+  syntax:
+    content: public static string Format(this string template, IFormatProvider provider, params object[] args)
+    parameters:
+    - id: template
+      type: System.String
+      description: A composite format string.
+    - id: provider
+      type: System.IFormatProvider
+      description: An object that supplies culture-specific formatting information.
+    - id: args
+      type: System.Object[]
+      description: A string array that contains zero or more objects to format.
+    return:
+      type: System.String
+      description: A copy of format in which the format items have been replaced by the string representation of the corresponding strings in args.
+    content.vb: Public Shared Function Format(template As String, provider As IFormatProvider, ParamArray args As Object()) As String
+  overload: NuvTools.Common.Strings.StringExtensions.Format*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: ''
+  nameWithType.vb: StringExtensions.Format(String, IFormatProvider, ParamArray Object())
+  fullName.vb: NuvTools.Common.Strings.StringExtensions.Format(String, System.IFormatProvider, ParamArray Object())
+  name.vb: Format(String, IFormatProvider, ParamArray Object())
+- uid: NuvTools.Common.Strings.StringExtensions.Format(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.IFormatProvider)
+  commentId: M:NuvTools.Common.Strings.StringExtensions.Format(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.IFormatProvider)
+  id: Format(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.IFormatProvider)
+  isExtensionMethod: true
+  parent: NuvTools.Common.Strings.StringExtensions
+  langs:
+  - csharp
+  - vb
+  name: Format(string, Dictionary<string, object>, IFormatProvider)
+  nameWithType: StringExtensions.Format(string, Dictionary<string, object>, IFormatProvider)
+  fullName: NuvTools.Common.Strings.StringExtensions.Format(string, System.Collections.Generic.Dictionary<string, object>, System.IFormatProvider)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/Strings/StringExtensions.cs
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.Strings
+  summary: Replaces the format item in a specified string with the string representation of a corresponding object by the key in the Dictionary.
+  example: []
+  syntax:
+    content: public static string Format(this string template, Dictionary<string, object> args, IFormatProvider provider = null)
+    parameters:
+    - id: template
+      type: System.String
+      description: A composite format string.
+    - id: args
+      type: System.Collections.Generic.Dictionary{System.String,System.Object}
+      description: A Dictionary that contains zero or more values to format by the key.
+    - id: provider
+      type: System.IFormatProvider
+      description: An object that supplies culture-specific formatting information.
+    return:
+      type: System.String
+      description: A copy of format in which the format items have been replaced by the string representation of the corresponding values in Dictionary.
+    content.vb: Public Shared Function Format(template As String, args As Dictionary(Of String, Object), provider As IFormatProvider = Nothing) As String
+  overload: NuvTools.Common.Strings.StringExtensions.Format*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: ''
+  nameWithType.vb: StringExtensions.Format(String, Dictionary(Of String, Object), IFormatProvider)
+  fullName.vb: NuvTools.Common.Strings.StringExtensions.Format(String, System.Collections.Generic.Dictionary(Of String, Object), System.IFormatProvider)
+  name.vb: Format(String, Dictionary(Of String, Object), IFormatProvider)
 - uid: NuvTools.Common.Strings.StringExtensions.RemoveDiacritics(System.String)
   commentId: M:NuvTools.Common.Strings.StringExtensions.RemoveDiacritics(System.String)
   id: RemoveDiacritics(System.String)
@@ -134,6 +257,8 @@ items:
   nameWithType: StringExtensions.RemoveDiacritics(string)
   fullName: NuvTools.Common.Strings.StringExtensions.RemoveDiacritics(string)
   type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/Strings/StringExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Strings
@@ -170,6 +295,8 @@ items:
   nameWithType: StringExtensions.RemoveSpecialCharacters(string)
   fullName: NuvTools.Common.Strings.StringExtensions.RemoveSpecialCharacters(string)
   type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/Strings/StringExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Strings
@@ -201,10 +328,12 @@ items:
   nameWithType: StringExtensions.FormatJson(string)
   fullName: NuvTools.Common.Strings.StringExtensions.FormatJson(string)
   type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/Strings/StringExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Strings
-  summary: Format the string to Json pretty-format.
+  summary: Format the string to pretty-format Json.
   example: []
   syntax:
     content: public static string FormatJson(this string value)
@@ -232,6 +361,8 @@ items:
   nameWithType: StringExtensions.IsValidJson(string)
   fullName: NuvTools.Common.Strings.StringExtensions.IsValidJson(string)
   type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/Strings/StringExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Strings
@@ -526,6 +657,13 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
 - uid: NuvTools.Common.Strings.StringExtensions.Left*
   commentId: Overload:NuvTools.Common.Strings.StringExtensions.Left
   isExternal: true
@@ -565,33 +703,159 @@ references:
 - uid: NuvTools.Common.Strings.StringExtensions.Format*
   commentId: Overload:NuvTools.Common.Strings.StringExtensions.Format
   isExternal: true
-  href: NuvTools.Common.Strings.StringExtensions.html#NuvTools_Common_Strings_StringExtensions_Format_System_String_System_String___
+  href: NuvTools.Common.Strings.StringExtensions.html#NuvTools_Common_Strings_StringExtensions_Format_System_String_System_Object___
   name: Format
   nameWithType: StringExtensions.Format
   fullName: NuvTools.Common.Strings.StringExtensions.Format
-- uid: System.String[]
+- uid: System.Object[]
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string[]
-  nameWithType: string[]
-  fullName: string[]
-  nameWithType.vb: String()
-  fullName.vb: String()
-  name.vb: String()
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object[]
+  nameWithType: object[]
+  fullName: object[]
+  nameWithType.vb: Object()
+  fullName.vb: Object()
+  name.vb: Object()
   spec.csharp:
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: (
+  - name: )
+- uid: System.IFormatProvider
+  commentId: T:System.IFormatProvider
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iformatprovider
+  name: IFormatProvider
+  nameWithType: IFormatProvider
+  fullName: System.IFormatProvider
+- uid: System.Collections.Generic.Dictionary{System.String,System.Object}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.Object}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, object>
+  nameWithType: Dictionary<string, object>
+  fullName: System.Collections.Generic.Dictionary<string, object>
+  nameWithType.vb: Dictionary(Of String, Object)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, Object)
+  name.vb: Dictionary(Of String, Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
   - uid: System.String
     name: string
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: '['
-  - name: ']'
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
   spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
   - uid: System.String
     name: String
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: (
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: NuvTools.Common.Strings.StringExtensions.RemoveDiacritics*
   commentId: Overload:NuvTools.Common.Strings.StringExtensions.RemoveDiacritics
   isExternal: true

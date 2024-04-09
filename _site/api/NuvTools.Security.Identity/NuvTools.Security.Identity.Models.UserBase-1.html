@@ -2,11 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class UserBase&lt;TKey&gt;
- | Nuv Tools Framework Docs </title>
+      <title>Class UserBase&lt;TKey&gt; | Nuv Tools Framework Docs </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class UserBase&lt;TKey&gt;
- | Nuv Tools Framework Docs ">
+      <meta name="title" content="Class UserBase&lt;TKey&gt; | Nuv Tools Framework Docs ">
+      
       
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
@@ -29,15 +28,16 @@
       <meta name="loc:themeAuto" content="Auto">
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -89,8 +89,7 @@
 
 
   <h1 id="NuvTools_Security_Identity_Models_UserBase_1" data-uid="NuvTools.Security.Identity.Models.UserBase`1" class="text-break">
-    Class UserBase&lt;TKey&gt;
-  
+Class UserBase&lt;TKey&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/bfc33d00ec048c7ef8ba757e92d286067d8ebc39/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -124,7 +123,7 @@
 
 
 
-  <dl class="typelist derived">
+  <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
     <div>
@@ -205,7 +204,7 @@
 
   <h3 id="NuvTools_Security_Identity_Models_UserBase_1__ctor" data-uid="NuvTools.Security.Identity.Models.UserBase`1.#ctor">
   UserBase()
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/bfc33d00ec048c7ef8ba757e92d286067d8ebc39/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -235,7 +234,7 @@
 
   <h3 id="NuvTools_Security_Identity_Models_UserBase_1_Email" data-uid="NuvTools.Security.Identity.Models.UserBase`1.Email">
   Email
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/bfc33d00ec048c7ef8ba757e92d286067d8ebc39/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -243,8 +242,8 @@
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Display(Name = &quot;Email&quot;, ResourceType = typeof(Fields))]
-[Required(ErrorMessageResourceName = &quot;XRequired&quot;, ErrorMessageResourceType = typeof(Messages))]
-[MaxLength(100, ErrorMessageResourceName = &quot;XMustBeUpToYCharacters&quot;, ErrorMessageResourceType = typeof(Messages))]
+[Required(ErrorMessageResourceName = &quot;XRequired&quot;, ErrorMessageResourceType = typeof(DynamicValidationMessages))]
+[MaxLength(100, ErrorMessageResourceName = &quot;XMustBeUpToYCharacters&quot;, ErrorMessageResourceType = typeof(DynamicValidationMessages))]
 [EmailAddress(ErrorMessageResourceName = &quot;InvalidEmail&quot;, ErrorMessageResourceType = typeof(Messages))]
 public override string Email { get; set; }</code></pre>
   </div>
@@ -270,7 +269,7 @@ public override string Email { get; set; }</code></pre>
 
   <h3 id="NuvTools_Security_Identity_Models_UserBase_1_Name" data-uid="NuvTools.Security.Identity.Models.UserBase`1.Name">
   Name
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/bfc33d00ec048c7ef8ba757e92d286067d8ebc39/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -278,7 +277,7 @@ public override string Email { get; set; }</code></pre>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Display(Name = &quot;Name&quot;, ResourceType = typeof(Fields))]
-[MaxLength(50, ErrorMessageResourceName = &quot;XMustBeUpToYCharacters&quot;, ErrorMessageResourceType = typeof(Messages))]
+[MaxLength(50, ErrorMessageResourceName = &quot;XMustBeUpToYCharacters&quot;, ErrorMessageResourceType = typeof(DynamicValidationMessages))]
 public virtual string Name { get; set; }</code></pre>
   </div>
 
@@ -303,7 +302,7 @@ public virtual string Name { get; set; }</code></pre>
 
   <h3 id="NuvTools_Security_Identity_Models_UserBase_1_Password" data-uid="NuvTools.Security.Identity.Models.UserBase`1.Password">
   Password
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/bfc33d00ec048c7ef8ba757e92d286067d8ebc39/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -312,9 +311,9 @@ public virtual string Name { get; set; }</code></pre>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[NotMapped]
 [Display(Name = &quot;Password&quot;, ResourceType = typeof(Fields))]
-[Required(ErrorMessageResourceName = &quot;XRequired&quot;, ErrorMessageResourceType = typeof(Messages))]
-[MaxLength(40, ErrorMessageResourceName = &quot;XMustBeUpToYCharacters&quot;, ErrorMessageResourceType = typeof(Messages))]
-[MinLength(6, ErrorMessageResourceName = &quot;XShouldHaveAtLeastYCharacters&quot;, ErrorMessageResourceType = typeof(Messages))]
+[Required(ErrorMessageResourceName = &quot;XRequired&quot;, ErrorMessageResourceType = typeof(DynamicValidationMessages))]
+[MaxLength(40, ErrorMessageResourceName = &quot;XMustBeUpToYCharacters&quot;, ErrorMessageResourceType = typeof(DynamicValidationMessages))]
+[MinLength(6, ErrorMessageResourceName = &quot;XShouldHaveAtLeastYCharacters&quot;, ErrorMessageResourceType = typeof(DynamicValidationMessages))]
 public virtual string Password { get; set; }</code></pre>
   </div>
 
@@ -339,7 +338,7 @@ public virtual string Password { get; set; }</code></pre>
 
   <h3 id="NuvTools_Security_Identity_Models_UserBase_1_RefreshToken" data-uid="NuvTools.Security.Identity.Models.UserBase`1.RefreshToken">
   RefreshToken
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/bfc33d00ec048c7ef8ba757e92d286067d8ebc39/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -371,7 +370,7 @@ public string RefreshToken { get; set; }</code></pre>
 
   <h3 id="NuvTools_Security_Identity_Models_UserBase_1_RefreshTokenExpiryTime" data-uid="NuvTools.Security.Identity.Models.UserBase`1.RefreshTokenExpiryTime">
   RefreshTokenExpiryTime
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/bfc33d00ec048c7ef8ba757e92d286067d8ebc39/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -403,7 +402,7 @@ public DateTime RefreshTokenExpiryTime { get; set; }</code></pre>
 
   <h3 id="NuvTools_Security_Identity_Models_UserBase_1_Status" data-uid="NuvTools.Security.Identity.Models.UserBase`1.Status">
   Status
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/bfc33d00ec048c7ef8ba757e92d286067d8ebc39/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -435,7 +434,7 @@ public virtual bool Status { get; set; }</code></pre>
 
   <h3 id="NuvTools_Security_Identity_Models_UserBase_1_Surname" data-uid="NuvTools.Security.Identity.Models.UserBase`1.Surname">
   Surname
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/bfc33d00ec048c7ef8ba757e92d286067d8ebc39/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -443,7 +442,7 @@ public virtual bool Status { get; set; }</code></pre>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Display(Name = &quot;Surname&quot;, ResourceType = typeof(Fields))]
-[MaxLength(50, ErrorMessageResourceName = &quot;XMustBeUpToYCharacters&quot;, ErrorMessageResourceType = typeof(Messages))]
+[MaxLength(50, ErrorMessageResourceName = &quot;XMustBeUpToYCharacters&quot;, ErrorMessageResourceType = typeof(DynamicValidationMessages))]
 public virtual string Surname { get; set; }</code></pre>
   </div>
 
@@ -468,6 +467,7 @@ public virtual string Surname { get; set; }</code></pre>
 </article>
 
         <div class="contribution d-print-none">
+          <a href="https://github.com/nuvtools/nuvtools-security-identity/blob/bfc33d00ec048c7ef8ba757e92d286067d8ebc39/src/NuvTools.Security.Identity.Models/UserBase.cs" class="edit-link">Edit this page</a>
         </div>
 
 
@@ -480,7 +480,7 @@ public virtual string Surname { get; set; }</code></pre>
 
     <div class="container-xxl search-results" id="search-results"></div>
 
-    <footer class="border-top">
+    <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
           <span>Supported by the <a href="https://nuv.tools" target="_blank">Nuv Tools</a>. Documentation generated by <a href="https://dotnet.github.io/docfx" target="_blank">docfx</a></span>.

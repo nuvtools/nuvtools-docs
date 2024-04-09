@@ -17,33 +17,35 @@ items:
   langs:
   - csharp
   - vb
-  name: ServiceWithCrudBase<TContext, TForm, TData, TKey>
-  nameWithType: ServiceWithCrudBase<TContext, TForm, TData, TKey>
-  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TForm, TData, TKey>
+  name: ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>
+  nameWithType: ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>
+  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>
   type: Class
+  source:
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs
   assemblies:
   - NuvTools.AspNetCore.EntityFrameworkCore
   namespace: NuvTools.AspNetCore.EntityFrameworkCore.Mapper
   syntax:
-    content: 'public abstract class ServiceWithCrudBase<TContext, TForm, TData, TKey> : ServiceWithMapperBase<TForm, TData> where TContext : DbContext where TForm : class where TData : class'
+    content: 'public abstract class ServiceWithCrudBase<TContext, TDTO, TEntity, TKey> : ServiceWithMapperBase<TDTO, TEntity> where TContext : DbContext where TDTO : class where TEntity : class'
     typeParameters:
     - id: TContext
-    - id: TForm
-    - id: TData
+    - id: TDTO
+    - id: TEntity
     - id: TKey
-    content.vb: Public MustInherit Class ServiceWithCrudBase(Of TContext As DbContext, TForm As Class, TData As Class, TKey) Inherits ServiceWithMapperBase(Of TForm, TData)
+    content.vb: Public MustInherit Class ServiceWithCrudBase(Of TContext As DbContext, TDTO As Class, TEntity As Class, TKey) Inherits ServiceWithMapperBase(Of TDTO, TEntity)
   inheritance:
   - System.Object
-  - NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TForm},{TData}}
+  - NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}
   inheritedMembers:
-  - NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TForm},{TData}}.ConvertTo``1({TData})
-  - NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TForm},{TData}}.ConvertTo``1(System.Collections.Generic.IEnumerable{{TData}})
-  - NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TForm},{TData}}.ConvertToData({TForm})
-  - NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TForm},{TData}}.ConvertToForm({TData})
-  - NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TForm},{TData}}.ConvertToForm(System.Collections.Generic.IEnumerable{{TData}})
-  - NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TForm},{TData}}.ConvertToForm(System.Collections.Generic.IList{{TData}})
-  - NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TForm},{TData}}.ConvertToForm({TData}[])
-  - NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TForm},{TData}}.Mapper
+  - NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}.ConvertTo``1({TEntity})
+  - NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}.ConvertTo``1(System.Collections.Generic.IEnumerable{{TEntity}})
+  - NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}.ConvertToEntity({TDTO})
+  - NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}.ConvertToDTO({TEntity})
+  - NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}.ConvertToDTO(System.Collections.Generic.IEnumerable{{TEntity}})
+  - NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}.ConvertToDTO(System.Collections.Generic.IList{{TEntity}})
+  - NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}.ConvertToDTO({TEntity}[])
+  - NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}.Mapper
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ToString
@@ -51,9 +53,9 @@ items:
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.GetHashCode
-  nameWithType.vb: ServiceWithCrudBase(Of TContext, TForm, TData, TKey)
-  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TForm, TData, TKey)
-  name.vb: ServiceWithCrudBase(Of TContext, TForm, TData, TKey)
+  nameWithType.vb: ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey)
+  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey)
+  name.vb: ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey)
 - uid: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.Context
   commentId: F:NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.Context
   id: Context
@@ -62,9 +64,11 @@ items:
   - csharp
   - vb
   name: Context
-  nameWithType: ServiceWithCrudBase<TContext, TForm, TData, TKey>.Context
-  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TForm, TData, TKey>.Context
+  nameWithType: ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.Context
+  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.Context
   type: Field
+  source:
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs
   assemblies:
   - NuvTools.AspNetCore.EntityFrameworkCore
   namespace: NuvTools.AspNetCore.EntityFrameworkCore.Mapper
@@ -73,8 +77,8 @@ items:
     return:
       type: '{TContext}'
     content.vb: Protected ReadOnly Context As TContext
-  nameWithType.vb: ServiceWithCrudBase(Of TContext, TForm, TData, TKey).Context
-  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TForm, TData, TKey).Context
+  nameWithType.vb: ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).Context
+  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).Context
 - uid: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.#ctor(`0,AutoMapper.IMapper)
   commentId: M:NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.#ctor(`0,AutoMapper.IMapper)
   id: '#ctor(`0,AutoMapper.IMapper)'
@@ -83,9 +87,11 @@ items:
   - csharp
   - vb
   name: ServiceWithCrudBase(TContext, IMapper)
-  nameWithType: ServiceWithCrudBase<TContext, TForm, TData, TKey>.ServiceWithCrudBase(TContext, IMapper)
-  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TForm, TData, TKey>.ServiceWithCrudBase(TContext, AutoMapper.IMapper)
+  nameWithType: ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.ServiceWithCrudBase(TContext, IMapper)
+  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.ServiceWithCrudBase(TContext, AutoMapper.IMapper)
   type: Constructor
+  source:
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs
   assemblies:
   - NuvTools.AspNetCore.EntityFrameworkCore
   namespace: NuvTools.AspNetCore.EntityFrameworkCore.Mapper
@@ -98,8 +104,8 @@ items:
       type: AutoMapper.IMapper
     content.vb: Public Sub New(context As TContext, mapper As IMapper)
   overload: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.#ctor*
-  nameWithType.vb: ServiceWithCrudBase(Of TContext, TForm, TData, TKey).New(TContext, IMapper)
-  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TForm, TData, TKey).New(TContext, AutoMapper.IMapper)
+  nameWithType.vb: ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).New(TContext, IMapper)
+  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).New(TContext, AutoMapper.IMapper)
   name.vb: New(TContext, IMapper)
 - uid: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.FindAsync(`3)
   commentId: M:NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.FindAsync(`3)
@@ -109,23 +115,25 @@ items:
   - csharp
   - vb
   name: FindAsync(TKey)
-  nameWithType: ServiceWithCrudBase<TContext, TForm, TData, TKey>.FindAsync(TKey)
-  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TForm, TData, TKey>.FindAsync(TKey)
+  nameWithType: ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.FindAsync(TKey)
+  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.FindAsync(TKey)
   type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs
   assemblies:
   - NuvTools.AspNetCore.EntityFrameworkCore
   namespace: NuvTools.AspNetCore.EntityFrameworkCore.Mapper
   syntax:
-    content: public Task<TForm> FindAsync(TKey id)
+    content: public Task<TDTO> FindAsync(TKey id)
     parameters:
     - id: id
       type: '{TKey}'
     return:
-      type: System.Threading.Tasks.Task{{TForm}}
-    content.vb: Public Function FindAsync(id As TKey) As Task(Of TForm)
+      type: System.Threading.Tasks.Task{{TDTO}}
+    content.vb: Public Function FindAsync(id As TKey) As Task(Of TDTO)
   overload: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.FindAsync*
-  nameWithType.vb: ServiceWithCrudBase(Of TContext, TForm, TData, TKey).FindAsync(TKey)
-  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TForm, TData, TKey).FindAsync(TKey)
+  nameWithType.vb: ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).FindAsync(TKey)
+  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).FindAsync(TKey)
 - uid: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.FindAsync(System.Object[])
   commentId: M:NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.FindAsync(System.Object[])
   id: FindAsync(System.Object[])
@@ -134,23 +142,25 @@ items:
   - csharp
   - vb
   name: FindAsync(object[])
-  nameWithType: ServiceWithCrudBase<TContext, TForm, TData, TKey>.FindAsync(object[])
-  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TForm, TData, TKey>.FindAsync(object[])
+  nameWithType: ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.FindAsync(object[])
+  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.FindAsync(object[])
   type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs
   assemblies:
   - NuvTools.AspNetCore.EntityFrameworkCore
   namespace: NuvTools.AspNetCore.EntityFrameworkCore.Mapper
   syntax:
-    content: public Task<TForm> FindAsync(object[] keys)
+    content: public Task<TDTO> FindAsync(object[] keys)
     parameters:
     - id: keys
       type: System.Object[]
     return:
-      type: System.Threading.Tasks.Task{{TForm}}
-    content.vb: Public Function FindAsync(keys As Object()) As Task(Of TForm)
+      type: System.Threading.Tasks.Task{{TDTO}}
+    content.vb: Public Function FindAsync(keys As Object()) As Task(Of TDTO)
   overload: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.FindAsync*
-  nameWithType.vb: ServiceWithCrudBase(Of TContext, TForm, TData, TKey).FindAsync(Object())
-  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TForm, TData, TKey).FindAsync(Object())
+  nameWithType.vb: ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).FindAsync(Object())
+  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).FindAsync(Object())
   name.vb: FindAsync(Object())
 - uid: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.FindFromExpressionAsync(System.Linq.Expressions.Expression{System.Func{System.Linq.IQueryable{`2}}})
   commentId: M:NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.FindFromExpressionAsync(System.Linq.Expressions.Expression{System.Func{System.Linq.IQueryable{`2}}})
@@ -159,25 +169,27 @@ items:
   langs:
   - csharp
   - vb
-  name: FindFromExpressionAsync(Expression<Func<IQueryable<TData>>>)
-  nameWithType: ServiceWithCrudBase<TContext, TForm, TData, TKey>.FindFromExpressionAsync(Expression<Func<IQueryable<TData>>>)
-  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TForm, TData, TKey>.FindFromExpressionAsync(System.Linq.Expressions.Expression<System.Func<System.Linq.IQueryable<TData>>>)
+  name: FindFromExpressionAsync(Expression<Func<IQueryable<TEntity>>>)
+  nameWithType: ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.FindFromExpressionAsync(Expression<Func<IQueryable<TEntity>>>)
+  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.FindFromExpressionAsync(System.Linq.Expressions.Expression<System.Func<System.Linq.IQueryable<TEntity>>>)
   type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs
   assemblies:
   - NuvTools.AspNetCore.EntityFrameworkCore
   namespace: NuvTools.AspNetCore.EntityFrameworkCore.Mapper
   syntax:
-    content: public Task<IEnumerable<TForm>> FindFromExpressionAsync(Expression<Func<IQueryable<TData>>> expression)
+    content: public Task<IEnumerable<TDTO>> FindFromExpressionAsync(Expression<Func<IQueryable<TEntity>>> expression)
     parameters:
     - id: expression
-      type: System.Linq.Expressions.Expression{System.Func{System.Linq.IQueryable{{TData}}}}
+      type: System.Linq.Expressions.Expression{System.Func{System.Linq.IQueryable{{TEntity}}}}
     return:
-      type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{{TForm}}}
-    content.vb: Public Function FindFromExpressionAsync(expression As Expression(Of Func(Of IQueryable(Of TData)))) As Task(Of IEnumerable(Of TForm))
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{{TDTO}}}
+    content.vb: Public Function FindFromExpressionAsync(expression As Expression(Of Func(Of IQueryable(Of TEntity)))) As Task(Of IEnumerable(Of TDTO))
   overload: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.FindFromExpressionAsync*
-  nameWithType.vb: ServiceWithCrudBase(Of TContext, TForm, TData, TKey).FindFromExpressionAsync(Expression(Of Func(Of IQueryable(Of TData))))
-  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TForm, TData, TKey).FindFromExpressionAsync(System.Linq.Expressions.Expression(Of System.Func(Of System.Linq.IQueryable(Of TData))))
-  name.vb: FindFromExpressionAsync(Expression(Of Func(Of IQueryable(Of TData))))
+  nameWithType.vb: ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).FindFromExpressionAsync(Expression(Of Func(Of IQueryable(Of TEntity))))
+  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).FindFromExpressionAsync(System.Linq.Expressions.Expression(Of System.Func(Of System.Linq.IQueryable(Of TEntity))))
+  name.vb: FindFromExpressionAsync(Expression(Of Func(Of IQueryable(Of TEntity))))
 - uid: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.AddAndSaveAsync(`1)
   commentId: M:NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.AddAndSaveAsync(`1)
   id: AddAndSaveAsync(`1)
@@ -185,24 +197,26 @@ items:
   langs:
   - csharp
   - vb
-  name: AddAndSaveAsync(TForm)
-  nameWithType: ServiceWithCrudBase<TContext, TForm, TData, TKey>.AddAndSaveAsync(TForm)
-  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TForm, TData, TKey>.AddAndSaveAsync(TForm)
+  name: AddAndSaveAsync(TDTO)
+  nameWithType: ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.AddAndSaveAsync(TDTO)
+  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.AddAndSaveAsync(TDTO)
   type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs
   assemblies:
   - NuvTools.AspNetCore.EntityFrameworkCore
   namespace: NuvTools.AspNetCore.EntityFrameworkCore.Mapper
   syntax:
-    content: public virtual Task<IResult<TKey>> AddAndSaveAsync(TForm model)
+    content: public virtual Task<IResult<TKey>> AddAndSaveAsync(TDTO model)
     parameters:
     - id: model
-      type: '{TForm}'
+      type: '{TDTO}'
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{{TKey}}}
-    content.vb: Public Overridable Function AddAndSaveAsync(model As TForm) As Task(Of IResult(Of TKey))
+    content.vb: Public Overridable Function AddAndSaveAsync(model As TDTO) As Task(Of IResult(Of TKey))
   overload: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.AddAndSaveAsync*
-  nameWithType.vb: ServiceWithCrudBase(Of TContext, TForm, TData, TKey).AddAndSaveAsync(TForm)
-  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TForm, TData, TKey).AddAndSaveAsync(TForm)
+  nameWithType.vb: ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).AddAndSaveAsync(TDTO)
+  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).AddAndSaveAsync(TDTO)
 - uid: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.UpdateAndSaveAsync(`3,`1)
   commentId: M:NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.UpdateAndSaveAsync(`3,`1)
   id: UpdateAndSaveAsync(`3,`1)
@@ -210,26 +224,28 @@ items:
   langs:
   - csharp
   - vb
-  name: UpdateAndSaveAsync(TKey, TForm)
-  nameWithType: ServiceWithCrudBase<TContext, TForm, TData, TKey>.UpdateAndSaveAsync(TKey, TForm)
-  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TForm, TData, TKey>.UpdateAndSaveAsync(TKey, TForm)
+  name: UpdateAndSaveAsync(TKey, TDTO)
+  nameWithType: ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.UpdateAndSaveAsync(TKey, TDTO)
+  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.UpdateAndSaveAsync(TKey, TDTO)
   type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs
   assemblies:
   - NuvTools.AspNetCore.EntityFrameworkCore
   namespace: NuvTools.AspNetCore.EntityFrameworkCore.Mapper
   syntax:
-    content: public virtual Task<IResult> UpdateAndSaveAsync(TKey id, TForm model)
+    content: public virtual Task<IResult> UpdateAndSaveAsync(TKey id, TDTO model)
     parameters:
     - id: id
       type: '{TKey}'
     - id: model
-      type: '{TForm}'
+      type: '{TDTO}'
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
-    content.vb: Public Overridable Function UpdateAndSaveAsync(id As TKey, model As TForm) As Task(Of IResult)
+    content.vb: Public Overridable Function UpdateAndSaveAsync(id As TKey, model As TDTO) As Task(Of IResult)
   overload: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.UpdateAndSaveAsync*
-  nameWithType.vb: ServiceWithCrudBase(Of TContext, TForm, TData, TKey).UpdateAndSaveAsync(TKey, TForm)
-  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TForm, TData, TKey).UpdateAndSaveAsync(TKey, TForm)
+  nameWithType.vb: ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).UpdateAndSaveAsync(TKey, TDTO)
+  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).UpdateAndSaveAsync(TKey, TDTO)
 - uid: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.RemoveAndSaveAsync(`3)
   commentId: M:NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.RemoveAndSaveAsync(`3)
   id: RemoveAndSaveAsync(`3)
@@ -238,9 +254,11 @@ items:
   - csharp
   - vb
   name: RemoveAndSaveAsync(TKey)
-  nameWithType: ServiceWithCrudBase<TContext, TForm, TData, TKey>.RemoveAndSaveAsync(TKey)
-  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TForm, TData, TKey>.RemoveAndSaveAsync(TKey)
+  nameWithType: ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.RemoveAndSaveAsync(TKey)
+  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.RemoveAndSaveAsync(TKey)
   type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs
   assemblies:
   - NuvTools.AspNetCore.EntityFrameworkCore
   namespace: NuvTools.AspNetCore.EntityFrameworkCore.Mapper
@@ -253,8 +271,8 @@ items:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
     content.vb: Public Overridable Function RemoveAndSaveAsync(id As TKey) As Task(Of IResult)
   overload: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.RemoveAndSaveAsync*
-  nameWithType.vb: ServiceWithCrudBase(Of TContext, TForm, TData, TKey).RemoveAndSaveAsync(TKey)
-  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TForm, TData, TKey).RemoveAndSaveAsync(TKey)
+  nameWithType.vb: ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).RemoveAndSaveAsync(TKey)
+  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).RemoveAndSaveAsync(TKey)
 - uid: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.Dataset
   commentId: P:NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.Dataset
   id: Dataset
@@ -263,21 +281,23 @@ items:
   - csharp
   - vb
   name: Dataset
-  nameWithType: ServiceWithCrudBase<TContext, TForm, TData, TKey>.Dataset
-  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TForm, TData, TKey>.Dataset
+  nameWithType: ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.Dataset
+  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.Dataset
   type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs
   assemblies:
   - NuvTools.AspNetCore.EntityFrameworkCore
   namespace: NuvTools.AspNetCore.EntityFrameworkCore.Mapper
   syntax:
-    content: public DbSet<TData> Dataset { get; }
+    content: public DbSet<TEntity> Dataset { get; }
     parameters: []
     return:
-      type: Microsoft.EntityFrameworkCore.DbSet{{TData}}
-    content.vb: Public ReadOnly Property Dataset As DbSet(Of TData)
+      type: Microsoft.EntityFrameworkCore.DbSet{{TEntity}}
+    content.vb: Public ReadOnly Property Dataset As DbSet(Of TEntity)
   overload: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.Dataset*
-  nameWithType.vb: ServiceWithCrudBase(Of TContext, TForm, TData, TKey).Dataset
-  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TForm, TData, TKey).Dataset
+  nameWithType.vb: ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).Dataset
+  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).Dataset
 references:
 - uid: NuvTools.AspNetCore.EntityFrameworkCore.Mapper
   commentId: N:NuvTools.AspNetCore.EntityFrameworkCore.Mapper
@@ -337,85 +357,92 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TForm},{TData}}
+- uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}
   commentId: T:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}
   parent: NuvTools.AspNetCore.Mapper
   definition: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2
-  name: ServiceWithMapperBase<TForm, TData>
-  nameWithType: ServiceWithMapperBase<TForm, TData>
-  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TForm, TData>
-  nameWithType.vb: ServiceWithMapperBase(Of TForm, TData)
-  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TForm, TData)
-  name.vb: ServiceWithMapperBase(Of TForm, TData)
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  name: ServiceWithMapperBase<TDTO, TEntity>
+  nameWithType: ServiceWithMapperBase<TDTO, TEntity>
+  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>
+  nameWithType.vb: ServiceWithMapperBase(Of TDTO, TEntity)
+  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TDTO, TEntity)
+  name.vb: ServiceWithMapperBase(Of TDTO, TEntity)
   spec.csharp:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2
     name: ServiceWithMapperBase
     isExternal: true
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: <
-  - name: TForm
+  - name: TDTO
   - name: ','
   - name: " "
-  - name: TData
+  - name: TEntity
   - name: '>'
   spec.vb:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2
     name: ServiceWithMapperBase
     isExternal: true
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - name: Of
   - name: " "
-  - name: TForm
+  - name: TDTO
   - name: ','
   - name: " "
-  - name: TData
+  - name: TEntity
   - name: )
-- uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TForm},{TData}}.ConvertTo``1({TData})
+- uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}.ConvertTo``1({TEntity})
   commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertTo``1(`2)
-  parent: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TForm},{TData}}
+  parent: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}
   definition: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertTo``1(`1)
-  name: ConvertTo<TReturn>(TData)
-  nameWithType: ServiceWithMapperBase<TForm, TData>.ConvertTo<TReturn>(TData)
-  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TForm, TData>.ConvertTo<TReturn>(TData)
-  nameWithType.vb: ServiceWithMapperBase(Of TForm, TData).ConvertTo(Of TReturn)(TData)
-  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TForm, TData).ConvertTo(Of TReturn)(TData)
-  name.vb: ConvertTo(Of TReturn)(TData)
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  name: ConvertTo<TReturn>(TEntity)
+  nameWithType: ServiceWithMapperBase<TDTO, TEntity>.ConvertTo<TReturn>(TEntity)
+  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertTo<TReturn>(TEntity)
+  nameWithType.vb: ServiceWithMapperBase(Of TDTO, TEntity).ConvertTo(Of TReturn)(TEntity)
+  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TDTO, TEntity).ConvertTo(Of TReturn)(TEntity)
+  name.vb: ConvertTo(Of TReturn)(TEntity)
   spec.csharp:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertTo``1(`2)
     name: ConvertTo
     isExternal: true
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: <
   - name: TReturn
   - name: '>'
   - name: (
-  - name: TData
+  - name: TEntity
   - name: )
   spec.vb:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertTo``1(`2)
     name: ConvertTo
     isExternal: true
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - name: Of
   - name: " "
   - name: TReturn
   - name: )
   - name: (
-  - name: TData
+  - name: TEntity
   - name: )
-- uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TForm},{TData}}.ConvertTo``1(System.Collections.Generic.IEnumerable{{TData}})
+- uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}.ConvertTo``1(System.Collections.Generic.IEnumerable{{TEntity}})
   commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertTo``1(System.Collections.Generic.IEnumerable{`2})
-  parent: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TForm},{TData}}
+  parent: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}
   definition: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertTo``1(System.Collections.Generic.IEnumerable{`1})
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: ConvertTo<TReturn>(IEnumerable<TData>)
-  nameWithType: ServiceWithMapperBase<TForm, TData>.ConvertTo<TReturn>(IEnumerable<TData>)
-  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TForm, TData>.ConvertTo<TReturn>(System.Collections.Generic.IEnumerable<TData>)
-  nameWithType.vb: ServiceWithMapperBase(Of TForm, TData).ConvertTo(Of TReturn)(IEnumerable(Of TData))
-  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TForm, TData).ConvertTo(Of TReturn)(System.Collections.Generic.IEnumerable(Of TData))
-  name.vb: ConvertTo(Of TReturn)(IEnumerable(Of TData))
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  name: ConvertTo<TReturn>(IEnumerable<TEntity>)
+  nameWithType: ServiceWithMapperBase<TDTO, TEntity>.ConvertTo<TReturn>(IEnumerable<TEntity>)
+  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertTo<TReturn>(System.Collections.Generic.IEnumerable<TEntity>)
+  nameWithType.vb: ServiceWithMapperBase(Of TDTO, TEntity).ConvertTo(Of TReturn)(IEnumerable(Of TEntity))
+  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TDTO, TEntity).ConvertTo(Of TReturn)(System.Collections.Generic.IEnumerable(Of TEntity))
+  name.vb: ConvertTo(Of TReturn)(IEnumerable(Of TEntity))
   spec.csharp:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertTo``1(System.Collections.Generic.IEnumerable{`2})
     name: ConvertTo
     isExternal: true
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: <
   - name: TReturn
   - name: '>'
@@ -425,13 +452,14 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-  - name: TData
+  - name: TEntity
   - name: '>'
   - name: )
   spec.vb:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertTo``1(System.Collections.Generic.IEnumerable{`2})
     name: ConvertTo
     isExternal: true
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - name: Of
   - name: " "
@@ -445,83 +473,91 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - name: TData
+  - name: TEntity
   - name: )
   - name: )
-- uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TForm},{TData}}.ConvertToData({TForm})
-  commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToData(`1)
-  parent: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TForm},{TData}}
-  definition: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToData(`0)
-  name: ConvertToData(TForm)
-  nameWithType: ServiceWithMapperBase<TForm, TData>.ConvertToData(TForm)
-  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TForm, TData>.ConvertToData(TForm)
-  nameWithType.vb: ServiceWithMapperBase(Of TForm, TData).ConvertToData(TForm)
-  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TForm, TData).ConvertToData(TForm)
+- uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}.ConvertToEntity({TDTO})
+  commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToEntity(`1)
+  parent: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}
+  definition: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToEntity(`0)
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  name: ConvertToEntity(TDTO)
+  nameWithType: ServiceWithMapperBase<TDTO, TEntity>.ConvertToEntity(TDTO)
+  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertToEntity(TDTO)
+  nameWithType.vb: ServiceWithMapperBase(Of TDTO, TEntity).ConvertToEntity(TDTO)
+  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TDTO, TEntity).ConvertToEntity(TDTO)
   spec.csharp:
-  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToData(`1)
-    name: ConvertToData
+  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToEntity(`1)
+    name: ConvertToEntity
     isExternal: true
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
-  - name: TForm
+  - name: TDTO
   - name: )
   spec.vb:
-  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToData(`1)
-    name: ConvertToData
+  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToEntity(`1)
+    name: ConvertToEntity
     isExternal: true
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
-  - name: TForm
+  - name: TDTO
   - name: )
-- uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TForm},{TData}}.ConvertToForm({TData})
-  commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToForm(`2)
-  parent: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TForm},{TData}}
-  definition: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToForm(`1)
-  name: ConvertToForm(TData)
-  nameWithType: ServiceWithMapperBase<TForm, TData>.ConvertToForm(TData)
-  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TForm, TData>.ConvertToForm(TData)
-  nameWithType.vb: ServiceWithMapperBase(Of TForm, TData).ConvertToForm(TData)
-  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TForm, TData).ConvertToForm(TData)
+- uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}.ConvertToDTO({TEntity})
+  commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToDTO(`2)
+  parent: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}
+  definition: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(`1)
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  name: ConvertToDTO(TEntity)
+  nameWithType: ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(TEntity)
+  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(TEntity)
+  nameWithType.vb: ServiceWithMapperBase(Of TDTO, TEntity).ConvertToDTO(TEntity)
+  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TDTO, TEntity).ConvertToDTO(TEntity)
   spec.csharp:
-  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToForm(`2)
-    name: ConvertToForm
+  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToDTO(`2)
+    name: ConvertToDTO
     isExternal: true
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
-  - name: TData
+  - name: TEntity
   - name: )
   spec.vb:
-  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToForm(`2)
-    name: ConvertToForm
+  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToDTO(`2)
+    name: ConvertToDTO
     isExternal: true
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
-  - name: TData
+  - name: TEntity
   - name: )
-- uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TForm},{TData}}.ConvertToForm(System.Collections.Generic.IEnumerable{{TData}})
-  commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToForm(System.Collections.Generic.IEnumerable{`2})
-  parent: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TForm},{TData}}
-  definition: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToForm(System.Collections.Generic.IEnumerable{`1})
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: ConvertToForm(IEnumerable<TData>)
-  nameWithType: ServiceWithMapperBase<TForm, TData>.ConvertToForm(IEnumerable<TData>)
-  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TForm, TData>.ConvertToForm(System.Collections.Generic.IEnumerable<TData>)
-  nameWithType.vb: ServiceWithMapperBase(Of TForm, TData).ConvertToForm(IEnumerable(Of TData))
-  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TForm, TData).ConvertToForm(System.Collections.Generic.IEnumerable(Of TData))
-  name.vb: ConvertToForm(IEnumerable(Of TData))
+- uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}.ConvertToDTO(System.Collections.Generic.IEnumerable{{TEntity}})
+  commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToDTO(System.Collections.Generic.IEnumerable{`2})
+  parent: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}
+  definition: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(System.Collections.Generic.IEnumerable{`1})
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  name: ConvertToDTO(IEnumerable<TEntity>)
+  nameWithType: ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(IEnumerable<TEntity>)
+  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(System.Collections.Generic.IEnumerable<TEntity>)
+  nameWithType.vb: ServiceWithMapperBase(Of TDTO, TEntity).ConvertToDTO(IEnumerable(Of TEntity))
+  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TDTO, TEntity).ConvertToDTO(System.Collections.Generic.IEnumerable(Of TEntity))
+  name.vb: ConvertToDTO(IEnumerable(Of TEntity))
   spec.csharp:
-  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToForm(System.Collections.Generic.IEnumerable{`2})
-    name: ConvertToForm
+  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToDTO(System.Collections.Generic.IEnumerable{`2})
+    name: ConvertToDTO
     isExternal: true
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-  - name: TData
+  - name: TEntity
   - name: '>'
   - name: )
   spec.vb:
-  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToForm(System.Collections.Generic.IEnumerable{`2})
-    name: ConvertToForm
+  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToDTO(System.Collections.Generic.IEnumerable{`2})
+    name: ConvertToDTO
     isExternal: true
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
@@ -530,37 +566,39 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - name: TData
+  - name: TEntity
   - name: )
   - name: )
-- uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TForm},{TData}}.ConvertToForm(System.Collections.Generic.IList{{TData}})
-  commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToForm(System.Collections.Generic.IList{`2})
-  parent: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TForm},{TData}}
-  definition: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToForm(System.Collections.Generic.IList{`1})
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
-  name: ConvertToForm(IList<TData>)
-  nameWithType: ServiceWithMapperBase<TForm, TData>.ConvertToForm(IList<TData>)
-  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TForm, TData>.ConvertToForm(System.Collections.Generic.IList<TData>)
-  nameWithType.vb: ServiceWithMapperBase(Of TForm, TData).ConvertToForm(IList(Of TData))
-  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TForm, TData).ConvertToForm(System.Collections.Generic.IList(Of TData))
-  name.vb: ConvertToForm(IList(Of TData))
+- uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}.ConvertToDTO(System.Collections.Generic.IList{{TEntity}})
+  commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToDTO(System.Collections.Generic.IList{`2})
+  parent: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}
+  definition: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(System.Collections.Generic.IList{`1})
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  name: ConvertToDTO(IList<TEntity>)
+  nameWithType: ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(IList<TEntity>)
+  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(System.Collections.Generic.IList<TEntity>)
+  nameWithType.vb: ServiceWithMapperBase(Of TDTO, TEntity).ConvertToDTO(IList(Of TEntity))
+  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TDTO, TEntity).ConvertToDTO(System.Collections.Generic.IList(Of TEntity))
+  name.vb: ConvertToDTO(IList(Of TEntity))
   spec.csharp:
-  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToForm(System.Collections.Generic.IList{`2})
-    name: ConvertToForm
+  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToDTO(System.Collections.Generic.IList{`2})
+    name: ConvertToDTO
     isExternal: true
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - uid: System.Collections.Generic.IList`1
     name: IList
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
   - name: <
-  - name: TData
+  - name: TEntity
   - name: '>'
   - name: )
   spec.vb:
-  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToForm(System.Collections.Generic.IList{`2})
-    name: ConvertToForm
+  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToDTO(System.Collections.Generic.IList{`2})
+    name: ConvertToDTO
     isExternal: true
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - uid: System.Collections.Generic.IList`1
     name: IList
@@ -569,46 +607,50 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - name: TData
+  - name: TEntity
   - name: )
   - name: )
-- uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TForm},{TData}}.ConvertToForm({TData}[])
-  commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToForm(`2[])
-  parent: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TForm},{TData}}
-  definition: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToForm(`1[])
-  name: ConvertToForm(TData[])
-  nameWithType: ServiceWithMapperBase<TForm, TData>.ConvertToForm(TData[])
-  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TForm, TData>.ConvertToForm(TData[])
-  nameWithType.vb: ServiceWithMapperBase(Of TForm, TData).ConvertToForm(TData())
-  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TForm, TData).ConvertToForm(TData())
-  name.vb: ConvertToForm(TData())
+- uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}.ConvertToDTO({TEntity}[])
+  commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToDTO(`2[])
+  parent: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}
+  definition: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(`1[])
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  name: ConvertToDTO(TEntity[])
+  nameWithType: ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(TEntity[])
+  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(TEntity[])
+  nameWithType.vb: ServiceWithMapperBase(Of TDTO, TEntity).ConvertToDTO(TEntity())
+  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TDTO, TEntity).ConvertToDTO(TEntity())
+  name.vb: ConvertToDTO(TEntity())
   spec.csharp:
-  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToForm(`2[])
-    name: ConvertToForm
+  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToDTO(`2[])
+    name: ConvertToDTO
     isExternal: true
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
-  - name: TData
+  - name: TEntity
   - name: '['
   - name: ']'
   - name: )
   spec.vb:
-  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToForm(`2[])
-    name: ConvertToForm
+  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToDTO(`2[])
+    name: ConvertToDTO
     isExternal: true
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
-  - name: TData
+  - name: TEntity
   - name: (
   - name: )
   - name: )
-- uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TForm},{TData}}.Mapper
+- uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}.Mapper
   commentId: P:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.Mapper
-  parent: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TForm},{TData}}
+  parent: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}
   definition: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.Mapper
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   name: Mapper
-  nameWithType: ServiceWithMapperBase<TForm, TData>.Mapper
-  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TForm, TData>.Mapper
-  nameWithType.vb: ServiceWithMapperBase(Of TForm, TData).Mapper
-  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TForm, TData).Mapper
+  nameWithType: ServiceWithMapperBase<TDTO, TEntity>.Mapper
+  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.Mapper
+  nameWithType.vb: ServiceWithMapperBase(Of TDTO, TEntity).Mapper
+  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TDTO, TEntity).Mapper
 - uid: System.Object.GetType
   commentId: M:System.Object.GetType
   parent: System.Object
@@ -839,22 +881,22 @@ references:
   commentId: T:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2
   isExternal: true
   href: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase-2.html
-  name: ServiceWithMapperBase<TForm, TData>
-  nameWithType: ServiceWithMapperBase<TForm, TData>
-  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TForm, TData>
-  nameWithType.vb: ServiceWithMapperBase(Of TForm, TData)
-  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TForm, TData)
-  name.vb: ServiceWithMapperBase(Of TForm, TData)
+  name: ServiceWithMapperBase<TDTO, TEntity>
+  nameWithType: ServiceWithMapperBase<TDTO, TEntity>
+  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>
+  nameWithType.vb: ServiceWithMapperBase(Of TDTO, TEntity)
+  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TDTO, TEntity)
+  name.vb: ServiceWithMapperBase(Of TDTO, TEntity)
   spec.csharp:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2
     name: ServiceWithMapperBase
     isExternal: true
     href: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase-2.html
   - name: <
-  - name: TForm
+  - name: TDTO
   - name: ','
   - name: " "
-  - name: TData
+  - name: TEntity
   - name: '>'
   spec.vb:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2
@@ -864,10 +906,10 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - name: TForm
+  - name: TDTO
   - name: ','
   - name: " "
-  - name: TData
+  - name: TEntity
   - name: )
 - uid: NuvTools.AspNetCore.Mapper
   commentId: N:NuvTools.AspNetCore.Mapper
@@ -909,48 +951,52 @@ references:
 - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertTo``1(`1)
   commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertTo``1(`1)
   isExternal: true
-  name: ConvertTo<TReturn>(TData)
-  nameWithType: ServiceWithMapperBase<TForm, TData>.ConvertTo<TReturn>(TData)
-  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TForm, TData>.ConvertTo<TReturn>(TData)
-  nameWithType.vb: ServiceWithMapperBase(Of TForm, TData).ConvertTo(Of TReturn)(TData)
-  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TForm, TData).ConvertTo(Of TReturn)(TData)
-  name.vb: ConvertTo(Of TReturn)(TData)
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  name: ConvertTo<TReturn>(TEntity)
+  nameWithType: ServiceWithMapperBase<TDTO, TEntity>.ConvertTo<TReturn>(TEntity)
+  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertTo<TReturn>(TEntity)
+  nameWithType.vb: ServiceWithMapperBase(Of TDTO, TEntity).ConvertTo(Of TReturn)(TEntity)
+  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TDTO, TEntity).ConvertTo(Of TReturn)(TEntity)
+  name.vb: ConvertTo(Of TReturn)(TEntity)
   spec.csharp:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertTo``1(`1)
     name: ConvertTo
     isExternal: true
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: <
   - name: TReturn
   - name: '>'
   - name: (
-  - name: TData
+  - name: TEntity
   - name: )
   spec.vb:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertTo``1(`1)
     name: ConvertTo
     isExternal: true
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - name: Of
   - name: " "
   - name: TReturn
   - name: )
   - name: (
-  - name: TData
+  - name: TEntity
   - name: )
 - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertTo``1(System.Collections.Generic.IEnumerable{`1})
   commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertTo``1(System.Collections.Generic.IEnumerable{`1})
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: ConvertTo<TReturn>(IEnumerable<TData>)
-  nameWithType: ServiceWithMapperBase<TForm, TData>.ConvertTo<TReturn>(IEnumerable<TData>)
-  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TForm, TData>.ConvertTo<TReturn>(System.Collections.Generic.IEnumerable<TData>)
-  nameWithType.vb: ServiceWithMapperBase(Of TForm, TData).ConvertTo(Of TReturn)(IEnumerable(Of TData))
-  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TForm, TData).ConvertTo(Of TReturn)(System.Collections.Generic.IEnumerable(Of TData))
-  name.vb: ConvertTo(Of TReturn)(IEnumerable(Of TData))
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  name: ConvertTo<TReturn>(IEnumerable<TEntity>)
+  nameWithType: ServiceWithMapperBase<TDTO, TEntity>.ConvertTo<TReturn>(IEnumerable<TEntity>)
+  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertTo<TReturn>(System.Collections.Generic.IEnumerable<TEntity>)
+  nameWithType.vb: ServiceWithMapperBase(Of TDTO, TEntity).ConvertTo(Of TReturn)(IEnumerable(Of TEntity))
+  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TDTO, TEntity).ConvertTo(Of TReturn)(System.Collections.Generic.IEnumerable(Of TEntity))
+  name.vb: ConvertTo(Of TReturn)(IEnumerable(Of TEntity))
   spec.csharp:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertTo``1(System.Collections.Generic.IEnumerable{`1})
     name: ConvertTo
     isExternal: true
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: <
   - name: TReturn
   - name: '>'
@@ -960,13 +1006,14 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-  - name: TData
+  - name: TEntity
   - name: '>'
   - name: )
   spec.vb:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertTo``1(System.Collections.Generic.IEnumerable{`1})
     name: ConvertTo
     isExternal: true
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - name: Of
   - name: " "
@@ -980,80 +1027,88 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - name: TData
+  - name: TEntity
   - name: )
   - name: )
-- uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToData(`0)
-  commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToData(`0)
+- uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToEntity(`0)
+  commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToEntity(`0)
   isExternal: true
-  name: ConvertToData(TForm)
-  nameWithType: ServiceWithMapperBase<TForm, TData>.ConvertToData(TForm)
-  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TForm, TData>.ConvertToData(TForm)
-  nameWithType.vb: ServiceWithMapperBase(Of TForm, TData).ConvertToData(TForm)
-  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TForm, TData).ConvertToData(TForm)
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  name: ConvertToEntity(TDTO)
+  nameWithType: ServiceWithMapperBase<TDTO, TEntity>.ConvertToEntity(TDTO)
+  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertToEntity(TDTO)
+  nameWithType.vb: ServiceWithMapperBase(Of TDTO, TEntity).ConvertToEntity(TDTO)
+  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TDTO, TEntity).ConvertToEntity(TDTO)
   spec.csharp:
-  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToData(`0)
-    name: ConvertToData
+  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToEntity(`0)
+    name: ConvertToEntity
     isExternal: true
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
-  - name: TForm
+  - name: TDTO
   - name: )
   spec.vb:
-  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToData(`0)
-    name: ConvertToData
+  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToEntity(`0)
+    name: ConvertToEntity
     isExternal: true
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
-  - name: TForm
+  - name: TDTO
   - name: )
-- uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToForm(`1)
-  commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToForm(`1)
+- uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(`1)
+  commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(`1)
   isExternal: true
-  name: ConvertToForm(TData)
-  nameWithType: ServiceWithMapperBase<TForm, TData>.ConvertToForm(TData)
-  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TForm, TData>.ConvertToForm(TData)
-  nameWithType.vb: ServiceWithMapperBase(Of TForm, TData).ConvertToForm(TData)
-  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TForm, TData).ConvertToForm(TData)
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  name: ConvertToDTO(TEntity)
+  nameWithType: ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(TEntity)
+  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(TEntity)
+  nameWithType.vb: ServiceWithMapperBase(Of TDTO, TEntity).ConvertToDTO(TEntity)
+  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TDTO, TEntity).ConvertToDTO(TEntity)
   spec.csharp:
-  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToForm(`1)
-    name: ConvertToForm
+  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(`1)
+    name: ConvertToDTO
     isExternal: true
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
-  - name: TData
+  - name: TEntity
   - name: )
   spec.vb:
-  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToForm(`1)
-    name: ConvertToForm
+  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(`1)
+    name: ConvertToDTO
     isExternal: true
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
-  - name: TData
+  - name: TEntity
   - name: )
-- uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToForm(System.Collections.Generic.IEnumerable{`1})
-  commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToForm(System.Collections.Generic.IEnumerable{`1})
+- uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(System.Collections.Generic.IEnumerable{`1})
+  commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(System.Collections.Generic.IEnumerable{`1})
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: ConvertToForm(IEnumerable<TData>)
-  nameWithType: ServiceWithMapperBase<TForm, TData>.ConvertToForm(IEnumerable<TData>)
-  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TForm, TData>.ConvertToForm(System.Collections.Generic.IEnumerable<TData>)
-  nameWithType.vb: ServiceWithMapperBase(Of TForm, TData).ConvertToForm(IEnumerable(Of TData))
-  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TForm, TData).ConvertToForm(System.Collections.Generic.IEnumerable(Of TData))
-  name.vb: ConvertToForm(IEnumerable(Of TData))
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  name: ConvertToDTO(IEnumerable<TEntity>)
+  nameWithType: ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(IEnumerable<TEntity>)
+  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(System.Collections.Generic.IEnumerable<TEntity>)
+  nameWithType.vb: ServiceWithMapperBase(Of TDTO, TEntity).ConvertToDTO(IEnumerable(Of TEntity))
+  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TDTO, TEntity).ConvertToDTO(System.Collections.Generic.IEnumerable(Of TEntity))
+  name.vb: ConvertToDTO(IEnumerable(Of TEntity))
   spec.csharp:
-  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToForm(System.Collections.Generic.IEnumerable{`1})
-    name: ConvertToForm
+  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(System.Collections.Generic.IEnumerable{`1})
+    name: ConvertToDTO
     isExternal: true
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-  - name: TData
+  - name: TEntity
   - name: '>'
   - name: )
   spec.vb:
-  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToForm(System.Collections.Generic.IEnumerable{`1})
-    name: ConvertToForm
+  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(System.Collections.Generic.IEnumerable{`1})
+    name: ConvertToDTO
     isExternal: true
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
@@ -1062,36 +1117,38 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - name: TData
+  - name: TEntity
   - name: )
   - name: )
-- uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToForm(System.Collections.Generic.IList{`1})
-  commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToForm(System.Collections.Generic.IList{`1})
+- uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(System.Collections.Generic.IList{`1})
+  commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(System.Collections.Generic.IList{`1})
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
-  name: ConvertToForm(IList<TData>)
-  nameWithType: ServiceWithMapperBase<TForm, TData>.ConvertToForm(IList<TData>)
-  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TForm, TData>.ConvertToForm(System.Collections.Generic.IList<TData>)
-  nameWithType.vb: ServiceWithMapperBase(Of TForm, TData).ConvertToForm(IList(Of TData))
-  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TForm, TData).ConvertToForm(System.Collections.Generic.IList(Of TData))
-  name.vb: ConvertToForm(IList(Of TData))
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  name: ConvertToDTO(IList<TEntity>)
+  nameWithType: ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(IList<TEntity>)
+  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(System.Collections.Generic.IList<TEntity>)
+  nameWithType.vb: ServiceWithMapperBase(Of TDTO, TEntity).ConvertToDTO(IList(Of TEntity))
+  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TDTO, TEntity).ConvertToDTO(System.Collections.Generic.IList(Of TEntity))
+  name.vb: ConvertToDTO(IList(Of TEntity))
   spec.csharp:
-  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToForm(System.Collections.Generic.IList{`1})
-    name: ConvertToForm
+  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(System.Collections.Generic.IList{`1})
+    name: ConvertToDTO
     isExternal: true
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - uid: System.Collections.Generic.IList`1
     name: IList
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1
   - name: <
-  - name: TData
+  - name: TEntity
   - name: '>'
   - name: )
   spec.vb:
-  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToForm(System.Collections.Generic.IList{`1})
-    name: ConvertToForm
+  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(System.Collections.Generic.IList{`1})
+    name: ConvertToDTO
     isExternal: true
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - uid: System.Collections.Generic.IList`1
     name: IList
@@ -1100,44 +1157,48 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - name: TData
+  - name: TEntity
   - name: )
   - name: )
-- uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToForm(`1[])
-  commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToForm(`1[])
+- uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(`1[])
+  commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(`1[])
   isExternal: true
-  name: ConvertToForm(TData[])
-  nameWithType: ServiceWithMapperBase<TForm, TData>.ConvertToForm(TData[])
-  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TForm, TData>.ConvertToForm(TData[])
-  nameWithType.vb: ServiceWithMapperBase(Of TForm, TData).ConvertToForm(TData())
-  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TForm, TData).ConvertToForm(TData())
-  name.vb: ConvertToForm(TData())
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  name: ConvertToDTO(TEntity[])
+  nameWithType: ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(TEntity[])
+  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(TEntity[])
+  nameWithType.vb: ServiceWithMapperBase(Of TDTO, TEntity).ConvertToDTO(TEntity())
+  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TDTO, TEntity).ConvertToDTO(TEntity())
+  name.vb: ConvertToDTO(TEntity())
   spec.csharp:
-  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToForm(`1[])
-    name: ConvertToForm
+  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(`1[])
+    name: ConvertToDTO
     isExternal: true
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
-  - name: TData
+  - name: TEntity
   - name: '['
   - name: ']'
   - name: )
   spec.vb:
-  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToForm(`1[])
-    name: ConvertToForm
+  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(`1[])
+    name: ConvertToDTO
     isExternal: true
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
-  - name: TData
+  - name: TEntity
   - name: (
   - name: )
   - name: )
 - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.Mapper
   commentId: P:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.Mapper
   isExternal: true
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   name: Mapper
-  nameWithType: ServiceWithMapperBase<TForm, TData>.Mapper
-  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TForm, TData>.Mapper
-  nameWithType.vb: ServiceWithMapperBase(Of TForm, TData).Mapper
-  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TForm, TData).Mapper
+  nameWithType: ServiceWithMapperBase<TDTO, TEntity>.Mapper
+  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.Mapper
+  nameWithType.vb: ServiceWithMapperBase(Of TDTO, TEntity).Mapper
+  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TDTO, TEntity).Mapper
 - uid: '{TContext}'
   commentId: '!:TContext'
   definition: TContext
@@ -1153,10 +1214,10 @@ references:
   isExternal: true
   href: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase-4.html#NuvTools_AspNetCore_EntityFrameworkCore_Mapper_ServiceWithCrudBase_4__ctor__0_AutoMapper_IMapper_
   name: ServiceWithCrudBase
-  nameWithType: ServiceWithCrudBase<TContext, TForm, TData, TKey>.ServiceWithCrudBase
-  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TForm, TData, TKey>.ServiceWithCrudBase
-  nameWithType.vb: ServiceWithCrudBase(Of TContext, TForm, TData, TKey).New
-  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TForm, TData, TKey).New
+  nameWithType: ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.ServiceWithCrudBase
+  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.ServiceWithCrudBase
+  nameWithType.vb: ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).New
+  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).New
   name.vb: New
 - uid: AutoMapper.IMapper
   commentId: T:AutoMapper.IMapper
@@ -1176,34 +1237,34 @@ references:
   isExternal: true
   href: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase-4.html#NuvTools_AspNetCore_EntityFrameworkCore_Mapper_ServiceWithCrudBase_4_FindAsync__3_
   name: FindAsync
-  nameWithType: ServiceWithCrudBase<TContext, TForm, TData, TKey>.FindAsync
-  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TForm, TData, TKey>.FindAsync
-  nameWithType.vb: ServiceWithCrudBase(Of TContext, TForm, TData, TKey).FindAsync
-  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TForm, TData, TKey).FindAsync
+  nameWithType: ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.FindAsync
+  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.FindAsync
+  nameWithType.vb: ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).FindAsync
+  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).FindAsync
 - uid: '{TKey}'
   commentId: '!:TKey'
   definition: TKey
   name: TKey
   nameWithType: TKey
   fullName: TKey
-- uid: System.Threading.Tasks.Task{{TForm}}
+- uid: System.Threading.Tasks.Task{{TDTO}}
   commentId: T:System.Threading.Tasks.Task{`1}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<TForm>
-  nameWithType: Task<TForm>
-  fullName: System.Threading.Tasks.Task<TForm>
-  nameWithType.vb: Task(Of TForm)
-  fullName.vb: System.Threading.Tasks.Task(Of TForm)
-  name.vb: Task(Of TForm)
+  name: Task<TDTO>
+  nameWithType: Task<TDTO>
+  fullName: System.Threading.Tasks.Task<TDTO>
+  nameWithType.vb: Task(Of TDTO)
+  fullName.vb: System.Threading.Tasks.Task(Of TDTO)
+  name.vb: Task(Of TDTO)
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
-  - name: TForm
+  - name: TDTO
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -1213,7 +1274,7 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - name: TForm
+  - name: TDTO
   - name: )
 - uid: TKey
   name: TKey
@@ -1312,21 +1373,21 @@ references:
   isExternal: true
   href: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase-4.html#NuvTools_AspNetCore_EntityFrameworkCore_Mapper_ServiceWithCrudBase_4_FindFromExpressionAsync_System_Linq_Expressions_Expression_System_Func_System_Linq_IQueryable__2____
   name: FindFromExpressionAsync
-  nameWithType: ServiceWithCrudBase<TContext, TForm, TData, TKey>.FindFromExpressionAsync
-  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TForm, TData, TKey>.FindFromExpressionAsync
-  nameWithType.vb: ServiceWithCrudBase(Of TContext, TForm, TData, TKey).FindFromExpressionAsync
-  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TForm, TData, TKey).FindFromExpressionAsync
-- uid: System.Linq.Expressions.Expression{System.Func{System.Linq.IQueryable{{TData}}}}
+  nameWithType: ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.FindFromExpressionAsync
+  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.FindFromExpressionAsync
+  nameWithType.vb: ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).FindFromExpressionAsync
+  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).FindFromExpressionAsync
+- uid: System.Linq.Expressions.Expression{System.Func{System.Linq.IQueryable{{TEntity}}}}
   commentId: T:System.Linq.Expressions.Expression{System.Func{System.Linq.IQueryable{`2}}}
   parent: System.Linq.Expressions
   definition: System.Linq.Expressions.Expression`1
   href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
-  name: Expression<Func<IQueryable<TData>>>
-  nameWithType: Expression<Func<IQueryable<TData>>>
-  fullName: System.Linq.Expressions.Expression<System.Func<System.Linq.IQueryable<TData>>>
-  nameWithType.vb: Expression(Of Func(Of IQueryable(Of TData)))
-  fullName.vb: System.Linq.Expressions.Expression(Of System.Func(Of System.Linq.IQueryable(Of TData)))
-  name.vb: Expression(Of Func(Of IQueryable(Of TData)))
+  name: Expression<Func<IQueryable<TEntity>>>
+  nameWithType: Expression<Func<IQueryable<TEntity>>>
+  fullName: System.Linq.Expressions.Expression<System.Func<System.Linq.IQueryable<TEntity>>>
+  nameWithType.vb: Expression(Of Func(Of IQueryable(Of TEntity)))
+  fullName.vb: System.Linq.Expressions.Expression(Of System.Func(Of System.Linq.IQueryable(Of TEntity)))
+  name.vb: Expression(Of Func(Of IQueryable(Of TEntity)))
   spec.csharp:
   - uid: System.Linq.Expressions.Expression`1
     name: Expression
@@ -1343,7 +1404,7 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
   - name: <
-  - name: TData
+  - name: TEntity
   - name: '>'
   - name: '>'
   - name: '>'
@@ -1369,21 +1430,21 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - name: TData
+  - name: TEntity
   - name: )
   - name: )
   - name: )
-- uid: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{{TForm}}}
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{{TDTO}}}
   commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{`1}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<IEnumerable<TForm>>
-  nameWithType: Task<IEnumerable<TForm>>
-  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<TForm>>
-  nameWithType.vb: Task(Of IEnumerable(Of TForm))
-  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IEnumerable(Of TForm))
-  name.vb: Task(Of IEnumerable(Of TForm))
+  name: Task<IEnumerable<TDTO>>
+  nameWithType: Task<IEnumerable<TDTO>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<TDTO>>
+  nameWithType.vb: Task(Of IEnumerable(Of TDTO))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IEnumerable(Of TDTO))
+  name.vb: Task(Of IEnumerable(Of TDTO))
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
@@ -1395,7 +1456,7 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-  - name: TForm
+  - name: TDTO
   - name: '>'
   - name: '>'
   spec.vb:
@@ -1413,7 +1474,7 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - name: TForm
+  - name: TDTO
   - name: )
   - name: )
 - uid: System.Linq.Expressions.Expression`1
@@ -1486,16 +1547,16 @@ references:
   isExternal: true
   href: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase-4.html#NuvTools_AspNetCore_EntityFrameworkCore_Mapper_ServiceWithCrudBase_4_AddAndSaveAsync__1_
   name: AddAndSaveAsync
-  nameWithType: ServiceWithCrudBase<TContext, TForm, TData, TKey>.AddAndSaveAsync
-  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TForm, TData, TKey>.AddAndSaveAsync
-  nameWithType.vb: ServiceWithCrudBase(Of TContext, TForm, TData, TKey).AddAndSaveAsync
-  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TForm, TData, TKey).AddAndSaveAsync
-- uid: '{TForm}'
-  commentId: '!:TForm'
-  definition: TForm
-  name: TForm
-  nameWithType: TForm
-  fullName: TForm
+  nameWithType: ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.AddAndSaveAsync
+  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.AddAndSaveAsync
+  nameWithType.vb: ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).AddAndSaveAsync
+  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).AddAndSaveAsync
+- uid: '{TDTO}'
+  commentId: '!:TDTO'
+  definition: TDTO
+  name: TDTO
+  nameWithType: TDTO
+  fullName: TDTO
 - uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{{TKey}}}
   commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{`3}}
   parent: System.Threading.Tasks
@@ -1537,19 +1598,19 @@ references:
   - name: TKey
   - name: )
   - name: )
-- uid: TForm
-  name: TForm
-  nameWithType: TForm
-  fullName: TForm
+- uid: TDTO
+  name: TDTO
+  nameWithType: TDTO
+  fullName: TDTO
 - uid: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.UpdateAndSaveAsync*
   commentId: Overload:NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.UpdateAndSaveAsync
   isExternal: true
   href: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase-4.html#NuvTools_AspNetCore_EntityFrameworkCore_Mapper_ServiceWithCrudBase_4_UpdateAndSaveAsync__3__1_
   name: UpdateAndSaveAsync
-  nameWithType: ServiceWithCrudBase<TContext, TForm, TData, TKey>.UpdateAndSaveAsync
-  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TForm, TData, TKey>.UpdateAndSaveAsync
-  nameWithType.vb: ServiceWithCrudBase(Of TContext, TForm, TData, TKey).UpdateAndSaveAsync
-  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TForm, TData, TKey).UpdateAndSaveAsync
+  nameWithType: ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.UpdateAndSaveAsync
+  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.UpdateAndSaveAsync
+  nameWithType.vb: ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).UpdateAndSaveAsync
+  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).UpdateAndSaveAsync
 - uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
   commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
   parent: System.Threading.Tasks
@@ -1588,37 +1649,37 @@ references:
   isExternal: true
   href: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase-4.html#NuvTools_AspNetCore_EntityFrameworkCore_Mapper_ServiceWithCrudBase_4_RemoveAndSaveAsync__3_
   name: RemoveAndSaveAsync
-  nameWithType: ServiceWithCrudBase<TContext, TForm, TData, TKey>.RemoveAndSaveAsync
-  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TForm, TData, TKey>.RemoveAndSaveAsync
-  nameWithType.vb: ServiceWithCrudBase(Of TContext, TForm, TData, TKey).RemoveAndSaveAsync
-  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TForm, TData, TKey).RemoveAndSaveAsync
+  nameWithType: ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.RemoveAndSaveAsync
+  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.RemoveAndSaveAsync
+  nameWithType.vb: ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).RemoveAndSaveAsync
+  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).RemoveAndSaveAsync
 - uid: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.Dataset*
   commentId: Overload:NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.Dataset
   isExternal: true
   href: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase-4.html#NuvTools_AspNetCore_EntityFrameworkCore_Mapper_ServiceWithCrudBase_4_Dataset
   name: Dataset
-  nameWithType: ServiceWithCrudBase<TContext, TForm, TData, TKey>.Dataset
-  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TForm, TData, TKey>.Dataset
-  nameWithType.vb: ServiceWithCrudBase(Of TContext, TForm, TData, TKey).Dataset
-  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TForm, TData, TKey).Dataset
-- uid: Microsoft.EntityFrameworkCore.DbSet{{TData}}
+  nameWithType: ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.Dataset
+  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.Dataset
+  nameWithType.vb: ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).Dataset
+  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).Dataset
+- uid: Microsoft.EntityFrameworkCore.DbSet{{TEntity}}
   commentId: T:Microsoft.EntityFrameworkCore.DbSet{`2}
   parent: Microsoft.EntityFrameworkCore
   definition: Microsoft.EntityFrameworkCore.DbSet`1
   href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
-  name: DbSet<TData>
-  nameWithType: DbSet<TData>
-  fullName: Microsoft.EntityFrameworkCore.DbSet<TData>
-  nameWithType.vb: DbSet(Of TData)
-  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of TData)
-  name.vb: DbSet(Of TData)
+  name: DbSet<TEntity>
+  nameWithType: DbSet<TEntity>
+  fullName: Microsoft.EntityFrameworkCore.DbSet<TEntity>
+  nameWithType.vb: DbSet(Of TEntity)
+  fullName.vb: Microsoft.EntityFrameworkCore.DbSet(Of TEntity)
+  name.vb: DbSet(Of TEntity)
   spec.csharp:
   - uid: Microsoft.EntityFrameworkCore.DbSet`1
     name: DbSet
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
   - name: <
-  - name: TData
+  - name: TEntity
   - name: '>'
   spec.vb:
   - uid: Microsoft.EntityFrameworkCore.DbSet`1
@@ -1628,7 +1689,7 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - name: TData
+  - name: TEntity
   - name: )
 - uid: Microsoft.EntityFrameworkCore.DbSet`1
   commentId: T:Microsoft.EntityFrameworkCore.DbSet`1

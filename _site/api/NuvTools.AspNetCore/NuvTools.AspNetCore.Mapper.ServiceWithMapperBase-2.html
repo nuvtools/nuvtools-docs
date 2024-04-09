@@ -2,11 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class ServiceWithMapperBase&lt;TForm, TData&gt;
- | Nuv Tools Framework Docs </title>
+      <title>Class ServiceWithMapperBase&lt;TDTO, TEntity&gt; | Nuv Tools Framework Docs </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class ServiceWithMapperBase&lt;TForm, TData&gt;
- | Nuv Tools Framework Docs ">
+      <meta name="title" content="Class ServiceWithMapperBase&lt;TDTO, TEntity&gt; | Nuv Tools Framework Docs ">
+      
       
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
@@ -29,15 +28,16 @@
       <meta name="loc:themeAuto" content="Auto">
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -89,8 +89,7 @@
 
 
   <h1 id="NuvTools_AspNetCore_Mapper_ServiceWithMapperBase_2" data-uid="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2" class="text-break">
-    Class ServiceWithMapperBase&lt;TForm, TData&gt;
-  
+Class ServiceWithMapperBase&lt;TDTO, TEntity&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -102,16 +101,16 @@
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class ServiceWithMapperBase&lt;TForm, TData&gt; where TForm : class where TData : class</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class ServiceWithMapperBase&lt;TDTO, TEntity&gt; where TDTO : class where TEntity : class</code></pre>
   </div>
 
 
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
-    <dt><code>TForm</code></dt>
+    <dt><code>TDTO</code></dt>
     <dd></dd>
-    <dt><code>TData</code></dt>
+    <dt><code>TEntity</code></dt>
     <dd></dd>
   </dl>
 
@@ -119,7 +118,7 @@
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><span class="xref">ServiceWithMapperBase&lt;TForm, TData&gt;</span></div>
+      <div><span class="xref">ServiceWithMapperBase&lt;TDTO, TEntity&gt;</span></div>
     </dd>
   </dl>
 
@@ -127,11 +126,11 @@
   <dl class="typelist derived">
     <dt>Derived</dt>
     <dd>
-      <div><a class="xref" href="NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase-4.html">ServiceWithCrudBase&lt;TContext, TForm, TData, TKey&gt;</a></div>
+      <div><a class="xref" href="NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase-4.html">ServiceWithCrudBase&lt;TContext, TDTO, TEntity, TKey&gt;</a></div>
     </dd>
   </dl>
 
-  <dl class="typelist derived">
+  <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
     <div>
@@ -170,7 +169,7 @@
 
   <h3 id="NuvTools_AspNetCore_Mapper_ServiceWithMapperBase_2__ctor_AutoMapper_IMapper_" data-uid="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.#ctor(AutoMapper.IMapper)">
   ServiceWithMapperBase(IMapper)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -205,7 +204,7 @@
 
   <h3 id="NuvTools_AspNetCore_Mapper_ServiceWithMapperBase_2_Mapper" data-uid="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.Mapper">
   Mapper
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -236,29 +235,29 @@
 </h2>
 
 
-  <a id="NuvTools_AspNetCore_Mapper_ServiceWithMapperBase_2_ConvertToData_" data-uid="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToData*"></a>
+  <a id="NuvTools_AspNetCore_Mapper_ServiceWithMapperBase_2_ConvertToDTO_" data-uid="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO*"></a>
 
-  <h3 id="NuvTools_AspNetCore_Mapper_ServiceWithMapperBase_2_ConvertToData__0_" data-uid="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToData(`0)">
-  ConvertToData(TForm)
-  
+  <h3 id="NuvTools_AspNetCore_Mapper_ServiceWithMapperBase_2_ConvertToDTO_System_Collections_Generic_IEnumerable__1__" data-uid="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(System.Collections.Generic.IEnumerable{`1})">
+  ConvertToDTO(IEnumerable&lt;TEntity&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected TData ConvertToData(TForm model)</code></pre>
+    <pre><code class="lang-csharp hljs">protected IEnumerable&lt;TDTO&gt; ConvertToDTO(IEnumerable&lt;TEntity&gt; models)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>model</code> <span class="xref">TForm</span></dt>
+    <dt><code>models</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TEntity&gt;</dt>
     <dd></dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">TData</span></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TDTO&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -272,29 +271,29 @@
 
 
 
-  <a id="NuvTools_AspNetCore_Mapper_ServiceWithMapperBase_2_ConvertToForm_" data-uid="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToForm*"></a>
+  <a id="NuvTools_AspNetCore_Mapper_ServiceWithMapperBase_2_ConvertToDTO_" data-uid="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO*"></a>
 
-  <h3 id="NuvTools_AspNetCore_Mapper_ServiceWithMapperBase_2_ConvertToForm_System_Collections_Generic_IEnumerable__1__" data-uid="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToForm(System.Collections.Generic.IEnumerable{`1})">
-  ConvertToForm(IEnumerable&lt;TData&gt;)
-  
+  <h3 id="NuvTools_AspNetCore_Mapper_ServiceWithMapperBase_2_ConvertToDTO_System_Collections_Generic_IList__1__" data-uid="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(System.Collections.Generic.IList{`1})">
+  ConvertToDTO(IList&lt;TEntity&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected IEnumerable&lt;TForm&gt; ConvertToForm(IEnumerable&lt;TData&gt; models)</code></pre>
+    <pre><code class="lang-csharp hljs">protected IList&lt;TDTO&gt; ConvertToDTO(IList&lt;TEntity&gt; models)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>models</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TData&gt;</dt>
+    <dt><code>models</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;TEntity&gt;</dt>
     <dd></dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TForm&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;TDTO&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -308,29 +307,29 @@
 
 
 
-  <a id="NuvTools_AspNetCore_Mapper_ServiceWithMapperBase_2_ConvertToForm_" data-uid="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToForm*"></a>
+  <a id="NuvTools_AspNetCore_Mapper_ServiceWithMapperBase_2_ConvertToDTO_" data-uid="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO*"></a>
 
-  <h3 id="NuvTools_AspNetCore_Mapper_ServiceWithMapperBase_2_ConvertToForm_System_Collections_Generic_IList__1__" data-uid="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToForm(System.Collections.Generic.IList{`1})">
-  ConvertToForm(IList&lt;TData&gt;)
-  
+  <h3 id="NuvTools_AspNetCore_Mapper_ServiceWithMapperBase_2_ConvertToDTO__1_" data-uid="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(`1)">
+  ConvertToDTO(TEntity)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected IList&lt;TForm&gt; ConvertToForm(IList&lt;TData&gt; models)</code></pre>
+    <pre><code class="lang-csharp hljs">protected TDTO ConvertToDTO(TEntity model)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>models</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;TData&gt;</dt>
+    <dt><code>model</code> <span class="xref">TEntity</span></dt>
     <dd></dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;TForm&gt;</dt>
+    <dt><span class="xref">TDTO</span></dt>
     <dd></dd>
   </dl>
 
@@ -344,29 +343,29 @@
 
 
 
-  <a id="NuvTools_AspNetCore_Mapper_ServiceWithMapperBase_2_ConvertToForm_" data-uid="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToForm*"></a>
+  <a id="NuvTools_AspNetCore_Mapper_ServiceWithMapperBase_2_ConvertToDTO_" data-uid="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO*"></a>
 
-  <h3 id="NuvTools_AspNetCore_Mapper_ServiceWithMapperBase_2_ConvertToForm__1_" data-uid="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToForm(`1)">
-  ConvertToForm(TData)
-  
+  <h3 id="NuvTools_AspNetCore_Mapper_ServiceWithMapperBase_2_ConvertToDTO__1___" data-uid="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(`1[])">
+  ConvertToDTO(TEntity[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected TForm ConvertToForm(TData model)</code></pre>
+    <pre><code class="lang-csharp hljs">protected TDTO[] ConvertToDTO(TEntity[] models)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>model</code> <span class="xref">TData</span></dt>
+    <dt><code>models</code> TEntity[]</dt>
     <dd></dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><span class="xref">TForm</span></dt>
+    <dt>TDTO[]</dt>
     <dd></dd>
   </dl>
 
@@ -380,29 +379,29 @@
 
 
 
-  <a id="NuvTools_AspNetCore_Mapper_ServiceWithMapperBase_2_ConvertToForm_" data-uid="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToForm*"></a>
+  <a id="NuvTools_AspNetCore_Mapper_ServiceWithMapperBase_2_ConvertToEntity_" data-uid="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToEntity*"></a>
 
-  <h3 id="NuvTools_AspNetCore_Mapper_ServiceWithMapperBase_2_ConvertToForm__1___" data-uid="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToForm(`1[])">
-  ConvertToForm(TData[])
-  
+  <h3 id="NuvTools_AspNetCore_Mapper_ServiceWithMapperBase_2_ConvertToEntity__0_" data-uid="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToEntity(`0)">
+  ConvertToEntity(TDTO)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected TForm[] ConvertToForm(TData[] models)</code></pre>
+    <pre><code class="lang-csharp hljs">protected TEntity ConvertToEntity(TDTO model)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>models</code> TData[]</dt>
+    <dt><code>model</code> <span class="xref">TDTO</span></dt>
     <dd></dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt>TForm[]</dt>
+    <dt><span class="xref">TEntity</span></dt>
     <dd></dd>
   </dl>
 
@@ -419,20 +418,20 @@
   <a id="NuvTools_AspNetCore_Mapper_ServiceWithMapperBase_2_ConvertTo_" data-uid="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertTo*"></a>
 
   <h3 id="NuvTools_AspNetCore_Mapper_ServiceWithMapperBase_2_ConvertTo__1_System_Collections_Generic_IEnumerable__1__" data-uid="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertTo``1(System.Collections.Generic.IEnumerable{`1})">
-  ConvertTo&lt;TReturn&gt;(IEnumerable&lt;TData&gt;)
-  
+  ConvertTo&lt;TReturn&gt;(IEnumerable&lt;TEntity&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected IEnumerable&lt;TReturn&gt; ConvertTo&lt;TReturn&gt;(IEnumerable&lt;TData&gt; models)</code></pre>
+    <pre><code class="lang-csharp hljs">protected IEnumerable&lt;TReturn&gt; ConvertTo&lt;TReturn&gt;(IEnumerable&lt;TEntity&gt; models)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>models</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TData&gt;</dt>
+    <dt><code>models</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TEntity&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -460,20 +459,20 @@
   <a id="NuvTools_AspNetCore_Mapper_ServiceWithMapperBase_2_ConvertTo_" data-uid="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertTo*"></a>
 
   <h3 id="NuvTools_AspNetCore_Mapper_ServiceWithMapperBase_2_ConvertTo__1__1_" data-uid="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertTo``1(`1)">
-  ConvertTo&lt;TReturn&gt;(TData)
-  
+  ConvertTo&lt;TReturn&gt;(TEntity)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected TReturn ConvertTo&lt;TReturn&gt;(TData model)</code></pre>
+    <pre><code class="lang-csharp hljs">protected TReturn ConvertTo&lt;TReturn&gt;(TEntity model)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>model</code> <span class="xref">TData</span></dt>
+    <dt><code>model</code> <span class="xref">TEntity</span></dt>
     <dd></dd>
   </dl>
 
@@ -502,6 +501,7 @@
 </article>
 
         <div class="contribution d-print-none">
+          <a href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs" class="edit-link">Edit this page</a>
         </div>
 
 
@@ -514,7 +514,7 @@
 
     <div class="container-xxl search-results" id="search-results"></div>
 
-    <footer class="border-top">
+    <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
           <span>Supported by the <a href="https://nuv.tools" target="_blank">Nuv Tools</a>. Documentation generated by <a href="https://dotnet.github.io/docfx" target="_blank">docfx</a></span>.

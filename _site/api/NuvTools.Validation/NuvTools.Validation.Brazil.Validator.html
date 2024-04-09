@@ -2,12 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class Validator
- | Nuv Tools Framework Docs </title>
+      <title>Class Validator | Nuv Tools Framework Docs </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class Validator
- | Nuv Tools Framework Docs ">
+      <meta name="title" content="Class Validator | Nuv Tools Framework Docs ">
       
+      <meta name="description" content="Responsible for validating rules used in Brazil.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -29,15 +28,16 @@
       <meta name="loc:themeAuto" content="Auto">
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -89,8 +89,7 @@
 
 
   <h1 id="NuvTools_Validation_Brazil_Validator" data-uid="NuvTools.Validation.Brazil.Validator" class="text-break">
-    Class Validator
-  
+Class Validator  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/8107e7c60e616d88d7782a0fe2cea992be20066f/src/NuvTools.Validation/Brazil/Validator.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -98,7 +97,7 @@
   <dl><dt>Assembly</dt><dd>NuvTools.Validation.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Validators's class.</p>
+  <div class="markdown summary"><p>Responsible for validating rules used in Brazil.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -119,7 +118,7 @@
 
 
 
-  <dl class="typelist derived">
+  <dl class="typelist inheritedMembers">
     <dt>Inherited Members</dt>
     <dd>
     <div>
@@ -158,28 +157,28 @@
 
   <h3 id="NuvTools_Validation_Brazil_Validator_IsCNPJ_System_String_" data-uid="NuvTools.Validation.Brazil.Validator.IsCNPJ(System.String)">
   IsCNPJ(string)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/8107e7c60e616d88d7782a0fe2cea992be20066f/src/NuvTools.Validation/Brazil/Validator.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Método para validar um CNPJ.</p>
+  <div class="markdown level1 summary"><p>Validates a CNPJ.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool IsCNPJ(string value)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool IsCNPJ(this string value)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>Informe um CNPJ. Retorno True: CNPJ válido. False: CNPJ inválido.</p>
+    <dd><p>Enter a CNPJ.</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd><p>True: CNPJ válido. False: CNPJ inválido.</p>
+    <dd><p>Whether CNPJ is valid or not.</p>
 </dd>
   </dl>
 
@@ -197,28 +196,28 @@
 
   <h3 id="NuvTools_Validation_Brazil_Validator_IsCPF_System_String_" data-uid="NuvTools.Validation.Brazil.Validator.IsCPF(System.String)">
   IsCPF(string)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/8107e7c60e616d88d7782a0fe2cea992be20066f/src/NuvTools.Validation/Brazil/Validator.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Método para validar um CPF.</p>
+  <div class="markdown level1 summary"><p>Validates a CPF.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool IsCPF(string value)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool IsCPF(this string value)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>Informe um CPF. Retorno True: CPF válido. False: CPF inválido.</p>
+    <dd><p>Enter a CPF.</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd><p>True: CPF válido. False: CPF inválido.</p>
+    <dd><p>Whether CPF is valid or not.</p>
 </dd>
   </dl>
 
@@ -236,28 +235,28 @@
 
   <h3 id="NuvTools_Validation_Brazil_Validator_IsCPForCNPJ_System_String_" data-uid="NuvTools.Validation.Brazil.Validator.IsCPForCNPJ(System.String)">
   IsCPForCNPJ(string)
-  
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/8107e7c60e616d88d7782a0fe2cea992be20066f/src/NuvTools.Validation/Brazil/Validator.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Método para validar um CPF ou um CNPJ.</p>
+  <div class="markdown level1 summary"><p>Validates a CPF or CNPJ.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool IsCPForCNPJ(string value)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool IsCPForCNPJ(this string value)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>Informe um CPF ou um CNPJ. Retorno True: CPF ou CNPJ válido. False: CPF ou CNPJ inválido.</p>
+    <dd><p>Enter a CPF or CNPJ.</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd><p>True: CPF ou CNPJ válido. False: CPF ou CNPJ inválido.</p>
+    <dd><p>Whether CPF or CNPJ is valid or not.</p>
 </dd>
   </dl>
 
@@ -275,6 +274,7 @@
 </article>
 
         <div class="contribution d-print-none">
+          <a href="https://github.com/nuvtools/nuvtools-validation/blob/8107e7c60e616d88d7782a0fe2cea992be20066f/src/NuvTools.Validation/Brazil/Validator.cs" class="edit-link">Edit this page</a>
         </div>
 
 
@@ -287,7 +287,7 @@
 
     <div class="container-xxl search-results" id="search-results"></div>
 
-    <footer class="border-top">
+    <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
           <span>Supported by the <a href="https://nuv.tools" target="_blank">Nuv Tools</a>. Documentation generated by <a href="https://dotnet.github.io/docfx" target="_blank">docfx</a></span>.

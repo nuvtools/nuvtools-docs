@@ -9,16 +9,16 @@ items:
   - NuvTools.Resources.DynamicValidationMessages.Culture
   - NuvTools.Resources.DynamicValidationMessages.DateXMustBeAfterDateY
   - NuvTools.Resources.DynamicValidationMessages.EmailXAlreadyTaken
-  - NuvTools.Resources.DynamicValidationMessages.FieldXMustBeBetweenYandZCharacters
   - NuvTools.Resources.DynamicValidationMessages.ResourceManager
   - NuvTools.Resources.DynamicValidationMessages.XInvalid
-  - NuvTools.Resources.DynamicValidationMessages.XMustBeUpToYCharacters
+  - NuvTools.Resources.DynamicValidationMessages.XMustBeEqualY
   - NuvTools.Resources.DynamicValidationMessages.XMustContainAtLeastYCapitalLetters
   - NuvTools.Resources.DynamicValidationMessages.XMustContainAtLeastYDigits
   - NuvTools.Resources.DynamicValidationMessages.XMustContainAtLeastYLowerCaseLetters
+  - NuvTools.Resources.DynamicValidationMessages.XMustContainBetweenYandZCharacters
+  - NuvTools.Resources.DynamicValidationMessages.XMustHaveAtLeastYCharacters
+  - NuvTools.Resources.DynamicValidationMessages.XMustHaveUpToYCharacters
   - NuvTools.Resources.DynamicValidationMessages.XRequired
-  - NuvTools.Resources.DynamicValidationMessages.XShouldBeEqualY
-  - NuvTools.Resources.DynamicValidationMessages.XShouldHaveAtLeastYCharacters
   langs:
   - csharp
   - vb
@@ -26,6 +26,8 @@ items:
   nameWithType: DynamicValidationMessages
   fullName: NuvTools.Resources.DynamicValidationMessages
   type: Class
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/3c5922057b4e1a92c416fc205a04873c8f9d8156/src/NuvTools.Resources/DynamicValidationMessages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -55,6 +57,8 @@ items:
   nameWithType: DynamicValidationMessages.ResourceManager
   fullName: NuvTools.Resources.DynamicValidationMessages.ResourceManager
   type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/3c5922057b4e1a92c416fc205a04873c8f9d8156/src/NuvTools.Resources/DynamicValidationMessages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -78,6 +82,8 @@ items:
   nameWithType: DynamicValidationMessages.Culture
   fullName: NuvTools.Resources.DynamicValidationMessages.Culture
   type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/3c5922057b4e1a92c416fc205a04873c8f9d8156/src/NuvTools.Resources/DynamicValidationMessages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -104,6 +110,8 @@ items:
   nameWithType: DynamicValidationMessages.AtLeastOneTheseParametersShoudBeFilledX
   fullName: NuvTools.Resources.DynamicValidationMessages.AtLeastOneTheseParametersShoudBeFilledX
   type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/3c5922057b4e1a92c416fc205a04873c8f9d8156/src/NuvTools.Resources/DynamicValidationMessages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -127,6 +135,8 @@ items:
   nameWithType: DynamicValidationMessages.DateXMustBeAfterDateY
   fullName: NuvTools.Resources.DynamicValidationMessages.DateXMustBeAfterDateY
   type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/3c5922057b4e1a92c416fc205a04873c8f9d8156/src/NuvTools.Resources/DynamicValidationMessages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -150,6 +160,8 @@ items:
   nameWithType: DynamicValidationMessages.EmailXAlreadyTaken
   fullName: NuvTools.Resources.DynamicValidationMessages.EmailXAlreadyTaken
   type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/3c5922057b4e1a92c416fc205a04873c8f9d8156/src/NuvTools.Resources/DynamicValidationMessages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -162,29 +174,6 @@ items:
       type: System.String
     content.vb: Public Shared ReadOnly Property EmailXAlreadyTaken As String
   overload: NuvTools.Resources.DynamicValidationMessages.EmailXAlreadyTaken*
-- uid: NuvTools.Resources.DynamicValidationMessages.FieldXMustBeBetweenYandZCharacters
-  commentId: P:NuvTools.Resources.DynamicValidationMessages.FieldXMustBeBetweenYandZCharacters
-  id: FieldXMustBeBetweenYandZCharacters
-  parent: NuvTools.Resources.DynamicValidationMessages
-  langs:
-  - csharp
-  - vb
-  name: FieldXMustBeBetweenYandZCharacters
-  nameWithType: DynamicValidationMessages.FieldXMustBeBetweenYandZCharacters
-  fullName: NuvTools.Resources.DynamicValidationMessages.FieldXMustBeBetweenYandZCharacters
-  type: Property
-  assemblies:
-  - NuvTools.Resources
-  namespace: NuvTools.Resources
-  summary: Looks up a localized string similar to Campo {PropertyName} deve conter entre {From} e {To} caracteres..
-  example: []
-  syntax:
-    content: public static string FieldXMustBeBetweenYandZCharacters { get; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public Shared ReadOnly Property FieldXMustBeBetweenYandZCharacters As String
-  overload: NuvTools.Resources.DynamicValidationMessages.FieldXMustBeBetweenYandZCharacters*
 - uid: NuvTools.Resources.DynamicValidationMessages.XInvalid
   commentId: P:NuvTools.Resources.DynamicValidationMessages.XInvalid
   id: XInvalid
@@ -196,10 +185,12 @@ items:
   nameWithType: DynamicValidationMessages.XInvalid
   fullName: NuvTools.Resources.DynamicValidationMessages.XInvalid
   type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/3c5922057b4e1a92c416fc205a04873c8f9d8156/src/NuvTools.Resources/DynamicValidationMessages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
-  summary: Looks up a localized string similar to {PropertyName} is invalid..
+  summary: Looks up a localized string similar to {0} is invalid..
   example: []
   syntax:
     content: public static string XInvalid { get; }
@@ -208,29 +199,31 @@ items:
       type: System.String
     content.vb: Public Shared ReadOnly Property XInvalid As String
   overload: NuvTools.Resources.DynamicValidationMessages.XInvalid*
-- uid: NuvTools.Resources.DynamicValidationMessages.XMustBeUpToYCharacters
-  commentId: P:NuvTools.Resources.DynamicValidationMessages.XMustBeUpToYCharacters
-  id: XMustBeUpToYCharacters
+- uid: NuvTools.Resources.DynamicValidationMessages.XMustBeEqualY
+  commentId: P:NuvTools.Resources.DynamicValidationMessages.XMustBeEqualY
+  id: XMustBeEqualY
   parent: NuvTools.Resources.DynamicValidationMessages
   langs:
   - csharp
   - vb
-  name: XMustBeUpToYCharacters
-  nameWithType: DynamicValidationMessages.XMustBeUpToYCharacters
-  fullName: NuvTools.Resources.DynamicValidationMessages.XMustBeUpToYCharacters
+  name: XMustBeEqualY
+  nameWithType: DynamicValidationMessages.XMustBeEqualY
+  fullName: NuvTools.Resources.DynamicValidationMessages.XMustBeEqualY
   type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/3c5922057b4e1a92c416fc205a04873c8f9d8156/src/NuvTools.Resources/DynamicValidationMessages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
-  summary: Looks up a localized string similar to The {PropertyName} should be up to {MaxLength} character(s)..
+  summary: Looks up a localized string similar to The {0} must be equal {1}..
   example: []
   syntax:
-    content: public static string XMustBeUpToYCharacters { get; }
+    content: public static string XMustBeEqualY { get; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Shared ReadOnly Property XMustBeUpToYCharacters As String
-  overload: NuvTools.Resources.DynamicValidationMessages.XMustBeUpToYCharacters*
+    content.vb: Public Shared ReadOnly Property XMustBeEqualY As String
+  overload: NuvTools.Resources.DynamicValidationMessages.XMustBeEqualY*
 - uid: NuvTools.Resources.DynamicValidationMessages.XMustContainAtLeastYCapitalLetters
   commentId: P:NuvTools.Resources.DynamicValidationMessages.XMustContainAtLeastYCapitalLetters
   id: XMustContainAtLeastYCapitalLetters
@@ -242,10 +235,12 @@ items:
   nameWithType: DynamicValidationMessages.XMustContainAtLeastYCapitalLetters
   fullName: NuvTools.Resources.DynamicValidationMessages.XMustContainAtLeastYCapitalLetters
   type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/3c5922057b4e1a92c416fc205a04873c8f9d8156/src/NuvTools.Resources/DynamicValidationMessages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
-  summary: Looks up a localized string similar to The {PropertyName} must contain at least {MinLength} capital letter(s)..
+  summary: Looks up a localized string similar to The {0} must contain at least {1} capital letter(s)..
   example: []
   syntax:
     content: public static string XMustContainAtLeastYCapitalLetters { get; }
@@ -265,10 +260,12 @@ items:
   nameWithType: DynamicValidationMessages.XMustContainAtLeastYDigits
   fullName: NuvTools.Resources.DynamicValidationMessages.XMustContainAtLeastYDigits
   type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/3c5922057b4e1a92c416fc205a04873c8f9d8156/src/NuvTools.Resources/DynamicValidationMessages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
-  summary: Looks up a localized string similar to The {PropertyName} must contain at least {MinLength} digit(s)..
+  summary: Looks up a localized string similar to The {0} must contain at least {1} digit(s)..
   example: []
   syntax:
     content: public static string XMustContainAtLeastYDigits { get; }
@@ -288,10 +285,12 @@ items:
   nameWithType: DynamicValidationMessages.XMustContainAtLeastYLowerCaseLetters
   fullName: NuvTools.Resources.DynamicValidationMessages.XMustContainAtLeastYLowerCaseLetters
   type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/3c5922057b4e1a92c416fc205a04873c8f9d8156/src/NuvTools.Resources/DynamicValidationMessages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
-  summary: Looks up a localized string similar to The {PropertyName} must contain at least {MinLength} lower case letter(s)..
+  summary: Looks up a localized string similar to The {0} must contain at least {1} lower case letter(s)..
   example: []
   syntax:
     content: public static string XMustContainAtLeastYLowerCaseLetters { get; }
@@ -300,6 +299,81 @@ items:
       type: System.String
     content.vb: Public Shared ReadOnly Property XMustContainAtLeastYLowerCaseLetters As String
   overload: NuvTools.Resources.DynamicValidationMessages.XMustContainAtLeastYLowerCaseLetters*
+- uid: NuvTools.Resources.DynamicValidationMessages.XMustContainBetweenYandZCharacters
+  commentId: P:NuvTools.Resources.DynamicValidationMessages.XMustContainBetweenYandZCharacters
+  id: XMustContainBetweenYandZCharacters
+  parent: NuvTools.Resources.DynamicValidationMessages
+  langs:
+  - csharp
+  - vb
+  name: XMustContainBetweenYandZCharacters
+  nameWithType: DynamicValidationMessages.XMustContainBetweenYandZCharacters
+  fullName: NuvTools.Resources.DynamicValidationMessages.XMustContainBetweenYandZCharacters
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/3c5922057b4e1a92c416fc205a04873c8f9d8156/src/NuvTools.Resources/DynamicValidationMessages.Designer.cs
+  assemblies:
+  - NuvTools.Resources
+  namespace: NuvTools.Resources
+  summary: Looks up a localized string similar to The {0} must contain between {1} and {2} character(s)..
+  example: []
+  syntax:
+    content: public static string XMustContainBetweenYandZCharacters { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property XMustContainBetweenYandZCharacters As String
+  overload: NuvTools.Resources.DynamicValidationMessages.XMustContainBetweenYandZCharacters*
+- uid: NuvTools.Resources.DynamicValidationMessages.XMustHaveAtLeastYCharacters
+  commentId: P:NuvTools.Resources.DynamicValidationMessages.XMustHaveAtLeastYCharacters
+  id: XMustHaveAtLeastYCharacters
+  parent: NuvTools.Resources.DynamicValidationMessages
+  langs:
+  - csharp
+  - vb
+  name: XMustHaveAtLeastYCharacters
+  nameWithType: DynamicValidationMessages.XMustHaveAtLeastYCharacters
+  fullName: NuvTools.Resources.DynamicValidationMessages.XMustHaveAtLeastYCharacters
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/3c5922057b4e1a92c416fc205a04873c8f9d8156/src/NuvTools.Resources/DynamicValidationMessages.Designer.cs
+  assemblies:
+  - NuvTools.Resources
+  namespace: NuvTools.Resources
+  summary: Looks up a localized string similar to The {0} must have at least {1} character(s)..
+  example: []
+  syntax:
+    content: public static string XMustHaveAtLeastYCharacters { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property XMustHaveAtLeastYCharacters As String
+  overload: NuvTools.Resources.DynamicValidationMessages.XMustHaveAtLeastYCharacters*
+- uid: NuvTools.Resources.DynamicValidationMessages.XMustHaveUpToYCharacters
+  commentId: P:NuvTools.Resources.DynamicValidationMessages.XMustHaveUpToYCharacters
+  id: XMustHaveUpToYCharacters
+  parent: NuvTools.Resources.DynamicValidationMessages
+  langs:
+  - csharp
+  - vb
+  name: XMustHaveUpToYCharacters
+  nameWithType: DynamicValidationMessages.XMustHaveUpToYCharacters
+  fullName: NuvTools.Resources.DynamicValidationMessages.XMustHaveUpToYCharacters
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/3c5922057b4e1a92c416fc205a04873c8f9d8156/src/NuvTools.Resources/DynamicValidationMessages.Designer.cs
+  assemblies:
+  - NuvTools.Resources
+  namespace: NuvTools.Resources
+  summary: Looks up a localized string similar to The {0} must have up to {1} character(s)..
+  example: []
+  syntax:
+    content: public static string XMustHaveUpToYCharacters { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property XMustHaveUpToYCharacters As String
+  overload: NuvTools.Resources.DynamicValidationMessages.XMustHaveUpToYCharacters*
 - uid: NuvTools.Resources.DynamicValidationMessages.XRequired
   commentId: P:NuvTools.Resources.DynamicValidationMessages.XRequired
   id: XRequired
@@ -311,10 +385,12 @@ items:
   nameWithType: DynamicValidationMessages.XRequired
   fullName: NuvTools.Resources.DynamicValidationMessages.XRequired
   type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/3c5922057b4e1a92c416fc205a04873c8f9d8156/src/NuvTools.Resources/DynamicValidationMessages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
-  summary: Looks up a localized string similar to {PropertyName} is required..
+  summary: Looks up a localized string similar to {0} is required..
   example: []
   syntax:
     content: public static string XRequired { get; }
@@ -323,52 +399,6 @@ items:
       type: System.String
     content.vb: Public Shared ReadOnly Property XRequired As String
   overload: NuvTools.Resources.DynamicValidationMessages.XRequired*
-- uid: NuvTools.Resources.DynamicValidationMessages.XShouldBeEqualY
-  commentId: P:NuvTools.Resources.DynamicValidationMessages.XShouldBeEqualY
-  id: XShouldBeEqualY
-  parent: NuvTools.Resources.DynamicValidationMessages
-  langs:
-  - csharp
-  - vb
-  name: XShouldBeEqualY
-  nameWithType: DynamicValidationMessages.XShouldBeEqualY
-  fullName: NuvTools.Resources.DynamicValidationMessages.XShouldBeEqualY
-  type: Property
-  assemblies:
-  - NuvTools.Resources
-  namespace: NuvTools.Resources
-  summary: Looks up a localized string similar to The {PropertyName} should be equal {ComparisonProperty}..
-  example: []
-  syntax:
-    content: public static string XShouldBeEqualY { get; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public Shared ReadOnly Property XShouldBeEqualY As String
-  overload: NuvTools.Resources.DynamicValidationMessages.XShouldBeEqualY*
-- uid: NuvTools.Resources.DynamicValidationMessages.XShouldHaveAtLeastYCharacters
-  commentId: P:NuvTools.Resources.DynamicValidationMessages.XShouldHaveAtLeastYCharacters
-  id: XShouldHaveAtLeastYCharacters
-  parent: NuvTools.Resources.DynamicValidationMessages
-  langs:
-  - csharp
-  - vb
-  name: XShouldHaveAtLeastYCharacters
-  nameWithType: DynamicValidationMessages.XShouldHaveAtLeastYCharacters
-  fullName: NuvTools.Resources.DynamicValidationMessages.XShouldHaveAtLeastYCharacters
-  type: Property
-  assemblies:
-  - NuvTools.Resources
-  namespace: NuvTools.Resources
-  summary: Looks up a localized string similar to The {PropertyName} should have at least {MinLength} character(s)..
-  example: []
-  syntax:
-    content: public static string XShouldHaveAtLeastYCharacters { get; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public Shared ReadOnly Property XShouldHaveAtLeastYCharacters As String
-  overload: NuvTools.Resources.DynamicValidationMessages.XShouldHaveAtLeastYCharacters*
 references:
 - uid: NuvTools.Resources
   commentId: N:NuvTools.Resources
@@ -750,13 +780,6 @@ references:
   name: EmailXAlreadyTaken
   nameWithType: DynamicValidationMessages.EmailXAlreadyTaken
   fullName: NuvTools.Resources.DynamicValidationMessages.EmailXAlreadyTaken
-- uid: NuvTools.Resources.DynamicValidationMessages.FieldXMustBeBetweenYandZCharacters*
-  commentId: Overload:NuvTools.Resources.DynamicValidationMessages.FieldXMustBeBetweenYandZCharacters
-  isExternal: true
-  href: NuvTools.Resources.DynamicValidationMessages.html#NuvTools_Resources_DynamicValidationMessages_FieldXMustBeBetweenYandZCharacters
-  name: FieldXMustBeBetweenYandZCharacters
-  nameWithType: DynamicValidationMessages.FieldXMustBeBetweenYandZCharacters
-  fullName: NuvTools.Resources.DynamicValidationMessages.FieldXMustBeBetweenYandZCharacters
 - uid: NuvTools.Resources.DynamicValidationMessages.XInvalid*
   commentId: Overload:NuvTools.Resources.DynamicValidationMessages.XInvalid
   isExternal: true
@@ -764,13 +787,13 @@ references:
   name: XInvalid
   nameWithType: DynamicValidationMessages.XInvalid
   fullName: NuvTools.Resources.DynamicValidationMessages.XInvalid
-- uid: NuvTools.Resources.DynamicValidationMessages.XMustBeUpToYCharacters*
-  commentId: Overload:NuvTools.Resources.DynamicValidationMessages.XMustBeUpToYCharacters
+- uid: NuvTools.Resources.DynamicValidationMessages.XMustBeEqualY*
+  commentId: Overload:NuvTools.Resources.DynamicValidationMessages.XMustBeEqualY
   isExternal: true
-  href: NuvTools.Resources.DynamicValidationMessages.html#NuvTools_Resources_DynamicValidationMessages_XMustBeUpToYCharacters
-  name: XMustBeUpToYCharacters
-  nameWithType: DynamicValidationMessages.XMustBeUpToYCharacters
-  fullName: NuvTools.Resources.DynamicValidationMessages.XMustBeUpToYCharacters
+  href: NuvTools.Resources.DynamicValidationMessages.html#NuvTools_Resources_DynamicValidationMessages_XMustBeEqualY
+  name: XMustBeEqualY
+  nameWithType: DynamicValidationMessages.XMustBeEqualY
+  fullName: NuvTools.Resources.DynamicValidationMessages.XMustBeEqualY
 - uid: NuvTools.Resources.DynamicValidationMessages.XMustContainAtLeastYCapitalLetters*
   commentId: Overload:NuvTools.Resources.DynamicValidationMessages.XMustContainAtLeastYCapitalLetters
   isExternal: true
@@ -792,6 +815,27 @@ references:
   name: XMustContainAtLeastYLowerCaseLetters
   nameWithType: DynamicValidationMessages.XMustContainAtLeastYLowerCaseLetters
   fullName: NuvTools.Resources.DynamicValidationMessages.XMustContainAtLeastYLowerCaseLetters
+- uid: NuvTools.Resources.DynamicValidationMessages.XMustContainBetweenYandZCharacters*
+  commentId: Overload:NuvTools.Resources.DynamicValidationMessages.XMustContainBetweenYandZCharacters
+  isExternal: true
+  href: NuvTools.Resources.DynamicValidationMessages.html#NuvTools_Resources_DynamicValidationMessages_XMustContainBetweenYandZCharacters
+  name: XMustContainBetweenYandZCharacters
+  nameWithType: DynamicValidationMessages.XMustContainBetweenYandZCharacters
+  fullName: NuvTools.Resources.DynamicValidationMessages.XMustContainBetweenYandZCharacters
+- uid: NuvTools.Resources.DynamicValidationMessages.XMustHaveAtLeastYCharacters*
+  commentId: Overload:NuvTools.Resources.DynamicValidationMessages.XMustHaveAtLeastYCharacters
+  isExternal: true
+  href: NuvTools.Resources.DynamicValidationMessages.html#NuvTools_Resources_DynamicValidationMessages_XMustHaveAtLeastYCharacters
+  name: XMustHaveAtLeastYCharacters
+  nameWithType: DynamicValidationMessages.XMustHaveAtLeastYCharacters
+  fullName: NuvTools.Resources.DynamicValidationMessages.XMustHaveAtLeastYCharacters
+- uid: NuvTools.Resources.DynamicValidationMessages.XMustHaveUpToYCharacters*
+  commentId: Overload:NuvTools.Resources.DynamicValidationMessages.XMustHaveUpToYCharacters
+  isExternal: true
+  href: NuvTools.Resources.DynamicValidationMessages.html#NuvTools_Resources_DynamicValidationMessages_XMustHaveUpToYCharacters
+  name: XMustHaveUpToYCharacters
+  nameWithType: DynamicValidationMessages.XMustHaveUpToYCharacters
+  fullName: NuvTools.Resources.DynamicValidationMessages.XMustHaveUpToYCharacters
 - uid: NuvTools.Resources.DynamicValidationMessages.XRequired*
   commentId: Overload:NuvTools.Resources.DynamicValidationMessages.XRequired
   isExternal: true
@@ -799,17 +843,3 @@ references:
   name: XRequired
   nameWithType: DynamicValidationMessages.XRequired
   fullName: NuvTools.Resources.DynamicValidationMessages.XRequired
-- uid: NuvTools.Resources.DynamicValidationMessages.XShouldBeEqualY*
-  commentId: Overload:NuvTools.Resources.DynamicValidationMessages.XShouldBeEqualY
-  isExternal: true
-  href: NuvTools.Resources.DynamicValidationMessages.html#NuvTools_Resources_DynamicValidationMessages_XShouldBeEqualY
-  name: XShouldBeEqualY
-  nameWithType: DynamicValidationMessages.XShouldBeEqualY
-  fullName: NuvTools.Resources.DynamicValidationMessages.XShouldBeEqualY
-- uid: NuvTools.Resources.DynamicValidationMessages.XShouldHaveAtLeastYCharacters*
-  commentId: Overload:NuvTools.Resources.DynamicValidationMessages.XShouldHaveAtLeastYCharacters
-  isExternal: true
-  href: NuvTools.Resources.DynamicValidationMessages.html#NuvTools_Resources_DynamicValidationMessages_XShouldHaveAtLeastYCharacters
-  name: XShouldHaveAtLeastYCharacters
-  nameWithType: DynamicValidationMessages.XShouldHaveAtLeastYCharacters
-  fullName: NuvTools.Resources.DynamicValidationMessages.XShouldHaveAtLeastYCharacters

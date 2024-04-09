@@ -6,9 +6,19 @@ items:
   parent: NuvTools.Data.Paging
   children:
   - NuvTools.Data.Paging.PagingBase`2.#ctor
+  - NuvTools.Data.Paging.PagingBase`2.#ctor(NuvTools.Data.Paging.PagingBase{`0,`1})
+  - NuvTools.Data.Paging.PagingBase`2.EqualityContract
+  - NuvTools.Data.Paging.PagingBase`2.Equals(NuvTools.Data.Paging.PagingBase{`0,`1})
+  - NuvTools.Data.Paging.PagingBase`2.Equals(System.Object)
+  - NuvTools.Data.Paging.PagingBase`2.GetHashCode
   - NuvTools.Data.Paging.PagingBase`2.List
   - NuvTools.Data.Paging.PagingBase`2.PageNumber
+  - NuvTools.Data.Paging.PagingBase`2.PrintMembers(System.Text.StringBuilder)
+  - NuvTools.Data.Paging.PagingBase`2.ToString
   - NuvTools.Data.Paging.PagingBase`2.Total
+  - NuvTools.Data.Paging.PagingBase`2.op_Equality(NuvTools.Data.Paging.PagingBase{`0,`1},NuvTools.Data.Paging.PagingBase{`0,`1})
+  - NuvTools.Data.Paging.PagingBase`2.op_Inequality(NuvTools.Data.Paging.PagingBase{`0,`1},NuvTools.Data.Paging.PagingBase{`0,`1})
+  - NuvTools.Data.Paging.PagingBase`2.{Clone}$
   langs:
   - csharp
   - vb
@@ -16,31 +26,282 @@ items:
   nameWithType: PagingBase<T, R>
   fullName: NuvTools.Data.Paging.PagingBase<T, R>
   type: Class
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Paging/PagingBase.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Paging
   syntax:
-    content: 'public abstract class PagingBase<T, R> where T : IEnumerable<R>'
+    content: 'public abstract record PagingBase<T, R> : IEquatable<PagingBase<T, R>> where T : IEnumerable<R>'
     typeParameters:
     - id: T
     - id: R
-    content.vb: Public MustInherit Class PagingBase(Of T As IEnumerable(Of R), R)
+    content.vb: Public MustInherit Class PagingBase(Of T As IEnumerable(Of R), R) Implements IEquatable(Of PagingBase(Of T, R))
   inheritance:
   - System.Object
   derivedClasses:
   - NuvTools.Data.Paging.PagingWithEnumerableList`1
   - NuvTools.Data.Paging.PagingWithQueryableList`1
+  implements:
+  - System.IEquatable{NuvTools.Data.Paging.PagingBase`2}
   inheritedMembers:
   - System.Object.GetType
   - System.Object.MemberwiseClone
-  - System.Object.ToString
-  - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.GetHashCode
   nameWithType.vb: PagingBase(Of T, R)
   fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R)
   name.vb: PagingBase(Of T, R)
+- uid: NuvTools.Data.Paging.PagingBase`2.ToString
+  commentId: M:NuvTools.Data.Paging.PagingBase`2.ToString
+  id: ToString
+  parent: NuvTools.Data.Paging.PagingBase`2
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: PagingBase<T, R>.ToString()
+  fullName: NuvTools.Data.Paging.PagingBase<T, R>.ToString()
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Paging/PagingBase.cs
+  assemblies:
+  - NuvTools.Data
+  namespace: NuvTools.Data.Paging
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.Object.ToString
+  overload: NuvTools.Data.Paging.PagingBase`2.ToString*
+  nameWithType.vb: PagingBase(Of T, R).ToString()
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R).ToString()
+- uid: NuvTools.Data.Paging.PagingBase`2.PrintMembers(System.Text.StringBuilder)
+  commentId: M:NuvTools.Data.Paging.PagingBase`2.PrintMembers(System.Text.StringBuilder)
+  id: PrintMembers(System.Text.StringBuilder)
+  parent: NuvTools.Data.Paging.PagingBase`2
+  langs:
+  - csharp
+  - vb
+  name: PrintMembers(StringBuilder)
+  nameWithType: PagingBase<T, R>.PrintMembers(StringBuilder)
+  fullName: NuvTools.Data.Paging.PagingBase<T, R>.PrintMembers(System.Text.StringBuilder)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Paging/PagingBase.cs
+  assemblies:
+  - NuvTools.Data
+  namespace: NuvTools.Data.Paging
+  syntax:
+    content: protected virtual bool PrintMembers(StringBuilder builder)
+    parameters:
+    - id: builder
+      type: System.Text.StringBuilder
+    return:
+      type: System.Boolean
+    content.vb: Protected Overridable Function PrintMembers(builder As StringBuilder) As Boolean
+  overload: NuvTools.Data.Paging.PagingBase`2.PrintMembers*
+  nameWithType.vb: PagingBase(Of T, R).PrintMembers(StringBuilder)
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R).PrintMembers(System.Text.StringBuilder)
+- uid: NuvTools.Data.Paging.PagingBase`2.op_Inequality(NuvTools.Data.Paging.PagingBase{`0,`1},NuvTools.Data.Paging.PagingBase{`0,`1})
+  commentId: M:NuvTools.Data.Paging.PagingBase`2.op_Inequality(NuvTools.Data.Paging.PagingBase{`0,`1},NuvTools.Data.Paging.PagingBase{`0,`1})
+  id: op_Inequality(NuvTools.Data.Paging.PagingBase{`0,`1},NuvTools.Data.Paging.PagingBase{`0,`1})
+  parent: NuvTools.Data.Paging.PagingBase`2
+  langs:
+  - csharp
+  - vb
+  name: operator !=(PagingBase<T, R>?, PagingBase<T, R>?)
+  nameWithType: PagingBase<T, R>.operator !=(PagingBase<T, R>?, PagingBase<T, R>?)
+  fullName: NuvTools.Data.Paging.PagingBase<T, R>.operator !=(NuvTools.Data.Paging.PagingBase<T, R>?, NuvTools.Data.Paging.PagingBase<T, R>?)
+  type: Operator
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Paging/PagingBase.cs
+  assemblies:
+  - NuvTools.Data
+  namespace: NuvTools.Data.Paging
+  syntax:
+    content: public static bool operator !=(PagingBase<T, R>? left, PagingBase<T, R>? right)
+    parameters:
+    - id: left
+      type: NuvTools.Data.Paging.PagingBase`2
+    - id: right
+      type: NuvTools.Data.Paging.PagingBase`2
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator <>(left As PagingBase(Of T, R), right As PagingBase(Of T, R)) As Boolean
+  overload: NuvTools.Data.Paging.PagingBase`2.op_Inequality*
+  nameWithType.vb: PagingBase(Of T, R).<>(PagingBase(Of T, R), PagingBase(Of T, R))
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R).<>(NuvTools.Data.Paging.PagingBase(Of T, R), NuvTools.Data.Paging.PagingBase(Of T, R))
+  name.vb: <>(PagingBase(Of T, R), PagingBase(Of T, R))
+- uid: NuvTools.Data.Paging.PagingBase`2.op_Equality(NuvTools.Data.Paging.PagingBase{`0,`1},NuvTools.Data.Paging.PagingBase{`0,`1})
+  commentId: M:NuvTools.Data.Paging.PagingBase`2.op_Equality(NuvTools.Data.Paging.PagingBase{`0,`1},NuvTools.Data.Paging.PagingBase{`0,`1})
+  id: op_Equality(NuvTools.Data.Paging.PagingBase{`0,`1},NuvTools.Data.Paging.PagingBase{`0,`1})
+  parent: NuvTools.Data.Paging.PagingBase`2
+  langs:
+  - csharp
+  - vb
+  name: operator ==(PagingBase<T, R>?, PagingBase<T, R>?)
+  nameWithType: PagingBase<T, R>.operator ==(PagingBase<T, R>?, PagingBase<T, R>?)
+  fullName: NuvTools.Data.Paging.PagingBase<T, R>.operator ==(NuvTools.Data.Paging.PagingBase<T, R>?, NuvTools.Data.Paging.PagingBase<T, R>?)
+  type: Operator
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Paging/PagingBase.cs
+  assemblies:
+  - NuvTools.Data
+  namespace: NuvTools.Data.Paging
+  syntax:
+    content: public static bool operator ==(PagingBase<T, R>? left, PagingBase<T, R>? right)
+    parameters:
+    - id: left
+      type: NuvTools.Data.Paging.PagingBase`2
+    - id: right
+      type: NuvTools.Data.Paging.PagingBase`2
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator =(left As PagingBase(Of T, R), right As PagingBase(Of T, R)) As Boolean
+  overload: NuvTools.Data.Paging.PagingBase`2.op_Equality*
+  nameWithType.vb: PagingBase(Of T, R).=(PagingBase(Of T, R), PagingBase(Of T, R))
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R).=(NuvTools.Data.Paging.PagingBase(Of T, R), NuvTools.Data.Paging.PagingBase(Of T, R))
+  name.vb: =(PagingBase(Of T, R), PagingBase(Of T, R))
+- uid: NuvTools.Data.Paging.PagingBase`2.GetHashCode
+  commentId: M:NuvTools.Data.Paging.PagingBase`2.GetHashCode
+  id: GetHashCode
+  parent: NuvTools.Data.Paging.PagingBase`2
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: PagingBase<T, R>.GetHashCode()
+  fullName: NuvTools.Data.Paging.PagingBase<T, R>.GetHashCode()
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Paging/PagingBase.cs
+  assemblies:
+  - NuvTools.Data
+  namespace: NuvTools.Data.Paging
+  example: []
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode() As Integer
+  overridden: System.Object.GetHashCode
+  overload: NuvTools.Data.Paging.PagingBase`2.GetHashCode*
+  nameWithType.vb: PagingBase(Of T, R).GetHashCode()
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R).GetHashCode()
+- uid: NuvTools.Data.Paging.PagingBase`2.Equals(System.Object)
+  commentId: M:NuvTools.Data.Paging.PagingBase`2.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: NuvTools.Data.Paging.PagingBase`2
+  langs:
+  - csharp
+  - vb
+  name: Equals(object?)
+  nameWithType: PagingBase<T, R>.Equals(object?)
+  fullName: NuvTools.Data.Paging.PagingBase<T, R>.Equals(object?)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Paging/PagingBase.cs
+  assemblies:
+  - NuvTools.Data
+  namespace: NuvTools.Data.Paging
+  example: []
+  syntax:
+    content: public override bool Equals(object? obj)
+    parameters:
+    - id: obj
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: NuvTools.Data.Paging.PagingBase`2.Equals*
+  nameWithType.vb: PagingBase(Of T, R).Equals(Object)
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R).Equals(Object)
+  name.vb: Equals(Object)
+- uid: NuvTools.Data.Paging.PagingBase`2.Equals(NuvTools.Data.Paging.PagingBase{`0,`1})
+  commentId: M:NuvTools.Data.Paging.PagingBase`2.Equals(NuvTools.Data.Paging.PagingBase{`0,`1})
+  id: Equals(NuvTools.Data.Paging.PagingBase{`0,`1})
+  parent: NuvTools.Data.Paging.PagingBase`2
+  langs:
+  - csharp
+  - vb
+  name: Equals(PagingBase<T, R>?)
+  nameWithType: PagingBase<T, R>.Equals(PagingBase<T, R>?)
+  fullName: NuvTools.Data.Paging.PagingBase<T, R>.Equals(NuvTools.Data.Paging.PagingBase<T, R>?)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Paging/PagingBase.cs
+  assemblies:
+  - NuvTools.Data
+  namespace: NuvTools.Data.Paging
+  example: []
+  syntax:
+    content: public virtual bool Equals(PagingBase<T, R>? other)
+    parameters:
+    - id: other
+      type: NuvTools.Data.Paging.PagingBase`2
+    return:
+      type: System.Boolean
+    content.vb: Public Overridable Function Equals(other As PagingBase(Of T, R)) As Boolean
+  overload: NuvTools.Data.Paging.PagingBase`2.Equals*
+  implements:
+  - System.IEquatable{NuvTools.Data.Paging.PagingBase`2}.Equals(NuvTools.Data.Paging.PagingBase{{T},{R}})
+  nameWithType.vb: PagingBase(Of T, R).Equals(PagingBase(Of T, R))
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R).Equals(NuvTools.Data.Paging.PagingBase(Of T, R))
+  name.vb: Equals(PagingBase(Of T, R))
+- uid: NuvTools.Data.Paging.PagingBase`2.{Clone}$
+  commentId: M:NuvTools.Data.Paging.PagingBase`2.{Clone}$
+  id: '{Clone}$'
+  parent: NuvTools.Data.Paging.PagingBase`2
+  langs:
+  - csharp
+  - vb
+  name: <Clone>$()
+  nameWithType: PagingBase<T, R>.<Clone>$()
+  fullName: NuvTools.Data.Paging.PagingBase<T, R>.<Clone>$()
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Paging/PagingBase.cs
+  assemblies:
+  - NuvTools.Data
+  namespace: NuvTools.Data.Paging
+  syntax:
+    content: public abstract PagingBase<T, R> <Clone>$()
+    return:
+      type: NuvTools.Data.Paging.PagingBase`2
+    content.vb: Public MustOverride Function <Clone>$() As PagingBase(Of T, R)
+  overload: NuvTools.Data.Paging.PagingBase`2.{Clone}$*
+  nameWithType.vb: PagingBase(Of T, R).<Clone>$()
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R).<Clone>$()
+- uid: NuvTools.Data.Paging.PagingBase`2.#ctor(NuvTools.Data.Paging.PagingBase{`0,`1})
+  commentId: M:NuvTools.Data.Paging.PagingBase`2.#ctor(NuvTools.Data.Paging.PagingBase{`0,`1})
+  id: '#ctor(NuvTools.Data.Paging.PagingBase{`0,`1})'
+  parent: NuvTools.Data.Paging.PagingBase`2
+  langs:
+  - csharp
+  - vb
+  name: PagingBase(PagingBase<T, R>)
+  nameWithType: PagingBase<T, R>.PagingBase(PagingBase<T, R>)
+  fullName: NuvTools.Data.Paging.PagingBase<T, R>.PagingBase(NuvTools.Data.Paging.PagingBase<T, R>)
+  type: Constructor
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Paging/PagingBase.cs
+  assemblies:
+  - NuvTools.Data
+  namespace: NuvTools.Data.Paging
+  syntax:
+    content: protected PagingBase(PagingBase<T, R> original)
+    parameters:
+    - id: original
+      type: NuvTools.Data.Paging.PagingBase`2
+    content.vb: Protected Sub New(original As PagingBase(Of T, R))
+  overload: NuvTools.Data.Paging.PagingBase`2.#ctor*
+  nameWithType.vb: PagingBase(Of T, R).New(PagingBase(Of T, R))
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R).New(NuvTools.Data.Paging.PagingBase(Of T, R))
+  name.vb: New(PagingBase(Of T, R))
 - uid: NuvTools.Data.Paging.PagingBase`2.#ctor
   commentId: M:NuvTools.Data.Paging.PagingBase`2.#ctor
   id: '#ctor'
@@ -52,6 +313,8 @@ items:
   nameWithType: PagingBase<T, R>.PagingBase()
   fullName: NuvTools.Data.Paging.PagingBase<T, R>.PagingBase()
   type: Constructor
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Paging/PagingBase.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Paging
@@ -62,6 +325,31 @@ items:
   nameWithType.vb: PagingBase(Of T, R).New()
   fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R).New()
   name.vb: New()
+- uid: NuvTools.Data.Paging.PagingBase`2.EqualityContract
+  commentId: P:NuvTools.Data.Paging.PagingBase`2.EqualityContract
+  id: EqualityContract
+  parent: NuvTools.Data.Paging.PagingBase`2
+  langs:
+  - csharp
+  - vb
+  name: EqualityContract
+  nameWithType: PagingBase<T, R>.EqualityContract
+  fullName: NuvTools.Data.Paging.PagingBase<T, R>.EqualityContract
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Paging/PagingBase.cs
+  assemblies:
+  - NuvTools.Data
+  namespace: NuvTools.Data.Paging
+  syntax:
+    content: protected virtual Type EqualityContract { get; }
+    parameters: []
+    return:
+      type: System.Type
+    content.vb: Protected Overridable ReadOnly Property EqualityContract As Type
+  overload: NuvTools.Data.Paging.PagingBase`2.EqualityContract*
+  nameWithType.vb: PagingBase(Of T, R).EqualityContract
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R).EqualityContract
 - uid: NuvTools.Data.Paging.PagingBase`2.PageNumber
   commentId: P:NuvTools.Data.Paging.PagingBase`2.PageNumber
   id: PageNumber
@@ -73,6 +361,8 @@ items:
   nameWithType: PagingBase<T, R>.PageNumber
   fullName: NuvTools.Data.Paging.PagingBase<T, R>.PageNumber
   type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Paging/PagingBase.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Paging
@@ -96,6 +386,8 @@ items:
   nameWithType: PagingBase<T, R>.Total
   fullName: NuvTools.Data.Paging.PagingBase<T, R>.Total
   type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Paging/PagingBase.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Paging
@@ -119,6 +411,8 @@ items:
   nameWithType: PagingBase<T, R>.List
   fullName: NuvTools.Data.Paging.PagingBase<T, R>.List
   type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Paging/PagingBase.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Paging
@@ -180,6 +474,55 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
+- uid: System.IEquatable{NuvTools.Data.Paging.PagingBase`2}
+  commentId: T:System.IEquatable{NuvTools.Data.Paging.PagingBase`2}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<PagingBase<T, R>>
+  nameWithType: IEquatable<PagingBase<T, R>>
+  fullName: System.IEquatable<NuvTools.Data.Paging.PagingBase<T, R>>
+  nameWithType.vb: IEquatable(Of PagingBase(Of T, R))
+  fullName.vb: System.IEquatable(Of NuvTools.Data.Paging.PagingBase(Of T, R))
+  name.vb: IEquatable(Of PagingBase(Of T, R))
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: NuvTools.Data.Paging.PagingBase`2
+    name: PagingBase
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: R
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Data.Paging.PagingBase`2
+    name: PagingBase
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: R
+  - name: )
+  - name: )
 - uid: System.Object.GetType
   commentId: M:System.Object.GetType
   parent: System.Object
@@ -227,63 +570,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
   - name: (
-  - name: )
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  name: ToString()
-  nameWithType: object.ToString()
-  fullName: object.ToString()
-  nameWithType.vb: Object.ToString()
-  fullName.vb: Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
-  - name: (
-  - name: )
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  name: Equals(object)
-  nameWithType: object.Equals(object)
-  fullName: object.Equals(object)
-  nameWithType.vb: Object.Equals(Object)
-  fullName.vb: Object.Equals(Object)
-  name.vb: Equals(Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  - name: (
-  - uid: System.Object
-    name: object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
-  - name: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
-  - name: (
-  - uid: System.Object
-    name: Object
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
 - uid: System.Object.Equals(System.Object,System.Object)
   commentId: M:System.Object.Equals(System.Object,System.Object)
@@ -375,6 +661,209 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: NuvTools.Data.Paging.PagingBase`2.ToString*
+  commentId: Overload:NuvTools.Data.Paging.PagingBase`2.ToString
+  isExternal: true
+  href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_ToString
+  name: ToString
+  nameWithType: PagingBase<T, R>.ToString
+  fullName: NuvTools.Data.Paging.PagingBase<T, R>.ToString
+  nameWithType.vb: PagingBase(Of T, R).ToString
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R).ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: NuvTools.Data.Paging.PagingBase`2.PrintMembers*
+  commentId: Overload:NuvTools.Data.Paging.PagingBase`2.PrintMembers
+  isExternal: true
+  href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_PrintMembers_System_Text_StringBuilder_
+  name: PrintMembers
+  nameWithType: PagingBase<T, R>.PrintMembers
+  fullName: NuvTools.Data.Paging.PagingBase<T, R>.PrintMembers
+  nameWithType.vb: PagingBase(Of T, R).PrintMembers
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R).PrintMembers
+- uid: System.Text.StringBuilder
+  commentId: T:System.Text.StringBuilder
+  parent: System.Text
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.text.stringbuilder
+  name: StringBuilder
+  nameWithType: StringBuilder
+  fullName: System.Text.StringBuilder
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Text
+  commentId: N:System.Text
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Text
+  nameWithType: System.Text
+  fullName: System.Text
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Text
+    name: Text
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Text
+    name: Text
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text
+- uid: NuvTools.Data.Paging.PagingBase`2.op_Inequality*
+  commentId: Overload:NuvTools.Data.Paging.PagingBase`2.op_Inequality
+  isExternal: true
+  href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_op_Inequality_NuvTools_Data_Paging_PagingBase__0__1__NuvTools_Data_Paging_PagingBase__0__1__
+  name: operator !=
+  nameWithType: PagingBase<T, R>.operator !=
+  fullName: NuvTools.Data.Paging.PagingBase<T, R>.operator !=
+  nameWithType.vb: PagingBase(Of T, R).<>
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R).<>
+  name.vb: <>
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: NuvTools.Data.Paging.PagingBase`2.op_Inequality*
+    name: '!='
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_op_Inequality_NuvTools_Data_Paging_PagingBase__0__1__NuvTools_Data_Paging_PagingBase__0__1__
+- uid: NuvTools.Data.Paging.PagingBase`2
+  commentId: T:NuvTools.Data.Paging.PagingBase`2
+  parent: NuvTools.Data.Paging
+  isExternal: true
+  href: NuvTools.Data.Paging.PagingBase-2.html
+  name: PagingBase<T, R>
+  nameWithType: PagingBase<T, R>
+  fullName: NuvTools.Data.Paging.PagingBase<T, R>
+  nameWithType.vb: PagingBase(Of T, R)
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R)
+  name.vb: PagingBase(Of T, R)
+  spec.csharp:
+  - uid: NuvTools.Data.Paging.PagingBase`2
+    name: PagingBase
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: R
+  - name: '>'
+  spec.vb:
+  - uid: NuvTools.Data.Paging.PagingBase`2
+    name: PagingBase
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: R
+  - name: )
+- uid: NuvTools.Data.Paging.PagingBase`2.op_Equality*
+  commentId: Overload:NuvTools.Data.Paging.PagingBase`2.op_Equality
+  isExternal: true
+  href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_op_Equality_NuvTools_Data_Paging_PagingBase__0__1__NuvTools_Data_Paging_PagingBase__0__1__
+  name: operator ==
+  nameWithType: PagingBase<T, R>.operator ==
+  fullName: NuvTools.Data.Paging.PagingBase<T, R>.operator ==
+  nameWithType.vb: PagingBase(Of T, R).=
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R).=
+  name.vb: =
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: NuvTools.Data.Paging.PagingBase`2.op_Equality*
+    name: ==
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_op_Equality_NuvTools_Data_Paging_PagingBase__0__1__NuvTools_Data_Paging_PagingBase__0__1__
 - uid: System.Object.GetHashCode
   commentId: M:System.Object.GetHashCode
   parent: System.Object
@@ -399,32 +888,15 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
   - name: (
   - name: )
-- uid: System
-  commentId: N:System
+- uid: NuvTools.Data.Paging.PagingBase`2.GetHashCode*
+  commentId: Overload:NuvTools.Data.Paging.PagingBase`2.GetHashCode
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System
-  nameWithType: System
-  fullName: System
-- uid: NuvTools.Data.Paging.PagingBase`2.#ctor*
-  commentId: Overload:NuvTools.Data.Paging.PagingBase`2.#ctor
-  isExternal: true
-  href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2__ctor
-  name: PagingBase
-  nameWithType: PagingBase<T, R>.PagingBase
-  fullName: NuvTools.Data.Paging.PagingBase<T, R>.PagingBase
-  nameWithType.vb: PagingBase(Of T, R).New
-  fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R).New
-  name.vb: New
-- uid: NuvTools.Data.Paging.PagingBase`2.PageNumber*
-  commentId: Overload:NuvTools.Data.Paging.PagingBase`2.PageNumber
-  isExternal: true
-  href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_PageNumber
-  name: PageNumber
-  nameWithType: PagingBase<T, R>.PageNumber
-  fullName: NuvTools.Data.Paging.PagingBase<T, R>.PageNumber
-  nameWithType.vb: PagingBase(Of T, R).PageNumber
-  fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R).PageNumber
+  href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_GetHashCode
+  name: GetHashCode
+  nameWithType: PagingBase<T, R>.GetHashCode
+  fullName: NuvTools.Data.Paging.PagingBase<T, R>.GetHashCode
+  nameWithType.vb: PagingBase(Of T, R).GetHashCode
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R).GetHashCode
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -436,6 +908,165 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: NuvTools.Data.Paging.PagingBase`2.Equals*
+  commentId: Overload:NuvTools.Data.Paging.PagingBase`2.Equals
+  isExternal: true
+  href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_Equals_System_Object_
+  name: Equals
+  nameWithType: PagingBase<T, R>.Equals
+  fullName: NuvTools.Data.Paging.PagingBase<T, R>.Equals
+  nameWithType.vb: PagingBase(Of T, R).Equals
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R).Equals
+- uid: System.IEquatable{NuvTools.Data.Paging.PagingBase`2}.Equals(NuvTools.Data.Paging.PagingBase{{T},{R}})
+  commentId: M:System.IEquatable{NuvTools.Data.Paging.PagingBase`2}.Equals(NuvTools.Data.Paging.PagingBase{`0,`1})
+  parent: System.IEquatable{NuvTools.Data.Paging.PagingBase`2}
+  definition: System.IEquatable`1.Equals(`0)
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  name: Equals(PagingBase<T, R>)
+  nameWithType: IEquatable<PagingBase<T, R>>.Equals(PagingBase<T, R>)
+  fullName: System.IEquatable<NuvTools.Data.Paging.PagingBase<T, R>>.Equals(NuvTools.Data.Paging.PagingBase<T, R>)
+  nameWithType.vb: IEquatable(Of PagingBase(Of T, R)).Equals(PagingBase(Of T, R))
+  fullName.vb: System.IEquatable(Of NuvTools.Data.Paging.PagingBase(Of T, R)).Equals(NuvTools.Data.Paging.PagingBase(Of T, R))
+  name.vb: Equals(PagingBase(Of T, R))
+  spec.csharp:
+  - uid: System.IEquatable{NuvTools.Data.Paging.PagingBase`2}.Equals(NuvTools.Data.Paging.PagingBase{`0,`1})
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - uid: NuvTools.Data.Paging.PagingBase`2
+    name: PagingBase
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: R
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: System.IEquatable{NuvTools.Data.Paging.PagingBase`2}.Equals(NuvTools.Data.Paging.PagingBase{`0,`1})
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - uid: NuvTools.Data.Paging.PagingBase`2
+    name: PagingBase
+    isExternal: true
+    href: NuvTools.Data.Paging.PagingBase-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: R
+  - name: )
+  - name: )
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - name: T
+  - name: )
+- uid: NuvTools.Data.Paging.PagingBase`2.{Clone}$*
+  commentId: Overload:NuvTools.Data.Paging.PagingBase`2.{Clone}$
+  isExternal: true
+  href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2__Clone__
+  name: <Clone>$
+  nameWithType: PagingBase<T, R>.<Clone>$
+  fullName: NuvTools.Data.Paging.PagingBase<T, R>.<Clone>$
+  nameWithType.vb: PagingBase(Of T, R).<Clone>$
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R).<Clone>$
+- uid: NuvTools.Data.Paging.PagingBase`2.#ctor*
+  commentId: Overload:NuvTools.Data.Paging.PagingBase`2.#ctor
+  isExternal: true
+  href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2__ctor_NuvTools_Data_Paging_PagingBase__0__1__
+  name: PagingBase
+  nameWithType: PagingBase<T, R>.PagingBase
+  fullName: NuvTools.Data.Paging.PagingBase<T, R>.PagingBase
+  nameWithType.vb: PagingBase(Of T, R).New
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R).New
+  name.vb: New
+- uid: NuvTools.Data.Paging.PagingBase`2.EqualityContract*
+  commentId: Overload:NuvTools.Data.Paging.PagingBase`2.EqualityContract
+  isExternal: true
+  href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_EqualityContract
+  name: EqualityContract
+  nameWithType: PagingBase<T, R>.EqualityContract
+  fullName: NuvTools.Data.Paging.PagingBase<T, R>.EqualityContract
+  nameWithType.vb: PagingBase(Of T, R).EqualityContract
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R).EqualityContract
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: NuvTools.Data.Paging.PagingBase`2.PageNumber*
+  commentId: Overload:NuvTools.Data.Paging.PagingBase`2.PageNumber
+  isExternal: true
+  href: NuvTools.Data.Paging.PagingBase-2.html#NuvTools_Data_Paging_PagingBase_2_PageNumber
+  name: PageNumber
+  nameWithType: PagingBase<T, R>.PageNumber
+  fullName: NuvTools.Data.Paging.PagingBase<T, R>.PageNumber
+  nameWithType.vb: PagingBase(Of T, R).PageNumber
+  fullName.vb: NuvTools.Data.Paging.PagingBase(Of T, R).PageNumber
 - uid: NuvTools.Data.Paging.PagingBase`2.Total*
   commentId: Overload:NuvTools.Data.Paging.PagingBase`2.Total
   isExternal: true

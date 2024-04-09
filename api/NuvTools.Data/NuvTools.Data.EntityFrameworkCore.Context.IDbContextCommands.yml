@@ -1,0 +1,769 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
+  commentId: T:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
+  id: IDbContextCommands
+  parent: NuvTools.Data.EntityFrameworkCore.Context
+  children:
+  - NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveAsync``2(``0)
+  - NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveWithCompositeKeyAsync``1(``0)
+  - NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.BeginTransactionAsync(System.Threading.CancellationToken)
+  - NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CommitTransactionAsync(System.Threading.CancellationToken)
+  - NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CurrentTransaction
+  - NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RemoveAndSaveAsync``1(System.Object[])
+  - NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RollbackTransactionAsync(System.Threading.CancellationToken)
+  - NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.SaveChangesAsync(System.Threading.CancellationToken)
+  - NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.UpdateAndSaveAsync``1(``0,System.Object[])
+  langs:
+  - csharp
+  - vb
+  name: IDbContextCommands
+  nameWithType: IDbContextCommands
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
+  type: Interface
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Context
+  syntax:
+    content: public interface IDbContextCommands
+    content.vb: Public Interface IDbContextCommands
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.BeginTransactionAsync(System.Threading.CancellationToken)
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.BeginTransactionAsync(System.Threading.CancellationToken)
+  id: BeginTransactionAsync(System.Threading.CancellationToken)
+  parent: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
+  langs:
+  - csharp
+  - vb
+  name: BeginTransactionAsync(CancellationToken)
+  nameWithType: IDbContextCommands.BeginTransactionAsync(CancellationToken)
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.BeginTransactionAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Context
+  syntax:
+    content: Task<IDbContextTransaction> BeginTransactionAsync(CancellationToken cancellationToken = default)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction}
+    content.vb: Function BeginTransactionAsync(cancellationToken As CancellationToken = Nothing) As Task(Of IDbContextTransaction)
+  overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.BeginTransactionAsync*
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RollbackTransactionAsync(System.Threading.CancellationToken)
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RollbackTransactionAsync(System.Threading.CancellationToken)
+  id: RollbackTransactionAsync(System.Threading.CancellationToken)
+  parent: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
+  langs:
+  - csharp
+  - vb
+  name: RollbackTransactionAsync(CancellationToken)
+  nameWithType: IDbContextCommands.RollbackTransactionAsync(CancellationToken)
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RollbackTransactionAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Context
+  syntax:
+    content: Task RollbackTransactionAsync(CancellationToken cancellationToken = default)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function RollbackTransactionAsync(cancellationToken As CancellationToken = Nothing) As Task
+  overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RollbackTransactionAsync*
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CommitTransactionAsync(System.Threading.CancellationToken)
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CommitTransactionAsync(System.Threading.CancellationToken)
+  id: CommitTransactionAsync(System.Threading.CancellationToken)
+  parent: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
+  langs:
+  - csharp
+  - vb
+  name: CommitTransactionAsync(CancellationToken)
+  nameWithType: IDbContextCommands.CommitTransactionAsync(CancellationToken)
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CommitTransactionAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Context
+  syntax:
+    content: Task CommitTransactionAsync(CancellationToken cancellationToken = default)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function CommitTransactionAsync(cancellationToken As CancellationToken = Nothing) As Task
+  overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CommitTransactionAsync*
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.SaveChangesAsync(System.Threading.CancellationToken)
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.SaveChangesAsync(System.Threading.CancellationToken)
+  id: SaveChangesAsync(System.Threading.CancellationToken)
+  parent: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
+  langs:
+  - csharp
+  - vb
+  name: SaveChangesAsync(CancellationToken)
+  nameWithType: IDbContextCommands.SaveChangesAsync(CancellationToken)
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.SaveChangesAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Context
+  syntax:
+    content: Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{System.Int32}
+    content.vb: Function SaveChangesAsync(cancellationToken As CancellationToken = Nothing) As Task(Of Integer)
+  overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.SaveChangesAsync*
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveAsync``2(``0)
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveAsync``2(``0)
+  id: AddAndSaveAsync``2(``0)
+  parent: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
+  langs:
+  - csharp
+  - vb
+  name: AddAndSaveAsync<TEntity, TKey>(TEntity)
+  nameWithType: IDbContextCommands.AddAndSaveAsync<TEntity, TKey>(TEntity)
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveAsync<TEntity, TKey>(TEntity)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Context
+  syntax:
+    content: 'Task<IResult<TKey>> AddAndSaveAsync<TEntity, TKey>(TEntity entity) where TEntity : class'
+    parameters:
+    - id: entity
+      type: '{TEntity}'
+    typeParameters:
+    - id: TEntity
+    - id: TKey
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{{TKey}}}
+    content.vb: Function AddAndSaveAsync(Of TEntity As Class, TKey)(entity As TEntity) As Task(Of IResult(Of TKey))
+  overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveAsync*
+  nameWithType.vb: IDbContextCommands.AddAndSaveAsync(Of TEntity, TKey)(TEntity)
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveAsync(Of TEntity, TKey)(TEntity)
+  name.vb: AddAndSaveAsync(Of TEntity, TKey)(TEntity)
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.UpdateAndSaveAsync``1(``0,System.Object[])
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.UpdateAndSaveAsync``1(``0,System.Object[])
+  id: UpdateAndSaveAsync``1(``0,System.Object[])
+  parent: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
+  langs:
+  - csharp
+  - vb
+  name: UpdateAndSaveAsync<TEntity>(TEntity, params object[])
+  nameWithType: IDbContextCommands.UpdateAndSaveAsync<TEntity>(TEntity, params object[])
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.UpdateAndSaveAsync<TEntity>(TEntity, params object[])
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Context
+  syntax:
+    content: 'Task<IResult> UpdateAndSaveAsync<TEntity>(TEntity entity, params object[] keyValues) where TEntity : class'
+    parameters:
+    - id: entity
+      type: '{TEntity}'
+    - id: keyValues
+      type: System.Object[]
+    typeParameters:
+    - id: TEntity
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+    content.vb: Function UpdateAndSaveAsync(Of TEntity As Class)(entity As TEntity, ParamArray keyValues As Object()) As Task(Of IResult)
+  overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.UpdateAndSaveAsync*
+  nameWithType.vb: IDbContextCommands.UpdateAndSaveAsync(Of TEntity)(TEntity, ParamArray Object())
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.UpdateAndSaveAsync(Of TEntity)(TEntity, ParamArray Object())
+  name.vb: UpdateAndSaveAsync(Of TEntity)(TEntity, ParamArray Object())
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveWithCompositeKeyAsync``1(``0)
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveWithCompositeKeyAsync``1(``0)
+  id: AddAndSaveWithCompositeKeyAsync``1(``0)
+  parent: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
+  langs:
+  - csharp
+  - vb
+  name: AddAndSaveWithCompositeKeyAsync<TEntity>(TEntity)
+  nameWithType: IDbContextCommands.AddAndSaveWithCompositeKeyAsync<TEntity>(TEntity)
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveWithCompositeKeyAsync<TEntity>(TEntity)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Context
+  syntax:
+    content: 'Task<IResult<object[]>> AddAndSaveWithCompositeKeyAsync<TEntity>(TEntity entity) where TEntity : class'
+    parameters:
+    - id: entity
+      type: '{TEntity}'
+    typeParameters:
+    - id: TEntity
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.Object[]}}
+    content.vb: Function AddAndSaveWithCompositeKeyAsync(Of TEntity As Class)(entity As TEntity) As Task(Of IResult(Of Object()))
+  overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveWithCompositeKeyAsync*
+  nameWithType.vb: IDbContextCommands.AddAndSaveWithCompositeKeyAsync(Of TEntity)(TEntity)
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveWithCompositeKeyAsync(Of TEntity)(TEntity)
+  name.vb: AddAndSaveWithCompositeKeyAsync(Of TEntity)(TEntity)
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RemoveAndSaveAsync``1(System.Object[])
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RemoveAndSaveAsync``1(System.Object[])
+  id: RemoveAndSaveAsync``1(System.Object[])
+  parent: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
+  langs:
+  - csharp
+  - vb
+  name: RemoveAndSaveAsync<TEntity>(params object[])
+  nameWithType: IDbContextCommands.RemoveAndSaveAsync<TEntity>(params object[])
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RemoveAndSaveAsync<TEntity>(params object[])
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Context
+  syntax:
+    content: 'Task<IResult> RemoveAndSaveAsync<TEntity>(params object[] keyValues) where TEntity : class'
+    parameters:
+    - id: keyValues
+      type: System.Object[]
+    typeParameters:
+    - id: TEntity
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+    content.vb: Function RemoveAndSaveAsync(Of TEntity As Class)(ParamArray keyValues As Object()) As Task(Of IResult)
+  overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RemoveAndSaveAsync*
+  nameWithType.vb: IDbContextCommands.RemoveAndSaveAsync(Of TEntity)(ParamArray Object())
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RemoveAndSaveAsync(Of TEntity)(ParamArray Object())
+  name.vb: RemoveAndSaveAsync(Of TEntity)(ParamArray Object())
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CurrentTransaction
+  commentId: P:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CurrentTransaction
+  id: CurrentTransaction
+  parent: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
+  langs:
+  - csharp
+  - vb
+  name: CurrentTransaction
+  nameWithType: IDbContextCommands.CurrentTransaction
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CurrentTransaction
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Context
+  syntax:
+    content: IDbContextTransaction CurrentTransaction { get; }
+    parameters: []
+    return:
+      type: Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction
+    content.vb: ReadOnly Property CurrentTransaction As IDbContextTransaction
+  overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CurrentTransaction*
+references:
+- uid: NuvTools.Data.EntityFrameworkCore.Context
+  commentId: N:NuvTools.Data.EntityFrameworkCore.Context
+  isExternal: true
+  href: NuvTools.html
+  name: NuvTools.Data.EntityFrameworkCore.Context
+  nameWithType: NuvTools.Data.EntityFrameworkCore.Context
+  fullName: NuvTools.Data.EntityFrameworkCore.Context
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Data
+    name: Data
+    isExternal: true
+    href: NuvTools.Data.html
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: NuvTools.Data.EntityFrameworkCore.html
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore.Context
+    name: Context
+    isExternal: true
+    href: NuvTools.Data.EntityFrameworkCore.Context.html
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Data
+    name: Data
+    isExternal: true
+    href: NuvTools.Data.html
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: NuvTools.Data.EntityFrameworkCore.html
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore.Context
+    name: Context
+    isExternal: true
+    href: NuvTools.Data.EntityFrameworkCore.Context.html
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.BeginTransactionAsync*
+  commentId: Overload:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.BeginTransactionAsync
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.html#NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_BeginTransactionAsync_System_Threading_CancellationToken_
+  name: BeginTransactionAsync
+  nameWithType: IDbContextCommands.BeginTransactionAsync
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.BeginTransactionAsync
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction}
+  commentId: T:System.Threading.Tasks.Task{Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IDbContextTransaction>
+  nameWithType: Task<IDbContextTransaction>
+  fullName: System.Threading.Tasks.Task<Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction>
+  nameWithType.vb: Task(Of IDbContextTransaction)
+  fullName.vb: System.Threading.Tasks.Task(Of Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction)
+  name.vb: Task(Of IDbContextTransaction)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction
+    name: IDbContextTransaction
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.storage.idbcontexttransaction
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction
+    name: IDbContextTransaction
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.storage.idbcontexttransaction
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RollbackTransactionAsync*
+  commentId: Overload:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RollbackTransactionAsync
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.html#NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_RollbackTransactionAsync_System_Threading_CancellationToken_
+  name: RollbackTransactionAsync
+  nameWithType: IDbContextCommands.RollbackTransactionAsync
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RollbackTransactionAsync
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CommitTransactionAsync*
+  commentId: Overload:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CommitTransactionAsync
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.html#NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_CommitTransactionAsync_System_Threading_CancellationToken_
+  name: CommitTransactionAsync
+  nameWithType: IDbContextCommands.CommitTransactionAsync
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CommitTransactionAsync
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.SaveChangesAsync*
+  commentId: Overload:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.SaveChangesAsync
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.html#NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_SaveChangesAsync_System_Threading_CancellationToken_
+  name: SaveChangesAsync
+  nameWithType: IDbContextCommands.SaveChangesAsync
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.SaveChangesAsync
+- uid: System.Threading.Tasks.Task{System.Int32}
+  commentId: T:System.Threading.Tasks.Task{System.Int32}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<int>
+  nameWithType: Task<int>
+  fullName: System.Threading.Tasks.Task<int>
+  nameWithType.vb: Task(Of Integer)
+  fullName.vb: System.Threading.Tasks.Task(Of Integer)
+  name.vb: Task(Of Integer)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveAsync*
+  commentId: Overload:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveAsync
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.html#NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_AddAndSaveAsync__2___0_
+  name: AddAndSaveAsync
+  nameWithType: IDbContextCommands.AddAndSaveAsync
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveAsync
+- uid: '{TEntity}'
+  commentId: '!:TEntity'
+  definition: TEntity
+  name: TEntity
+  nameWithType: TEntity
+  fullName: TEntity
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{{TKey}}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{``1}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<TKey>>
+  nameWithType: Task<IResult<TKey>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<TKey>>
+  nameWithType.vb: Task(Of IResult(Of TKey))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of TKey))
+  name.vb: Task(Of IResult(Of TKey))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - name: TKey
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: )
+  - name: )
+- uid: TEntity
+  name: TEntity
+  nameWithType: TEntity
+  fullName: TEntity
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.UpdateAndSaveAsync*
+  commentId: Overload:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.UpdateAndSaveAsync
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.html#NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_UpdateAndSaveAsync__1___0_System_Object___
+  name: UpdateAndSaveAsync
+  nameWithType: IDbContextCommands.UpdateAndSaveAsync
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.UpdateAndSaveAsync
+- uid: System.Object[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object[]
+  nameWithType: object[]
+  fullName: object[]
+  nameWithType.vb: Object()
+  fullName.vb: Object()
+  name.vb: Object()
+  spec.csharp:
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: (
+  - name: )
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult>
+  nameWithType: Task<IResult>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult>
+  nameWithType.vb: Task(Of IResult)
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult)
+  name.vb: Task(Of IResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult
+    name: IResult
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult
+    name: IResult
+    isExternal: true
+  - name: )
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveWithCompositeKeyAsync*
+  commentId: Overload:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveWithCompositeKeyAsync
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.html#NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_AddAndSaveWithCompositeKeyAsync__1___0_
+  name: AddAndSaveWithCompositeKeyAsync
+  nameWithType: IDbContextCommands.AddAndSaveWithCompositeKeyAsync
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveWithCompositeKeyAsync
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.Object[]}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.Object[]}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<object[]>>
+  nameWithType: Task<IResult<object[]>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<object[]>>
+  nameWithType.vb: Task(Of IResult(Of Object()))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of Object()))
+  name.vb: Task(Of IResult(Of Object()))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '['
+  - name: ']'
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: (
+  - name: )
+  - name: )
+  - name: )
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RemoveAndSaveAsync*
+  commentId: Overload:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RemoveAndSaveAsync
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.html#NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_RemoveAndSaveAsync__1_System_Object___
+  name: RemoveAndSaveAsync
+  nameWithType: IDbContextCommands.RemoveAndSaveAsync
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RemoveAndSaveAsync
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CurrentTransaction*
+  commentId: Overload:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CurrentTransaction
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.html#NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_CurrentTransaction
+  name: CurrentTransaction
+  nameWithType: IDbContextCommands.CurrentTransaction
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CurrentTransaction
+- uid: Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction
+  commentId: T:Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction
+  parent: Microsoft.EntityFrameworkCore.Storage
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.storage.idbcontexttransaction
+  name: IDbContextTransaction
+  nameWithType: IDbContextTransaction
+  fullName: Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction
+- uid: Microsoft.EntityFrameworkCore.Storage
+  commentId: N:Microsoft.EntityFrameworkCore.Storage
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.EntityFrameworkCore.Storage
+  nameWithType: Microsoft.EntityFrameworkCore.Storage
+  fullName: Microsoft.EntityFrameworkCore.Storage
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore.Storage
+    name: Storage
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.storage
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore.Storage
+    name: Storage
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.storage
