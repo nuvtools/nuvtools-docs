@@ -17,7 +17,7 @@ items:
   fullName: NuvTools.Security.Identity.Models.Api.TokenResponse
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/bfc33d00ec048c7ef8ba757e92d286067d8ebc39/src/NuvTools.Security.Identity.Models/Api/TokenResponse.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/8a28a4078171d44e3ffb8b500dad5a246ce64df4/src/NuvTools.Security.Identity.Models/Api/TokenResponse.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models.Api
@@ -46,7 +46,7 @@ items:
   fullName: NuvTools.Security.Identity.Models.Api.TokenResponse.TokenResponse()
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/bfc33d00ec048c7ef8ba757e92d286067d8ebc39/src/NuvTools.Security.Identity.Models/Api/TokenResponse.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/8a28a4078171d44e3ffb8b500dad5a246ce64df4/src/NuvTools.Security.Identity.Models/Api/TokenResponse.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models.Api
@@ -69,12 +69,12 @@ items:
   fullName: NuvTools.Security.Identity.Models.Api.TokenResponse.Token
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/bfc33d00ec048c7ef8ba757e92d286067d8ebc39/src/NuvTools.Security.Identity.Models/Api/TokenResponse.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/8a28a4078171d44e3ffb8b500dad5a246ce64df4/src/NuvTools.Security.Identity.Models/Api/TokenResponse.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models.Api
   syntax:
-    content: public string Token { get; set; }
+    content: public string? Token { get; set; }
     parameters: []
     return:
       type: System.String
@@ -92,12 +92,12 @@ items:
   fullName: NuvTools.Security.Identity.Models.Api.TokenResponse.RefreshToken
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/bfc33d00ec048c7ef8ba757e92d286067d8ebc39/src/NuvTools.Security.Identity.Models/Api/TokenResponse.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/8a28a4078171d44e3ffb8b500dad5a246ce64df4/src/NuvTools.Security.Identity.Models/Api/TokenResponse.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models.Api
   syntax:
-    content: public string RefreshToken { get; set; }
+    content: public string? RefreshToken { get; set; }
     parameters: []
     return:
       type: System.String
@@ -115,16 +115,16 @@ items:
   fullName: NuvTools.Security.Identity.Models.Api.TokenResponse.RefreshTokenExpiryTime
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/bfc33d00ec048c7ef8ba757e92d286067d8ebc39/src/NuvTools.Security.Identity.Models/Api/TokenResponse.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/8a28a4078171d44e3ffb8b500dad5a246ce64df4/src/NuvTools.Security.Identity.Models/Api/TokenResponse.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models.Api
   syntax:
-    content: public DateTime RefreshTokenExpiryTime { get; set; }
+    content: public DateTime? RefreshTokenExpiryTime { get; set; }
     parameters: []
     return:
-      type: System.DateTime
-    content.vb: Public Property RefreshTokenExpiryTime As Date
+      type: System.Nullable{System.DateTime}
+    content.vb: Public Property RefreshTokenExpiryTime As Date?
   overload: NuvTools.Security.Identity.Models.Api.TokenResponse.RefreshTokenExpiryTime*
 references:
 - uid: NuvTools.Security.Identity.Models.Api
@@ -463,14 +463,54 @@ references:
   name: RefreshTokenExpiryTime
   nameWithType: TokenResponse.RefreshTokenExpiryTime
   fullName: NuvTools.Security.Identity.Models.Api.TokenResponse.RefreshTokenExpiryTime
-- uid: System.DateTime
-  commentId: T:System.DateTime
+- uid: System.Nullable{System.DateTime}
+  commentId: T:System.Nullable{System.DateTime}
   parent: System
-  isExternal: true
+  definition: System.Nullable`1
   href: https://learn.microsoft.com/dotnet/api/system.datetime
-  name: DateTime
-  nameWithType: DateTime
-  fullName: System.DateTime
-  nameWithType.vb: Date
-  fullName.vb: Date
-  name.vb: Date
+  name: DateTime?
+  nameWithType: DateTime?
+  fullName: System.DateTime?
+  nameWithType.vb: Date?
+  fullName.vb: Date?
+  name.vb: Date?
+  spec.csharp:
+  - uid: System.DateTime
+    name: DateTime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: '?'
+  spec.vb:
+  - uid: System.DateTime
+    name: Date
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetime
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )

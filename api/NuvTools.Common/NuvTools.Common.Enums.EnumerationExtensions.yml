@@ -26,7 +26,7 @@ items:
   fullName: NuvTools.Common.Enums.EnumerationExtensions
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/Enums/EnumerationExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/Enums/EnumerationExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Enums
@@ -58,7 +58,7 @@ items:
   fullName: NuvTools.Common.Enums.EnumerationExtensions.GetGroupName(System.Enum)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/Enums/EnumerationExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/Enums/EnumerationExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Enums
@@ -88,7 +88,7 @@ items:
   fullName: NuvTools.Common.Enums.EnumerationExtensions.IsInGroup(System.Enum, string)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/Enums/EnumerationExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/Enums/EnumerationExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Enums
@@ -124,7 +124,7 @@ items:
   fullName: NuvTools.Common.Enums.EnumerationExtensions.GetShortName(System.Enum)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/Enums/EnumerationExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/Enums/EnumerationExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Enums
@@ -154,7 +154,7 @@ items:
   fullName: NuvTools.Common.Enums.EnumerationExtensions.GetName(System.Enum)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/Enums/EnumerationExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/Enums/EnumerationExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Enums
@@ -184,7 +184,7 @@ items:
   fullName: NuvTools.Common.Enums.EnumerationExtensions.GetDescription(System.Enum)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/Enums/EnumerationExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/Enums/EnumerationExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Enums
@@ -214,7 +214,7 @@ items:
   fullName: NuvTools.Common.Enums.EnumerationExtensions.GetValueAsString(System.Enum)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/Enums/EnumerationExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/Enums/EnumerationExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Enums
@@ -244,14 +244,14 @@ items:
   fullName: NuvTools.Common.Enums.EnumerationExtensions.GetEnumerator<TUEnum>(System.Enum)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/Enums/EnumerationExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/Enums/EnumerationExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Enums
   summary: Returns the enum item description.
   example: []
   syntax:
-    content: 'public static IEnumerator<TUEnum> GetEnumerator<TUEnum>(this Enum value) where TUEnum : IEquatable<TUEnum>'
+    content: 'public static IEnumDescriptor<TUEnum> GetEnumerator<TUEnum>(this Enum value) where TUEnum : IEquatable<TUEnum>'
     parameters:
     - id: value
       type: System.Enum
@@ -260,9 +260,9 @@ items:
     - id: TUEnum
       description: Id type that should be the same as enum underlyting type.
     return:
-      type: NuvTools.Common.Enums.IEnumerator{{TUEnum}}
+      type: NuvTools.Common.Enums.IEnumDescriptor{{TUEnum}}
       description: Enum item description.
-    content.vb: Public Shared Function GetEnumerator(Of TUEnum As IEquatable(Of TUEnum))(value As [Enum]) As IEnumerator(Of TUEnum)
+    content.vb: Public Shared Function GetEnumerator(Of TUEnum As IEquatable(Of TUEnum))(value As [Enum]) As IEnumDescriptor(Of TUEnum)
   overload: NuvTools.Common.Enums.EnumerationExtensions.GetEnumerator*
   exceptions:
   - type: System.ArgumentNullException
@@ -287,7 +287,7 @@ items:
   fullName: NuvTools.Common.Enums.EnumerationExtensions.ToStringSeparatorDelimited<TEnum>(System.Collections.Generic.IEnumerable<TEnum>, char)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/Enums/EnumerationExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/Enums/EnumerationExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Enums
@@ -326,7 +326,7 @@ items:
   fullName: NuvTools.Common.Enums.EnumerationExtensions.ToListEnumFromSeparatorDelimited<TEnum>(string, char)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/Enums/EnumerationExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/Enums/EnumerationExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Enums
@@ -365,7 +365,7 @@ items:
   fullName: NuvTools.Common.Enums.EnumerationExtensions.ToListEnumFromSeparatorDelimited(string, System.Type, char)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/Enums/EnumerationExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/Enums/EnumerationExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Enums
@@ -404,12 +404,12 @@ items:
   fullName: NuvTools.Common.Enums.EnumerationExtensions.GetDisplayAttributes(System.Enum)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/Enums/EnumerationExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/Enums/EnumerationExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Enums
   syntax:
-    content: public static DisplayAttribute[] GetDisplayAttributes(this Enum value)
+    content: public static DisplayAttribute[]? GetDisplayAttributes(this Enum value)
     parameters:
     - id: value
       type: System.Enum
@@ -430,22 +430,22 @@ items:
   fullName: NuvTools.Common.Enums.EnumerationExtensions.GetOrder(System.Enum)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/Enums/EnumerationExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/Enums/EnumerationExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Enums
   summary: Returns the Order value from DisplayAttribute.
   example: []
   syntax:
-    content: public static int GetOrder(this Enum value)
+    content: public static int? GetOrder(this Enum value)
     parameters:
     - id: value
       type: System.Enum
       description: Enum with DisplayAttribute.
     return:
-      type: System.Int32
+      type: System.Nullable{System.Int32}
       description: ''
-    content.vb: Public Shared Function GetOrder(value As [Enum]) As Integer
+    content.vb: Public Shared Function GetOrder(value As [Enum]) As Integer?
   overload: NuvTools.Common.Enums.EnumerationExtensions.GetOrder*
 - uid: NuvTools.Common.Enums.EnumerationExtensions.GetPrompt(System.Enum)
   commentId: M:NuvTools.Common.Enums.EnumerationExtensions.GetPrompt(System.Enum)
@@ -460,14 +460,14 @@ items:
   fullName: NuvTools.Common.Enums.EnumerationExtensions.GetPrompt(System.Enum)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/Enums/EnumerationExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/Enums/EnumerationExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Enums
   summary: Returns the Order value from DisplayAttribute.
   example: []
   syntax:
-    content: public static string GetPrompt(this Enum value)
+    content: public static string? GetPrompt(this Enum value)
     parameters:
     - id: value
       type: System.Enum
@@ -897,58 +897,58 @@ references:
   name: GetEnumerator
   nameWithType: EnumerationExtensions.GetEnumerator
   fullName: NuvTools.Common.Enums.EnumerationExtensions.GetEnumerator
-- uid: NuvTools.Common.Enums.IEnumerator{{TUEnum}}
-  commentId: T:NuvTools.Common.Enums.IEnumerator{``0}
+- uid: NuvTools.Common.Enums.IEnumDescriptor{{TUEnum}}
+  commentId: T:NuvTools.Common.Enums.IEnumDescriptor{``0}
   parent: NuvTools.Common.Enums
-  definition: NuvTools.Common.Enums.IEnumerator`1
-  href: NuvTools.Common.Enums.IEnumerator-1.html
-  name: IEnumerator<TUEnum>
-  nameWithType: IEnumerator<TUEnum>
-  fullName: NuvTools.Common.Enums.IEnumerator<TUEnum>
-  nameWithType.vb: IEnumerator(Of TUEnum)
-  fullName.vb: NuvTools.Common.Enums.IEnumerator(Of TUEnum)
-  name.vb: IEnumerator(Of TUEnum)
+  definition: NuvTools.Common.Enums.IEnumDescriptor`1
+  href: NuvTools.Common.Enums.IEnumDescriptor-1.html
+  name: IEnumDescriptor<TUEnum>
+  nameWithType: IEnumDescriptor<TUEnum>
+  fullName: NuvTools.Common.Enums.IEnumDescriptor<TUEnum>
+  nameWithType.vb: IEnumDescriptor(Of TUEnum)
+  fullName.vb: NuvTools.Common.Enums.IEnumDescriptor(Of TUEnum)
+  name.vb: IEnumDescriptor(Of TUEnum)
   spec.csharp:
-  - uid: NuvTools.Common.Enums.IEnumerator`1
-    name: IEnumerator
+  - uid: NuvTools.Common.Enums.IEnumDescriptor`1
+    name: IEnumDescriptor
     isExternal: true
-    href: NuvTools.Common.Enums.IEnumerator-1.html
+    href: NuvTools.Common.Enums.IEnumDescriptor-1.html
   - name: <
   - name: TUEnum
   - name: '>'
   spec.vb:
-  - uid: NuvTools.Common.Enums.IEnumerator`1
-    name: IEnumerator
+  - uid: NuvTools.Common.Enums.IEnumDescriptor`1
+    name: IEnumDescriptor
     isExternal: true
-    href: NuvTools.Common.Enums.IEnumerator-1.html
+    href: NuvTools.Common.Enums.IEnumDescriptor-1.html
   - name: (
   - name: Of
   - name: " "
   - name: TUEnum
   - name: )
-- uid: NuvTools.Common.Enums.IEnumerator`1
-  commentId: T:NuvTools.Common.Enums.IEnumerator`1
+- uid: NuvTools.Common.Enums.IEnumDescriptor`1
+  commentId: T:NuvTools.Common.Enums.IEnumDescriptor`1
   isExternal: true
-  href: NuvTools.Common.Enums.IEnumerator-1.html
-  name: IEnumerator<TKey>
-  nameWithType: IEnumerator<TKey>
-  fullName: NuvTools.Common.Enums.IEnumerator<TKey>
-  nameWithType.vb: IEnumerator(Of TKey)
-  fullName.vb: NuvTools.Common.Enums.IEnumerator(Of TKey)
-  name.vb: IEnumerator(Of TKey)
+  href: NuvTools.Common.Enums.IEnumDescriptor-1.html
+  name: IEnumDescriptor<TKey>
+  nameWithType: IEnumDescriptor<TKey>
+  fullName: NuvTools.Common.Enums.IEnumDescriptor<TKey>
+  nameWithType.vb: IEnumDescriptor(Of TKey)
+  fullName.vb: NuvTools.Common.Enums.IEnumDescriptor(Of TKey)
+  name.vb: IEnumDescriptor(Of TKey)
   spec.csharp:
-  - uid: NuvTools.Common.Enums.IEnumerator`1
-    name: IEnumerator
+  - uid: NuvTools.Common.Enums.IEnumDescriptor`1
+    name: IEnumDescriptor
     isExternal: true
-    href: NuvTools.Common.Enums.IEnumerator-1.html
+    href: NuvTools.Common.Enums.IEnumDescriptor-1.html
   - name: <
   - name: TKey
   - name: '>'
   spec.vb:
-  - uid: NuvTools.Common.Enums.IEnumerator`1
-    name: IEnumerator
+  - uid: NuvTools.Common.Enums.IEnumDescriptor`1
+    name: IEnumDescriptor
     isExternal: true
-    href: NuvTools.Common.Enums.IEnumerator-1.html
+    href: NuvTools.Common.Enums.IEnumDescriptor-1.html
   - name: (
   - name: Of
   - name: " "
@@ -1153,17 +1153,57 @@ references:
   name: GetOrder
   nameWithType: EnumerationExtensions.GetOrder
   fullName: NuvTools.Common.Enums.EnumerationExtensions.GetOrder
-- uid: System.Int32
-  commentId: T:System.Int32
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
   parent: System
-  isExternal: true
+  definition: System.Nullable`1
   href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: NuvTools.Common.Enums.EnumerationExtensions.GetPrompt*
   commentId: Overload:NuvTools.Common.Enums.EnumerationExtensions.GetPrompt
   isExternal: true

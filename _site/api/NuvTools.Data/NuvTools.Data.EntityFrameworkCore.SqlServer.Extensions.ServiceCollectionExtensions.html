@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -54,7 +54,7 @@
             <div id="navbar">
               <form class="search" role="search" id="search">
                 <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
@@ -77,7 +77,7 @@
 
       <div class="content">
         <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
             <i class="bi bi-list"></i>
           </button>
 
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Data_EntityFrameworkCore_SqlServer_Extensions_ServiceCollectionExtensions" data-uid="NuvTools.Data.EntityFrameworkCore.SqlServer.Extensions.ServiceCollectionExtensions" class="text-break">
-Class ServiceCollectionExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data.EntityFrameworkCore.SqlServer/Extensions/ServiceCollectionExtensions.cs"><i class="bi bi-code-slash"></i></a>
+Class ServiceCollectionExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/d67a4b78952ab91ca34c9f72154a8f12faac6f95/src/NuvTools.Data.EntityFrameworkCore.SqlServer/Extensions/ServiceCollectionExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -155,15 +155,15 @@ Class ServiceCollectionExtensions  <a class="header-action link-secondary" title
   <a id="NuvTools_Data_EntityFrameworkCore_SqlServer_Extensions_ServiceCollectionExtensions_AddDatabaseByConnectionName_" data-uid="NuvTools.Data.EntityFrameworkCore.SqlServer.Extensions.ServiceCollectionExtensions.AddDatabaseByConnectionName*"></a>
 
   <h3 id="NuvTools_Data_EntityFrameworkCore_SqlServer_Extensions_ServiceCollectionExtensions_AddDatabaseByConnectionName__1_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_System_String_System_Action_Microsoft_EntityFrameworkCore_Infrastructure_SqlServerDbContextOptionsBuilder__Microsoft_Extensions_DependencyInjection_ServiceLifetime_" data-uid="NuvTools.Data.EntityFrameworkCore.SqlServer.Extensions.ServiceCollectionExtensions.AddDatabaseByConnectionName``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String,System.Action{Microsoft.EntityFrameworkCore.Infrastructure.SqlServerDbContextOptionsBuilder},Microsoft.Extensions.DependencyInjection.ServiceLifetime)">
-  AddDatabaseByConnectionName&lt;TContext&gt;(IServiceCollection, IConfiguration, string, Action&lt;SqlServerDbContextOptionsBuilder&gt;, ServiceLifetime)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data.EntityFrameworkCore.SqlServer/Extensions/ServiceCollectionExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  AddDatabaseByConnectionName&lt;TContext&gt;(IServiceCollection, IConfiguration, string, Action&lt;SqlServerDbContextOptionsBuilder&gt;?, ServiceLifetime)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/d67a4b78952ab91ca34c9f72154a8f12faac6f95/src/NuvTools.Data.EntityFrameworkCore.SqlServer/Extensions/ServiceCollectionExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IServiceCollection AddDatabaseByConnectionName&lt;TContext&gt;(this IServiceCollection services, IConfiguration configuration, string connectionName, Action&lt;SqlServerDbContextOptionsBuilder&gt; sqlServerOptionsAction = null, ServiceLifetime contextLifetime = ServiceLifetime.Scoped) where TContext : DbContext</code></pre>
+    <pre><code class="lang-csharp hljs">public static IServiceCollection AddDatabaseByConnectionName&lt;TContext&gt;(this IServiceCollection services, IConfiguration configuration, string connectionName, Action&lt;SqlServerDbContextOptionsBuilder&gt;? sqlServerOptionsAction = null, ServiceLifetime contextLifetime = ServiceLifetime.Scoped) where TContext : DbContext</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -204,15 +204,15 @@ Class ServiceCollectionExtensions  <a class="header-action link-secondary" title
   <a id="NuvTools_Data_EntityFrameworkCore_SqlServer_Extensions_ServiceCollectionExtensions_AddDatabaseByConnectionName_" data-uid="NuvTools.Data.EntityFrameworkCore.SqlServer.Extensions.ServiceCollectionExtensions.AddDatabaseByConnectionName*"></a>
 
   <h3 id="NuvTools_Data_EntityFrameworkCore_SqlServer_Extensions_ServiceCollectionExtensions_AddDatabaseByConnectionName__1_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_String_System_String_System_Action_Microsoft_EntityFrameworkCore_Infrastructure_SqlServerDbContextOptionsBuilder__Microsoft_Extensions_DependencyInjection_ServiceLifetime_" data-uid="NuvTools.Data.EntityFrameworkCore.SqlServer.Extensions.ServiceCollectionExtensions.AddDatabaseByConnectionName``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String,System.String,System.Action{Microsoft.EntityFrameworkCore.Infrastructure.SqlServerDbContextOptionsBuilder},Microsoft.Extensions.DependencyInjection.ServiceLifetime)">
-  AddDatabaseByConnectionName&lt;TContext&gt;(IServiceCollection, string, string, Action&lt;SqlServerDbContextOptionsBuilder&gt;, ServiceLifetime)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data.EntityFrameworkCore.SqlServer/Extensions/ServiceCollectionExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  AddDatabaseByConnectionName&lt;TContext&gt;(IServiceCollection, string, string, Action&lt;SqlServerDbContextOptionsBuilder&gt;?, ServiceLifetime)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/d67a4b78952ab91ca34c9f72154a8f12faac6f95/src/NuvTools.Data.EntityFrameworkCore.SqlServer/Extensions/ServiceCollectionExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IServiceCollection AddDatabaseByConnectionName&lt;TContext&gt;(this IServiceCollection services, string connectionName, string settingsFileName = &quot;appsettings.json&quot;, Action&lt;SqlServerDbContextOptionsBuilder&gt; sqlServerOptionsAction = null, ServiceLifetime contextLifetime = ServiceLifetime.Scoped) where TContext : DbContext</code></pre>
+    <pre><code class="lang-csharp hljs">public static IServiceCollection AddDatabaseByConnectionName&lt;TContext&gt;(this IServiceCollection services, string connectionName, string settingsFileName = &quot;appsettings.json&quot;, Action&lt;SqlServerDbContextOptionsBuilder&gt;? sqlServerOptionsAction = null, ServiceLifetime contextLifetime = ServiceLifetime.Scoped) where TContext : DbContext</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -253,15 +253,15 @@ Class ServiceCollectionExtensions  <a class="header-action link-secondary" title
   <a id="NuvTools_Data_EntityFrameworkCore_SqlServer_Extensions_ServiceCollectionExtensions_AddDatabase_" data-uid="NuvTools.Data.EntityFrameworkCore.SqlServer.Extensions.ServiceCollectionExtensions.AddDatabase*"></a>
 
   <h3 id="NuvTools_Data_EntityFrameworkCore_SqlServer_Extensions_ServiceCollectionExtensions_AddDatabase__1_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_String_System_Action_Microsoft_EntityFrameworkCore_Infrastructure_SqlServerDbContextOptionsBuilder__Microsoft_Extensions_DependencyInjection_ServiceLifetime_" data-uid="NuvTools.Data.EntityFrameworkCore.SqlServer.Extensions.ServiceCollectionExtensions.AddDatabase``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String,System.Action{Microsoft.EntityFrameworkCore.Infrastructure.SqlServerDbContextOptionsBuilder},Microsoft.Extensions.DependencyInjection.ServiceLifetime)">
-  AddDatabase&lt;TContext&gt;(IServiceCollection, string, Action&lt;SqlServerDbContextOptionsBuilder&gt;, ServiceLifetime)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data.EntityFrameworkCore.SqlServer/Extensions/ServiceCollectionExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  AddDatabase&lt;TContext&gt;(IServiceCollection, string?, Action&lt;SqlServerDbContextOptionsBuilder&gt;?, ServiceLifetime)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/d67a4b78952ab91ca34c9f72154a8f12faac6f95/src/NuvTools.Data.EntityFrameworkCore.SqlServer/Extensions/ServiceCollectionExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IServiceCollection AddDatabase&lt;TContext&gt;(this IServiceCollection services, string connectionString, Action&lt;SqlServerDbContextOptionsBuilder&gt; sqlServerOptionsAction = null, ServiceLifetime contextLifetime = ServiceLifetime.Scoped) where TContext : DbContext</code></pre>
+    <pre><code class="lang-csharp hljs">public static IServiceCollection AddDatabase&lt;TContext&gt;(this IServiceCollection services, string? connectionString, Action&lt;SqlServerDbContextOptionsBuilder&gt;? sqlServerOptionsAction = null, ServiceLifetime contextLifetime = ServiceLifetime.Scoped) where TContext : DbContext</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -301,7 +301,7 @@ Class ServiceCollectionExtensions  <a class="header-action link-secondary" title
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data.EntityFrameworkCore.SqlServer/Extensions/ServiceCollectionExtensions.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-data/blob/d67a4b78952ab91ca34c9f72154a8f12faac6f95/src/NuvTools.Data.EntityFrameworkCore.SqlServer/Extensions/ServiceCollectionExtensions.cs" class="edit-link">Edit this page</a>
         </div>
 
 

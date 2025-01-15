@@ -17,7 +17,7 @@ items:
   fullName: NuvTools.Security.Identity.Models.RoleBase<TKey>
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/bfc33d00ec048c7ef8ba757e92d286067d8ebc39/src/NuvTools.Security.Identity.Models/RoleBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/8a28a4078171d44e3ffb8b500dad5a246ce64df4/src/NuvTools.Security.Identity.Models/RoleBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
@@ -55,7 +55,7 @@ items:
   fullName: NuvTools.Security.Identity.Models.RoleBase<TKey>.RoleBase()
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/bfc33d00ec048c7ef8ba757e92d286067d8ebc39/src/NuvTools.Security.Identity.Models/RoleBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/8a28a4078171d44e3ffb8b500dad5a246ce64df4/src/NuvTools.Security.Identity.Models/RoleBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
@@ -78,7 +78,7 @@ items:
   fullName: NuvTools.Security.Identity.Models.RoleBase<TKey>.RoleBase(string)
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/bfc33d00ec048c7ef8ba757e92d286067d8ebc39/src/NuvTools.Security.Identity.Models/RoleBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/8a28a4078171d44e3ffb8b500dad5a246ce64df4/src/NuvTools.Security.Identity.Models/RoleBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
@@ -104,7 +104,7 @@ items:
   fullName: NuvTools.Security.Identity.Models.RoleBase<TKey>.Name
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/bfc33d00ec048c7ef8ba757e92d286067d8ebc39/src/NuvTools.Security.Identity.Models/RoleBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/8a28a4078171d44e3ffb8b500dad5a246ce64df4/src/NuvTools.Security.Identity.Models/RoleBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
@@ -115,9 +115,9 @@ items:
 
       [Required(ErrorMessageResourceName = "XRequired", ErrorMessageResourceType = typeof(DynamicValidationMessages))]
 
-      [MaxLength(30, ErrorMessageResourceName = "XMustBeUpToYCharacters", ErrorMessageResourceType = typeof(DynamicValidationMessages))]
+      [MaxLength(30, ErrorMessageResourceName = "XMustHaveUpToYCharacters", ErrorMessageResourceType = typeof(DynamicValidationMessages))]
 
-      public override string Name { get; set; }
+      public override string? Name { get; set; }
     parameters: []
     return:
       type: System.String
@@ -126,7 +126,7 @@ items:
 
       <Required(ErrorMessageResourceName:="XRequired", ErrorMessageResourceType:=GetType(DynamicValidationMessages))>
 
-      <MaxLength(30, ErrorMessageResourceName:="XMustBeUpToYCharacters", ErrorMessageResourceType:=GetType(DynamicValidationMessages))>
+      <MaxLength(30, ErrorMessageResourceName:="XMustHaveUpToYCharacters", ErrorMessageResourceType:=GetType(DynamicValidationMessages))>
 
       Public Overrides Property Name As String
   overridden: Microsoft.AspNetCore.Identity.IdentityRole{{TKey}}.Name
@@ -160,7 +160,7 @@ items:
     namedArguments:
     - name: ErrorMessageResourceName
       type: System.String
-      value: XMustBeUpToYCharacters
+      value: XMustHaveUpToYCharacters
     - name: ErrorMessageResourceType
       type: System.Type
       value: NuvTools.Resources.DynamicValidationMessages
@@ -178,7 +178,7 @@ items:
   fullName: NuvTools.Security.Identity.Models.RoleBase<TKey>.Claims
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/bfc33d00ec048c7ef8ba757e92d286067d8ebc39/src/NuvTools.Security.Identity.Models/RoleBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/8a28a4078171d44e3ffb8b500dad5a246ce64df4/src/NuvTools.Security.Identity.Models/RoleBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
@@ -186,7 +186,7 @@ items:
     content: >-
       [NotMapped]
 
-      public List<KeyValuePair<string, string>> Claims { get; set; }
+      public List<KeyValuePair<string, string>>? Claims { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.String}}

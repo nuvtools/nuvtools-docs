@@ -5,6 +5,9 @@ items:
   id: IResult
   parent: NuvTools.Common.ResultWrapper
   children:
+  - NuvTools.Common.ResultWrapper.IResult.ContainsNotFound
+  - NuvTools.Common.ResultWrapper.IResult.Message
+  - NuvTools.Common.ResultWrapper.IResult.MessageDetail
   - NuvTools.Common.ResultWrapper.IResult.Messages
   - NuvTools.Common.ResultWrapper.IResult.ResultType
   - NuvTools.Common.ResultWrapper.IResult.Succeeded
@@ -16,7 +19,7 @@ items:
   fullName: NuvTools.Common.ResultWrapper.IResult
   type: Interface
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/IResult.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
@@ -39,17 +42,63 @@ items:
   fullName: NuvTools.Common.ResultWrapper.IResult.Messages
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/IResult.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
   syntax:
-    content: List<string> Messages { get; set; }
+    content: List<MessageDetail> Messages { get; }
     parameters: []
     return:
-      type: System.Collections.Generic.List{System.String}
-    content.vb: Property Messages As List(Of String)
+      type: System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail}
+    content.vb: ReadOnly Property Messages As List(Of MessageDetail)
   overload: NuvTools.Common.ResultWrapper.IResult.Messages*
+- uid: NuvTools.Common.ResultWrapper.IResult.MessageDetail
+  commentId: P:NuvTools.Common.ResultWrapper.IResult.MessageDetail
+  id: MessageDetail
+  parent: NuvTools.Common.ResultWrapper.IResult
+  langs:
+  - csharp
+  - vb
+  name: MessageDetail
+  nameWithType: IResult.MessageDetail
+  fullName: NuvTools.Common.ResultWrapper.IResult.MessageDetail
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/IResult.cs
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.ResultWrapper
+  syntax:
+    content: MessageDetail? MessageDetail { get; }
+    parameters: []
+    return:
+      type: NuvTools.Common.ResultWrapper.MessageDetail
+    content.vb: ReadOnly Property MessageDetail As MessageDetail
+  overload: NuvTools.Common.ResultWrapper.IResult.MessageDetail*
+- uid: NuvTools.Common.ResultWrapper.IResult.Message
+  commentId: P:NuvTools.Common.ResultWrapper.IResult.Message
+  id: Message
+  parent: NuvTools.Common.ResultWrapper.IResult
+  langs:
+  - csharp
+  - vb
+  name: Message
+  nameWithType: IResult.Message
+  fullName: NuvTools.Common.ResultWrapper.IResult.Message
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/IResult.cs
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.ResultWrapper
+  syntax:
+    content: string? Message { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property Message As String
+  overload: NuvTools.Common.ResultWrapper.IResult.Message*
 - uid: NuvTools.Common.ResultWrapper.IResult.Succeeded
   commentId: P:NuvTools.Common.ResultWrapper.IResult.Succeeded
   id: Succeeded
@@ -62,17 +111,40 @@ items:
   fullName: NuvTools.Common.ResultWrapper.IResult.Succeeded
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/IResult.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
   syntax:
-    content: bool Succeeded { get; set; }
+    content: bool Succeeded { get; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Property Succeeded As Boolean
+    content.vb: ReadOnly Property Succeeded As Boolean
   overload: NuvTools.Common.ResultWrapper.IResult.Succeeded*
+- uid: NuvTools.Common.ResultWrapper.IResult.ContainsNotFound
+  commentId: P:NuvTools.Common.ResultWrapper.IResult.ContainsNotFound
+  id: ContainsNotFound
+  parent: NuvTools.Common.ResultWrapper.IResult
+  langs:
+  - csharp
+  - vb
+  name: ContainsNotFound
+  nameWithType: IResult.ContainsNotFound
+  fullName: NuvTools.Common.ResultWrapper.IResult.ContainsNotFound
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/IResult.cs
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.ResultWrapper
+  syntax:
+    content: bool ContainsNotFound { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: ReadOnly Property ContainsNotFound As Boolean
+  overload: NuvTools.Common.ResultWrapper.IResult.ContainsNotFound*
 - uid: NuvTools.Common.ResultWrapper.IResult.ResultType
   commentId: P:NuvTools.Common.ResultWrapper.IResult.ResultType
   id: ResultType
@@ -85,16 +157,16 @@ items:
   fullName: NuvTools.Common.ResultWrapper.IResult.ResultType
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/IResult.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
   syntax:
-    content: ResultType ResultType { get; set; }
+    content: ResultType ResultType { get; }
     parameters: []
     return:
       type: NuvTools.Common.ResultWrapper.ResultType
-    content.vb: Property ResultType As ResultType
+    content.vb: ReadOnly Property ResultType As ResultType
   overload: NuvTools.Common.ResultWrapper.IResult.ResultType*
 references:
 - uid: NuvTools.Common.ResultWrapper
@@ -556,27 +628,27 @@ references:
   name: Messages
   nameWithType: IResult.Messages
   fullName: NuvTools.Common.ResultWrapper.IResult.Messages
-- uid: System.Collections.Generic.List{System.String}
-  commentId: T:System.Collections.Generic.List{System.String}
+- uid: System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail}
+  commentId: T:System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.List`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<string>
-  nameWithType: List<string>
-  fullName: System.Collections.Generic.List<string>
-  nameWithType.vb: List(Of String)
-  fullName.vb: System.Collections.Generic.List(Of String)
-  name.vb: List(Of String)
+  name: List<MessageDetail>
+  nameWithType: List<MessageDetail>
+  fullName: System.Collections.Generic.List<NuvTools.Common.ResultWrapper.MessageDetail>
+  nameWithType.vb: List(Of MessageDetail)
+  fullName.vb: System.Collections.Generic.List(Of NuvTools.Common.ResultWrapper.MessageDetail)
+  name.vb: List(Of MessageDetail)
   spec.csharp:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
-  - uid: System.String
-    name: string
+  - uid: NuvTools.Common.ResultWrapper.MessageDetail
+    name: MessageDetail
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
+    href: NuvTools.Common.ResultWrapper.MessageDetail.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.List`1
@@ -586,10 +658,10 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: System.String
-    name: String
+  - uid: NuvTools.Common.ResultWrapper.MessageDetail
+    name: MessageDetail
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
+    href: NuvTools.Common.ResultWrapper.MessageDetail.html
   - name: )
 - uid: System.Collections.Generic.List`1
   commentId: T:System.Collections.Generic.List`1
@@ -656,6 +728,46 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: NuvTools.Common.ResultWrapper.IResult.MessageDetail*
+  commentId: Overload:NuvTools.Common.ResultWrapper.IResult.MessageDetail
+  isExternal: true
+  href: NuvTools.Common.ResultWrapper.IResult.html#NuvTools_Common_ResultWrapper_IResult_MessageDetail
+  name: MessageDetail
+  nameWithType: IResult.MessageDetail
+  fullName: NuvTools.Common.ResultWrapper.IResult.MessageDetail
+- uid: NuvTools.Common.ResultWrapper.MessageDetail
+  commentId: T:NuvTools.Common.ResultWrapper.MessageDetail
+  parent: NuvTools.Common.ResultWrapper
+  isExternal: true
+  href: NuvTools.Common.ResultWrapper.MessageDetail.html
+  name: MessageDetail
+  nameWithType: MessageDetail
+  fullName: NuvTools.Common.ResultWrapper.MessageDetail
+- uid: NuvTools.Common.ResultWrapper.IResult.Message*
+  commentId: Overload:NuvTools.Common.ResultWrapper.IResult.Message
+  isExternal: true
+  href: NuvTools.Common.ResultWrapper.IResult.html#NuvTools_Common_ResultWrapper_IResult_Message
+  name: Message
+  nameWithType: IResult.Message
+  fullName: NuvTools.Common.ResultWrapper.IResult.Message
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: NuvTools.Common.ResultWrapper.IResult.Succeeded*
   commentId: Overload:NuvTools.Common.ResultWrapper.IResult.Succeeded
   isExternal: true
@@ -674,13 +786,13 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: System
-  commentId: N:System
+- uid: NuvTools.Common.ResultWrapper.IResult.ContainsNotFound*
+  commentId: Overload:NuvTools.Common.ResultWrapper.IResult.ContainsNotFound
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System
-  nameWithType: System
-  fullName: System
+  href: NuvTools.Common.ResultWrapper.IResult.html#NuvTools_Common_ResultWrapper_IResult_ContainsNotFound
+  name: ContainsNotFound
+  nameWithType: IResult.ContainsNotFound
+  fullName: NuvTools.Common.ResultWrapper.IResult.ContainsNotFound
 - uid: NuvTools.Common.ResultWrapper.IResult.ResultType*
   commentId: Overload:NuvTools.Common.ResultWrapper.IResult.ResultType
   isExternal: true

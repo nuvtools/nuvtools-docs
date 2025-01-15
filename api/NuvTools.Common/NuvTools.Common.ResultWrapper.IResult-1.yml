@@ -14,7 +14,7 @@ items:
   fullName: NuvTools.Common.ResultWrapper.IResult<T>
   type: Interface
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/IResult.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
@@ -25,7 +25,10 @@ items:
     content.vb: Public Interface IResult(Of Out T) Inherits IResult
   inheritedMembers:
   - NuvTools.Common.ResultWrapper.IResult.Messages
+  - NuvTools.Common.ResultWrapper.IResult.MessageDetail
+  - NuvTools.Common.ResultWrapper.IResult.Message
   - NuvTools.Common.ResultWrapper.IResult.Succeeded
+  - NuvTools.Common.ResultWrapper.IResult.ContainsNotFound
   - NuvTools.Common.ResultWrapper.IResult.ResultType
   extensionMethods:
   - NuvTools.Common.ResultWrapper.IResult`1.NuvTools.Common.Serialization.Json.ObjectExtensions.Clone``1(System.Int32)
@@ -46,12 +49,12 @@ items:
   fullName: NuvTools.Common.ResultWrapper.IResult<T>.Data
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/IResult.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
   syntax:
-    content: T Data { get; }
+    content: T? Data { get; }
     parameters: []
     return:
       type: '{T}'
@@ -105,6 +108,22 @@ references:
   name: Messages
   nameWithType: IResult.Messages
   fullName: NuvTools.Common.ResultWrapper.IResult.Messages
+- uid: NuvTools.Common.ResultWrapper.IResult.MessageDetail
+  commentId: P:NuvTools.Common.ResultWrapper.IResult.MessageDetail
+  parent: NuvTools.Common.ResultWrapper.IResult
+  isExternal: true
+  href: NuvTools.Common.ResultWrapper.IResult.html#NuvTools_Common_ResultWrapper_IResult_MessageDetail
+  name: MessageDetail
+  nameWithType: IResult.MessageDetail
+  fullName: NuvTools.Common.ResultWrapper.IResult.MessageDetail
+- uid: NuvTools.Common.ResultWrapper.IResult.Message
+  commentId: P:NuvTools.Common.ResultWrapper.IResult.Message
+  parent: NuvTools.Common.ResultWrapper.IResult
+  isExternal: true
+  href: NuvTools.Common.ResultWrapper.IResult.html#NuvTools_Common_ResultWrapper_IResult_Message
+  name: Message
+  nameWithType: IResult.Message
+  fullName: NuvTools.Common.ResultWrapper.IResult.Message
 - uid: NuvTools.Common.ResultWrapper.IResult.Succeeded
   commentId: P:NuvTools.Common.ResultWrapper.IResult.Succeeded
   parent: NuvTools.Common.ResultWrapper.IResult
@@ -113,6 +132,14 @@ references:
   name: Succeeded
   nameWithType: IResult.Succeeded
   fullName: NuvTools.Common.ResultWrapper.IResult.Succeeded
+- uid: NuvTools.Common.ResultWrapper.IResult.ContainsNotFound
+  commentId: P:NuvTools.Common.ResultWrapper.IResult.ContainsNotFound
+  parent: NuvTools.Common.ResultWrapper.IResult
+  isExternal: true
+  href: NuvTools.Common.ResultWrapper.IResult.html#NuvTools_Common_ResultWrapper_IResult_ContainsNotFound
+  name: ContainsNotFound
+  nameWithType: IResult.ContainsNotFound
+  fullName: NuvTools.Common.ResultWrapper.IResult.ContainsNotFound
 - uid: NuvTools.Common.ResultWrapper.IResult.ResultType
   commentId: P:NuvTools.Common.ResultWrapper.IResult.ResultType
   parent: NuvTools.Common.ResultWrapper.IResult

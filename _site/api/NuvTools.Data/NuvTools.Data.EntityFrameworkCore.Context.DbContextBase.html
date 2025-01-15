@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class DbContextBase | Nuv Tools Framework Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class DbContextBase | Nuv Tools Framework Docs ">
+      
+      
+      <link rel="icon" href="../../images/icon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/NuvToolsLogoLandscape.svg" alt="Framework Docs">
+            Framework Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase">
+
+
+
+  <h1 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase" class="text-break">
+Class DbContextBase  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="NuvTools.html">NuvTools</a>.<a class="xref" href="NuvTools.Data.html">Data</a>.<a class="xref" href="NuvTools.Data.EntityFrameworkCore.html">EntityFrameworkCore</a>.<a class="xref" href="NuvTools.Data.EntityFrameworkCore.Context.html">Context</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NuvTools.Data.EntityFrameworkCore.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class DbContextBase : DbContext, IInfrastructure&lt;IServiceProvider&gt;, IDbContextDependencies, IDbSetCache, IDbContextPoolable, IResettableService, IDisposable, IAsyncDisposable, IDbContextCommands, IDbContextWithListCommands</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext">DbContext</a></div>
+      <div><span class="xref">DbContextBase</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.infrastructure.iinfrastructure-1">IInfrastructure</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iserviceprovider">IServiceProvider</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.internal.idbcontextdependencies">IDbContextDependencies</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.internal.idbsetcache">IDbSetCache</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.internal.idbcontextpoolable">IDbContextPoolable</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.infrastructure.iresettableservice">IResettableService</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iasyncdisposable">IAsyncDisposable</a></div>
+      <div><a class="xref" href="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.html">IDbContextCommands</a></div>
+      <div><a class="xref" href="NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.html">IDbContextWithListCommands</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.set#microsoft-entityframeworkcore-dbcontext-set-1">DbContext.Set&lt;TEntity&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.set#microsoft-entityframeworkcore-dbcontext-set-1(system-string)">DbContext.Set&lt;TEntity&gt;(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.onconfiguring">DbContext.OnConfiguring(DbContextOptionsBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.configureconventions">DbContext.ConfigureConventions(ModelConfigurationBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.onmodelcreating">DbContext.OnModelCreating(ModelBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechanges#microsoft-entityframeworkcore-dbcontext-savechanges">DbContext.SaveChanges()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechanges#microsoft-entityframeworkcore-dbcontext-savechanges(system-boolean)">DbContext.SaveChanges(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechangesasync#microsoft-entityframeworkcore-dbcontext-savechangesasync(system-threading-cancellationtoken)">DbContext.SaveChangesAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechangesasync#microsoft-entityframeworkcore-dbcontext-savechangesasync(system-boolean-system-threading-cancellationtoken)">DbContext.SaveChangesAsync(bool, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.dispose">DbContext.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.disposeasync">DbContext.DisposeAsync()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.entry#microsoft-entityframeworkcore-dbcontext-entry-1(-0)">DbContext.Entry&lt;TEntity&gt;(TEntity)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.entry#microsoft-entityframeworkcore-dbcontext-entry(system-object)">DbContext.Entry(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.add#microsoft-entityframeworkcore-dbcontext-add-1(-0)">DbContext.Add&lt;TEntity&gt;(TEntity)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.addasync#microsoft-entityframeworkcore-dbcontext-addasync-1(-0-system-threading-cancellationtoken)">DbContext.AddAsync&lt;TEntity&gt;(TEntity, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.attach#microsoft-entityframeworkcore-dbcontext-attach-1(-0)">DbContext.Attach&lt;TEntity&gt;(TEntity)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.update#microsoft-entityframeworkcore-dbcontext-update-1(-0)">DbContext.Update&lt;TEntity&gt;(TEntity)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.remove#microsoft-entityframeworkcore-dbcontext-remove-1(-0)">DbContext.Remove&lt;TEntity&gt;(TEntity)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.add#microsoft-entityframeworkcore-dbcontext-add(system-object)">DbContext.Add(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.addasync#microsoft-entityframeworkcore-dbcontext-addasync(system-object-system-threading-cancellationtoken)">DbContext.AddAsync(object, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.attach#microsoft-entityframeworkcore-dbcontext-attach(system-object)">DbContext.Attach(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.update#microsoft-entityframeworkcore-dbcontext-update(system-object)">DbContext.Update(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.remove#microsoft-entityframeworkcore-dbcontext-remove(system-object)">DbContext.Remove(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.addrange#microsoft-entityframeworkcore-dbcontext-addrange(system-object())">DbContext.AddRange(params object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.addrangeasync#microsoft-entityframeworkcore-dbcontext-addrangeasync(system-object())">DbContext.AddRangeAsync(params object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.attachrange#microsoft-entityframeworkcore-dbcontext-attachrange(system-object())">DbContext.AttachRange(params object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.updaterange#microsoft-entityframeworkcore-dbcontext-updaterange(system-object())">DbContext.UpdateRange(params object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.removerange#microsoft-entityframeworkcore-dbcontext-removerange(system-object())">DbContext.RemoveRange(params object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.addrange#microsoft-entityframeworkcore-dbcontext-addrange(system-collections-generic-ienumerable((system-object)))">DbContext.AddRange(IEnumerable&lt;object&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.addrangeasync#microsoft-entityframeworkcore-dbcontext-addrangeasync(system-collections-generic-ienumerable((system-object))-system-threading-cancellationtoken)">DbContext.AddRangeAsync(IEnumerable&lt;object&gt;, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.attachrange#microsoft-entityframeworkcore-dbcontext-attachrange(system-collections-generic-ienumerable((system-object)))">DbContext.AttachRange(IEnumerable&lt;object&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.updaterange#microsoft-entityframeworkcore-dbcontext-updaterange(system-collections-generic-ienumerable((system-object)))">DbContext.UpdateRange(IEnumerable&lt;object&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.removerange#microsoft-entityframeworkcore-dbcontext-removerange(system-collections-generic-ienumerable((system-object)))">DbContext.RemoveRange(IEnumerable&lt;object&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.find#microsoft-entityframeworkcore-dbcontext-find(system-type-system-object())">DbContext.Find(Type, params object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.findasync#microsoft-entityframeworkcore-dbcontext-findasync(system-type-system-object())">DbContext.FindAsync(Type, params object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.findasync#microsoft-entityframeworkcore-dbcontext-findasync(system-type-system-object()-system-threading-cancellationtoken)">DbContext.FindAsync(Type, object[], CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.find#microsoft-entityframeworkcore-dbcontext-find-1(system-object())">DbContext.Find&lt;TEntity&gt;(params object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.findasync#microsoft-entityframeworkcore-dbcontext-findasync-1(system-object())">DbContext.FindAsync&lt;TEntity&gt;(params object[])</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.findasync#microsoft-entityframeworkcore-dbcontext-findasync-1(system-object()-system-threading-cancellationtoken)">DbContext.FindAsync&lt;TEntity&gt;(object[], CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.fromexpression">DbContext.FromExpression&lt;TResult&gt;(Expression&lt;Func&lt;IQueryable&lt;TResult&gt;&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.database">DbContext.Database</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.changetracker">DbContext.ChangeTracker</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.model">DbContext.Model</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.contextid">DbContext.ContextId</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savingchanges">DbContext.SavingChanges</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savedchanges">DbContext.SavedChanges</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechangesfailed">DbContext.SaveChangesFailed</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.html#NuvTools_Data_EntityFrameworkCore_Extensions_DbContextExtensions_AddAndSaveAsync__2_Microsoft_EntityFrameworkCore_DbContext___0_">DbContextExtensions.AddAndSaveAsync&lt;TEntity, TKey&gt;(DbContext, TEntity)</a>
+  </div>
+  <div>
+      <a class="xref" href="NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.html#NuvTools_Data_EntityFrameworkCore_Extensions_DbContextExtensions_AddAndSaveWithCompositeKeyAsync__1_Microsoft_EntityFrameworkCore_DbContext___0_">DbContextExtensions.AddAndSaveWithCompositeKeyAsync&lt;TEntity&gt;(DbContext, TEntity)</a>
+  </div>
+  <div>
+      <a class="xref" href="NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.html#NuvTools_Data_EntityFrameworkCore_Extensions_DbContextExtensions_ExecuteWithStrategyAsync_Microsoft_EntityFrameworkCore_DbContext_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task__System_Threading_CancellationToken_">DbContextExtensions.ExecuteWithStrategyAsync(DbContext, Func&lt;CancellationToken, Task&gt;, CancellationToken)</a>
+  </div>
+  <div>
+      <a class="xref" href="NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.html#NuvTools_Data_EntityFrameworkCore_Extensions_DbContextExtensions_ExecuteWithStrategyAsync__1_Microsoft_EntityFrameworkCore_DbContext_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task___0___System_Threading_CancellationToken_">DbContextExtensions.ExecuteWithStrategyAsync&lt;T&gt;(DbContext, Func&lt;CancellationToken, Task&lt;T&gt;&gt;, CancellationToken)</a>
+  </div>
+  <div>
+      <a class="xref" href="NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.html#NuvTools_Data_EntityFrameworkCore_Extensions_DbContextExtensions_FindPrimaryKeyValues__1_Microsoft_EntityFrameworkCore_DbContext___0_">DbContextExtensions.FindPrimaryKeyValues&lt;TEntity&gt;(DbContext, TEntity)</a>
+  </div>
+  <div>
+      <a class="xref" href="NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.html#NuvTools_Data_EntityFrameworkCore_Extensions_DbContextExtensions_RemoveAndSaveAsync__1_Microsoft_EntityFrameworkCore_DbContext_System_Object___">DbContextExtensions.RemoveAndSaveAsync&lt;TEntity&gt;(DbContext, params object[])</a>
+  </div>
+  <div>
+      <a class="xref" href="NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.html#NuvTools_Data_EntityFrameworkCore_Extensions_DbContextExtensions_UpdateAndSaveAsync__1_Microsoft_EntityFrameworkCore_DbContext___0_System_Object___">DbContextExtensions.UpdateAndSaveAsync&lt;TEntity&gt;(DbContext, TEntity, params object[])</a>
+  </div>
+  <div>
+      <a class="xref" href="NuvTools.Data.EntityFrameworkCore.Extensions.DbContextWithListExtensions.html#NuvTools_Data_EntityFrameworkCore_Extensions_DbContextWithListExtensions_AddOrRemoveFromListAsync__2_Microsoft_EntityFrameworkCore_DbContext_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___">DbContextWithListExtensions.AddOrRemoveFromListAsync&lt;TEntity, TKey&gt;(DbContext, IEnumerable&lt;TEntity&gt;, Func&lt;TEntity, TKey&gt;, Expression&lt;Func&lt;TEntity, bool&gt;&gt;?)</a>
+  </div>
+  <div>
+      <a class="xref" href="NuvTools.Data.EntityFrameworkCore.Extensions.DbContextWithListExtensions.html#NuvTools_Data_EntityFrameworkCore_Extensions_DbContextWithListExtensions_AddOrUpdateFromListAsync__2_Microsoft_EntityFrameworkCore_DbContext_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___">DbContextWithListExtensions.AddOrUpdateFromListAsync&lt;TEntity, TKey&gt;(DbContext, IEnumerable&lt;TEntity&gt;, Func&lt;TEntity, TKey&gt;, Expression&lt;Func&lt;TEntity, bool&gt;&gt;?)</a>
+  </div>
+  <div>
+      <a class="xref" href="NuvTools.Data.EntityFrameworkCore.Extensions.DbContextWithListExtensions.html#NuvTools_Data_EntityFrameworkCore_Extensions_DbContextWithListExtensions_SyncFromListAsync__2_Microsoft_EntityFrameworkCore_DbContext_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___">DbContextWithListExtensions.SyncFromListAsync&lt;TEntity, TKey&gt;(DbContext, IEnumerable&lt;TEntity&gt;, Func&lt;TEntity, TKey&gt;, Expression&lt;Func&lt;TEntity, bool&gt;&gt;?)</a>
+  </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase__ctor_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.#ctor*"></a>
+
+  <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase__ctor" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.#ctor">
+  DbContextBase()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected DbContextBase()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase__ctor_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.#ctor*"></a>
+
+  <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase__ctor_Microsoft_EntityFrameworkCore_DbContextOptions_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions)">
+  DbContextBase(DbContextOptions)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected DbContextBase(DbContextOptions options)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>options</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontextoptions">DbContextOptions</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_CurrentTransaction_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.CurrentTransaction*"></a>
+
+  <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_CurrentTransaction" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.CurrentTransaction">
+  CurrentTransaction
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IDbContextTransaction? CurrentTransaction { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.storage.idbcontexttransaction">IDbContextTransaction</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_AddAndSaveAsync_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.AddAndSaveAsync*"></a>
+
+  <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_AddAndSaveAsync__2___0_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.AddAndSaveAsync``2(``0)">
+  AddAndSaveAsync&lt;TEntity, TKey&gt;(TEntity)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IResult&lt;TKey&gt;&gt; AddAndSaveAsync&lt;TEntity, TKey&gt;(TEntity entity) where TEntity : class</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entity</code> <span class="xref">TEntity</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;TKey&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TEntity</code></dt>
+    <dd></dd>
+    <dt><code>TKey</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_AddAndSaveWithCompositeKeyAsync_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.AddAndSaveWithCompositeKeyAsync*"></a>
+
+  <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_AddAndSaveWithCompositeKeyAsync__1___0_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.AddAndSaveWithCompositeKeyAsync``1(``0)">
+  AddAndSaveWithCompositeKeyAsync&lt;TEntity&gt;(TEntity)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IResult&lt;object[]&gt;&gt; AddAndSaveWithCompositeKeyAsync&lt;TEntity&gt;(TEntity entity) where TEntity : class</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entity</code> <span class="xref">TEntity</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TEntity</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_AddOrRemoveFromListAsync_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.AddOrRemoveFromListAsync*"></a>
+
+  <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_AddOrRemoveFromListAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.AddOrRemoveFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+  AddOrRemoveFromListAsync&lt;TEntity, TKey&gt;(IEnumerable&lt;TEntity&gt;, Func&lt;TEntity, TKey&gt;, Expression&lt;Func&lt;TEntity, bool&gt;&gt;?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Synchronizes a DbSet with a provided list by adding or removing entities, without updating any entities.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IResult&gt; AddOrRemoveFromListAsync&lt;TEntity, TKey&gt;(IEnumerable&lt;TEntity&gt; entities, Func&lt;TEntity, TKey&gt; keySelector, Expression&lt;Func&lt;TEntity, bool&gt;&gt;? filter = null) where TEntity : class where TKey : notnull</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entities</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TEntity&gt;</dt>
+    <dd><p>The list of entities to synchronize with the database.</p>
+</dd>
+    <dt><code>keySelector</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;TEntity, TKey&gt;</dt>
+    <dd><p>A function to select the key for matching entities.</p>
+</dd>
+    <dt><code>filter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;TEntity, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;&gt;</dt>
+    <dd><p>An optional filter predicate to apply to the database entities.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TEntity</code></dt>
+    <dd><p>The type of the entity.</p>
+</dd>
+    <dt><code>TKey</code></dt>
+    <dd><p>The type of the key used to uniquely identify entities.</p>
+</dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_AddOrRemoveFromListAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean____examples">Examples</h4>
+  <p>await context.AddOrRemoveFromListAsync(
+updatedOrders,
+o =&gt; o.OrderId,
+o =&gt; o.IsPending
+);</p>
+
+
+  <h4 class="section" id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_AddOrRemoveFromListAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean____remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method adds entities in the list that are not in the database and removes entities in the database
+that are not in the list. It does not update any entities.</p>
+</div>
+
+
+
+
+  <a id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_AddOrUpdateFromListAsync_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.AddOrUpdateFromListAsync*"></a>
+
+  <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_AddOrUpdateFromListAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.AddOrUpdateFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+  AddOrUpdateFromListAsync&lt;TEntity, TKey&gt;(IEnumerable&lt;TEntity&gt;, Func&lt;TEntity, TKey&gt;, Expression&lt;Func&lt;TEntity, bool&gt;&gt;?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Synchronizes a DbSet with a provided list by adding or updating entities, without removing any entities.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IResult&gt; AddOrUpdateFromListAsync&lt;TEntity, TKey&gt;(IEnumerable&lt;TEntity&gt; entities, Func&lt;TEntity, TKey&gt; keySelector, Expression&lt;Func&lt;TEntity, bool&gt;&gt;? filter = null) where TEntity : class where TKey : notnull</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entities</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TEntity&gt;</dt>
+    <dd><p>The list of entities to synchronize with the database.</p>
+</dd>
+    <dt><code>keySelector</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;TEntity, TKey&gt;</dt>
+    <dd><p>A function to select the key for matching entities.</p>
+</dd>
+    <dt><code>filter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;TEntity, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;&gt;</dt>
+    <dd><p>An optional filter predicate to apply to the database entities.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TEntity</code></dt>
+    <dd><p>The type of the entity.</p>
+</dd>
+    <dt><code>TKey</code></dt>
+    <dd><p>The type of the key used to uniquely identify entities.</p>
+</dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_AddOrUpdateFromListAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean____examples">Examples</h4>
+  <p>await context.AddOrUpdateFromListAsync(
+updatedProducts,
+p =&gt; p.ProductCode,
+p =&gt; p.IsActive
+);</p>
+
+
+  <h4 class="section" id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_AddOrUpdateFromListAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean____remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method adds entities in the list that are not in the database and updates entities that exist in both.
+It does not remove any entities from the database.</p>
+</div>
+
+
+
+
+  <a id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_BeginTransactionAsync_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.BeginTransactionAsync*"></a>
+
+  <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_BeginTransactionAsync_System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.BeginTransactionAsync(System.Threading.CancellationToken)">
+  BeginTransactionAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IDbContextTransaction&gt; BeginTransactionAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.storage.idbcontexttransaction">IDbContextTransaction</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_CommitTransactionAsync_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.CommitTransactionAsync*"></a>
+
+  <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_CommitTransactionAsync_System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.CommitTransactionAsync(System.Threading.CancellationToken)">
+  CommitTransactionAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task CommitTransactionAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_ExecuteWithStrategyAsync_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.ExecuteWithStrategyAsync*"></a>
+
+  <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_ExecuteWithStrategyAsync_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task__System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.ExecuteWithStrategyAsync(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Threading.CancellationToken)">
+  ExecuteWithStrategyAsync(Func&lt;CancellationToken, Task&gt;, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task ExecuteWithStrategyAsync(Func&lt;CancellationToken, Task&gt; action, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_ExecuteWithStrategyAsync_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.ExecuteWithStrategyAsync*"></a>
+
+  <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_ExecuteWithStrategyAsync__1_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task___0___System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.ExecuteWithStrategyAsync``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)">
+  ExecuteWithStrategyAsync&lt;T&gt;(Func&lt;CancellationToken, Task&lt;T&gt;&gt;, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;T&gt; ExecuteWithStrategyAsync&lt;T&gt;(Func&lt;CancellationToken, Task&lt;T&gt;&gt; action, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T&gt;&gt;</dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_RemoveAndSaveAsync_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.RemoveAndSaveAsync*"></a>
+
+  <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_RemoveAndSaveAsync__1_System_Object___" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.RemoveAndSaveAsync``1(System.Object[])">
+  RemoveAndSaveAsync&lt;TEntity&gt;(params object[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IResult&gt; RemoveAndSaveAsync&lt;TEntity&gt;(params object[] keyValues) where TEntity : class</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>keyValues</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TEntity</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_RollbackTransactionAsync_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.RollbackTransactionAsync*"></a>
+
+  <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_RollbackTransactionAsync_System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.RollbackTransactionAsync(System.Threading.CancellationToken)">
+  RollbackTransactionAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task RollbackTransactionAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_SyncFromListAsync_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.SyncFromListAsync*"></a>
+
+  <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_SyncFromListAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.SyncFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+  SyncFromListAsync&lt;TEntity, TKey&gt;(IEnumerable&lt;TEntity&gt;, Func&lt;TEntity, TKey&gt;, Expression&lt;Func&lt;TEntity, bool&gt;&gt;?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Synchronizes a DbSet with a provided list by adding, updating, or removing entities.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IResult&gt; SyncFromListAsync&lt;TEntity, TKey&gt;(IEnumerable&lt;TEntity&gt; entities, Func&lt;TEntity, TKey&gt; keySelector, Expression&lt;Func&lt;TEntity, bool&gt;&gt;? filter = null) where TEntity : class where TKey : notnull</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entities</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TEntity&gt;</dt>
+    <dd><p>The list of entities to synchronize with the database.</p>
+</dd>
+    <dt><code>keySelector</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;TEntity, TKey&gt;</dt>
+    <dd><p>A function to select the key for matching entities.</p>
+</dd>
+    <dt><code>filter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;TEntity, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;&gt;</dt>
+    <dd><p>An optional filter predicate to apply to the database entities.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TEntity</code></dt>
+    <dd><p>The type of the entity.</p>
+</dd>
+    <dt><code>TKey</code></dt>
+    <dd><p>The type of the key used to uniquely identify entities.</p>
+</dd>
+  </dl>
+
+
+
+
+
+  <h4 class="section" id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_SyncFromListAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean____examples">Examples</h4>
+  <p>await context.SyncFromListAsync(
+updatedEmployees,
+e =&gt; e.Id,
+e =&gt; e.IsActive
+);</p>
+
+
+  <h4 class="section" id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_SyncFromListAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean____remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method adds entities in the list that are not in the database, updates entities that exist in both,
+and removes entities in the database that are not in the list.</p>
+</div>
+
+
+
+
+  <a id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_UpdateAndSaveAsync_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.UpdateAndSaveAsync*"></a>
+
+  <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_UpdateAndSaveAsync__1___0_System_Object___" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.UpdateAndSaveAsync``1(``0,System.Object[])">
+  UpdateAndSaveAsync&lt;TEntity&gt;(TEntity, params object[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IResult&gt; UpdateAndSaveAsync&lt;TEntity&gt;(TEntity entity, params object[] keyValues) where TEntity : class</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entity</code> <span class="xref">TEntity</span></dt>
+    <dd></dd>
+    <dt><code>keyValues</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TEntity</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Supported by the <a href="https://nuv.tools" target="_blank">Nuv Tools</a>. Documentation generated by <a href="https://dotnet.github.io/docfx" target="_blank">docfx</a></span>.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

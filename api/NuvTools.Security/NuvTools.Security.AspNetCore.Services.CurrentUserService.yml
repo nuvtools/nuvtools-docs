@@ -19,7 +19,7 @@ items:
   fullName: NuvTools.Security.AspNetCore.Services.CurrentUserService
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/2162e82c2b5cd8a19eba8c8a2a08b0fd0b913412/src/NuvTools.Security.AspNetCore/Services/CurrentUserService.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/5d4fc5f3d9f65d1759fa3054b699f01719802a22/src/NuvTools.Security.AspNetCore/Services/CurrentUserService.cs
   assemblies:
   - NuvTools.Security.AspNetCore
   namespace: NuvTools.Security.AspNetCore.Services
@@ -48,7 +48,7 @@ items:
   fullName: NuvTools.Security.AspNetCore.Services.CurrentUserService.CurrentUserService(Microsoft.AspNetCore.Http.IHttpContextAccessor)
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/2162e82c2b5cd8a19eba8c8a2a08b0fd0b913412/src/NuvTools.Security.AspNetCore/Services/CurrentUserService.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/5d4fc5f3d9f65d1759fa3054b699f01719802a22/src/NuvTools.Security.AspNetCore/Services/CurrentUserService.cs
   assemblies:
   - NuvTools.Security.AspNetCore
   namespace: NuvTools.Security.AspNetCore.Services
@@ -74,12 +74,12 @@ items:
   fullName: NuvTools.Security.AspNetCore.Services.CurrentUserService.NameIdentifier
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/2162e82c2b5cd8a19eba8c8a2a08b0fd0b913412/src/NuvTools.Security.AspNetCore/Services/CurrentUserService.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/5d4fc5f3d9f65d1759fa3054b699f01719802a22/src/NuvTools.Security.AspNetCore/Services/CurrentUserService.cs
   assemblies:
   - NuvTools.Security.AspNetCore
   namespace: NuvTools.Security.AspNetCore.Services
   syntax:
-    content: public string NameIdentifier { get; }
+    content: public string? NameIdentifier { get; }
     parameters: []
     return:
       type: System.String
@@ -97,12 +97,12 @@ items:
   fullName: NuvTools.Security.AspNetCore.Services.CurrentUserService.RemoteIpAddress
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/2162e82c2b5cd8a19eba8c8a2a08b0fd0b913412/src/NuvTools.Security.AspNetCore/Services/CurrentUserService.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/5d4fc5f3d9f65d1759fa3054b699f01719802a22/src/NuvTools.Security.AspNetCore/Services/CurrentUserService.cs
   assemblies:
   - NuvTools.Security.AspNetCore
   namespace: NuvTools.Security.AspNetCore.Services
   syntax:
-    content: public string RemoteIpAddress { get; }
+    content: public string? RemoteIpAddress { get; }
     parameters: []
     return:
       type: System.String
@@ -120,16 +120,16 @@ items:
   fullName: NuvTools.Security.AspNetCore.Services.CurrentUserService.RemotePort
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/2162e82c2b5cd8a19eba8c8a2a08b0fd0b913412/src/NuvTools.Security.AspNetCore/Services/CurrentUserService.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/5d4fc5f3d9f65d1759fa3054b699f01719802a22/src/NuvTools.Security.AspNetCore/Services/CurrentUserService.cs
   assemblies:
   - NuvTools.Security.AspNetCore
   namespace: NuvTools.Security.AspNetCore.Services
   syntax:
-    content: public int RemotePort { get; }
+    content: public int? RemotePort { get; }
     parameters: []
     return:
-      type: System.Int32
-    content.vb: Public ReadOnly Property RemotePort As Integer
+      type: System.Nullable{System.Int32}
+    content.vb: Public ReadOnly Property RemotePort As Integer?
   overload: NuvTools.Security.AspNetCore.Services.CurrentUserService.RemotePort*
 - uid: NuvTools.Security.AspNetCore.Services.CurrentUserService.FullRemoteAddress
   commentId: P:NuvTools.Security.AspNetCore.Services.CurrentUserService.FullRemoteAddress
@@ -143,7 +143,7 @@ items:
   fullName: NuvTools.Security.AspNetCore.Services.CurrentUserService.FullRemoteAddress
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/2162e82c2b5cd8a19eba8c8a2a08b0fd0b913412/src/NuvTools.Security.AspNetCore/Services/CurrentUserService.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/5d4fc5f3d9f65d1759fa3054b699f01719802a22/src/NuvTools.Security.AspNetCore/Services/CurrentUserService.cs
   assemblies:
   - NuvTools.Security.AspNetCore
   namespace: NuvTools.Security.AspNetCore.Services
@@ -166,12 +166,12 @@ items:
   fullName: NuvTools.Security.AspNetCore.Services.CurrentUserService.Claims
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/2162e82c2b5cd8a19eba8c8a2a08b0fd0b913412/src/NuvTools.Security.AspNetCore/Services/CurrentUserService.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/5d4fc5f3d9f65d1759fa3054b699f01719802a22/src/NuvTools.Security.AspNetCore/Services/CurrentUserService.cs
   assemblies:
   - NuvTools.Security.AspNetCore
   namespace: NuvTools.Security.AspNetCore.Services
   syntax:
-    content: public List<KeyValuePair<string, string>> Claims { get; }
+    content: public List<KeyValuePair<string, string>>? Claims { get; }
     parameters: []
     return:
       type: System.Collections.Generic.List{System.Collections.Generic.KeyValuePair{System.String,System.String}}
@@ -549,17 +549,57 @@ references:
   name: RemotePort
   nameWithType: CurrentUserService.RemotePort
   fullName: NuvTools.Security.AspNetCore.Services.CurrentUserService.RemotePort
-- uid: System.Int32
-  commentId: T:System.Int32
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
   parent: System
-  isExternal: true
+  definition: System.Nullable`1
   href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: NuvTools.Security.AspNetCore.Services.CurrentUserService.FullRemoteAddress*
   commentId: Overload:NuvTools.Security.AspNetCore.Services.CurrentUserService.FullRemoteAddress
   isExternal: true

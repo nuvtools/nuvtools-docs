@@ -15,7 +15,7 @@ items:
   fullName: NuvTools.Common.ResultWrapper.ResultExtensions
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/ResultExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/ResultExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
@@ -45,12 +45,12 @@ items:
   fullName: NuvTools.Common.ResultWrapper.ResultExtensions.ToResult<T>(System.Net.Http.HttpResponseMessage)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/ResultExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/ResultExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
   syntax:
-    content: public static Task<IResult<T>> ToResult<T>(this HttpResponseMessage response)
+    content: public static Task<IResult<T>?> ToResult<T>(this HttpResponseMessage response)
     parameters:
     - id: response
       type: System.Net.Http.HttpResponseMessage
@@ -76,12 +76,12 @@ items:
   fullName: NuvTools.Common.ResultWrapper.ResultExtensions.ToResult(System.Net.Http.HttpResponseMessage)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/ResultExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/ResultExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
   syntax:
-    content: public static Task<IResult> ToResult(this HttpResponseMessage response)
+    content: public static Task<IResult?> ToResult(this HttpResponseMessage response)
     parameters:
     - id: response
       type: System.Net.Http.HttpResponseMessage
@@ -380,7 +380,7 @@ references:
   nameWithType: HttpResponseMessage
   fullName: System.Net.Http.HttpResponseMessage
 - uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{{T}}}
-  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{`0}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{``0}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1

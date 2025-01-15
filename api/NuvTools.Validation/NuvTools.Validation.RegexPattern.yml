@@ -5,8 +5,9 @@ items:
   id: RegexPattern
   parent: NuvTools.Validation
   children:
-  - NuvTools.Validation.RegexPattern.Base64File
-  - NuvTools.Validation.RegexPattern.EmailAddress
+  - NuvTools.Validation.RegexPattern.BASE64_CONTENT
+  - NuvTools.Validation.RegexPattern.BASE64_DATAURI
+  - NuvTools.Validation.RegexPattern.EMAIL_ADDRESS
   langs:
   - csharp
   - vb
@@ -15,7 +16,7 @@ items:
   fullName: NuvTools.Validation.RegexPattern
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-validation/blob/8107e7c60e616d88d7782a0fe2cea992be20066f/src/NuvTools.Validation/RegexPattern.cs
+    href: https://github.com/nuvtools/nuvtools-validation/blob/d6720f15095aa5069702caa5ff40d949809d80c9/src/NuvTools.Validation/RegexPattern.cs
   assemblies:
   - NuvTools.Validation
   namespace: NuvTools.Validation
@@ -34,52 +35,75 @@ items:
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.GetHashCode
-- uid: NuvTools.Validation.RegexPattern.EmailAddress
-  commentId: F:NuvTools.Validation.RegexPattern.EmailAddress
-  id: EmailAddress
+- uid: NuvTools.Validation.RegexPattern.EMAIL_ADDRESS
+  commentId: F:NuvTools.Validation.RegexPattern.EMAIL_ADDRESS
+  id: EMAIL_ADDRESS
   parent: NuvTools.Validation.RegexPattern
   langs:
   - csharp
   - vb
-  name: EmailAddress
-  nameWithType: RegexPattern.EmailAddress
-  fullName: NuvTools.Validation.RegexPattern.EmailAddress
+  name: EMAIL_ADDRESS
+  nameWithType: RegexPattern.EMAIL_ADDRESS
+  fullName: NuvTools.Validation.RegexPattern.EMAIL_ADDRESS
   type: Field
   source:
-    href: https://github.com/nuvtools/nuvtools-validation/blob/8107e7c60e616d88d7782a0fe2cea992be20066f/src/NuvTools.Validation/RegexPattern.cs
+    href: https://github.com/nuvtools/nuvtools-validation/blob/d6720f15095aa5069702caa5ff40d949809d80c9/src/NuvTools.Validation/RegexPattern.cs
   assemblies:
   - NuvTools.Validation
   namespace: NuvTools.Validation
   summary: Regex pattern for e-mail address validation.
   example: []
   syntax:
-    content: public const string EmailAddress = "^([a-z0-9_\\-])([a-z0-9_\\-\\.]*)@(\\[((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\\.){3}|((([a-z0-9\\-]+)\\.)+))([a-z]{2,}|(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\\])$"
+    content: public const string EMAIL_ADDRESS = "^([a-z0-9_\\-])([a-z0-9_\\-\\.]*)@(\\[((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\\.){3}|((([a-z0-9\\-]+)\\.)+))([a-z]{2,}|(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\\])$"
     return:
       type: System.String
-    content.vb: Public Const EmailAddress As String = "^([a-z0-9_\-])([a-z0-9_\-\.]*)@(\[((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}|((([a-z0-9\-]+)\.)+))([a-z]{2,}|(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\])$"
-- uid: NuvTools.Validation.RegexPattern.Base64File
-  commentId: F:NuvTools.Validation.RegexPattern.Base64File
-  id: Base64File
+    content.vb: Public Const EMAIL_ADDRESS As String = "^([a-z0-9_\-])([a-z0-9_\-\.]*)@(\[((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}|((([a-z0-9\-]+)\.)+))([a-z]{2,}|(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\])$"
+- uid: NuvTools.Validation.RegexPattern.BASE64_CONTENT
+  commentId: F:NuvTools.Validation.RegexPattern.BASE64_CONTENT
+  id: BASE64_CONTENT
   parent: NuvTools.Validation.RegexPattern
   langs:
   - csharp
   - vb
-  name: Base64File
-  nameWithType: RegexPattern.Base64File
-  fullName: NuvTools.Validation.RegexPattern.Base64File
+  name: BASE64_CONTENT
+  nameWithType: RegexPattern.BASE64_CONTENT
+  fullName: NuvTools.Validation.RegexPattern.BASE64_CONTENT
   type: Field
   source:
-    href: https://github.com/nuvtools/nuvtools-validation/blob/8107e7c60e616d88d7782a0fe2cea992be20066f/src/NuvTools.Validation/RegexPattern.cs
+    href: https://github.com/nuvtools/nuvtools-validation/blob/d6720f15095aa5069702caa5ff40d949809d80c9/src/NuvTools.Validation/RegexPattern.cs
   assemblies:
   - NuvTools.Validation
   namespace: NuvTools.Validation
-  summary: Regex to validate and extract informations (type, extension and content) from base64 file.
+  summary: Regex to validate Base64 and extract using content label.
   example: []
   syntax:
-    content: public const string Base64File = "data:(?<type>.+?/(?<extension>.+?));(?<base>.+),(?<content>.+)"
+    content: public const string BASE64_CONTENT = "^(?<content>(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4}))$"
     return:
       type: System.String
-    content.vb: Public Const Base64File As String = "data:(?<type>.+?/(?<extension>.+?));(?<base>.+),(?<content>.+)"
+    content.vb: Public Const BASE64_CONTENT As String = "^(?<content>(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4}))$"
+- uid: NuvTools.Validation.RegexPattern.BASE64_DATAURI
+  commentId: F:NuvTools.Validation.RegexPattern.BASE64_DATAURI
+  id: BASE64_DATAURI
+  parent: NuvTools.Validation.RegexPattern
+  langs:
+  - csharp
+  - vb
+  name: BASE64_DATAURI
+  nameWithType: RegexPattern.BASE64_DATAURI
+  fullName: NuvTools.Validation.RegexPattern.BASE64_DATAURI
+  type: Field
+  source:
+    href: https://github.com/nuvtools/nuvtools-validation/blob/d6720f15095aa5069702caa5ff40d949809d80c9/src/NuvTools.Validation/RegexPattern.cs
+  assemblies:
+  - NuvTools.Validation
+  namespace: NuvTools.Validation
+  summary: Regex to validate and extract informations (type, extension and content) from Data URI Base64.
+  example: []
+  syntax:
+    content: public const string BASE64_DATAURI = "^data:(?<type>.+?/(?<extension>.+?));(?<base>.+),(?<content>(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4}))$"
+    return:
+      type: System.String
+    content.vb: Public Const BASE64_DATAURI As String = "^data:(?<type>.+?/(?<extension>.+?));(?<base>.+),(?<content>(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4}))$"
 references:
 - uid: NuvTools.Validation
   commentId: N:NuvTools.Validation

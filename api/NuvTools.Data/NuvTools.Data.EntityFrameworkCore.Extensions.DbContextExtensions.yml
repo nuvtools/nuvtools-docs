@@ -9,6 +9,8 @@ items:
   - NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.AddAndSaveWithCompositeKeyAsync``1(Microsoft.EntityFrameworkCore.DbContext,``0)
   - NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteResilientTransactionAsync(Microsoft.EntityFrameworkCore.DbContext,System.Func{System.Threading.Tasks.Task})
   - NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteStrategyAsync(Microsoft.EntityFrameworkCore.DbContext,System.Func{System.Threading.Tasks.Task})
+  - NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteWithStrategyAsync(Microsoft.EntityFrameworkCore.DbContext,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Threading.CancellationToken)
+  - NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteWithStrategyAsync``1(Microsoft.EntityFrameworkCore.DbContext,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)
   - NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.FindPrimaryKeyValues``1(Microsoft.EntityFrameworkCore.DbContext,``0)
   - NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.RemoveAndSaveAsync``1(Microsoft.EntityFrameworkCore.DbContext,System.Object[])
   - NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.UpdateAndSaveAsync``1(Microsoft.EntityFrameworkCore.DbContext,``0,System.Object[])
@@ -20,7 +22,7 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data.EntityFrameworkCore/Extensions/DbContextExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data.EntityFrameworkCore/Extensions/DbContextExtensions.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Extensions
@@ -50,7 +52,7 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.AddAndSaveAsync<TEntity, TKey>(Microsoft.EntityFrameworkCore.DbContext, TEntity)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data.EntityFrameworkCore/Extensions/DbContextExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data.EntityFrameworkCore/Extensions/DbContextExtensions.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Extensions
@@ -84,7 +86,7 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.AddAndSaveWithCompositeKeyAsync<TEntity>(Microsoft.EntityFrameworkCore.DbContext, TEntity)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data.EntityFrameworkCore/Extensions/DbContextExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data.EntityFrameworkCore/Extensions/DbContextExtensions.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Extensions
@@ -117,7 +119,7 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.FindPrimaryKeyValues<TEntity>(Microsoft.EntityFrameworkCore.DbContext, TEntity)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data.EntityFrameworkCore/Extensions/DbContextExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data.EntityFrameworkCore/Extensions/DbContextExtensions.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Extensions
@@ -150,7 +152,7 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.UpdateAndSaveAsync<TEntity>(Microsoft.EntityFrameworkCore.DbContext, TEntity, params object[])
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data.EntityFrameworkCore/Extensions/DbContextExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data.EntityFrameworkCore/Extensions/DbContextExtensions.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Extensions
@@ -185,7 +187,7 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.RemoveAndSaveAsync<TEntity>(Microsoft.EntityFrameworkCore.DbContext, params object[])
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data.EntityFrameworkCore/Extensions/DbContextExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data.EntityFrameworkCore/Extensions/DbContextExtensions.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Extensions
@@ -205,6 +207,93 @@ items:
   nameWithType.vb: DbContextExtensions.RemoveAndSaveAsync(Of TEntity)(DbContext, ParamArray Object())
   fullName.vb: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.RemoveAndSaveAsync(Of TEntity)(Microsoft.EntityFrameworkCore.DbContext, ParamArray Object())
   name.vb: RemoveAndSaveAsync(Of TEntity)(DbContext, ParamArray Object())
+- uid: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteWithStrategyAsync(Microsoft.EntityFrameworkCore.DbContext,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Threading.CancellationToken)
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteWithStrategyAsync(Microsoft.EntityFrameworkCore.DbContext,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Threading.CancellationToken)
+  id: ExecuteWithStrategyAsync(Microsoft.EntityFrameworkCore.DbContext,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Threading.CancellationToken)
+  isExtensionMethod: true
+  parent: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions
+  langs:
+  - csharp
+  - vb
+  name: ExecuteWithStrategyAsync(DbContext, Func<CancellationToken, Task>, CancellationToken)
+  nameWithType: DbContextExtensions.ExecuteWithStrategyAsync(DbContext, Func<CancellationToken, Task>, CancellationToken)
+  fullName: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteWithStrategyAsync(Microsoft.EntityFrameworkCore.DbContext, System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task>, System.Threading.CancellationToken)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data.EntityFrameworkCore/Extensions/DbContextExtensions.cs
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Extensions
+  summary: >-
+    Executes the provided action within the execution strategy of the DbContext.
+
+    <p><a href="https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency">https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency</a></p>
+  example: []
+  syntax:
+    content: public static Task ExecuteWithStrategyAsync(this DbContext context, Func<CancellationToken, Task> action, CancellationToken cancellationToken = default)
+    parameters:
+    - id: context
+      type: Microsoft.EntityFrameworkCore.DbContext
+      description: The DbContext instance.
+    - id: action
+      type: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task}
+      description: The action to execute.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: A CancellationToken to observe while waiting for the task to complete.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A Task representing the asynchronous operation.
+    content.vb: Public Shared Function ExecuteWithStrategyAsync(context As DbContext, action As Func(Of CancellationToken, Task), cancellationToken As CancellationToken = Nothing) As Task
+  overload: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteWithStrategyAsync*
+  nameWithType.vb: DbContextExtensions.ExecuteWithStrategyAsync(DbContext, Func(Of CancellationToken, Task), CancellationToken)
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteWithStrategyAsync(Microsoft.EntityFrameworkCore.DbContext, System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task), System.Threading.CancellationToken)
+  name.vb: ExecuteWithStrategyAsync(DbContext, Func(Of CancellationToken, Task), CancellationToken)
+- uid: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteWithStrategyAsync``1(Microsoft.EntityFrameworkCore.DbContext,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteWithStrategyAsync``1(Microsoft.EntityFrameworkCore.DbContext,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)
+  id: ExecuteWithStrategyAsync``1(Microsoft.EntityFrameworkCore.DbContext,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)
+  isExtensionMethod: true
+  parent: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions
+  langs:
+  - csharp
+  - vb
+  name: ExecuteWithStrategyAsync<T>(DbContext, Func<CancellationToken, Task<T>>, CancellationToken)
+  nameWithType: DbContextExtensions.ExecuteWithStrategyAsync<T>(DbContext, Func<CancellationToken, Task<T>>, CancellationToken)
+  fullName: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteWithStrategyAsync<T>(Microsoft.EntityFrameworkCore.DbContext, System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<T>>, System.Threading.CancellationToken)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data.EntityFrameworkCore/Extensions/DbContextExtensions.cs
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Extensions
+  summary: >-
+    Executes the provided action within the execution strategy of the DbContext and returns a result.
+
+    <p><a href="https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency">https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency</a></p>
+  example: []
+  syntax:
+    content: public static Task<T> ExecuteWithStrategyAsync<T>(this DbContext context, Func<CancellationToken, Task<T>> action, CancellationToken cancellationToken = default)
+    parameters:
+    - id: context
+      type: Microsoft.EntityFrameworkCore.DbContext
+      description: The DbContext instance.
+    - id: action
+      type: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{{T}}}
+      description: The action to execute.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: A CancellationToken to observe while waiting for the task to complete.
+    typeParameters:
+    - id: T
+      description: The type of the result.
+    return:
+      type: System.Threading.Tasks.Task{{T}}
+      description: A Task representing the asynchronous operation, with a result of type T.
+    content.vb: Public Shared Function ExecuteWithStrategyAsync(Of T)(context As DbContext, action As Func(Of CancellationToken, Task(Of T)), cancellationToken As CancellationToken = Nothing) As Task(Of T)
+  overload: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteWithStrategyAsync*
+  nameWithType.vb: DbContextExtensions.ExecuteWithStrategyAsync(Of T)(DbContext, Func(Of CancellationToken, Task(Of T)), CancellationToken)
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteWithStrategyAsync(Of T)(Microsoft.EntityFrameworkCore.DbContext, System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task(Of T)), System.Threading.CancellationToken)
+  name.vb: ExecuteWithStrategyAsync(Of T)(DbContext, Func(Of CancellationToken, Task(Of T)), CancellationToken)
 - uid: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteResilientTransactionAsync(Microsoft.EntityFrameworkCore.DbContext,System.Func{System.Threading.Tasks.Task})
   commentId: M:NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteResilientTransactionAsync(Microsoft.EntityFrameworkCore.DbContext,System.Func{System.Threading.Tasks.Task})
   id: ExecuteResilientTransactionAsync(Microsoft.EntityFrameworkCore.DbContext,System.Func{System.Threading.Tasks.Task})
@@ -218,7 +307,7 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteResilientTransactionAsync(Microsoft.EntityFrameworkCore.DbContext, System.Func<System.Threading.Tasks.Task>)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data.EntityFrameworkCore/Extensions/DbContextExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/d67a4b78952ab91ca34c9f72154a8f12faac6f95/src/NuvTools.Data.EntityFrameworkCore/Extensions/DbContextExtensions.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Extensions
@@ -257,7 +346,7 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteStrategyAsync(Microsoft.EntityFrameworkCore.DbContext, System.Func<System.Threading.Tasks.Task>)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data.EntityFrameworkCore/Extensions/DbContextExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/d67a4b78952ab91ca34c9f72154a8f12faac6f95/src/NuvTools.Data.EntityFrameworkCore/Extensions/DbContextExtensions.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Extensions
@@ -861,6 +950,221 @@ references:
   name: RemoveAndSaveAsync
   nameWithType: DbContextExtensions.RemoveAndSaveAsync
   fullName: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.RemoveAndSaveAsync
+- uid: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteWithStrategyAsync*
+  commentId: Overload:NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteWithStrategyAsync
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.html#NuvTools_Data_EntityFrameworkCore_Extensions_DbContextExtensions_ExecuteWithStrategyAsync_Microsoft_EntityFrameworkCore_DbContext_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task__System_Threading_CancellationToken_
+  name: ExecuteWithStrategyAsync
+  nameWithType: DbContextExtensions.ExecuteWithStrategyAsync
+  fullName: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteWithStrategyAsync
+- uid: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task}
+  commentId: T:System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<CancellationToken, Task>
+  nameWithType: Func<CancellationToken, Task>
+  fullName: System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task>
+  nameWithType.vb: Func(Of CancellationToken, Task)
+  fullName.vb: System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task)
+  name.vb: Func(Of CancellationToken, Task)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: )
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{{T}}}
+  commentId: T:System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<CancellationToken, Task<T>>
+  nameWithType: Func<CancellationToken, Task<T>>
+  fullName: System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<T>>
+  nameWithType.vb: Func(Of CancellationToken, Task(Of T))
+  fullName.vb: System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task(Of T))
+  name.vb: Func(Of CancellationToken, Task(Of T))
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: T
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: ','
+  - name: " "
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: System.Threading.Tasks.Task{{T}}
+  commentId: T:System.Threading.Tasks.Task{``0}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<T>
+  nameWithType: Task<T>
+  fullName: System.Threading.Tasks.Task<T>
+  nameWithType.vb: Task(Of T)
+  fullName.vb: System.Threading.Tasks.Task(Of T)
+  name.vb: Task(Of T)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteResilientTransactionAsync*
   commentId: Overload:NuvTools.Data.EntityFrameworkCore.Extensions.DbContextExtensions.ExecuteResilientTransactionAsync
   isExternal: true
@@ -903,14 +1207,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
   - name: )
-- uid: System.Threading.Tasks.Task
-  commentId: T:System.Threading.Tasks.Task
-  parent: System.Threading.Tasks
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
-  name: Task
-  nameWithType: Task
-  fullName: System.Threading.Tasks.Task
 - uid: System.Func`1
   commentId: T:System.Func`1
   isExternal: true

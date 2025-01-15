@@ -5,6 +5,7 @@ items:
   id: IFileManager
   parent: NuvTools.Storage
   children:
+  - NuvTools.Storage.IFileManager.AddFileAsync(NuvTools.Storage.IFile[])
   - NuvTools.Storage.IFileManager.AddFileAsync(System.String,NuvTools.Storage.IFile[])
   - NuvTools.Storage.IFileManager.FileExistsAsync(System.String)
   - NuvTools.Storage.IFileManager.GetAccessRepositoryUri(NuvTools.Storage.AccessPermissions)
@@ -19,7 +20,7 @@ items:
   fullName: NuvTools.Storage.IFileManager
   type: Interface
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage/IFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
   assemblies:
   - NuvTools.Storage
   namespace: NuvTools.Storage
@@ -38,12 +39,12 @@ items:
   fullName: NuvTools.Storage.IFileManager.AddFileAsync(string, params NuvTools.Storage.IFile[])
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage/IFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
   assemblies:
   - NuvTools.Storage
   namespace: NuvTools.Storage
   syntax:
-    content: Task<IReadOnlyList<IFile>> AddFileAsync(string rootDir = null, params IFile[] files)
+    content: Task<IReadOnlyList<IFile>> AddFileAsync(string rootDir, params IFile[] files)
     parameters:
     - id: rootDir
       type: System.String
@@ -51,11 +52,39 @@ items:
       type: NuvTools.Storage.IFile[]
     return:
       type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{NuvTools.Storage.IFile}}
-    content.vb: Function AddFileAsync(rootDir As String = Nothing, ParamArray files As IFile()) As Task(Of IReadOnlyList(Of IFile))
+    content.vb: Function AddFileAsync(rootDir As String, ParamArray files As IFile()) As Task(Of IReadOnlyList(Of IFile))
   overload: NuvTools.Storage.IFileManager.AddFileAsync*
   nameWithType.vb: IFileManager.AddFileAsync(String, ParamArray IFile())
   fullName.vb: NuvTools.Storage.IFileManager.AddFileAsync(String, ParamArray NuvTools.Storage.IFile())
   name.vb: AddFileAsync(String, ParamArray IFile())
+- uid: NuvTools.Storage.IFileManager.AddFileAsync(NuvTools.Storage.IFile[])
+  commentId: M:NuvTools.Storage.IFileManager.AddFileAsync(NuvTools.Storage.IFile[])
+  id: AddFileAsync(NuvTools.Storage.IFile[])
+  parent: NuvTools.Storage.IFileManager
+  langs:
+  - csharp
+  - vb
+  name: AddFileAsync(params IFile[])
+  nameWithType: IFileManager.AddFileAsync(params IFile[])
+  fullName: NuvTools.Storage.IFileManager.AddFileAsync(params NuvTools.Storage.IFile[])
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
+  assemblies:
+  - NuvTools.Storage
+  namespace: NuvTools.Storage
+  syntax:
+    content: Task<IReadOnlyList<IFile>> AddFileAsync(params IFile[] files)
+    parameters:
+    - id: files
+      type: NuvTools.Storage.IFile[]
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{NuvTools.Storage.IFile}}
+    content.vb: Function AddFileAsync(ParamArray files As IFile()) As Task(Of IReadOnlyList(Of IFile))
+  overload: NuvTools.Storage.IFileManager.AddFileAsync*
+  nameWithType.vb: IFileManager.AddFileAsync(ParamArray IFile())
+  fullName.vb: NuvTools.Storage.IFileManager.AddFileAsync(ParamArray NuvTools.Storage.IFile())
+  name.vb: AddFileAsync(ParamArray IFile())
 - uid: NuvTools.Storage.IFileManager.FileExistsAsync(System.String)
   commentId: M:NuvTools.Storage.IFileManager.FileExistsAsync(System.String)
   id: FileExistsAsync(System.String)
@@ -68,7 +97,7 @@ items:
   fullName: NuvTools.Storage.IFileManager.FileExistsAsync(string)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage/IFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
   assemblies:
   - NuvTools.Storage
   namespace: NuvTools.Storage
@@ -96,7 +125,7 @@ items:
   fullName: NuvTools.Storage.IFileManager.RemoveFileAsync(string)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage/IFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
   assemblies:
   - NuvTools.Storage
   namespace: NuvTools.Storage
@@ -124,7 +153,7 @@ items:
   fullName: NuvTools.Storage.IFileManager.GetAccessRepositoryUri(NuvTools.Storage.AccessPermissions)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage/IFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
   assemblies:
   - NuvTools.Storage
   namespace: NuvTools.Storage
@@ -149,7 +178,7 @@ items:
   fullName: NuvTools.Storage.IFileManager.GetFilesAsync(int?)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage/IFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
   assemblies:
   - NuvTools.Storage
   namespace: NuvTools.Storage
@@ -177,12 +206,12 @@ items:
   fullName: NuvTools.Storage.IFileManager.GetFileAsync(string, bool)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage/IFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
   assemblies:
   - NuvTools.Storage
   namespace: NuvTools.Storage
   syntax:
-    content: Task<IFile> GetFileAsync(string id, bool download = false)
+    content: Task<IFile?> GetFileAsync(string id, bool download = false)
     parameters:
     - id: id
       type: System.String

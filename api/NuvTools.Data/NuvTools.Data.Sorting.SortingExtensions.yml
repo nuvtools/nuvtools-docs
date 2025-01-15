@@ -5,10 +5,10 @@ items:
   id: SortingExtensions
   parent: NuvTools.Data.Sorting
   children:
-  - NuvTools.Data.Sorting.SortingExtensions.Sort``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},NuvTools.Data.Sorting.SortingExtensions.SortDirection)
-  - NuvTools.Data.Sorting.SortingExtensions.Sort``2(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},NuvTools.Data.Sorting.SortingExtensions.SortDirection)
-  - NuvTools.Data.Sorting.SortingExtensions.ThenSort``2(System.Linq.IOrderedEnumerable{``0},System.Func{``0,``1},NuvTools.Data.Sorting.SortingExtensions.SortDirection)
-  - NuvTools.Data.Sorting.SortingExtensions.ThenSort``2(System.Linq.IOrderedQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},NuvTools.Data.Sorting.SortingExtensions.SortDirection)
+  - NuvTools.Data.Sorting.SortingExtensions.Sort``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},NuvTools.Data.Sorting.Enumerations.SortDirection)
+  - NuvTools.Data.Sorting.SortingExtensions.Sort``2(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},NuvTools.Data.Sorting.Enumerations.SortDirection)
+  - NuvTools.Data.Sorting.SortingExtensions.ThenSort``2(System.Linq.IOrderedEnumerable{``0},System.Func{``0,``1},NuvTools.Data.Sorting.Enumerations.SortDirection)
+  - NuvTools.Data.Sorting.SortingExtensions.ThenSort``2(System.Linq.IOrderedQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},NuvTools.Data.Sorting.Enumerations.SortDirection)
   langs:
   - csharp
   - vb
@@ -17,7 +17,7 @@ items:
   fullName: NuvTools.Data.Sorting.SortingExtensions
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Sorting/SortingExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data/Sorting/SortingExtensions.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Sorting
@@ -34,149 +34,149 @@ items:
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.GetHashCode
-- uid: NuvTools.Data.Sorting.SortingExtensions.Sort``2(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},NuvTools.Data.Sorting.SortingExtensions.SortDirection)
-  commentId: M:NuvTools.Data.Sorting.SortingExtensions.Sort``2(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},NuvTools.Data.Sorting.SortingExtensions.SortDirection)
-  id: Sort``2(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},NuvTools.Data.Sorting.SortingExtensions.SortDirection)
+- uid: NuvTools.Data.Sorting.SortingExtensions.Sort``2(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},NuvTools.Data.Sorting.Enumerations.SortDirection)
+  commentId: M:NuvTools.Data.Sorting.SortingExtensions.Sort``2(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},NuvTools.Data.Sorting.Enumerations.SortDirection)
+  id: Sort``2(System.Linq.IQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},NuvTools.Data.Sorting.Enumerations.SortDirection)
   isExtensionMethod: true
   parent: NuvTools.Data.Sorting.SortingExtensions
   langs:
   - csharp
   - vb
   name: Sort<T, TKey>(IQueryable<T>, Expression<Func<T, TKey>>, SortDirection)
-  nameWithType: SortingExtensions.Sort<T, TKey>(IQueryable<T>, Expression<Func<T, TKey>>, SortingExtensions.SortDirection)
-  fullName: NuvTools.Data.Sorting.SortingExtensions.Sort<T, TKey>(System.Linq.IQueryable<T>, System.Linq.Expressions.Expression<System.Func<T, TKey>>, NuvTools.Data.Sorting.SortingExtensions.SortDirection)
+  nameWithType: SortingExtensions.Sort<T, TKey>(IQueryable<T>, Expression<Func<T, TKey>>, SortDirection)
+  fullName: NuvTools.Data.Sorting.SortingExtensions.Sort<T, TKey>(System.Linq.IQueryable<T>, System.Linq.Expressions.Expression<System.Func<T, TKey>>, NuvTools.Data.Sorting.Enumerations.SortDirection)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Sorting/SortingExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data/Sorting/SortingExtensions.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Sorting
   syntax:
-    content: public static IOrderedQueryable<T> Sort<T, TKey>(this IQueryable<T> list, Expression<Func<T, TKey>> property, SortingExtensions.SortDirection direction = SortDirection.ASC)
+    content: public static IOrderedQueryable<T> Sort<T, TKey>(this IQueryable<T> list, Expression<Func<T, TKey>> property, SortDirection direction = SortDirection.ASC)
     parameters:
     - id: list
       type: System.Linq.IQueryable{{T}}
     - id: property
       type: System.Linq.Expressions.Expression{System.Func{{T},{TKey}}}
     - id: direction
-      type: NuvTools.Data.Sorting.SortingExtensions.SortDirection
+      type: NuvTools.Data.Sorting.Enumerations.SortDirection
     typeParameters:
     - id: T
     - id: TKey
     return:
       type: System.Linq.IOrderedQueryable{{T}}
-    content.vb: Public Shared Function Sort(Of T, TKey)(list As IQueryable(Of T), [property] As Expression(Of Func(Of T, TKey)), direction As SortingExtensions.SortDirection = SortDirection.ASC) As IOrderedQueryable(Of T)
+    content.vb: Public Shared Function Sort(Of T, TKey)(list As IQueryable(Of T), [property] As Expression(Of Func(Of T, TKey)), direction As SortDirection = SortDirection.ASC) As IOrderedQueryable(Of T)
   overload: NuvTools.Data.Sorting.SortingExtensions.Sort*
-  nameWithType.vb: SortingExtensions.Sort(Of T, TKey)(IQueryable(Of T), Expression(Of Func(Of T, TKey)), SortingExtensions.SortDirection)
-  fullName.vb: NuvTools.Data.Sorting.SortingExtensions.Sort(Of T, TKey)(System.Linq.IQueryable(Of T), System.Linq.Expressions.Expression(Of System.Func(Of T, TKey)), NuvTools.Data.Sorting.SortingExtensions.SortDirection)
+  nameWithType.vb: SortingExtensions.Sort(Of T, TKey)(IQueryable(Of T), Expression(Of Func(Of T, TKey)), SortDirection)
+  fullName.vb: NuvTools.Data.Sorting.SortingExtensions.Sort(Of T, TKey)(System.Linq.IQueryable(Of T), System.Linq.Expressions.Expression(Of System.Func(Of T, TKey)), NuvTools.Data.Sorting.Enumerations.SortDirection)
   name.vb: Sort(Of T, TKey)(IQueryable(Of T), Expression(Of Func(Of T, TKey)), SortDirection)
-- uid: NuvTools.Data.Sorting.SortingExtensions.ThenSort``2(System.Linq.IOrderedQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},NuvTools.Data.Sorting.SortingExtensions.SortDirection)
-  commentId: M:NuvTools.Data.Sorting.SortingExtensions.ThenSort``2(System.Linq.IOrderedQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},NuvTools.Data.Sorting.SortingExtensions.SortDirection)
-  id: ThenSort``2(System.Linq.IOrderedQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},NuvTools.Data.Sorting.SortingExtensions.SortDirection)
+- uid: NuvTools.Data.Sorting.SortingExtensions.ThenSort``2(System.Linq.IOrderedQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},NuvTools.Data.Sorting.Enumerations.SortDirection)
+  commentId: M:NuvTools.Data.Sorting.SortingExtensions.ThenSort``2(System.Linq.IOrderedQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},NuvTools.Data.Sorting.Enumerations.SortDirection)
+  id: ThenSort``2(System.Linq.IOrderedQueryable{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},NuvTools.Data.Sorting.Enumerations.SortDirection)
   isExtensionMethod: true
   parent: NuvTools.Data.Sorting.SortingExtensions
   langs:
   - csharp
   - vb
   name: ThenSort<T, TKey>(IOrderedQueryable<T>, Expression<Func<T, TKey>>, SortDirection)
-  nameWithType: SortingExtensions.ThenSort<T, TKey>(IOrderedQueryable<T>, Expression<Func<T, TKey>>, SortingExtensions.SortDirection)
-  fullName: NuvTools.Data.Sorting.SortingExtensions.ThenSort<T, TKey>(System.Linq.IOrderedQueryable<T>, System.Linq.Expressions.Expression<System.Func<T, TKey>>, NuvTools.Data.Sorting.SortingExtensions.SortDirection)
+  nameWithType: SortingExtensions.ThenSort<T, TKey>(IOrderedQueryable<T>, Expression<Func<T, TKey>>, SortDirection)
+  fullName: NuvTools.Data.Sorting.SortingExtensions.ThenSort<T, TKey>(System.Linq.IOrderedQueryable<T>, System.Linq.Expressions.Expression<System.Func<T, TKey>>, NuvTools.Data.Sorting.Enumerations.SortDirection)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Sorting/SortingExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data/Sorting/SortingExtensions.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Sorting
   syntax:
-    content: public static IOrderedQueryable<T> ThenSort<T, TKey>(this IOrderedQueryable<T> list, Expression<Func<T, TKey>> property, SortingExtensions.SortDirection direction = SortDirection.ASC)
+    content: public static IOrderedQueryable<T> ThenSort<T, TKey>(this IOrderedQueryable<T> list, Expression<Func<T, TKey>> property, SortDirection direction = SortDirection.ASC)
     parameters:
     - id: list
       type: System.Linq.IOrderedQueryable{{T}}
     - id: property
       type: System.Linq.Expressions.Expression{System.Func{{T},{TKey}}}
     - id: direction
-      type: NuvTools.Data.Sorting.SortingExtensions.SortDirection
+      type: NuvTools.Data.Sorting.Enumerations.SortDirection
     typeParameters:
     - id: T
     - id: TKey
     return:
       type: System.Linq.IOrderedQueryable{{T}}
-    content.vb: Public Shared Function ThenSort(Of T, TKey)(list As IOrderedQueryable(Of T), [property] As Expression(Of Func(Of T, TKey)), direction As SortingExtensions.SortDirection = SortDirection.ASC) As IOrderedQueryable(Of T)
+    content.vb: Public Shared Function ThenSort(Of T, TKey)(list As IOrderedQueryable(Of T), [property] As Expression(Of Func(Of T, TKey)), direction As SortDirection = SortDirection.ASC) As IOrderedQueryable(Of T)
   overload: NuvTools.Data.Sorting.SortingExtensions.ThenSort*
-  nameWithType.vb: SortingExtensions.ThenSort(Of T, TKey)(IOrderedQueryable(Of T), Expression(Of Func(Of T, TKey)), SortingExtensions.SortDirection)
-  fullName.vb: NuvTools.Data.Sorting.SortingExtensions.ThenSort(Of T, TKey)(System.Linq.IOrderedQueryable(Of T), System.Linq.Expressions.Expression(Of System.Func(Of T, TKey)), NuvTools.Data.Sorting.SortingExtensions.SortDirection)
+  nameWithType.vb: SortingExtensions.ThenSort(Of T, TKey)(IOrderedQueryable(Of T), Expression(Of Func(Of T, TKey)), SortDirection)
+  fullName.vb: NuvTools.Data.Sorting.SortingExtensions.ThenSort(Of T, TKey)(System.Linq.IOrderedQueryable(Of T), System.Linq.Expressions.Expression(Of System.Func(Of T, TKey)), NuvTools.Data.Sorting.Enumerations.SortDirection)
   name.vb: ThenSort(Of T, TKey)(IOrderedQueryable(Of T), Expression(Of Func(Of T, TKey)), SortDirection)
-- uid: NuvTools.Data.Sorting.SortingExtensions.Sort``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},NuvTools.Data.Sorting.SortingExtensions.SortDirection)
-  commentId: M:NuvTools.Data.Sorting.SortingExtensions.Sort``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},NuvTools.Data.Sorting.SortingExtensions.SortDirection)
-  id: Sort``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},NuvTools.Data.Sorting.SortingExtensions.SortDirection)
+- uid: NuvTools.Data.Sorting.SortingExtensions.Sort``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},NuvTools.Data.Sorting.Enumerations.SortDirection)
+  commentId: M:NuvTools.Data.Sorting.SortingExtensions.Sort``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},NuvTools.Data.Sorting.Enumerations.SortDirection)
+  id: Sort``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},NuvTools.Data.Sorting.Enumerations.SortDirection)
   isExtensionMethod: true
   parent: NuvTools.Data.Sorting.SortingExtensions
   langs:
   - csharp
   - vb
   name: Sort<T, TKey>(IEnumerable<T>, Func<T, TKey>, SortDirection)
-  nameWithType: SortingExtensions.Sort<T, TKey>(IEnumerable<T>, Func<T, TKey>, SortingExtensions.SortDirection)
-  fullName: NuvTools.Data.Sorting.SortingExtensions.Sort<T, TKey>(System.Collections.Generic.IEnumerable<T>, System.Func<T, TKey>, NuvTools.Data.Sorting.SortingExtensions.SortDirection)
+  nameWithType: SortingExtensions.Sort<T, TKey>(IEnumerable<T>, Func<T, TKey>, SortDirection)
+  fullName: NuvTools.Data.Sorting.SortingExtensions.Sort<T, TKey>(System.Collections.Generic.IEnumerable<T>, System.Func<T, TKey>, NuvTools.Data.Sorting.Enumerations.SortDirection)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Sorting/SortingExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data/Sorting/SortingExtensions.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Sorting
   syntax:
-    content: public static IOrderedEnumerable<T> Sort<T, TKey>(this IEnumerable<T> list, Func<T, TKey> property, SortingExtensions.SortDirection direction = SortDirection.ASC)
+    content: public static IOrderedEnumerable<T> Sort<T, TKey>(this IEnumerable<T> list, Func<T, TKey> property, SortDirection direction = SortDirection.ASC)
     parameters:
     - id: list
       type: System.Collections.Generic.IEnumerable{{T}}
     - id: property
       type: System.Func{{T},{TKey}}
     - id: direction
-      type: NuvTools.Data.Sorting.SortingExtensions.SortDirection
+      type: NuvTools.Data.Sorting.Enumerations.SortDirection
     typeParameters:
     - id: T
     - id: TKey
     return:
       type: System.Linq.IOrderedEnumerable{{T}}
-    content.vb: Public Shared Function Sort(Of T, TKey)(list As IEnumerable(Of T), [property] As Func(Of T, TKey), direction As SortingExtensions.SortDirection = SortDirection.ASC) As IOrderedEnumerable(Of T)
+    content.vb: Public Shared Function Sort(Of T, TKey)(list As IEnumerable(Of T), [property] As Func(Of T, TKey), direction As SortDirection = SortDirection.ASC) As IOrderedEnumerable(Of T)
   overload: NuvTools.Data.Sorting.SortingExtensions.Sort*
-  nameWithType.vb: SortingExtensions.Sort(Of T, TKey)(IEnumerable(Of T), Func(Of T, TKey), SortingExtensions.SortDirection)
-  fullName.vb: NuvTools.Data.Sorting.SortingExtensions.Sort(Of T, TKey)(System.Collections.Generic.IEnumerable(Of T), System.Func(Of T, TKey), NuvTools.Data.Sorting.SortingExtensions.SortDirection)
+  nameWithType.vb: SortingExtensions.Sort(Of T, TKey)(IEnumerable(Of T), Func(Of T, TKey), SortDirection)
+  fullName.vb: NuvTools.Data.Sorting.SortingExtensions.Sort(Of T, TKey)(System.Collections.Generic.IEnumerable(Of T), System.Func(Of T, TKey), NuvTools.Data.Sorting.Enumerations.SortDirection)
   name.vb: Sort(Of T, TKey)(IEnumerable(Of T), Func(Of T, TKey), SortDirection)
-- uid: NuvTools.Data.Sorting.SortingExtensions.ThenSort``2(System.Linq.IOrderedEnumerable{``0},System.Func{``0,``1},NuvTools.Data.Sorting.SortingExtensions.SortDirection)
-  commentId: M:NuvTools.Data.Sorting.SortingExtensions.ThenSort``2(System.Linq.IOrderedEnumerable{``0},System.Func{``0,``1},NuvTools.Data.Sorting.SortingExtensions.SortDirection)
-  id: ThenSort``2(System.Linq.IOrderedEnumerable{``0},System.Func{``0,``1},NuvTools.Data.Sorting.SortingExtensions.SortDirection)
+- uid: NuvTools.Data.Sorting.SortingExtensions.ThenSort``2(System.Linq.IOrderedEnumerable{``0},System.Func{``0,``1},NuvTools.Data.Sorting.Enumerations.SortDirection)
+  commentId: M:NuvTools.Data.Sorting.SortingExtensions.ThenSort``2(System.Linq.IOrderedEnumerable{``0},System.Func{``0,``1},NuvTools.Data.Sorting.Enumerations.SortDirection)
+  id: ThenSort``2(System.Linq.IOrderedEnumerable{``0},System.Func{``0,``1},NuvTools.Data.Sorting.Enumerations.SortDirection)
   isExtensionMethod: true
   parent: NuvTools.Data.Sorting.SortingExtensions
   langs:
   - csharp
   - vb
   name: ThenSort<T, TKey>(IOrderedEnumerable<T>, Func<T, TKey>, SortDirection)
-  nameWithType: SortingExtensions.ThenSort<T, TKey>(IOrderedEnumerable<T>, Func<T, TKey>, SortingExtensions.SortDirection)
-  fullName: NuvTools.Data.Sorting.SortingExtensions.ThenSort<T, TKey>(System.Linq.IOrderedEnumerable<T>, System.Func<T, TKey>, NuvTools.Data.Sorting.SortingExtensions.SortDirection)
+  nameWithType: SortingExtensions.ThenSort<T, TKey>(IOrderedEnumerable<T>, Func<T, TKey>, SortDirection)
+  fullName: NuvTools.Data.Sorting.SortingExtensions.ThenSort<T, TKey>(System.Linq.IOrderedEnumerable<T>, System.Func<T, TKey>, NuvTools.Data.Sorting.Enumerations.SortDirection)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/a7daeee816e9bf7d05a1a14d08ecfe9833289ab7/src/NuvTools.Data/Sorting/SortingExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data/Sorting/SortingExtensions.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Sorting
   syntax:
-    content: public static IOrderedEnumerable<T> ThenSort<T, TKey>(this IOrderedEnumerable<T> list, Func<T, TKey> property, SortingExtensions.SortDirection direction = SortDirection.ASC)
+    content: public static IOrderedEnumerable<T> ThenSort<T, TKey>(this IOrderedEnumerable<T> list, Func<T, TKey> property, SortDirection direction = SortDirection.ASC)
     parameters:
     - id: list
       type: System.Linq.IOrderedEnumerable{{T}}
     - id: property
       type: System.Func{{T},{TKey}}
     - id: direction
-      type: NuvTools.Data.Sorting.SortingExtensions.SortDirection
+      type: NuvTools.Data.Sorting.Enumerations.SortDirection
     typeParameters:
     - id: T
     - id: TKey
     return:
       type: System.Linq.IOrderedEnumerable{{T}}
-    content.vb: Public Shared Function ThenSort(Of T, TKey)(list As IOrderedEnumerable(Of T), [property] As Func(Of T, TKey), direction As SortingExtensions.SortDirection = SortDirection.ASC) As IOrderedEnumerable(Of T)
+    content.vb: Public Shared Function ThenSort(Of T, TKey)(list As IOrderedEnumerable(Of T), [property] As Func(Of T, TKey), direction As SortDirection = SortDirection.ASC) As IOrderedEnumerable(Of T)
   overload: NuvTools.Data.Sorting.SortingExtensions.ThenSort*
-  nameWithType.vb: SortingExtensions.ThenSort(Of T, TKey)(IOrderedEnumerable(Of T), Func(Of T, TKey), SortingExtensions.SortDirection)
-  fullName.vb: NuvTools.Data.Sorting.SortingExtensions.ThenSort(Of T, TKey)(System.Linq.IOrderedEnumerable(Of T), System.Func(Of T, TKey), NuvTools.Data.Sorting.SortingExtensions.SortDirection)
+  nameWithType.vb: SortingExtensions.ThenSort(Of T, TKey)(IOrderedEnumerable(Of T), Func(Of T, TKey), SortDirection)
+  fullName.vb: NuvTools.Data.Sorting.SortingExtensions.ThenSort(Of T, TKey)(System.Linq.IOrderedEnumerable(Of T), System.Func(Of T, TKey), NuvTools.Data.Sorting.Enumerations.SortDirection)
   name.vb: ThenSort(Of T, TKey)(IOrderedEnumerable(Of T), Func(Of T, TKey), SortDirection)
 references:
 - uid: NuvTools.Data.Sorting
@@ -456,7 +456,7 @@ references:
 - uid: NuvTools.Data.Sorting.SortingExtensions.Sort*
   commentId: Overload:NuvTools.Data.Sorting.SortingExtensions.Sort
   isExternal: true
-  href: NuvTools.Data.Sorting.SortingExtensions.html#NuvTools_Data_Sorting_SortingExtensions_Sort__2_System_Linq_IQueryable___0__System_Linq_Expressions_Expression_System_Func___0___1___NuvTools_Data_Sorting_SortingExtensions_SortDirection_
+  href: NuvTools.Data.Sorting.SortingExtensions.html#NuvTools_Data_Sorting_SortingExtensions_Sort__2_System_Linq_IQueryable___0__System_Linq_Expressions_Expression_System_Func___0___1___NuvTools_Data_Sorting_Enumerations_SortDirection_
   name: Sort
   nameWithType: SortingExtensions.Sort
   fullName: NuvTools.Data.Sorting.SortingExtensions.Sort
@@ -538,34 +538,14 @@ references:
   - name: TKey
   - name: )
   - name: )
-- uid: NuvTools.Data.Sorting.SortingExtensions.SortDirection
-  commentId: T:NuvTools.Data.Sorting.SortingExtensions.SortDirection
-  parent: NuvTools.Data.Sorting
+- uid: NuvTools.Data.Sorting.Enumerations.SortDirection
+  commentId: T:NuvTools.Data.Sorting.Enumerations.SortDirection
+  parent: NuvTools.Data.Sorting.Enumerations
   isExternal: true
-  href: NuvTools.Data.Sorting.SortingExtensions.html
-  name: SortingExtensions.SortDirection
-  nameWithType: SortingExtensions.SortDirection
-  fullName: NuvTools.Data.Sorting.SortingExtensions.SortDirection
-  spec.csharp:
-  - uid: NuvTools.Data.Sorting.SortingExtensions
-    name: SortingExtensions
-    isExternal: true
-    href: NuvTools.Data.Sorting.SortingExtensions.html
-  - name: .
-  - uid: NuvTools.Data.Sorting.SortingExtensions.SortDirection
-    name: SortDirection
-    isExternal: true
-    href: NuvTools.Data.Sorting.SortingExtensions.SortDirection.html
-  spec.vb:
-  - uid: NuvTools.Data.Sorting.SortingExtensions
-    name: SortingExtensions
-    isExternal: true
-    href: NuvTools.Data.Sorting.SortingExtensions.html
-  - name: .
-  - uid: NuvTools.Data.Sorting.SortingExtensions.SortDirection
-    name: SortDirection
-    isExternal: true
-    href: NuvTools.Data.Sorting.SortingExtensions.SortDirection.html
+  href: NuvTools.Data.Sorting.Enumerations.SortDirection.html
+  name: SortDirection
+  nameWithType: SortDirection
+  fullName: NuvTools.Data.Sorting.Enumerations.SortDirection
 - uid: System.Linq.IOrderedQueryable{{T}}
   commentId: T:System.Linq.IOrderedQueryable{``0}
   parent: System.Linq
@@ -715,6 +695,53 @@ references:
     name: Expressions
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.linq.expressions
+- uid: NuvTools.Data.Sorting.Enumerations
+  commentId: N:NuvTools.Data.Sorting.Enumerations
+  isExternal: true
+  href: NuvTools.html
+  name: NuvTools.Data.Sorting.Enumerations
+  nameWithType: NuvTools.Data.Sorting.Enumerations
+  fullName: NuvTools.Data.Sorting.Enumerations
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Data
+    name: Data
+    isExternal: true
+    href: NuvTools.Data.html
+  - name: .
+  - uid: NuvTools.Data.Sorting
+    name: Sorting
+    isExternal: true
+    href: NuvTools.Data.Sorting.html
+  - name: .
+  - uid: NuvTools.Data.Sorting.Enumerations
+    name: Enumerations
+    isExternal: true
+    href: NuvTools.Data.Sorting.Enumerations.html
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Data
+    name: Data
+    isExternal: true
+    href: NuvTools.Data.html
+  - name: .
+  - uid: NuvTools.Data.Sorting
+    name: Sorting
+    isExternal: true
+    href: NuvTools.Data.Sorting.html
+  - name: .
+  - uid: NuvTools.Data.Sorting.Enumerations
+    name: Enumerations
+    isExternal: true
+    href: NuvTools.Data.Sorting.Enumerations.html
 - uid: System.Linq.IOrderedQueryable`1
   commentId: T:System.Linq.IOrderedQueryable`1
   isExternal: true
@@ -746,7 +773,7 @@ references:
 - uid: NuvTools.Data.Sorting.SortingExtensions.ThenSort*
   commentId: Overload:NuvTools.Data.Sorting.SortingExtensions.ThenSort
   isExternal: true
-  href: NuvTools.Data.Sorting.SortingExtensions.html#NuvTools_Data_Sorting_SortingExtensions_ThenSort__2_System_Linq_IOrderedQueryable___0__System_Linq_Expressions_Expression_System_Func___0___1___NuvTools_Data_Sorting_SortingExtensions_SortDirection_
+  href: NuvTools.Data.Sorting.SortingExtensions.html#NuvTools_Data_Sorting_SortingExtensions_ThenSort__2_System_Linq_IOrderedQueryable___0__System_Linq_Expressions_Expression_System_Func___0___1___NuvTools_Data_Sorting_Enumerations_SortDirection_
   name: ThenSort
   nameWithType: SortingExtensions.ThenSort
   fullName: NuvTools.Data.Sorting.SortingExtensions.ThenSort

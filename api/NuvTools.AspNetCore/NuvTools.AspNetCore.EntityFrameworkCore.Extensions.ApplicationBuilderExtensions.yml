@@ -5,7 +5,7 @@ items:
   id: ApplicationBuilderExtensions
   parent: NuvTools.AspNetCore.EntityFrameworkCore.Extensions
   children:
-  - NuvTools.AspNetCore.EntityFrameworkCore.Extensions.ApplicationBuilderExtensions.DatabaseMigrate``1(Microsoft.AspNetCore.Builder.IApplicationBuilder)
+  - NuvTools.AspNetCore.EntityFrameworkCore.Extensions.ApplicationBuilderExtensions.DatabaseMigrate``1(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.Nullable{System.TimeSpan})
   langs:
   - csharp
   - vb
@@ -14,7 +14,7 @@ items:
   fullName: NuvTools.AspNetCore.EntityFrameworkCore.Extensions.ApplicationBuilderExtensions
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore.EntityFrameworkCore/Extensions/ApplicationBuilderExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/230d5661488bc98a74f886850249cf09a4f1c38f/src/NuvTools.AspNetCore.EntityFrameworkCore/Extensions/ApplicationBuilderExtensions.cs
   assemblies:
   - NuvTools.AspNetCore.EntityFrameworkCore
   namespace: NuvTools.AspNetCore.EntityFrameworkCore.Extensions
@@ -31,37 +31,39 @@ items:
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.GetHashCode
-- uid: NuvTools.AspNetCore.EntityFrameworkCore.Extensions.ApplicationBuilderExtensions.DatabaseMigrate``1(Microsoft.AspNetCore.Builder.IApplicationBuilder)
-  commentId: M:NuvTools.AspNetCore.EntityFrameworkCore.Extensions.ApplicationBuilderExtensions.DatabaseMigrate``1(Microsoft.AspNetCore.Builder.IApplicationBuilder)
-  id: DatabaseMigrate``1(Microsoft.AspNetCore.Builder.IApplicationBuilder)
+- uid: NuvTools.AspNetCore.EntityFrameworkCore.Extensions.ApplicationBuilderExtensions.DatabaseMigrate``1(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.Nullable{System.TimeSpan})
+  commentId: M:NuvTools.AspNetCore.EntityFrameworkCore.Extensions.ApplicationBuilderExtensions.DatabaseMigrate``1(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.Nullable{System.TimeSpan})
+  id: DatabaseMigrate``1(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.Nullable{System.TimeSpan})
   isExtensionMethod: true
   parent: NuvTools.AspNetCore.EntityFrameworkCore.Extensions.ApplicationBuilderExtensions
   langs:
   - csharp
   - vb
-  name: DatabaseMigrate<TContext>(IApplicationBuilder)
-  nameWithType: ApplicationBuilderExtensions.DatabaseMigrate<TContext>(IApplicationBuilder)
-  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Extensions.ApplicationBuilderExtensions.DatabaseMigrate<TContext>(Microsoft.AspNetCore.Builder.IApplicationBuilder)
+  name: DatabaseMigrate<TContext>(IApplicationBuilder, TimeSpan?)
+  nameWithType: ApplicationBuilderExtensions.DatabaseMigrate<TContext>(IApplicationBuilder, TimeSpan?)
+  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Extensions.ApplicationBuilderExtensions.DatabaseMigrate<TContext>(Microsoft.AspNetCore.Builder.IApplicationBuilder, System.TimeSpan?)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/5682c02d6bfd347f04ecf6aceaa33c6ee80dc613/src/NuvTools.AspNetCore.EntityFrameworkCore/Extensions/ApplicationBuilderExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/230d5661488bc98a74f886850249cf09a4f1c38f/src/NuvTools.AspNetCore.EntityFrameworkCore/Extensions/ApplicationBuilderExtensions.cs
   assemblies:
   - NuvTools.AspNetCore.EntityFrameworkCore
   namespace: NuvTools.AspNetCore.EntityFrameworkCore.Extensions
   syntax:
-    content: 'public static IApplicationBuilder DatabaseMigrate<TContext>(this IApplicationBuilder app) where TContext : DbContext'
+    content: 'public static IApplicationBuilder DatabaseMigrate<TContext>(this IApplicationBuilder app, TimeSpan? timeout = null) where TContext : DbContext'
     parameters:
     - id: app
       type: Microsoft.AspNetCore.Builder.IApplicationBuilder
+    - id: timeout
+      type: System.Nullable{System.TimeSpan}
     typeParameters:
     - id: TContext
     return:
       type: Microsoft.AspNetCore.Builder.IApplicationBuilder
-    content.vb: Public Shared Function DatabaseMigrate(Of TContext As DbContext)(app As IApplicationBuilder) As IApplicationBuilder
+    content.vb: Public Shared Function DatabaseMigrate(Of TContext As DbContext)(app As IApplicationBuilder, timeout As TimeSpan? = Nothing) As IApplicationBuilder
   overload: NuvTools.AspNetCore.EntityFrameworkCore.Extensions.ApplicationBuilderExtensions.DatabaseMigrate*
-  nameWithType.vb: ApplicationBuilderExtensions.DatabaseMigrate(Of TContext)(IApplicationBuilder)
-  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Extensions.ApplicationBuilderExtensions.DatabaseMigrate(Of TContext)(Microsoft.AspNetCore.Builder.IApplicationBuilder)
-  name.vb: DatabaseMigrate(Of TContext)(IApplicationBuilder)
+  nameWithType.vb: ApplicationBuilderExtensions.DatabaseMigrate(Of TContext)(IApplicationBuilder, TimeSpan?)
+  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Extensions.ApplicationBuilderExtensions.DatabaseMigrate(Of TContext)(Microsoft.AspNetCore.Builder.IApplicationBuilder, System.TimeSpan?)
+  name.vb: DatabaseMigrate(Of TContext)(IApplicationBuilder, TimeSpan?)
 references:
 - uid: NuvTools.AspNetCore.EntityFrameworkCore.Extensions
   commentId: N:NuvTools.AspNetCore.EntityFrameworkCore.Extensions
@@ -350,7 +352,7 @@ references:
 - uid: NuvTools.AspNetCore.EntityFrameworkCore.Extensions.ApplicationBuilderExtensions.DatabaseMigrate*
   commentId: Overload:NuvTools.AspNetCore.EntityFrameworkCore.Extensions.ApplicationBuilderExtensions.DatabaseMigrate
   isExternal: true
-  href: NuvTools.AspNetCore.EntityFrameworkCore.Extensions.ApplicationBuilderExtensions.html#NuvTools_AspNetCore_EntityFrameworkCore_Extensions_ApplicationBuilderExtensions_DatabaseMigrate__1_Microsoft_AspNetCore_Builder_IApplicationBuilder_
+  href: NuvTools.AspNetCore.EntityFrameworkCore.Extensions.ApplicationBuilderExtensions.html#NuvTools_AspNetCore_EntityFrameworkCore_Extensions_ApplicationBuilderExtensions_DatabaseMigrate__1_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_Nullable_System_TimeSpan__
   name: DatabaseMigrate
   nameWithType: ApplicationBuilderExtensions.DatabaseMigrate
   fullName: NuvTools.AspNetCore.EntityFrameworkCore.Extensions.ApplicationBuilderExtensions.DatabaseMigrate
@@ -362,6 +364,26 @@ references:
   name: IApplicationBuilder
   nameWithType: IApplicationBuilder
   fullName: Microsoft.AspNetCore.Builder.IApplicationBuilder
+- uid: System.Nullable{System.TimeSpan}
+  commentId: T:System.Nullable{System.TimeSpan}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.timespan
+  name: TimeSpan?
+  nameWithType: TimeSpan?
+  fullName: System.TimeSpan?
+  spec.csharp:
+  - uid: System.TimeSpan
+    name: TimeSpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.timespan
+  - name: '?'
+  spec.vb:
+  - uid: System.TimeSpan
+    name: TimeSpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.timespan
+  - name: '?'
 - uid: Microsoft.AspNetCore.Builder
   commentId: N:Microsoft.AspNetCore.Builder
   isExternal: true
@@ -399,3 +421,31 @@ references:
     name: Builder
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.builder
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )

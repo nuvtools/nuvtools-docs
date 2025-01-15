@@ -5,7 +5,11 @@ items:
   id: Validator
   parent: NuvTools.Validation
   children:
+  - NuvTools.Validation.Validator.HasNumbersOnly(System.String)
+  - NuvTools.Validation.Validator.IsDecimalNumber(System.String,System.Boolean,System.IFormatProvider)
   - NuvTools.Validation.Validator.IsEmail(System.String)
+  - NuvTools.Validation.Validator.IsIntNumber(System.String,System.Boolean)
+  - NuvTools.Validation.Validator.IsLongNumber(System.String,System.Boolean)
   - NuvTools.Validation.Validator.Validate``1(``0)
   langs:
   - csharp
@@ -15,7 +19,7 @@ items:
   fullName: NuvTools.Validation.Validator
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-validation/blob/8107e7c60e616d88d7782a0fe2cea992be20066f/src/NuvTools.Validation/Validator.cs
+    href: https://github.com/nuvtools/nuvtools-validation/blob/d6720f15095aa5069702caa5ff40d949809d80c9/src/NuvTools.Validation/Validator.cs
   assemblies:
   - NuvTools.Validation
   namespace: NuvTools.Validation
@@ -47,7 +51,7 @@ items:
   fullName: NuvTools.Validation.Validator.IsEmail(string)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-validation/blob/8107e7c60e616d88d7782a0fe2cea992be20066f/src/NuvTools.Validation/Validator.cs
+    href: https://github.com/nuvtools/nuvtools-validation/blob/d6720f15095aa5069702caa5ff40d949809d80c9/src/NuvTools.Validation/Validator.cs
   assemblies:
   - NuvTools.Validation
   namespace: NuvTools.Validation
@@ -80,12 +84,12 @@ items:
   fullName: NuvTools.Validation.Validator.Validate<T>(T)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-validation/blob/8107e7c60e616d88d7782a0fe2cea992be20066f/src/NuvTools.Validation/Validator.cs
+    href: https://github.com/nuvtools/nuvtools-validation/blob/d6720f15095aa5069702caa5ff40d949809d80c9/src/NuvTools.Validation/Validator.cs
   assemblies:
   - NuvTools.Validation
   namespace: NuvTools.Validation
   syntax:
-    content: public static List<string> Validate<T>(this T obj)
+    content: public static List<string>? Validate<T>(this T obj)
     parameters:
     - id: obj
       type: '{T}'
@@ -98,6 +102,150 @@ items:
   nameWithType.vb: Validator.Validate(Of T)(T)
   fullName.vb: NuvTools.Validation.Validator.Validate(Of T)(T)
   name.vb: Validate(Of T)(T)
+- uid: NuvTools.Validation.Validator.HasNumbersOnly(System.String)
+  commentId: M:NuvTools.Validation.Validator.HasNumbersOnly(System.String)
+  id: HasNumbersOnly(System.String)
+  isExtensionMethod: true
+  parent: NuvTools.Validation.Validator
+  langs:
+  - csharp
+  - vb
+  name: HasNumbersOnly(string)
+  nameWithType: Validator.HasNumbersOnly(string)
+  fullName: NuvTools.Validation.Validator.HasNumbersOnly(string)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-validation/blob/d6720f15095aa5069702caa5ff40d949809d80c9/src/NuvTools.Validation/Validator.cs
+  assemblies:
+  - NuvTools.Validation
+  namespace: NuvTools.Validation
+  summary: Checks if the provided string contains only numeric characters.
+  example: []
+  syntax:
+    content: public static bool HasNumbersOnly(this string input)
+    parameters:
+    - id: input
+      type: System.String
+      description: The string to check.
+    return:
+      type: System.Boolean
+      description: True if the input contains only numeric characters, otherwise false.
+    content.vb: Public Shared Function HasNumbersOnly(input As String) As Boolean
+  overload: NuvTools.Validation.Validator.HasNumbersOnly*
+  nameWithType.vb: Validator.HasNumbersOnly(String)
+  fullName.vb: NuvTools.Validation.Validator.HasNumbersOnly(String)
+  name.vb: HasNumbersOnly(String)
+- uid: NuvTools.Validation.Validator.IsIntNumber(System.String,System.Boolean)
+  commentId: M:NuvTools.Validation.Validator.IsIntNumber(System.String,System.Boolean)
+  id: IsIntNumber(System.String,System.Boolean)
+  isExtensionMethod: true
+  parent: NuvTools.Validation.Validator
+  langs:
+  - csharp
+  - vb
+  name: IsIntNumber(string, bool)
+  nameWithType: Validator.IsIntNumber(string, bool)
+  fullName: NuvTools.Validation.Validator.IsIntNumber(string, bool)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-validation/blob/d6720f15095aa5069702caa5ff40d949809d80c9/src/NuvTools.Validation/Validator.cs
+  assemblies:
+  - NuvTools.Validation
+  namespace: NuvTools.Validation
+  summary: Checks if the provided string represents a long type number.
+  example: []
+  syntax:
+    content: public static bool IsIntNumber(this string input, bool positiveOnly = false)
+    parameters:
+    - id: input
+      type: System.String
+      description: The string to check.
+    - id: positiveOnly
+      type: System.Boolean
+      description: If only positive numbers is valid.
+    return:
+      type: System.Boolean
+      description: True if the input is a whole number, otherwise false.
+    content.vb: Public Shared Function IsIntNumber(input As String, positiveOnly As Boolean = False) As Boolean
+  overload: NuvTools.Validation.Validator.IsIntNumber*
+  nameWithType.vb: Validator.IsIntNumber(String, Boolean)
+  fullName.vb: NuvTools.Validation.Validator.IsIntNumber(String, Boolean)
+  name.vb: IsIntNumber(String, Boolean)
+- uid: NuvTools.Validation.Validator.IsLongNumber(System.String,System.Boolean)
+  commentId: M:NuvTools.Validation.Validator.IsLongNumber(System.String,System.Boolean)
+  id: IsLongNumber(System.String,System.Boolean)
+  isExtensionMethod: true
+  parent: NuvTools.Validation.Validator
+  langs:
+  - csharp
+  - vb
+  name: IsLongNumber(string, bool)
+  nameWithType: Validator.IsLongNumber(string, bool)
+  fullName: NuvTools.Validation.Validator.IsLongNumber(string, bool)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-validation/blob/d6720f15095aa5069702caa5ff40d949809d80c9/src/NuvTools.Validation/Validator.cs
+  assemblies:
+  - NuvTools.Validation
+  namespace: NuvTools.Validation
+  summary: Checks if the provided string represents a long type number.
+  example: []
+  syntax:
+    content: public static bool IsLongNumber(this string input, bool positiveOnly = false)
+    parameters:
+    - id: input
+      type: System.String
+      description: The string to check.
+    - id: positiveOnly
+      type: System.Boolean
+      description: If only positive numbers is valid.
+    return:
+      type: System.Boolean
+      description: True if the input is a whole number, otherwise false.
+    content.vb: Public Shared Function IsLongNumber(input As String, positiveOnly As Boolean = False) As Boolean
+  overload: NuvTools.Validation.Validator.IsLongNumber*
+  nameWithType.vb: Validator.IsLongNumber(String, Boolean)
+  fullName.vb: NuvTools.Validation.Validator.IsLongNumber(String, Boolean)
+  name.vb: IsLongNumber(String, Boolean)
+- uid: NuvTools.Validation.Validator.IsDecimalNumber(System.String,System.Boolean,System.IFormatProvider)
+  commentId: M:NuvTools.Validation.Validator.IsDecimalNumber(System.String,System.Boolean,System.IFormatProvider)
+  id: IsDecimalNumber(System.String,System.Boolean,System.IFormatProvider)
+  isExtensionMethod: true
+  parent: NuvTools.Validation.Validator
+  langs:
+  - csharp
+  - vb
+  name: IsDecimalNumber(string, bool, IFormatProvider?)
+  nameWithType: Validator.IsDecimalNumber(string, bool, IFormatProvider?)
+  fullName: NuvTools.Validation.Validator.IsDecimalNumber(string, bool, System.IFormatProvider?)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-validation/blob/d6720f15095aa5069702caa5ff40d949809d80c9/src/NuvTools.Validation/Validator.cs
+  assemblies:
+  - NuvTools.Validation
+  namespace: NuvTools.Validation
+  summary: Checks if the provided string represents a valid decimal number.
+  example: []
+  syntax:
+    content: public static bool IsDecimalNumber(this string input, bool positiveOnly = false, IFormatProvider? provider = null)
+    parameters:
+    - id: input
+      type: System.String
+      description: The string to check.
+    - id: positiveOnly
+      type: System.Boolean
+      description: If only positive numbers is valid.
+    - id: provider
+      type: System.IFormatProvider
+      description: An object that supplies culture-specific parsing information about s.
+    return:
+      type: System.Boolean
+      description: True if the input is a valid decimal number, otherwise false.
+    content.vb: Public Shared Function IsDecimalNumber(input As String, positiveOnly As Boolean = False, provider As IFormatProvider = Nothing) As Boolean
+  overload: NuvTools.Validation.Validator.IsDecimalNumber*
+  nameWithType.vb: Validator.IsDecimalNumber(String, Boolean, IFormatProvider)
+  fullName.vb: NuvTools.Validation.Validator.IsDecimalNumber(String, Boolean, System.IFormatProvider)
+  name.vb: IsDecimalNumber(String, Boolean, IFormatProvider)
 references:
 - uid: NuvTools.Validation
   commentId: N:NuvTools.Validation
@@ -510,3 +658,39 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: NuvTools.Validation.Validator.HasNumbersOnly*
+  commentId: Overload:NuvTools.Validation.Validator.HasNumbersOnly
+  isExternal: true
+  href: NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_HasNumbersOnly_System_String_
+  name: HasNumbersOnly
+  nameWithType: Validator.HasNumbersOnly
+  fullName: NuvTools.Validation.Validator.HasNumbersOnly
+- uid: NuvTools.Validation.Validator.IsIntNumber*
+  commentId: Overload:NuvTools.Validation.Validator.IsIntNumber
+  isExternal: true
+  href: NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_IsIntNumber_System_String_System_Boolean_
+  name: IsIntNumber
+  nameWithType: Validator.IsIntNumber
+  fullName: NuvTools.Validation.Validator.IsIntNumber
+- uid: NuvTools.Validation.Validator.IsLongNumber*
+  commentId: Overload:NuvTools.Validation.Validator.IsLongNumber
+  isExternal: true
+  href: NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_IsLongNumber_System_String_System_Boolean_
+  name: IsLongNumber
+  nameWithType: Validator.IsLongNumber
+  fullName: NuvTools.Validation.Validator.IsLongNumber
+- uid: NuvTools.Validation.Validator.IsDecimalNumber*
+  commentId: Overload:NuvTools.Validation.Validator.IsDecimalNumber
+  isExternal: true
+  href: NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_IsDecimalNumber_System_String_System_Boolean_System_IFormatProvider_
+  name: IsDecimalNumber
+  nameWithType: Validator.IsDecimalNumber
+  fullName: NuvTools.Validation.Validator.IsDecimalNumber
+- uid: System.IFormatProvider
+  commentId: T:System.IFormatProvider
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iformatprovider
+  name: IFormatProvider
+  nameWithType: IFormatProvider
+  fullName: System.IFormatProvider

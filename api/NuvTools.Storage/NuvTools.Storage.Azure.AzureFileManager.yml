@@ -22,7 +22,7 @@ items:
   fullName: NuvTools.Storage.Azure.AzureFileManager
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage.Azure/AzureFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage.Azure/AzureFileManager.cs
   assemblies:
   - NuvTools.Storage.Azure
   namespace: NuvTools.Storage.Azure
@@ -53,18 +53,18 @@ items:
   fullName: NuvTools.Storage.Azure.AzureFileManager.AzureFileManager(string, string)
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage.Azure/AzureFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage.Azure/AzureFileManager.cs
   assemblies:
   - NuvTools.Storage.Azure
   namespace: NuvTools.Storage.Azure
   syntax:
-    content: public AzureFileManager(string connectionString, string repositoryName = null)
+    content: public AzureFileManager(string connectionString, string repositoryName)
     parameters:
     - id: connectionString
       type: System.String
     - id: repositoryName
       type: System.String
-    content.vb: Public Sub New(connectionString As String, repositoryName As String = Nothing)
+    content.vb: Public Sub New(connectionString As String, repositoryName As String)
   overload: NuvTools.Storage.Azure.AzureFileManager.#ctor*
   nameWithType.vb: AzureFileManager.New(String, String)
   fullName.vb: NuvTools.Storage.Azure.AzureFileManager.New(String, String)
@@ -81,7 +81,7 @@ items:
   fullName: NuvTools.Storage.Azure.AzureFileManager.GetAccessRepositoryUri(NuvTools.Storage.AccessPermissions)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage.Azure/AzureFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage.Azure/AzureFileManager.cs
   assemblies:
   - NuvTools.Storage.Azure
   namespace: NuvTools.Storage.Azure
@@ -109,13 +109,13 @@ items:
   fullName: NuvTools.Storage.Azure.AzureFileManager.GetFileAsync(string, bool)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage.Azure/AzureFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage.Azure/AzureFileManager.cs
   assemblies:
   - NuvTools.Storage.Azure
   namespace: NuvTools.Storage.Azure
   example: []
   syntax:
-    content: public Task<IFile> GetFileAsync(string id, bool download = false)
+    content: public Task<IFile?> GetFileAsync(string id, bool download = false)
     parameters:
     - id: id
       type: System.String
@@ -142,7 +142,7 @@ items:
   fullName: NuvTools.Storage.Azure.AzureFileManager.GetFilesAsync(int?)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage.Azure/AzureFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage.Azure/AzureFileManager.cs
   assemblies:
   - NuvTools.Storage.Azure
   namespace: NuvTools.Storage.Azure
@@ -173,7 +173,7 @@ items:
   fullName: NuvTools.Storage.Azure.AzureFileManager.RemoveFileAsync(string)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage.Azure/AzureFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage.Azure/AzureFileManager.cs
   assemblies:
   - NuvTools.Storage.Azure
   namespace: NuvTools.Storage.Azure
@@ -204,10 +204,11 @@ items:
   fullName: NuvTools.Storage.Azure.AzureFileManager.AddFileAsync(params NuvTools.Storage.IFile[])
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage.Azure/AzureFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage.Azure/AzureFileManager.cs
   assemblies:
   - NuvTools.Storage.Azure
   namespace: NuvTools.Storage.Azure
+  example: []
   syntax:
     content: public Task<IReadOnlyList<IFile>> AddFileAsync(params IFile[] files)
     parameters:
@@ -217,6 +218,8 @@ items:
       type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{NuvTools.Storage.IFile}}
     content.vb: Public Function AddFileAsync(ParamArray files As IFile()) As Task(Of IReadOnlyList(Of IFile))
   overload: NuvTools.Storage.Azure.AzureFileManager.AddFileAsync*
+  implements:
+  - NuvTools.Storage.IFileManager.AddFileAsync(NuvTools.Storage.IFile[])
   nameWithType.vb: AzureFileManager.AddFileAsync(ParamArray IFile())
   fullName.vb: NuvTools.Storage.Azure.AzureFileManager.AddFileAsync(ParamArray NuvTools.Storage.IFile())
   name.vb: AddFileAsync(ParamArray IFile())
@@ -232,7 +235,7 @@ items:
   fullName: NuvTools.Storage.Azure.AzureFileManager.AddFileAsync(string, params NuvTools.Storage.IFile[])
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage.Azure/AzureFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage.Azure/AzureFileManager.cs
   assemblies:
   - NuvTools.Storage.Azure
   namespace: NuvTools.Storage.Azure
@@ -265,7 +268,7 @@ items:
   fullName: NuvTools.Storage.Azure.AzureFileManager.FileExistsAsync(string)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage.Azure/AzureFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage.Azure/AzureFileManager.cs
   assemblies:
   - NuvTools.Storage.Azure
   namespace: NuvTools.Storage.Azure
@@ -296,7 +299,7 @@ items:
   fullName: NuvTools.Storage.Azure.AzureFileManager.Credencial
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage.Azure/AzureFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage.Azure/AzureFileManager.cs
   assemblies:
   - NuvTools.Storage.Azure
   namespace: NuvTools.Storage.Azure
@@ -649,7 +652,7 @@ references:
   commentId: M:NuvTools.Storage.IFileManager.GetAccessRepositoryUri(NuvTools.Storage.AccessPermissions)
   parent: NuvTools.Storage.IFileManager
   isExternal: true
-  href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage/IFileManager.cs
+  href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
   name: GetAccessRepositoryUri(AccessPermissions)
   nameWithType: IFileManager.GetAccessRepositoryUri(AccessPermissions)
   fullName: NuvTools.Storage.IFileManager.GetAccessRepositoryUri(NuvTools.Storage.AccessPermissions)
@@ -657,23 +660,23 @@ references:
   - uid: NuvTools.Storage.IFileManager.GetAccessRepositoryUri(NuvTools.Storage.AccessPermissions)
     name: GetAccessRepositoryUri
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage/IFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
   - name: (
   - uid: NuvTools.Storage.AccessPermissions
     name: AccessPermissions
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage/AccessPermissions.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/AccessPermissions.cs
   - name: )
   spec.vb:
   - uid: NuvTools.Storage.IFileManager.GetAccessRepositoryUri(NuvTools.Storage.AccessPermissions)
     name: GetAccessRepositoryUri
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage/IFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
   - name: (
   - uid: NuvTools.Storage.AccessPermissions
     name: AccessPermissions
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage/AccessPermissions.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/AccessPermissions.cs
   - name: )
 - uid: NuvTools.Storage.AccessPermissions
   commentId: T:NuvTools.Storage.AccessPermissions
@@ -701,7 +704,7 @@ references:
   commentId: M:NuvTools.Storage.IFileManager.GetFileAsync(System.String,System.Boolean)
   parent: NuvTools.Storage.IFileManager
   isExternal: true
-  href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage/IFileManager.cs
+  href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
   name: GetFileAsync(string, bool)
   nameWithType: IFileManager.GetFileAsync(string, bool)
   fullName: NuvTools.Storage.IFileManager.GetFileAsync(string, bool)
@@ -712,7 +715,7 @@ references:
   - uid: NuvTools.Storage.IFileManager.GetFileAsync(System.String,System.Boolean)
     name: GetFileAsync
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage/IFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
   - name: (
   - uid: System.String
     name: string
@@ -729,7 +732,7 @@ references:
   - uid: NuvTools.Storage.IFileManager.GetFileAsync(System.String,System.Boolean)
     name: GetFileAsync
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage/IFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
   - name: (
   - uid: System.String
     name: String
@@ -864,7 +867,7 @@ references:
   commentId: M:NuvTools.Storage.IFileManager.GetFilesAsync(System.Nullable{System.Int32})
   parent: NuvTools.Storage.IFileManager
   isExternal: true
-  href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage/IFileManager.cs
+  href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
   name: GetFilesAsync(int?)
   nameWithType: IFileManager.GetFilesAsync(int?)
   fullName: NuvTools.Storage.IFileManager.GetFilesAsync(int?)
@@ -875,7 +878,7 @@ references:
   - uid: NuvTools.Storage.IFileManager.GetFilesAsync(System.Nullable{System.Int32})
     name: GetFilesAsync
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage/IFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
   - name: (
   - uid: System.Int32
     name: int
@@ -887,7 +890,7 @@ references:
   - uid: NuvTools.Storage.IFileManager.GetFilesAsync(System.Nullable{System.Int32})
     name: GetFilesAsync
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage/IFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
   - name: (
   - uid: System.Int32
     name: Integer
@@ -1006,7 +1009,7 @@ references:
   commentId: M:NuvTools.Storage.IFileManager.RemoveFileAsync(System.String)
   parent: NuvTools.Storage.IFileManager
   isExternal: true
-  href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage/IFileManager.cs
+  href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
   name: RemoveFileAsync(string)
   nameWithType: IFileManager.RemoveFileAsync(string)
   fullName: NuvTools.Storage.IFileManager.RemoveFileAsync(string)
@@ -1017,7 +1020,7 @@ references:
   - uid: NuvTools.Storage.IFileManager.RemoveFileAsync(System.String)
     name: RemoveFileAsync
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage/IFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
   - name: (
   - uid: System.String
     name: string
@@ -1028,7 +1031,7 @@ references:
   - uid: NuvTools.Storage.IFileManager.RemoveFileAsync(System.String)
     name: RemoveFileAsync
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage/IFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
   - name: (
   - uid: System.String
     name: String
@@ -1050,6 +1053,47 @@ references:
   name: AddFileAsync
   nameWithType: AzureFileManager.AddFileAsync
   fullName: NuvTools.Storage.Azure.AzureFileManager.AddFileAsync
+- uid: NuvTools.Storage.IFileManager.AddFileAsync(NuvTools.Storage.IFile[])
+  commentId: M:NuvTools.Storage.IFileManager.AddFileAsync(NuvTools.Storage.IFile[])
+  parent: NuvTools.Storage.IFileManager
+  isExternal: true
+  href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
+  name: AddFileAsync(params IFile[])
+  nameWithType: IFileManager.AddFileAsync(params IFile[])
+  fullName: NuvTools.Storage.IFileManager.AddFileAsync(params NuvTools.Storage.IFile[])
+  nameWithType.vb: IFileManager.AddFileAsync(ParamArray IFile())
+  fullName.vb: NuvTools.Storage.IFileManager.AddFileAsync(ParamArray NuvTools.Storage.IFile())
+  name.vb: AddFileAsync(ParamArray IFile())
+  spec.csharp:
+  - uid: NuvTools.Storage.IFileManager.AddFileAsync(NuvTools.Storage.IFile[])
+    name: AddFileAsync
+    isExternal: true
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
+  - name: (
+  - name: params
+  - name: " "
+  - uid: NuvTools.Storage.IFile
+    name: IFile
+    isExternal: true
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFile.cs
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Storage.IFileManager.AddFileAsync(NuvTools.Storage.IFile[])
+    name: AddFileAsync
+    isExternal: true
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
+  - name: (
+  - name: ParamArray
+  - name: " "
+  - uid: NuvTools.Storage.IFile
+    name: IFile
+    isExternal: true
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFile.cs
+  - name: (
+  - name: )
+  - name: )
 - uid: NuvTools.Storage.IFile[]
   isExternal: true
   href: NuvTools.Storage.IFile.html
@@ -1077,7 +1121,7 @@ references:
   commentId: M:NuvTools.Storage.IFileManager.AddFileAsync(System.String,NuvTools.Storage.IFile[])
   parent: NuvTools.Storage.IFileManager
   isExternal: true
-  href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage/IFileManager.cs
+  href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
   name: AddFileAsync(string, params IFile[])
   nameWithType: IFileManager.AddFileAsync(string, params IFile[])
   fullName: NuvTools.Storage.IFileManager.AddFileAsync(string, params NuvTools.Storage.IFile[])
@@ -1088,7 +1132,7 @@ references:
   - uid: NuvTools.Storage.IFileManager.AddFileAsync(System.String,NuvTools.Storage.IFile[])
     name: AddFileAsync
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage/IFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
   - name: (
   - uid: System.String
     name: string
@@ -1101,7 +1145,7 @@ references:
   - uid: NuvTools.Storage.IFile
     name: IFile
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage/IFile.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFile.cs
   - name: '['
   - name: ']'
   - name: )
@@ -1109,7 +1153,7 @@ references:
   - uid: NuvTools.Storage.IFileManager.AddFileAsync(System.String,NuvTools.Storage.IFile[])
     name: AddFileAsync
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage/IFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
   - name: (
   - uid: System.String
     name: String
@@ -1122,7 +1166,7 @@ references:
   - uid: NuvTools.Storage.IFile
     name: IFile
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage/IFile.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFile.cs
   - name: (
   - name: )
   - name: )
@@ -1137,7 +1181,7 @@ references:
   commentId: M:NuvTools.Storage.IFileManager.FileExistsAsync(System.String)
   parent: NuvTools.Storage.IFileManager
   isExternal: true
-  href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage/IFileManager.cs
+  href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
   name: FileExistsAsync(string)
   nameWithType: IFileManager.FileExistsAsync(string)
   fullName: NuvTools.Storage.IFileManager.FileExistsAsync(string)
@@ -1148,7 +1192,7 @@ references:
   - uid: NuvTools.Storage.IFileManager.FileExistsAsync(System.String)
     name: FileExistsAsync
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage/IFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
   - name: (
   - uid: System.String
     name: string
@@ -1159,7 +1203,7 @@ references:
   - uid: NuvTools.Storage.IFileManager.FileExistsAsync(System.String)
     name: FileExistsAsync
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-storage/blob/c786d31c5b0ff68f3690e36438fc18f6c21cfec2/src/NuvTools.Storage/IFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
   - name: (
   - uid: System.String
     name: String

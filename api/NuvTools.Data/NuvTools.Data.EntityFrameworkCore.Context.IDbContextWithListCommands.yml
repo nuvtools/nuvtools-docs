@@ -1,0 +1,638 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands
+  commentId: T:NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands
+  id: IDbContextWithListCommands
+  parent: NuvTools.Data.EntityFrameworkCore.Context
+  children:
+  - NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrRemoveFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
+  - NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrUpdateFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
+  - NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.SyncFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
+  langs:
+  - csharp
+  - vb
+  name: IDbContextWithListCommands
+  nameWithType: IDbContextWithListCommands
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands
+  type: Interface
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextWithListCommands.cs
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Context
+  syntax:
+    content: public interface IDbContextWithListCommands
+    content.vb: Public Interface IDbContextWithListCommands
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.SyncFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.SyncFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
+  id: SyncFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
+  parent: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands
+  langs:
+  - csharp
+  - vb
+  name: SyncFromListAsync<TEntity, TKey>(IEnumerable<TEntity>, Func<TEntity, TKey>, Expression<Func<TEntity, bool>>?)
+  nameWithType: IDbContextWithListCommands.SyncFromListAsync<TEntity, TKey>(IEnumerable<TEntity>, Func<TEntity, TKey>, Expression<Func<TEntity, bool>>?)
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.SyncFromListAsync<TEntity, TKey>(System.Collections.Generic.IEnumerable<TEntity>, System.Func<TEntity, TKey>, System.Linq.Expressions.Expression<System.Func<TEntity, bool>>?)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextWithListCommands.cs
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Synchronizes a DbSet with a provided list by adding, updating, or removing entities.
+  remarks: >-
+    This method adds entities in the list that are not in the database, updates entities that exist in both,
+
+    and removes entities in the database that are not in the list.
+  example:
+  - >-
+    await context.SyncFromListAsync(
+        updatedEmployees,
+        e =&gt; e.Id,
+        e =&gt; e.IsActive
+    );
+  syntax:
+    content: 'Task<IResult> SyncFromListAsync<TEntity, TKey>(IEnumerable<TEntity> entities, Func<TEntity, TKey> keySelector, Expression<Func<TEntity, bool>>? filter = null) where TEntity : class where TKey : notnull'
+    parameters:
+    - id: entities
+      type: System.Collections.Generic.IEnumerable{{TEntity}}
+      description: The list of entities to synchronize with the database.
+    - id: keySelector
+      type: System.Func{{TEntity},{TKey}}
+      description: A function to select the key for matching entities.
+    - id: filter
+      type: System.Linq.Expressions.Expression{System.Func{{TEntity},System.Boolean}}
+      description: An optional filter predicate to apply to the database entities.
+    typeParameters:
+    - id: TEntity
+      description: The type of the entity.
+    - id: TKey
+      description: The type of the key used to uniquely identify entities.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+    content.vb: Function SyncFromListAsync(Of TEntity As Class, TKey)(entities As IEnumerable(Of TEntity), keySelector As Func(Of TEntity, TKey), filter As Expression(Of Func(Of TEntity, Boolean)) = Nothing) As Task(Of IResult)
+  overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.SyncFromListAsync*
+  nameWithType.vb: IDbContextWithListCommands.SyncFromListAsync(Of TEntity, TKey)(IEnumerable(Of TEntity), Func(Of TEntity, TKey), Expression(Of Func(Of TEntity, Boolean)))
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.SyncFromListAsync(Of TEntity, TKey)(System.Collections.Generic.IEnumerable(Of TEntity), System.Func(Of TEntity, TKey), System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)))
+  name.vb: SyncFromListAsync(Of TEntity, TKey)(IEnumerable(Of TEntity), Func(Of TEntity, TKey), Expression(Of Func(Of TEntity, Boolean)))
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrUpdateFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrUpdateFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
+  id: AddOrUpdateFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
+  parent: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands
+  langs:
+  - csharp
+  - vb
+  name: AddOrUpdateFromListAsync<TEntity, TKey>(IEnumerable<TEntity>, Func<TEntity, TKey>, Expression<Func<TEntity, bool>>?)
+  nameWithType: IDbContextWithListCommands.AddOrUpdateFromListAsync<TEntity, TKey>(IEnumerable<TEntity>, Func<TEntity, TKey>, Expression<Func<TEntity, bool>>?)
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrUpdateFromListAsync<TEntity, TKey>(System.Collections.Generic.IEnumerable<TEntity>, System.Func<TEntity, TKey>, System.Linq.Expressions.Expression<System.Func<TEntity, bool>>?)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextWithListCommands.cs
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Synchronizes a DbSet with a provided list by adding or updating entities, without removing any entities.
+  remarks: >-
+    This method adds entities in the list that are not in the database and updates entities that exist in both.
+
+    It does not remove any entities from the database.
+  example:
+  - >-
+    await context.AddOrUpdateFromListAsync(
+        updatedProducts,
+        p =&gt; p.ProductCode,
+        p =&gt; p.IsActive
+    );
+  syntax:
+    content: 'Task<IResult> AddOrUpdateFromListAsync<TEntity, TKey>(IEnumerable<TEntity> entities, Func<TEntity, TKey> keySelector, Expression<Func<TEntity, bool>>? filter = null) where TEntity : class where TKey : notnull'
+    parameters:
+    - id: entities
+      type: System.Collections.Generic.IEnumerable{{TEntity}}
+      description: The list of entities to synchronize with the database.
+    - id: keySelector
+      type: System.Func{{TEntity},{TKey}}
+      description: A function to select the key for matching entities.
+    - id: filter
+      type: System.Linq.Expressions.Expression{System.Func{{TEntity},System.Boolean}}
+      description: An optional filter predicate to apply to the database entities.
+    typeParameters:
+    - id: TEntity
+      description: The type of the entity.
+    - id: TKey
+      description: The type of the key used to uniquely identify entities.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+    content.vb: Function AddOrUpdateFromListAsync(Of TEntity As Class, TKey)(entities As IEnumerable(Of TEntity), keySelector As Func(Of TEntity, TKey), filter As Expression(Of Func(Of TEntity, Boolean)) = Nothing) As Task(Of IResult)
+  overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrUpdateFromListAsync*
+  nameWithType.vb: IDbContextWithListCommands.AddOrUpdateFromListAsync(Of TEntity, TKey)(IEnumerable(Of TEntity), Func(Of TEntity, TKey), Expression(Of Func(Of TEntity, Boolean)))
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrUpdateFromListAsync(Of TEntity, TKey)(System.Collections.Generic.IEnumerable(Of TEntity), System.Func(Of TEntity, TKey), System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)))
+  name.vb: AddOrUpdateFromListAsync(Of TEntity, TKey)(IEnumerable(Of TEntity), Func(Of TEntity, TKey), Expression(Of Func(Of TEntity, Boolean)))
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrRemoveFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrRemoveFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
+  id: AddOrRemoveFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
+  parent: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands
+  langs:
+  - csharp
+  - vb
+  name: AddOrRemoveFromListAsync<TEntity, TKey>(IEnumerable<TEntity>, Func<TEntity, TKey>, Expression<Func<TEntity, bool>>?)
+  nameWithType: IDbContextWithListCommands.AddOrRemoveFromListAsync<TEntity, TKey>(IEnumerable<TEntity>, Func<TEntity, TKey>, Expression<Func<TEntity, bool>>?)
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrRemoveFromListAsync<TEntity, TKey>(System.Collections.Generic.IEnumerable<TEntity>, System.Func<TEntity, TKey>, System.Linq.Expressions.Expression<System.Func<TEntity, bool>>?)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/ce0ac8cfdd8de9610086a94318aa99cb3e15c308/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextWithListCommands.cs
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Synchronizes a DbSet with a provided list by adding or removing entities, without updating any entities.
+  remarks: >-
+    This method adds entities in the list that are not in the database and removes entities in the database
+
+    that are not in the list. It does not update any entities.
+  example:
+  - >-
+    await context.AddOrRemoveFromListAsync(
+        updatedOrders,
+        o =&gt; o.OrderId,
+        o =&gt; o.IsPending
+    );
+  syntax:
+    content: 'Task<IResult> AddOrRemoveFromListAsync<TEntity, TKey>(IEnumerable<TEntity> entities, Func<TEntity, TKey> keySelector, Expression<Func<TEntity, bool>>? filter = null) where TEntity : class where TKey : notnull'
+    parameters:
+    - id: entities
+      type: System.Collections.Generic.IEnumerable{{TEntity}}
+      description: The list of entities to synchronize with the database.
+    - id: keySelector
+      type: System.Func{{TEntity},{TKey}}
+      description: A function to select the key for matching entities.
+    - id: filter
+      type: System.Linq.Expressions.Expression{System.Func{{TEntity},System.Boolean}}
+      description: An optional filter predicate to apply to the database entities.
+    typeParameters:
+    - id: TEntity
+      description: The type of the entity.
+    - id: TKey
+      description: The type of the key used to uniquely identify entities.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+    content.vb: Function AddOrRemoveFromListAsync(Of TEntity As Class, TKey)(entities As IEnumerable(Of TEntity), keySelector As Func(Of TEntity, TKey), filter As Expression(Of Func(Of TEntity, Boolean)) = Nothing) As Task(Of IResult)
+  overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrRemoveFromListAsync*
+  nameWithType.vb: IDbContextWithListCommands.AddOrRemoveFromListAsync(Of TEntity, TKey)(IEnumerable(Of TEntity), Func(Of TEntity, TKey), Expression(Of Func(Of TEntity, Boolean)))
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrRemoveFromListAsync(Of TEntity, TKey)(System.Collections.Generic.IEnumerable(Of TEntity), System.Func(Of TEntity, TKey), System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)))
+  name.vb: AddOrRemoveFromListAsync(Of TEntity, TKey)(IEnumerable(Of TEntity), Func(Of TEntity, TKey), Expression(Of Func(Of TEntity, Boolean)))
+references:
+- uid: NuvTools.Data.EntityFrameworkCore.Context
+  commentId: N:NuvTools.Data.EntityFrameworkCore.Context
+  isExternal: true
+  href: NuvTools.html
+  name: NuvTools.Data.EntityFrameworkCore.Context
+  nameWithType: NuvTools.Data.EntityFrameworkCore.Context
+  fullName: NuvTools.Data.EntityFrameworkCore.Context
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Data
+    name: Data
+    isExternal: true
+    href: NuvTools.Data.html
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: NuvTools.Data.EntityFrameworkCore.html
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore.Context
+    name: Context
+    isExternal: true
+    href: NuvTools.Data.EntityFrameworkCore.Context.html
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Data
+    name: Data
+    isExternal: true
+    href: NuvTools.Data.html
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: NuvTools.Data.EntityFrameworkCore.html
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore.Context
+    name: Context
+    isExternal: true
+    href: NuvTools.Data.EntityFrameworkCore.Context.html
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.SyncFromListAsync*
+  commentId: Overload:NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.SyncFromListAsync
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.html#NuvTools_Data_EntityFrameworkCore_Context_IDbContextWithListCommands_SyncFromListAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___
+  name: SyncFromListAsync
+  nameWithType: IDbContextWithListCommands.SyncFromListAsync
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.SyncFromListAsync
+- uid: System.Collections.Generic.IEnumerable{{TEntity}}
+  commentId: T:System.Collections.Generic.IEnumerable{``0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<TEntity>
+  nameWithType: IEnumerable<TEntity>
+  fullName: System.Collections.Generic.IEnumerable<TEntity>
+  nameWithType.vb: IEnumerable(Of TEntity)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of TEntity)
+  name.vb: IEnumerable(Of TEntity)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: TEntity
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TEntity
+  - name: )
+- uid: System.Func{{TEntity},{TKey}}
+  commentId: T:System.Func{``0,``1}
+  parent: System
+  definition: System.Func`2
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<TEntity, TKey>
+  nameWithType: Func<TEntity, TKey>
+  fullName: System.Func<TEntity, TKey>
+  nameWithType.vb: Func(Of TEntity, TKey)
+  fullName.vb: System.Func(Of TEntity, TKey)
+  name.vb: Func(Of TEntity, TKey)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: TEntity
+  - name: ','
+  - name: " "
+  - name: TKey
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TEntity
+  - name: ','
+  - name: " "
+  - name: TKey
+  - name: )
+- uid: System.Linq.Expressions.Expression{System.Func{{TEntity},System.Boolean}}
+  commentId: T:System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}}
+  parent: System.Linq.Expressions
+  definition: System.Linq.Expressions.Expression`1
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  name: Expression<Func<TEntity, bool>>
+  nameWithType: Expression<Func<TEntity, bool>>
+  fullName: System.Linq.Expressions.Expression<System.Func<TEntity, bool>>
+  nameWithType.vb: Expression(Of Func(Of TEntity, Boolean))
+  fullName.vb: System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean))
+  name.vb: Expression(Of Func(Of TEntity, Boolean))
+  spec.csharp:
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: TEntity
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TEntity
+  - name: ','
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: )
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult>
+  nameWithType: Task<IResult>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult>
+  nameWithType.vb: Task(Of IResult)
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult)
+  name.vb: Task(Of IResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult
+    name: IResult
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult
+    name: IResult
+    isExternal: true
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Linq.Expressions.Expression`1
+  commentId: T:System.Linq.Expressions.Expression`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  name: Expression<TDelegate>
+  nameWithType: Expression<TDelegate>
+  fullName: System.Linq.Expressions.Expression<TDelegate>
+  nameWithType.vb: Expression(Of TDelegate)
+  fullName.vb: System.Linq.Expressions.Expression(Of TDelegate)
+  name.vb: Expression(Of TDelegate)
+  spec.csharp:
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: <
+  - name: TDelegate
+  - name: '>'
+  spec.vb:
+  - uid: System.Linq.Expressions.Expression`1
+    name: Expression
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TDelegate
+  - name: )
+- uid: System.Linq.Expressions
+  commentId: N:System.Linq.Expressions
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Linq.Expressions
+  nameWithType: System.Linq.Expressions
+  fullName: System.Linq.Expressions
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Linq
+    name: Linq
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq
+  - name: .
+  - uid: System.Linq.Expressions
+    name: Expressions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Linq
+    name: Linq
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq
+  - name: .
+  - uid: System.Linq.Expressions
+    name: Expressions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.expressions
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrUpdateFromListAsync*
+  commentId: Overload:NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrUpdateFromListAsync
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.html#NuvTools_Data_EntityFrameworkCore_Context_IDbContextWithListCommands_AddOrUpdateFromListAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___
+  name: AddOrUpdateFromListAsync
+  nameWithType: IDbContextWithListCommands.AddOrUpdateFromListAsync
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrUpdateFromListAsync
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrRemoveFromListAsync*
+  commentId: Overload:NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrRemoveFromListAsync
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.html#NuvTools_Data_EntityFrameworkCore_Context_IDbContextWithListCommands_AddOrRemoveFromListAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___
+  name: AddOrRemoveFromListAsync
+  nameWithType: IDbContextWithListCommands.AddOrRemoveFromListAsync
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrRemoveFromListAsync

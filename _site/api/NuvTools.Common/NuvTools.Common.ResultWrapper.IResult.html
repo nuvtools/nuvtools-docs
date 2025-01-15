@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -54,7 +54,7 @@
             <div id="navbar">
               <form class="search" role="search" id="search">
                 <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
@@ -77,7 +77,7 @@
 
       <div class="content">
         <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
             <i class="bi bi-list"></i>
           </button>
 
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Common_ResultWrapper_IResult" data-uid="NuvTools.Common.ResultWrapper.IResult" class="text-break">
-Interface IResult  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+Interface IResult  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -121,7 +121,7 @@ Interface IResult  <a class="header-action link-secondary" title="View source" h
       <a class="xref" href="NuvTools.Common.Serialization.Json.ObjectExtensions.html#NuvTools_Common_Serialization_Json_ObjectExtensions_Serialize__1___0_System_Int32_">ObjectExtensions.Serialize&lt;T&gt;(T, int)</a>
   </div>
   <div>
-      <a class="xref" href="NuvTools.Common.Web.ObjectExtensions.html#NuvTools_Common_Web_ObjectExtensions_GetQueryString__1___0_System_String_">ObjectExtensions.GetQueryString&lt;T&gt;(T, string)</a>
+      <a class="xref" href="NuvTools.Common.Web.ObjectExtensions.html#NuvTools_Common_Web_ObjectExtensions_GetQueryString__1___0_System_String_">ObjectExtensions.GetQueryString&lt;T&gt;(T, string?)</a>
   </div>
   </dd></dl>
 
@@ -133,18 +133,18 @@ Interface IResult  <a class="header-action link-secondary" title="View source" h
 </h2>
 
 
-  <a id="NuvTools_Common_ResultWrapper_IResult_Messages_" data-uid="NuvTools.Common.ResultWrapper.IResult.Messages*"></a>
+  <a id="NuvTools_Common_ResultWrapper_IResult_ContainsNotFound_" data-uid="NuvTools.Common.ResultWrapper.IResult.ContainsNotFound*"></a>
 
-  <h3 id="NuvTools_Common_ResultWrapper_IResult_Messages" data-uid="NuvTools.Common.ResultWrapper.IResult.Messages">
-  Messages
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NuvTools_Common_ResultWrapper_IResult_ContainsNotFound" data-uid="NuvTools.Common.ResultWrapper.IResult.ContainsNotFound">
+  ContainsNotFound
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">List&lt;string&gt; Messages { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">bool ContainsNotFound { get; }</code></pre>
   </div>
 
 
@@ -153,7 +153,100 @@ Interface IResult  <a class="header-action link-secondary" title="View source" h
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Common_ResultWrapper_IResult_Message_" data-uid="NuvTools.Common.ResultWrapper.IResult.Message*"></a>
+
+  <h3 id="NuvTools_Common_ResultWrapper_IResult_Message" data-uid="NuvTools.Common.ResultWrapper.IResult.Message">
+  Message
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string? Message { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Common_ResultWrapper_IResult_MessageDetail_" data-uid="NuvTools.Common.ResultWrapper.IResult.MessageDetail*"></a>
+
+  <h3 id="NuvTools_Common_ResultWrapper_IResult_MessageDetail" data-uid="NuvTools.Common.ResultWrapper.IResult.MessageDetail">
+  MessageDetail
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">MessageDetail? MessageDetail { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NuvTools.Common.ResultWrapper.MessageDetail.html">MessageDetail</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Common_ResultWrapper_IResult_Messages_" data-uid="NuvTools.Common.ResultWrapper.IResult.Messages*"></a>
+
+  <h3 id="NuvTools_Common_ResultWrapper_IResult_Messages" data-uid="NuvTools.Common.ResultWrapper.IResult.Messages">
+  Messages
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">List&lt;MessageDetail&gt; Messages { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="NuvTools.Common.ResultWrapper.MessageDetail.html">MessageDetail</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -168,14 +261,14 @@ Interface IResult  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="NuvTools_Common_ResultWrapper_IResult_ResultType" data-uid="NuvTools.Common.ResultWrapper.IResult.ResultType">
   ResultType
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">ResultType ResultType { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">ResultType ResultType { get; }</code></pre>
   </div>
 
 
@@ -199,14 +292,14 @@ Interface IResult  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="NuvTools_Common_ResultWrapper_IResult_Succeeded" data-uid="NuvTools.Common.ResultWrapper.IResult.Succeeded">
   Succeeded
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">bool Succeeded { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">bool Succeeded { get; }</code></pre>
   </div>
 
 
@@ -230,7 +323,7 @@ Interface IResult  <a class="header-action link-secondary" title="View source" h
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/IResult.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/IResult.cs" class="edit-link">Edit this page</a>
         </div>
 
 

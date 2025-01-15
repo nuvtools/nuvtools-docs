@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -54,7 +54,7 @@
             <div id="navbar">
               <form class="search" role="search" id="search">
                 <i class="bi bi-search"></i>
-                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
             </div>
           </div>
@@ -77,7 +77,7 @@
 
       <div class="content">
         <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
             <i class="bi bi-list"></i>
           </button>
 
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Common_ResultWrapper_Result" data-uid="NuvTools.Common.ResultWrapper.Result" class="text-break">
-Class Result  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
+Class Result  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -165,7 +165,7 @@ Class Result  <a class="header-action link-secondary" title="View source" href="
       <a class="xref" href="NuvTools.Common.Serialization.Json.ObjectExtensions.html#NuvTools_Common_Serialization_Json_ObjectExtensions_Serialize__1___0_System_Int32_">ObjectExtensions.Serialize&lt;T&gt;(T, int)</a>
   </div>
   <div>
-      <a class="xref" href="NuvTools.Common.Web.ObjectExtensions.html#NuvTools_Common_Web_ObjectExtensions_GetQueryString__1___0_System_String_">ObjectExtensions.GetQueryString&lt;T&gt;(T, string)</a>
+      <a class="xref" href="NuvTools.Common.Web.ObjectExtensions.html#NuvTools_Common_Web_ObjectExtensions_GetQueryString__1___0_System_String_">ObjectExtensions.GetQueryString&lt;T&gt;(T, string?)</a>
   </div>
   </dd></dl>
 
@@ -181,7 +181,7 @@ Class Result  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="NuvTools_Common_ResultWrapper_Result__ctor" data-uid="NuvTools.Common.ResultWrapper.Result.#ctor">
   Result()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -207,18 +207,18 @@ Class Result  <a class="header-action link-secondary" title="View source" href="
 </h2>
 
 
-  <a id="NuvTools_Common_ResultWrapper_Result_Messages_" data-uid="NuvTools.Common.ResultWrapper.Result.Messages*"></a>
+  <a id="NuvTools_Common_ResultWrapper_Result_ContainsNotFound_" data-uid="NuvTools.Common.ResultWrapper.Result.ContainsNotFound*"></a>
 
-  <h3 id="NuvTools_Common_ResultWrapper_Result_Messages" data-uid="NuvTools.Common.ResultWrapper.Result.Messages">
-  Messages
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NuvTools_Common_ResultWrapper_Result_ContainsNotFound" data-uid="NuvTools.Common.ResultWrapper.Result.ContainsNotFound">
+  ContainsNotFound
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;string&gt; Messages { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public bool ContainsNotFound { get; set; }</code></pre>
   </div>
 
 
@@ -227,7 +227,100 @@ Class Result  <a class="header-action link-secondary" title="View source" href="
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Common_ResultWrapper_Result_Message_" data-uid="NuvTools.Common.ResultWrapper.Result.Message*"></a>
+
+  <h3 id="NuvTools_Common_ResultWrapper_Result_Message" data-uid="NuvTools.Common.ResultWrapper.Result.Message">
+  Message
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? Message { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Common_ResultWrapper_Result_MessageDetail_" data-uid="NuvTools.Common.ResultWrapper.Result.MessageDetail*"></a>
+
+  <h3 id="NuvTools_Common_ResultWrapper_Result_MessageDetail" data-uid="NuvTools.Common.ResultWrapper.Result.MessageDetail">
+  MessageDetail
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MessageDetail? MessageDetail { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NuvTools.Common.ResultWrapper.MessageDetail.html">MessageDetail</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Common_ResultWrapper_Result_Messages_" data-uid="NuvTools.Common.ResultWrapper.Result.Messages*"></a>
+
+  <h3 id="NuvTools_Common_ResultWrapper_Result_Messages" data-uid="NuvTools.Common.ResultWrapper.Result.Messages">
+  Messages
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;MessageDetail&gt; Messages { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="NuvTools.Common.ResultWrapper.MessageDetail.html">MessageDetail</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -242,7 +335,7 @@ Class Result  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="NuvTools_Common_ResultWrapper_Result_ResultType" data-uid="NuvTools.Common.ResultWrapper.Result.ResultType">
   ResultType
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -273,7 +366,7 @@ Class Result  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="NuvTools_Common_ResultWrapper_Result_Succeeded" data-uid="NuvTools.Common.ResultWrapper.Result.Succeeded">
   Succeeded
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -304,20 +397,101 @@ Class Result  <a class="header-action link-secondary" title="View source" href="
 </h2>
 
 
-  <a id="NuvTools_Common_ResultWrapper_Result_Fail_" data-uid="NuvTools.Common.ResultWrapper.Result.Fail*"></a>
+  <a id="NuvTools_Common_ResultWrapper_Result_ConvertToMessageDetail_" data-uid="NuvTools.Common.ResultWrapper.Result.ConvertToMessageDetail*"></a>
 
-  <h3 id="NuvTools_Common_ResultWrapper_Result_Fail" data-uid="NuvTools.Common.ResultWrapper.Result.Fail">
-  Fail()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NuvTools_Common_ResultWrapper_Result_ConvertToMessageDetail_System_Collections_Generic_IEnumerable_System_String__" data-uid="NuvTools.Common.ResultWrapper.Result.ConvertToMessageDetail(System.Collections.Generic.IEnumerable{System.String})">
+  ConvertToMessageDetail(IEnumerable&lt;string&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IResult Fail()</code></pre>
+    <pre><code class="lang-csharp hljs">protected static List&lt;MessageDetail&gt; ConvertToMessageDetail(IEnumerable&lt;string&gt; value)</code></pre>
   </div>
 
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="NuvTools.Common.ResultWrapper.MessageDetail.html">MessageDetail</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Common_ResultWrapper_Result_Fail_" data-uid="NuvTools.Common.ResultWrapper.Result.Fail*"></a>
+
+  <h3 id="NuvTools_Common_ResultWrapper_Result_Fail_NuvTools_Common_ResultWrapper_MessageDetail_Microsoft_Extensions_Logging_ILogger_" data-uid="NuvTools.Common.ResultWrapper.Result.Fail(NuvTools.Common.ResultWrapper.MessageDetail,Microsoft.Extensions.Logging.ILogger)">
+  Fail(MessageDetail, ILogger?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IResult Fail(MessageDetail message, ILogger? logger = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>message</code> <a class="xref" href="NuvTools.Common.ResultWrapper.MessageDetail.html">MessageDetail</a></dt>
+    <dd></dd>
+    <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger">ILogger</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NuvTools.Common.ResultWrapper.IResult.html">IResult</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Common_ResultWrapper_Result_Fail_" data-uid="NuvTools.Common.ResultWrapper.Result.Fail*"></a>
+
+  <h3 id="NuvTools_Common_ResultWrapper_Result_Fail_System_Collections_Generic_List_NuvTools_Common_ResultWrapper_MessageDetail__Microsoft_Extensions_Logging_ILogger_" data-uid="NuvTools.Common.ResultWrapper.Result.Fail(System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)">
+  Fail(List&lt;MessageDetail&gt;?, ILogger?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IResult Fail(List&lt;MessageDetail&gt;? messages = null, ILogger? logger = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>messages</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="NuvTools.Common.ResultWrapper.MessageDetail.html">MessageDetail</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger">ILogger</a></dt>
+    <dd></dd>
+  </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
@@ -338,15 +512,15 @@ Class Result  <a class="header-action link-secondary" title="View source" href="
   <a id="NuvTools_Common_ResultWrapper_Result_Fail_" data-uid="NuvTools.Common.ResultWrapper.Result.Fail*"></a>
 
   <h3 id="NuvTools_Common_ResultWrapper_Result_Fail_System_Collections_Generic_List_System_String__Microsoft_Extensions_Logging_ILogger_" data-uid="NuvTools.Common.ResultWrapper.Result.Fail(System.Collections.Generic.List{System.String},Microsoft.Extensions.Logging.ILogger)">
-  Fail(List&lt;string&gt;, ILogger)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
+  Fail(List&lt;string&gt;, ILogger?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IResult Fail(List&lt;string&gt; messages, ILogger logger = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static IResult Fail(List&lt;string&gt; messages, ILogger? logger = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -375,16 +549,56 @@ Class Result  <a class="header-action link-secondary" title="View source" href="
 
   <a id="NuvTools_Common_ResultWrapper_Result_Fail_" data-uid="NuvTools.Common.ResultWrapper.Result.Fail*"></a>
 
-  <h3 id="NuvTools_Common_ResultWrapper_Result_Fail_System_String_Microsoft_Extensions_Logging_ILogger_" data-uid="NuvTools.Common.ResultWrapper.Result.Fail(System.String,Microsoft.Extensions.Logging.ILogger)">
-  Fail(string, ILogger)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NuvTools_Common_ResultWrapper_Result_Fail_System_Exception_System_Int16_Microsoft_Extensions_Logging_ILogger_" data-uid="NuvTools.Common.ResultWrapper.Result.Fail(System.Exception,System.Int16,Microsoft.Extensions.Logging.ILogger)">
+  Fail(Exception, short, ILogger?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IResult Fail(string message, ILogger logger = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static IResult Fail(Exception exception, short level = 1, ILogger? logger = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>exception</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception">Exception</a></dt>
+    <dd></dd>
+    <dt><code>level</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int16">short</a></dt>
+    <dd></dd>
+    <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger">ILogger</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NuvTools.Common.ResultWrapper.IResult.html">IResult</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Common_ResultWrapper_Result_Fail_" data-uid="NuvTools.Common.ResultWrapper.Result.Fail*"></a>
+
+  <h3 id="NuvTools_Common_ResultWrapper_Result_Fail_System_String_Microsoft_Extensions_Logging_ILogger_" data-uid="NuvTools.Common.ResultWrapper.Result.Fail(System.String,Microsoft.Extensions.Logging.ILogger)">
+  Fail(string, ILogger?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IResult Fail(string message, ILogger? logger = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -411,64 +625,64 @@ Class Result  <a class="header-action link-secondary" title="View source" href="
 
 
 
-  <a id="NuvTools_Common_ResultWrapper_Result_FailAsync_" data-uid="NuvTools.Common.ResultWrapper.Result.FailAsync*"></a>
+  <a id="NuvTools_Common_ResultWrapper_Result_FailNotFound_" data-uid="NuvTools.Common.ResultWrapper.Result.FailNotFound*"></a>
 
-  <h3 id="NuvTools_Common_ResultWrapper_Result_FailAsync" data-uid="NuvTools.Common.ResultWrapper.Result.FailAsync">
-  FailAsync()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NuvTools_Common_ResultWrapper_Result_FailNotFound_System_String_" data-uid="NuvTools.Common.ResultWrapper.Result.FailNotFound(System.String)">
+  FailNotFound(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task&lt;IResult&gt; FailAsync()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="NuvTools_Common_ResultWrapper_Result_FailAsync_" data-uid="NuvTools.Common.ResultWrapper.Result.FailAsync*"></a>
-
-  <h3 id="NuvTools_Common_ResultWrapper_Result_FailAsync_System_String_Microsoft_Extensions_Logging_ILogger_" data-uid="NuvTools.Common.ResultWrapper.Result.FailAsync(System.String,Microsoft.Extensions.Logging.ILogger)">
-  FailAsync(string, ILogger)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task&lt;IResult&gt; FailAsync(string message, ILogger logger = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static IResult FailNotFound(string message)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>message</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
-    <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger">ILogger</a></dt>
-    <dd></dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
+    <dt><a class="xref" href="NuvTools.Common.ResultWrapper.IResult.html">IResult</a></dt>
     <dd></dd>
   </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Common_ResultWrapper_Result_Log_" data-uid="NuvTools.Common.ResultWrapper.Result.Log*"></a>
+
+  <h3 id="NuvTools_Common_ResultWrapper_Result_Log_System_Collections_Generic_List_NuvTools_Common_ResultWrapper_MessageDetail__Microsoft_Extensions_Logging_ILogger_" data-uid="NuvTools.Common.ResultWrapper.Result.Log(System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)">
+  Log(List&lt;MessageDetail&gt;?, ILogger?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected static void Log(List&lt;MessageDetail&gt;? messages, ILogger? logger)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>messages</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="NuvTools.Common.ResultWrapper.MessageDetail.html">MessageDetail</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger">ILogger</a></dt>
+    <dd></dd>
+  </dl>
+
 
 
 
@@ -482,18 +696,23 @@ Class Result  <a class="header-action link-secondary" title="View source" href="
 
   <a id="NuvTools_Common_ResultWrapper_Result_Success_" data-uid="NuvTools.Common.ResultWrapper.Result.Success*"></a>
 
-  <h3 id="NuvTools_Common_ResultWrapper_Result_Success" data-uid="NuvTools.Common.ResultWrapper.Result.Success">
-  Success()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NuvTools_Common_ResultWrapper_Result_Success_NuvTools_Common_ResultWrapper_MessageDetail_" data-uid="NuvTools.Common.ResultWrapper.Result.Success(NuvTools.Common.ResultWrapper.MessageDetail)">
+  Success(MessageDetail?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IResult Success()</code></pre>
+    <pre><code class="lang-csharp hljs">public static IResult Success(MessageDetail? message = null)</code></pre>
   </div>
 
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>message</code> <a class="xref" href="NuvTools.Common.ResultWrapper.MessageDetail.html">MessageDetail</a></dt>
+    <dd></dd>
+  </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
@@ -515,7 +734,7 @@ Class Result  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="NuvTools_Common_ResultWrapper_Result_Success_System_String_" data-uid="NuvTools.Common.ResultWrapper.Result.Success(System.String)">
   Success(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -547,60 +766,69 @@ Class Result  <a class="header-action link-secondary" title="View source" href="
 
 
 
-  <a id="NuvTools_Common_ResultWrapper_Result_SuccessAsync_" data-uid="NuvTools.Common.ResultWrapper.Result.SuccessAsync*"></a>
+  <a id="NuvTools_Common_ResultWrapper_Result_ValidationFail_" data-uid="NuvTools.Common.ResultWrapper.Result.ValidationFail*"></a>
 
-  <h3 id="NuvTools_Common_ResultWrapper_Result_SuccessAsync" data-uid="NuvTools.Common.ResultWrapper.Result.SuccessAsync">
-  SuccessAsync()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NuvTools_Common_ResultWrapper_Result_ValidationFail_NuvTools_Common_ResultWrapper_MessageDetail_Microsoft_Extensions_Logging_ILogger_" data-uid="NuvTools.Common.ResultWrapper.Result.ValidationFail(NuvTools.Common.ResultWrapper.MessageDetail,Microsoft.Extensions.Logging.ILogger)">
+  ValidationFail(MessageDetail, ILogger?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task&lt;IResult&gt; SuccessAsync()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="NuvTools_Common_ResultWrapper_Result_SuccessAsync_" data-uid="NuvTools.Common.ResultWrapper.Result.SuccessAsync*"></a>
-
-  <h3 id="NuvTools_Common_ResultWrapper_Result_SuccessAsync_System_String_" data-uid="NuvTools.Common.ResultWrapper.Result.SuccessAsync(System.String)">
-  SuccessAsync(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task&lt;IResult&gt; SuccessAsync(string message)</code></pre>
+    <pre><code class="lang-csharp hljs">public static IResult ValidationFail(MessageDetail message, ILogger? logger = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>message</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><code>message</code> <a class="xref" href="NuvTools.Common.ResultWrapper.MessageDetail.html">MessageDetail</a></dt>
+    <dd></dd>
+    <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger">ILogger</a></dt>
     <dd></dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
+    <dt><a class="xref" href="NuvTools.Common.ResultWrapper.IResult.html">IResult</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Common_ResultWrapper_Result_ValidationFail_" data-uid="NuvTools.Common.ResultWrapper.Result.ValidationFail*"></a>
+
+  <h3 id="NuvTools_Common_ResultWrapper_Result_ValidationFail_System_Collections_Generic_List_NuvTools_Common_ResultWrapper_MessageDetail__Microsoft_Extensions_Logging_ILogger_" data-uid="NuvTools.Common.ResultWrapper.Result.ValidationFail(System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)">
+  ValidationFail(List&lt;MessageDetail&gt;, ILogger?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IResult ValidationFail(List&lt;MessageDetail&gt; messages, ILogger? logger = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>messages</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="NuvTools.Common.ResultWrapper.MessageDetail.html">MessageDetail</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger">ILogger</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NuvTools.Common.ResultWrapper.IResult.html">IResult</a></dt>
     <dd></dd>
   </dl>
 
@@ -617,15 +845,15 @@ Class Result  <a class="header-action link-secondary" title="View source" href="
   <a id="NuvTools_Common_ResultWrapper_Result_ValidationFail_" data-uid="NuvTools.Common.ResultWrapper.Result.ValidationFail*"></a>
 
   <h3 id="NuvTools_Common_ResultWrapper_Result_ValidationFail_System_Collections_Generic_List_System_String__Microsoft_Extensions_Logging_ILogger_" data-uid="NuvTools.Common.ResultWrapper.Result.ValidationFail(System.Collections.Generic.List{System.String},Microsoft.Extensions.Logging.ILogger)">
-  ValidationFail(List&lt;string&gt;, ILogger)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
+  ValidationFail(List&lt;string&gt;, ILogger?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IResult ValidationFail(List&lt;string&gt; messages, ILogger logger = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static IResult ValidationFail(List&lt;string&gt; messages, ILogger? logger = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -655,15 +883,15 @@ Class Result  <a class="header-action link-secondary" title="View source" href="
   <a id="NuvTools_Common_ResultWrapper_Result_ValidationFail_" data-uid="NuvTools.Common.ResultWrapper.Result.ValidationFail*"></a>
 
   <h3 id="NuvTools_Common_ResultWrapper_Result_ValidationFail_System_String_Microsoft_Extensions_Logging_ILogger_" data-uid="NuvTools.Common.ResultWrapper.Result.ValidationFail(System.String,Microsoft.Extensions.Logging.ILogger)">
-  ValidationFail(string, ILogger)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
+  ValidationFail(string, ILogger?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IResult ValidationFail(string message, ILogger logger = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static IResult ValidationFail(string message, ILogger? logger = null)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -690,122 +918,11 @@ Class Result  <a class="header-action link-secondary" title="View source" href="
 
 
 
-  <a id="NuvTools_Common_ResultWrapper_Result_ValidationFailAsync_" data-uid="NuvTools.Common.ResultWrapper.Result.ValidationFailAsync*"></a>
-
-  <h3 id="NuvTools_Common_ResultWrapper_Result_ValidationFailAsync_System_Collections_Generic_List_System_String__Microsoft_Extensions_Logging_ILogger_" data-uid="NuvTools.Common.ResultWrapper.Result.ValidationFailAsync(System.Collections.Generic.List{System.String},Microsoft.Extensions.Logging.ILogger)">
-  ValidationFailAsync(List&lt;string&gt;, ILogger)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task&lt;IResult&gt; ValidationFailAsync(List&lt;string&gt; messages, ILogger logger = null)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>messages</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
-    <dd></dd>
-    <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger">ILogger</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="NuvTools_Common_ResultWrapper_Result_ValidationFailAsync_" data-uid="NuvTools.Common.ResultWrapper.Result.ValidationFailAsync*"></a>
-
-  <h3 id="NuvTools_Common_ResultWrapper_Result_ValidationFailAsync_System_String_Microsoft_Extensions_Logging_ILogger_" data-uid="NuvTools.Common.ResultWrapper.Result.ValidationFailAsync(System.String,Microsoft.Extensions.Logging.ILogger)">
-  ValidationFailAsync(string, ILogger)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task&lt;IResult&gt; ValidationFailAsync(string message, ILogger logger = null)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>message</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-    <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger">ILogger</a></dt>
-    <dd></dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="NuvTools_Common_ResultWrapper_Result_WriteLog_" data-uid="NuvTools.Common.ResultWrapper.Result.WriteLog*"></a>
-
-  <h3 id="NuvTools_Common_ResultWrapper_Result_WriteLog_NuvTools_Common_ResultWrapper_ResultType_System_Collections_Generic_List_System_String__Microsoft_Extensions_Logging_ILogger_" data-uid="NuvTools.Common.ResultWrapper.Result.WriteLog(NuvTools.Common.ResultWrapper.ResultType,System.Collections.Generic.List{System.String},Microsoft.Extensions.Logging.ILogger)">
-  WriteLog(ResultType, List&lt;string&gt;, ILogger)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/Result.cs"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected static void WriteLog(ResultType resultType, List&lt;string&gt; messages, ILogger logger)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>resultType</code> <a class="xref" href="NuvTools.Common.ResultWrapper.ResultType.html">ResultType</a></dt>
-    <dd></dd>
-    <dt><code>messages</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
-    <dd></dd>
-    <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger">ILogger</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-common/blob/1e6f6cd418dc81f749b1d3a6ebe39497f7012d20/src/NuvTools.Common/ResultWrapper/Result.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-common/blob/46ac5183f95d2544268c60a92da990ff1624c22d/src/NuvTools.Common/ResultWrapper/Result.cs" class="edit-link">Edit this page</a>
         </div>
 
 
