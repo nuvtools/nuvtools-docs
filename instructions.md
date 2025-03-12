@@ -1,3 +1,6 @@
 dotnet tool install -g docfx
-docfx metadata path/to/docfx.json
-docfx build docfx_project\docfx.json --serve
+
+Remove the _site and api folder
+
+docfx metadata docfx.json
+docfx build docfx.json --serve
