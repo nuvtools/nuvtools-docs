@@ -5,17 +5,19 @@ items:
   id: IDbContextCommands
   parent: NuvTools.Data.EntityFrameworkCore.Context
   children:
-  - NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveAsync``2(``0)
-  - NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveWithCompositeKeyAsync``1(``0)
+  - NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveAsync``2(``0,System.Threading.CancellationToken)
+  - NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveWithCompositeKeyAsync``1(``0,System.Threading.CancellationToken)
   - NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.BeginTransactionAsync(System.Threading.CancellationToken)
   - NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CommitTransactionAsync(System.Threading.CancellationToken)
   - NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CurrentTransaction
   - NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.ExecuteWithStrategyAsync(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Threading.CancellationToken)
   - NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.ExecuteWithStrategyAsync``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)
   - NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RemoveAndSaveAsync``1(System.Object[])
+  - NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RemoveAndSaveAsync``1(System.Object[],System.Threading.CancellationToken)
   - NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RollbackTransactionAsync(System.Threading.CancellationToken)
   - NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.SaveChangesAsync(System.Threading.CancellationToken)
   - NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.UpdateAndSaveAsync``1(``0,System.Object[])
+  - NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.UpdateAndSaveAsync``1(``0,System.Object[],System.Threading.CancellationToken)
   langs:
   - csharp
   - vb
@@ -24,7 +26,7 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
   type: Interface
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/92b78492c8c296e07b2714393509db4f8584826c/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
@@ -43,7 +45,7 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.BeginTransactionAsync(System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/92b78492c8c296e07b2714393509db4f8584826c/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
@@ -68,7 +70,7 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RollbackTransactionAsync(System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/92b78492c8c296e07b2714393509db4f8584826c/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
@@ -93,7 +95,7 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CommitTransactionAsync(System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/92b78492c8c296e07b2714393509db4f8584826c/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
@@ -118,7 +120,7 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.ExecuteWithStrategyAsync(System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task>, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/92b78492c8c296e07b2714393509db4f8584826c/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
@@ -148,7 +150,7 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.ExecuteWithStrategyAsync<T>(System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<T>>, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/92b78492c8c296e07b2714393509db4f8584826c/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
@@ -180,7 +182,7 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.SaveChangesAsync(System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/92b78492c8c296e07b2714393509db4f8584826c/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
@@ -193,37 +195,39 @@ items:
       type: System.Threading.Tasks.Task{System.Int32}
     content.vb: Function SaveChangesAsync(cancellationToken As CancellationToken = Nothing) As Task(Of Integer)
   overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.SaveChangesAsync*
-- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveAsync``2(``0)
-  commentId: M:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveAsync``2(``0)
-  id: AddAndSaveAsync``2(``0)
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveAsync``2(``0,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveAsync``2(``0,System.Threading.CancellationToken)
+  id: AddAndSaveAsync``2(``0,System.Threading.CancellationToken)
   parent: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
   langs:
   - csharp
   - vb
-  name: AddAndSaveAsync<TEntity, TKey>(TEntity)
-  nameWithType: IDbContextCommands.AddAndSaveAsync<TEntity, TKey>(TEntity)
-  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveAsync<TEntity, TKey>(TEntity)
+  name: AddAndSaveAsync<TEntity, TKey>(TEntity, CancellationToken)
+  nameWithType: IDbContextCommands.AddAndSaveAsync<TEntity, TKey>(TEntity, CancellationToken)
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveAsync<TEntity, TKey>(TEntity, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/92b78492c8c296e07b2714393509db4f8584826c/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
   syntax:
-    content: 'Task<IResult<TKey>> AddAndSaveAsync<TEntity, TKey>(TEntity entity) where TEntity : class'
+    content: 'Task<IResult<TKey>> AddAndSaveAsync<TEntity, TKey>(TEntity entity, CancellationToken cancellationToken = default) where TEntity : class'
     parameters:
     - id: entity
       type: '{TEntity}'
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
     typeParameters:
     - id: TEntity
     - id: TKey
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{{TKey}}}
-    content.vb: Function AddAndSaveAsync(Of TEntity As Class, TKey)(entity As TEntity) As Task(Of IResult(Of TKey))
+    content.vb: Function AddAndSaveAsync(Of TEntity As Class, TKey)(entity As TEntity, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of TKey))
   overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveAsync*
-  nameWithType.vb: IDbContextCommands.AddAndSaveAsync(Of TEntity, TKey)(TEntity)
-  fullName.vb: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveAsync(Of TEntity, TKey)(TEntity)
-  name.vb: AddAndSaveAsync(Of TEntity, TKey)(TEntity)
+  nameWithType.vb: IDbContextCommands.AddAndSaveAsync(Of TEntity, TKey)(TEntity, CancellationToken)
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveAsync(Of TEntity, TKey)(TEntity, System.Threading.CancellationToken)
+  name.vb: AddAndSaveAsync(Of TEntity, TKey)(TEntity, CancellationToken)
 - uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.UpdateAndSaveAsync``1(``0,System.Object[])
   commentId: M:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.UpdateAndSaveAsync``1(``0,System.Object[])
   id: UpdateAndSaveAsync``1(``0,System.Object[])
@@ -236,7 +240,7 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.UpdateAndSaveAsync<TEntity>(TEntity, params object[])
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/92b78492c8c296e07b2714393509db4f8584826c/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
@@ -256,36 +260,72 @@ items:
   nameWithType.vb: IDbContextCommands.UpdateAndSaveAsync(Of TEntity)(TEntity, ParamArray Object())
   fullName.vb: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.UpdateAndSaveAsync(Of TEntity)(TEntity, ParamArray Object())
   name.vb: UpdateAndSaveAsync(Of TEntity)(TEntity, ParamArray Object())
-- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveWithCompositeKeyAsync``1(``0)
-  commentId: M:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveWithCompositeKeyAsync``1(``0)
-  id: AddAndSaveWithCompositeKeyAsync``1(``0)
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.UpdateAndSaveAsync``1(``0,System.Object[],System.Threading.CancellationToken)
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.UpdateAndSaveAsync``1(``0,System.Object[],System.Threading.CancellationToken)
+  id: UpdateAndSaveAsync``1(``0,System.Object[],System.Threading.CancellationToken)
   parent: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
   langs:
   - csharp
   - vb
-  name: AddAndSaveWithCompositeKeyAsync<TEntity>(TEntity)
-  nameWithType: IDbContextCommands.AddAndSaveWithCompositeKeyAsync<TEntity>(TEntity)
-  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveWithCompositeKeyAsync<TEntity>(TEntity)
+  name: UpdateAndSaveAsync<TEntity>(TEntity, object[], CancellationToken)
+  nameWithType: IDbContextCommands.UpdateAndSaveAsync<TEntity>(TEntity, object[], CancellationToken)
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.UpdateAndSaveAsync<TEntity>(TEntity, object[], System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/92b78492c8c296e07b2714393509db4f8584826c/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
   syntax:
-    content: 'Task<IResult<object[]>> AddAndSaveWithCompositeKeyAsync<TEntity>(TEntity entity) where TEntity : class'
+    content: 'Task<IResult> UpdateAndSaveAsync<TEntity>(TEntity entity, object[] keyValues, CancellationToken cancellationToken = default) where TEntity : class'
     parameters:
     - id: entity
       type: '{TEntity}'
+    - id: keyValues
+      type: System.Object[]
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    typeParameters:
+    - id: TEntity
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+    content.vb: Function UpdateAndSaveAsync(Of TEntity As Class)(entity As TEntity, keyValues As Object(), cancellationToken As CancellationToken = Nothing) As Task(Of IResult)
+  overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.UpdateAndSaveAsync*
+  nameWithType.vb: IDbContextCommands.UpdateAndSaveAsync(Of TEntity)(TEntity, Object(), CancellationToken)
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.UpdateAndSaveAsync(Of TEntity)(TEntity, Object(), System.Threading.CancellationToken)
+  name.vb: UpdateAndSaveAsync(Of TEntity)(TEntity, Object(), CancellationToken)
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveWithCompositeKeyAsync``1(``0,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveWithCompositeKeyAsync``1(``0,System.Threading.CancellationToken)
+  id: AddAndSaveWithCompositeKeyAsync``1(``0,System.Threading.CancellationToken)
+  parent: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
+  langs:
+  - csharp
+  - vb
+  name: AddAndSaveWithCompositeKeyAsync<TEntity>(TEntity, CancellationToken)
+  nameWithType: IDbContextCommands.AddAndSaveWithCompositeKeyAsync<TEntity>(TEntity, CancellationToken)
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveWithCompositeKeyAsync<TEntity>(TEntity, System.Threading.CancellationToken)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Context
+  syntax:
+    content: 'Task<IResult<object[]>> AddAndSaveWithCompositeKeyAsync<TEntity>(TEntity entity, CancellationToken cancellationToken = default) where TEntity : class'
+    parameters:
+    - id: entity
+      type: '{TEntity}'
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
     typeParameters:
     - id: TEntity
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.Object[]}}
-    content.vb: Function AddAndSaveWithCompositeKeyAsync(Of TEntity As Class)(entity As TEntity) As Task(Of IResult(Of Object()))
+    content.vb: Function AddAndSaveWithCompositeKeyAsync(Of TEntity As Class)(entity As TEntity, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of Object()))
   overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveWithCompositeKeyAsync*
-  nameWithType.vb: IDbContextCommands.AddAndSaveWithCompositeKeyAsync(Of TEntity)(TEntity)
-  fullName.vb: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveWithCompositeKeyAsync(Of TEntity)(TEntity)
-  name.vb: AddAndSaveWithCompositeKeyAsync(Of TEntity)(TEntity)
+  nameWithType.vb: IDbContextCommands.AddAndSaveWithCompositeKeyAsync(Of TEntity)(TEntity, CancellationToken)
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveWithCompositeKeyAsync(Of TEntity)(TEntity, System.Threading.CancellationToken)
+  name.vb: AddAndSaveWithCompositeKeyAsync(Of TEntity)(TEntity, CancellationToken)
 - uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RemoveAndSaveAsync``1(System.Object[])
   commentId: M:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RemoveAndSaveAsync``1(System.Object[])
   id: RemoveAndSaveAsync``1(System.Object[])
@@ -298,7 +338,7 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RemoveAndSaveAsync<TEntity>(params object[])
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/92b78492c8c296e07b2714393509db4f8584826c/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
@@ -316,6 +356,38 @@ items:
   nameWithType.vb: IDbContextCommands.RemoveAndSaveAsync(Of TEntity)(ParamArray Object())
   fullName.vb: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RemoveAndSaveAsync(Of TEntity)(ParamArray Object())
   name.vb: RemoveAndSaveAsync(Of TEntity)(ParamArray Object())
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RemoveAndSaveAsync``1(System.Object[],System.Threading.CancellationToken)
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RemoveAndSaveAsync``1(System.Object[],System.Threading.CancellationToken)
+  id: RemoveAndSaveAsync``1(System.Object[],System.Threading.CancellationToken)
+  parent: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
+  langs:
+  - csharp
+  - vb
+  name: RemoveAndSaveAsync<TEntity>(object[], CancellationToken)
+  nameWithType: IDbContextCommands.RemoveAndSaveAsync<TEntity>(object[], CancellationToken)
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RemoveAndSaveAsync<TEntity>(object[], System.Threading.CancellationToken)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Context
+  syntax:
+    content: 'Task<IResult> RemoveAndSaveAsync<TEntity>(object[] keyValues, CancellationToken cancellationToken = default) where TEntity : class'
+    parameters:
+    - id: keyValues
+      type: System.Object[]
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    typeParameters:
+    - id: TEntity
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+    content.vb: Function RemoveAndSaveAsync(Of TEntity As Class)(keyValues As Object(), cancellationToken As CancellationToken = Nothing) As Task(Of IResult)
+  overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RemoveAndSaveAsync*
+  nameWithType.vb: IDbContextCommands.RemoveAndSaveAsync(Of TEntity)(Object(), CancellationToken)
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RemoveAndSaveAsync(Of TEntity)(Object(), System.Threading.CancellationToken)
+  name.vb: RemoveAndSaveAsync(Of TEntity)(Object(), CancellationToken)
 - uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CurrentTransaction
   commentId: P:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CurrentTransaction
   id: CurrentTransaction
@@ -328,7 +400,7 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CurrentTransaction
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/92b78492c8c296e07b2714393509db4f8584826c/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
@@ -775,7 +847,7 @@ references:
 - uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveAsync*
   commentId: Overload:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveAsync
   isExternal: true
-  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.html#NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_AddAndSaveAsync__2___0_
+  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.html#NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_AddAndSaveAsync__2___0_System_Threading_CancellationToken_
   name: AddAndSaveAsync
   nameWithType: IDbContextCommands.AddAndSaveAsync
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveAsync
@@ -896,7 +968,7 @@ references:
 - uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveWithCompositeKeyAsync*
   commentId: Overload:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveWithCompositeKeyAsync
   isExternal: true
-  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.html#NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_AddAndSaveWithCompositeKeyAsync__1___0_
+  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.html#NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_AddAndSaveWithCompositeKeyAsync__1___0_System_Threading_CancellationToken_
   name: AddAndSaveWithCompositeKeyAsync
   nameWithType: IDbContextCommands.AddAndSaveWithCompositeKeyAsync
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveWithCompositeKeyAsync

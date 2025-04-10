@@ -5,9 +5,9 @@ items:
   id: IDbContextWithListCommands
   parent: NuvTools.Data.EntityFrameworkCore.Context
   children:
-  - NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrRemoveFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
-  - NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrUpdateFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
-  - NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.SyncFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
+  - NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrRemoveFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)
+  - NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrUpdateFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)
+  - NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.SyncFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)
   langs:
   - csharp
   - vb
@@ -16,26 +16,26 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands
   type: Interface
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/92b78492c8c296e07b2714393509db4f8584826c/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextWithListCommands.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextWithListCommands.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
   syntax:
     content: public interface IDbContextWithListCommands
     content.vb: Public Interface IDbContextWithListCommands
-- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.SyncFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
-  commentId: M:NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.SyncFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
-  id: SyncFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.SyncFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.SyncFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)
+  id: SyncFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)
   parent: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands
   langs:
   - csharp
   - vb
-  name: SyncFromListAsync<TEntity, TKey>(IEnumerable<TEntity>, Func<TEntity, TKey>, Expression<Func<TEntity, bool>>?)
-  nameWithType: IDbContextWithListCommands.SyncFromListAsync<TEntity, TKey>(IEnumerable<TEntity>, Func<TEntity, TKey>, Expression<Func<TEntity, bool>>?)
-  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.SyncFromListAsync<TEntity, TKey>(System.Collections.Generic.IEnumerable<TEntity>, System.Func<TEntity, TKey>, System.Linq.Expressions.Expression<System.Func<TEntity, bool>>?)
+  name: SyncFromListAsync<TEntity, TKey>(IEnumerable<TEntity>, Func<TEntity, TKey>, Expression<Func<TEntity, bool>>?, CancellationToken)
+  nameWithType: IDbContextWithListCommands.SyncFromListAsync<TEntity, TKey>(IEnumerable<TEntity>, Func<TEntity, TKey>, Expression<Func<TEntity, bool>>?, CancellationToken)
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.SyncFromListAsync<TEntity, TKey>(System.Collections.Generic.IEnumerable<TEntity>, System.Func<TEntity, TKey>, System.Linq.Expressions.Expression<System.Func<TEntity, bool>>?, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/92b78492c8c296e07b2714393509db4f8584826c/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextWithListCommands.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextWithListCommands.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
@@ -52,7 +52,7 @@ items:
         e =&gt; e.IsActive
     );
   syntax:
-    content: 'Task<IResult> SyncFromListAsync<TEntity, TKey>(IEnumerable<TEntity> entities, Func<TEntity, TKey> keySelector, Expression<Func<TEntity, bool>>? filter = null) where TEntity : class where TKey : notnull'
+    content: 'Task<IResult> SyncFromListAsync<TEntity, TKey>(IEnumerable<TEntity> entities, Func<TEntity, TKey> keySelector, Expression<Func<TEntity, bool>>? filter = null, CancellationToken cancellationToken = default) where TEntity : class where TKey : notnull'
     parameters:
     - id: entities
       type: System.Collections.Generic.IEnumerable{{TEntity}}
@@ -63,6 +63,9 @@ items:
     - id: filter
       type: System.Linq.Expressions.Expression{System.Func{{TEntity},System.Boolean}}
       description: An optional filter predicate to apply to the database entities.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: A token to monitor for cancellation requests.
     typeParameters:
     - id: TEntity
       description: The type of the entity.
@@ -70,24 +73,24 @@ items:
       description: The type of the key used to uniquely identify entities.
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
-    content.vb: Function SyncFromListAsync(Of TEntity As Class, TKey)(entities As IEnumerable(Of TEntity), keySelector As Func(Of TEntity, TKey), filter As Expression(Of Func(Of TEntity, Boolean)) = Nothing) As Task(Of IResult)
+    content.vb: Function SyncFromListAsync(Of TEntity As Class, TKey)(entities As IEnumerable(Of TEntity), keySelector As Func(Of TEntity, TKey), filter As Expression(Of Func(Of TEntity, Boolean)) = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of IResult)
   overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.SyncFromListAsync*
-  nameWithType.vb: IDbContextWithListCommands.SyncFromListAsync(Of TEntity, TKey)(IEnumerable(Of TEntity), Func(Of TEntity, TKey), Expression(Of Func(Of TEntity, Boolean)))
-  fullName.vb: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.SyncFromListAsync(Of TEntity, TKey)(System.Collections.Generic.IEnumerable(Of TEntity), System.Func(Of TEntity, TKey), System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)))
-  name.vb: SyncFromListAsync(Of TEntity, TKey)(IEnumerable(Of TEntity), Func(Of TEntity, TKey), Expression(Of Func(Of TEntity, Boolean)))
-- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrUpdateFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
-  commentId: M:NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrUpdateFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
-  id: AddOrUpdateFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
+  nameWithType.vb: IDbContextWithListCommands.SyncFromListAsync(Of TEntity, TKey)(IEnumerable(Of TEntity), Func(Of TEntity, TKey), Expression(Of Func(Of TEntity, Boolean)), CancellationToken)
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.SyncFromListAsync(Of TEntity, TKey)(System.Collections.Generic.IEnumerable(Of TEntity), System.Func(Of TEntity, TKey), System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)), System.Threading.CancellationToken)
+  name.vb: SyncFromListAsync(Of TEntity, TKey)(IEnumerable(Of TEntity), Func(Of TEntity, TKey), Expression(Of Func(Of TEntity, Boolean)), CancellationToken)
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrUpdateFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrUpdateFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)
+  id: AddOrUpdateFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)
   parent: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands
   langs:
   - csharp
   - vb
-  name: AddOrUpdateFromListAsync<TEntity, TKey>(IEnumerable<TEntity>, Func<TEntity, TKey>, Expression<Func<TEntity, bool>>?)
-  nameWithType: IDbContextWithListCommands.AddOrUpdateFromListAsync<TEntity, TKey>(IEnumerable<TEntity>, Func<TEntity, TKey>, Expression<Func<TEntity, bool>>?)
-  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrUpdateFromListAsync<TEntity, TKey>(System.Collections.Generic.IEnumerable<TEntity>, System.Func<TEntity, TKey>, System.Linq.Expressions.Expression<System.Func<TEntity, bool>>?)
+  name: AddOrUpdateFromListAsync<TEntity, TKey>(IEnumerable<TEntity>, Func<TEntity, TKey>, Expression<Func<TEntity, bool>>?, CancellationToken)
+  nameWithType: IDbContextWithListCommands.AddOrUpdateFromListAsync<TEntity, TKey>(IEnumerable<TEntity>, Func<TEntity, TKey>, Expression<Func<TEntity, bool>>?, CancellationToken)
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrUpdateFromListAsync<TEntity, TKey>(System.Collections.Generic.IEnumerable<TEntity>, System.Func<TEntity, TKey>, System.Linq.Expressions.Expression<System.Func<TEntity, bool>>?, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/92b78492c8c296e07b2714393509db4f8584826c/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextWithListCommands.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextWithListCommands.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
@@ -104,7 +107,7 @@ items:
         p =&gt; p.IsActive
     );
   syntax:
-    content: 'Task<IResult> AddOrUpdateFromListAsync<TEntity, TKey>(IEnumerable<TEntity> entities, Func<TEntity, TKey> keySelector, Expression<Func<TEntity, bool>>? filter = null) where TEntity : class where TKey : notnull'
+    content: 'Task<IResult> AddOrUpdateFromListAsync<TEntity, TKey>(IEnumerable<TEntity> entities, Func<TEntity, TKey> keySelector, Expression<Func<TEntity, bool>>? filter = null, CancellationToken cancellationToken = default) where TEntity : class where TKey : notnull'
     parameters:
     - id: entities
       type: System.Collections.Generic.IEnumerable{{TEntity}}
@@ -115,6 +118,9 @@ items:
     - id: filter
       type: System.Linq.Expressions.Expression{System.Func{{TEntity},System.Boolean}}
       description: An optional filter predicate to apply to the database entities.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: A token to monitor for cancellation requests.
     typeParameters:
     - id: TEntity
       description: The type of the entity.
@@ -122,24 +128,24 @@ items:
       description: The type of the key used to uniquely identify entities.
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
-    content.vb: Function AddOrUpdateFromListAsync(Of TEntity As Class, TKey)(entities As IEnumerable(Of TEntity), keySelector As Func(Of TEntity, TKey), filter As Expression(Of Func(Of TEntity, Boolean)) = Nothing) As Task(Of IResult)
+    content.vb: Function AddOrUpdateFromListAsync(Of TEntity As Class, TKey)(entities As IEnumerable(Of TEntity), keySelector As Func(Of TEntity, TKey), filter As Expression(Of Func(Of TEntity, Boolean)) = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of IResult)
   overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrUpdateFromListAsync*
-  nameWithType.vb: IDbContextWithListCommands.AddOrUpdateFromListAsync(Of TEntity, TKey)(IEnumerable(Of TEntity), Func(Of TEntity, TKey), Expression(Of Func(Of TEntity, Boolean)))
-  fullName.vb: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrUpdateFromListAsync(Of TEntity, TKey)(System.Collections.Generic.IEnumerable(Of TEntity), System.Func(Of TEntity, TKey), System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)))
-  name.vb: AddOrUpdateFromListAsync(Of TEntity, TKey)(IEnumerable(Of TEntity), Func(Of TEntity, TKey), Expression(Of Func(Of TEntity, Boolean)))
-- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrRemoveFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
-  commentId: M:NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrRemoveFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
-  id: AddOrRemoveFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})
+  nameWithType.vb: IDbContextWithListCommands.AddOrUpdateFromListAsync(Of TEntity, TKey)(IEnumerable(Of TEntity), Func(Of TEntity, TKey), Expression(Of Func(Of TEntity, Boolean)), CancellationToken)
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrUpdateFromListAsync(Of TEntity, TKey)(System.Collections.Generic.IEnumerable(Of TEntity), System.Func(Of TEntity, TKey), System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)), System.Threading.CancellationToken)
+  name.vb: AddOrUpdateFromListAsync(Of TEntity, TKey)(IEnumerable(Of TEntity), Func(Of TEntity, TKey), Expression(Of Func(Of TEntity, Boolean)), CancellationToken)
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrRemoveFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrRemoveFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)
+  id: AddOrRemoveFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)
   parent: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands
   langs:
   - csharp
   - vb
-  name: AddOrRemoveFromListAsync<TEntity, TKey>(IEnumerable<TEntity>, Func<TEntity, TKey>, Expression<Func<TEntity, bool>>?)
-  nameWithType: IDbContextWithListCommands.AddOrRemoveFromListAsync<TEntity, TKey>(IEnumerable<TEntity>, Func<TEntity, TKey>, Expression<Func<TEntity, bool>>?)
-  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrRemoveFromListAsync<TEntity, TKey>(System.Collections.Generic.IEnumerable<TEntity>, System.Func<TEntity, TKey>, System.Linq.Expressions.Expression<System.Func<TEntity, bool>>?)
+  name: AddOrRemoveFromListAsync<TEntity, TKey>(IEnumerable<TEntity>, Func<TEntity, TKey>, Expression<Func<TEntity, bool>>?, CancellationToken)
+  nameWithType: IDbContextWithListCommands.AddOrRemoveFromListAsync<TEntity, TKey>(IEnumerable<TEntity>, Func<TEntity, TKey>, Expression<Func<TEntity, bool>>?, CancellationToken)
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrRemoveFromListAsync<TEntity, TKey>(System.Collections.Generic.IEnumerable<TEntity>, System.Func<TEntity, TKey>, System.Linq.Expressions.Expression<System.Func<TEntity, bool>>?, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/92b78492c8c296e07b2714393509db4f8584826c/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextWithListCommands.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextWithListCommands.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
@@ -156,7 +162,7 @@ items:
         o =&gt; o.IsPending
     );
   syntax:
-    content: 'Task<IResult> AddOrRemoveFromListAsync<TEntity, TKey>(IEnumerable<TEntity> entities, Func<TEntity, TKey> keySelector, Expression<Func<TEntity, bool>>? filter = null) where TEntity : class where TKey : notnull'
+    content: 'Task<IResult> AddOrRemoveFromListAsync<TEntity, TKey>(IEnumerable<TEntity> entities, Func<TEntity, TKey> keySelector, Expression<Func<TEntity, bool>>? filter = null, CancellationToken cancellationToken = default) where TEntity : class where TKey : notnull'
     parameters:
     - id: entities
       type: System.Collections.Generic.IEnumerable{{TEntity}}
@@ -167,6 +173,9 @@ items:
     - id: filter
       type: System.Linq.Expressions.Expression{System.Func{{TEntity},System.Boolean}}
       description: An optional filter predicate to apply to the database entities.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: A token to monitor for cancellation requests.
     typeParameters:
     - id: TEntity
       description: The type of the entity.
@@ -174,11 +183,11 @@ items:
       description: The type of the key used to uniquely identify entities.
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
-    content.vb: Function AddOrRemoveFromListAsync(Of TEntity As Class, TKey)(entities As IEnumerable(Of TEntity), keySelector As Func(Of TEntity, TKey), filter As Expression(Of Func(Of TEntity, Boolean)) = Nothing) As Task(Of IResult)
+    content.vb: Function AddOrRemoveFromListAsync(Of TEntity As Class, TKey)(entities As IEnumerable(Of TEntity), keySelector As Func(Of TEntity, TKey), filter As Expression(Of Func(Of TEntity, Boolean)) = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of IResult)
   overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrRemoveFromListAsync*
-  nameWithType.vb: IDbContextWithListCommands.AddOrRemoveFromListAsync(Of TEntity, TKey)(IEnumerable(Of TEntity), Func(Of TEntity, TKey), Expression(Of Func(Of TEntity, Boolean)))
-  fullName.vb: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrRemoveFromListAsync(Of TEntity, TKey)(System.Collections.Generic.IEnumerable(Of TEntity), System.Func(Of TEntity, TKey), System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)))
-  name.vb: AddOrRemoveFromListAsync(Of TEntity, TKey)(IEnumerable(Of TEntity), Func(Of TEntity, TKey), Expression(Of Func(Of TEntity, Boolean)))
+  nameWithType.vb: IDbContextWithListCommands.AddOrRemoveFromListAsync(Of TEntity, TKey)(IEnumerable(Of TEntity), Func(Of TEntity, TKey), Expression(Of Func(Of TEntity, Boolean)), CancellationToken)
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrRemoveFromListAsync(Of TEntity, TKey)(System.Collections.Generic.IEnumerable(Of TEntity), System.Func(Of TEntity, TKey), System.Linq.Expressions.Expression(Of System.Func(Of TEntity, Boolean)), System.Threading.CancellationToken)
+  name.vb: AddOrRemoveFromListAsync(Of TEntity, TKey)(IEnumerable(Of TEntity), Func(Of TEntity, TKey), Expression(Of Func(Of TEntity, Boolean)), CancellationToken)
 references:
 - uid: NuvTools.Data.EntityFrameworkCore.Context
   commentId: N:NuvTools.Data.EntityFrameworkCore.Context
@@ -230,7 +239,7 @@ references:
 - uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.SyncFromListAsync*
   commentId: Overload:NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.SyncFromListAsync
   isExternal: true
-  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.html#NuvTools_Data_EntityFrameworkCore_Context_IDbContextWithListCommands_SyncFromListAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___
+  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.html#NuvTools_Data_EntityFrameworkCore_Context_IDbContextWithListCommands_SyncFromListAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken_
   name: SyncFromListAsync
   nameWithType: IDbContextWithListCommands.SyncFromListAsync
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.SyncFromListAsync
@@ -353,6 +362,14 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   - name: )
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
 - uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
   commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
   parent: System.Threading.Tasks
@@ -557,6 +574,33 @@ references:
     name: Expressions
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.linq.expressions
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
 - uid: System.Threading.Tasks.Task`1
   commentId: T:System.Threading.Tasks.Task`1
   isExternal: true
@@ -625,14 +669,14 @@ references:
 - uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrUpdateFromListAsync*
   commentId: Overload:NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrUpdateFromListAsync
   isExternal: true
-  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.html#NuvTools_Data_EntityFrameworkCore_Context_IDbContextWithListCommands_AddOrUpdateFromListAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___
+  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.html#NuvTools_Data_EntityFrameworkCore_Context_IDbContextWithListCommands_AddOrUpdateFromListAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken_
   name: AddOrUpdateFromListAsync
   nameWithType: IDbContextWithListCommands.AddOrUpdateFromListAsync
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrUpdateFromListAsync
 - uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrRemoveFromListAsync*
   commentId: Overload:NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrRemoveFromListAsync
   isExternal: true
-  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.html#NuvTools_Data_EntityFrameworkCore_Context_IDbContextWithListCommands_AddOrRemoveFromListAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___
+  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.html#NuvTools_Data_EntityFrameworkCore_Context_IDbContextWithListCommands_AddOrRemoveFromListAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken_
   name: AddOrRemoveFromListAsync
   nameWithType: IDbContextWithListCommands.AddOrRemoveFromListAsync
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.AddOrRemoveFromListAsync

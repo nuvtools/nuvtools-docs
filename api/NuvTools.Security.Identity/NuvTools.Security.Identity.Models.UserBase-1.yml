@@ -21,7 +21,7 @@ items:
   fullName: NuvTools.Security.Identity.Models.UserBase<TKey>
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/8a28a4078171d44e3ffb8b500dad5a246ce64df4/src/NuvTools.Security.Identity.Models/UserBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
@@ -70,7 +70,7 @@ items:
   fullName: NuvTools.Security.Identity.Models.UserBase<TKey>.UserBase()
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/8a28a4078171d44e3ffb8b500dad5a246ce64df4/src/NuvTools.Security.Identity.Models/UserBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
@@ -93,10 +93,11 @@ items:
   fullName: NuvTools.Security.Identity.Models.UserBase<TKey>.Email
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/8a28a4078171d44e3ffb8b500dad5a246ce64df4/src/NuvTools.Security.Identity.Models/UserBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
+  summary: Gets or sets the email address for this user.
   example: []
   syntax:
     content: >-
@@ -181,7 +182,7 @@ items:
   fullName: NuvTools.Security.Identity.Models.UserBase<TKey>.Name
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/8a28a4078171d44e3ffb8b500dad5a246ce64df4/src/NuvTools.Security.Identity.Models/UserBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
@@ -239,7 +240,7 @@ items:
   fullName: NuvTools.Security.Identity.Models.UserBase<TKey>.Surname
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/8a28a4078171d44e3ffb8b500dad5a246ce64df4/src/NuvTools.Security.Identity.Models/UserBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
@@ -297,7 +298,7 @@ items:
   fullName: NuvTools.Security.Identity.Models.UserBase<TKey>.Status
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/8a28a4078171d44e3ffb8b500dad5a246ce64df4/src/NuvTools.Security.Identity.Models/UserBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
@@ -339,7 +340,7 @@ items:
   fullName: NuvTools.Security.Identity.Models.UserBase<TKey>.Password
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/8a28a4078171d44e3ffb8b500dad5a246ce64df4/src/NuvTools.Security.Identity.Models/UserBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
@@ -355,6 +356,12 @@ items:
 
       [MinLength(6, ErrorMessageResourceName = "XMustHaveAtLeastYCharacters", ErrorMessageResourceType = typeof(DynamicValidationMessages))]
 
+      [PasswordComplexityCapitalLetters(1)]
+
+      [PasswordComplexityLowerCaseLetters(1)]
+
+      [PasswordComplexityDigits(1)]
+
       public virtual string? Password { get; set; }
     parameters: []
     return:
@@ -369,6 +376,12 @@ items:
       <MaxLength(40, ErrorMessageResourceName:="XMustHaveUpToYCharacters", ErrorMessageResourceType:=GetType(DynamicValidationMessages))>
 
       <MinLength(6, ErrorMessageResourceName:="XMustHaveAtLeastYCharacters", ErrorMessageResourceType:=GetType(DynamicValidationMessages))>
+
+      <PasswordComplexityCapitalLetters(1)>
+
+      <PasswordComplexityLowerCaseLetters(1)>
+
+      <PasswordComplexityDigits(1)>
 
       Public Overridable Property Password As String
   overload: NuvTools.Security.Identity.Models.UserBase`1.Password*
@@ -420,6 +433,21 @@ items:
     - name: ErrorMessageResourceType
       type: System.Type
       value: NuvTools.Resources.DynamicValidationMessages
+  - type: NuvTools.Validation.Annotations.PasswordComplexityCapitalLettersAttribute
+    ctor: NuvTools.Validation.Annotations.PasswordComplexityCapitalLettersAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 1
+  - type: NuvTools.Validation.Annotations.PasswordComplexityLowerCaseLettersAttribute
+    ctor: NuvTools.Validation.Annotations.PasswordComplexityLowerCaseLettersAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 1
+  - type: NuvTools.Validation.Annotations.PasswordComplexityDigitsAttribute
+    ctor: NuvTools.Validation.Annotations.PasswordComplexityDigitsAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 1
   nameWithType.vb: UserBase(Of TKey).Password
   fullName.vb: NuvTools.Security.Identity.Models.UserBase(Of TKey).Password
 - uid: NuvTools.Security.Identity.Models.UserBase`1.RefreshToken
@@ -434,7 +462,7 @@ items:
   fullName: NuvTools.Security.Identity.Models.UserBase<TKey>.RefreshToken
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/8a28a4078171d44e3ffb8b500dad5a246ce64df4/src/NuvTools.Security.Identity.Models/UserBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
@@ -469,7 +497,7 @@ items:
   fullName: NuvTools.Security.Identity.Models.UserBase<TKey>.RefreshTokenExpiryTime
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/8a28a4078171d44e3ffb8b500dad5a246ce64df4/src/NuvTools.Security.Identity.Models/UserBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models

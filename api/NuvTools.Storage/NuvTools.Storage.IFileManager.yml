@@ -5,13 +5,14 @@ items:
   id: IFileManager
   parent: NuvTools.Storage
   children:
-  - NuvTools.Storage.IFileManager.AddFileAsync(NuvTools.Storage.IFile[])
-  - NuvTools.Storage.IFileManager.AddFileAsync(System.String,NuvTools.Storage.IFile[])
-  - NuvTools.Storage.IFileManager.FileExistsAsync(System.String)
+  - NuvTools.Storage.IFileManager.AddFileAsync(NuvTools.Storage.IFile,System.String,System.Threading.CancellationToken)
+  - NuvTools.Storage.IFileManager.AddFilesAsync(NuvTools.Storage.IFile[],System.Threading.CancellationToken)
+  - NuvTools.Storage.IFileManager.AddFilesAsync(System.String,NuvTools.Storage.IFile[],System.Threading.CancellationToken)
+  - NuvTools.Storage.IFileManager.FileExistsAsync(System.String,System.Threading.CancellationToken)
   - NuvTools.Storage.IFileManager.GetAccessRepositoryUri(NuvTools.Storage.AccessPermissions)
-  - NuvTools.Storage.IFileManager.GetFileAsync(System.String,System.Boolean)
-  - NuvTools.Storage.IFileManager.GetFilesAsync(System.Nullable{System.Int32})
-  - NuvTools.Storage.IFileManager.RemoveFileAsync(System.String)
+  - NuvTools.Storage.IFileManager.GetFileAsync(System.String,System.Boolean,System.Threading.CancellationToken)
+  - NuvTools.Storage.IFileManager.GetFilesAsync(System.Nullable{System.Int32},System.Threading.CancellationToken)
+  - NuvTools.Storage.IFileManager.RemoveFileAsync(System.String,System.Threading.CancellationToken)
   langs:
   - csharp
   - vb
@@ -20,127 +21,167 @@ items:
   fullName: NuvTools.Storage.IFileManager
   type: Interface
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/b8b17ac9bcb9c1e3649ce991d43cac3dc31964d0/src/NuvTools.Storage/IFileManager.cs
   assemblies:
   - NuvTools.Storage
   namespace: NuvTools.Storage
   syntax:
     content: public interface IFileManager
     content.vb: Public Interface IFileManager
-- uid: NuvTools.Storage.IFileManager.AddFileAsync(System.String,NuvTools.Storage.IFile[])
-  commentId: M:NuvTools.Storage.IFileManager.AddFileAsync(System.String,NuvTools.Storage.IFile[])
-  id: AddFileAsync(System.String,NuvTools.Storage.IFile[])
+- uid: NuvTools.Storage.IFileManager.AddFileAsync(NuvTools.Storage.IFile,System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Storage.IFileManager.AddFileAsync(NuvTools.Storage.IFile,System.String,System.Threading.CancellationToken)
+  id: AddFileAsync(NuvTools.Storage.IFile,System.String,System.Threading.CancellationToken)
   parent: NuvTools.Storage.IFileManager
   langs:
   - csharp
   - vb
-  name: AddFileAsync(string, params IFile[])
-  nameWithType: IFileManager.AddFileAsync(string, params IFile[])
-  fullName: NuvTools.Storage.IFileManager.AddFileAsync(string, params NuvTools.Storage.IFile[])
+  name: AddFileAsync(IFile, string?, CancellationToken)
+  nameWithType: IFileManager.AddFileAsync(IFile, string?, CancellationToken)
+  fullName: NuvTools.Storage.IFileManager.AddFileAsync(NuvTools.Storage.IFile, string?, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/b8b17ac9bcb9c1e3649ce991d43cac3dc31964d0/src/NuvTools.Storage/IFileManager.cs
   assemblies:
   - NuvTools.Storage
   namespace: NuvTools.Storage
   syntax:
-    content: Task<IReadOnlyList<IFile>> AddFileAsync(string rootDir, params IFile[] files)
+    content: Task<IFile> AddFileAsync(IFile file, string? rootDir = null, CancellationToken cancellationToken = default)
+    parameters:
+    - id: file
+      type: NuvTools.Storage.IFile
+    - id: rootDir
+      type: System.String
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Storage.IFile}
+    content.vb: Function AddFileAsync(file As IFile, rootDir As String = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of IFile)
+  overload: NuvTools.Storage.IFileManager.AddFileAsync*
+  nameWithType.vb: IFileManager.AddFileAsync(IFile, String, CancellationToken)
+  fullName.vb: NuvTools.Storage.IFileManager.AddFileAsync(NuvTools.Storage.IFile, String, System.Threading.CancellationToken)
+  name.vb: AddFileAsync(IFile, String, CancellationToken)
+- uid: NuvTools.Storage.IFileManager.AddFilesAsync(System.String,NuvTools.Storage.IFile[],System.Threading.CancellationToken)
+  commentId: M:NuvTools.Storage.IFileManager.AddFilesAsync(System.String,NuvTools.Storage.IFile[],System.Threading.CancellationToken)
+  id: AddFilesAsync(System.String,NuvTools.Storage.IFile[],System.Threading.CancellationToken)
+  parent: NuvTools.Storage.IFileManager
+  langs:
+  - csharp
+  - vb
+  name: AddFilesAsync(string, IFile[], CancellationToken)
+  nameWithType: IFileManager.AddFilesAsync(string, IFile[], CancellationToken)
+  fullName: NuvTools.Storage.IFileManager.AddFilesAsync(string, NuvTools.Storage.IFile[], System.Threading.CancellationToken)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-storage/blob/b8b17ac9bcb9c1e3649ce991d43cac3dc31964d0/src/NuvTools.Storage/IFileManager.cs
+  assemblies:
+  - NuvTools.Storage
+  namespace: NuvTools.Storage
+  syntax:
+    content: Task<IReadOnlyList<IFile>> AddFilesAsync(string rootDir, IFile[] files, CancellationToken cancellationToken = default)
     parameters:
     - id: rootDir
       type: System.String
     - id: files
       type: NuvTools.Storage.IFile[]
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
     return:
       type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{NuvTools.Storage.IFile}}
-    content.vb: Function AddFileAsync(rootDir As String, ParamArray files As IFile()) As Task(Of IReadOnlyList(Of IFile))
-  overload: NuvTools.Storage.IFileManager.AddFileAsync*
-  nameWithType.vb: IFileManager.AddFileAsync(String, ParamArray IFile())
-  fullName.vb: NuvTools.Storage.IFileManager.AddFileAsync(String, ParamArray NuvTools.Storage.IFile())
-  name.vb: AddFileAsync(String, ParamArray IFile())
-- uid: NuvTools.Storage.IFileManager.AddFileAsync(NuvTools.Storage.IFile[])
-  commentId: M:NuvTools.Storage.IFileManager.AddFileAsync(NuvTools.Storage.IFile[])
-  id: AddFileAsync(NuvTools.Storage.IFile[])
+    content.vb: Function AddFilesAsync(rootDir As String, files As IFile(), cancellationToken As CancellationToken = Nothing) As Task(Of IReadOnlyList(Of IFile))
+  overload: NuvTools.Storage.IFileManager.AddFilesAsync*
+  nameWithType.vb: IFileManager.AddFilesAsync(String, IFile(), CancellationToken)
+  fullName.vb: NuvTools.Storage.IFileManager.AddFilesAsync(String, NuvTools.Storage.IFile(), System.Threading.CancellationToken)
+  name.vb: AddFilesAsync(String, IFile(), CancellationToken)
+- uid: NuvTools.Storage.IFileManager.AddFilesAsync(NuvTools.Storage.IFile[],System.Threading.CancellationToken)
+  commentId: M:NuvTools.Storage.IFileManager.AddFilesAsync(NuvTools.Storage.IFile[],System.Threading.CancellationToken)
+  id: AddFilesAsync(NuvTools.Storage.IFile[],System.Threading.CancellationToken)
   parent: NuvTools.Storage.IFileManager
   langs:
   - csharp
   - vb
-  name: AddFileAsync(params IFile[])
-  nameWithType: IFileManager.AddFileAsync(params IFile[])
-  fullName: NuvTools.Storage.IFileManager.AddFileAsync(params NuvTools.Storage.IFile[])
+  name: AddFilesAsync(IFile[], CancellationToken)
+  nameWithType: IFileManager.AddFilesAsync(IFile[], CancellationToken)
+  fullName: NuvTools.Storage.IFileManager.AddFilesAsync(NuvTools.Storage.IFile[], System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/b8b17ac9bcb9c1e3649ce991d43cac3dc31964d0/src/NuvTools.Storage/IFileManager.cs
   assemblies:
   - NuvTools.Storage
   namespace: NuvTools.Storage
   syntax:
-    content: Task<IReadOnlyList<IFile>> AddFileAsync(params IFile[] files)
+    content: Task<IReadOnlyList<IFile>> AddFilesAsync(IFile[] files, CancellationToken cancellationToken = default)
     parameters:
     - id: files
       type: NuvTools.Storage.IFile[]
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
     return:
       type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{NuvTools.Storage.IFile}}
-    content.vb: Function AddFileAsync(ParamArray files As IFile()) As Task(Of IReadOnlyList(Of IFile))
-  overload: NuvTools.Storage.IFileManager.AddFileAsync*
-  nameWithType.vb: IFileManager.AddFileAsync(ParamArray IFile())
-  fullName.vb: NuvTools.Storage.IFileManager.AddFileAsync(ParamArray NuvTools.Storage.IFile())
-  name.vb: AddFileAsync(ParamArray IFile())
-- uid: NuvTools.Storage.IFileManager.FileExistsAsync(System.String)
-  commentId: M:NuvTools.Storage.IFileManager.FileExistsAsync(System.String)
-  id: FileExistsAsync(System.String)
+    content.vb: Function AddFilesAsync(files As IFile(), cancellationToken As CancellationToken = Nothing) As Task(Of IReadOnlyList(Of IFile))
+  overload: NuvTools.Storage.IFileManager.AddFilesAsync*
+  nameWithType.vb: IFileManager.AddFilesAsync(IFile(), CancellationToken)
+  fullName.vb: NuvTools.Storage.IFileManager.AddFilesAsync(NuvTools.Storage.IFile(), System.Threading.CancellationToken)
+  name.vb: AddFilesAsync(IFile(), CancellationToken)
+- uid: NuvTools.Storage.IFileManager.FileExistsAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Storage.IFileManager.FileExistsAsync(System.String,System.Threading.CancellationToken)
+  id: FileExistsAsync(System.String,System.Threading.CancellationToken)
   parent: NuvTools.Storage.IFileManager
   langs:
   - csharp
   - vb
-  name: FileExistsAsync(string)
-  nameWithType: IFileManager.FileExistsAsync(string)
-  fullName: NuvTools.Storage.IFileManager.FileExistsAsync(string)
+  name: FileExistsAsync(string, CancellationToken)
+  nameWithType: IFileManager.FileExistsAsync(string, CancellationToken)
+  fullName: NuvTools.Storage.IFileManager.FileExistsAsync(string, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/b8b17ac9bcb9c1e3649ce991d43cac3dc31964d0/src/NuvTools.Storage/IFileManager.cs
   assemblies:
   - NuvTools.Storage
   namespace: NuvTools.Storage
   syntax:
-    content: Task<bool> FileExistsAsync(string id)
+    content: Task<bool> FileExistsAsync(string id, CancellationToken cancellationToken = default)
     parameters:
     - id: id
       type: System.String
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
     return:
       type: System.Threading.Tasks.Task{System.Boolean}
-    content.vb: Function FileExistsAsync(id As String) As Task(Of Boolean)
+    content.vb: Function FileExistsAsync(id As String, cancellationToken As CancellationToken = Nothing) As Task(Of Boolean)
   overload: NuvTools.Storage.IFileManager.FileExistsAsync*
-  nameWithType.vb: IFileManager.FileExistsAsync(String)
-  fullName.vb: NuvTools.Storage.IFileManager.FileExistsAsync(String)
-  name.vb: FileExistsAsync(String)
-- uid: NuvTools.Storage.IFileManager.RemoveFileAsync(System.String)
-  commentId: M:NuvTools.Storage.IFileManager.RemoveFileAsync(System.String)
-  id: RemoveFileAsync(System.String)
+  nameWithType.vb: IFileManager.FileExistsAsync(String, CancellationToken)
+  fullName.vb: NuvTools.Storage.IFileManager.FileExistsAsync(String, System.Threading.CancellationToken)
+  name.vb: FileExistsAsync(String, CancellationToken)
+- uid: NuvTools.Storage.IFileManager.RemoveFileAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Storage.IFileManager.RemoveFileAsync(System.String,System.Threading.CancellationToken)
+  id: RemoveFileAsync(System.String,System.Threading.CancellationToken)
   parent: NuvTools.Storage.IFileManager
   langs:
   - csharp
   - vb
-  name: RemoveFileAsync(string)
-  nameWithType: IFileManager.RemoveFileAsync(string)
-  fullName: NuvTools.Storage.IFileManager.RemoveFileAsync(string)
+  name: RemoveFileAsync(string, CancellationToken)
+  nameWithType: IFileManager.RemoveFileAsync(string, CancellationToken)
+  fullName: NuvTools.Storage.IFileManager.RemoveFileAsync(string, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/b8b17ac9bcb9c1e3649ce991d43cac3dc31964d0/src/NuvTools.Storage/IFileManager.cs
   assemblies:
   - NuvTools.Storage
   namespace: NuvTools.Storage
   syntax:
-    content: Task RemoveFileAsync(string id)
+    content: Task RemoveFileAsync(string id, CancellationToken cancellationToken = default)
     parameters:
     - id: id
       type: System.String
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
     return:
       type: System.Threading.Tasks.Task
-    content.vb: Function RemoveFileAsync(id As String) As Task
+    content.vb: Function RemoveFileAsync(id As String, cancellationToken As CancellationToken = Nothing) As Task
   overload: NuvTools.Storage.IFileManager.RemoveFileAsync*
-  nameWithType.vb: IFileManager.RemoveFileAsync(String)
-  fullName.vb: NuvTools.Storage.IFileManager.RemoveFileAsync(String)
-  name.vb: RemoveFileAsync(String)
+  nameWithType.vb: IFileManager.RemoveFileAsync(String, CancellationToken)
+  fullName.vb: NuvTools.Storage.IFileManager.RemoveFileAsync(String, System.Threading.CancellationToken)
+  name.vb: RemoveFileAsync(String, CancellationToken)
 - uid: NuvTools.Storage.IFileManager.GetAccessRepositoryUri(NuvTools.Storage.AccessPermissions)
   commentId: M:NuvTools.Storage.IFileManager.GetAccessRepositoryUri(NuvTools.Storage.AccessPermissions)
   id: GetAccessRepositoryUri(NuvTools.Storage.AccessPermissions)
@@ -153,7 +194,7 @@ items:
   fullName: NuvTools.Storage.IFileManager.GetAccessRepositoryUri(NuvTools.Storage.AccessPermissions)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/b8b17ac9bcb9c1e3649ce991d43cac3dc31964d0/src/NuvTools.Storage/IFileManager.cs
   assemblies:
   - NuvTools.Storage
   namespace: NuvTools.Storage
@@ -166,64 +207,68 @@ items:
       type: System.Uri
     content.vb: Function GetAccessRepositoryUri(permissions As AccessPermissions = AccessPermissions.Read) As Uri
   overload: NuvTools.Storage.IFileManager.GetAccessRepositoryUri*
-- uid: NuvTools.Storage.IFileManager.GetFilesAsync(System.Nullable{System.Int32})
-  commentId: M:NuvTools.Storage.IFileManager.GetFilesAsync(System.Nullable{System.Int32})
-  id: GetFilesAsync(System.Nullable{System.Int32})
+- uid: NuvTools.Storage.IFileManager.GetFilesAsync(System.Nullable{System.Int32},System.Threading.CancellationToken)
+  commentId: M:NuvTools.Storage.IFileManager.GetFilesAsync(System.Nullable{System.Int32},System.Threading.CancellationToken)
+  id: GetFilesAsync(System.Nullable{System.Int32},System.Threading.CancellationToken)
   parent: NuvTools.Storage.IFileManager
   langs:
   - csharp
   - vb
-  name: GetFilesAsync(int?)
-  nameWithType: IFileManager.GetFilesAsync(int?)
-  fullName: NuvTools.Storage.IFileManager.GetFilesAsync(int?)
+  name: GetFilesAsync(int?, CancellationToken)
+  nameWithType: IFileManager.GetFilesAsync(int?, CancellationToken)
+  fullName: NuvTools.Storage.IFileManager.GetFilesAsync(int?, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/b8b17ac9bcb9c1e3649ce991d43cac3dc31964d0/src/NuvTools.Storage/IFileManager.cs
   assemblies:
   - NuvTools.Storage
   namespace: NuvTools.Storage
   syntax:
-    content: Task<IReadOnlyList<IFile>> GetFilesAsync(int? pageSize)
+    content: Task<IReadOnlyList<IFile>> GetFilesAsync(int? pageSize, CancellationToken cancellationToken = default)
     parameters:
     - id: pageSize
       type: System.Nullable{System.Int32}
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
     return:
       type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{NuvTools.Storage.IFile}}
-    content.vb: Function GetFilesAsync(pageSize As Integer?) As Task(Of IReadOnlyList(Of IFile))
+    content.vb: Function GetFilesAsync(pageSize As Integer?, cancellationToken As CancellationToken = Nothing) As Task(Of IReadOnlyList(Of IFile))
   overload: NuvTools.Storage.IFileManager.GetFilesAsync*
-  nameWithType.vb: IFileManager.GetFilesAsync(Integer?)
-  fullName.vb: NuvTools.Storage.IFileManager.GetFilesAsync(Integer?)
-  name.vb: GetFilesAsync(Integer?)
-- uid: NuvTools.Storage.IFileManager.GetFileAsync(System.String,System.Boolean)
-  commentId: M:NuvTools.Storage.IFileManager.GetFileAsync(System.String,System.Boolean)
-  id: GetFileAsync(System.String,System.Boolean)
+  nameWithType.vb: IFileManager.GetFilesAsync(Integer?, CancellationToken)
+  fullName.vb: NuvTools.Storage.IFileManager.GetFilesAsync(Integer?, System.Threading.CancellationToken)
+  name.vb: GetFilesAsync(Integer?, CancellationToken)
+- uid: NuvTools.Storage.IFileManager.GetFileAsync(System.String,System.Boolean,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Storage.IFileManager.GetFileAsync(System.String,System.Boolean,System.Threading.CancellationToken)
+  id: GetFileAsync(System.String,System.Boolean,System.Threading.CancellationToken)
   parent: NuvTools.Storage.IFileManager
   langs:
   - csharp
   - vb
-  name: GetFileAsync(string, bool)
-  nameWithType: IFileManager.GetFileAsync(string, bool)
-  fullName: NuvTools.Storage.IFileManager.GetFileAsync(string, bool)
+  name: GetFileAsync(string, bool, CancellationToken)
+  nameWithType: IFileManager.GetFileAsync(string, bool, CancellationToken)
+  fullName: NuvTools.Storage.IFileManager.GetFileAsync(string, bool, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/38995a0b3e410768b2a058e0fcfdfbb971a2d525/src/NuvTools.Storage/IFileManager.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/b8b17ac9bcb9c1e3649ce991d43cac3dc31964d0/src/NuvTools.Storage/IFileManager.cs
   assemblies:
   - NuvTools.Storage
   namespace: NuvTools.Storage
   syntax:
-    content: Task<IFile?> GetFileAsync(string id, bool download = false)
+    content: Task<IFile?> GetFileAsync(string id, bool download = false, CancellationToken cancellationToken = default)
     parameters:
     - id: id
       type: System.String
     - id: download
       type: System.Boolean
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
     return:
       type: System.Threading.Tasks.Task{NuvTools.Storage.IFile}
-    content.vb: Function GetFileAsync(id As String, download As Boolean = False) As Task(Of IFile)
+    content.vb: Function GetFileAsync(id As String, download As Boolean = False, cancellationToken As CancellationToken = Nothing) As Task(Of IFile)
   overload: NuvTools.Storage.IFileManager.GetFileAsync*
-  nameWithType.vb: IFileManager.GetFileAsync(String, Boolean)
-  fullName.vb: NuvTools.Storage.IFileManager.GetFileAsync(String, Boolean)
-  name.vb: GetFileAsync(String, Boolean)
+  nameWithType.vb: IFileManager.GetFileAsync(String, Boolean, CancellationToken)
+  fullName.vb: NuvTools.Storage.IFileManager.GetFileAsync(String, Boolean, System.Threading.CancellationToken)
+  name.vb: GetFileAsync(String, Boolean, CancellationToken)
 references:
 - uid: NuvTools.Storage
   commentId: N:NuvTools.Storage
@@ -255,10 +300,18 @@ references:
 - uid: NuvTools.Storage.IFileManager.AddFileAsync*
   commentId: Overload:NuvTools.Storage.IFileManager.AddFileAsync
   isExternal: true
-  href: NuvTools.Storage.IFileManager.html#NuvTools_Storage_IFileManager_AddFileAsync_System_String_NuvTools_Storage_IFile___
+  href: NuvTools.Storage.IFileManager.html#NuvTools_Storage_IFileManager_AddFileAsync_NuvTools_Storage_IFile_System_String_System_Threading_CancellationToken_
   name: AddFileAsync
   nameWithType: IFileManager.AddFileAsync
   fullName: NuvTools.Storage.IFileManager.AddFileAsync
+- uid: NuvTools.Storage.IFile
+  commentId: T:NuvTools.Storage.IFile
+  parent: NuvTools.Storage
+  isExternal: true
+  href: NuvTools.Storage.IFile.html
+  name: IFile
+  nameWithType: IFile
+  fullName: NuvTools.Storage.IFile
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -270,6 +323,155 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{NuvTools.Storage.IFile}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Storage.IFile}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IFile>
+  nameWithType: Task<IFile>
+  fullName: System.Threading.Tasks.Task<NuvTools.Storage.IFile>
+  nameWithType.vb: Task(Of IFile)
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Storage.IFile)
+  name.vb: Task(Of IFile)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Storage.IFile
+    name: IFile
+    isExternal: true
+    href: NuvTools.Storage.IFile.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Storage.IFile
+    name: IFile
+    isExternal: true
+    href: NuvTools.Storage.IFile.html
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NuvTools.Storage.IFileManager.AddFilesAsync*
+  commentId: Overload:NuvTools.Storage.IFileManager.AddFilesAsync
+  isExternal: true
+  href: NuvTools.Storage.IFileManager.html#NuvTools_Storage_IFileManager_AddFilesAsync_System_String_NuvTools_Storage_IFile___System_Threading_CancellationToken_
+  name: AddFilesAsync
+  nameWithType: IFileManager.AddFilesAsync
+  fullName: NuvTools.Storage.IFileManager.AddFilesAsync
 - uid: NuvTools.Storage.IFile[]
   isExternal: true
   href: NuvTools.Storage.IFile.html
@@ -342,82 +544,10 @@ references:
     href: NuvTools.Storage.IFile.html
   - name: )
   - name: )
-- uid: System
-  commentId: N:System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System
-  nameWithType: System
-  fullName: System
-- uid: System.Threading.Tasks.Task`1
-  commentId: T:System.Threading.Tasks.Task`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<TResult>
-  nameWithType: Task<TResult>
-  fullName: System.Threading.Tasks.Task<TResult>
-  nameWithType.vb: Task(Of TResult)
-  fullName.vb: System.Threading.Tasks.Task(Of TResult)
-  name.vb: Task(Of TResult)
-  spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: <
-  - name: TResult
-  - name: '>'
-  spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: TResult
-  - name: )
-- uid: System.Threading.Tasks
-  commentId: N:System.Threading.Tasks
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Threading.Tasks
-  nameWithType: System.Threading.Tasks
-  fullName: System.Threading.Tasks
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Threading
-    name: Threading
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading
-  - name: .
-  - uid: System.Threading.Tasks
-    name: Tasks
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Threading
-    name: Threading
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading
-  - name: .
-  - uid: System.Threading.Tasks
-    name: Tasks
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
 - uid: NuvTools.Storage.IFileManager.FileExistsAsync*
   commentId: Overload:NuvTools.Storage.IFileManager.FileExistsAsync
   isExternal: true
-  href: NuvTools.Storage.IFileManager.html#NuvTools_Storage_IFileManager_FileExistsAsync_System_String_
+  href: NuvTools.Storage.IFileManager.html#NuvTools_Storage_IFileManager_FileExistsAsync_System_String_System_Threading_CancellationToken_
   name: FileExistsAsync
   nameWithType: IFileManager.FileExistsAsync
   fullName: NuvTools.Storage.IFileManager.FileExistsAsync
@@ -459,7 +589,7 @@ references:
 - uid: NuvTools.Storage.IFileManager.RemoveFileAsync*
   commentId: Overload:NuvTools.Storage.IFileManager.RemoveFileAsync
   isExternal: true
-  href: NuvTools.Storage.IFileManager.html#NuvTools_Storage_IFileManager_RemoveFileAsync_System_String_
+  href: NuvTools.Storage.IFileManager.html#NuvTools_Storage_IFileManager_RemoveFileAsync_System_String_System_Threading_CancellationToken_
   name: RemoveFileAsync
   nameWithType: IFileManager.RemoveFileAsync
   fullName: NuvTools.Storage.IFileManager.RemoveFileAsync
@@ -496,7 +626,7 @@ references:
 - uid: NuvTools.Storage.IFileManager.GetFilesAsync*
   commentId: Overload:NuvTools.Storage.IFileManager.GetFilesAsync
   isExternal: true
-  href: NuvTools.Storage.IFileManager.html#NuvTools_Storage_IFileManager_GetFilesAsync_System_Nullable_System_Int32__
+  href: NuvTools.Storage.IFileManager.html#NuvTools_Storage_IFileManager_GetFilesAsync_System_Nullable_System_Int32__System_Threading_CancellationToken_
   name: GetFilesAsync
   nameWithType: IFileManager.GetFilesAsync
   fullName: NuvTools.Storage.IFileManager.GetFilesAsync
@@ -554,7 +684,7 @@ references:
 - uid: NuvTools.Storage.IFileManager.GetFileAsync*
   commentId: Overload:NuvTools.Storage.IFileManager.GetFileAsync
   isExternal: true
-  href: NuvTools.Storage.IFileManager.html#NuvTools_Storage_IFileManager_GetFileAsync_System_String_System_Boolean_
+  href: NuvTools.Storage.IFileManager.html#NuvTools_Storage_IFileManager_GetFileAsync_System_String_System_Boolean_System_Threading_CancellationToken_
   name: GetFileAsync
   nameWithType: IFileManager.GetFileAsync
   fullName: NuvTools.Storage.IFileManager.GetFileAsync
@@ -569,38 +699,3 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: System.Threading.Tasks.Task{NuvTools.Storage.IFile}
-  commentId: T:System.Threading.Tasks.Task{NuvTools.Storage.IFile}
-  parent: System.Threading.Tasks
-  definition: System.Threading.Tasks.Task`1
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<IFile>
-  nameWithType: Task<IFile>
-  fullName: System.Threading.Tasks.Task<NuvTools.Storage.IFile>
-  nameWithType.vb: Task(Of IFile)
-  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Storage.IFile)
-  name.vb: Task(Of IFile)
-  spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: <
-  - uid: NuvTools.Storage.IFile
-    name: IFile
-    isExternal: true
-    href: NuvTools.Storage.IFile.html
-  - name: '>'
-  spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: NuvTools.Storage.IFile
-    name: IFile
-    isExternal: true
-    href: NuvTools.Storage.IFile.html
-  - name: )

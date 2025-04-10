@@ -1,0 +1,784 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1
+  commentId: T:NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1
+  id: FluentValidation`1
+  parent: NuvTools.Validation.AspNetCore.Blazor
+  children:
+  - NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.#ctor(`0,FluentValidation.IValidator{`0},Microsoft.AspNetCore.Components.Forms.EditContext,System.Boolean,System.Boolean)
+  - NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.Validate
+  - NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.ValidateField(Microsoft.AspNetCore.Components.Forms.FieldIdentifier)
+  - NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.ValidateModelAndHighlightInvalidFields
+  langs:
+  - csharp
+  - vb
+  name: FluentValidation<TModel>
+  nameWithType: FluentValidation<TModel>
+  fullName: NuvTools.Validation.AspNetCore.Blazor.FluentValidation<TModel>
+  type: Class
+  source:
+    href: https://github.com/nuvtools/nuvtools-validation/blob/256eedd3a204d87abc3fa4ffdbd9cb4c9e1016b2/src/NuvTools.Validation.AspNetCore.Blazor/FluentValidation.cs
+  assemblies:
+  - NuvTools.Validation.AspNetCore.Blazor
+  namespace: NuvTools.Validation.AspNetCore.Blazor
+  syntax:
+    content: 'public class FluentValidation<TModel> where TModel : class, new()'
+    typeParameters:
+    - id: TModel
+    content.vb: Public Class FluentValidation(Of TModel As {Class, New})
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  extensionMethods:
+  - NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.NuvTools.Validation.Validator.Validate``1
+  nameWithType.vb: FluentValidation(Of TModel)
+  fullName.vb: NuvTools.Validation.AspNetCore.Blazor.FluentValidation(Of TModel)
+  name.vb: FluentValidation(Of TModel)
+- uid: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.#ctor(`0,FluentValidation.IValidator{`0},Microsoft.AspNetCore.Components.Forms.EditContext,System.Boolean,System.Boolean)
+  commentId: M:NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.#ctor(`0,FluentValidation.IValidator{`0},Microsoft.AspNetCore.Components.Forms.EditContext,System.Boolean,System.Boolean)
+  id: '#ctor(`0,FluentValidation.IValidator{`0},Microsoft.AspNetCore.Components.Forms.EditContext,System.Boolean,System.Boolean)'
+  parent: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1
+  langs:
+  - csharp
+  - vb
+  name: FluentValidation(TModel, IValidator<TModel>, EditContext, bool, bool)
+  nameWithType: FluentValidation<TModel>.FluentValidation(TModel, IValidator<TModel>, EditContext, bool, bool)
+  fullName: NuvTools.Validation.AspNetCore.Blazor.FluentValidation<TModel>.FluentValidation(TModel, FluentValidation.IValidator<TModel>, Microsoft.AspNetCore.Components.Forms.EditContext, bool, bool)
+  type: Constructor
+  source:
+    href: https://github.com/nuvtools/nuvtools-validation/blob/256eedd3a204d87abc3fa4ffdbd9cb4c9e1016b2/src/NuvTools.Validation.AspNetCore.Blazor/FluentValidation.cs
+  assemblies:
+  - NuvTools.Validation.AspNetCore.Blazor
+  namespace: NuvTools.Validation.AspNetCore.Blazor
+  syntax:
+    content: public FluentValidation(TModel model, IValidator<TModel> validator, EditContext editContext, bool autoValidationOnRequested = true, bool autoValidationOnFieldChanged = true)
+    parameters:
+    - id: model
+      type: '{TModel}'
+    - id: validator
+      type: FluentValidation.IValidator{{TModel}}
+    - id: editContext
+      type: Microsoft.AspNetCore.Components.Forms.EditContext
+    - id: autoValidationOnRequested
+      type: System.Boolean
+    - id: autoValidationOnFieldChanged
+      type: System.Boolean
+    content.vb: Public Sub New(model As TModel, validator As IValidator(Of TModel), editContext As EditContext, autoValidationOnRequested As Boolean = True, autoValidationOnFieldChanged As Boolean = True)
+  overload: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.#ctor*
+  nameWithType.vb: FluentValidation(Of TModel).New(TModel, IValidator(Of TModel), EditContext, Boolean, Boolean)
+  fullName.vb: NuvTools.Validation.AspNetCore.Blazor.FluentValidation(Of TModel).New(TModel, FluentValidation.IValidator(Of TModel), Microsoft.AspNetCore.Components.Forms.EditContext, Boolean, Boolean)
+  name.vb: New(TModel, IValidator(Of TModel), EditContext, Boolean, Boolean)
+- uid: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.Validate
+  commentId: M:NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.Validate
+  id: Validate
+  parent: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1
+  langs:
+  - csharp
+  - vb
+  name: Validate()
+  nameWithType: FluentValidation<TModel>.Validate()
+  fullName: NuvTools.Validation.AspNetCore.Blazor.FluentValidation<TModel>.Validate()
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-validation/blob/256eedd3a204d87abc3fa4ffdbd9cb4c9e1016b2/src/NuvTools.Validation.AspNetCore.Blazor/FluentValidation.cs
+  assemblies:
+  - NuvTools.Validation.AspNetCore.Blazor
+  namespace: NuvTools.Validation.AspNetCore.Blazor
+  summary: Perform validation for the entire model and populate the ValidationMessageStore.
+  example: []
+  syntax:
+    content: public ValidationResult Validate()
+    return:
+      type: FluentValidation.Results.ValidationResult
+      description: The validation result.
+    content.vb: Public Function Validate() As ValidationResult
+  overload: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.Validate*
+  nameWithType.vb: FluentValidation(Of TModel).Validate()
+  fullName.vb: NuvTools.Validation.AspNetCore.Blazor.FluentValidation(Of TModel).Validate()
+- uid: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.ValidateModelAndHighlightInvalidFields
+  commentId: M:NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.ValidateModelAndHighlightInvalidFields
+  id: ValidateModelAndHighlightInvalidFields
+  parent: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1
+  langs:
+  - csharp
+  - vb
+  name: ValidateModelAndHighlightInvalidFields()
+  nameWithType: FluentValidation<TModel>.ValidateModelAndHighlightInvalidFields()
+  fullName: NuvTools.Validation.AspNetCore.Blazor.FluentValidation<TModel>.ValidateModelAndHighlightInvalidFields()
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-validation/blob/256eedd3a204d87abc3fa4ffdbd9cb4c9e1016b2/src/NuvTools.Validation.AspNetCore.Blazor/FluentValidation.cs
+  assemblies:
+  - NuvTools.Validation.AspNetCore.Blazor
+  namespace: NuvTools.Validation.AspNetCore.Blazor
+  summary: Validate the entire model and highlight invalid fields in the UI.
+  example: []
+  syntax:
+    content: public ValidationResult ValidateModelAndHighlightInvalidFields()
+    return:
+      type: FluentValidation.Results.ValidationResult
+      description: The validation result.
+    content.vb: Public Function ValidateModelAndHighlightInvalidFields() As ValidationResult
+  overload: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.ValidateModelAndHighlightInvalidFields*
+  nameWithType.vb: FluentValidation(Of TModel).ValidateModelAndHighlightInvalidFields()
+  fullName.vb: NuvTools.Validation.AspNetCore.Blazor.FluentValidation(Of TModel).ValidateModelAndHighlightInvalidFields()
+- uid: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.ValidateField(Microsoft.AspNetCore.Components.Forms.FieldIdentifier)
+  commentId: M:NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.ValidateField(Microsoft.AspNetCore.Components.Forms.FieldIdentifier)
+  id: ValidateField(Microsoft.AspNetCore.Components.Forms.FieldIdentifier)
+  parent: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1
+  langs:
+  - csharp
+  - vb
+  name: ValidateField(FieldIdentifier)
+  nameWithType: FluentValidation<TModel>.ValidateField(FieldIdentifier)
+  fullName: NuvTools.Validation.AspNetCore.Blazor.FluentValidation<TModel>.ValidateField(Microsoft.AspNetCore.Components.Forms.FieldIdentifier)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-validation/blob/256eedd3a204d87abc3fa4ffdbd9cb4c9e1016b2/src/NuvTools.Validation.AspNetCore.Blazor/FluentValidation.cs
+  assemblies:
+  - NuvTools.Validation.AspNetCore.Blazor
+  namespace: NuvTools.Validation.AspNetCore.Blazor
+  summary: Validate a specific field and update its validation state.
+  example: []
+  syntax:
+    content: public void ValidateField(FieldIdentifier fieldIdentifier)
+    parameters:
+    - id: fieldIdentifier
+      type: Microsoft.AspNetCore.Components.Forms.FieldIdentifier
+      description: The field to validate.
+    content.vb: Public Sub ValidateField(fieldIdentifier As FieldIdentifier)
+  overload: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.ValidateField*
+  nameWithType.vb: FluentValidation(Of TModel).ValidateField(FieldIdentifier)
+  fullName.vb: NuvTools.Validation.AspNetCore.Blazor.FluentValidation(Of TModel).ValidateField(Microsoft.AspNetCore.Components.Forms.FieldIdentifier)
+references:
+- uid: NuvTools.Validation.AspNetCore.Blazor
+  commentId: N:NuvTools.Validation.AspNetCore.Blazor
+  isExternal: true
+  href: NuvTools.html
+  name: NuvTools.Validation.AspNetCore.Blazor
+  nameWithType: NuvTools.Validation.AspNetCore.Blazor
+  fullName: NuvTools.Validation.AspNetCore.Blazor
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Validation
+    name: Validation
+    isExternal: true
+    href: NuvTools.Validation.html
+  - name: .
+  - uid: NuvTools.Validation.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: NuvTools.Validation.AspNetCore.html
+  - name: .
+  - uid: NuvTools.Validation.AspNetCore.Blazor
+    name: Blazor
+    isExternal: true
+    href: NuvTools.Validation.AspNetCore.Blazor.html
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Validation
+    name: Validation
+    isExternal: true
+    href: NuvTools.Validation.html
+  - name: .
+  - uid: NuvTools.Validation.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: NuvTools.Validation.AspNetCore.html
+  - name: .
+  - uid: NuvTools.Validation.AspNetCore.Blazor
+    name: Blazor
+    isExternal: true
+    href: NuvTools.Validation.AspNetCore.Blazor.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.NuvTools.Validation.Validator.Validate``1
+  commentId: M:NuvTools.Validation.Validator.Validate``1(``0)
+  parent: NuvTools.Validation.Validator
+  definition: NuvTools.Validation.Validator.Validate``1(``0)
+  href: NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_Validate__1___0_
+  name: Validate<FluentValidation<TModel>>(FluentValidation<TModel>)
+  nameWithType: Validator.Validate<FluentValidation<TModel>>(FluentValidation<TModel>)
+  fullName: NuvTools.Validation.Validator.Validate<NuvTools.Validation.AspNetCore.Blazor.FluentValidation<TModel>>(NuvTools.Validation.AspNetCore.Blazor.FluentValidation<TModel>)
+  nameWithType.vb: Validator.Validate(Of FluentValidation(Of TModel))(FluentValidation(Of TModel))
+  fullName.vb: NuvTools.Validation.Validator.Validate(Of NuvTools.Validation.AspNetCore.Blazor.FluentValidation(Of TModel))(NuvTools.Validation.AspNetCore.Blazor.FluentValidation(Of TModel))
+  name.vb: Validate(Of FluentValidation(Of TModel))(FluentValidation(Of TModel))
+  spec.csharp:
+  - uid: NuvTools.Validation.Validator.Validate``1(NuvTools.Validation.AspNetCore.Blazor.FluentValidation{`0})
+    name: Validate
+    isExternal: true
+    href: NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_Validate__1___0_
+  - name: <
+  - uid: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1
+    name: FluentValidation
+    isExternal: true
+    href: NuvTools.Validation.AspNetCore.Blazor.FluentValidation-1.html
+  - name: <
+  - name: TModel
+  - name: '>'
+  - name: '>'
+  - name: (
+  - uid: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1
+    name: FluentValidation
+    isExternal: true
+    href: NuvTools.Validation.AspNetCore.Blazor.FluentValidation-1.html
+  - name: <
+  - name: TModel
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Validation.Validator.Validate``1(NuvTools.Validation.AspNetCore.Blazor.FluentValidation{`0})
+    name: Validate
+    isExternal: true
+    href: NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_Validate__1___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1
+    name: FluentValidation
+    isExternal: true
+    href: NuvTools.Validation.AspNetCore.Blazor.FluentValidation-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TModel
+  - name: )
+  - name: )
+  - name: (
+  - uid: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1
+    name: FluentValidation
+    isExternal: true
+    href: NuvTools.Validation.AspNetCore.Blazor.FluentValidation-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TModel
+  - name: )
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NuvTools.Validation.Validator.Validate``1(``0)
+  commentId: M:NuvTools.Validation.Validator.Validate``1(``0)
+  isExternal: true
+  href: NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_Validate__1___0_
+  name: Validate<T>(T)
+  nameWithType: Validator.Validate<T>(T)
+  fullName: NuvTools.Validation.Validator.Validate<T>(T)
+  nameWithType.vb: Validator.Validate(Of T)(T)
+  fullName.vb: NuvTools.Validation.Validator.Validate(Of T)(T)
+  name.vb: Validate(Of T)(T)
+  spec.csharp:
+  - uid: NuvTools.Validation.Validator.Validate``1(``0)
+    name: Validate
+    isExternal: true
+    href: NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_Validate__1___0_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Validation.Validator.Validate``1(``0)
+    name: Validate
+    isExternal: true
+    href: NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_Validate__1___0_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - name: T
+  - name: )
+- uid: NuvTools.Validation.Validator
+  commentId: T:NuvTools.Validation.Validator
+  parent: NuvTools.Validation
+  isExternal: true
+  href: NuvTools.Validation.Validator.html
+  name: Validator
+  nameWithType: Validator
+  fullName: NuvTools.Validation.Validator
+- uid: NuvTools.Validation
+  commentId: N:NuvTools.Validation
+  isExternal: true
+  href: NuvTools.html
+  name: NuvTools.Validation
+  nameWithType: NuvTools.Validation
+  fullName: NuvTools.Validation
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Validation
+    name: Validation
+    isExternal: true
+    href: NuvTools.Validation.html
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Validation
+    name: Validation
+    isExternal: true
+    href: NuvTools.Validation.html
+- uid: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.#ctor*
+  commentId: Overload:NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.#ctor
+  isExternal: true
+  href: NuvTools.Validation.AspNetCore.Blazor.FluentValidation-1.html#NuvTools_Validation_AspNetCore_Blazor_FluentValidation_1__ctor__0_FluentValidation_IValidator__0__Microsoft_AspNetCore_Components_Forms_EditContext_System_Boolean_System_Boolean_
+  name: FluentValidation
+  nameWithType: FluentValidation<TModel>.FluentValidation
+  fullName: NuvTools.Validation.AspNetCore.Blazor.FluentValidation<TModel>.FluentValidation
+  nameWithType.vb: FluentValidation(Of TModel).New
+  fullName.vb: NuvTools.Validation.AspNetCore.Blazor.FluentValidation(Of TModel).New
+  name.vb: New
+- uid: '{TModel}'
+  commentId: '!:TModel'
+  definition: TModel
+  name: TModel
+  nameWithType: TModel
+  fullName: TModel
+- uid: FluentValidation.IValidator{{TModel}}
+  commentId: T:FluentValidation.IValidator{`0}
+  parent: FluentValidation
+  definition: FluentValidation.IValidator`1
+  name: IValidator<TModel>
+  nameWithType: IValidator<TModel>
+  fullName: FluentValidation.IValidator<TModel>
+  nameWithType.vb: IValidator(Of TModel)
+  fullName.vb: FluentValidation.IValidator(Of TModel)
+  name.vb: IValidator(Of TModel)
+  spec.csharp:
+  - uid: FluentValidation.IValidator`1
+    name: IValidator
+    isExternal: true
+  - name: <
+  - name: TModel
+  - name: '>'
+  spec.vb:
+  - uid: FluentValidation.IValidator`1
+    name: IValidator
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TModel
+  - name: )
+- uid: Microsoft.AspNetCore.Components.Forms.EditContext
+  commentId: T:Microsoft.AspNetCore.Components.Forms.EditContext
+  parent: Microsoft.AspNetCore.Components.Forms
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.forms.editcontext
+  name: EditContext
+  nameWithType: EditContext
+  fullName: Microsoft.AspNetCore.Components.Forms.EditContext
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: TModel
+  commentId: '!:TModel'
+  name: TModel
+  nameWithType: TModel
+  fullName: TModel
+- uid: FluentValidation.IValidator`1
+  commentId: T:FluentValidation.IValidator`1
+  isExternal: true
+  name: IValidator<T>
+  nameWithType: IValidator<T>
+  fullName: FluentValidation.IValidator<T>
+  nameWithType.vb: IValidator(Of T)
+  fullName.vb: FluentValidation.IValidator(Of T)
+  name.vb: IValidator(Of T)
+  spec.csharp:
+  - uid: FluentValidation.IValidator`1
+    name: IValidator
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: FluentValidation.IValidator`1
+    name: IValidator
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: FluentValidation
+  commentId: N:FluentValidation
+  isExternal: true
+  name: FluentValidation
+  nameWithType: FluentValidation
+  fullName: FluentValidation
+- uid: Microsoft.AspNetCore.Components.Forms
+  commentId: N:Microsoft.AspNetCore.Components.Forms
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.AspNetCore.Components.Forms
+  nameWithType: Microsoft.AspNetCore.Components.Forms
+  fullName: Microsoft.AspNetCore.Components.Forms
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Components
+    name: Components
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components
+  - name: .
+  - uid: Microsoft.AspNetCore.Components.Forms
+    name: Forms
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.forms
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Components
+    name: Components
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components
+  - name: .
+  - uid: Microsoft.AspNetCore.Components.Forms
+    name: Forms
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.forms
+- uid: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.Validate*
+  commentId: Overload:NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.Validate
+  isExternal: true
+  href: NuvTools.Validation.AspNetCore.Blazor.FluentValidation-1.html#NuvTools_Validation_AspNetCore_Blazor_FluentValidation_1_Validate
+  name: Validate
+  nameWithType: FluentValidation<TModel>.Validate
+  fullName: NuvTools.Validation.AspNetCore.Blazor.FluentValidation<TModel>.Validate
+  nameWithType.vb: FluentValidation(Of TModel).Validate
+  fullName.vb: NuvTools.Validation.AspNetCore.Blazor.FluentValidation(Of TModel).Validate
+- uid: FluentValidation.Results.ValidationResult
+  commentId: T:FluentValidation.Results.ValidationResult
+  parent: FluentValidation.Results
+  isExternal: true
+  name: ValidationResult
+  nameWithType: ValidationResult
+  fullName: FluentValidation.Results.ValidationResult
+- uid: FluentValidation.Results
+  commentId: N:FluentValidation.Results
+  isExternal: true
+  name: FluentValidation.Results
+  nameWithType: FluentValidation.Results
+  fullName: FluentValidation.Results
+  spec.csharp:
+  - uid: FluentValidation
+    name: FluentValidation
+    isExternal: true
+  - name: .
+  - uid: FluentValidation.Results
+    name: Results
+    isExternal: true
+  spec.vb:
+  - uid: FluentValidation
+    name: FluentValidation
+    isExternal: true
+  - name: .
+  - uid: FluentValidation.Results
+    name: Results
+    isExternal: true
+- uid: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.ValidateModelAndHighlightInvalidFields*
+  commentId: Overload:NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.ValidateModelAndHighlightInvalidFields
+  isExternal: true
+  href: NuvTools.Validation.AspNetCore.Blazor.FluentValidation-1.html#NuvTools_Validation_AspNetCore_Blazor_FluentValidation_1_ValidateModelAndHighlightInvalidFields
+  name: ValidateModelAndHighlightInvalidFields
+  nameWithType: FluentValidation<TModel>.ValidateModelAndHighlightInvalidFields
+  fullName: NuvTools.Validation.AspNetCore.Blazor.FluentValidation<TModel>.ValidateModelAndHighlightInvalidFields
+  nameWithType.vb: FluentValidation(Of TModel).ValidateModelAndHighlightInvalidFields
+  fullName.vb: NuvTools.Validation.AspNetCore.Blazor.FluentValidation(Of TModel).ValidateModelAndHighlightInvalidFields
+- uid: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.ValidateField*
+  commentId: Overload:NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.ValidateField
+  isExternal: true
+  href: NuvTools.Validation.AspNetCore.Blazor.FluentValidation-1.html#NuvTools_Validation_AspNetCore_Blazor_FluentValidation_1_ValidateField_Microsoft_AspNetCore_Components_Forms_FieldIdentifier_
+  name: ValidateField
+  nameWithType: FluentValidation<TModel>.ValidateField
+  fullName: NuvTools.Validation.AspNetCore.Blazor.FluentValidation<TModel>.ValidateField
+  nameWithType.vb: FluentValidation(Of TModel).ValidateField
+  fullName.vb: NuvTools.Validation.AspNetCore.Blazor.FluentValidation(Of TModel).ValidateField
+- uid: Microsoft.AspNetCore.Components.Forms.FieldIdentifier
+  commentId: T:Microsoft.AspNetCore.Components.Forms.FieldIdentifier
+  parent: Microsoft.AspNetCore.Components.Forms
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.forms.fieldidentifier
+  name: FieldIdentifier
+  nameWithType: FieldIdentifier
+  fullName: Microsoft.AspNetCore.Components.Forms.FieldIdentifier

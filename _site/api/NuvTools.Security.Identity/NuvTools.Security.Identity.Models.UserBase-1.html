@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Security_Identity_Models_UserBase_1" data-uid="NuvTools.Security.Identity.Models.UserBase`1" class="text-break">
-Class UserBase&lt;TKey&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/8a28a4078171d44e3ffb8b500dad5a246ce64df4/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
+Class UserBase&lt;TKey&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -204,7 +204,7 @@ Class UserBase&lt;TKey&gt;  <a class="header-action link-secondary" title="View 
 
   <h3 id="NuvTools_Security_Identity_Models_UserBase_1__ctor" data-uid="NuvTools.Security.Identity.Models.UserBase`1.#ctor">
   UserBase()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/8a28a4078171d44e3ffb8b500dad5a246ce64df4/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -234,10 +234,11 @@ Class UserBase&lt;TKey&gt;  <a class="header-action link-secondary" title="View 
 
   <h3 id="NuvTools_Security_Identity_Models_UserBase_1_Email" data-uid="NuvTools.Security.Identity.Models.UserBase`1.Email">
   Email
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/8a28a4078171d44e3ffb8b500dad5a246ce64df4/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets the email address for this user.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -269,7 +270,7 @@ public override string? Email { get; set; }</code></pre>
 
   <h3 id="NuvTools_Security_Identity_Models_UserBase_1_Name" data-uid="NuvTools.Security.Identity.Models.UserBase`1.Name">
   Name
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/8a28a4078171d44e3ffb8b500dad5a246ce64df4/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -302,7 +303,7 @@ public virtual string? Name { get; set; }</code></pre>
 
   <h3 id="NuvTools_Security_Identity_Models_UserBase_1_Password" data-uid="NuvTools.Security.Identity.Models.UserBase`1.Password">
   Password
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/8a28a4078171d44e3ffb8b500dad5a246ce64df4/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -314,6 +315,9 @@ public virtual string? Name { get; set; }</code></pre>
 [Required(ErrorMessageResourceName = &quot;XRequired&quot;, ErrorMessageResourceType = typeof(DynamicValidationMessages))]
 [MaxLength(40, ErrorMessageResourceName = &quot;XMustHaveUpToYCharacters&quot;, ErrorMessageResourceType = typeof(DynamicValidationMessages))]
 [MinLength(6, ErrorMessageResourceName = &quot;XMustHaveAtLeastYCharacters&quot;, ErrorMessageResourceType = typeof(DynamicValidationMessages))]
+[PasswordComplexityCapitalLetters(1)]
+[PasswordComplexityLowerCaseLetters(1)]
+[PasswordComplexityDigits(1)]
 public virtual string? Password { get; set; }</code></pre>
   </div>
 
@@ -338,7 +342,7 @@ public virtual string? Password { get; set; }</code></pre>
 
   <h3 id="NuvTools_Security_Identity_Models_UserBase_1_RefreshToken" data-uid="NuvTools.Security.Identity.Models.UserBase`1.RefreshToken">
   RefreshToken
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/8a28a4078171d44e3ffb8b500dad5a246ce64df4/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -370,7 +374,7 @@ public string? RefreshToken { get; set; }</code></pre>
 
   <h3 id="NuvTools_Security_Identity_Models_UserBase_1_RefreshTokenExpiryTime" data-uid="NuvTools.Security.Identity.Models.UserBase`1.RefreshTokenExpiryTime">
   RefreshTokenExpiryTime
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/8a28a4078171d44e3ffb8b500dad5a246ce64df4/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -402,7 +406,7 @@ public DateTime RefreshTokenExpiryTime { get; set; }</code></pre>
 
   <h3 id="NuvTools_Security_Identity_Models_UserBase_1_Status" data-uid="NuvTools.Security.Identity.Models.UserBase`1.Status">
   Status
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/8a28a4078171d44e3ffb8b500dad5a246ce64df4/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -434,7 +438,7 @@ public virtual bool Status { get; set; }</code></pre>
 
   <h3 id="NuvTools_Security_Identity_Models_UserBase_1_Surname" data-uid="NuvTools.Security.Identity.Models.UserBase`1.Surname">
   Surname
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/8a28a4078171d44e3ffb8b500dad5a246ce64df4/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -467,7 +471,7 @@ public virtual string? Surname { get; set; }</code></pre>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-security-identity/blob/8a28a4078171d44e3ffb8b500dad5a246ce64df4/src/NuvTools.Security.Identity.Models/UserBase.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs" class="edit-link">Edit this page</a>
         </div>
 
 
