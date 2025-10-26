@@ -29,39 +29,58 @@ items:
   fullName: NuvTools.Common.ResultWrapper.Result<T>
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/Result.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/Result.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: >-
+    Represents a generic operation result that carries a data payload along with
+
+    success status and message details.
+  remarks: >-
+    This class provides a unified and type-safe way to return both data and
+
+    status information from service or repository operations.
+  example:
+  - >-
+    Example usage:
+
+    <pre><code class="lang-csharp">IResult&lt;UserDto&gt; result = await _userService.GetUserByIdAsync(1);
+
+
+    if (result.Succeeded)
+
+    {
+        Console.WriteLine($"User: {result.Data!.Name}");
+    }
+
+    else
+
+    {
+        logger.LogWarning(result.Message);
+    }</code></pre>
   syntax:
-    content: 'public class Result<T> : Result, IResult<T>, IResult'
+    content: 'public class Result<T> : ResultBase, IResult<T>, IResult'
     typeParameters:
     - id: T
-    content.vb: Public Class Result(Of T) Inherits Result Implements IResult(Of T), IResult
+      description: The type of data returned by the operation.
+    content.vb: Public Class Result(Of T) Inherits ResultBase Implements IResult(Of T), IResult
   inheritance:
   - System.Object
-  - NuvTools.Common.ResultWrapper.Result
+  - NuvTools.Common.ResultWrapper.ResultBase
   implements:
   - NuvTools.Common.ResultWrapper.IResult{{T}}
   - NuvTools.Common.ResultWrapper.IResult
   inheritedMembers:
-  - NuvTools.Common.ResultWrapper.Result.Log(System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)
-  - NuvTools.Common.ResultWrapper.Result.ConvertToMessageDetail(System.Collections.Generic.IEnumerable{System.String})
-  - NuvTools.Common.ResultWrapper.Result.Fail(System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)
-  - NuvTools.Common.ResultWrapper.Result.Fail(System.Collections.Generic.List{System.String},Microsoft.Extensions.Logging.ILogger)
-  - NuvTools.Common.ResultWrapper.Result.Fail(System.String,Microsoft.Extensions.Logging.ILogger)
-  - NuvTools.Common.ResultWrapper.Result.Fail(NuvTools.Common.ResultWrapper.MessageDetail,Microsoft.Extensions.Logging.ILogger)
-  - NuvTools.Common.ResultWrapper.Result.Fail(System.Exception,System.Int16,Microsoft.Extensions.Logging.ILogger)
-  - NuvTools.Common.ResultWrapper.Result.ValidationFail(System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)
-  - NuvTools.Common.ResultWrapper.Result.ValidationFail(System.Collections.Generic.List{System.String},Microsoft.Extensions.Logging.ILogger)
-  - NuvTools.Common.ResultWrapper.Result.ValidationFail(NuvTools.Common.ResultWrapper.MessageDetail,Microsoft.Extensions.Logging.ILogger)
-  - NuvTools.Common.ResultWrapper.Result.ValidationFail(System.String,Microsoft.Extensions.Logging.ILogger)
-  - NuvTools.Common.ResultWrapper.Result.Succeeded
-  - NuvTools.Common.ResultWrapper.Result.ContainsNotFound
-  - NuvTools.Common.ResultWrapper.Result.ResultType
-  - NuvTools.Common.ResultWrapper.Result.Messages
-  - NuvTools.Common.ResultWrapper.Result.MessageDetail
-  - NuvTools.Common.ResultWrapper.Result.Message
+  - NuvTools.Common.ResultWrapper.ResultBase.Log(System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)
+  - NuvTools.Common.ResultWrapper.ResultBase.ConvertToMessageDetail(System.Collections.Generic.IEnumerable{System.String})
+  - NuvTools.Common.ResultWrapper.ResultBase.CreateResult``1(NuvTools.Common.ResultWrapper.Enumerations.ResultType,{T},System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)
+  - NuvTools.Common.ResultWrapper.ResultBase.Succeeded
+  - NuvTools.Common.ResultWrapper.ResultBase.ContainsNotFound
+  - NuvTools.Common.ResultWrapper.ResultBase.ResultType
+  - NuvTools.Common.ResultWrapper.ResultBase.Messages
+  - NuvTools.Common.ResultWrapper.ResultBase.MessageDetail
+  - NuvTools.Common.ResultWrapper.ResultBase.Message
   - System.Object.GetType
   - System.Object.MemberwiseClone
   - System.Object.ToString
@@ -88,10 +107,12 @@ items:
   fullName: NuvTools.Common.ResultWrapper.Result<T>.Fail(System.Collections.Generic.List<NuvTools.Common.ResultWrapper.MessageDetail>?, T?, Microsoft.Extensions.Logging.ILogger?)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/Result.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/Result.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: Creates an error result with optional messages and data.
+  example: []
   syntax:
     content: public static IResult<T> Fail(List<MessageDetail>? messages = null, T? data = default, ILogger? logger = null)
     parameters:
@@ -120,10 +141,12 @@ items:
   fullName: NuvTools.Common.ResultWrapper.Result<T>.Fail(System.Collections.Generic.List<string>, T?, Microsoft.Extensions.Logging.ILogger?)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/Result.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/Result.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: Creates an error result from a list of simple message strings.
+  example: []
   syntax:
     content: public static IResult<T> Fail(List<string> messages, T? data = default, ILogger? logger = null)
     parameters:
@@ -152,10 +175,12 @@ items:
   fullName: NuvTools.Common.ResultWrapper.Result<T>.Fail(NuvTools.Common.ResultWrapper.MessageDetail, T?, Microsoft.Extensions.Logging.ILogger?)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/Result.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/Result.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: Creates an error result from a single <xref href="NuvTools.Common.ResultWrapper.MessageDetail" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public static IResult<T> Fail(MessageDetail message, T? data = default, ILogger? logger = null)
     parameters:
@@ -184,10 +209,12 @@ items:
   fullName: NuvTools.Common.ResultWrapper.Result<T>.Fail(string, T?, Microsoft.Extensions.Logging.ILogger?)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/Result.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/Result.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: Creates an error result from a single message string.
+  example: []
   syntax:
     content: public static IResult<T> Fail(string message, T? data = default, ILogger? logger = null)
     parameters:
@@ -216,10 +243,12 @@ items:
   fullName: NuvTools.Common.ResultWrapper.Result<T>.Fail(System.Exception, short, T?, Microsoft.Extensions.Logging.ILogger?)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/Result.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/Result.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: Creates an error result from an exception, with optional data and logging.
+  example: []
   syntax:
     content: public static IResult<T> Fail(Exception exception, short level = 1, T? data = default, ILogger? logger = null)
     parameters:
@@ -250,10 +279,12 @@ items:
   fullName: NuvTools.Common.ResultWrapper.Result<T>.FailNotFound(string)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/Result.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/Result.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: Creates a "Not Found" failure result with code "404".
+  example: []
   syntax:
     content: public static IResult<T> FailNotFound(string message)
     parameters:
@@ -278,10 +309,12 @@ items:
   fullName: NuvTools.Common.ResultWrapper.Result<T>.ValidationFail(System.Collections.Generic.List<NuvTools.Common.ResultWrapper.MessageDetail>, T?, Microsoft.Extensions.Logging.ILogger?)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/Result.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/Result.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: Creates a validation failure result with message details.
+  example: []
   syntax:
     content: public static IResult<T> ValidationFail(List<MessageDetail> messages, T? data = default, ILogger? logger = null)
     parameters:
@@ -310,10 +343,12 @@ items:
   fullName: NuvTools.Common.ResultWrapper.Result<T>.ValidationFail(System.Collections.Generic.List<string>, T?, Microsoft.Extensions.Logging.ILogger?)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/Result.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/Result.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: Creates a validation failure result from a list of message strings.
+  example: []
   syntax:
     content: public static IResult<T> ValidationFail(List<string> messages, T? data = default, ILogger? logger = null)
     parameters:
@@ -342,10 +377,12 @@ items:
   fullName: NuvTools.Common.ResultWrapper.Result<T>.ValidationFail(NuvTools.Common.ResultWrapper.MessageDetail, T?, Microsoft.Extensions.Logging.ILogger?)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/Result.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/Result.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: Creates a validation failure result from a single <xref href="NuvTools.Common.ResultWrapper.MessageDetail" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public static IResult<T> ValidationFail(MessageDetail message, T? data = default, ILogger? logger = null)
     parameters:
@@ -374,10 +411,12 @@ items:
   fullName: NuvTools.Common.ResultWrapper.Result<T>.ValidationFail(string, T?, Microsoft.Extensions.Logging.ILogger?)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/Result.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/Result.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: Creates a validation failure result from a simple message string.
+  example: []
   syntax:
     content: public static IResult<T> ValidationFail(string message, T? data = default, ILogger? logger = null)
     parameters:
@@ -406,10 +445,12 @@ items:
   fullName: NuvTools.Common.ResultWrapper.Result<T>.Success(T?, NuvTools.Common.ResultWrapper.MessageDetail?)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/Result.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/Result.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: Creates a successful operation result containing optional data and message.
+  example: []
   syntax:
     content: public static IResult<T> Success(T? data = default, MessageDetail? message = null)
     parameters:
@@ -436,10 +477,12 @@ items:
   fullName: NuvTools.Common.ResultWrapper.Result<T>.Success(T?, string)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/Result.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/Result.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: Creates a successful operation result containing data and a message string.
+  example: []
   syntax:
     content: public static IResult<T> Success(T? data, string message)
     parameters:
@@ -466,10 +509,12 @@ items:
   fullName: NuvTools.Common.ResultWrapper.Result<T>.Success(NuvTools.Common.ResultWrapper.MessageDetail?)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/Result.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/Result.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: Creates a successful operation result containing only a message.
+  example: []
   syntax:
     content: public static IResult<T> Success(MessageDetail? message)
     parameters:
@@ -494,10 +539,12 @@ items:
   fullName: NuvTools.Common.ResultWrapper.Result<T>.Success(string)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/Result.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/Result.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: Creates a successful operation result with a simple message string.
+  example: []
   syntax:
     content: public static IResult<T> Success(string message)
     parameters:
@@ -522,7 +569,7 @@ items:
   fullName: NuvTools.Common.ResultWrapper.Result<T>.Result()
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/Result.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/Result.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
@@ -545,10 +592,11 @@ items:
   fullName: NuvTools.Common.ResultWrapper.Result<T>.Data
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/Result.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/Result.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: The data returned by the operation, if applicable.
   example: []
   syntax:
     content: public T? Data { get; set; }
@@ -610,14 +658,14 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: NuvTools.Common.ResultWrapper.Result
-  commentId: T:NuvTools.Common.ResultWrapper.Result
+- uid: NuvTools.Common.ResultWrapper.ResultBase
+  commentId: T:NuvTools.Common.ResultWrapper.ResultBase
   parent: NuvTools.Common.ResultWrapper
   isExternal: true
-  href: NuvTools.Common.ResultWrapper.Result.html
-  name: Result
-  nameWithType: Result
-  fullName: NuvTools.Common.ResultWrapper.Result
+  href: NuvTools.Common.ResultWrapper.ResultBase.html
+  name: ResultBase
+  nameWithType: ResultBase
+  fullName: NuvTools.Common.ResultWrapper.ResultBase
 - uid: NuvTools.Common.ResultWrapper.IResult{{T}}
   commentId: T:NuvTools.Common.ResultWrapper.IResult{`0}
   parent: NuvTools.Common.ResultWrapper
@@ -655,22 +703,22 @@ references:
   name: IResult
   nameWithType: IResult
   fullName: NuvTools.Common.ResultWrapper.IResult
-- uid: NuvTools.Common.ResultWrapper.Result.Log(System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)
-  commentId: M:NuvTools.Common.ResultWrapper.Result.Log(System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)
-  parent: NuvTools.Common.ResultWrapper.Result
+- uid: NuvTools.Common.ResultWrapper.ResultBase.Log(System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)
+  commentId: M:NuvTools.Common.ResultWrapper.ResultBase.Log(System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)
+  parent: NuvTools.Common.ResultWrapper.ResultBase
   isExternal: true
-  href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_Log_System_Collections_Generic_List_NuvTools_Common_ResultWrapper_MessageDetail__Microsoft_Extensions_Logging_ILogger_
+  href: NuvTools.Common.ResultWrapper.ResultBase.html#NuvTools_Common_ResultWrapper_ResultBase_Log_System_Collections_Generic_List_NuvTools_Common_ResultWrapper_MessageDetail__Microsoft_Extensions_Logging_ILogger_
   name: Log(List<MessageDetail>, ILogger)
-  nameWithType: Result.Log(List<MessageDetail>, ILogger)
-  fullName: NuvTools.Common.ResultWrapper.Result.Log(System.Collections.Generic.List<NuvTools.Common.ResultWrapper.MessageDetail>, Microsoft.Extensions.Logging.ILogger)
-  nameWithType.vb: Result.Log(List(Of MessageDetail), ILogger)
-  fullName.vb: NuvTools.Common.ResultWrapper.Result.Log(System.Collections.Generic.List(Of NuvTools.Common.ResultWrapper.MessageDetail), Microsoft.Extensions.Logging.ILogger)
+  nameWithType: ResultBase.Log(List<MessageDetail>, ILogger)
+  fullName: NuvTools.Common.ResultWrapper.ResultBase.Log(System.Collections.Generic.List<NuvTools.Common.ResultWrapper.MessageDetail>, Microsoft.Extensions.Logging.ILogger)
+  nameWithType.vb: ResultBase.Log(List(Of MessageDetail), ILogger)
+  fullName.vb: NuvTools.Common.ResultWrapper.ResultBase.Log(System.Collections.Generic.List(Of NuvTools.Common.ResultWrapper.MessageDetail), Microsoft.Extensions.Logging.ILogger)
   name.vb: Log(List(Of MessageDetail), ILogger)
   spec.csharp:
-  - uid: NuvTools.Common.ResultWrapper.Result.Log(System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)
+  - uid: NuvTools.Common.ResultWrapper.ResultBase.Log(System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)
     name: Log
     isExternal: true
-    href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_Log_System_Collections_Generic_List_NuvTools_Common_ResultWrapper_MessageDetail__Microsoft_Extensions_Logging_ILogger_
+    href: NuvTools.Common.ResultWrapper.ResultBase.html#NuvTools_Common_ResultWrapper_ResultBase_Log_System_Collections_Generic_List_NuvTools_Common_ResultWrapper_MessageDetail__Microsoft_Extensions_Logging_ILogger_
   - name: (
   - uid: System.Collections.Generic.List`1
     name: List
@@ -690,10 +738,10 @@ references:
     href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger
   - name: )
   spec.vb:
-  - uid: NuvTools.Common.ResultWrapper.Result.Log(System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)
+  - uid: NuvTools.Common.ResultWrapper.ResultBase.Log(System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)
     name: Log
     isExternal: true
-    href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_Log_System_Collections_Generic_List_NuvTools_Common_ResultWrapper_MessageDetail__Microsoft_Extensions_Logging_ILogger_
+    href: NuvTools.Common.ResultWrapper.ResultBase.html#NuvTools_Common_ResultWrapper_ResultBase_Log_System_Collections_Generic_List_NuvTools_Common_ResultWrapper_MessageDetail__Microsoft_Extensions_Logging_ILogger_
   - name: (
   - uid: System.Collections.Generic.List`1
     name: List
@@ -714,22 +762,22 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger
   - name: )
-- uid: NuvTools.Common.ResultWrapper.Result.ConvertToMessageDetail(System.Collections.Generic.IEnumerable{System.String})
-  commentId: M:NuvTools.Common.ResultWrapper.Result.ConvertToMessageDetail(System.Collections.Generic.IEnumerable{System.String})
-  parent: NuvTools.Common.ResultWrapper.Result
+- uid: NuvTools.Common.ResultWrapper.ResultBase.ConvertToMessageDetail(System.Collections.Generic.IEnumerable{System.String})
+  commentId: M:NuvTools.Common.ResultWrapper.ResultBase.ConvertToMessageDetail(System.Collections.Generic.IEnumerable{System.String})
+  parent: NuvTools.Common.ResultWrapper.ResultBase
   isExternal: true
-  href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_ConvertToMessageDetail_System_Collections_Generic_IEnumerable_System_String__
+  href: NuvTools.Common.ResultWrapper.ResultBase.html#NuvTools_Common_ResultWrapper_ResultBase_ConvertToMessageDetail_System_Collections_Generic_IEnumerable_System_String__
   name: ConvertToMessageDetail(IEnumerable<string>)
-  nameWithType: Result.ConvertToMessageDetail(IEnumerable<string>)
-  fullName: NuvTools.Common.ResultWrapper.Result.ConvertToMessageDetail(System.Collections.Generic.IEnumerable<string>)
-  nameWithType.vb: Result.ConvertToMessageDetail(IEnumerable(Of String))
-  fullName.vb: NuvTools.Common.ResultWrapper.Result.ConvertToMessageDetail(System.Collections.Generic.IEnumerable(Of String))
+  nameWithType: ResultBase.ConvertToMessageDetail(IEnumerable<string>)
+  fullName: NuvTools.Common.ResultWrapper.ResultBase.ConvertToMessageDetail(System.Collections.Generic.IEnumerable<string>)
+  nameWithType.vb: ResultBase.ConvertToMessageDetail(IEnumerable(Of String))
+  fullName.vb: NuvTools.Common.ResultWrapper.ResultBase.ConvertToMessageDetail(System.Collections.Generic.IEnumerable(Of String))
   name.vb: ConvertToMessageDetail(IEnumerable(Of String))
   spec.csharp:
-  - uid: NuvTools.Common.ResultWrapper.Result.ConvertToMessageDetail(System.Collections.Generic.IEnumerable{System.String})
+  - uid: NuvTools.Common.ResultWrapper.ResultBase.ConvertToMessageDetail(System.Collections.Generic.IEnumerable{System.String})
     name: ConvertToMessageDetail
     isExternal: true
-    href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_ConvertToMessageDetail_System_Collections_Generic_IEnumerable_System_String__
+    href: NuvTools.Common.ResultWrapper.ResultBase.html#NuvTools_Common_ResultWrapper_ResultBase_ConvertToMessageDetail_System_Collections_Generic_IEnumerable_System_String__
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
@@ -743,10 +791,10 @@ references:
   - name: '>'
   - name: )
   spec.vb:
-  - uid: NuvTools.Common.ResultWrapper.Result.ConvertToMessageDetail(System.Collections.Generic.IEnumerable{System.String})
+  - uid: NuvTools.Common.ResultWrapper.ResultBase.ConvertToMessageDetail(System.Collections.Generic.IEnumerable{System.String})
     name: ConvertToMessageDetail
     isExternal: true
-    href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_ConvertToMessageDetail_System_Collections_Generic_IEnumerable_System_String__
+    href: NuvTools.Common.ResultWrapper.ResultBase.html#NuvTools_Common_ResultWrapper_ResultBase_ConvertToMessageDetail_System_Collections_Generic_IEnumerable_System_String__
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
@@ -761,23 +809,35 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   - name: )
-- uid: NuvTools.Common.ResultWrapper.Result.Fail(System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)
-  commentId: M:NuvTools.Common.ResultWrapper.Result.Fail(System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)
-  parent: NuvTools.Common.ResultWrapper.Result
-  isExternal: true
-  href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_Fail_System_Collections_Generic_List_NuvTools_Common_ResultWrapper_MessageDetail__Microsoft_Extensions_Logging_ILogger_
-  name: Fail(List<MessageDetail>, ILogger)
-  nameWithType: Result.Fail(List<MessageDetail>, ILogger)
-  fullName: NuvTools.Common.ResultWrapper.Result.Fail(System.Collections.Generic.List<NuvTools.Common.ResultWrapper.MessageDetail>, Microsoft.Extensions.Logging.ILogger)
-  nameWithType.vb: Result.Fail(List(Of MessageDetail), ILogger)
-  fullName.vb: NuvTools.Common.ResultWrapper.Result.Fail(System.Collections.Generic.List(Of NuvTools.Common.ResultWrapper.MessageDetail), Microsoft.Extensions.Logging.ILogger)
-  name.vb: Fail(List(Of MessageDetail), ILogger)
+- uid: NuvTools.Common.ResultWrapper.ResultBase.CreateResult``1(NuvTools.Common.ResultWrapper.Enumerations.ResultType,{T},System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)
+  commentId: M:NuvTools.Common.ResultWrapper.ResultBase.CreateResult``1(NuvTools.Common.ResultWrapper.Enumerations.ResultType,``0,System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)
+  parent: NuvTools.Common.ResultWrapper.ResultBase
+  definition: NuvTools.Common.ResultWrapper.ResultBase.CreateResult``1(NuvTools.Common.ResultWrapper.Enumerations.ResultType,``0,System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)
+  href: NuvTools.Common.ResultWrapper.ResultBase.html#NuvTools_Common_ResultWrapper_ResultBase_CreateResult__1_NuvTools_Common_ResultWrapper_Enumerations_ResultType___0_System_Collections_Generic_List_NuvTools_Common_ResultWrapper_MessageDetail__Microsoft_Extensions_Logging_ILogger_
+  name: CreateResult<T>(ResultType, T, List<MessageDetail>, ILogger)
+  nameWithType: ResultBase.CreateResult<T>(ResultType, T, List<MessageDetail>, ILogger)
+  fullName: NuvTools.Common.ResultWrapper.ResultBase.CreateResult<T>(NuvTools.Common.ResultWrapper.Enumerations.ResultType, T, System.Collections.Generic.List<NuvTools.Common.ResultWrapper.MessageDetail>, Microsoft.Extensions.Logging.ILogger)
+  nameWithType.vb: ResultBase.CreateResult(Of T)(ResultType, T, List(Of MessageDetail), ILogger)
+  fullName.vb: NuvTools.Common.ResultWrapper.ResultBase.CreateResult(Of T)(NuvTools.Common.ResultWrapper.Enumerations.ResultType, T, System.Collections.Generic.List(Of NuvTools.Common.ResultWrapper.MessageDetail), Microsoft.Extensions.Logging.ILogger)
+  name.vb: CreateResult(Of T)(ResultType, T, List(Of MessageDetail), ILogger)
   spec.csharp:
-  - uid: NuvTools.Common.ResultWrapper.Result.Fail(System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)
-    name: Fail
+  - uid: NuvTools.Common.ResultWrapper.ResultBase.CreateResult``1(NuvTools.Common.ResultWrapper.Enumerations.ResultType,``0,System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)
+    name: CreateResult
     isExternal: true
-    href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_Fail_System_Collections_Generic_List_NuvTools_Common_ResultWrapper_MessageDetail__Microsoft_Extensions_Logging_ILogger_
+    href: NuvTools.Common.ResultWrapper.ResultBase.html#NuvTools_Common_ResultWrapper_ResultBase_CreateResult__1_NuvTools_Common_ResultWrapper_Enumerations_ResultType___0_System_Collections_Generic_List_NuvTools_Common_ResultWrapper_MessageDetail__Microsoft_Extensions_Logging_ILogger_
+  - name: <
+  - name: T
+  - name: '>'
   - name: (
+  - uid: NuvTools.Common.ResultWrapper.Enumerations.ResultType
+    name: ResultType
+    isExternal: true
+    href: NuvTools.Common.ResultWrapper.Enumerations.ResultType.html
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
@@ -796,11 +856,25 @@ references:
     href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger
   - name: )
   spec.vb:
-  - uid: NuvTools.Common.ResultWrapper.Result.Fail(System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)
-    name: Fail
+  - uid: NuvTools.Common.ResultWrapper.ResultBase.CreateResult``1(NuvTools.Common.ResultWrapper.Enumerations.ResultType,``0,System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)
+    name: CreateResult
     isExternal: true
-    href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_Fail_System_Collections_Generic_List_NuvTools_Common_ResultWrapper_MessageDetail__Microsoft_Extensions_Logging_ILogger_
+    href: NuvTools.Common.ResultWrapper.ResultBase.html#NuvTools_Common_ResultWrapper_ResultBase_CreateResult__1_NuvTools_Common_ResultWrapper_Enumerations_ResultType___0_System_Collections_Generic_List_NuvTools_Common_ResultWrapper_MessageDetail__Microsoft_Extensions_Logging_ILogger_
   - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: NuvTools.Common.ResultWrapper.Enumerations.ResultType
+    name: ResultType
+    isExternal: true
+    href: NuvTools.Common.ResultWrapper.Enumerations.ResultType.html
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
@@ -820,462 +894,54 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger
   - name: )
-- uid: NuvTools.Common.ResultWrapper.Result.Fail(System.Collections.Generic.List{System.String},Microsoft.Extensions.Logging.ILogger)
-  commentId: M:NuvTools.Common.ResultWrapper.Result.Fail(System.Collections.Generic.List{System.String},Microsoft.Extensions.Logging.ILogger)
-  parent: NuvTools.Common.ResultWrapper.Result
+- uid: NuvTools.Common.ResultWrapper.ResultBase.Succeeded
+  commentId: P:NuvTools.Common.ResultWrapper.ResultBase.Succeeded
+  parent: NuvTools.Common.ResultWrapper.ResultBase
   isExternal: true
-  href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_Fail_System_Collections_Generic_List_System_String__Microsoft_Extensions_Logging_ILogger_
-  name: Fail(List<string>, ILogger)
-  nameWithType: Result.Fail(List<string>, ILogger)
-  fullName: NuvTools.Common.ResultWrapper.Result.Fail(System.Collections.Generic.List<string>, Microsoft.Extensions.Logging.ILogger)
-  nameWithType.vb: Result.Fail(List(Of String), ILogger)
-  fullName.vb: NuvTools.Common.ResultWrapper.Result.Fail(System.Collections.Generic.List(Of String), Microsoft.Extensions.Logging.ILogger)
-  name.vb: Fail(List(Of String), ILogger)
-  spec.csharp:
-  - uid: NuvTools.Common.ResultWrapper.Result.Fail(System.Collections.Generic.List{System.String},Microsoft.Extensions.Logging.ILogger)
-    name: Fail
-    isExternal: true
-    href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_Fail_System_Collections_Generic_List_System_String__Microsoft_Extensions_Logging_ILogger_
-  - name: (
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: '>'
-  - name: ','
-  - name: " "
-  - uid: Microsoft.Extensions.Logging.ILogger
-    name: ILogger
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger
-  - name: )
-  spec.vb:
-  - uid: NuvTools.Common.ResultWrapper.Result.Fail(System.Collections.Generic.List{System.String},Microsoft.Extensions.Logging.ILogger)
-    name: Fail
-    isExternal: true
-    href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_Fail_System_Collections_Generic_List_System_String__Microsoft_Extensions_Logging_ILogger_
-  - name: (
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
-  - name: ','
-  - name: " "
-  - uid: Microsoft.Extensions.Logging.ILogger
-    name: ILogger
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger
-  - name: )
-- uid: NuvTools.Common.ResultWrapper.Result.Fail(System.String,Microsoft.Extensions.Logging.ILogger)
-  commentId: M:NuvTools.Common.ResultWrapper.Result.Fail(System.String,Microsoft.Extensions.Logging.ILogger)
-  parent: NuvTools.Common.ResultWrapper.Result
-  isExternal: true
-  href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_Fail_System_String_Microsoft_Extensions_Logging_ILogger_
-  name: Fail(string, ILogger)
-  nameWithType: Result.Fail(string, ILogger)
-  fullName: NuvTools.Common.ResultWrapper.Result.Fail(string, Microsoft.Extensions.Logging.ILogger)
-  nameWithType.vb: Result.Fail(String, ILogger)
-  fullName.vb: NuvTools.Common.ResultWrapper.Result.Fail(String, Microsoft.Extensions.Logging.ILogger)
-  name.vb: Fail(String, ILogger)
-  spec.csharp:
-  - uid: NuvTools.Common.ResultWrapper.Result.Fail(System.String,Microsoft.Extensions.Logging.ILogger)
-    name: Fail
-    isExternal: true
-    href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_Fail_System_String_Microsoft_Extensions_Logging_ILogger_
-  - name: (
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: Microsoft.Extensions.Logging.ILogger
-    name: ILogger
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger
-  - name: )
-  spec.vb:
-  - uid: NuvTools.Common.ResultWrapper.Result.Fail(System.String,Microsoft.Extensions.Logging.ILogger)
-    name: Fail
-    isExternal: true
-    href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_Fail_System_String_Microsoft_Extensions_Logging_ILogger_
-  - name: (
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: Microsoft.Extensions.Logging.ILogger
-    name: ILogger
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger
-  - name: )
-- uid: NuvTools.Common.ResultWrapper.Result.Fail(NuvTools.Common.ResultWrapper.MessageDetail,Microsoft.Extensions.Logging.ILogger)
-  commentId: M:NuvTools.Common.ResultWrapper.Result.Fail(NuvTools.Common.ResultWrapper.MessageDetail,Microsoft.Extensions.Logging.ILogger)
-  parent: NuvTools.Common.ResultWrapper.Result
-  isExternal: true
-  href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_Fail_NuvTools_Common_ResultWrapper_MessageDetail_Microsoft_Extensions_Logging_ILogger_
-  name: Fail(MessageDetail, ILogger)
-  nameWithType: Result.Fail(MessageDetail, ILogger)
-  fullName: NuvTools.Common.ResultWrapper.Result.Fail(NuvTools.Common.ResultWrapper.MessageDetail, Microsoft.Extensions.Logging.ILogger)
-  spec.csharp:
-  - uid: NuvTools.Common.ResultWrapper.Result.Fail(NuvTools.Common.ResultWrapper.MessageDetail,Microsoft.Extensions.Logging.ILogger)
-    name: Fail
-    isExternal: true
-    href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_Fail_NuvTools_Common_ResultWrapper_MessageDetail_Microsoft_Extensions_Logging_ILogger_
-  - name: (
-  - uid: NuvTools.Common.ResultWrapper.MessageDetail
-    name: MessageDetail
-    isExternal: true
-    href: NuvTools.Common.ResultWrapper.MessageDetail.html
-  - name: ','
-  - name: " "
-  - uid: Microsoft.Extensions.Logging.ILogger
-    name: ILogger
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger
-  - name: )
-  spec.vb:
-  - uid: NuvTools.Common.ResultWrapper.Result.Fail(NuvTools.Common.ResultWrapper.MessageDetail,Microsoft.Extensions.Logging.ILogger)
-    name: Fail
-    isExternal: true
-    href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_Fail_NuvTools_Common_ResultWrapper_MessageDetail_Microsoft_Extensions_Logging_ILogger_
-  - name: (
-  - uid: NuvTools.Common.ResultWrapper.MessageDetail
-    name: MessageDetail
-    isExternal: true
-    href: NuvTools.Common.ResultWrapper.MessageDetail.html
-  - name: ','
-  - name: " "
-  - uid: Microsoft.Extensions.Logging.ILogger
-    name: ILogger
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger
-  - name: )
-- uid: NuvTools.Common.ResultWrapper.Result.Fail(System.Exception,System.Int16,Microsoft.Extensions.Logging.ILogger)
-  commentId: M:NuvTools.Common.ResultWrapper.Result.Fail(System.Exception,System.Int16,Microsoft.Extensions.Logging.ILogger)
-  parent: NuvTools.Common.ResultWrapper.Result
-  isExternal: true
-  href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_Fail_System_Exception_System_Int16_Microsoft_Extensions_Logging_ILogger_
-  name: Fail(Exception, short, ILogger)
-  nameWithType: Result.Fail(Exception, short, ILogger)
-  fullName: NuvTools.Common.ResultWrapper.Result.Fail(System.Exception, short, Microsoft.Extensions.Logging.ILogger)
-  nameWithType.vb: Result.Fail(Exception, Short, ILogger)
-  fullName.vb: NuvTools.Common.ResultWrapper.Result.Fail(System.Exception, Short, Microsoft.Extensions.Logging.ILogger)
-  name.vb: Fail(Exception, Short, ILogger)
-  spec.csharp:
-  - uid: NuvTools.Common.ResultWrapper.Result.Fail(System.Exception,System.Int16,Microsoft.Extensions.Logging.ILogger)
-    name: Fail
-    isExternal: true
-    href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_Fail_System_Exception_System_Int16_Microsoft_Extensions_Logging_ILogger_
-  - name: (
-  - uid: System.Exception
-    name: Exception
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.exception
-  - name: ','
-  - name: " "
-  - uid: System.Int16
-    name: short
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int16
-  - name: ','
-  - name: " "
-  - uid: Microsoft.Extensions.Logging.ILogger
-    name: ILogger
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger
-  - name: )
-  spec.vb:
-  - uid: NuvTools.Common.ResultWrapper.Result.Fail(System.Exception,System.Int16,Microsoft.Extensions.Logging.ILogger)
-    name: Fail
-    isExternal: true
-    href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_Fail_System_Exception_System_Int16_Microsoft_Extensions_Logging_ILogger_
-  - name: (
-  - uid: System.Exception
-    name: Exception
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.exception
-  - name: ','
-  - name: " "
-  - uid: System.Int16
-    name: Short
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.int16
-  - name: ','
-  - name: " "
-  - uid: Microsoft.Extensions.Logging.ILogger
-    name: ILogger
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger
-  - name: )
-- uid: NuvTools.Common.ResultWrapper.Result.ValidationFail(System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)
-  commentId: M:NuvTools.Common.ResultWrapper.Result.ValidationFail(System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)
-  parent: NuvTools.Common.ResultWrapper.Result
-  isExternal: true
-  href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_ValidationFail_System_Collections_Generic_List_NuvTools_Common_ResultWrapper_MessageDetail__Microsoft_Extensions_Logging_ILogger_
-  name: ValidationFail(List<MessageDetail>, ILogger)
-  nameWithType: Result.ValidationFail(List<MessageDetail>, ILogger)
-  fullName: NuvTools.Common.ResultWrapper.Result.ValidationFail(System.Collections.Generic.List<NuvTools.Common.ResultWrapper.MessageDetail>, Microsoft.Extensions.Logging.ILogger)
-  nameWithType.vb: Result.ValidationFail(List(Of MessageDetail), ILogger)
-  fullName.vb: NuvTools.Common.ResultWrapper.Result.ValidationFail(System.Collections.Generic.List(Of NuvTools.Common.ResultWrapper.MessageDetail), Microsoft.Extensions.Logging.ILogger)
-  name.vb: ValidationFail(List(Of MessageDetail), ILogger)
-  spec.csharp:
-  - uid: NuvTools.Common.ResultWrapper.Result.ValidationFail(System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)
-    name: ValidationFail
-    isExternal: true
-    href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_ValidationFail_System_Collections_Generic_List_NuvTools_Common_ResultWrapper_MessageDetail__Microsoft_Extensions_Logging_ILogger_
-  - name: (
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - uid: NuvTools.Common.ResultWrapper.MessageDetail
-    name: MessageDetail
-    isExternal: true
-    href: NuvTools.Common.ResultWrapper.MessageDetail.html
-  - name: '>'
-  - name: ','
-  - name: " "
-  - uid: Microsoft.Extensions.Logging.ILogger
-    name: ILogger
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger
-  - name: )
-  spec.vb:
-  - uid: NuvTools.Common.ResultWrapper.Result.ValidationFail(System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)
-    name: ValidationFail
-    isExternal: true
-    href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_ValidationFail_System_Collections_Generic_List_NuvTools_Common_ResultWrapper_MessageDetail__Microsoft_Extensions_Logging_ILogger_
-  - name: (
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: NuvTools.Common.ResultWrapper.MessageDetail
-    name: MessageDetail
-    isExternal: true
-    href: NuvTools.Common.ResultWrapper.MessageDetail.html
-  - name: )
-  - name: ','
-  - name: " "
-  - uid: Microsoft.Extensions.Logging.ILogger
-    name: ILogger
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger
-  - name: )
-- uid: NuvTools.Common.ResultWrapper.Result.ValidationFail(System.Collections.Generic.List{System.String},Microsoft.Extensions.Logging.ILogger)
-  commentId: M:NuvTools.Common.ResultWrapper.Result.ValidationFail(System.Collections.Generic.List{System.String},Microsoft.Extensions.Logging.ILogger)
-  parent: NuvTools.Common.ResultWrapper.Result
-  isExternal: true
-  href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_ValidationFail_System_Collections_Generic_List_System_String__Microsoft_Extensions_Logging_ILogger_
-  name: ValidationFail(List<string>, ILogger)
-  nameWithType: Result.ValidationFail(List<string>, ILogger)
-  fullName: NuvTools.Common.ResultWrapper.Result.ValidationFail(System.Collections.Generic.List<string>, Microsoft.Extensions.Logging.ILogger)
-  nameWithType.vb: Result.ValidationFail(List(Of String), ILogger)
-  fullName.vb: NuvTools.Common.ResultWrapper.Result.ValidationFail(System.Collections.Generic.List(Of String), Microsoft.Extensions.Logging.ILogger)
-  name.vb: ValidationFail(List(Of String), ILogger)
-  spec.csharp:
-  - uid: NuvTools.Common.ResultWrapper.Result.ValidationFail(System.Collections.Generic.List{System.String},Microsoft.Extensions.Logging.ILogger)
-    name: ValidationFail
-    isExternal: true
-    href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_ValidationFail_System_Collections_Generic_List_System_String__Microsoft_Extensions_Logging_ILogger_
-  - name: (
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: <
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: '>'
-  - name: ','
-  - name: " "
-  - uid: Microsoft.Extensions.Logging.ILogger
-    name: ILogger
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger
-  - name: )
-  spec.vb:
-  - uid: NuvTools.Common.ResultWrapper.Result.ValidationFail(System.Collections.Generic.List{System.String},Microsoft.Extensions.Logging.ILogger)
-    name: ValidationFail
-    isExternal: true
-    href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_ValidationFail_System_Collections_Generic_List_System_String__Microsoft_Extensions_Logging_ILogger_
-  - name: (
-  - uid: System.Collections.Generic.List`1
-    name: List
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: )
-  - name: ','
-  - name: " "
-  - uid: Microsoft.Extensions.Logging.ILogger
-    name: ILogger
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger
-  - name: )
-- uid: NuvTools.Common.ResultWrapper.Result.ValidationFail(NuvTools.Common.ResultWrapper.MessageDetail,Microsoft.Extensions.Logging.ILogger)
-  commentId: M:NuvTools.Common.ResultWrapper.Result.ValidationFail(NuvTools.Common.ResultWrapper.MessageDetail,Microsoft.Extensions.Logging.ILogger)
-  parent: NuvTools.Common.ResultWrapper.Result
-  isExternal: true
-  href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_ValidationFail_NuvTools_Common_ResultWrapper_MessageDetail_Microsoft_Extensions_Logging_ILogger_
-  name: ValidationFail(MessageDetail, ILogger)
-  nameWithType: Result.ValidationFail(MessageDetail, ILogger)
-  fullName: NuvTools.Common.ResultWrapper.Result.ValidationFail(NuvTools.Common.ResultWrapper.MessageDetail, Microsoft.Extensions.Logging.ILogger)
-  spec.csharp:
-  - uid: NuvTools.Common.ResultWrapper.Result.ValidationFail(NuvTools.Common.ResultWrapper.MessageDetail,Microsoft.Extensions.Logging.ILogger)
-    name: ValidationFail
-    isExternal: true
-    href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_ValidationFail_NuvTools_Common_ResultWrapper_MessageDetail_Microsoft_Extensions_Logging_ILogger_
-  - name: (
-  - uid: NuvTools.Common.ResultWrapper.MessageDetail
-    name: MessageDetail
-    isExternal: true
-    href: NuvTools.Common.ResultWrapper.MessageDetail.html
-  - name: ','
-  - name: " "
-  - uid: Microsoft.Extensions.Logging.ILogger
-    name: ILogger
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger
-  - name: )
-  spec.vb:
-  - uid: NuvTools.Common.ResultWrapper.Result.ValidationFail(NuvTools.Common.ResultWrapper.MessageDetail,Microsoft.Extensions.Logging.ILogger)
-    name: ValidationFail
-    isExternal: true
-    href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_ValidationFail_NuvTools_Common_ResultWrapper_MessageDetail_Microsoft_Extensions_Logging_ILogger_
-  - name: (
-  - uid: NuvTools.Common.ResultWrapper.MessageDetail
-    name: MessageDetail
-    isExternal: true
-    href: NuvTools.Common.ResultWrapper.MessageDetail.html
-  - name: ','
-  - name: " "
-  - uid: Microsoft.Extensions.Logging.ILogger
-    name: ILogger
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger
-  - name: )
-- uid: NuvTools.Common.ResultWrapper.Result.ValidationFail(System.String,Microsoft.Extensions.Logging.ILogger)
-  commentId: M:NuvTools.Common.ResultWrapper.Result.ValidationFail(System.String,Microsoft.Extensions.Logging.ILogger)
-  parent: NuvTools.Common.ResultWrapper.Result
-  isExternal: true
-  href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_ValidationFail_System_String_Microsoft_Extensions_Logging_ILogger_
-  name: ValidationFail(string, ILogger)
-  nameWithType: Result.ValidationFail(string, ILogger)
-  fullName: NuvTools.Common.ResultWrapper.Result.ValidationFail(string, Microsoft.Extensions.Logging.ILogger)
-  nameWithType.vb: Result.ValidationFail(String, ILogger)
-  fullName.vb: NuvTools.Common.ResultWrapper.Result.ValidationFail(String, Microsoft.Extensions.Logging.ILogger)
-  name.vb: ValidationFail(String, ILogger)
-  spec.csharp:
-  - uid: NuvTools.Common.ResultWrapper.Result.ValidationFail(System.String,Microsoft.Extensions.Logging.ILogger)
-    name: ValidationFail
-    isExternal: true
-    href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_ValidationFail_System_String_Microsoft_Extensions_Logging_ILogger_
-  - name: (
-  - uid: System.String
-    name: string
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: Microsoft.Extensions.Logging.ILogger
-    name: ILogger
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger
-  - name: )
-  spec.vb:
-  - uid: NuvTools.Common.ResultWrapper.Result.ValidationFail(System.String,Microsoft.Extensions.Logging.ILogger)
-    name: ValidationFail
-    isExternal: true
-    href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_ValidationFail_System_String_Microsoft_Extensions_Logging_ILogger_
-  - name: (
-  - uid: System.String
-    name: String
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.string
-  - name: ','
-  - name: " "
-  - uid: Microsoft.Extensions.Logging.ILogger
-    name: ILogger
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger
-  - name: )
-- uid: NuvTools.Common.ResultWrapper.Result.Succeeded
-  commentId: P:NuvTools.Common.ResultWrapper.Result.Succeeded
-  parent: NuvTools.Common.ResultWrapper.Result
-  isExternal: true
-  href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_Succeeded
+  href: NuvTools.Common.ResultWrapper.ResultBase.html#NuvTools_Common_ResultWrapper_ResultBase_Succeeded
   name: Succeeded
-  nameWithType: Result.Succeeded
-  fullName: NuvTools.Common.ResultWrapper.Result.Succeeded
-- uid: NuvTools.Common.ResultWrapper.Result.ContainsNotFound
-  commentId: P:NuvTools.Common.ResultWrapper.Result.ContainsNotFound
-  parent: NuvTools.Common.ResultWrapper.Result
+  nameWithType: ResultBase.Succeeded
+  fullName: NuvTools.Common.ResultWrapper.ResultBase.Succeeded
+- uid: NuvTools.Common.ResultWrapper.ResultBase.ContainsNotFound
+  commentId: P:NuvTools.Common.ResultWrapper.ResultBase.ContainsNotFound
+  parent: NuvTools.Common.ResultWrapper.ResultBase
   isExternal: true
-  href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_ContainsNotFound
+  href: NuvTools.Common.ResultWrapper.ResultBase.html#NuvTools_Common_ResultWrapper_ResultBase_ContainsNotFound
   name: ContainsNotFound
-  nameWithType: Result.ContainsNotFound
-  fullName: NuvTools.Common.ResultWrapper.Result.ContainsNotFound
-- uid: NuvTools.Common.ResultWrapper.Result.ResultType
-  commentId: P:NuvTools.Common.ResultWrapper.Result.ResultType
-  parent: NuvTools.Common.ResultWrapper.Result
+  nameWithType: ResultBase.ContainsNotFound
+  fullName: NuvTools.Common.ResultWrapper.ResultBase.ContainsNotFound
+- uid: NuvTools.Common.ResultWrapper.ResultBase.ResultType
+  commentId: P:NuvTools.Common.ResultWrapper.ResultBase.ResultType
+  parent: NuvTools.Common.ResultWrapper.ResultBase
   isExternal: true
-  href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_ResultType
+  href: NuvTools.Common.ResultWrapper.ResultBase.html#NuvTools_Common_ResultWrapper_ResultBase_ResultType
   name: ResultType
-  nameWithType: Result.ResultType
-  fullName: NuvTools.Common.ResultWrapper.Result.ResultType
-- uid: NuvTools.Common.ResultWrapper.Result.Messages
-  commentId: P:NuvTools.Common.ResultWrapper.Result.Messages
-  parent: NuvTools.Common.ResultWrapper.Result
+  nameWithType: ResultBase.ResultType
+  fullName: NuvTools.Common.ResultWrapper.ResultBase.ResultType
+- uid: NuvTools.Common.ResultWrapper.ResultBase.Messages
+  commentId: P:NuvTools.Common.ResultWrapper.ResultBase.Messages
+  parent: NuvTools.Common.ResultWrapper.ResultBase
   isExternal: true
-  href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_Messages
+  href: NuvTools.Common.ResultWrapper.ResultBase.html#NuvTools_Common_ResultWrapper_ResultBase_Messages
   name: Messages
-  nameWithType: Result.Messages
-  fullName: NuvTools.Common.ResultWrapper.Result.Messages
-- uid: NuvTools.Common.ResultWrapper.Result.MessageDetail
-  commentId: P:NuvTools.Common.ResultWrapper.Result.MessageDetail
-  parent: NuvTools.Common.ResultWrapper.Result
+  nameWithType: ResultBase.Messages
+  fullName: NuvTools.Common.ResultWrapper.ResultBase.Messages
+- uid: NuvTools.Common.ResultWrapper.ResultBase.MessageDetail
+  commentId: P:NuvTools.Common.ResultWrapper.ResultBase.MessageDetail
+  parent: NuvTools.Common.ResultWrapper.ResultBase
   isExternal: true
-  href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_MessageDetail
+  href: NuvTools.Common.ResultWrapper.ResultBase.html#NuvTools_Common_ResultWrapper_ResultBase_MessageDetail
   name: MessageDetail
-  nameWithType: Result.MessageDetail
-  fullName: NuvTools.Common.ResultWrapper.Result.MessageDetail
-- uid: NuvTools.Common.ResultWrapper.Result.Message
-  commentId: P:NuvTools.Common.ResultWrapper.Result.Message
-  parent: NuvTools.Common.ResultWrapper.Result
+  nameWithType: ResultBase.MessageDetail
+  fullName: NuvTools.Common.ResultWrapper.ResultBase.MessageDetail
+- uid: NuvTools.Common.ResultWrapper.ResultBase.Message
+  commentId: P:NuvTools.Common.ResultWrapper.ResultBase.Message
+  parent: NuvTools.Common.ResultWrapper.ResultBase
   isExternal: true
-  href: NuvTools.Common.ResultWrapper.Result.html#NuvTools_Common_ResultWrapper_Result_Message
+  href: NuvTools.Common.ResultWrapper.ResultBase.html#NuvTools_Common_ResultWrapper_ResultBase_Message
   name: Message
-  nameWithType: Result.Message
-  fullName: NuvTools.Common.ResultWrapper.Result.Message
+  nameWithType: ResultBase.Message
+  fullName: NuvTools.Common.ResultWrapper.ResultBase.Message
 - uid: System.Object.GetType
   commentId: M:System.Object.GetType
   parent: System.Object
@@ -1754,6 +1420,90 @@ references:
   - name: Of
   - name: " "
   - name: T
+  - name: )
+- uid: NuvTools.Common.ResultWrapper.ResultBase.CreateResult``1(NuvTools.Common.ResultWrapper.Enumerations.ResultType,``0,System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)
+  commentId: M:NuvTools.Common.ResultWrapper.ResultBase.CreateResult``1(NuvTools.Common.ResultWrapper.Enumerations.ResultType,``0,System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)
+  isExternal: true
+  href: NuvTools.Common.ResultWrapper.ResultBase.html#NuvTools_Common_ResultWrapper_ResultBase_CreateResult__1_NuvTools_Common_ResultWrapper_Enumerations_ResultType___0_System_Collections_Generic_List_NuvTools_Common_ResultWrapper_MessageDetail__Microsoft_Extensions_Logging_ILogger_
+  name: CreateResult<T>(ResultType, T, List<MessageDetail>, ILogger)
+  nameWithType: ResultBase.CreateResult<T>(ResultType, T, List<MessageDetail>, ILogger)
+  fullName: NuvTools.Common.ResultWrapper.ResultBase.CreateResult<T>(NuvTools.Common.ResultWrapper.Enumerations.ResultType, T, System.Collections.Generic.List<NuvTools.Common.ResultWrapper.MessageDetail>, Microsoft.Extensions.Logging.ILogger)
+  nameWithType.vb: ResultBase.CreateResult(Of T)(ResultType, T, List(Of MessageDetail), ILogger)
+  fullName.vb: NuvTools.Common.ResultWrapper.ResultBase.CreateResult(Of T)(NuvTools.Common.ResultWrapper.Enumerations.ResultType, T, System.Collections.Generic.List(Of NuvTools.Common.ResultWrapper.MessageDetail), Microsoft.Extensions.Logging.ILogger)
+  name.vb: CreateResult(Of T)(ResultType, T, List(Of MessageDetail), ILogger)
+  spec.csharp:
+  - uid: NuvTools.Common.ResultWrapper.ResultBase.CreateResult``1(NuvTools.Common.ResultWrapper.Enumerations.ResultType,``0,System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)
+    name: CreateResult
+    isExternal: true
+    href: NuvTools.Common.ResultWrapper.ResultBase.html#NuvTools_Common_ResultWrapper_ResultBase_CreateResult__1_NuvTools_Common_ResultWrapper_Enumerations_ResultType___0_System_Collections_Generic_List_NuvTools_Common_ResultWrapper_MessageDetail__Microsoft_Extensions_Logging_ILogger_
+  - name: <
+  - name: T
+  - name: '>'
+  - name: (
+  - uid: NuvTools.Common.ResultWrapper.Enumerations.ResultType
+    name: ResultType
+    isExternal: true
+    href: NuvTools.Common.ResultWrapper.Enumerations.ResultType.html
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.MessageDetail
+    name: MessageDetail
+    isExternal: true
+    href: NuvTools.Common.ResultWrapper.MessageDetail.html
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Extensions.Logging.ILogger
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Common.ResultWrapper.ResultBase.CreateResult``1(NuvTools.Common.ResultWrapper.Enumerations.ResultType,``0,System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)
+    name: CreateResult
+    isExternal: true
+    href: NuvTools.Common.ResultWrapper.ResultBase.html#NuvTools_Common_ResultWrapper_ResultBase_CreateResult__1_NuvTools_Common_ResultWrapper_Enumerations_ResultType___0_System_Collections_Generic_List_NuvTools_Common_ResultWrapper_MessageDetail__Microsoft_Extensions_Logging_ILogger_
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: (
+  - uid: NuvTools.Common.ResultWrapper.Enumerations.ResultType
+    name: ResultType
+    isExternal: true
+    href: NuvTools.Common.ResultWrapper.Enumerations.ResultType.html
+  - name: ','
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.MessageDetail
+    name: MessageDetail
+    isExternal: true
+    href: NuvTools.Common.ResultWrapper.MessageDetail.html
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Extensions.Logging.ILogger
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger
   - name: )
 - uid: NuvTools.Common.Serialization.Json.ObjectExtensions.Clone``1(``0,System.Int32)
   commentId: M:NuvTools.Common.Serialization.Json.ObjectExtensions.Clone``1(``0,System.Int32)

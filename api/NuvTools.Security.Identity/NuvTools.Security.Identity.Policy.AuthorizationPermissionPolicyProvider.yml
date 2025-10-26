@@ -18,10 +18,23 @@ items:
   fullName: NuvTools.Security.Identity.Policy.AuthorizationPermissionPolicyProvider
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity/Policy/AuthorizationPermissionPolicyProvider.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity/Policy/AuthorizationPermissionPolicyProvider.cs
   assemblies:
   - NuvTools.Security.Identity
   namespace: NuvTools.Security.Identity.Policy
+  summary: >-
+    Custom implementation of <xref href="Microsoft.AspNetCore.Authorization.IAuthorizationPolicyProvider" data-throw-if-not-resolved="false"></xref> that dynamically generates
+
+    authorization policies based on permission claims.
+  remarks: >-
+    This provider enables runtime creation of policies following a naming convention.  
+
+    If a policy name starts with <xref href="NuvTools.Security.Models.ClaimTypes.Permission" data-throw-if-not-resolved="false"></xref>, it creates a policy that requires
+
+    a <xref href="NuvTools.Security.Identity.Policy.PermissionRequirement" data-throw-if-not-resolved="false"></xref> with the corresponding value.  
+
+    Otherwise, it delegates to the default <xref href="Microsoft.AspNetCore.Authorization.DefaultAuthorizationPolicyProvider" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: 'public class AuthorizationPermissionPolicyProvider : IAuthorizationPolicyProvider'
     content.vb: Public Class AuthorizationPermissionPolicyProvider Implements IAuthorizationPolicyProvider
@@ -49,10 +62,23 @@ items:
   fullName: NuvTools.Security.Identity.Policy.AuthorizationPermissionPolicyProvider.AuthorizationPermissionPolicyProvider(Microsoft.Extensions.Options.IOptions<Microsoft.AspNetCore.Authorization.AuthorizationOptions>)
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity/Policy/AuthorizationPermissionPolicyProvider.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity/Policy/AuthorizationPermissionPolicyProvider.cs
   assemblies:
   - NuvTools.Security.Identity
   namespace: NuvTools.Security.Identity.Policy
+  summary: >-
+    Custom implementation of <xref href="Microsoft.AspNetCore.Authorization.IAuthorizationPolicyProvider" data-throw-if-not-resolved="false"></xref> that dynamically generates
+
+    authorization policies based on permission claims.
+  remarks: >-
+    This provider enables runtime creation of policies following a naming convention.  
+
+    If a policy name starts with <xref href="NuvTools.Security.Models.ClaimTypes.Permission" data-throw-if-not-resolved="false"></xref>, it creates a policy that requires
+
+    a <xref href="NuvTools.Security.Identity.Policy.PermissionRequirement" data-throw-if-not-resolved="false"></xref> with the corresponding value.  
+
+    Otherwise, it delegates to the default <xref href="Microsoft.AspNetCore.Authorization.DefaultAuthorizationPolicyProvider" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public AuthorizationPermissionPolicyProvider(IOptions<AuthorizationOptions> options)
     parameters:
@@ -75,17 +101,17 @@ items:
   fullName: NuvTools.Security.Identity.Policy.AuthorizationPermissionPolicyProvider.GetDefaultPolicyAsync()
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity/Policy/AuthorizationPermissionPolicyProvider.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity/Policy/AuthorizationPermissionPolicyProvider.cs
   assemblies:
   - NuvTools.Security.Identity
   namespace: NuvTools.Security.Identity.Policy
-  summary: Gets the default authorization policy.
+  summary: Retrieves the default authorization policy.
   example: []
   syntax:
     content: public Task<AuthorizationPolicy> GetDefaultPolicyAsync()
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Authorization.AuthorizationPolicy}
-      description: The default authorization policy.
+      description: A <xref href="System.Threading.Tasks.Task%601" data-throw-if-not-resolved="false"></xref> containing the default <xref href="Microsoft.AspNetCore.Authorization.AuthorizationPolicy" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Function GetDefaultPolicyAsync() As Task(Of AuthorizationPolicy)
   overload: NuvTools.Security.Identity.Policy.AuthorizationPermissionPolicyProvider.GetDefaultPolicyAsync*
   implements:
@@ -102,21 +128,27 @@ items:
   fullName: NuvTools.Security.Identity.Policy.AuthorizationPermissionPolicyProvider.GetPolicyAsync(string)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity/Policy/AuthorizationPermissionPolicyProvider.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity/Policy/AuthorizationPermissionPolicyProvider.cs
   assemblies:
   - NuvTools.Security.Identity
   namespace: NuvTools.Security.Identity.Policy
-  summary: Gets a <xref href="Microsoft.AspNetCore.Authorization.AuthorizationPolicy" data-throw-if-not-resolved="false"></xref> from the given <code class="paramref">policyName</code>
+  summary: Retrieves an authorization policy based on the specified policy name.
+  remarks: >-
+    If the <code class="paramref">policyName</code> starts with <xref href="NuvTools.Security.Models.ClaimTypes.Permission" data-throw-if-not-resolved="false"></xref>,  
+
+    a new policy will be built dynamically that enforces a <xref href="NuvTools.Security.Identity.Policy.PermissionRequirement" data-throw-if-not-resolved="false"></xref>.  
+
+    Otherwise, the request is delegated to the fallback provider.
   example: []
   syntax:
     content: public Task<AuthorizationPolicy?> GetPolicyAsync(string policyName)
     parameters:
     - id: policyName
       type: System.String
-      description: The policy name to retrieve.
+      description: The name of the policy to retrieve.
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Authorization.AuthorizationPolicy}
-      description: The named <xref href="Microsoft.AspNetCore.Authorization.AuthorizationPolicy" data-throw-if-not-resolved="false"></xref>.
+      description: A <xref href="System.Threading.Tasks.Task%601" data-throw-if-not-resolved="false"></xref> containing the <xref href="Microsoft.AspNetCore.Authorization.AuthorizationPolicy" data-throw-if-not-resolved="false"></xref>, or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> if none exists.
     content.vb: Public Function GetPolicyAsync(policyName As String) As Task(Of AuthorizationPolicy)
   overload: NuvTools.Security.Identity.Policy.AuthorizationPermissionPolicyProvider.GetPolicyAsync*
   implements:
@@ -136,17 +168,17 @@ items:
   fullName: NuvTools.Security.Identity.Policy.AuthorizationPermissionPolicyProvider.GetFallbackPolicyAsync()
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity/Policy/AuthorizationPermissionPolicyProvider.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity/Policy/AuthorizationPermissionPolicyProvider.cs
   assemblies:
   - NuvTools.Security.Identity
   namespace: NuvTools.Security.Identity.Policy
-  summary: Gets the fallback authorization policy.
+  summary: Retrieves the fallback authorization policy, if defined.
   example: []
   syntax:
     content: public Task<AuthorizationPolicy?> GetFallbackPolicyAsync()
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Authorization.AuthorizationPolicy}
-      description: The fallback authorization policy.
+      description: Always returns <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> since this provider does not define a fallback policy.
     content.vb: Public Function GetFallbackPolicyAsync() As Task(Of AuthorizationPolicy)
   overload: NuvTools.Security.Identity.Policy.AuthorizationPermissionPolicyProvider.GetFallbackPolicyAsync*
   implements:
@@ -163,10 +195,12 @@ items:
   fullName: NuvTools.Security.Identity.Policy.AuthorizationPermissionPolicyProvider.FallbackPolicyProvider
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity/Policy/AuthorizationPermissionPolicyProvider.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity/Policy/AuthorizationPermissionPolicyProvider.cs
   assemblies:
   - NuvTools.Security.Identity
   namespace: NuvTools.Security.Identity.Policy
+  summary: The default fallback policy provider used for standard authorization policies.
+  example: []
   syntax:
     content: public DefaultAuthorizationPolicyProvider FallbackPolicyProvider { get; }
     parameters: []
@@ -175,6 +209,36 @@ items:
     content.vb: Public ReadOnly Property FallbackPolicyProvider As DefaultAuthorizationPolicyProvider
   overload: NuvTools.Security.Identity.Policy.AuthorizationPermissionPolicyProvider.FallbackPolicyProvider*
 references:
+- uid: Microsoft.AspNetCore.Authorization.IAuthorizationPolicyProvider
+  commentId: T:Microsoft.AspNetCore.Authorization.IAuthorizationPolicyProvider
+  parent: Microsoft.AspNetCore.Authorization
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationpolicyprovider
+  name: IAuthorizationPolicyProvider
+  nameWithType: IAuthorizationPolicyProvider
+  fullName: Microsoft.AspNetCore.Authorization.IAuthorizationPolicyProvider
+- uid: NuvTools.Security.Models.ClaimTypes.Permission
+  commentId: F:NuvTools.Security.Models.ClaimTypes.Permission
+  isExternal: true
+  name: Permission
+  nameWithType: ClaimTypes.Permission
+  fullName: NuvTools.Security.Models.ClaimTypes.Permission
+- uid: NuvTools.Security.Identity.Policy.PermissionRequirement
+  commentId: T:NuvTools.Security.Identity.Policy.PermissionRequirement
+  parent: NuvTools.Security.Identity.Policy
+  isExternal: true
+  href: NuvTools.Security.Identity.Policy.PermissionRequirement.html
+  name: PermissionRequirement
+  nameWithType: PermissionRequirement
+  fullName: NuvTools.Security.Identity.Policy.PermissionRequirement
+- uid: Microsoft.AspNetCore.Authorization.DefaultAuthorizationPolicyProvider
+  commentId: T:Microsoft.AspNetCore.Authorization.DefaultAuthorizationPolicyProvider
+  parent: Microsoft.AspNetCore.Authorization
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.defaultauthorizationpolicyprovider
+  name: DefaultAuthorizationPolicyProvider
+  nameWithType: DefaultAuthorizationPolicyProvider
+  fullName: Microsoft.AspNetCore.Authorization.DefaultAuthorizationPolicyProvider
 - uid: NuvTools.Security.Identity.Policy
   commentId: N:NuvTools.Security.Identity.Policy
   isExternal: true
@@ -233,14 +297,6 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: Microsoft.AspNetCore.Authorization.IAuthorizationPolicyProvider
-  commentId: T:Microsoft.AspNetCore.Authorization.IAuthorizationPolicyProvider
-  parent: Microsoft.AspNetCore.Authorization
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationpolicyprovider
-  name: IAuthorizationPolicyProvider
-  nameWithType: IAuthorizationPolicyProvider
-  fullName: Microsoft.AspNetCore.Authorization.IAuthorizationPolicyProvider
 - uid: System.Object.GetType
   commentId: M:System.Object.GetType
   parent: System.Object
@@ -460,13 +516,6 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
   - name: (
   - name: )
-- uid: System
-  commentId: N:System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System
-  nameWithType: System
-  fullName: System
 - uid: Microsoft.AspNetCore.Authorization
   commentId: N:Microsoft.AspNetCore.Authorization
   isExternal: true
@@ -504,6 +553,13 @@ references:
     name: Authorization
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: NuvTools.Security.Identity.Policy.AuthorizationPermissionPolicyProvider.#ctor*
   commentId: Overload:NuvTools.Security.Identity.Policy.AuthorizationPermissionPolicyProvider.#ctor
   isExternal: true
@@ -614,6 +670,41 @@ references:
     name: Options
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: Microsoft.AspNetCore.Authorization.AuthorizationPolicy
+  commentId: T:Microsoft.AspNetCore.Authorization.AuthorizationPolicy
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationpolicy
+  name: AuthorizationPolicy
+  nameWithType: AuthorizationPolicy
+  fullName: Microsoft.AspNetCore.Authorization.AuthorizationPolicy
 - uid: NuvTools.Security.Identity.Policy.AuthorizationPermissionPolicyProvider.GetDefaultPolicyAsync*
   commentId: Overload:NuvTools.Security.Identity.Policy.AuthorizationPermissionPolicyProvider.GetDefaultPolicyAsync
   isExternal: true
@@ -678,34 +769,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationpolicy
   - name: )
-- uid: System.Threading.Tasks.Task`1
-  commentId: T:System.Threading.Tasks.Task`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<TResult>
-  nameWithType: Task<TResult>
-  fullName: System.Threading.Tasks.Task<TResult>
-  nameWithType.vb: Task(Of TResult)
-  fullName.vb: System.Threading.Tasks.Task(Of TResult)
-  name.vb: Task(Of TResult)
-  spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: <
-  - name: TResult
-  - name: '>'
-  spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: TResult
-  - name: )
 - uid: System.Threading.Tasks
   commentId: N:System.Threading.Tasks
   isExternal: true
@@ -743,13 +806,6 @@ references:
     name: Tasks
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
-- uid: Microsoft.AspNetCore.Authorization.AuthorizationPolicy
-  commentId: T:Microsoft.AspNetCore.Authorization.AuthorizationPolicy
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationpolicy
-  name: AuthorizationPolicy
-  nameWithType: AuthorizationPolicy
-  fullName: Microsoft.AspNetCore.Authorization.AuthorizationPolicy
 - uid: NuvTools.Security.Identity.Policy.AuthorizationPermissionPolicyProvider.GetPolicyAsync*
   commentId: Overload:NuvTools.Security.Identity.Policy.AuthorizationPermissionPolicyProvider.GetPolicyAsync
   isExternal: true
@@ -837,11 +893,3 @@ references:
   name: FallbackPolicyProvider
   nameWithType: AuthorizationPermissionPolicyProvider.FallbackPolicyProvider
   fullName: NuvTools.Security.Identity.Policy.AuthorizationPermissionPolicyProvider.FallbackPolicyProvider
-- uid: Microsoft.AspNetCore.Authorization.DefaultAuthorizationPolicyProvider
-  commentId: T:Microsoft.AspNetCore.Authorization.DefaultAuthorizationPolicyProvider
-  parent: Microsoft.AspNetCore.Authorization
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.defaultauthorizationpolicyprovider
-  name: DefaultAuthorizationPolicyProvider
-  nameWithType: DefaultAuthorizationPolicyProvider
-  fullName: Microsoft.AspNetCore.Authorization.DefaultAuthorizationPolicyProvider

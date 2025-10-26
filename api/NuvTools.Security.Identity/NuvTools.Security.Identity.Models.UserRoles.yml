@@ -16,10 +16,18 @@ items:
   fullName: NuvTools.Security.Identity.Models.UserRoles
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserRoles.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/UserRoles.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
+  summary: Represents the association between a user and their assigned roles.
+  remarks: >-
+    This model is typically used for transferring or serializing role assignment data,  
+
+    for example in APIs or service layers that need to list or update user roles.  
+
+    It does not represent a database entity but rather a DTO (Data Transfer Object).
+  example: []
   syntax:
     content: public class UserRoles
     content.vb: Public Class UserRoles
@@ -45,7 +53,7 @@ items:
   fullName: NuvTools.Security.Identity.Models.UserRoles.UserRoles()
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserRoles.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/UserRoles.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
@@ -68,10 +76,13 @@ items:
   fullName: NuvTools.Security.Identity.Models.UserRoles.UserId
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserRoles.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/UserRoles.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
+  summary: Gets or sets the unique identifier of the user.
+  remarks: The identifier type is defined as <xref href="System.Int32" data-throw-if-not-resolved="false"></xref> by default
+  example: []
   syntax:
     content: public int UserId { get; set; }
     parameters: []
@@ -91,10 +102,16 @@ items:
   fullName: NuvTools.Security.Identity.Models.UserRoles.Roles
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserRoles.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/UserRoles.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
+  summary: Gets or sets the list of role names assigned to the user.
+  remarks: >-
+    Each string represents a role name.  
+
+    If no roles are assigned, this property may be <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> or an empty list.
+  example: []
   syntax:
     content: public IList<string>? Roles { get; set; }
     parameters: []
@@ -397,13 +414,6 @@ references:
   nameWithType.vb: UserRoles.New
   fullName.vb: NuvTools.Security.Identity.Models.UserRoles.New
   name.vb: New
-- uid: NuvTools.Security.Identity.Models.UserRoles.UserId*
-  commentId: Overload:NuvTools.Security.Identity.Models.UserRoles.UserId
-  isExternal: true
-  href: NuvTools.Security.Identity.Models.UserRoles.html#NuvTools_Security_Identity_Models_UserRoles_UserId
-  name: UserId
-  nameWithType: UserRoles.UserId
-  fullName: NuvTools.Security.Identity.Models.UserRoles.UserId
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -415,6 +425,13 @@ references:
   nameWithType.vb: Integer
   fullName.vb: Integer
   name.vb: Integer
+- uid: NuvTools.Security.Identity.Models.UserRoles.UserId*
+  commentId: Overload:NuvTools.Security.Identity.Models.UserRoles.UserId
+  isExternal: true
+  href: NuvTools.Security.Identity.Models.UserRoles.html#NuvTools_Security_Identity_Models_UserRoles_UserId
+  name: UserId
+  nameWithType: UserRoles.UserId
+  fullName: NuvTools.Security.Identity.Models.UserRoles.UserId
 - uid: NuvTools.Security.Identity.Models.UserRoles.Roles*
   commentId: Overload:NuvTools.Security.Identity.Models.UserRoles.Roles
   isExternal: true

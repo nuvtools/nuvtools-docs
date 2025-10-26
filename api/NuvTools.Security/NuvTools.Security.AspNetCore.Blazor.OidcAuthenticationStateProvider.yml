@@ -16,10 +16,19 @@ items:
   fullName: NuvTools.Security.AspNetCore.Blazor.OidcAuthenticationStateProvider
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/2857885b7303512230448106b859554a2f8a0178/src/NuvTools.Security.AspNetCore.Blazor/OidcAuthenticationStateProvider.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security.AspNetCore.Blazor/OidcAuthenticationStateProvider.cs
   assemblies:
   - NuvTools.Security.AspNetCore.Blazor
   namespace: NuvTools.Security.AspNetCore.Blazor
+  summary: >-
+    Provides an <xref href="Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider" data-throw-if-not-resolved="false"></xref> implementation for Blazor WebAssembly
+
+    applications that use OpenID Connect (OIDC) authentication.
+  remarks: >-
+    This provider retrieves and parses access tokens using an <xref href="Microsoft.AspNetCore.Components.WebAssembly.Authentication.IAccessTokenProvider" data-throw-if-not-resolved="false"></xref>,
+
+    enabling JWT-based user claims to be extracted and tracked for authorization.
+  example: []
   syntax:
     content: 'public class OidcAuthenticationStateProvider : AuthenticationStateProvider'
     content.vb: Public Class OidcAuthenticationStateProvider Inherits AuthenticationStateProvider
@@ -48,10 +57,19 @@ items:
   fullName: NuvTools.Security.AspNetCore.Blazor.OidcAuthenticationStateProvider.OidcAuthenticationStateProvider(Microsoft.AspNetCore.Components.WebAssembly.Authentication.IAccessTokenProvider)
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/2857885b7303512230448106b859554a2f8a0178/src/NuvTools.Security.AspNetCore.Blazor/OidcAuthenticationStateProvider.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security.AspNetCore.Blazor/OidcAuthenticationStateProvider.cs
   assemblies:
   - NuvTools.Security.AspNetCore.Blazor
   namespace: NuvTools.Security.AspNetCore.Blazor
+  summary: >-
+    Provides an <xref href="Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider" data-throw-if-not-resolved="false"></xref> implementation for Blazor WebAssembly
+
+    applications that use OpenID Connect (OIDC) authentication.
+  remarks: >-
+    This provider retrieves and parses access tokens using an <xref href="Microsoft.AspNetCore.Components.WebAssembly.Authentication.IAccessTokenProvider" data-throw-if-not-resolved="false"></xref>,
+
+    enabling JWT-based user claims to be extracted and tracked for authorization.
+  example: []
   syntax:
     content: public OidcAuthenticationStateProvider(IAccessTokenProvider tokenProvider)
     parameters:
@@ -74,17 +92,26 @@ items:
   fullName: NuvTools.Security.AspNetCore.Blazor.OidcAuthenticationStateProvider.GetAuthenticationStateAsync()
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/2857885b7303512230448106b859554a2f8a0178/src/NuvTools.Security.AspNetCore.Blazor/OidcAuthenticationStateProvider.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security.AspNetCore.Blazor/OidcAuthenticationStateProvider.cs
   assemblies:
   - NuvTools.Security.AspNetCore.Blazor
   namespace: NuvTools.Security.AspNetCore.Blazor
-  summary: Asynchronously gets an <xref href="Microsoft.AspNetCore.Components.Authorization.AuthenticationState" data-throw-if-not-resolved="false"></xref> that describes the current user.
+  summary: Asynchronously retrieves the current authentication state.
+  remarks: >-
+    This method is called by the Blazor authorization infrastructure to determine
+
+    the current user’s identity. If a valid access token is present, it will parse the
+
+    claims from the JWT; otherwise, it returns an anonymous user.
   example: []
   syntax:
     content: public override Task<AuthenticationState> GetAuthenticationStateAsync()
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Components.Authorization.AuthenticationState}
-      description: A task that, when resolved, gives an <xref href="Microsoft.AspNetCore.Components.Authorization.AuthenticationState" data-throw-if-not-resolved="false"></xref> instance that describes the current user.
+      description: >-
+        An <xref href="Microsoft.AspNetCore.Components.Authorization.AuthenticationState" data-throw-if-not-resolved="false"></xref> representing either the authenticated user or
+
+        an anonymous identity if the token could not be obtained or is invalid.
     content.vb: Public Overrides Function GetAuthenticationStateAsync() As Task(Of AuthenticationState)
   overridden: Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider.GetAuthenticationStateAsync
   overload: NuvTools.Security.AspNetCore.Blazor.OidcAuthenticationStateProvider.GetAuthenticationStateAsync*
@@ -100,10 +127,12 @@ items:
   fullName: NuvTools.Security.AspNetCore.Blazor.OidcAuthenticationStateProvider.CurrentUser
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/2857885b7303512230448106b859554a2f8a0178/src/NuvTools.Security.AspNetCore.Blazor/OidcAuthenticationStateProvider.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security.AspNetCore.Blazor/OidcAuthenticationStateProvider.cs
   assemblies:
   - NuvTools.Security.AspNetCore.Blazor
   namespace: NuvTools.Security.AspNetCore.Blazor
+  summary: Gets the current authenticated user represented by a <xref href="System.Security.Claims.ClaimsPrincipal" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public ClaimsPrincipal? CurrentUser { get; }
     parameters: []
@@ -112,6 +141,22 @@ items:
     content.vb: Public ReadOnly Property CurrentUser As ClaimsPrincipal
   overload: NuvTools.Security.AspNetCore.Blazor.OidcAuthenticationStateProvider.CurrentUser*
 references:
+- uid: Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider
+  commentId: T:Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider
+  parent: Microsoft.AspNetCore.Components.Authorization
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.authorization.authenticationstateprovider
+  name: AuthenticationStateProvider
+  nameWithType: AuthenticationStateProvider
+  fullName: Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider
+- uid: Microsoft.AspNetCore.Components.WebAssembly.Authentication.IAccessTokenProvider
+  commentId: T:Microsoft.AspNetCore.Components.WebAssembly.Authentication.IAccessTokenProvider
+  parent: Microsoft.AspNetCore.Components.WebAssembly.Authentication
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.webassembly.authentication.iaccesstokenprovider
+  name: IAccessTokenProvider
+  nameWithType: IAccessTokenProvider
+  fullName: Microsoft.AspNetCore.Components.WebAssembly.Authentication.IAccessTokenProvider
 - uid: NuvTools.Security.AspNetCore.Blazor
   commentId: N:NuvTools.Security.AspNetCore.Blazor
   isExternal: true
@@ -170,14 +215,6 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider
-  commentId: T:Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider
-  parent: Microsoft.AspNetCore.Components.Authorization
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.authorization.authenticationstateprovider
-  name: AuthenticationStateProvider
-  nameWithType: AuthenticationStateProvider
-  fullName: Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider
 - uid: Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider.NotifyAuthenticationStateChanged(System.Threading.Tasks.Task{Microsoft.AspNetCore.Components.Authorization.AuthenticationState})
   commentId: M:Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider.NotifyAuthenticationStateChanged(System.Threading.Tasks.Task{Microsoft.AspNetCore.Components.Authorization.AuthenticationState})
   parent: Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider
@@ -452,13 +489,6 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
   - name: (
   - name: )
-- uid: System
-  commentId: N:System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System
-  nameWithType: System
-  fullName: System
 - uid: Microsoft.AspNetCore.Components.Authorization
   commentId: N:Microsoft.AspNetCore.Components.Authorization
   isExternal: true
@@ -506,24 +536,6 @@ references:
     name: Authorization
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.authorization
-- uid: NuvTools.Security.AspNetCore.Blazor.OidcAuthenticationStateProvider.#ctor*
-  commentId: Overload:NuvTools.Security.AspNetCore.Blazor.OidcAuthenticationStateProvider.#ctor
-  isExternal: true
-  href: NuvTools.Security.AspNetCore.Blazor.OidcAuthenticationStateProvider.html#NuvTools_Security_AspNetCore_Blazor_OidcAuthenticationStateProvider__ctor_Microsoft_AspNetCore_Components_WebAssembly_Authentication_IAccessTokenProvider_
-  name: OidcAuthenticationStateProvider
-  nameWithType: OidcAuthenticationStateProvider.OidcAuthenticationStateProvider
-  fullName: NuvTools.Security.AspNetCore.Blazor.OidcAuthenticationStateProvider.OidcAuthenticationStateProvider
-  nameWithType.vb: OidcAuthenticationStateProvider.New
-  fullName.vb: NuvTools.Security.AspNetCore.Blazor.OidcAuthenticationStateProvider.New
-  name.vb: New
-- uid: Microsoft.AspNetCore.Components.WebAssembly.Authentication.IAccessTokenProvider
-  commentId: T:Microsoft.AspNetCore.Components.WebAssembly.Authentication.IAccessTokenProvider
-  parent: Microsoft.AspNetCore.Components.WebAssembly.Authentication
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.webassembly.authentication.iaccesstokenprovider
-  name: IAccessTokenProvider
-  nameWithType: IAccessTokenProvider
-  fullName: Microsoft.AspNetCore.Components.WebAssembly.Authentication.IAccessTokenProvider
 - uid: Microsoft.AspNetCore.Components.WebAssembly.Authentication
   commentId: N:Microsoft.AspNetCore.Components.WebAssembly.Authentication
   isExternal: true
@@ -581,6 +593,23 @@ references:
     name: Authentication
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.webassembly.authentication
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NuvTools.Security.AspNetCore.Blazor.OidcAuthenticationStateProvider.#ctor*
+  commentId: Overload:NuvTools.Security.AspNetCore.Blazor.OidcAuthenticationStateProvider.#ctor
+  isExternal: true
+  href: NuvTools.Security.AspNetCore.Blazor.OidcAuthenticationStateProvider.html#NuvTools_Security_AspNetCore_Blazor_OidcAuthenticationStateProvider__ctor_Microsoft_AspNetCore_Components_WebAssembly_Authentication_IAccessTokenProvider_
+  name: OidcAuthenticationStateProvider
+  nameWithType: OidcAuthenticationStateProvider.OidcAuthenticationStateProvider
+  fullName: NuvTools.Security.AspNetCore.Blazor.OidcAuthenticationStateProvider.OidcAuthenticationStateProvider
+  nameWithType.vb: OidcAuthenticationStateProvider.New
+  fullName.vb: NuvTools.Security.AspNetCore.Blazor.OidcAuthenticationStateProvider.New
+  name.vb: New
 - uid: Microsoft.AspNetCore.Components.Authorization.AuthenticationState
   commentId: T:Microsoft.AspNetCore.Components.Authorization.AuthenticationState
   isExternal: true
@@ -717,13 +746,6 @@ references:
     name: Tasks
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
-- uid: NuvTools.Security.AspNetCore.Blazor.OidcAuthenticationStateProvider.CurrentUser*
-  commentId: Overload:NuvTools.Security.AspNetCore.Blazor.OidcAuthenticationStateProvider.CurrentUser
-  isExternal: true
-  href: NuvTools.Security.AspNetCore.Blazor.OidcAuthenticationStateProvider.html#NuvTools_Security_AspNetCore_Blazor_OidcAuthenticationStateProvider_CurrentUser
-  name: CurrentUser
-  nameWithType: OidcAuthenticationStateProvider.CurrentUser
-  fullName: NuvTools.Security.AspNetCore.Blazor.OidcAuthenticationStateProvider.CurrentUser
 - uid: System.Security.Claims.ClaimsPrincipal
   commentId: T:System.Security.Claims.ClaimsPrincipal
   parent: System.Security.Claims
@@ -732,6 +754,13 @@ references:
   name: ClaimsPrincipal
   nameWithType: ClaimsPrincipal
   fullName: System.Security.Claims.ClaimsPrincipal
+- uid: NuvTools.Security.AspNetCore.Blazor.OidcAuthenticationStateProvider.CurrentUser*
+  commentId: Overload:NuvTools.Security.AspNetCore.Blazor.OidcAuthenticationStateProvider.CurrentUser
+  isExternal: true
+  href: NuvTools.Security.AspNetCore.Blazor.OidcAuthenticationStateProvider.html#NuvTools_Security_AspNetCore_Blazor_OidcAuthenticationStateProvider_CurrentUser
+  name: CurrentUser
+  nameWithType: OidcAuthenticationStateProvider.CurrentUser
+  fullName: NuvTools.Security.AspNetCore.Blazor.OidcAuthenticationStateProvider.CurrentUser
 - uid: System.Security.Claims
   commentId: N:System.Security.Claims
   isExternal: true

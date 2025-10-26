@@ -6,9 +6,9 @@ items:
   parent: NuvTools.Common.ResultWrapper
   children:
   - NuvTools.Common.ResultWrapper.MessageDetail.#ctor(NuvTools.Common.ResultWrapper.MessageDetail)
-  - NuvTools.Common.ResultWrapper.MessageDetail.#ctor(System.String,System.String,System.String,System.Nullable{NuvTools.Common.ResultWrapper.Severity})
+  - NuvTools.Common.ResultWrapper.MessageDetail.#ctor(System.String,System.String,System.String,System.Nullable{NuvTools.Common.ResultWrapper.Enumerations.Severity})
   - NuvTools.Common.ResultWrapper.MessageDetail.Code
-  - NuvTools.Common.ResultWrapper.MessageDetail.Deconstruct(System.String@,System.String@,System.String@,System.Nullable{NuvTools.Common.ResultWrapper.Severity}@)
+  - NuvTools.Common.ResultWrapper.MessageDetail.Deconstruct(System.String@,System.String@,System.String@,System.Nullable{NuvTools.Common.ResultWrapper.Enumerations.Severity}@)
   - NuvTools.Common.ResultWrapper.MessageDetail.Detail
   - NuvTools.Common.ResultWrapper.MessageDetail.EqualityContract
   - NuvTools.Common.ResultWrapper.MessageDetail.Equals(NuvTools.Common.ResultWrapper.MessageDetail)
@@ -28,10 +28,34 @@ items:
   fullName: NuvTools.Common.ResultWrapper.MessageDetail
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: >-
+    Represents a detailed message related to an operation result,
+
+    such as informational, success, warning, or error messages.
+  remarks: >-
+    The <xref href="NuvTools.Common.ResultWrapper.MessageDetail" data-throw-if-not-resolved="false"></xref> record is typically used as part of a
+
+    <xref href="NuvTools.Common.ResultWrapper.Result" data-throw-if-not-resolved="false"></xref> or <xref href="NuvTools.Common.ResultWrapper.Result%601" data-throw-if-not-resolved="false"></xref> object to provide
+
+    structured feedback about an operation.
+
+    It allows developers to capture human-readable messages along with
+
+    metadata such as message code and severity.
+  example:
+  - >-
+    Example usage:
+
+    <pre><code class="lang-csharp">var message = new MessageDetail(
+        Title: "Validation failed",
+        Detail: "The email address format is invalid.",
+        Code: "VAL001",
+        Severity: Severity.Warning
+    );</code></pre>
   syntax:
     content: 'public record MessageDetail : IEquatable<MessageDetail>'
     content.vb: Public Class MessageDetail Implements IEquatable(Of MessageDetail)
@@ -48,37 +72,74 @@ items:
   - NuvTools.Common.ResultWrapper.MessageDetail.NuvTools.Common.Serialization.Json.ObjectExtensions.Clone``1(System.Int32)
   - NuvTools.Common.ResultWrapper.MessageDetail.NuvTools.Common.Serialization.Json.ObjectExtensions.Serialize``1(System.Int32)
   - NuvTools.Common.ResultWrapper.MessageDetail.NuvTools.Common.Web.ObjectExtensions.GetQueryString``1(System.String)
-- uid: NuvTools.Common.ResultWrapper.MessageDetail.#ctor(System.String,System.String,System.String,System.Nullable{NuvTools.Common.ResultWrapper.Severity})
-  commentId: M:NuvTools.Common.ResultWrapper.MessageDetail.#ctor(System.String,System.String,System.String,System.Nullable{NuvTools.Common.ResultWrapper.Severity})
-  id: '#ctor(System.String,System.String,System.String,System.Nullable{NuvTools.Common.ResultWrapper.Severity})'
+- uid: NuvTools.Common.ResultWrapper.MessageDetail.#ctor(System.String,System.String,System.String,System.Nullable{NuvTools.Common.ResultWrapper.Enumerations.Severity})
+  commentId: M:NuvTools.Common.ResultWrapper.MessageDetail.#ctor(System.String,System.String,System.String,System.Nullable{NuvTools.Common.ResultWrapper.Enumerations.Severity})
+  id: '#ctor(System.String,System.String,System.String,System.Nullable{NuvTools.Common.ResultWrapper.Enumerations.Severity})'
   parent: NuvTools.Common.ResultWrapper.MessageDetail
   langs:
   - csharp
   - vb
   name: MessageDetail(string, string?, string?, Severity?)
   nameWithType: MessageDetail.MessageDetail(string, string?, string?, Severity?)
-  fullName: NuvTools.Common.ResultWrapper.MessageDetail.MessageDetail(string, string?, string?, NuvTools.Common.ResultWrapper.Severity?)
+  fullName: NuvTools.Common.ResultWrapper.MessageDetail.MessageDetail(string, string?, string?, NuvTools.Common.ResultWrapper.Enumerations.Severity?)
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: >-
+    Represents a detailed message related to an operation result,
+
+    such as informational, success, warning, or error messages.
+  remarks: >-
+    The <xref href="NuvTools.Common.ResultWrapper.MessageDetail" data-throw-if-not-resolved="false"></xref> record is typically used as part of a
+
+    <xref href="NuvTools.Common.ResultWrapper.Result" data-throw-if-not-resolved="false"></xref> or <xref href="NuvTools.Common.ResultWrapper.Result%601" data-throw-if-not-resolved="false"></xref> object to provide
+
+    structured feedback about an operation.
+
+    It allows developers to capture human-readable messages along with
+
+    metadata such as message code and severity.
+  example:
+  - >-
+    Example usage:
+
+    <pre><code class="lang-csharp">var message = new MessageDetail(
+        Title: "Validation failed",
+        Detail: "The email address format is invalid.",
+        Code: "VAL001",
+        Severity: Severity.Warning
+    );</code></pre>
   syntax:
     content: public MessageDetail(string Title, string? Detail = null, string? Code = null, Severity? Severity = null)
     parameters:
     - id: Title
       type: System.String
+      description: The short, human-readable message summarizing the event or result.
     - id: Detail
       type: System.String
+      description: >-
+        An optional detailed description that provides more context or
+
+        technical information about the message.
     - id: Code
       type: System.String
+      description: >-
+        An optional identifier that uniquely represents the message type or
+
+        category, useful for localization, logging, or client-side handling.
     - id: Severity
-      type: System.Nullable{NuvTools.Common.ResultWrapper.Severity}
+      type: System.Nullable{NuvTools.Common.ResultWrapper.Enumerations.Severity}
+      description: >-
+        The severity level of the message (e.g., <xref href="NuvTools.Common.ResultWrapper.Enumerations.Severity.Information" data-throw-if-not-resolved="false"></xref>,
+
+        <xref href="NuvTools.Common.ResultWrapper.Enumerations.Severity.Warning" data-throw-if-not-resolved="false"></xref>, <xref href="NuvTools.Common.ResultWrapper.Enumerations.Severity.Error" data-throw-if-not-resolved="false"></xref>).
     content.vb: Public Sub New(Title As String, Detail As String = Nothing, Code As String = Nothing, Severity As Severity? = Nothing)
   overload: NuvTools.Common.ResultWrapper.MessageDetail.#ctor*
   nameWithType.vb: MessageDetail.New(String, String, String, Severity?)
-  fullName.vb: NuvTools.Common.ResultWrapper.MessageDetail.New(String, String, String, NuvTools.Common.ResultWrapper.Severity?)
+  fullName.vb: NuvTools.Common.ResultWrapper.MessageDetail.New(String, String, String, NuvTools.Common.ResultWrapper.Enumerations.Severity?)
   name.vb: New(String, String, String, Severity?)
 - uid: NuvTools.Common.ResultWrapper.MessageDetail.ToString
   commentId: M:NuvTools.Common.ResultWrapper.MessageDetail.ToString
@@ -92,7 +153,7 @@ items:
   fullName: NuvTools.Common.ResultWrapper.MessageDetail.ToString()
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
@@ -116,7 +177,7 @@ items:
   fullName: NuvTools.Common.ResultWrapper.MessageDetail.PrintMembers(System.Text.StringBuilder)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
@@ -141,7 +202,7 @@ items:
   fullName: NuvTools.Common.ResultWrapper.MessageDetail.operator !=(NuvTools.Common.ResultWrapper.MessageDetail?, NuvTools.Common.ResultWrapper.MessageDetail?)
   type: Operator
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
@@ -171,7 +232,7 @@ items:
   fullName: NuvTools.Common.ResultWrapper.MessageDetail.operator ==(NuvTools.Common.ResultWrapper.MessageDetail?, NuvTools.Common.ResultWrapper.MessageDetail?)
   type: Operator
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
@@ -201,7 +262,7 @@ items:
   fullName: NuvTools.Common.ResultWrapper.MessageDetail.GetHashCode()
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
@@ -225,7 +286,7 @@ items:
   fullName: NuvTools.Common.ResultWrapper.MessageDetail.Equals(object?)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
@@ -255,7 +316,7 @@ items:
   fullName: NuvTools.Common.ResultWrapper.MessageDetail.Equals(NuvTools.Common.ResultWrapper.MessageDetail?)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
@@ -286,7 +347,7 @@ items:
   fullName: NuvTools.Common.ResultWrapper.MessageDetail.MessageDetail(NuvTools.Common.ResultWrapper.MessageDetail)
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
@@ -300,19 +361,19 @@ items:
   nameWithType.vb: MessageDetail.New(MessageDetail)
   fullName.vb: NuvTools.Common.ResultWrapper.MessageDetail.New(NuvTools.Common.ResultWrapper.MessageDetail)
   name.vb: New(MessageDetail)
-- uid: NuvTools.Common.ResultWrapper.MessageDetail.Deconstruct(System.String@,System.String@,System.String@,System.Nullable{NuvTools.Common.ResultWrapper.Severity}@)
-  commentId: M:NuvTools.Common.ResultWrapper.MessageDetail.Deconstruct(System.String@,System.String@,System.String@,System.Nullable{NuvTools.Common.ResultWrapper.Severity}@)
-  id: Deconstruct(System.String@,System.String@,System.String@,System.Nullable{NuvTools.Common.ResultWrapper.Severity}@)
+- uid: NuvTools.Common.ResultWrapper.MessageDetail.Deconstruct(System.String@,System.String@,System.String@,System.Nullable{NuvTools.Common.ResultWrapper.Enumerations.Severity}@)
+  commentId: M:NuvTools.Common.ResultWrapper.MessageDetail.Deconstruct(System.String@,System.String@,System.String@,System.Nullable{NuvTools.Common.ResultWrapper.Enumerations.Severity}@)
+  id: Deconstruct(System.String@,System.String@,System.String@,System.Nullable{NuvTools.Common.ResultWrapper.Enumerations.Severity}@)
   parent: NuvTools.Common.ResultWrapper.MessageDetail
   langs:
   - csharp
   - vb
   name: Deconstruct(out string, out string?, out string?, out Severity?)
   nameWithType: MessageDetail.Deconstruct(out string, out string?, out string?, out Severity?)
-  fullName: NuvTools.Common.ResultWrapper.MessageDetail.Deconstruct(out string, out string?, out string?, out NuvTools.Common.ResultWrapper.Severity?)
+  fullName: NuvTools.Common.ResultWrapper.MessageDetail.Deconstruct(out string, out string?, out string?, out NuvTools.Common.ResultWrapper.Enumerations.Severity?)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
@@ -326,11 +387,11 @@ items:
     - id: Code
       type: System.String
     - id: Severity
-      type: System.Nullable{NuvTools.Common.ResultWrapper.Severity}
+      type: System.Nullable{NuvTools.Common.ResultWrapper.Enumerations.Severity}
     content.vb: Public Sub Deconstruct(Title As String, Detail As String, Code As String, Severity As Severity?)
   overload: NuvTools.Common.ResultWrapper.MessageDetail.Deconstruct*
   nameWithType.vb: MessageDetail.Deconstruct(String, String, String, Severity?)
-  fullName.vb: NuvTools.Common.ResultWrapper.MessageDetail.Deconstruct(String, String, String, NuvTools.Common.ResultWrapper.Severity?)
+  fullName.vb: NuvTools.Common.ResultWrapper.MessageDetail.Deconstruct(String, String, String, NuvTools.Common.ResultWrapper.Enumerations.Severity?)
   name.vb: Deconstruct(String, String, String, Severity?)
 - uid: NuvTools.Common.ResultWrapper.MessageDetail.EqualityContract
   commentId: P:NuvTools.Common.ResultWrapper.MessageDetail.EqualityContract
@@ -344,7 +405,7 @@ items:
   fullName: NuvTools.Common.ResultWrapper.MessageDetail.EqualityContract
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
@@ -367,10 +428,12 @@ items:
   fullName: NuvTools.Common.ResultWrapper.MessageDetail.Title
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: The short, human-readable message summarizing the event or result.
+  example: []
   syntax:
     content: public string Title { get; init; }
     parameters: []
@@ -390,10 +453,15 @@ items:
   fullName: NuvTools.Common.ResultWrapper.MessageDetail.Detail
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: >-
+    An optional detailed description that provides more context or
+
+    technical information about the message.
+  example: []
   syntax:
     content: public string? Detail { get; init; }
     parameters: []
@@ -413,10 +481,15 @@ items:
   fullName: NuvTools.Common.ResultWrapper.MessageDetail.Code
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: >-
+    An optional identifier that uniquely represents the message type or
+
+    category, useful for localization, logging, or client-side handling.
+  example: []
   syntax:
     content: public string? Code { get; init; }
     parameters: []
@@ -436,18 +509,87 @@ items:
   fullName: NuvTools.Common.ResultWrapper.MessageDetail.Severity
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: >-
+    The severity level of the message (e.g., <xref href="NuvTools.Common.ResultWrapper.Enumerations.Severity.Information" data-throw-if-not-resolved="false"></xref>,
+
+    <xref href="NuvTools.Common.ResultWrapper.Enumerations.Severity.Warning" data-throw-if-not-resolved="false"></xref>, <xref href="NuvTools.Common.ResultWrapper.Enumerations.Severity.Error" data-throw-if-not-resolved="false"></xref>).
+  example: []
   syntax:
     content: public Severity? Severity { get; init; }
     parameters: []
     return:
-      type: System.Nullable{NuvTools.Common.ResultWrapper.Severity}
+      type: System.Nullable{NuvTools.Common.ResultWrapper.Enumerations.Severity}
     content.vb: Public Property Severity As Severity?
   overload: NuvTools.Common.ResultWrapper.MessageDetail.Severity*
 references:
+- uid: NuvTools.Common.ResultWrapper.MessageDetail
+  commentId: T:NuvTools.Common.ResultWrapper.MessageDetail
+  parent: NuvTools.Common.ResultWrapper
+  isExternal: true
+  href: NuvTools.Common.ResultWrapper.MessageDetail.html
+  name: MessageDetail
+  nameWithType: MessageDetail
+  fullName: NuvTools.Common.ResultWrapper.MessageDetail
+- uid: NuvTools.Common.ResultWrapper.Result
+  commentId: T:NuvTools.Common.ResultWrapper.Result
+  isExternal: true
+  href: NuvTools.Common.ResultWrapper.Result.html
+  name: Result
+  nameWithType: Result
+  fullName: NuvTools.Common.ResultWrapper.Result
+- uid: NuvTools.Common.ResultWrapper.Result`1
+  commentId: T:NuvTools.Common.ResultWrapper.Result`1
+  isExternal: true
+  href: NuvTools.Common.ResultWrapper.Result-1.html
+  name: Result<T>
+  nameWithType: Result<T>
+  fullName: NuvTools.Common.ResultWrapper.Result<T>
+  nameWithType.vb: Result(Of T)
+  fullName.vb: NuvTools.Common.ResultWrapper.Result(Of T)
+  name.vb: Result(Of T)
+  spec.csharp:
+  - uid: NuvTools.Common.ResultWrapper.Result`1
+    name: Result
+    isExternal: true
+    href: NuvTools.Common.ResultWrapper.Result-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: NuvTools.Common.ResultWrapper.Result`1
+    name: Result
+    isExternal: true
+    href: NuvTools.Common.ResultWrapper.Result-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NuvTools.Common.ResultWrapper.Enumerations.Severity.Information
+  commentId: F:NuvTools.Common.ResultWrapper.Enumerations.Severity.Information
+  isExternal: true
+  href: NuvTools.Common.ResultWrapper.Enumerations.Severity.html#NuvTools_Common_ResultWrapper_Enumerations_Severity_Information
+  name: Information
+  nameWithType: Severity.Information
+  fullName: NuvTools.Common.ResultWrapper.Enumerations.Severity.Information
+- uid: NuvTools.Common.ResultWrapper.Enumerations.Severity.Warning
+  commentId: F:NuvTools.Common.ResultWrapper.Enumerations.Severity.Warning
+  isExternal: true
+  href: NuvTools.Common.ResultWrapper.Enumerations.Severity.html#NuvTools_Common_ResultWrapper_Enumerations_Severity_Warning
+  name: Warning
+  nameWithType: Severity.Warning
+  fullName: NuvTools.Common.ResultWrapper.Enumerations.Severity.Warning
+- uid: NuvTools.Common.ResultWrapper.Enumerations.Severity.Error
+  commentId: F:NuvTools.Common.ResultWrapper.Enumerations.Severity.Error
+  isExternal: true
+  href: NuvTools.Common.ResultWrapper.Enumerations.Severity.html#NuvTools_Common_ResultWrapper_Enumerations_Severity_Error
+  name: Error
+  nameWithType: Severity.Error
+  fullName: NuvTools.Common.ResultWrapper.Enumerations.Severity.Error
 - uid: NuvTools.Common.ResultWrapper
   commentId: N:NuvTools.Common.ResultWrapper
   isExternal: true
@@ -1122,7 +1264,7 @@ references:
 - uid: NuvTools.Common.ResultWrapper.MessageDetail.#ctor*
   commentId: Overload:NuvTools.Common.ResultWrapper.MessageDetail.#ctor
   isExternal: true
-  href: NuvTools.Common.ResultWrapper.MessageDetail.html#NuvTools_Common_ResultWrapper_MessageDetail__ctor_System_String_System_String_System_String_System_Nullable_NuvTools_Common_ResultWrapper_Severity__
+  href: NuvTools.Common.ResultWrapper.MessageDetail.html#NuvTools_Common_ResultWrapper_MessageDetail__ctor_System_String_System_String_System_String_System_Nullable_NuvTools_Common_ResultWrapper_Enumerations_Severity__
   name: MessageDetail
   nameWithType: MessageDetail.MessageDetail
   fullName: NuvTools.Common.ResultWrapper.MessageDetail.MessageDetail
@@ -1140,25 +1282,25 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: System.Nullable{NuvTools.Common.ResultWrapper.Severity}
-  commentId: T:System.Nullable{NuvTools.Common.ResultWrapper.Severity}
+- uid: System.Nullable{NuvTools.Common.ResultWrapper.Enumerations.Severity}
+  commentId: T:System.Nullable{NuvTools.Common.ResultWrapper.Enumerations.Severity}
   parent: System
   definition: System.Nullable`1
-  href: NuvTools.Common.ResultWrapper.Severity.html
+  href: NuvTools.Common.ResultWrapper.Enumerations.Severity.html
   name: Severity?
   nameWithType: Severity?
-  fullName: NuvTools.Common.ResultWrapper.Severity?
+  fullName: NuvTools.Common.ResultWrapper.Enumerations.Severity?
   spec.csharp:
-  - uid: NuvTools.Common.ResultWrapper.Severity
+  - uid: NuvTools.Common.ResultWrapper.Enumerations.Severity
     name: Severity
     isExternal: true
-    href: NuvTools.Common.ResultWrapper.Severity.html
+    href: NuvTools.Common.ResultWrapper.Enumerations.Severity.html
   - name: '?'
   spec.vb:
-  - uid: NuvTools.Common.ResultWrapper.Severity
+  - uid: NuvTools.Common.ResultWrapper.Enumerations.Severity
     name: Severity
     isExternal: true
-    href: NuvTools.Common.ResultWrapper.Severity.html
+    href: NuvTools.Common.ResultWrapper.Enumerations.Severity.html
   - name: '?'
 - uid: System.Nullable`1
   commentId: T:System.Nullable`1
@@ -1289,14 +1431,6 @@ references:
     name: '!='
     isExternal: true
     href: NuvTools.Common.ResultWrapper.MessageDetail.html#NuvTools_Common_ResultWrapper_MessageDetail_op_Inequality_NuvTools_Common_ResultWrapper_MessageDetail_NuvTools_Common_ResultWrapper_MessageDetail_
-- uid: NuvTools.Common.ResultWrapper.MessageDetail
-  commentId: T:NuvTools.Common.ResultWrapper.MessageDetail
-  parent: NuvTools.Common.ResultWrapper
-  isExternal: true
-  href: NuvTools.Common.ResultWrapper.MessageDetail.html
-  name: MessageDetail
-  nameWithType: MessageDetail
-  fullName: NuvTools.Common.ResultWrapper.MessageDetail
 - uid: NuvTools.Common.ResultWrapper.MessageDetail.op_Equality*
   commentId: Overload:NuvTools.Common.ResultWrapper.MessageDetail.op_Equality
   isExternal: true
@@ -1456,7 +1590,7 @@ references:
 - uid: NuvTools.Common.ResultWrapper.MessageDetail.Deconstruct*
   commentId: Overload:NuvTools.Common.ResultWrapper.MessageDetail.Deconstruct
   isExternal: true
-  href: NuvTools.Common.ResultWrapper.MessageDetail.html#NuvTools_Common_ResultWrapper_MessageDetail_Deconstruct_System_String__System_String__System_String__System_Nullable_NuvTools_Common_ResultWrapper_Severity___
+  href: NuvTools.Common.ResultWrapper.MessageDetail.html#NuvTools_Common_ResultWrapper_MessageDetail_Deconstruct_System_String__System_String__System_String__System_Nullable_NuvTools_Common_ResultWrapper_Enumerations_Severity___
   name: Deconstruct
   nameWithType: MessageDetail.Deconstruct
   fullName: NuvTools.Common.ResultWrapper.MessageDetail.Deconstruct

@@ -19,10 +19,36 @@ items:
   fullName: NuvTools.Common.ResultWrapper.IResult
   type: Interface
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/IResult.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: >-
+    Defines the base contract for an operation result, representing
+
+    the outcome of a business or system process along with contextual messages.
+  remarks: >-
+    This interface provides a consistent structure for handling success and error
+
+    results throughout the application.  
+
+    Implementations usually include information such as:
+
+    <ul><li>Whether the operation succeeded (<xref href="NuvTools.Common.ResultWrapper.IResult.Succeeded" data-throw-if-not-resolved="false"></xref>)</li><li>The result classification (<xref href="NuvTools.Common.ResultWrapper.IResult.ResultType" data-throw-if-not-resolved="false"></xref>)</li><li>Messages providing feedback or error details (<xref href="NuvTools.Common.ResultWrapper.IResult.Messages" data-throw-if-not-resolved="false"></xref>)</li></ul>
+
+    It is commonly implemented by <xref href="NuvTools.Common.ResultWrapper.Result" data-throw-if-not-resolved="false"></xref> and <xref href="NuvTools.Common.ResultWrapper.Result%601" data-throw-if-not-resolved="false"></xref> classes.
+  example:
+  - >-
+    Example usage:
+
+    <pre><code class="lang-csharp">IResult result = Result.Success("Operation completed successfully.");
+
+
+    if (!result.Succeeded)
+
+    {
+        logger.LogError(result.Message);
+    }</code></pre>
   syntax:
     content: public interface IResult
     content.vb: Public Interface IResult
@@ -42,10 +68,17 @@ items:
   fullName: NuvTools.Common.ResultWrapper.IResult.Messages
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/IResult.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: >-
+    A collection of messages associated with the operation result.
+
+    Each <xref href="NuvTools.Common.ResultWrapper.IResult.MessageDetail" data-throw-if-not-resolved="false"></xref> contains structured information
+
+    about the outcome (e.g., warnings, validation errors, or success messages).
+  example: []
   syntax:
     content: List<MessageDetail> Messages { get; }
     parameters: []
@@ -65,10 +98,15 @@ items:
   fullName: NuvTools.Common.ResultWrapper.IResult.MessageDetail
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/IResult.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: >-
+    The primary message detail, typically the first or most relevant message
+
+    from the <xref href="NuvTools.Common.ResultWrapper.IResult.Messages" data-throw-if-not-resolved="false"></xref> collection.
+  example: []
   syntax:
     content: MessageDetail? MessageDetail { get; }
     parameters: []
@@ -88,10 +126,15 @@ items:
   fullName: NuvTools.Common.ResultWrapper.IResult.Message
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/IResult.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: >-
+    A simplified or aggregated version of the main message,
+
+    typically derived from <xref href="NuvTools.Common.ResultWrapper.MessageDetail.Title" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: string? Message { get; }
     parameters: []
@@ -111,10 +154,12 @@ items:
   fullName: NuvTools.Common.ResultWrapper.IResult.Succeeded
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/IResult.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: Indicates whether the operation completed successfully.
+  example: []
   syntax:
     content: bool Succeeded { get; }
     parameters: []
@@ -134,10 +179,15 @@ items:
   fullName: NuvTools.Common.ResultWrapper.IResult.ContainsNotFound
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/IResult.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: >-
+    Indicates whether the result represents a "Not Found" condition.
+
+    Useful for distinguishing between empty results and missing resources.
+  example: []
   syntax:
     content: bool ContainsNotFound { get; }
     parameters: []
@@ -157,18 +207,84 @@ items:
   fullName: NuvTools.Common.ResultWrapper.IResult.ResultType
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/IResult.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: >-
+    Specifies the type or classification of the result,
+
+    such as <xref href="NuvTools.Common.ResultWrapper.Enumerations.ResultType.Success" data-throw-if-not-resolved="false"></xref>,
+
+    <xref href="NuvTools.Common.ResultWrapper.Enumerations.ResultType.Error" data-throw-if-not-resolved="false"></xref>, or <xref href="NuvTools.Common.ResultWrapper.Enumerations.ResultType.ValidationError" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: ResultType ResultType { get; }
     parameters: []
     return:
-      type: NuvTools.Common.ResultWrapper.ResultType
+      type: NuvTools.Common.ResultWrapper.Enumerations.ResultType
     content.vb: ReadOnly Property ResultType As ResultType
   overload: NuvTools.Common.ResultWrapper.IResult.ResultType*
 references:
+- uid: NuvTools.Common.ResultWrapper.IResult.Succeeded
+  commentId: P:NuvTools.Common.ResultWrapper.IResult.Succeeded
+  parent: NuvTools.Common.ResultWrapper.IResult
+  isExternal: true
+  href: NuvTools.Common.ResultWrapper.IResult.html#NuvTools_Common_ResultWrapper_IResult_Succeeded
+  name: Succeeded
+  nameWithType: IResult.Succeeded
+  fullName: NuvTools.Common.ResultWrapper.IResult.Succeeded
+- uid: NuvTools.Common.ResultWrapper.IResult.ResultType
+  commentId: P:NuvTools.Common.ResultWrapper.IResult.ResultType
+  parent: NuvTools.Common.ResultWrapper.IResult
+  isExternal: true
+  href: NuvTools.Common.ResultWrapper.IResult.html#NuvTools_Common_ResultWrapper_IResult_ResultType
+  name: ResultType
+  nameWithType: IResult.ResultType
+  fullName: NuvTools.Common.ResultWrapper.IResult.ResultType
+- uid: NuvTools.Common.ResultWrapper.IResult.Messages
+  commentId: P:NuvTools.Common.ResultWrapper.IResult.Messages
+  parent: NuvTools.Common.ResultWrapper.IResult
+  isExternal: true
+  href: NuvTools.Common.ResultWrapper.IResult.html#NuvTools_Common_ResultWrapper_IResult_Messages
+  name: Messages
+  nameWithType: IResult.Messages
+  fullName: NuvTools.Common.ResultWrapper.IResult.Messages
+- uid: NuvTools.Common.ResultWrapper.Result
+  commentId: T:NuvTools.Common.ResultWrapper.Result
+  isExternal: true
+  href: NuvTools.Common.ResultWrapper.Result.html
+  name: Result
+  nameWithType: Result
+  fullName: NuvTools.Common.ResultWrapper.Result
+- uid: NuvTools.Common.ResultWrapper.Result`1
+  commentId: T:NuvTools.Common.ResultWrapper.Result`1
+  isExternal: true
+  href: NuvTools.Common.ResultWrapper.Result-1.html
+  name: Result<T>
+  nameWithType: Result<T>
+  fullName: NuvTools.Common.ResultWrapper.Result<T>
+  nameWithType.vb: Result(Of T)
+  fullName.vb: NuvTools.Common.ResultWrapper.Result(Of T)
+  name.vb: Result(Of T)
+  spec.csharp:
+  - uid: NuvTools.Common.ResultWrapper.Result`1
+    name: Result
+    isExternal: true
+    href: NuvTools.Common.ResultWrapper.Result-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: NuvTools.Common.ResultWrapper.Result`1
+    name: Result
+    isExternal: true
+    href: NuvTools.Common.ResultWrapper.Result-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: NuvTools.Common.ResultWrapper
   commentId: N:NuvTools.Common.ResultWrapper
   isExternal: true
@@ -383,6 +499,14 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
+- uid: NuvTools.Common.ResultWrapper.IResult
+  commentId: T:NuvTools.Common.ResultWrapper.IResult
+  parent: NuvTools.Common.ResultWrapper
+  isExternal: true
+  href: NuvTools.Common.ResultWrapper.IResult.html
+  name: IResult
+  nameWithType: IResult
+  fullName: NuvTools.Common.ResultWrapper.IResult
 - uid: NuvTools.Common.Serialization.Json.ObjectExtensions.Clone``1(``0,System.Int32)
   commentId: M:NuvTools.Common.Serialization.Json.ObjectExtensions.Clone``1(``0,System.Int32)
   isExternal: true
@@ -621,6 +745,14 @@ references:
     name: Web
     isExternal: true
     href: NuvTools.Common.Web.html
+- uid: NuvTools.Common.ResultWrapper.IResult.MessageDetail
+  commentId: P:NuvTools.Common.ResultWrapper.IResult.MessageDetail
+  parent: NuvTools.Common.ResultWrapper.IResult
+  isExternal: true
+  href: NuvTools.Common.ResultWrapper.IResult.html#NuvTools_Common_ResultWrapper_IResult_MessageDetail
+  name: MessageDetail
+  nameWithType: IResult.MessageDetail
+  fullName: NuvTools.Common.ResultWrapper.IResult.MessageDetail
 - uid: NuvTools.Common.ResultWrapper.IResult.Messages*
   commentId: Overload:NuvTools.Common.ResultWrapper.IResult.Messages
   isExternal: true
@@ -743,6 +875,13 @@ references:
   name: MessageDetail
   nameWithType: MessageDetail
   fullName: NuvTools.Common.ResultWrapper.MessageDetail
+- uid: NuvTools.Common.ResultWrapper.MessageDetail.Title
+  commentId: P:NuvTools.Common.ResultWrapper.MessageDetail.Title
+  isExternal: true
+  href: NuvTools.Common.ResultWrapper.MessageDetail.html#NuvTools_Common_ResultWrapper_MessageDetail_Title
+  name: Title
+  nameWithType: MessageDetail.Title
+  fullName: NuvTools.Common.ResultWrapper.MessageDetail.Title
 - uid: NuvTools.Common.ResultWrapper.IResult.Message*
   commentId: Overload:NuvTools.Common.ResultWrapper.IResult.Message
   isExternal: true
@@ -793,6 +932,27 @@ references:
   name: ContainsNotFound
   nameWithType: IResult.ContainsNotFound
   fullName: NuvTools.Common.ResultWrapper.IResult.ContainsNotFound
+- uid: NuvTools.Common.ResultWrapper.Enumerations.ResultType.Success
+  commentId: F:NuvTools.Common.ResultWrapper.Enumerations.ResultType.Success
+  isExternal: true
+  href: NuvTools.Common.ResultWrapper.Enumerations.ResultType.html#NuvTools_Common_ResultWrapper_Enumerations_ResultType_Success
+  name: Success
+  nameWithType: ResultType.Success
+  fullName: NuvTools.Common.ResultWrapper.Enumerations.ResultType.Success
+- uid: NuvTools.Common.ResultWrapper.Enumerations.ResultType.Error
+  commentId: F:NuvTools.Common.ResultWrapper.Enumerations.ResultType.Error
+  isExternal: true
+  href: NuvTools.Common.ResultWrapper.Enumerations.ResultType.html#NuvTools_Common_ResultWrapper_Enumerations_ResultType_Error
+  name: Error
+  nameWithType: ResultType.Error
+  fullName: NuvTools.Common.ResultWrapper.Enumerations.ResultType.Error
+- uid: NuvTools.Common.ResultWrapper.Enumerations.ResultType.ValidationError
+  commentId: F:NuvTools.Common.ResultWrapper.Enumerations.ResultType.ValidationError
+  isExternal: true
+  href: NuvTools.Common.ResultWrapper.Enumerations.ResultType.html#NuvTools_Common_ResultWrapper_Enumerations_ResultType_ValidationError
+  name: ValidationError
+  nameWithType: ResultType.ValidationError
+  fullName: NuvTools.Common.ResultWrapper.Enumerations.ResultType.ValidationError
 - uid: NuvTools.Common.ResultWrapper.IResult.ResultType*
   commentId: Overload:NuvTools.Common.ResultWrapper.IResult.ResultType
   isExternal: true
@@ -800,11 +960,58 @@ references:
   name: ResultType
   nameWithType: IResult.ResultType
   fullName: NuvTools.Common.ResultWrapper.IResult.ResultType
-- uid: NuvTools.Common.ResultWrapper.ResultType
-  commentId: T:NuvTools.Common.ResultWrapper.ResultType
-  parent: NuvTools.Common.ResultWrapper
+- uid: NuvTools.Common.ResultWrapper.Enumerations.ResultType
+  commentId: T:NuvTools.Common.ResultWrapper.Enumerations.ResultType
+  parent: NuvTools.Common.ResultWrapper.Enumerations
   isExternal: true
-  href: NuvTools.Common.ResultWrapper.ResultType.html
+  href: NuvTools.Common.ResultWrapper.Enumerations.ResultType.html
   name: ResultType
   nameWithType: ResultType
-  fullName: NuvTools.Common.ResultWrapper.ResultType
+  fullName: NuvTools.Common.ResultWrapper.Enumerations.ResultType
+- uid: NuvTools.Common.ResultWrapper.Enumerations
+  commentId: N:NuvTools.Common.ResultWrapper.Enumerations
+  isExternal: true
+  href: NuvTools.html
+  name: NuvTools.Common.ResultWrapper.Enumerations
+  nameWithType: NuvTools.Common.ResultWrapper.Enumerations
+  fullName: NuvTools.Common.ResultWrapper.Enumerations
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Common
+    name: Common
+    isExternal: true
+    href: NuvTools.Common.html
+  - name: .
+  - uid: NuvTools.Common.ResultWrapper
+    name: ResultWrapper
+    isExternal: true
+    href: NuvTools.Common.ResultWrapper.html
+  - name: .
+  - uid: NuvTools.Common.ResultWrapper.Enumerations
+    name: Enumerations
+    isExternal: true
+    href: NuvTools.Common.ResultWrapper.Enumerations.html
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Common
+    name: Common
+    isExternal: true
+    href: NuvTools.Common.html
+  - name: .
+  - uid: NuvTools.Common.ResultWrapper
+    name: ResultWrapper
+    isExternal: true
+    href: NuvTools.Common.ResultWrapper.html
+  - name: .
+  - uid: NuvTools.Common.ResultWrapper.Enumerations
+    name: Enumerations
+    isExternal: true
+    href: NuvTools.Common.ResultWrapper.Enumerations.html

@@ -17,14 +17,21 @@ items:
   fullName: NuvTools.Security.Identity.Models.RoleBase<TKey>
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/RoleBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/RoleBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
+  summary: Represents the base model for application roles within the identity system.
+  remarks: >-
+    This abstract class extends <xref href="Microsoft.AspNetCore.Identity.IdentityRole%601" data-throw-if-not-resolved="false"></xref> to provide additional
+
+    validation, display metadata, and support for storing associated claims in memory.
+  example: []
   syntax:
     content: 'public abstract class RoleBase<TKey> : IdentityRole<TKey> where TKey : IEquatable<TKey>'
     typeParameters:
     - id: TKey
+      description: The type of the primary key used for the role (e.g., <xref href="System.Guid" data-throw-if-not-resolved="false"></xref> or <xref href="System.Int32" data-throw-if-not-resolved="false"></xref>).
     content.vb: Public MustInherit Class RoleBase(Of TKey As IEquatable(Of TKey)) Inherits IdentityRole(Of TKey)
   inheritance:
   - System.Object
@@ -55,13 +62,15 @@ items:
   fullName: NuvTools.Security.Identity.Models.RoleBase<TKey>.RoleBase()
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/RoleBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/RoleBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
+  summary: Initializes a new instance of the <xref href="NuvTools.Security.Identity.Models.RoleBase%601" data-throw-if-not-resolved="false"></xref> class.
+  example: []
   syntax:
-    content: public RoleBase()
-    content.vb: Public Sub New()
+    content: protected RoleBase()
+    content.vb: Protected Sub New()
   overload: NuvTools.Security.Identity.Models.RoleBase`1.#ctor*
   nameWithType.vb: RoleBase(Of TKey).New()
   fullName.vb: NuvTools.Security.Identity.Models.RoleBase(Of TKey).New()
@@ -78,16 +87,19 @@ items:
   fullName: NuvTools.Security.Identity.Models.RoleBase<TKey>.RoleBase(string)
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/RoleBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/RoleBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
+  summary: Initializes a new instance of the <xref href="NuvTools.Security.Identity.Models.RoleBase%601" data-throw-if-not-resolved="false"></xref> class with the specified name.
+  example: []
   syntax:
-    content: public RoleBase(string name)
+    content: protected RoleBase(string name)
     parameters:
     - id: name
       type: System.String
-    content.vb: Public Sub New(name As String)
+      description: The name of the role.
+    content.vb: Protected Sub New(name As String)
   overload: NuvTools.Security.Identity.Models.RoleBase`1.#ctor*
   nameWithType.vb: RoleBase(Of TKey).New(String)
   fullName.vb: NuvTools.Security.Identity.Models.RoleBase(Of TKey).New(String)
@@ -104,11 +116,15 @@ items:
   fullName: NuvTools.Security.Identity.Models.RoleBase<TKey>.Name
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/RoleBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/RoleBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
-  summary: Gets or sets the name for this role.
+  summary: Gets or sets the display name of the role.
+  remarks: >-
+    This property overrides the base <xref href="Microsoft.AspNetCore.Identity.IdentityRole%601.Name" data-throw-if-not-resolved="false"></xref> property
+
+    to apply validation and localization-friendly display attributes.
   example: []
   syntax:
     content: >-
@@ -179,10 +195,18 @@ items:
   fullName: NuvTools.Security.Identity.Models.RoleBase<TKey>.Claims
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/RoleBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/RoleBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
+  summary: Gets or sets the list of claims associated with this role.
+  remarks: >-
+    This property is marked as "NotMapped" since claims are managed
+
+    through the <xref href="Microsoft.AspNetCore.Identity.RoleManager%601" data-throw-if-not-resolved="false"></xref> API and are not persisted directly
+
+    in the database.
+  example: []
   syntax:
     content: >-
       [NotMapped]
@@ -203,6 +227,52 @@ items:
   nameWithType.vb: RoleBase(Of TKey).Claims
   fullName.vb: NuvTools.Security.Identity.Models.RoleBase(Of TKey).Claims
 references:
+- uid: System.Guid
+  commentId: T:System.Guid
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Microsoft.AspNetCore.Identity.IdentityRole`1
+  commentId: T:Microsoft.AspNetCore.Identity.IdentityRole`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityrole-1
+  name: IdentityRole<TKey>
+  nameWithType: IdentityRole<TKey>
+  fullName: Microsoft.AspNetCore.Identity.IdentityRole<TKey>
+  nameWithType.vb: IdentityRole(Of TKey)
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityRole(Of TKey)
+  name.vb: IdentityRole(Of TKey)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Identity.IdentityRole`1
+    name: IdentityRole
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityrole-1
+  - name: <
+  - name: TKey
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Identity.IdentityRole`1
+    name: IdentityRole
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityrole-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: )
 - uid: NuvTools.Security.Identity.Models
   commentId: N:NuvTools.Security.Identity.Models
   isExternal: true
@@ -546,34 +616,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: Microsoft.AspNetCore.Identity.IdentityRole`1
-  commentId: T:Microsoft.AspNetCore.Identity.IdentityRole`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityrole-1
-  name: IdentityRole<TKey>
-  nameWithType: IdentityRole<TKey>
-  fullName: Microsoft.AspNetCore.Identity.IdentityRole<TKey>
-  nameWithType.vb: IdentityRole(Of TKey)
-  fullName.vb: Microsoft.AspNetCore.Identity.IdentityRole(Of TKey)
-  name.vb: IdentityRole(Of TKey)
-  spec.csharp:
-  - uid: Microsoft.AspNetCore.Identity.IdentityRole`1
-    name: IdentityRole
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityrole-1
-  - name: <
-  - name: TKey
-  - name: '>'
-  spec.vb:
-  - uid: Microsoft.AspNetCore.Identity.IdentityRole`1
-    name: IdentityRole
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityrole-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: TKey
-  - name: )
 - uid: Microsoft.AspNetCore.Identity
   commentId: N:Microsoft.AspNetCore.Identity
   isExternal: true
@@ -661,6 +703,34 @@ references:
   fullName: Microsoft.AspNetCore.Identity.IdentityRole<TKey>.ConcurrencyStamp
   nameWithType.vb: IdentityRole(Of TKey).ConcurrencyStamp
   fullName.vb: Microsoft.AspNetCore.Identity.IdentityRole(Of TKey).ConcurrencyStamp
+- uid: NuvTools.Security.Identity.Models.RoleBase`1
+  commentId: T:NuvTools.Security.Identity.Models.RoleBase`1
+  isExternal: true
+  href: NuvTools.Security.Identity.Models.RoleBase-1.html
+  name: RoleBase<TKey>
+  nameWithType: RoleBase<TKey>
+  fullName: NuvTools.Security.Identity.Models.RoleBase<TKey>
+  nameWithType.vb: RoleBase(Of TKey)
+  fullName.vb: NuvTools.Security.Identity.Models.RoleBase(Of TKey)
+  name.vb: RoleBase(Of TKey)
+  spec.csharp:
+  - uid: NuvTools.Security.Identity.Models.RoleBase`1
+    name: RoleBase
+    isExternal: true
+    href: NuvTools.Security.Identity.Models.RoleBase-1.html
+  - name: <
+  - name: TKey
+  - name: '>'
+  spec.vb:
+  - uid: NuvTools.Security.Identity.Models.RoleBase`1
+    name: RoleBase
+    isExternal: true
+    href: NuvTools.Security.Identity.Models.RoleBase-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: )
 - uid: NuvTools.Security.Identity.Models.RoleBase`1.#ctor*
   commentId: Overload:NuvTools.Security.Identity.Models.RoleBase`1.#ctor
   isExternal: true
@@ -682,6 +752,15 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: Microsoft.AspNetCore.Identity.IdentityRole`1.Name
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityRole`1.Name
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityrole-1.name
+  name: Name
+  nameWithType: IdentityRole<TKey>.Name
+  fullName: Microsoft.AspNetCore.Identity.IdentityRole<TKey>.Name
+  nameWithType.vb: IdentityRole(Of TKey).Name
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityRole(Of TKey).Name
 - uid: Microsoft.AspNetCore.Identity.IdentityRole{{TKey}}.Name
   commentId: P:Microsoft.AspNetCore.Identity.IdentityRole{`0}.Name
   parent: Microsoft.AspNetCore.Identity.IdentityRole{{TKey}}
@@ -701,15 +780,34 @@ references:
   fullName: NuvTools.Security.Identity.Models.RoleBase<TKey>.Name
   nameWithType.vb: RoleBase(Of TKey).Name
   fullName.vb: NuvTools.Security.Identity.Models.RoleBase(Of TKey).Name
-- uid: Microsoft.AspNetCore.Identity.IdentityRole`1.Name
-  commentId: P:Microsoft.AspNetCore.Identity.IdentityRole`1.Name
+- uid: Microsoft.AspNetCore.Identity.RoleManager`1
+  commentId: T:Microsoft.AspNetCore.Identity.RoleManager`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityrole-1.name
-  name: Name
-  nameWithType: IdentityRole<TKey>.Name
-  fullName: Microsoft.AspNetCore.Identity.IdentityRole<TKey>.Name
-  nameWithType.vb: IdentityRole(Of TKey).Name
-  fullName.vb: Microsoft.AspNetCore.Identity.IdentityRole(Of TKey).Name
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.rolemanager-1
+  name: RoleManager<TRole>
+  nameWithType: RoleManager<TRole>
+  fullName: Microsoft.AspNetCore.Identity.RoleManager<TRole>
+  nameWithType.vb: RoleManager(Of TRole)
+  fullName.vb: Microsoft.AspNetCore.Identity.RoleManager(Of TRole)
+  name.vb: RoleManager(Of TRole)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Identity.RoleManager`1
+    name: RoleManager
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.rolemanager-1
+  - name: <
+  - name: TRole
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Identity.RoleManager`1
+    name: RoleManager
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.rolemanager-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TRole
+  - name: )
 - uid: NuvTools.Security.Identity.Models.RoleBase`1.Claims*
   commentId: Overload:NuvTools.Security.Identity.Models.RoleBase`1.Claims
   isExternal: true

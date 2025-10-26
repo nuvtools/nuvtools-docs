@@ -6,6 +6,7 @@ items:
   parent: NuvTools.Data.EntityFrameworkCore.Paging
   children:
   - NuvTools.Data.EntityFrameworkCore.Paging.PagingExtensions.PagingWrapAsync``1(System.Linq.IQueryable{``0},System.Int32,System.Int32,System.Threading.CancellationToken)
+  - NuvTools.Data.EntityFrameworkCore.Paging.PagingExtensions.PagingWrapWithEnumerableListAsync``1(System.Linq.IQueryable{``0},System.Int32,System.Int32,System.Threading.CancellationToken)
   - NuvTools.Data.EntityFrameworkCore.Paging.PagingExtensions.ToPagingWithEnumerableListAsync``1(NuvTools.Data.Paging.PagingWithQueryableList{``0},System.Threading.CancellationToken)
   langs:
   - csharp
@@ -15,7 +16,7 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Paging.PagingExtensions
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data.EntityFrameworkCore/Paging/PagingExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Paging/PagingExtensions.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Paging
@@ -45,7 +46,7 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Paging.PagingExtensions.PagingWrapAsync<T>(System.Linq.IQueryable<T>, int, int, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data.EntityFrameworkCore/Paging/PagingExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Paging/PagingExtensions.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Paging
@@ -69,6 +70,43 @@ items:
   nameWithType.vb: PagingExtensions.PagingWrapAsync(Of T)(IQueryable(Of T), Integer, Integer, CancellationToken)
   fullName.vb: NuvTools.Data.EntityFrameworkCore.Paging.PagingExtensions.PagingWrapAsync(Of T)(System.Linq.IQueryable(Of T), Integer, Integer, System.Threading.CancellationToken)
   name.vb: PagingWrapAsync(Of T)(IQueryable(Of T), Integer, Integer, CancellationToken)
+- uid: NuvTools.Data.EntityFrameworkCore.Paging.PagingExtensions.PagingWrapWithEnumerableListAsync``1(System.Linq.IQueryable{``0},System.Int32,System.Int32,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Paging.PagingExtensions.PagingWrapWithEnumerableListAsync``1(System.Linq.IQueryable{``0},System.Int32,System.Int32,System.Threading.CancellationToken)
+  id: PagingWrapWithEnumerableListAsync``1(System.Linq.IQueryable{``0},System.Int32,System.Int32,System.Threading.CancellationToken)
+  isExtensionMethod: true
+  parent: NuvTools.Data.EntityFrameworkCore.Paging.PagingExtensions
+  langs:
+  - csharp
+  - vb
+  name: PagingWrapWithEnumerableListAsync<T>(IQueryable<T>, int, int, CancellationToken)
+  nameWithType: PagingExtensions.PagingWrapWithEnumerableListAsync<T>(IQueryable<T>, int, int, CancellationToken)
+  fullName: NuvTools.Data.EntityFrameworkCore.Paging.PagingExtensions.PagingWrapWithEnumerableListAsync<T>(System.Linq.IQueryable<T>, int, int, System.Threading.CancellationToken)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Paging/PagingExtensions.cs
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Paging
+  syntax:
+    content: public static Task<PagingWithEnumerableList<T>> PagingWrapWithEnumerableListAsync<T>(this IQueryable<T> list, int pageNumber = 1, int pageSize = 30, CancellationToken cancellationToken = default)
+    parameters:
+    - id: list
+      type: System.Linq.IQueryable{{T}}
+    - id: pageNumber
+      type: System.Int32
+    - id: pageSize
+      type: System.Int32
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    typeParameters:
+    - id: T
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Data.Paging.PagingWithEnumerableList{{T}}}
+    content.vb: Public Shared Function PagingWrapWithEnumerableListAsync(Of T)(list As IQueryable(Of T), pageNumber As Integer = 1, pageSize As Integer = 30, cancellationToken As CancellationToken = Nothing) As Task(Of PagingWithEnumerableList(Of T))
+  overload: NuvTools.Data.EntityFrameworkCore.Paging.PagingExtensions.PagingWrapWithEnumerableListAsync*
+  nameWithType.vb: PagingExtensions.PagingWrapWithEnumerableListAsync(Of T)(IQueryable(Of T), Integer, Integer, CancellationToken)
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Paging.PagingExtensions.PagingWrapWithEnumerableListAsync(Of T)(System.Linq.IQueryable(Of T), Integer, Integer, System.Threading.CancellationToken)
+  name.vb: PagingWrapWithEnumerableListAsync(Of T)(IQueryable(Of T), Integer, Integer, CancellationToken)
 - uid: NuvTools.Data.EntityFrameworkCore.Paging.PagingExtensions.ToPagingWithEnumerableListAsync``1(NuvTools.Data.Paging.PagingWithQueryableList{``0},System.Threading.CancellationToken)
   commentId: M:NuvTools.Data.EntityFrameworkCore.Paging.PagingExtensions.ToPagingWithEnumerableListAsync``1(NuvTools.Data.Paging.PagingWithQueryableList{``0},System.Threading.CancellationToken)
   id: ToPagingWithEnumerableListAsync``1(NuvTools.Data.Paging.PagingWithQueryableList{``0},System.Threading.CancellationToken)
@@ -82,7 +120,7 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Paging.PagingExtensions.ToPagingWithEnumerableListAsync<T>(NuvTools.Data.Paging.PagingWithQueryableList<T>, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data.EntityFrameworkCore/Paging/PagingExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Paging/PagingExtensions.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Paging
@@ -462,7 +500,7 @@ references:
   - uid: NuvTools.Data.Paging.PagingWithQueryableList`1
     name: PagingWithQueryableList
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data/Paging/PagingWithQueryableList.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data/Paging/PagingWithQueryableList.cs
   - name: <
   - name: T
   - name: '>'
@@ -478,7 +516,7 @@ references:
   - uid: NuvTools.Data.Paging.PagingWithQueryableList`1
     name: PagingWithQueryableList
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data/Paging/PagingWithQueryableList.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data/Paging/PagingWithQueryableList.cs
   - name: (
   - name: Of
   - name: " "
@@ -632,6 +670,56 @@ references:
     name: Tasks
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NuvTools.Data.EntityFrameworkCore.Paging.PagingExtensions.PagingWrapWithEnumerableListAsync*
+  commentId: Overload:NuvTools.Data.EntityFrameworkCore.Paging.PagingExtensions.PagingWrapWithEnumerableListAsync
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Paging.PagingExtensions.html#NuvTools_Data_EntityFrameworkCore_Paging_PagingExtensions_PagingWrapWithEnumerableListAsync__1_System_Linq_IQueryable___0__System_Int32_System_Int32_System_Threading_CancellationToken_
+  name: PagingWrapWithEnumerableListAsync
+  nameWithType: PagingExtensions.PagingWrapWithEnumerableListAsync
+  fullName: NuvTools.Data.EntityFrameworkCore.Paging.PagingExtensions.PagingWrapWithEnumerableListAsync
+- uid: System.Threading.Tasks.Task{NuvTools.Data.Paging.PagingWithEnumerableList{{T}}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Data.Paging.PagingWithEnumerableList{``0}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<PagingWithEnumerableList<T>>
+  nameWithType: Task<PagingWithEnumerableList<T>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Data.Paging.PagingWithEnumerableList<T>>
+  nameWithType.vb: Task(Of PagingWithEnumerableList(Of T))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Data.Paging.PagingWithEnumerableList(Of T))
+  name.vb: Task(Of PagingWithEnumerableList(Of T))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Data.Paging.PagingWithEnumerableList`1
+    name: PagingWithEnumerableList
+    isExternal: true
+    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data/Paging/PagingWithEnumerableList.cs
+  - name: <
+  - name: T
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Data.Paging.PagingWithEnumerableList`1
+    name: PagingWithEnumerableList
+    isExternal: true
+    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data/Paging/PagingWithEnumerableList.cs
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
 - uid: NuvTools.Data.EntityFrameworkCore.Paging.PagingExtensions.ToPagingWithEnumerableListAsync*
   commentId: Overload:NuvTools.Data.EntityFrameworkCore.Paging.PagingExtensions.ToPagingWithEnumerableListAsync
   isExternal: true
@@ -668,52 +756,8 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: System.Threading.Tasks.Task{NuvTools.Data.Paging.PagingWithEnumerableList{{T}}}
-  commentId: T:System.Threading.Tasks.Task{NuvTools.Data.Paging.PagingWithEnumerableList{``0}}
-  parent: System.Threading.Tasks
-  definition: System.Threading.Tasks.Task`1
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<PagingWithEnumerableList<T>>
-  nameWithType: Task<PagingWithEnumerableList<T>>
-  fullName: System.Threading.Tasks.Task<NuvTools.Data.Paging.PagingWithEnumerableList<T>>
-  nameWithType.vb: Task(Of PagingWithEnumerableList(Of T))
-  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Data.Paging.PagingWithEnumerableList(Of T))
-  name.vb: Task(Of PagingWithEnumerableList(Of T))
-  spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: <
-  - uid: NuvTools.Data.Paging.PagingWithEnumerableList`1
-    name: PagingWithEnumerableList
-    isExternal: true
-    href: https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data/Paging/PagingWithEnumerableList.cs
-  - name: <
-  - name: T
-  - name: '>'
-  - name: '>'
-  spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: NuvTools.Data.Paging.PagingWithEnumerableList`1
-    name: PagingWithEnumerableList
-    isExternal: true
-    href: https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data/Paging/PagingWithEnumerableList.cs
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
-  - name: )
 - uid: NuvTools.Data.Paging.PagingWithQueryableList`1
   commentId: T:NuvTools.Data.Paging.PagingWithQueryableList`1
-  parent: NuvTools.Data.Paging
   isExternal: true
   href: NuvTools.Data.Paging.PagingWithQueryableList-1.html
   name: PagingWithQueryableList<T>

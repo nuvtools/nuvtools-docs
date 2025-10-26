@@ -21,14 +21,23 @@ items:
   fullName: NuvTools.Security.Identity.Models.UserBase<TKey>
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/UserBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
+  summary: Represents the base class for application users within the identity system.
+  remarks: >-
+    This abstract class extends <xref href="Microsoft.AspNetCore.Identity.IdentityUser%601" data-throw-if-not-resolved="false"></xref> to include
+
+    additional profile data and validation attributes for multilingual applications.
+
+    It also introduces password and refresh token fields that are not persisted in the database.
+  example: []
   syntax:
     content: 'public abstract class UserBase<TKey> : IdentityUser<TKey> where TKey : IEquatable<TKey>'
     typeParameters:
     - id: TKey
+      description: The type of the user's primary key (e.g., <xref href="System.Guid" data-throw-if-not-resolved="false"></xref> or <xref href="System.Int32" data-throw-if-not-resolved="false"></xref>).
     content.vb: Public MustInherit Class UserBase(Of TKey As IEquatable(Of TKey)) Inherits IdentityUser(Of TKey)
   inheritance:
   - System.Object
@@ -70,7 +79,7 @@ items:
   fullName: NuvTools.Security.Identity.Models.UserBase<TKey>.UserBase()
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/UserBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
@@ -93,11 +102,15 @@ items:
   fullName: NuvTools.Security.Identity.Models.UserBase<TKey>.Email
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/UserBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
-  summary: Gets or sets the email address for this user.
+  summary: Gets or sets the user's email address.
+  remarks: >-
+    This property overrides the base <xref href="Microsoft.AspNetCore.Identity.IdentityUser%601.Email" data-throw-if-not-resolved="false"></xref> property
+
+    to add localized display names and validation attributes.
   example: []
   syntax:
     content: >-
@@ -182,10 +195,12 @@ items:
   fullName: NuvTools.Security.Identity.Models.UserBase<TKey>.Name
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/UserBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
+  summary: Gets or sets the user's first name.
+  example: []
   syntax:
     content: >-
       [Display(Name = "Name", ResourceType = typeof(Fields))]
@@ -240,10 +255,12 @@ items:
   fullName: NuvTools.Security.Identity.Models.UserBase<TKey>.Surname
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/UserBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
+  summary: Gets or sets the user's last name or surname.
+  example: []
   syntax:
     content: >-
       [Display(Name = "Surname", ResourceType = typeof(Fields))]
@@ -298,10 +315,12 @@ items:
   fullName: NuvTools.Security.Identity.Models.UserBase<TKey>.Status
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/UserBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
+  summary: Gets or sets a value indicating whether the user account is active.
+  example: []
   syntax:
     content: >-
       [Display(Name = "Status", ResourceType = typeof(Fields))]
@@ -340,10 +359,19 @@ items:
   fullName: NuvTools.Security.Identity.Models.UserBase<TKey>.Password
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/UserBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
+  summary: >-
+    Gets or sets the user's password.  
+
+    This property is **not persisted** in the database.
+  remarks: >-
+    It is intended for use during user registration or password updates.
+
+    The complexity attributes are enforced through <xref href="NuvTools.Validation.Annotations" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: >-
       [NotMapped]
@@ -355,12 +383,6 @@ items:
       [MaxLength(40, ErrorMessageResourceName = "XMustHaveUpToYCharacters", ErrorMessageResourceType = typeof(DynamicValidationMessages))]
 
       [MinLength(6, ErrorMessageResourceName = "XMustHaveAtLeastYCharacters", ErrorMessageResourceType = typeof(DynamicValidationMessages))]
-
-      [PasswordComplexityCapitalLetters(1)]
-
-      [PasswordComplexityLowerCaseLetters(1)]
-
-      [PasswordComplexityDigits(1)]
 
       public virtual string? Password { get; set; }
     parameters: []
@@ -376,12 +398,6 @@ items:
       <MaxLength(40, ErrorMessageResourceName:="XMustHaveUpToYCharacters", ErrorMessageResourceType:=GetType(DynamicValidationMessages))>
 
       <MinLength(6, ErrorMessageResourceName:="XMustHaveAtLeastYCharacters", ErrorMessageResourceType:=GetType(DynamicValidationMessages))>
-
-      <PasswordComplexityCapitalLetters(1)>
-
-      <PasswordComplexityLowerCaseLetters(1)>
-
-      <PasswordComplexityDigits(1)>
 
       Public Overridable Property Password As String
   overload: NuvTools.Security.Identity.Models.UserBase`1.Password*
@@ -433,21 +449,6 @@ items:
     - name: ErrorMessageResourceType
       type: System.Type
       value: NuvTools.Resources.DynamicValidationMessages
-  - type: NuvTools.Validation.Annotations.PasswordComplexityCapitalLettersAttribute
-    ctor: NuvTools.Validation.Annotations.PasswordComplexityCapitalLettersAttribute.#ctor(System.Int32)
-    arguments:
-    - type: System.Int32
-      value: 1
-  - type: NuvTools.Validation.Annotations.PasswordComplexityLowerCaseLettersAttribute
-    ctor: NuvTools.Validation.Annotations.PasswordComplexityLowerCaseLettersAttribute.#ctor(System.Int32)
-    arguments:
-    - type: System.Int32
-      value: 1
-  - type: NuvTools.Validation.Annotations.PasswordComplexityDigitsAttribute
-    ctor: NuvTools.Validation.Annotations.PasswordComplexityDigitsAttribute.#ctor(System.Int32)
-    arguments:
-    - type: System.Int32
-      value: 1
   nameWithType.vb: UserBase(Of TKey).Password
   fullName.vb: NuvTools.Security.Identity.Models.UserBase(Of TKey).Password
 - uid: NuvTools.Security.Identity.Models.UserBase`1.RefreshToken
@@ -462,10 +463,13 @@ items:
   fullName: NuvTools.Security.Identity.Models.UserBase<TKey>.RefreshToken
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/UserBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
+  summary: Gets or sets the refresh token used for renewing authentication sessions.
+  remarks: This property is not mapped to the database and is meant for temporary runtime storage.
+  example: []
   syntax:
     content: >-
       [NotMapped]
@@ -497,10 +501,13 @@ items:
   fullName: NuvTools.Security.Identity.Models.UserBase<TKey>.RefreshTokenExpiryTime
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/UserBase.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models
+  summary: Gets or sets the date and time when the refresh token expires.
+  remarks: This property is not persisted in the database.
+  example: []
   syntax:
     content: >-
       [NotMapped]
@@ -521,6 +528,52 @@ items:
   nameWithType.vb: UserBase(Of TKey).RefreshTokenExpiryTime
   fullName.vb: NuvTools.Security.Identity.Models.UserBase(Of TKey).RefreshTokenExpiryTime
 references:
+- uid: System.Guid
+  commentId: T:System.Guid
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.guid
+  name: Guid
+  nameWithType: Guid
+  fullName: System.Guid
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1
+  commentId: T:Microsoft.AspNetCore.Identity.IdentityUser`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1
+  name: IdentityUser<TKey>
+  nameWithType: IdentityUser<TKey>
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>
+  nameWithType.vb: IdentityUser(Of TKey)
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey)
+  name.vb: IdentityUser(Of TKey)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Identity.IdentityUser`1
+    name: IdentityUser
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1
+  - name: <
+  - name: TKey
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Identity.IdentityUser`1
+    name: IdentityUser
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: )
 - uid: NuvTools.Security.Identity.Models
   commentId: N:NuvTools.Security.Identity.Models
   isExternal: true
@@ -974,34 +1027,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: Microsoft.AspNetCore.Identity.IdentityUser`1
-  commentId: T:Microsoft.AspNetCore.Identity.IdentityUser`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1
-  name: IdentityUser<TKey>
-  nameWithType: IdentityUser<TKey>
-  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>
-  nameWithType.vb: IdentityUser(Of TKey)
-  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey)
-  name.vb: IdentityUser(Of TKey)
-  spec.csharp:
-  - uid: Microsoft.AspNetCore.Identity.IdentityUser`1
-    name: IdentityUser
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1
-  - name: <
-  - name: TKey
-  - name: '>'
-  spec.vb:
-  - uid: Microsoft.AspNetCore.Identity.IdentityUser`1
-    name: IdentityUser
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: TKey
-  - name: )
 - uid: Microsoft.AspNetCore.Identity
   commentId: N:Microsoft.AspNetCore.Identity
   isExternal: true
@@ -1198,6 +1223,15 @@ references:
   nameWithType.vb: UserBase(Of TKey).New
   fullName.vb: NuvTools.Security.Identity.Models.UserBase(Of TKey).New
   name.vb: New
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.Email
+  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.Email
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.email
+  name: Email
+  nameWithType: IdentityUser<TKey>.Email
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.Email
+  nameWithType.vb: IdentityUser(Of TKey).Email
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).Email
 - uid: Microsoft.AspNetCore.Identity.IdentityUser{{TKey}}.Email
   commentId: P:Microsoft.AspNetCore.Identity.IdentityUser{`0}.Email
   parent: Microsoft.AspNetCore.Identity.IdentityUser{{TKey}}
@@ -1228,15 +1262,6 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: Microsoft.AspNetCore.Identity.IdentityUser`1.Email
-  commentId: P:Microsoft.AspNetCore.Identity.IdentityUser`1.Email
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.email
-  name: Email
-  nameWithType: IdentityUser<TKey>.Email
-  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>.Email
-  nameWithType.vb: IdentityUser(Of TKey).Email
-  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey).Email
 - uid: NuvTools.Security.Identity.Models.UserBase`1.Name*
   commentId: Overload:NuvTools.Security.Identity.Models.UserBase`1.Name
   isExternal: true
@@ -1275,6 +1300,36 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
+- uid: NuvTools.Validation.Annotations
+  commentId: N:NuvTools.Validation.Annotations
+  isExternal: true
+  name: NuvTools.Validation.Annotations
+  nameWithType: NuvTools.Validation.Annotations
+  fullName: NuvTools.Validation.Annotations
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+  - name: .
+  - uid: NuvTools.Validation
+    name: Validation
+    isExternal: true
+  - name: .
+  - uid: NuvTools.Validation.Annotations
+    name: Annotations
+    isExternal: true
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+  - name: .
+  - uid: NuvTools.Validation
+    name: Validation
+    isExternal: true
+  - name: .
+  - uid: NuvTools.Validation.Annotations
+    name: Annotations
+    isExternal: true
 - uid: NuvTools.Security.Identity.Models.UserBase`1.Password*
   commentId: Overload:NuvTools.Security.Identity.Models.UserBase`1.Password
   isExternal: true

@@ -15,10 +15,16 @@ items:
   fullName: NuvTools.Security.Identity.Policy.PermissionRequirement
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity/Policy/PermissionRequirement.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity/Policy/PermissionRequirement.cs
   assemblies:
   - NuvTools.Security.Identity
   namespace: NuvTools.Security.Identity.Policy
+  summary: Represents an authorization requirement based on a specific permission.
+  remarks: >-
+    This requirement is evaluated by the <xref href="NuvTools.Security.Identity.Policy.PermissionAuthorizationHandler" data-throw-if-not-resolved="false"></xref> to determine
+
+    whether the current user possesses a claim that grants the specified permission.
+  example: []
   syntax:
     content: 'public class PermissionRequirement : IAuthorizationRequirement'
     content.vb: Public Class PermissionRequirement Implements IAuthorizationRequirement
@@ -46,10 +52,16 @@ items:
   fullName: NuvTools.Security.Identity.Policy.PermissionRequirement.PermissionRequirement(string)
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity/Policy/PermissionRequirement.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity/Policy/PermissionRequirement.cs
   assemblies:
   - NuvTools.Security.Identity
   namespace: NuvTools.Security.Identity.Policy
+  summary: Represents an authorization requirement based on a specific permission.
+  remarks: >-
+    This requirement is evaluated by the <xref href="NuvTools.Security.Identity.Policy.PermissionAuthorizationHandler" data-throw-if-not-resolved="false"></xref> to determine
+
+    whether the current user possesses a claim that grants the specified permission.
+  example: []
   syntax:
     content: public PermissionRequirement(string permission)
     parameters:
@@ -72,10 +84,16 @@ items:
   fullName: NuvTools.Security.Identity.Policy.PermissionRequirement.Permission
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity/Policy/PermissionRequirement.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity/Policy/PermissionRequirement.cs
   assemblies:
   - NuvTools.Security.Identity
   namespace: NuvTools.Security.Identity.Policy
+  summary: Gets the name or identifier of the permission required for authorization.
+  remarks: >-
+    This value typically corresponds to the <code>Value</code> of a claim of type
+
+    <code>ClaimTypes.Permission</code> that must be present on the authenticated user.
+  example: []
   syntax:
     content: public string Permission { get; }
     parameters: []
@@ -84,6 +102,13 @@ items:
     content.vb: Public ReadOnly Property Permission As String
   overload: NuvTools.Security.Identity.Policy.PermissionRequirement.Permission*
 references:
+- uid: NuvTools.Security.Identity.Policy.PermissionAuthorizationHandler
+  commentId: T:NuvTools.Security.Identity.Policy.PermissionAuthorizationHandler
+  isExternal: true
+  href: NuvTools.Security.Identity.Policy.PermissionAuthorizationHandler.html
+  name: PermissionAuthorizationHandler
+  nameWithType: PermissionAuthorizationHandler
+  fullName: NuvTools.Security.Identity.Policy.PermissionAuthorizationHandler
 - uid: NuvTools.Security.Identity.Policy
   commentId: N:NuvTools.Security.Identity.Policy
   isExternal: true

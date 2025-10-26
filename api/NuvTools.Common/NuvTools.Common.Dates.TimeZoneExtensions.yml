@@ -5,8 +5,10 @@ items:
   id: TimeZoneExtensions
   parent: NuvTools.Common.Dates
   children:
-  - NuvTools.Common.Dates.TimeZoneExtensions.DateParseToUtc(System.String,System.String,NuvTools.Common.Dates.TimeZoneRegion)
-  - NuvTools.Common.Dates.TimeZoneExtensions.ToTimeZone(System.DateTime,NuvTools.Common.Dates.TimeZoneRegion,NuvTools.Common.Dates.UtcDirection)
+  - NuvTools.Common.Dates.TimeZoneExtensions.DateParseToUtc(System.String,System.String,NuvTools.Common.Dates.Enumerations.TimeZoneRegion,System.Nullable{System.Int32})
+  - NuvTools.Common.Dates.TimeZoneExtensions.GetTimeZoneInfo(NuvTools.Common.Dates.Enumerations.TimeZoneRegion)
+  - NuvTools.Common.Dates.TimeZoneExtensions.ToTimeZone(System.DateTime,NuvTools.Common.Dates.Enumerations.TimeZoneRegion,NuvTools.Common.Dates.Enumerations.UtcDirection,System.Nullable{System.Int32})
+  - NuvTools.Common.Dates.TimeZoneExtensions.ToTimeZoneOffset(System.DateTimeOffset,NuvTools.Common.Dates.Enumerations.TimeZoneRegion,System.Nullable{System.Int32})
   langs:
   - csharp
   - vb
@@ -15,10 +17,12 @@ items:
   fullName: NuvTools.Common.Dates.TimeZoneExtensions
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/Dates/TimeZoneExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Dates/TimeZoneExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Dates
+  summary: Provides helper methods for timezone conversions.
+  example: []
   syntax:
     content: public static class TimeZoneExtensions
     content.vb: Public Module TimeZoneExtensions
@@ -32,84 +36,147 @@ items:
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.GetHashCode
-- uid: NuvTools.Common.Dates.TimeZoneExtensions.ToTimeZone(System.DateTime,NuvTools.Common.Dates.TimeZoneRegion,NuvTools.Common.Dates.UtcDirection)
-  commentId: M:NuvTools.Common.Dates.TimeZoneExtensions.ToTimeZone(System.DateTime,NuvTools.Common.Dates.TimeZoneRegion,NuvTools.Common.Dates.UtcDirection)
-  id: ToTimeZone(System.DateTime,NuvTools.Common.Dates.TimeZoneRegion,NuvTools.Common.Dates.UtcDirection)
+- uid: NuvTools.Common.Dates.TimeZoneExtensions.ToTimeZone(System.DateTime,NuvTools.Common.Dates.Enumerations.TimeZoneRegion,NuvTools.Common.Dates.Enumerations.UtcDirection,System.Nullable{System.Int32})
+  commentId: M:NuvTools.Common.Dates.TimeZoneExtensions.ToTimeZone(System.DateTime,NuvTools.Common.Dates.Enumerations.TimeZoneRegion,NuvTools.Common.Dates.Enumerations.UtcDirection,System.Nullable{System.Int32})
+  id: ToTimeZone(System.DateTime,NuvTools.Common.Dates.Enumerations.TimeZoneRegion,NuvTools.Common.Dates.Enumerations.UtcDirection,System.Nullable{System.Int32})
   isExtensionMethod: true
   parent: NuvTools.Common.Dates.TimeZoneExtensions
   langs:
   - csharp
   - vb
-  name: ToTimeZone(DateTime, TimeZoneRegion, UtcDirection)
-  nameWithType: TimeZoneExtensions.ToTimeZone(DateTime, TimeZoneRegion, UtcDirection)
-  fullName: NuvTools.Common.Dates.TimeZoneExtensions.ToTimeZone(System.DateTime, NuvTools.Common.Dates.TimeZoneRegion, NuvTools.Common.Dates.UtcDirection)
+  name: ToTimeZone(DateTime, TimeZoneRegion, UtcDirection, int?)
+  nameWithType: TimeZoneExtensions.ToTimeZone(DateTime, TimeZoneRegion, UtcDirection, int?)
+  fullName: NuvTools.Common.Dates.TimeZoneExtensions.ToTimeZone(System.DateTime, NuvTools.Common.Dates.Enumerations.TimeZoneRegion, NuvTools.Common.Dates.Enumerations.UtcDirection, int?)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/Dates/TimeZoneExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Dates/TimeZoneExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Dates
-  summary: Converts a date and time to the specified time zone.
+  summary: Converts a <xref href="System.DateTime" data-throw-if-not-resolved="false"></xref> to the specified timezone or offset.
   example: []
   syntax:
-    content: public static DateTime ToTimeZone(this DateTime value, TimeZoneRegion timeZoneRegion = TimeZoneRegion.Brasilia, UtcDirection utcDirection = UtcDirection.None)
+    content: public static DateTime ToTimeZone(this DateTime value, TimeZoneRegion timeZoneRegion = TimeZoneRegion.Brasilia, UtcDirection utcDirection = UtcDirection.None, int? offsetMinutes = null)
     parameters:
     - id: value
       type: System.DateTime
-      description: Date and time to be converted.
+      description: The input datetime.
     - id: timeZoneRegion
-      type: NuvTools.Common.Dates.TimeZoneRegion
-      description: Region which value will be converted.
+      type: NuvTools.Common.Dates.Enumerations.TimeZoneRegion
+      description: The target region (optional if using offset).
     - id: utcDirection
-      type: NuvTools.Common.Dates.UtcDirection
-      description: Conversion direction.
+      type: NuvTools.Common.Dates.Enumerations.UtcDirection
+      description: Whether to convert to or from UTC.
+    - id: offsetMinutes
+      type: System.Nullable{System.Int32}
+      description: Manual offset in minutes (optional).
     return:
       type: System.DateTime
-      description: ''
-    content.vb: Public Shared Function ToTimeZone(value As Date, timeZoneRegion As TimeZoneRegion = TimeZoneRegion.Brasilia, utcDirection As UtcDirection = UtcDirection.None) As Date
+    content.vb: Public Shared Function ToTimeZone(value As Date, timeZoneRegion As TimeZoneRegion = TimeZoneRegion.Brasilia, utcDirection As UtcDirection = UtcDirection.None, offsetMinutes As Integer? = Nothing) As Date
   overload: NuvTools.Common.Dates.TimeZoneExtensions.ToTimeZone*
-  nameWithType.vb: TimeZoneExtensions.ToTimeZone(Date, TimeZoneRegion, UtcDirection)
-  fullName.vb: NuvTools.Common.Dates.TimeZoneExtensions.ToTimeZone(Date, NuvTools.Common.Dates.TimeZoneRegion, NuvTools.Common.Dates.UtcDirection)
-  name.vb: ToTimeZone(Date, TimeZoneRegion, UtcDirection)
-- uid: NuvTools.Common.Dates.TimeZoneExtensions.DateParseToUtc(System.String,System.String,NuvTools.Common.Dates.TimeZoneRegion)
-  commentId: M:NuvTools.Common.Dates.TimeZoneExtensions.DateParseToUtc(System.String,System.String,NuvTools.Common.Dates.TimeZoneRegion)
-  id: DateParseToUtc(System.String,System.String,NuvTools.Common.Dates.TimeZoneRegion)
+  nameWithType.vb: TimeZoneExtensions.ToTimeZone(Date, TimeZoneRegion, UtcDirection, Integer?)
+  fullName.vb: NuvTools.Common.Dates.TimeZoneExtensions.ToTimeZone(Date, NuvTools.Common.Dates.Enumerations.TimeZoneRegion, NuvTools.Common.Dates.Enumerations.UtcDirection, Integer?)
+  name.vb: ToTimeZone(Date, TimeZoneRegion, UtcDirection, Integer?)
+- uid: NuvTools.Common.Dates.TimeZoneExtensions.DateParseToUtc(System.String,System.String,NuvTools.Common.Dates.Enumerations.TimeZoneRegion,System.Nullable{System.Int32})
+  commentId: M:NuvTools.Common.Dates.TimeZoneExtensions.DateParseToUtc(System.String,System.String,NuvTools.Common.Dates.Enumerations.TimeZoneRegion,System.Nullable{System.Int32})
+  id: DateParseToUtc(System.String,System.String,NuvTools.Common.Dates.Enumerations.TimeZoneRegion,System.Nullable{System.Int32})
   isExtensionMethod: true
   parent: NuvTools.Common.Dates.TimeZoneExtensions
   langs:
   - csharp
   - vb
-  name: DateParseToUtc(string, string, TimeZoneRegion)
-  nameWithType: TimeZoneExtensions.DateParseToUtc(string, string, TimeZoneRegion)
-  fullName: NuvTools.Common.Dates.TimeZoneExtensions.DateParseToUtc(string, string, NuvTools.Common.Dates.TimeZoneRegion)
+  name: DateParseToUtc(string, string, TimeZoneRegion, int?)
+  nameWithType: TimeZoneExtensions.DateParseToUtc(string, string, TimeZoneRegion, int?)
+  fullName: NuvTools.Common.Dates.TimeZoneExtensions.DateParseToUtc(string, string, NuvTools.Common.Dates.Enumerations.TimeZoneRegion, int?)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/Dates/TimeZoneExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Dates/TimeZoneExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Dates
-  summary: Parses the string to DateTime using TimeZoneRegion options
+  summary: Converts a string date to UTC <xref href="System.DateTime" data-throw-if-not-resolved="false"></xref> using either a region or a custom offset.
   example: []
   syntax:
-    content: public static DateTime DateParseToUtc(this string value, string format = "dd-MM-yyyy HH:mm:ss", TimeZoneRegion fromTimeZoneRegion = TimeZoneRegion.Brasilia)
+    content: public static DateTime DateParseToUtc(this string value, string format = "dd-MM-yyyy HH:mm:ss", TimeZoneRegion fromTimeZoneRegion = TimeZoneRegion.Brasilia, int? offsetMinutes = null)
     parameters:
     - id: value
       type: System.String
-      description: Date and time string to be converted into DateTIme.
     - id: format
       type: System.String
-      description: Format that the value is being passed.
     - id: fromTimeZoneRegion
-      type: NuvTools.Common.Dates.TimeZoneRegion
-      description: Region which value will be converted.
+      type: NuvTools.Common.Dates.Enumerations.TimeZoneRegion
+    - id: offsetMinutes
+      type: System.Nullable{System.Int32}
     return:
       type: System.DateTime
-      description: ''
-    content.vb: Public Shared Function DateParseToUtc(value As String, format As String = "dd-MM-yyyy HH:mm:ss", fromTimeZoneRegion As TimeZoneRegion = TimeZoneRegion.Brasilia) As Date
+    content.vb: Public Shared Function DateParseToUtc(value As String, format As String = "dd-MM-yyyy HH:mm:ss", fromTimeZoneRegion As TimeZoneRegion = TimeZoneRegion.Brasilia, offsetMinutes As Integer? = Nothing) As Date
   overload: NuvTools.Common.Dates.TimeZoneExtensions.DateParseToUtc*
-  nameWithType.vb: TimeZoneExtensions.DateParseToUtc(String, String, TimeZoneRegion)
-  fullName.vb: NuvTools.Common.Dates.TimeZoneExtensions.DateParseToUtc(String, String, NuvTools.Common.Dates.TimeZoneRegion)
-  name.vb: DateParseToUtc(String, String, TimeZoneRegion)
+  nameWithType.vb: TimeZoneExtensions.DateParseToUtc(String, String, TimeZoneRegion, Integer?)
+  fullName.vb: NuvTools.Common.Dates.TimeZoneExtensions.DateParseToUtc(String, String, NuvTools.Common.Dates.Enumerations.TimeZoneRegion, Integer?)
+  name.vb: DateParseToUtc(String, String, TimeZoneRegion, Integer?)
+- uid: NuvTools.Common.Dates.TimeZoneExtensions.ToTimeZoneOffset(System.DateTimeOffset,NuvTools.Common.Dates.Enumerations.TimeZoneRegion,System.Nullable{System.Int32})
+  commentId: M:NuvTools.Common.Dates.TimeZoneExtensions.ToTimeZoneOffset(System.DateTimeOffset,NuvTools.Common.Dates.Enumerations.TimeZoneRegion,System.Nullable{System.Int32})
+  id: ToTimeZoneOffset(System.DateTimeOffset,NuvTools.Common.Dates.Enumerations.TimeZoneRegion,System.Nullable{System.Int32})
+  isExtensionMethod: true
+  parent: NuvTools.Common.Dates.TimeZoneExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToTimeZoneOffset(DateTimeOffset, TimeZoneRegion, int?)
+  nameWithType: TimeZoneExtensions.ToTimeZoneOffset(DateTimeOffset, TimeZoneRegion, int?)
+  fullName: NuvTools.Common.Dates.TimeZoneExtensions.ToTimeZoneOffset(System.DateTimeOffset, NuvTools.Common.Dates.Enumerations.TimeZoneRegion, int?)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Dates/TimeZoneExtensions.cs
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.Dates
+  summary: Converts a DateTimeOffset to the specified timezone region or offset.
+  example: []
+  syntax:
+    content: public static DateTimeOffset ToTimeZoneOffset(this DateTimeOffset value, TimeZoneRegion timeZoneRegion = TimeZoneRegion.Brasilia, int? offsetMinutes = null)
+    parameters:
+    - id: value
+      type: System.DateTimeOffset
+    - id: timeZoneRegion
+      type: NuvTools.Common.Dates.Enumerations.TimeZoneRegion
+    - id: offsetMinutes
+      type: System.Nullable{System.Int32}
+    return:
+      type: System.DateTimeOffset
+    content.vb: Public Shared Function ToTimeZoneOffset(value As DateTimeOffset, timeZoneRegion As TimeZoneRegion = TimeZoneRegion.Brasilia, offsetMinutes As Integer? = Nothing) As DateTimeOffset
+  overload: NuvTools.Common.Dates.TimeZoneExtensions.ToTimeZoneOffset*
+  nameWithType.vb: TimeZoneExtensions.ToTimeZoneOffset(DateTimeOffset, TimeZoneRegion, Integer?)
+  fullName.vb: NuvTools.Common.Dates.TimeZoneExtensions.ToTimeZoneOffset(System.DateTimeOffset, NuvTools.Common.Dates.Enumerations.TimeZoneRegion, Integer?)
+  name.vb: ToTimeZoneOffset(DateTimeOffset, TimeZoneRegion, Integer?)
+- uid: NuvTools.Common.Dates.TimeZoneExtensions.GetTimeZoneInfo(NuvTools.Common.Dates.Enumerations.TimeZoneRegion)
+  commentId: M:NuvTools.Common.Dates.TimeZoneExtensions.GetTimeZoneInfo(NuvTools.Common.Dates.Enumerations.TimeZoneRegion)
+  id: GetTimeZoneInfo(NuvTools.Common.Dates.Enumerations.TimeZoneRegion)
+  isExtensionMethod: true
+  parent: NuvTools.Common.Dates.TimeZoneExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetTimeZoneInfo(TimeZoneRegion)
+  nameWithType: TimeZoneExtensions.GetTimeZoneInfo(TimeZoneRegion)
+  fullName: NuvTools.Common.Dates.TimeZoneExtensions.GetTimeZoneInfo(NuvTools.Common.Dates.Enumerations.TimeZoneRegion)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Dates/TimeZoneExtensions.cs
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.Dates
+  summary: Returns the <xref href="System.TimeZoneInfo" data-throw-if-not-resolved="false"></xref> for a given region, respecting the OS platform.
+  example: []
+  syntax:
+    content: public static TimeZoneInfo GetTimeZoneInfo(this TimeZoneRegion region)
+    parameters:
+    - id: region
+      type: NuvTools.Common.Dates.Enumerations.TimeZoneRegion
+    return:
+      type: System.TimeZoneInfo
+    content.vb: Public Shared Function GetTimeZoneInfo(region As TimeZoneRegion) As TimeZoneInfo
+  overload: NuvTools.Common.Dates.TimeZoneExtensions.GetTimeZoneInfo*
 references:
 - uid: NuvTools.Common.Dates
   commentId: N:NuvTools.Common.Dates
@@ -385,13 +452,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: NuvTools.Common.Dates.TimeZoneExtensions.ToTimeZone*
-  commentId: Overload:NuvTools.Common.Dates.TimeZoneExtensions.ToTimeZone
-  isExternal: true
-  href: NuvTools.Common.Dates.TimeZoneExtensions.html#NuvTools_Common_Dates_TimeZoneExtensions_ToTimeZone_System_DateTime_NuvTools_Common_Dates_TimeZoneRegion_NuvTools_Common_Dates_UtcDirection_
-  name: ToTimeZone
-  nameWithType: TimeZoneExtensions.ToTimeZone
-  fullName: NuvTools.Common.Dates.TimeZoneExtensions.ToTimeZone
 - uid: System.DateTime
   commentId: T:System.DateTime
   parent: System
@@ -403,26 +463,131 @@ references:
   nameWithType.vb: Date
   fullName.vb: Date
   name.vb: Date
-- uid: NuvTools.Common.Dates.TimeZoneRegion
-  commentId: T:NuvTools.Common.Dates.TimeZoneRegion
-  parent: NuvTools.Common.Dates
+- uid: NuvTools.Common.Dates.TimeZoneExtensions.ToTimeZone*
+  commentId: Overload:NuvTools.Common.Dates.TimeZoneExtensions.ToTimeZone
   isExternal: true
-  href: NuvTools.Common.Dates.TimeZoneRegion.html
+  href: NuvTools.Common.Dates.TimeZoneExtensions.html#NuvTools_Common_Dates_TimeZoneExtensions_ToTimeZone_System_DateTime_NuvTools_Common_Dates_Enumerations_TimeZoneRegion_NuvTools_Common_Dates_Enumerations_UtcDirection_System_Nullable_System_Int32__
+  name: ToTimeZone
+  nameWithType: TimeZoneExtensions.ToTimeZone
+  fullName: NuvTools.Common.Dates.TimeZoneExtensions.ToTimeZone
+- uid: NuvTools.Common.Dates.Enumerations.TimeZoneRegion
+  commentId: T:NuvTools.Common.Dates.Enumerations.TimeZoneRegion
+  parent: NuvTools.Common.Dates.Enumerations
+  isExternal: true
+  href: NuvTools.Common.Dates.Enumerations.TimeZoneRegion.html
   name: TimeZoneRegion
   nameWithType: TimeZoneRegion
-  fullName: NuvTools.Common.Dates.TimeZoneRegion
-- uid: NuvTools.Common.Dates.UtcDirection
-  commentId: T:NuvTools.Common.Dates.UtcDirection
-  parent: NuvTools.Common.Dates
+  fullName: NuvTools.Common.Dates.Enumerations.TimeZoneRegion
+- uid: NuvTools.Common.Dates.Enumerations.UtcDirection
+  commentId: T:NuvTools.Common.Dates.Enumerations.UtcDirection
+  parent: NuvTools.Common.Dates.Enumerations
   isExternal: true
-  href: NuvTools.Common.Dates.UtcDirection.html
+  href: NuvTools.Common.Dates.Enumerations.UtcDirection.html
   name: UtcDirection
   nameWithType: UtcDirection
-  fullName: NuvTools.Common.Dates.UtcDirection
+  fullName: NuvTools.Common.Dates.Enumerations.UtcDirection
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: NuvTools.Common.Dates.Enumerations
+  commentId: N:NuvTools.Common.Dates.Enumerations
+  isExternal: true
+  href: NuvTools.html
+  name: NuvTools.Common.Dates.Enumerations
+  nameWithType: NuvTools.Common.Dates.Enumerations
+  fullName: NuvTools.Common.Dates.Enumerations
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Common
+    name: Common
+    isExternal: true
+    href: NuvTools.Common.html
+  - name: .
+  - uid: NuvTools.Common.Dates
+    name: Dates
+    isExternal: true
+    href: NuvTools.Common.Dates.html
+  - name: .
+  - uid: NuvTools.Common.Dates.Enumerations
+    name: Enumerations
+    isExternal: true
+    href: NuvTools.Common.Dates.Enumerations.html
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Common
+    name: Common
+    isExternal: true
+    href: NuvTools.Common.html
+  - name: .
+  - uid: NuvTools.Common.Dates
+    name: Dates
+    isExternal: true
+    href: NuvTools.Common.Dates.html
+  - name: .
+  - uid: NuvTools.Common.Dates.Enumerations
+    name: Enumerations
+    isExternal: true
+    href: NuvTools.Common.Dates.Enumerations.html
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: NuvTools.Common.Dates.TimeZoneExtensions.DateParseToUtc*
   commentId: Overload:NuvTools.Common.Dates.TimeZoneExtensions.DateParseToUtc
   isExternal: true
-  href: NuvTools.Common.Dates.TimeZoneExtensions.html#NuvTools_Common_Dates_TimeZoneExtensions_DateParseToUtc_System_String_System_String_NuvTools_Common_Dates_TimeZoneRegion_
+  href: NuvTools.Common.Dates.TimeZoneExtensions.html#NuvTools_Common_Dates_TimeZoneExtensions_DateParseToUtc_System_String_System_String_NuvTools_Common_Dates_Enumerations_TimeZoneRegion_System_Nullable_System_Int32__
   name: DateParseToUtc
   nameWithType: TimeZoneExtensions.DateParseToUtc
   fullName: NuvTools.Common.Dates.TimeZoneExtensions.DateParseToUtc
@@ -437,3 +602,33 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: NuvTools.Common.Dates.TimeZoneExtensions.ToTimeZoneOffset*
+  commentId: Overload:NuvTools.Common.Dates.TimeZoneExtensions.ToTimeZoneOffset
+  isExternal: true
+  href: NuvTools.Common.Dates.TimeZoneExtensions.html#NuvTools_Common_Dates_TimeZoneExtensions_ToTimeZoneOffset_System_DateTimeOffset_NuvTools_Common_Dates_Enumerations_TimeZoneRegion_System_Nullable_System_Int32__
+  name: ToTimeZoneOffset
+  nameWithType: TimeZoneExtensions.ToTimeZoneOffset
+  fullName: NuvTools.Common.Dates.TimeZoneExtensions.ToTimeZoneOffset
+- uid: System.DateTimeOffset
+  commentId: T:System.DateTimeOffset
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetimeoffset
+  name: DateTimeOffset
+  nameWithType: DateTimeOffset
+  fullName: System.DateTimeOffset
+- uid: System.TimeZoneInfo
+  commentId: T:System.TimeZoneInfo
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.timezoneinfo
+  name: TimeZoneInfo
+  nameWithType: TimeZoneInfo
+  fullName: System.TimeZoneInfo
+- uid: NuvTools.Common.Dates.TimeZoneExtensions.GetTimeZoneInfo*
+  commentId: Overload:NuvTools.Common.Dates.TimeZoneExtensions.GetTimeZoneInfo
+  isExternal: true
+  href: NuvTools.Common.Dates.TimeZoneExtensions.html#NuvTools_Common_Dates_TimeZoneExtensions_GetTimeZoneInfo_NuvTools_Common_Dates_Enumerations_TimeZoneRegion_
+  name: GetTimeZoneInfo
+  nameWithType: TimeZoneExtensions.GetTimeZoneInfo
+  fullName: NuvTools.Common.Dates.TimeZoneExtensions.GetTimeZoneInfo

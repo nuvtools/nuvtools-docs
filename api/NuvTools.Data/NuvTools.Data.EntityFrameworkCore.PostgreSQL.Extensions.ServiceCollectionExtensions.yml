@@ -16,7 +16,7 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions.ServiceCollectionExtensions
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ServiceCollectionExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ServiceCollectionExtensions.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore.PostgreSQL
   namespace: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions
@@ -46,12 +46,12 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions.ServiceCollectionExtensions.AddDatabaseByConnectionName<TContext>(Microsoft.Extensions.DependencyInjection.IServiceCollection, string, string, System.Action<Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure.NpgsqlDbContextOptionsBuilder>?, Microsoft.Extensions.DependencyInjection.ServiceLifetime)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ServiceCollectionExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ServiceCollectionExtensions.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore.PostgreSQL
   namespace: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions
   syntax:
-    content: 'public static IServiceCollection AddDatabaseByConnectionName<TContext>(this IServiceCollection services, string connectionName, string settingsFileName = "appsettings.json", Action<NpgsqlDbContextOptionsBuilder>? npgsqlOptionsAction = null, ServiceLifetime contextLifetime = ServiceLifetime.Scoped) where TContext : DbContextSnakeCaseNamingBase'
+    content: 'public static IServiceCollection AddDatabaseByConnectionName<TContext>(this IServiceCollection services, string connectionName, string settingsFileName = "appsettings.json", Action<NpgsqlDbContextOptionsBuilder>? npgsqlOptionsAction = null, ServiceLifetime contextLifetime = ServiceLifetime.Scoped) where TContext : DbContext'
     parameters:
     - id: services
       type: Microsoft.Extensions.DependencyInjection.IServiceCollection
@@ -67,7 +67,7 @@ items:
     - id: TContext
     return:
       type: Microsoft.Extensions.DependencyInjection.IServiceCollection
-    content.vb: Public Shared Function AddDatabaseByConnectionName(Of TContext As DbContextSnakeCaseNamingBase)(services As IServiceCollection, connectionName As String, settingsFileName As String = "appsettings.json", npgsqlOptionsAction As Action(Of NpgsqlDbContextOptionsBuilder) = Nothing, contextLifetime As ServiceLifetime = ServiceLifetime.Scoped) As IServiceCollection
+    content.vb: Public Shared Function AddDatabaseByConnectionName(Of TContext As DbContext)(services As IServiceCollection, connectionName As String, settingsFileName As String = "appsettings.json", npgsqlOptionsAction As Action(Of NpgsqlDbContextOptionsBuilder) = Nothing, contextLifetime As ServiceLifetime = ServiceLifetime.Scoped) As IServiceCollection
   overload: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions.ServiceCollectionExtensions.AddDatabaseByConnectionName*
   nameWithType.vb: ServiceCollectionExtensions.AddDatabaseByConnectionName(Of TContext)(IServiceCollection, String, String, Action(Of NpgsqlDbContextOptionsBuilder), ServiceLifetime)
   fullName.vb: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions.ServiceCollectionExtensions.AddDatabaseByConnectionName(Of TContext)(Microsoft.Extensions.DependencyInjection.IServiceCollection, String, String, System.Action(Of Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure.NpgsqlDbContextOptionsBuilder), Microsoft.Extensions.DependencyInjection.ServiceLifetime)
@@ -85,12 +85,12 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions.ServiceCollectionExtensions.AddDatabaseByConnectionName<TContext>(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration, string, System.Action<Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure.NpgsqlDbContextOptionsBuilder>?, Microsoft.Extensions.DependencyInjection.ServiceLifetime)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ServiceCollectionExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ServiceCollectionExtensions.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore.PostgreSQL
   namespace: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions
   syntax:
-    content: 'public static IServiceCollection AddDatabaseByConnectionName<TContext>(this IServiceCollection services, IConfiguration configuration, string connectionName, Action<NpgsqlDbContextOptionsBuilder>? npgsqlOptionsAction = null, ServiceLifetime contextLifetime = ServiceLifetime.Scoped) where TContext : DbContextSnakeCaseNamingBase'
+    content: 'public static IServiceCollection AddDatabaseByConnectionName<TContext>(this IServiceCollection services, IConfiguration configuration, string connectionName, Action<NpgsqlDbContextOptionsBuilder>? npgsqlOptionsAction = null, ServiceLifetime contextLifetime = ServiceLifetime.Scoped) where TContext : DbContext'
     parameters:
     - id: services
       type: Microsoft.Extensions.DependencyInjection.IServiceCollection
@@ -106,7 +106,7 @@ items:
     - id: TContext
     return:
       type: Microsoft.Extensions.DependencyInjection.IServiceCollection
-    content.vb: Public Shared Function AddDatabaseByConnectionName(Of TContext As DbContextSnakeCaseNamingBase)(services As IServiceCollection, configuration As IConfiguration, connectionName As String, npgsqlOptionsAction As Action(Of NpgsqlDbContextOptionsBuilder) = Nothing, contextLifetime As ServiceLifetime = ServiceLifetime.Scoped) As IServiceCollection
+    content.vb: Public Shared Function AddDatabaseByConnectionName(Of TContext As DbContext)(services As IServiceCollection, configuration As IConfiguration, connectionName As String, npgsqlOptionsAction As Action(Of NpgsqlDbContextOptionsBuilder) = Nothing, contextLifetime As ServiceLifetime = ServiceLifetime.Scoped) As IServiceCollection
   overload: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions.ServiceCollectionExtensions.AddDatabaseByConnectionName*
   nameWithType.vb: ServiceCollectionExtensions.AddDatabaseByConnectionName(Of TContext)(IServiceCollection, IConfiguration, String, Action(Of NpgsqlDbContextOptionsBuilder), ServiceLifetime)
   fullName.vb: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions.ServiceCollectionExtensions.AddDatabaseByConnectionName(Of TContext)(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration, String, System.Action(Of Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure.NpgsqlDbContextOptionsBuilder), Microsoft.Extensions.DependencyInjection.ServiceLifetime)
@@ -124,12 +124,12 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions.ServiceCollectionExtensions.AddDatabase<TContext>(Microsoft.Extensions.DependencyInjection.IServiceCollection, string?, System.Action<Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure.NpgsqlDbContextOptionsBuilder>?, Microsoft.Extensions.DependencyInjection.ServiceLifetime)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ServiceCollectionExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ServiceCollectionExtensions.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore.PostgreSQL
   namespace: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions
   syntax:
-    content: 'public static IServiceCollection AddDatabase<TContext>(this IServiceCollection services, string? connectionString, Action<NpgsqlDbContextOptionsBuilder>? npgsqlOptionsAction = null, ServiceLifetime contextLifetime = ServiceLifetime.Scoped) where TContext : DbContextSnakeCaseNamingBase'
+    content: 'public static IServiceCollection AddDatabase<TContext>(this IServiceCollection services, string? connectionString, Action<NpgsqlDbContextOptionsBuilder>? npgsqlOptionsAction = null, ServiceLifetime contextLifetime = ServiceLifetime.Scoped) where TContext : DbContext'
     parameters:
     - id: services
       type: Microsoft.Extensions.DependencyInjection.IServiceCollection
@@ -143,7 +143,7 @@ items:
     - id: TContext
     return:
       type: Microsoft.Extensions.DependencyInjection.IServiceCollection
-    content.vb: Public Shared Function AddDatabase(Of TContext As DbContextSnakeCaseNamingBase)(services As IServiceCollection, connectionString As String, npgsqlOptionsAction As Action(Of NpgsqlDbContextOptionsBuilder) = Nothing, contextLifetime As ServiceLifetime = ServiceLifetime.Scoped) As IServiceCollection
+    content.vb: Public Shared Function AddDatabase(Of TContext As DbContext)(services As IServiceCollection, connectionString As String, npgsqlOptionsAction As Action(Of NpgsqlDbContextOptionsBuilder) = Nothing, contextLifetime As ServiceLifetime = ServiceLifetime.Scoped) As IServiceCollection
   overload: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions.ServiceCollectionExtensions.AddDatabase*
   nameWithType.vb: ServiceCollectionExtensions.AddDatabase(Of TContext)(IServiceCollection, String, Action(Of NpgsqlDbContextOptionsBuilder), ServiceLifetime)
   fullName.vb: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions.ServiceCollectionExtensions.AddDatabase(Of TContext)(Microsoft.Extensions.DependencyInjection.IServiceCollection, String, System.Action(Of Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure.NpgsqlDbContextOptionsBuilder), Microsoft.Extensions.DependencyInjection.ServiceLifetime)

@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Data_EntityFrameworkCore_PostgreSQL_Extensions_ServiceCollectionExtensions" data-uid="NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions.ServiceCollectionExtensions" class="text-break">
-Class ServiceCollectionExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ServiceCollectionExtensions.cs"><i class="bi bi-code-slash"></i></a>
+Class ServiceCollectionExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ServiceCollectionExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -156,14 +156,14 @@ Class ServiceCollectionExtensions  <a class="header-action link-secondary" title
 
   <h3 id="NuvTools_Data_EntityFrameworkCore_PostgreSQL_Extensions_ServiceCollectionExtensions_AddDatabaseByConnectionName__1_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_System_String_System_Action_Npgsql_EntityFrameworkCore_PostgreSQL_Infrastructure_NpgsqlDbContextOptionsBuilder__Microsoft_Extensions_DependencyInjection_ServiceLifetime_" data-uid="NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions.ServiceCollectionExtensions.AddDatabaseByConnectionName``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String,System.Action{Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure.NpgsqlDbContextOptionsBuilder},Microsoft.Extensions.DependencyInjection.ServiceLifetime)">
   AddDatabaseByConnectionName&lt;TContext&gt;(IServiceCollection, IConfiguration, string, Action&lt;NpgsqlDbContextOptionsBuilder&gt;?, ServiceLifetime)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ServiceCollectionExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ServiceCollectionExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IServiceCollection AddDatabaseByConnectionName&lt;TContext&gt;(this IServiceCollection services, IConfiguration configuration, string connectionName, Action&lt;NpgsqlDbContextOptionsBuilder&gt;? npgsqlOptionsAction = null, ServiceLifetime contextLifetime = ServiceLifetime.Scoped) where TContext : DbContextSnakeCaseNamingBase</code></pre>
+    <pre><code class="lang-csharp hljs">public static IServiceCollection AddDatabaseByConnectionName&lt;TContext&gt;(this IServiceCollection services, IConfiguration configuration, string connectionName, Action&lt;NpgsqlDbContextOptionsBuilder&gt;? npgsqlOptionsAction = null, ServiceLifetime contextLifetime = ServiceLifetime.Scoped) where TContext : DbContext</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -205,14 +205,14 @@ Class ServiceCollectionExtensions  <a class="header-action link-secondary" title
 
   <h3 id="NuvTools_Data_EntityFrameworkCore_PostgreSQL_Extensions_ServiceCollectionExtensions_AddDatabaseByConnectionName__1_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_String_System_String_System_Action_Npgsql_EntityFrameworkCore_PostgreSQL_Infrastructure_NpgsqlDbContextOptionsBuilder__Microsoft_Extensions_DependencyInjection_ServiceLifetime_" data-uid="NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions.ServiceCollectionExtensions.AddDatabaseByConnectionName``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String,System.String,System.Action{Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure.NpgsqlDbContextOptionsBuilder},Microsoft.Extensions.DependencyInjection.ServiceLifetime)">
   AddDatabaseByConnectionName&lt;TContext&gt;(IServiceCollection, string, string, Action&lt;NpgsqlDbContextOptionsBuilder&gt;?, ServiceLifetime)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ServiceCollectionExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ServiceCollectionExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IServiceCollection AddDatabaseByConnectionName&lt;TContext&gt;(this IServiceCollection services, string connectionName, string settingsFileName = &quot;appsettings.json&quot;, Action&lt;NpgsqlDbContextOptionsBuilder&gt;? npgsqlOptionsAction = null, ServiceLifetime contextLifetime = ServiceLifetime.Scoped) where TContext : DbContextSnakeCaseNamingBase</code></pre>
+    <pre><code class="lang-csharp hljs">public static IServiceCollection AddDatabaseByConnectionName&lt;TContext&gt;(this IServiceCollection services, string connectionName, string settingsFileName = &quot;appsettings.json&quot;, Action&lt;NpgsqlDbContextOptionsBuilder&gt;? npgsqlOptionsAction = null, ServiceLifetime contextLifetime = ServiceLifetime.Scoped) where TContext : DbContext</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -254,14 +254,14 @@ Class ServiceCollectionExtensions  <a class="header-action link-secondary" title
 
   <h3 id="NuvTools_Data_EntityFrameworkCore_PostgreSQL_Extensions_ServiceCollectionExtensions_AddDatabase__1_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_String_System_Action_Npgsql_EntityFrameworkCore_PostgreSQL_Infrastructure_NpgsqlDbContextOptionsBuilder__Microsoft_Extensions_DependencyInjection_ServiceLifetime_" data-uid="NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions.ServiceCollectionExtensions.AddDatabase``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String,System.Action{Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure.NpgsqlDbContextOptionsBuilder},Microsoft.Extensions.DependencyInjection.ServiceLifetime)">
   AddDatabase&lt;TContext&gt;(IServiceCollection, string?, Action&lt;NpgsqlDbContextOptionsBuilder&gt;?, ServiceLifetime)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ServiceCollectionExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ServiceCollectionExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IServiceCollection AddDatabase&lt;TContext&gt;(this IServiceCollection services, string? connectionString, Action&lt;NpgsqlDbContextOptionsBuilder&gt;? npgsqlOptionsAction = null, ServiceLifetime contextLifetime = ServiceLifetime.Scoped) where TContext : DbContextSnakeCaseNamingBase</code></pre>
+    <pre><code class="lang-csharp hljs">public static IServiceCollection AddDatabase&lt;TContext&gt;(this IServiceCollection services, string? connectionString, Action&lt;NpgsqlDbContextOptionsBuilder&gt;? npgsqlOptionsAction = null, ServiceLifetime contextLifetime = ServiceLifetime.Scoped) where TContext : DbContext</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -301,7 +301,7 @@ Class ServiceCollectionExtensions  <a class="header-action link-secondary" title
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-data/blob/1c585dd878be2de8bd0fca892ed9ec5757a7b4e3/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ServiceCollectionExtensions.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ServiceCollectionExtensions.cs" class="edit-link">Edit this page</a>
         </div>
 
 

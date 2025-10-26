@@ -14,14 +14,42 @@ items:
   fullName: NuvTools.Common.ResultWrapper.IResult<T>
   type: Interface
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/IResult.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: Defines the generic contract for an operation result that includes a data payload.
+  remarks: >-
+    This interface extends <xref href="NuvTools.Common.ResultWrapper.IResult" data-throw-if-not-resolved="false"></xref> by including a strongly-typed
+
+    <xref href="NuvTools.Common.ResultWrapper.IResult%601.Data" data-throw-if-not-resolved="false"></xref> property.  
+
+    It allows returning both status information and operation results
+
+    in a unified, consistent structure.
+  example:
+  - >-
+    Example usage:
+
+    <pre><code class="lang-csharp">IResult&lt;UserDto&gt; result = await _userService.GetUserByIdAsync(1);
+
+
+    if (result.Succeeded)
+
+    {
+        Console.WriteLine($"User: {result.Data!.Name}");
+    }
+
+    else
+
+    {
+        Console.WriteLine($"Error: {result.Message}");
+    }</code></pre>
   syntax:
     content: 'public interface IResult<out T> : IResult'
     typeParameters:
     - id: T
+      description: The type of the data returned by the operation.
     content.vb: Public Interface IResult(Of Out T) Inherits IResult
   inheritedMembers:
   - NuvTools.Common.ResultWrapper.IResult.Messages
@@ -49,10 +77,12 @@ items:
   fullName: NuvTools.Common.ResultWrapper.IResult<T>.Data
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/IResult.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
+  summary: The data returned by the operation, if applicable.
+  example: []
   syntax:
     content: T? Data { get; }
     parameters: []
@@ -63,6 +93,23 @@ items:
   nameWithType.vb: IResult(Of T).Data
   fullName.vb: NuvTools.Common.ResultWrapper.IResult(Of T).Data
 references:
+- uid: NuvTools.Common.ResultWrapper.IResult
+  commentId: T:NuvTools.Common.ResultWrapper.IResult
+  parent: NuvTools.Common.ResultWrapper
+  isExternal: true
+  href: NuvTools.Common.ResultWrapper.IResult.html
+  name: IResult
+  nameWithType: IResult
+  fullName: NuvTools.Common.ResultWrapper.IResult
+- uid: NuvTools.Common.ResultWrapper.IResult`1.Data
+  commentId: P:NuvTools.Common.ResultWrapper.IResult`1.Data
+  isExternal: true
+  href: NuvTools.Common.ResultWrapper.IResult-1.html#NuvTools_Common_ResultWrapper_IResult_1_Data
+  name: Data
+  nameWithType: IResult<T>.Data
+  fullName: NuvTools.Common.ResultWrapper.IResult<T>.Data
+  nameWithType.vb: IResult(Of T).Data
+  fullName.vb: NuvTools.Common.ResultWrapper.IResult(Of T).Data
 - uid: NuvTools.Common.ResultWrapper
   commentId: N:NuvTools.Common.ResultWrapper
   isExternal: true
@@ -373,14 +420,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
-- uid: NuvTools.Common.ResultWrapper.IResult
-  commentId: T:NuvTools.Common.ResultWrapper.IResult
-  parent: NuvTools.Common.ResultWrapper
-  isExternal: true
-  href: NuvTools.Common.ResultWrapper.IResult.html
-  name: IResult
-  nameWithType: IResult
-  fullName: NuvTools.Common.ResultWrapper.IResult
 - uid: NuvTools.Common.Serialization.Json.ObjectExtensions.Clone``1(``0,System.Int32)
   commentId: M:NuvTools.Common.Serialization.Json.ObjectExtensions.Clone``1(``0,System.Int32)
   isExternal: true

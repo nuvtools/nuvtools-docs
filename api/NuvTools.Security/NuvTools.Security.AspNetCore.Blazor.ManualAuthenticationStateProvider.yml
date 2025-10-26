@@ -18,10 +18,19 @@ items:
   fullName: NuvTools.Security.AspNetCore.Blazor.ManualAuthenticationStateProvider
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/2857885b7303512230448106b859554a2f8a0178/src/NuvTools.Security.AspNetCore.Blazor/ManualAuthenticationStateProvider.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security.AspNetCore.Blazor/ManualAuthenticationStateProvider.cs
   assemblies:
   - NuvTools.Security.AspNetCore.Blazor
   namespace: NuvTools.Security.AspNetCore.Blazor
+  summary: >-
+    Provides a manual implementation of <xref href="Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider" data-throw-if-not-resolved="false"></xref> that manages user authentication state
+
+    using JWT tokens stored in browser local storage.
+  remarks: >-
+    This provider enables custom authentication logic in Blazor applications, typically used when not relying on built-in
+
+    authentication mechanisms like OpenID Connect or Azure AD.
+  example: []
   syntax:
     content: 'public class ManualAuthenticationStateProvider : AuthenticationStateProvider'
     content.vb: Public Class ManualAuthenticationStateProvider Inherits AuthenticationStateProvider
@@ -50,10 +59,19 @@ items:
   fullName: NuvTools.Security.AspNetCore.Blazor.ManualAuthenticationStateProvider.ManualAuthenticationStateProvider(Blazored.LocalStorage.ILocalStorageService)
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/2857885b7303512230448106b859554a2f8a0178/src/NuvTools.Security.AspNetCore.Blazor/ManualAuthenticationStateProvider.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security.AspNetCore.Blazor/ManualAuthenticationStateProvider.cs
   assemblies:
   - NuvTools.Security.AspNetCore.Blazor
   namespace: NuvTools.Security.AspNetCore.Blazor
+  summary: >-
+    Provides a manual implementation of <xref href="Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider" data-throw-if-not-resolved="false"></xref> that manages user authentication state
+
+    using JWT tokens stored in browser local storage.
+  remarks: >-
+    This provider enables custom authentication logic in Blazor applications, typically used when not relying on built-in
+
+    authentication mechanisms like OpenID Connect or Azure AD.
+  example: []
   syntax:
     content: public ManualAuthenticationStateProvider(ILocalStorageService storage)
     parameters:
@@ -76,19 +94,27 @@ items:
   fullName: NuvTools.Security.AspNetCore.Blazor.ManualAuthenticationStateProvider.SignInAsync(string)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/2857885b7303512230448106b859554a2f8a0178/src/NuvTools.Security.AspNetCore.Blazor/ManualAuthenticationStateProvider.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security.AspNetCore.Blazor/ManualAuthenticationStateProvider.cs
   assemblies:
   - NuvTools.Security.AspNetCore.Blazor
   namespace: NuvTools.Security.AspNetCore.Blazor
+  summary: Signs the user in by validating the provided JWT token and updating the authentication state.
+  remarks: If the token is expired or invalid, the user will be automatically signed out.
+  example: []
   syntax:
     content: public Task SignInAsync(string token)
     parameters:
     - id: token
       type: System.String
+      description: The JWT token used to authenticate the user.
     return:
       type: System.Threading.Tasks.Task
     content.vb: Public Function SignInAsync(token As String) As Task
   overload: NuvTools.Security.AspNetCore.Blazor.ManualAuthenticationStateProvider.SignInAsync*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">token</code> is null or empty.
   nameWithType.vb: ManualAuthenticationStateProvider.SignInAsync(String)
   fullName.vb: NuvTools.Security.AspNetCore.Blazor.ManualAuthenticationStateProvider.SignInAsync(String)
   name.vb: SignInAsync(String)
@@ -104,10 +130,12 @@ items:
   fullName: NuvTools.Security.AspNetCore.Blazor.ManualAuthenticationStateProvider.SignOutAsync()
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/2857885b7303512230448106b859554a2f8a0178/src/NuvTools.Security.AspNetCore.Blazor/ManualAuthenticationStateProvider.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security.AspNetCore.Blazor/ManualAuthenticationStateProvider.cs
   assemblies:
   - NuvTools.Security.AspNetCore.Blazor
   namespace: NuvTools.Security.AspNetCore.Blazor
+  summary: Signs the user out by removing the stored token and setting the authentication state to anonymous.
+  example: []
   syntax:
     content: public Task SignOutAsync()
     return:
@@ -126,17 +154,17 @@ items:
   fullName: NuvTools.Security.AspNetCore.Blazor.ManualAuthenticationStateProvider.GetAuthenticationStateAsync()
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/2857885b7303512230448106b859554a2f8a0178/src/NuvTools.Security.AspNetCore.Blazor/ManualAuthenticationStateProvider.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security.AspNetCore.Blazor/ManualAuthenticationStateProvider.cs
   assemblies:
   - NuvTools.Security.AspNetCore.Blazor
   namespace: NuvTools.Security.AspNetCore.Blazor
-  summary: Asynchronously gets an <xref href="Microsoft.AspNetCore.Components.Authorization.AuthenticationState" data-throw-if-not-resolved="false"></xref> that describes the current user.
+  summary: Gets the current authentication state by reading the JWT token from local storage.
   example: []
   syntax:
     content: public override Task<AuthenticationState> GetAuthenticationStateAsync()
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Components.Authorization.AuthenticationState}
-      description: A task that, when resolved, gives an <xref href="Microsoft.AspNetCore.Components.Authorization.AuthenticationState" data-throw-if-not-resolved="false"></xref> instance that describes the current user.
+      description: An <xref href="Microsoft.AspNetCore.Components.Authorization.AuthenticationState" data-throw-if-not-resolved="false"></xref> representing the current user or an anonymous identity if no valid token exists.
     content.vb: Public Overrides Function GetAuthenticationStateAsync() As Task(Of AuthenticationState)
   overridden: Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider.GetAuthenticationStateAsync
   overload: NuvTools.Security.AspNetCore.Blazor.ManualAuthenticationStateProvider.GetAuthenticationStateAsync*
@@ -152,10 +180,12 @@ items:
   fullName: NuvTools.Security.AspNetCore.Blazor.ManualAuthenticationStateProvider.CurrentUser
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/2857885b7303512230448106b859554a2f8a0178/src/NuvTools.Security.AspNetCore.Blazor/ManualAuthenticationStateProvider.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security.AspNetCore.Blazor/ManualAuthenticationStateProvider.cs
   assemblies:
   - NuvTools.Security.AspNetCore.Blazor
   namespace: NuvTools.Security.AspNetCore.Blazor
+  summary: Gets the current authenticated user.
+  example: []
   syntax:
     content: public ClaimsPrincipal? CurrentUser { get; }
     parameters: []
@@ -164,6 +194,14 @@ items:
     content.vb: Public ReadOnly Property CurrentUser As ClaimsPrincipal
   overload: NuvTools.Security.AspNetCore.Blazor.ManualAuthenticationStateProvider.CurrentUser*
 references:
+- uid: Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider
+  commentId: T:Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider
+  parent: Microsoft.AspNetCore.Components.Authorization
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.authorization.authenticationstateprovider
+  name: AuthenticationStateProvider
+  nameWithType: AuthenticationStateProvider
+  fullName: Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider
 - uid: NuvTools.Security.AspNetCore.Blazor
   commentId: N:NuvTools.Security.AspNetCore.Blazor
   isExternal: true
@@ -222,14 +260,6 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider
-  commentId: T:Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider
-  parent: Microsoft.AspNetCore.Components.Authorization
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.authorization.authenticationstateprovider
-  name: AuthenticationStateProvider
-  nameWithType: AuthenticationStateProvider
-  fullName: Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider
 - uid: Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider.NotifyAuthenticationStateChanged(System.Threading.Tasks.Task{Microsoft.AspNetCore.Components.Authorization.AuthenticationState})
   commentId: M:Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider.NotifyAuthenticationStateChanged(System.Threading.Tasks.Task{Microsoft.AspNetCore.Components.Authorization.AuthenticationState})
   parent: Microsoft.AspNetCore.Components.Authorization.AuthenticationStateProvider
@@ -504,13 +534,6 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
   - name: (
   - name: )
-- uid: System
-  commentId: N:System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System
-  nameWithType: System
-  fullName: System
 - uid: Microsoft.AspNetCore.Components.Authorization
   commentId: N:Microsoft.AspNetCore.Components.Authorization
   isExternal: true
@@ -558,6 +581,13 @@ references:
     name: Authorization
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.authorization
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: NuvTools.Security.AspNetCore.Blazor.ManualAuthenticationStateProvider.#ctor*
   commentId: Overload:NuvTools.Security.AspNetCore.Blazor.ManualAuthenticationStateProvider.#ctor
   isExternal: true
@@ -597,6 +627,13 @@ references:
   - uid: Blazored.LocalStorage
     name: LocalStorage
     isExternal: true
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
 - uid: NuvTools.Security.AspNetCore.Blazor.ManualAuthenticationStateProvider.SignInAsync*
   commentId: Overload:NuvTools.Security.AspNetCore.Blazor.ManualAuthenticationStateProvider.SignInAsync
   isExternal: true

@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface IResult | Nuv Tools Framework Docs ">
       
-      
+      <meta name="description" content="Defines the base contract for an operation result, representing the outcome of a business or system process along with contextual messages.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Common_ResultWrapper_IResult" data-uid="NuvTools.Common.ResultWrapper.IResult" class="text-break">
-Interface IResult  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+Interface IResult  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,9 @@ Interface IResult  <a class="header-action link-secondary" title="View source" h
   <dl><dt>Assembly</dt><dd>NuvTools.Common.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Defines the base contract for an operation result, representing
+the outcome of a business or system process along with contextual messages.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -126,7 +128,23 @@ Interface IResult  <a class="header-action link-secondary" title="View source" h
   </dd></dl>
 
 
+  <h2 id="NuvTools_Common_ResultWrapper_IResult_examples">Examples</h2>
+  <p>Example usage:</p>
+<pre><code class="lang-csharp">IResult result = Result.Success("Operation completed successfully.");
 
+if (!result.Succeeded)
+{
+    logger.LogError(result.Message);
+}</code></pre>
+
+
+  <h2 id="NuvTools_Common_ResultWrapper_IResult_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This interface provides a consistent structure for handling success and error
+results throughout the application.<br>
+Implementations usually include information such as:</p>
+<ul><li>Whether the operation succeeded (<a class="xref" href="NuvTools.Common.ResultWrapper.IResult.html#NuvTools_Common_ResultWrapper_IResult_Succeeded">Succeeded</a>)</li><li>The result classification (<a class="xref" href="NuvTools.Common.ResultWrapper.IResult.html#NuvTools_Common_ResultWrapper_IResult_ResultType">ResultType</a>)</li><li>Messages providing feedback or error details (<a class="xref" href="NuvTools.Common.ResultWrapper.IResult.html#NuvTools_Common_ResultWrapper_IResult_Messages">Messages</a>)</li></ul>
+It is commonly implemented by <a class="xref" href="NuvTools.Common.ResultWrapper.Result.html">Result</a> and <a class="xref" href="NuvTools.Common.ResultWrapper.Result-1.html">Result&lt;T&gt;</a> classes.
+</div>
 
 
   <h2 class="section" id="properties">Properties
@@ -137,10 +155,12 @@ Interface IResult  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="NuvTools_Common_ResultWrapper_IResult_ContainsNotFound" data-uid="NuvTools.Common.ResultWrapper.IResult.ContainsNotFound">
   ContainsNotFound
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Indicates whether the result represents a &quot;Not Found&quot; condition.
+Useful for distinguishing between empty results and missing resources.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -168,10 +188,12 @@ Interface IResult  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="NuvTools_Common_ResultWrapper_IResult_Message" data-uid="NuvTools.Common.ResultWrapper.IResult.Message">
   Message
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>A simplified or aggregated version of the main message,
+typically derived from <a class="xref" href="NuvTools.Common.ResultWrapper.MessageDetail.html#NuvTools_Common_ResultWrapper_MessageDetail_Title">Title</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -199,10 +221,12 @@ Interface IResult  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="NuvTools_Common_ResultWrapper_IResult_MessageDetail" data-uid="NuvTools.Common.ResultWrapper.IResult.MessageDetail">
   MessageDetail
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The primary message detail, typically the first or most relevant message
+from the <a class="xref" href="NuvTools.Common.ResultWrapper.IResult.html#NuvTools_Common_ResultWrapper_IResult_Messages">Messages</a> collection.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -230,10 +254,13 @@ Interface IResult  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="NuvTools_Common_ResultWrapper_IResult_Messages" data-uid="NuvTools.Common.ResultWrapper.IResult.Messages">
   Messages
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>A collection of messages associated with the operation result.
+Each <a class="xref" href="NuvTools.Common.ResultWrapper.IResult.html#NuvTools_Common_ResultWrapper_IResult_MessageDetail">MessageDetail</a> contains structured information
+about the outcome (e.g., warnings, validation errors, or success messages).</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -261,10 +288,13 @@ Interface IResult  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="NuvTools_Common_ResultWrapper_IResult_ResultType" data-uid="NuvTools.Common.ResultWrapper.IResult.ResultType">
   ResultType
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Specifies the type or classification of the result,
+such as <a class="xref" href="NuvTools.Common.ResultWrapper.Enumerations.ResultType.html#NuvTools_Common_ResultWrapper_Enumerations_ResultType_Success">Success</a>,
+<a class="xref" href="NuvTools.Common.ResultWrapper.Enumerations.ResultType.html#NuvTools_Common_ResultWrapper_Enumerations_ResultType_Error">Error</a>, or <a class="xref" href="NuvTools.Common.ResultWrapper.Enumerations.ResultType.html#NuvTools_Common_ResultWrapper_Enumerations_ResultType_ValidationError">ValidationError</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -277,7 +307,7 @@ Interface IResult  <a class="header-action link-secondary" title="View source" h
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="NuvTools.Common.ResultWrapper.ResultType.html">ResultType</a></dt>
+    <dt><a class="xref" href="NuvTools.Common.ResultWrapper.Enumerations.ResultType.html">ResultType</a></dt>
     <dd></dd>
   </dl>
 
@@ -292,10 +322,11 @@ Interface IResult  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="NuvTools_Common_ResultWrapper_IResult_Succeeded" data-uid="NuvTools.Common.ResultWrapper.IResult.Succeeded">
   Succeeded
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Indicates whether the operation completed successfully.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -323,7 +354,7 @@ Interface IResult  <a class="header-action link-secondary" title="View source" h
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/IResult.cs" class="edit-link">Edit this page</a>
         </div>
 
 

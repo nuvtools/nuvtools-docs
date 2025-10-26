@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class SystemDateTimeService | Nuv Tools Framework Docs ">
       
-      
+      <meta name="description" content="Default implementation of  using .">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Common_Dates_SystemDateTimeService" data-uid="NuvTools.Common.Dates.SystemDateTimeService" class="text-break">
-Class SystemDateTimeService  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/Dates/SystemDateTimeService.cs"><i class="bi bi-code-slash"></i></a>
+Class SystemDateTimeService  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Dates/SystemDateTimeService.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class SystemDateTimeService  <a class="header-action link-secondary" title="View
   <dl><dt>Assembly</dt><dd>NuvTools.Common.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Default implementation of <a class="xref" href="NuvTools.Common.Dates.IDateTimeService.html">IDateTimeService</a> using <a class="xref" href="NuvTools.Common.Dates.TimeZoneExtensions.html">TimeZoneExtensions</a>.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -173,18 +174,24 @@ Class SystemDateTimeService  <a class="header-action link-secondary" title="View
 
   <a id="NuvTools_Common_Dates_SystemDateTimeService__ctor_" data-uid="NuvTools.Common.Dates.SystemDateTimeService.#ctor*"></a>
 
-  <h3 id="NuvTools_Common_Dates_SystemDateTimeService__ctor" data-uid="NuvTools.Common.Dates.SystemDateTimeService.#ctor">
-  SystemDateTimeService()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/Dates/SystemDateTimeService.cs"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NuvTools_Common_Dates_SystemDateTimeService__ctor_NuvTools_Common_Dates_Enumerations_TimeZoneRegion_" data-uid="NuvTools.Common.Dates.SystemDateTimeService.#ctor(NuvTools.Common.Dates.Enumerations.TimeZoneRegion)">
+  SystemDateTimeService(TimeZoneRegion)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Dates/SystemDateTimeService.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Default implementation of <a class="xref" href="NuvTools.Common.Dates.IDateTimeService.html">IDateTimeService</a> using <a class="xref" href="NuvTools.Common.Dates.TimeZoneExtensions.html">TimeZoneExtensions</a>.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public SystemDateTimeService()</code></pre>
+    <pre><code class="lang-csharp hljs">public SystemDateTimeService(TimeZoneRegion region = TimeZoneRegion.Brasilia)</code></pre>
   </div>
 
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>region</code> <a class="xref" href="NuvTools.Common.Dates.Enumerations.TimeZoneRegion.html">TimeZoneRegion</a></dt>
+    <dd></dd>
+  </dl>
 
 
 
@@ -205,10 +212,11 @@ Class SystemDateTimeService  <a class="header-action link-secondary" title="View
 
   <h3 id="NuvTools_Common_Dates_SystemDateTimeService_Now" data-uid="NuvTools.Common.Dates.SystemDateTimeService.Now">
   Now
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/Dates/SystemDateTimeService.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Dates/SystemDateTimeService.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Current local DateTime based on configured region.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -232,14 +240,79 @@ Class SystemDateTimeService  <a class="header-action link-secondary" title="View
 
 
 
+  <a id="NuvTools_Common_Dates_SystemDateTimeService_NowOffset_" data-uid="NuvTools.Common.Dates.SystemDateTimeService.NowOffset*"></a>
+
+  <h3 id="NuvTools_Common_Dates_SystemDateTimeService_NowOffset" data-uid="NuvTools.Common.Dates.SystemDateTimeService.NowOffset">
+  NowOffset
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Dates/SystemDateTimeService.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Current local DateTimeOffset based on configured region.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTimeOffset NowOffset { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Common_Dates_SystemDateTimeService_Region_" data-uid="NuvTools.Common.Dates.SystemDateTimeService.Region*"></a>
+
+  <h3 id="NuvTools_Common_Dates_SystemDateTimeService_Region" data-uid="NuvTools.Common.Dates.SystemDateTimeService.Region">
+  Region
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Dates/SystemDateTimeService.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Configured timezone region.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TimeZoneRegion Region { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NuvTools.Common.Dates.Enumerations.TimeZoneRegion.html">TimeZoneRegion</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="NuvTools_Common_Dates_SystemDateTimeService_UtcNow_" data-uid="NuvTools.Common.Dates.SystemDateTimeService.UtcNow*"></a>
 
   <h3 id="NuvTools_Common_Dates_SystemDateTimeService_UtcNow" data-uid="NuvTools.Common.Dates.SystemDateTimeService.UtcNow">
   UtcNow
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/Dates/SystemDateTimeService.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Dates/SystemDateTimeService.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Current UTC DateTime.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -263,11 +336,195 @@ Class SystemDateTimeService  <a class="header-action link-secondary" title="View
 
 
 
+  <a id="NuvTools_Common_Dates_SystemDateTimeService_UtcNowOffset_" data-uid="NuvTools.Common.Dates.SystemDateTimeService.UtcNowOffset*"></a>
+
+  <h3 id="NuvTools_Common_Dates_SystemDateTimeService_UtcNowOffset" data-uid="NuvTools.Common.Dates.SystemDateTimeService.UtcNowOffset">
+  UtcNowOffset
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Dates/SystemDateTimeService.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Current UTC DateTimeOffset.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTimeOffset UtcNowOffset { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="NuvTools_Common_Dates_SystemDateTimeService_ConvertFromUtc_" data-uid="NuvTools.Common.Dates.SystemDateTimeService.ConvertFromUtc*"></a>
+
+  <h3 id="NuvTools_Common_Dates_SystemDateTimeService_ConvertFromUtc_System_DateTime_" data-uid="NuvTools.Common.Dates.SystemDateTimeService.ConvertFromUtc(System.DateTime)">
+  ConvertFromUtc(DateTime)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Dates/SystemDateTimeService.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Converts UTC DateTime to local region time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTime ConvertFromUtc(DateTime utcDateTime)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>utcDateTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Common_Dates_SystemDateTimeService_ConvertFromUtc_" data-uid="NuvTools.Common.Dates.SystemDateTimeService.ConvertFromUtc*"></a>
+
+  <h3 id="NuvTools_Common_Dates_SystemDateTimeService_ConvertFromUtc_System_DateTimeOffset_" data-uid="NuvTools.Common.Dates.SystemDateTimeService.ConvertFromUtc(System.DateTimeOffset)">
+  ConvertFromUtc(DateTimeOffset)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Dates/SystemDateTimeService.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Converts UTC DateTimeOffset to local region time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTimeOffset ConvertFromUtc(DateTimeOffset utcDateTime)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>utcDateTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Common_Dates_SystemDateTimeService_ConvertToUtc_" data-uid="NuvTools.Common.Dates.SystemDateTimeService.ConvertToUtc*"></a>
+
+  <h3 id="NuvTools_Common_Dates_SystemDateTimeService_ConvertToUtc_System_DateTime_" data-uid="NuvTools.Common.Dates.SystemDateTimeService.ConvertToUtc(System.DateTime)">
+  ConvertToUtc(DateTime)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Dates/SystemDateTimeService.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Converts local DateTime to UTC.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTime ConvertToUtc(DateTime localDateTime)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>localDateTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetime">DateTime</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Common_Dates_SystemDateTimeService_ConvertToUtc_" data-uid="NuvTools.Common.Dates.SystemDateTimeService.ConvertToUtc*"></a>
+
+  <h3 id="NuvTools_Common_Dates_SystemDateTimeService_ConvertToUtc_System_DateTimeOffset_" data-uid="NuvTools.Common.Dates.SystemDateTimeService.ConvertToUtc(System.DateTimeOffset)">
+  ConvertToUtc(DateTimeOffset)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Dates/SystemDateTimeService.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Converts local DateTimeOffset to UTC.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DateTimeOffset ConvertToUtc(DateTimeOffset localDateTime)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>localDateTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/Dates/SystemDateTimeService.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Dates/SystemDateTimeService.cs" class="edit-link">Edit this page</a>
         </div>
 
 

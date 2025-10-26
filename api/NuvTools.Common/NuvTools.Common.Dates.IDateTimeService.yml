@@ -5,8 +5,15 @@ items:
   id: IDateTimeService
   parent: NuvTools.Common.Dates
   children:
+  - NuvTools.Common.Dates.IDateTimeService.ConvertFromUtc(System.DateTime)
+  - NuvTools.Common.Dates.IDateTimeService.ConvertFromUtc(System.DateTimeOffset)
+  - NuvTools.Common.Dates.IDateTimeService.ConvertToUtc(System.DateTime)
+  - NuvTools.Common.Dates.IDateTimeService.ConvertToUtc(System.DateTimeOffset)
   - NuvTools.Common.Dates.IDateTimeService.Now
+  - NuvTools.Common.Dates.IDateTimeService.NowOffset
+  - NuvTools.Common.Dates.IDateTimeService.Region
   - NuvTools.Common.Dates.IDateTimeService.UtcNow
+  - NuvTools.Common.Dates.IDateTimeService.UtcNowOffset
   langs:
   - csharp
   - vb
@@ -15,10 +22,12 @@ items:
   fullName: NuvTools.Common.Dates.IDateTimeService
   type: Interface
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/Dates/IDateTimeService.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Dates/IDateTimeService.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Dates
+  summary: Provides a timezone-aware abstraction for system date and time operations.
+  example: []
   syntax:
     content: public interface IDateTimeService
     content.vb: Public Interface IDateTimeService
@@ -26,6 +35,120 @@ items:
   - NuvTools.Common.Dates.IDateTimeService.NuvTools.Common.Serialization.Json.ObjectExtensions.Clone``1(System.Int32)
   - NuvTools.Common.Dates.IDateTimeService.NuvTools.Common.Serialization.Json.ObjectExtensions.Serialize``1(System.Int32)
   - NuvTools.Common.Dates.IDateTimeService.NuvTools.Common.Web.ObjectExtensions.GetQueryString``1(System.String)
+- uid: NuvTools.Common.Dates.IDateTimeService.ConvertFromUtc(System.DateTime)
+  commentId: M:NuvTools.Common.Dates.IDateTimeService.ConvertFromUtc(System.DateTime)
+  id: ConvertFromUtc(System.DateTime)
+  parent: NuvTools.Common.Dates.IDateTimeService
+  langs:
+  - csharp
+  - vb
+  name: ConvertFromUtc(DateTime)
+  nameWithType: IDateTimeService.ConvertFromUtc(DateTime)
+  fullName: NuvTools.Common.Dates.IDateTimeService.ConvertFromUtc(System.DateTime)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Dates/IDateTimeService.cs
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.Dates
+  summary: Converts UTC DateTime to local region time.
+  example: []
+  syntax:
+    content: DateTime ConvertFromUtc(DateTime utcDateTime)
+    parameters:
+    - id: utcDateTime
+      type: System.DateTime
+    return:
+      type: System.DateTime
+    content.vb: Function ConvertFromUtc(utcDateTime As Date) As Date
+  overload: NuvTools.Common.Dates.IDateTimeService.ConvertFromUtc*
+  nameWithType.vb: IDateTimeService.ConvertFromUtc(Date)
+  fullName.vb: NuvTools.Common.Dates.IDateTimeService.ConvertFromUtc(Date)
+  name.vb: ConvertFromUtc(Date)
+- uid: NuvTools.Common.Dates.IDateTimeService.ConvertToUtc(System.DateTime)
+  commentId: M:NuvTools.Common.Dates.IDateTimeService.ConvertToUtc(System.DateTime)
+  id: ConvertToUtc(System.DateTime)
+  parent: NuvTools.Common.Dates.IDateTimeService
+  langs:
+  - csharp
+  - vb
+  name: ConvertToUtc(DateTime)
+  nameWithType: IDateTimeService.ConvertToUtc(DateTime)
+  fullName: NuvTools.Common.Dates.IDateTimeService.ConvertToUtc(System.DateTime)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Dates/IDateTimeService.cs
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.Dates
+  summary: Converts local DateTime to UTC.
+  example: []
+  syntax:
+    content: DateTime ConvertToUtc(DateTime localDateTime)
+    parameters:
+    - id: localDateTime
+      type: System.DateTime
+    return:
+      type: System.DateTime
+    content.vb: Function ConvertToUtc(localDateTime As Date) As Date
+  overload: NuvTools.Common.Dates.IDateTimeService.ConvertToUtc*
+  nameWithType.vb: IDateTimeService.ConvertToUtc(Date)
+  fullName.vb: NuvTools.Common.Dates.IDateTimeService.ConvertToUtc(Date)
+  name.vb: ConvertToUtc(Date)
+- uid: NuvTools.Common.Dates.IDateTimeService.ConvertFromUtc(System.DateTimeOffset)
+  commentId: M:NuvTools.Common.Dates.IDateTimeService.ConvertFromUtc(System.DateTimeOffset)
+  id: ConvertFromUtc(System.DateTimeOffset)
+  parent: NuvTools.Common.Dates.IDateTimeService
+  langs:
+  - csharp
+  - vb
+  name: ConvertFromUtc(DateTimeOffset)
+  nameWithType: IDateTimeService.ConvertFromUtc(DateTimeOffset)
+  fullName: NuvTools.Common.Dates.IDateTimeService.ConvertFromUtc(System.DateTimeOffset)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Dates/IDateTimeService.cs
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.Dates
+  summary: Converts UTC DateTimeOffset to local region time.
+  example: []
+  syntax:
+    content: DateTimeOffset ConvertFromUtc(DateTimeOffset utcDateTime)
+    parameters:
+    - id: utcDateTime
+      type: System.DateTimeOffset
+    return:
+      type: System.DateTimeOffset
+    content.vb: Function ConvertFromUtc(utcDateTime As DateTimeOffset) As DateTimeOffset
+  overload: NuvTools.Common.Dates.IDateTimeService.ConvertFromUtc*
+- uid: NuvTools.Common.Dates.IDateTimeService.ConvertToUtc(System.DateTimeOffset)
+  commentId: M:NuvTools.Common.Dates.IDateTimeService.ConvertToUtc(System.DateTimeOffset)
+  id: ConvertToUtc(System.DateTimeOffset)
+  parent: NuvTools.Common.Dates.IDateTimeService
+  langs:
+  - csharp
+  - vb
+  name: ConvertToUtc(DateTimeOffset)
+  nameWithType: IDateTimeService.ConvertToUtc(DateTimeOffset)
+  fullName: NuvTools.Common.Dates.IDateTimeService.ConvertToUtc(System.DateTimeOffset)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Dates/IDateTimeService.cs
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.Dates
+  summary: Converts local DateTimeOffset to UTC.
+  example: []
+  syntax:
+    content: DateTimeOffset ConvertToUtc(DateTimeOffset localDateTime)
+    parameters:
+    - id: localDateTime
+      type: System.DateTimeOffset
+    return:
+      type: System.DateTimeOffset
+    content.vb: Function ConvertToUtc(localDateTime As DateTimeOffset) As DateTimeOffset
+  overload: NuvTools.Common.Dates.IDateTimeService.ConvertToUtc*
 - uid: NuvTools.Common.Dates.IDateTimeService.UtcNow
   commentId: P:NuvTools.Common.Dates.IDateTimeService.UtcNow
   id: UtcNow
@@ -38,10 +161,12 @@ items:
   fullName: NuvTools.Common.Dates.IDateTimeService.UtcNow
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/Dates/IDateTimeService.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Dates/IDateTimeService.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Dates
+  summary: Current UTC DateTime.
+  example: []
   syntax:
     content: DateTime UtcNow { get; }
     parameters: []
@@ -49,6 +174,31 @@ items:
       type: System.DateTime
     content.vb: ReadOnly Property UtcNow As Date
   overload: NuvTools.Common.Dates.IDateTimeService.UtcNow*
+- uid: NuvTools.Common.Dates.IDateTimeService.UtcNowOffset
+  commentId: P:NuvTools.Common.Dates.IDateTimeService.UtcNowOffset
+  id: UtcNowOffset
+  parent: NuvTools.Common.Dates.IDateTimeService
+  langs:
+  - csharp
+  - vb
+  name: UtcNowOffset
+  nameWithType: IDateTimeService.UtcNowOffset
+  fullName: NuvTools.Common.Dates.IDateTimeService.UtcNowOffset
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Dates/IDateTimeService.cs
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.Dates
+  summary: Current UTC DateTimeOffset.
+  example: []
+  syntax:
+    content: DateTimeOffset UtcNowOffset { get; }
+    parameters: []
+    return:
+      type: System.DateTimeOffset
+    content.vb: ReadOnly Property UtcNowOffset As DateTimeOffset
+  overload: NuvTools.Common.Dates.IDateTimeService.UtcNowOffset*
 - uid: NuvTools.Common.Dates.IDateTimeService.Now
   commentId: P:NuvTools.Common.Dates.IDateTimeService.Now
   id: Now
@@ -61,10 +211,12 @@ items:
   fullName: NuvTools.Common.Dates.IDateTimeService.Now
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/Dates/IDateTimeService.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Dates/IDateTimeService.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Dates
+  summary: Current local DateTime based on configured region.
+  example: []
   syntax:
     content: DateTime Now { get; }
     parameters: []
@@ -72,6 +224,56 @@ items:
       type: System.DateTime
     content.vb: ReadOnly Property Now As Date
   overload: NuvTools.Common.Dates.IDateTimeService.Now*
+- uid: NuvTools.Common.Dates.IDateTimeService.NowOffset
+  commentId: P:NuvTools.Common.Dates.IDateTimeService.NowOffset
+  id: NowOffset
+  parent: NuvTools.Common.Dates.IDateTimeService
+  langs:
+  - csharp
+  - vb
+  name: NowOffset
+  nameWithType: IDateTimeService.NowOffset
+  fullName: NuvTools.Common.Dates.IDateTimeService.NowOffset
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Dates/IDateTimeService.cs
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.Dates
+  summary: Current local DateTimeOffset based on configured region.
+  example: []
+  syntax:
+    content: DateTimeOffset NowOffset { get; }
+    parameters: []
+    return:
+      type: System.DateTimeOffset
+    content.vb: ReadOnly Property NowOffset As DateTimeOffset
+  overload: NuvTools.Common.Dates.IDateTimeService.NowOffset*
+- uid: NuvTools.Common.Dates.IDateTimeService.Region
+  commentId: P:NuvTools.Common.Dates.IDateTimeService.Region
+  id: Region
+  parent: NuvTools.Common.Dates.IDateTimeService
+  langs:
+  - csharp
+  - vb
+  name: Region
+  nameWithType: IDateTimeService.Region
+  fullName: NuvTools.Common.Dates.IDateTimeService.Region
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Dates/IDateTimeService.cs
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.Dates
+  summary: Configured timezone region.
+  example: []
+  syntax:
+    content: TimeZoneRegion Region { get; }
+    parameters: []
+    return:
+      type: NuvTools.Common.Dates.Enumerations.TimeZoneRegion
+    content.vb: ReadOnly Property Region As TimeZoneRegion
+  overload: NuvTools.Common.Dates.IDateTimeService.Region*
 references:
 - uid: NuvTools.Common.Dates
   commentId: N:NuvTools.Common.Dates
@@ -525,13 +727,13 @@ references:
     name: Web
     isExternal: true
     href: NuvTools.Common.Web.html
-- uid: NuvTools.Common.Dates.IDateTimeService.UtcNow*
-  commentId: Overload:NuvTools.Common.Dates.IDateTimeService.UtcNow
+- uid: NuvTools.Common.Dates.IDateTimeService.ConvertFromUtc*
+  commentId: Overload:NuvTools.Common.Dates.IDateTimeService.ConvertFromUtc
   isExternal: true
-  href: NuvTools.Common.Dates.IDateTimeService.html#NuvTools_Common_Dates_IDateTimeService_UtcNow
-  name: UtcNow
-  nameWithType: IDateTimeService.UtcNow
-  fullName: NuvTools.Common.Dates.IDateTimeService.UtcNow
+  href: NuvTools.Common.Dates.IDateTimeService.html#NuvTools_Common_Dates_IDateTimeService_ConvertFromUtc_System_DateTime_
+  name: ConvertFromUtc
+  nameWithType: IDateTimeService.ConvertFromUtc
+  fullName: NuvTools.Common.Dates.IDateTimeService.ConvertFromUtc
 - uid: System.DateTime
   commentId: T:System.DateTime
   parent: System
@@ -550,6 +752,35 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: NuvTools.Common.Dates.IDateTimeService.ConvertToUtc*
+  commentId: Overload:NuvTools.Common.Dates.IDateTimeService.ConvertToUtc
+  isExternal: true
+  href: NuvTools.Common.Dates.IDateTimeService.html#NuvTools_Common_Dates_IDateTimeService_ConvertToUtc_System_DateTime_
+  name: ConvertToUtc
+  nameWithType: IDateTimeService.ConvertToUtc
+  fullName: NuvTools.Common.Dates.IDateTimeService.ConvertToUtc
+- uid: System.DateTimeOffset
+  commentId: T:System.DateTimeOffset
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetimeoffset
+  name: DateTimeOffset
+  nameWithType: DateTimeOffset
+  fullName: System.DateTimeOffset
+- uid: NuvTools.Common.Dates.IDateTimeService.UtcNow*
+  commentId: Overload:NuvTools.Common.Dates.IDateTimeService.UtcNow
+  isExternal: true
+  href: NuvTools.Common.Dates.IDateTimeService.html#NuvTools_Common_Dates_IDateTimeService_UtcNow
+  name: UtcNow
+  nameWithType: IDateTimeService.UtcNow
+  fullName: NuvTools.Common.Dates.IDateTimeService.UtcNow
+- uid: NuvTools.Common.Dates.IDateTimeService.UtcNowOffset*
+  commentId: Overload:NuvTools.Common.Dates.IDateTimeService.UtcNowOffset
+  isExternal: true
+  href: NuvTools.Common.Dates.IDateTimeService.html#NuvTools_Common_Dates_IDateTimeService_UtcNowOffset
+  name: UtcNowOffset
+  nameWithType: IDateTimeService.UtcNowOffset
+  fullName: NuvTools.Common.Dates.IDateTimeService.UtcNowOffset
 - uid: NuvTools.Common.Dates.IDateTimeService.Now*
   commentId: Overload:NuvTools.Common.Dates.IDateTimeService.Now
   isExternal: true
@@ -557,3 +788,72 @@ references:
   name: Now
   nameWithType: IDateTimeService.Now
   fullName: NuvTools.Common.Dates.IDateTimeService.Now
+- uid: NuvTools.Common.Dates.IDateTimeService.NowOffset*
+  commentId: Overload:NuvTools.Common.Dates.IDateTimeService.NowOffset
+  isExternal: true
+  href: NuvTools.Common.Dates.IDateTimeService.html#NuvTools_Common_Dates_IDateTimeService_NowOffset
+  name: NowOffset
+  nameWithType: IDateTimeService.NowOffset
+  fullName: NuvTools.Common.Dates.IDateTimeService.NowOffset
+- uid: NuvTools.Common.Dates.IDateTimeService.Region*
+  commentId: Overload:NuvTools.Common.Dates.IDateTimeService.Region
+  isExternal: true
+  href: NuvTools.Common.Dates.IDateTimeService.html#NuvTools_Common_Dates_IDateTimeService_Region
+  name: Region
+  nameWithType: IDateTimeService.Region
+  fullName: NuvTools.Common.Dates.IDateTimeService.Region
+- uid: NuvTools.Common.Dates.Enumerations.TimeZoneRegion
+  commentId: T:NuvTools.Common.Dates.Enumerations.TimeZoneRegion
+  parent: NuvTools.Common.Dates.Enumerations
+  isExternal: true
+  href: NuvTools.Common.Dates.Enumerations.TimeZoneRegion.html
+  name: TimeZoneRegion
+  nameWithType: TimeZoneRegion
+  fullName: NuvTools.Common.Dates.Enumerations.TimeZoneRegion
+- uid: NuvTools.Common.Dates.Enumerations
+  commentId: N:NuvTools.Common.Dates.Enumerations
+  isExternal: true
+  href: NuvTools.html
+  name: NuvTools.Common.Dates.Enumerations
+  nameWithType: NuvTools.Common.Dates.Enumerations
+  fullName: NuvTools.Common.Dates.Enumerations
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Common
+    name: Common
+    isExternal: true
+    href: NuvTools.Common.html
+  - name: .
+  - uid: NuvTools.Common.Dates
+    name: Dates
+    isExternal: true
+    href: NuvTools.Common.Dates.html
+  - name: .
+  - uid: NuvTools.Common.Dates.Enumerations
+    name: Enumerations
+    isExternal: true
+    href: NuvTools.Common.Dates.Enumerations.html
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Common
+    name: Common
+    isExternal: true
+    href: NuvTools.Common.html
+  - name: .
+  - uid: NuvTools.Common.Dates
+    name: Dates
+    isExternal: true
+    href: NuvTools.Common.Dates.html
+  - name: .
+  - uid: NuvTools.Common.Dates.Enumerations
+    name: Enumerations
+    isExternal: true
+    href: NuvTools.Common.Dates.Enumerations.html

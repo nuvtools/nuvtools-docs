@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class RegexExtensions | Nuv Tools Framework Docs ">
       
-      <meta name="description" content="Regex extension class.">
+      <meta name="description" content="Provides extension methods for simplifying common  operations on  values.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Common_RegularExpressions_RegexExtensions" data-uid="NuvTools.Common.RegularExpressions.RegexExtensions" class="text-break">
-Class RegexExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/RegularExpressions/RegexExtensions.cs"><i class="bi bi-code-slash"></i></a>
+Class RegexExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/RegularExpressions/RegexExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,7 @@ Class RegexExtensions  <a class="header-action link-secondary" title="View sourc
   <dl><dt>Assembly</dt><dd>NuvTools.Common.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Regex extension class.</p>
+  <div class="markdown summary"><p>Provides extension methods for simplifying common <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.regularexpressions.regex">Regex</a> operations on <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> values.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -156,31 +156,37 @@ Class RegexExtensions  <a class="header-action link-secondary" title="View sourc
   <a id="NuvTools_Common_RegularExpressions_RegexExtensions_IsMatch_" data-uid="NuvTools.Common.RegularExpressions.RegexExtensions.IsMatch*"></a>
 
   <h3 id="NuvTools_Common_RegularExpressions_RegexExtensions_IsMatch_System_String_System_String_System_Text_RegularExpressions_RegexOptions_" data-uid="NuvTools.Common.RegularExpressions.RegexExtensions.IsMatch(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
-  IsMatch(string, string, RegexOptions)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/RegularExpressions/RegexExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  IsMatch(string?, string, RegexOptions)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/RegularExpressions/RegexExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Determines whether the specified regular expression finds a match in the input string.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool IsMatch(this string value, string pattern, RegexOptions options = RegexOptions.IgnoreCase)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool IsMatch(this string? value, string pattern, RegexOptions options = RegexOptions.IgnoreCase)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The input string to search. If <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>, returns <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.</p>
+</dd>
     <dt><code>pattern</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The regular expression pattern to match.</p>
+</dd>
     <dt><code>options</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.regularexpressions.regexoptions">RegexOptions</a></dt>
-    <dd></dd>
+    <dd><p>Optional <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.regularexpressions.regexoptions">RegexOptions</a> to modify the search behavior.
+Default is <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.regularexpressions.regexoptions#system-text-regularexpressions-regexoptions-ignorecase">IgnoreCase</a>.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the regular expression finds a match; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.</p>
+</dd>
   </dl>
 
 
@@ -190,37 +196,49 @@ Class RegexExtensions  <a class="header-action link-secondary" title="View sourc
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">pattern</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> or empty.</p>
+</dd>
+  </dl>
 
 
 
   <a id="NuvTools_Common_RegularExpressions_RegexExtensions_Match_" data-uid="NuvTools.Common.RegularExpressions.RegexExtensions.Match*"></a>
 
   <h3 id="NuvTools_Common_RegularExpressions_RegexExtensions_Match_System_String_System_String_System_Text_RegularExpressions_RegexOptions_" data-uid="NuvTools.Common.RegularExpressions.RegexExtensions.Match(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
-  Match(string, string, RegexOptions)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/RegularExpressions/RegexExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  Match(string?, string, RegexOptions)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/RegularExpressions/RegexExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Searches the specified input string for the first occurrence of a regular expression pattern.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Match Match(this string value, string pattern, RegexOptions options = RegexOptions.None)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Match Match(this string? value, string pattern, RegexOptions options = RegexOptions.None)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The input string to search. If <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>, returns an empty <a class="xref" href="NuvTools.Common.RegularExpressions.RegexExtensions.html#NuvTools_Common_RegularExpressions_RegexExtensions_Match_System_String_System_String_System_Text_RegularExpressions_RegexOptions_">Match(string?, string, RegexOptions)</a>.</p>
+</dd>
     <dt><code>pattern</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The regular expression pattern to match.</p>
+</dd>
     <dt><code>options</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.regularexpressions.regexoptions">RegexOptions</a></dt>
-    <dd></dd>
+    <dd><p>Optional <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.regularexpressions.regexoptions">RegexOptions</a> to modify the search behavior. Default is <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.regularexpressions.regexoptions#system-text-regularexpressions-regexoptions-none">None</a>.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.regularexpressions.match">Match</a></dt>
-    <dd></dd>
+    <dd><p>A <a class="xref" href="NuvTools.Common.RegularExpressions.RegexExtensions.html#NuvTools_Common_RegularExpressions_RegexExtensions_Match_System_String_System_String_System_Text_RegularExpressions_RegexOptions_">Match(string?, string, RegexOptions)</a> object containing information about the first match found in <code class="paramref">value</code>.
+If <code class="paramref">value</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>, returns an empty match.</p>
+</dd>
   </dl>
 
 
@@ -230,39 +248,52 @@ Class RegexExtensions  <a class="header-action link-secondary" title="View sourc
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">pattern</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> or empty.</p>
+</dd>
+  </dl>
 
 
 
-  <a id="NuvTools_Common_RegularExpressions_RegexExtensions_Replace_" data-uid="NuvTools.Common.RegularExpressions.RegexExtensions.Replace*"></a>
+  <a id="NuvTools_Common_RegularExpressions_RegexExtensions_ReplacePattern_" data-uid="NuvTools.Common.RegularExpressions.RegexExtensions.ReplacePattern*"></a>
 
-  <h3 id="NuvTools_Common_RegularExpressions_RegexExtensions_Replace_System_String_System_String_System_String_System_Text_RegularExpressions_RegexOptions_" data-uid="NuvTools.Common.RegularExpressions.RegexExtensions.Replace(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
-  Replace(string, string, string, RegexOptions)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/RegularExpressions/RegexExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NuvTools_Common_RegularExpressions_RegexExtensions_ReplacePattern_System_String_System_String_System_String_System_Text_RegularExpressions_RegexOptions_" data-uid="NuvTools.Common.RegularExpressions.RegexExtensions.ReplacePattern(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
+  ReplacePattern(string?, string, string, RegexOptions)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/RegularExpressions/RegexExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Replaces all occurrences of a specified regular expression pattern in the input string with a replacement string.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string Replace(this string value, string pattern, string newValue, RegexOptions options = RegexOptions.None)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string? ReplacePattern(this string? value, string pattern, string newValue, RegexOptions options = RegexOptions.None)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The input string to modify. If <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>, returns an empty string.</p>
+</dd>
     <dt><code>pattern</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The regular expression pattern to match.</p>
+</dd>
     <dt><code>newValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The replacement string. If <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>, it is treated as an empty string.</p>
+</dd>
     <dt><code>options</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.regularexpressions.regexoptions">RegexOptions</a></dt>
-    <dd></dd>
+    <dd><p>Optional <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.regularexpressions.regexoptions">RegexOptions</a> to modify the search behavior. Default is <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.regularexpressions.regexoptions#system-text-regularexpressions-regexoptions-none">None</a>.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>A new string that is identical to the input string except that all instances of <code class="paramref">pattern</code>
+have been replaced with <code class="paramref">newValue</code>.</p>
+</dd>
   </dl>
 
 
@@ -272,6 +303,12 @@ Class RegexExtensions  <a class="header-action link-secondary" title="View sourc
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>Thrown if <code class="paramref">pattern</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> or empty.</p>
+</dd>
+  </dl>
 
 
 
@@ -279,7 +316,7 @@ Class RegexExtensions  <a class="header-action link-secondary" title="View sourc
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/RegularExpressions/RegexExtensions.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/RegularExpressions/RegexExtensions.cs" class="edit-link">Edit this page</a>
         </div>
 
 

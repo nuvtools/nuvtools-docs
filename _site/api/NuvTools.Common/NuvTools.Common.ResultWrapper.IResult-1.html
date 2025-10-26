@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface IResult&lt;T&gt; | Nuv Tools Framework Docs ">
       
-      
+      <meta name="description" content="Defines the generic contract for an operation result that includes a data payload.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Common_ResultWrapper_IResult_1" data-uid="NuvTools.Common.ResultWrapper.IResult`1" class="text-break">
-Interface IResult&lt;T&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+Interface IResult&lt;T&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Interface IResult&lt;T&gt;  <a class="header-action link-secondary" title="View 
   <dl><dt>Assembly</dt><dd>NuvTools.Common.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Defines the generic contract for an operation result that includes a data payload.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -109,7 +110,8 @@ Interface IResult&lt;T&gt;  <a class="header-action link-secondary" title="View 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>The type of the data returned by the operation.</p>
+</dd>
   </dl>
 
 
@@ -153,7 +155,26 @@ Interface IResult&lt;T&gt;  <a class="header-action link-secondary" title="View 
   </dd></dl>
 
 
+  <h2 id="NuvTools_Common_ResultWrapper_IResult_1_examples">Examples</h2>
+  <p>Example usage:</p>
+<pre><code class="lang-csharp">IResult&lt;UserDto&gt; result = await _userService.GetUserByIdAsync(1);
 
+if (result.Succeeded)
+{
+    Console.WriteLine($"User: {result.Data!.Name}");
+}
+else
+{
+    Console.WriteLine($"Error: {result.Message}");
+}</code></pre>
+
+
+  <h2 id="NuvTools_Common_ResultWrapper_IResult_1_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This interface extends <a class="xref" href="NuvTools.Common.ResultWrapper.IResult.html">IResult</a> by including a strongly-typed
+<a class="xref" href="NuvTools.Common.ResultWrapper.IResult-1.html#NuvTools_Common_ResultWrapper_IResult_1_Data">Data</a> property.<br>
+It allows returning both status information and operation results
+in a unified, consistent structure.</p>
+</div>
 
 
   <h2 class="section" id="properties">Properties
@@ -164,10 +185,11 @@ Interface IResult&lt;T&gt;  <a class="header-action link-secondary" title="View 
 
   <h3 id="NuvTools_Common_ResultWrapper_IResult_1_Data" data-uid="NuvTools.Common.ResultWrapper.IResult`1.Data">
   Data
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The data returned by the operation, if applicable.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -195,7 +217,7 @@ Interface IResult&lt;T&gt;  <a class="header-action link-secondary" title="View 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/IResult.cs" class="edit-link">Edit this page</a>
         </div>
 
 

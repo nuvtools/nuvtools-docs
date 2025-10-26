@@ -10,6 +10,13 @@ items:
   - NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetFamilyName(System.Security.Claims.ClaimsPrincipal)
   - NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetGivenName(System.Security.Claims.ClaimsPrincipal)
   - NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetId(System.Security.Claims.ClaimsPrincipal)
+  - NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetName(System.Security.Claims.ClaimsPrincipal)
+  - NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetNameIdentifier(System.Security.Claims.ClaimsPrincipal)
+  - NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetPreferredUsername(System.Security.Claims.ClaimsPrincipal)
+  - NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSub(System.Security.Claims.ClaimsPrincipal)
+  - NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSurname(System.Security.Claims.ClaimsPrincipal)
+  - NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetUniqueName(System.Security.Claims.ClaimsPrincipal)
+  - NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetUpn(System.Security.Claims.ClaimsPrincipal)
   - NuvTools.Security.Extensions.ClaimsPrincipalExtensions.HasValue``1(System.Security.Claims.ClaimsPrincipal,System.String,``0)
   langs:
   - csharp
@@ -19,7 +26,7 @@ items:
   fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/2857885b7303512230448106b859554a2f8a0178/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
   assemblies:
   - NuvTools.Security
   namespace: NuvTools.Security.Extensions
@@ -49,7 +56,7 @@ items:
   fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetId(System.Security.Claims.ClaimsPrincipal)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/2857885b7303512230448106b859554a2f8a0178/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
   assemblies:
   - NuvTools.Security
   namespace: NuvTools.Security.Extensions
@@ -62,6 +69,84 @@ items:
       type: System.String
     content.vb: Public Shared Function GetId(user As ClaimsPrincipal) As String
   overload: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetId*
+- uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSub(System.Security.Claims.ClaimsPrincipal)
+  commentId: M:NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSub(System.Security.Claims.ClaimsPrincipal)
+  id: GetSub(System.Security.Claims.ClaimsPrincipal)
+  isExtensionMethod: true
+  parent: NuvTools.Security.Extensions.ClaimsPrincipalExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetSub(ClaimsPrincipal)
+  nameWithType: ClaimsPrincipalExtensions.GetSub(ClaimsPrincipal)
+  fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSub(System.Security.Claims.ClaimsPrincipal)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Extensions
+  syntax:
+    content: public static string? GetSub(this ClaimsPrincipal user)
+    parameters:
+    - id: user
+      type: System.Security.Claims.ClaimsPrincipal
+    return:
+      type: System.String
+    content.vb: Public Shared Function GetSub(user As ClaimsPrincipal) As String
+  overload: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSub*
+- uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetNameIdentifier(System.Security.Claims.ClaimsPrincipal)
+  commentId: M:NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetNameIdentifier(System.Security.Claims.ClaimsPrincipal)
+  id: GetNameIdentifier(System.Security.Claims.ClaimsPrincipal)
+  isExtensionMethod: true
+  parent: NuvTools.Security.Extensions.ClaimsPrincipalExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetNameIdentifier(ClaimsPrincipal)
+  nameWithType: ClaimsPrincipalExtensions.GetNameIdentifier(ClaimsPrincipal)
+  fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetNameIdentifier(System.Security.Claims.ClaimsPrincipal)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Extensions
+  syntax:
+    content: public static string? GetNameIdentifier(this ClaimsPrincipal user)
+    parameters:
+    - id: user
+      type: System.Security.Claims.ClaimsPrincipal
+    return:
+      type: System.String
+    content.vb: Public Shared Function GetNameIdentifier(user As ClaimsPrincipal) As String
+  overload: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetNameIdentifier*
+- uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetName(System.Security.Claims.ClaimsPrincipal)
+  commentId: M:NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetName(System.Security.Claims.ClaimsPrincipal)
+  id: GetName(System.Security.Claims.ClaimsPrincipal)
+  isExtensionMethod: true
+  parent: NuvTools.Security.Extensions.ClaimsPrincipalExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetName(ClaimsPrincipal)
+  nameWithType: ClaimsPrincipalExtensions.GetName(ClaimsPrincipal)
+  fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetName(System.Security.Claims.ClaimsPrincipal)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Extensions
+  syntax:
+    content: public static string? GetName(this ClaimsPrincipal user)
+    parameters:
+    - id: user
+      type: System.Security.Claims.ClaimsPrincipal
+    return:
+      type: System.String
+    content.vb: Public Shared Function GetName(user As ClaimsPrincipal) As String
+  overload: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetName*
 - uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetGivenName(System.Security.Claims.ClaimsPrincipal)
   commentId: M:NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetGivenName(System.Security.Claims.ClaimsPrincipal)
   id: GetGivenName(System.Security.Claims.ClaimsPrincipal)
@@ -75,7 +160,7 @@ items:
   fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetGivenName(System.Security.Claims.ClaimsPrincipal)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/2857885b7303512230448106b859554a2f8a0178/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
   assemblies:
   - NuvTools.Security
   namespace: NuvTools.Security.Extensions
@@ -88,6 +173,32 @@ items:
       type: System.String
     content.vb: Public Shared Function GetGivenName(user As ClaimsPrincipal) As String
   overload: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetGivenName*
+- uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSurname(System.Security.Claims.ClaimsPrincipal)
+  commentId: M:NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSurname(System.Security.Claims.ClaimsPrincipal)
+  id: GetSurname(System.Security.Claims.ClaimsPrincipal)
+  isExtensionMethod: true
+  parent: NuvTools.Security.Extensions.ClaimsPrincipalExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetSurname(ClaimsPrincipal)
+  nameWithType: ClaimsPrincipalExtensions.GetSurname(ClaimsPrincipal)
+  fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSurname(System.Security.Claims.ClaimsPrincipal)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Extensions
+  syntax:
+    content: public static string? GetSurname(this ClaimsPrincipal user)
+    parameters:
+    - id: user
+      type: System.Security.Claims.ClaimsPrincipal
+    return:
+      type: System.String
+    content.vb: Public Shared Function GetSurname(user As ClaimsPrincipal) As String
+  overload: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSurname*
 - uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetFamilyName(System.Security.Claims.ClaimsPrincipal)
   commentId: M:NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetFamilyName(System.Security.Claims.ClaimsPrincipal)
   id: GetFamilyName(System.Security.Claims.ClaimsPrincipal)
@@ -101,7 +212,7 @@ items:
   fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetFamilyName(System.Security.Claims.ClaimsPrincipal)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/2857885b7303512230448106b859554a2f8a0178/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
   assemblies:
   - NuvTools.Security
   namespace: NuvTools.Security.Extensions
@@ -127,7 +238,7 @@ items:
   fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetEmail(System.Security.Claims.ClaimsPrincipal)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/2857885b7303512230448106b859554a2f8a0178/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
   assemblies:
   - NuvTools.Security
   namespace: NuvTools.Security.Extensions
@@ -140,6 +251,84 @@ items:
       type: System.String
     content.vb: Public Shared Function GetEmail(user As ClaimsPrincipal) As String
   overload: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetEmail*
+- uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetUpn(System.Security.Claims.ClaimsPrincipal)
+  commentId: M:NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetUpn(System.Security.Claims.ClaimsPrincipal)
+  id: GetUpn(System.Security.Claims.ClaimsPrincipal)
+  isExtensionMethod: true
+  parent: NuvTools.Security.Extensions.ClaimsPrincipalExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetUpn(ClaimsPrincipal)
+  nameWithType: ClaimsPrincipalExtensions.GetUpn(ClaimsPrincipal)
+  fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetUpn(System.Security.Claims.ClaimsPrincipal)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Extensions
+  syntax:
+    content: public static string? GetUpn(this ClaimsPrincipal user)
+    parameters:
+    - id: user
+      type: System.Security.Claims.ClaimsPrincipal
+    return:
+      type: System.String
+    content.vb: Public Shared Function GetUpn(user As ClaimsPrincipal) As String
+  overload: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetUpn*
+- uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetPreferredUsername(System.Security.Claims.ClaimsPrincipal)
+  commentId: M:NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetPreferredUsername(System.Security.Claims.ClaimsPrincipal)
+  id: GetPreferredUsername(System.Security.Claims.ClaimsPrincipal)
+  isExtensionMethod: true
+  parent: NuvTools.Security.Extensions.ClaimsPrincipalExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetPreferredUsername(ClaimsPrincipal)
+  nameWithType: ClaimsPrincipalExtensions.GetPreferredUsername(ClaimsPrincipal)
+  fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetPreferredUsername(System.Security.Claims.ClaimsPrincipal)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Extensions
+  syntax:
+    content: public static string? GetPreferredUsername(this ClaimsPrincipal user)
+    parameters:
+    - id: user
+      type: System.Security.Claims.ClaimsPrincipal
+    return:
+      type: System.String
+    content.vb: Public Shared Function GetPreferredUsername(user As ClaimsPrincipal) As String
+  overload: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetPreferredUsername*
+- uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetUniqueName(System.Security.Claims.ClaimsPrincipal)
+  commentId: M:NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetUniqueName(System.Security.Claims.ClaimsPrincipal)
+  id: GetUniqueName(System.Security.Claims.ClaimsPrincipal)
+  isExtensionMethod: true
+  parent: NuvTools.Security.Extensions.ClaimsPrincipalExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetUniqueName(ClaimsPrincipal)
+  nameWithType: ClaimsPrincipalExtensions.GetUniqueName(ClaimsPrincipal)
+  fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetUniqueName(System.Security.Claims.ClaimsPrincipal)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Extensions
+  syntax:
+    content: public static string? GetUniqueName(this ClaimsPrincipal user)
+    parameters:
+    - id: user
+      type: System.Security.Claims.ClaimsPrincipal
+    return:
+      type: System.String
+    content.vb: Public Shared Function GetUniqueName(user As ClaimsPrincipal) As String
+  overload: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetUniqueName*
 - uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.HasValue``1(System.Security.Claims.ClaimsPrincipal,System.String,``0)
   commentId: M:NuvTools.Security.Extensions.ClaimsPrincipalExtensions.HasValue``1(System.Security.Claims.ClaimsPrincipal,System.String,``0)
   id: HasValue``1(System.Security.Claims.ClaimsPrincipal,System.String,``0)
@@ -153,7 +342,7 @@ items:
   fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.HasValue<T>(System.Security.Claims.ClaimsPrincipal, string, T)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/2857885b7303512230448106b859554a2f8a0178/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
   assemblies:
   - NuvTools.Security
   namespace: NuvTools.Security.Extensions
@@ -188,7 +377,7 @@ items:
   fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetCustomAttributeValues<T>(System.Security.Claims.ClaimsPrincipal, string)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/2857885b7303512230448106b859554a2f8a0178/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
   assemblies:
   - NuvTools.Security
   namespace: NuvTools.Security.Extensions
@@ -546,6 +735,27 @@ references:
     name: Claims
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.security.claims
+- uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSub*
+  commentId: Overload:NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSub
+  isExternal: true
+  href: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.html#NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetSub_System_Security_Claims_ClaimsPrincipal_
+  name: GetSub
+  nameWithType: ClaimsPrincipalExtensions.GetSub
+  fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSub
+- uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetNameIdentifier*
+  commentId: Overload:NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetNameIdentifier
+  isExternal: true
+  href: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.html#NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetNameIdentifier_System_Security_Claims_ClaimsPrincipal_
+  name: GetNameIdentifier
+  nameWithType: ClaimsPrincipalExtensions.GetNameIdentifier
+  fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetNameIdentifier
+- uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetName*
+  commentId: Overload:NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetName
+  isExternal: true
+  href: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.html#NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetName_System_Security_Claims_ClaimsPrincipal_
+  name: GetName
+  nameWithType: ClaimsPrincipalExtensions.GetName
+  fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetName
 - uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetGivenName*
   commentId: Overload:NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetGivenName
   isExternal: true
@@ -553,6 +763,13 @@ references:
   name: GetGivenName
   nameWithType: ClaimsPrincipalExtensions.GetGivenName
   fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetGivenName
+- uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSurname*
+  commentId: Overload:NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSurname
+  isExternal: true
+  href: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.html#NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetSurname_System_Security_Claims_ClaimsPrincipal_
+  name: GetSurname
+  nameWithType: ClaimsPrincipalExtensions.GetSurname
+  fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSurname
 - uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetFamilyName*
   commentId: Overload:NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetFamilyName
   isExternal: true
@@ -567,6 +784,27 @@ references:
   name: GetEmail
   nameWithType: ClaimsPrincipalExtensions.GetEmail
   fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetEmail
+- uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetUpn*
+  commentId: Overload:NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetUpn
+  isExternal: true
+  href: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.html#NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetUpn_System_Security_Claims_ClaimsPrincipal_
+  name: GetUpn
+  nameWithType: ClaimsPrincipalExtensions.GetUpn
+  fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetUpn
+- uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetPreferredUsername*
+  commentId: Overload:NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetPreferredUsername
+  isExternal: true
+  href: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.html#NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetPreferredUsername_System_Security_Claims_ClaimsPrincipal_
+  name: GetPreferredUsername
+  nameWithType: ClaimsPrincipalExtensions.GetPreferredUsername
+  fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetPreferredUsername
+- uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetUniqueName*
+  commentId: Overload:NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetUniqueName
+  isExternal: true
+  href: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.html#NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetUniqueName_System_Security_Claims_ClaimsPrincipal_
+  name: GetUniqueName
+  nameWithType: ClaimsPrincipalExtensions.GetUniqueName
+  fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetUniqueName
 - uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.HasValue*
   commentId: Overload:NuvTools.Security.Extensions.ClaimsPrincipalExtensions.HasValue
   isExternal: true

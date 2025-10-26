@@ -7,7 +7,7 @@ items:
   children:
   - NuvTools.Common.RegularExpressions.RegexExtensions.IsMatch(System.String,System.String,System.Text.RegularExpressions.RegexOptions)
   - NuvTools.Common.RegularExpressions.RegexExtensions.Match(System.String,System.String,System.Text.RegularExpressions.RegexOptions)
-  - NuvTools.Common.RegularExpressions.RegexExtensions.Replace(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)
+  - NuvTools.Common.RegularExpressions.RegexExtensions.ReplacePattern(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)
   langs:
   - csharp
   - vb
@@ -16,11 +16,11 @@ items:
   fullName: NuvTools.Common.RegularExpressions.RegexExtensions
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/RegularExpressions/RegexExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/RegularExpressions/RegexExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.RegularExpressions
-  summary: Regex extension class.
+  summary: Provides extension methods for simplifying common <xref href="System.Text.RegularExpressions.Regex" data-throw-if-not-resolved="false"></xref> operations on <xref href="System.String" data-throw-if-not-resolved="false"></xref> values.
   example: []
   syntax:
     content: public static class RegexExtensions
@@ -43,28 +43,41 @@ items:
   langs:
   - csharp
   - vb
-  name: Match(string, string, RegexOptions)
-  nameWithType: RegexExtensions.Match(string, string, RegexOptions)
-  fullName: NuvTools.Common.RegularExpressions.RegexExtensions.Match(string, string, System.Text.RegularExpressions.RegexOptions)
+  name: Match(string?, string, RegexOptions)
+  nameWithType: RegexExtensions.Match(string?, string, RegexOptions)
+  fullName: NuvTools.Common.RegularExpressions.RegexExtensions.Match(string?, string, System.Text.RegularExpressions.RegexOptions)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/RegularExpressions/RegexExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/RegularExpressions/RegexExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.RegularExpressions
+  summary: Searches the specified input string for the first occurrence of a regular expression pattern.
+  example: []
   syntax:
-    content: public static Match Match(this string value, string pattern, RegexOptions options = RegexOptions.None)
+    content: public static Match Match(this string? value, string pattern, RegexOptions options = RegexOptions.None)
     parameters:
     - id: value
       type: System.String
+      description: The input string to search. If <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>, returns an empty <xref href="NuvTools.Common.RegularExpressions.RegexExtensions.Match(System.String%2cSystem.String%2cSystem.Text.RegularExpressions.RegexOptions)" data-throw-if-not-resolved="false"></xref>.
     - id: pattern
       type: System.String
+      description: The regular expression pattern to match.
     - id: options
       type: System.Text.RegularExpressions.RegexOptions
+      description: Optional <xref href="System.Text.RegularExpressions.RegexOptions" data-throw-if-not-resolved="false"></xref> to modify the search behavior. Default is <xref href="System.Text.RegularExpressions.RegexOptions.None" data-throw-if-not-resolved="false"></xref>.
     return:
       type: System.Text.RegularExpressions.Match
+      description: >-
+        A <xref href="NuvTools.Common.RegularExpressions.RegexExtensions.Match(System.String%2cSystem.String%2cSystem.Text.RegularExpressions.RegexOptions)" data-throw-if-not-resolved="false"></xref> object containing information about the first match found in <code class="paramref">value</code>.
+
+        If <code class="paramref">value</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>, returns an empty match.
     content.vb: Public Shared Function Match(value As String, pattern As String, options As RegexOptions = RegexOptions.None) As Match
   overload: NuvTools.Common.RegularExpressions.RegexExtensions.Match*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">pattern</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> or empty.
   nameWithType.vb: RegexExtensions.Match(String, String, RegexOptions)
   fullName.vb: NuvTools.Common.RegularExpressions.RegexExtensions.Match(String, String, System.Text.RegularExpressions.RegexOptions)
   name.vb: Match(String, String, RegexOptions)
@@ -76,67 +89,112 @@ items:
   langs:
   - csharp
   - vb
-  name: IsMatch(string, string, RegexOptions)
-  nameWithType: RegexExtensions.IsMatch(string, string, RegexOptions)
-  fullName: NuvTools.Common.RegularExpressions.RegexExtensions.IsMatch(string, string, System.Text.RegularExpressions.RegexOptions)
+  name: IsMatch(string?, string, RegexOptions)
+  nameWithType: RegexExtensions.IsMatch(string?, string, RegexOptions)
+  fullName: NuvTools.Common.RegularExpressions.RegexExtensions.IsMatch(string?, string, System.Text.RegularExpressions.RegexOptions)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/RegularExpressions/RegexExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/RegularExpressions/RegexExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.RegularExpressions
+  summary: Determines whether the specified regular expression finds a match in the input string.
+  example: []
   syntax:
-    content: public static bool IsMatch(this string value, string pattern, RegexOptions options = RegexOptions.IgnoreCase)
+    content: public static bool IsMatch(this string? value, string pattern, RegexOptions options = RegexOptions.IgnoreCase)
     parameters:
     - id: value
       type: System.String
+      description: The input string to search. If <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>, returns <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
     - id: pattern
       type: System.String
+      description: The regular expression pattern to match.
     - id: options
       type: System.Text.RegularExpressions.RegexOptions
+      description: >-
+        Optional <xref href="System.Text.RegularExpressions.RegexOptions" data-throw-if-not-resolved="false"></xref> to modify the search behavior.
+
+        Default is <xref href="System.Text.RegularExpressions.RegexOptions.IgnoreCase" data-throw-if-not-resolved="false"></xref>.
     return:
       type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the regular expression finds a match; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
     content.vb: Public Shared Function IsMatch(value As String, pattern As String, options As RegexOptions = RegexOptions.IgnoreCase) As Boolean
   overload: NuvTools.Common.RegularExpressions.RegexExtensions.IsMatch*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">pattern</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> or empty.
   nameWithType.vb: RegexExtensions.IsMatch(String, String, RegexOptions)
   fullName.vb: NuvTools.Common.RegularExpressions.RegexExtensions.IsMatch(String, String, System.Text.RegularExpressions.RegexOptions)
   name.vb: IsMatch(String, String, RegexOptions)
-- uid: NuvTools.Common.RegularExpressions.RegexExtensions.Replace(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)
-  commentId: M:NuvTools.Common.RegularExpressions.RegexExtensions.Replace(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)
-  id: Replace(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)
+- uid: NuvTools.Common.RegularExpressions.RegexExtensions.ReplacePattern(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)
+  commentId: M:NuvTools.Common.RegularExpressions.RegexExtensions.ReplacePattern(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)
+  id: ReplacePattern(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)
   isExtensionMethod: true
   parent: NuvTools.Common.RegularExpressions.RegexExtensions
   langs:
   - csharp
   - vb
-  name: Replace(string, string, string, RegexOptions)
-  nameWithType: RegexExtensions.Replace(string, string, string, RegexOptions)
-  fullName: NuvTools.Common.RegularExpressions.RegexExtensions.Replace(string, string, string, System.Text.RegularExpressions.RegexOptions)
+  name: ReplacePattern(string?, string, string, RegexOptions)
+  nameWithType: RegexExtensions.ReplacePattern(string?, string, string, RegexOptions)
+  fullName: NuvTools.Common.RegularExpressions.RegexExtensions.ReplacePattern(string?, string, string, System.Text.RegularExpressions.RegexOptions)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/RegularExpressions/RegexExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/RegularExpressions/RegexExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.RegularExpressions
+  summary: Replaces all occurrences of a specified regular expression pattern in the input string with a replacement string.
+  example: []
   syntax:
-    content: public static string Replace(this string value, string pattern, string newValue, RegexOptions options = RegexOptions.None)
+    content: public static string? ReplacePattern(this string? value, string pattern, string newValue, RegexOptions options = RegexOptions.None)
     parameters:
     - id: value
       type: System.String
+      description: The input string to modify. If <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>, returns an empty string.
     - id: pattern
       type: System.String
+      description: The regular expression pattern to match.
     - id: newValue
       type: System.String
+      description: The replacement string. If <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>, it is treated as an empty string.
     - id: options
       type: System.Text.RegularExpressions.RegexOptions
+      description: Optional <xref href="System.Text.RegularExpressions.RegexOptions" data-throw-if-not-resolved="false"></xref> to modify the search behavior. Default is <xref href="System.Text.RegularExpressions.RegexOptions.None" data-throw-if-not-resolved="false"></xref>.
     return:
       type: System.String
-    content.vb: Public Shared Function Replace(value As String, pattern As String, newValue As String, options As RegexOptions = RegexOptions.None) As String
-  overload: NuvTools.Common.RegularExpressions.RegexExtensions.Replace*
-  nameWithType.vb: RegexExtensions.Replace(String, String, String, RegexOptions)
-  fullName.vb: NuvTools.Common.RegularExpressions.RegexExtensions.Replace(String, String, String, System.Text.RegularExpressions.RegexOptions)
-  name.vb: Replace(String, String, String, RegexOptions)
+      description: >-
+        A new string that is identical to the input string except that all instances of <code class="paramref">pattern</code>
+
+        have been replaced with <code class="paramref">newValue</code>.
+    content.vb: Public Shared Function ReplacePattern(value As String, pattern As String, newValue As String, options As RegexOptions = RegexOptions.None) As String
+  overload: NuvTools.Common.RegularExpressions.RegexExtensions.ReplacePattern*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">pattern</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> or empty.
+  nameWithType.vb: RegexExtensions.ReplacePattern(String, String, String, RegexOptions)
+  fullName.vb: NuvTools.Common.RegularExpressions.RegexExtensions.ReplacePattern(String, String, String, System.Text.RegularExpressions.RegexOptions)
+  name.vb: ReplacePattern(String, String, String, RegexOptions)
 references:
+- uid: System.Text.RegularExpressions.Regex
+  commentId: T:System.Text.RegularExpressions.Regex
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.text.regularexpressions.regex
+  name: Regex
+  nameWithType: Regex
+  fullName: System.Text.RegularExpressions.Regex
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
 - uid: NuvTools.Common.RegularExpressions
   commentId: N:NuvTools.Common.RegularExpressions
   isExternal: true
@@ -411,24 +469,62 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: NuvTools.Common.RegularExpressions.RegexExtensions.Match*
-  commentId: Overload:NuvTools.Common.RegularExpressions.RegexExtensions.Match
+- uid: NuvTools.Common.RegularExpressions.RegexExtensions.Match(System.String,System.String,System.Text.RegularExpressions.RegexOptions)
+  commentId: M:NuvTools.Common.RegularExpressions.RegexExtensions.Match(System.String,System.String,System.Text.RegularExpressions.RegexOptions)
   isExternal: true
   href: NuvTools.Common.RegularExpressions.RegexExtensions.html#NuvTools_Common_RegularExpressions_RegexExtensions_Match_System_String_System_String_System_Text_RegularExpressions_RegexOptions_
-  name: Match
-  nameWithType: RegexExtensions.Match
-  fullName: NuvTools.Common.RegularExpressions.RegexExtensions.Match
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
+  name: Match(string, string, RegexOptions)
+  nameWithType: RegexExtensions.Match(string, string, RegexOptions)
+  fullName: NuvTools.Common.RegularExpressions.RegexExtensions.Match(string, string, System.Text.RegularExpressions.RegexOptions)
+  nameWithType.vb: RegexExtensions.Match(String, String, RegexOptions)
+  fullName.vb: NuvTools.Common.RegularExpressions.RegexExtensions.Match(String, String, System.Text.RegularExpressions.RegexOptions)
+  name.vb: Match(String, String, RegexOptions)
+  spec.csharp:
+  - uid: NuvTools.Common.RegularExpressions.RegexExtensions.Match(System.String,System.String,System.Text.RegularExpressions.RegexOptions)
+    name: Match
+    isExternal: true
+    href: NuvTools.Common.RegularExpressions.RegexExtensions.html#NuvTools_Common_RegularExpressions_RegexExtensions_Match_System_String_System_String_System_Text_RegularExpressions_RegexOptions_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Text.RegularExpressions.RegexOptions
+    name: RegexOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.regularexpressions.regexoptions
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Common.RegularExpressions.RegexExtensions.Match(System.String,System.String,System.Text.RegularExpressions.RegexOptions)
+    name: Match
+    isExternal: true
+    href: NuvTools.Common.RegularExpressions.RegexExtensions.html#NuvTools_Common_RegularExpressions_RegexExtensions_Match_System_String_System_String_System_Text_RegularExpressions_RegexOptions_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Text.RegularExpressions.RegexOptions
+    name: RegexOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.regularexpressions.regexoptions
+  - name: )
 - uid: System.Text.RegularExpressions.RegexOptions
   commentId: T:System.Text.RegularExpressions.RegexOptions
   parent: System.Text.RegularExpressions
@@ -437,6 +533,27 @@ references:
   name: RegexOptions
   nameWithType: RegexOptions
   fullName: System.Text.RegularExpressions.RegexOptions
+- uid: System.Text.RegularExpressions.RegexOptions.None
+  commentId: F:System.Text.RegularExpressions.RegexOptions.None
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.text.regularexpressions.regexoptions#system-text-regularexpressions-regexoptions-none
+  name: None
+  nameWithType: RegexOptions.None
+  fullName: System.Text.RegularExpressions.RegexOptions.None
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException
+- uid: NuvTools.Common.RegularExpressions.RegexExtensions.Match*
+  commentId: Overload:NuvTools.Common.RegularExpressions.RegexExtensions.Match
+  isExternal: true
+  href: NuvTools.Common.RegularExpressions.RegexExtensions.html#NuvTools_Common_RegularExpressions_RegexExtensions_Match_System_String_System_String_System_Text_RegularExpressions_RegexOptions_
+  name: Match
+  nameWithType: RegexExtensions.Match
+  fullName: NuvTools.Common.RegularExpressions.RegexExtensions.Match
 - uid: System.Text.RegularExpressions.Match
   commentId: T:System.Text.RegularExpressions.Match
   parent: System.Text.RegularExpressions
@@ -482,6 +599,13 @@ references:
     name: RegularExpressions
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.text.regularexpressions
+- uid: System.Text.RegularExpressions.RegexOptions.IgnoreCase
+  commentId: F:System.Text.RegularExpressions.RegexOptions.IgnoreCase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.text.regularexpressions.regexoptions#system-text-regularexpressions-regexoptions-ignorecase
+  name: IgnoreCase
+  nameWithType: RegexOptions.IgnoreCase
+  fullName: System.Text.RegularExpressions.RegexOptions.IgnoreCase
 - uid: NuvTools.Common.RegularExpressions.RegexExtensions.IsMatch*
   commentId: Overload:NuvTools.Common.RegularExpressions.RegexExtensions.IsMatch
   isExternal: true
@@ -500,10 +624,10 @@ references:
   nameWithType.vb: Boolean
   fullName.vb: Boolean
   name.vb: Boolean
-- uid: NuvTools.Common.RegularExpressions.RegexExtensions.Replace*
-  commentId: Overload:NuvTools.Common.RegularExpressions.RegexExtensions.Replace
+- uid: NuvTools.Common.RegularExpressions.RegexExtensions.ReplacePattern*
+  commentId: Overload:NuvTools.Common.RegularExpressions.RegexExtensions.ReplacePattern
   isExternal: true
-  href: NuvTools.Common.RegularExpressions.RegexExtensions.html#NuvTools_Common_RegularExpressions_RegexExtensions_Replace_System_String_System_String_System_String_System_Text_RegularExpressions_RegexOptions_
-  name: Replace
-  nameWithType: RegexExtensions.Replace
-  fullName: NuvTools.Common.RegularExpressions.RegexExtensions.Replace
+  href: NuvTools.Common.RegularExpressions.RegexExtensions.html#NuvTools_Common_RegularExpressions_RegexExtensions_ReplacePattern_System_String_System_String_System_String_System_Text_RegularExpressions_RegexOptions_
+  name: ReplacePattern
+  nameWithType: RegexExtensions.ReplacePattern
+  fullName: NuvTools.Common.RegularExpressions.RegexExtensions.ReplacePattern

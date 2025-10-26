@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class MessageDetail | Nuv Tools Framework Docs ">
       
-      
+      <meta name="description" content="Represents a detailed message related to an operation result, such as informational, success, warning, or error messages.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Common_ResultWrapper_MessageDetail" data-uid="NuvTools.Common.ResultWrapper.MessageDetail" class="text-break">
-Class MessageDetail  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+Class MessageDetail  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,9 @@ Class MessageDetail  <a class="header-action link-secondary" title="View source"
   <dl><dt>Assembly</dt><dd>NuvTools.Common.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Represents a detailed message related to an operation result,
+such as informational, success, warning, or error messages.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -155,7 +157,23 @@ Class MessageDetail  <a class="header-action link-secondary" title="View source"
   </dd></dl>
 
 
+  <h2 id="NuvTools_Common_ResultWrapper_MessageDetail_examples">Examples</h2>
+  <p>Example usage:</p>
+<pre><code class="lang-csharp">var message = new MessageDetail(
+    Title: "Validation failed",
+    Detail: "The email address format is invalid.",
+    Code: "VAL001",
+    Severity: Severity.Warning
+);</code></pre>
 
+
+  <h2 id="NuvTools_Common_ResultWrapper_MessageDetail_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>The <a class="xref" href="NuvTools.Common.ResultWrapper.MessageDetail.html">MessageDetail</a> record is typically used as part of a
+<a class="xref" href="NuvTools.Common.ResultWrapper.Result.html">Result</a> or <a class="xref" href="NuvTools.Common.ResultWrapper.Result-1.html">Result&lt;T&gt;</a> object to provide
+structured feedback about an operation.
+It allows developers to capture human-readable messages along with
+metadata such as message code and severity.</p>
+</div>
 
 
   <h2 class="section" id="constructors">Constructors
@@ -166,7 +184,7 @@ Class MessageDetail  <a class="header-action link-secondary" title="View source"
 
   <h3 id="NuvTools_Common_ResultWrapper_MessageDetail__ctor_NuvTools_Common_ResultWrapper_MessageDetail_" data-uid="NuvTools.Common.ResultWrapper.MessageDetail.#ctor(NuvTools.Common.ResultWrapper.MessageDetail)">
   MessageDetail(MessageDetail)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -195,12 +213,14 @@ Class MessageDetail  <a class="header-action link-secondary" title="View source"
 
   <a id="NuvTools_Common_ResultWrapper_MessageDetail__ctor_" data-uid="NuvTools.Common.ResultWrapper.MessageDetail.#ctor*"></a>
 
-  <h3 id="NuvTools_Common_ResultWrapper_MessageDetail__ctor_System_String_System_String_System_String_System_Nullable_NuvTools_Common_ResultWrapper_Severity__" data-uid="NuvTools.Common.ResultWrapper.MessageDetail.#ctor(System.String,System.String,System.String,System.Nullable{NuvTools.Common.ResultWrapper.Severity})">
+  <h3 id="NuvTools_Common_ResultWrapper_MessageDetail__ctor_System_String_System_String_System_String_System_Nullable_NuvTools_Common_ResultWrapper_Enumerations_Severity__" data-uid="NuvTools.Common.ResultWrapper.MessageDetail.#ctor(System.String,System.String,System.String,System.Nullable{NuvTools.Common.ResultWrapper.Enumerations.Severity})">
   MessageDetail(string, string?, string?, Severity?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Represents a detailed message related to an operation result,
+such as informational, success, warning, or error messages.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -210,13 +230,20 @@ Class MessageDetail  <a class="header-action link-secondary" title="View source"
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>Title</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The short, human-readable message summarizing the event or result.</p>
+</dd>
     <dt><code>Detail</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>An optional detailed description that provides more context or
+technical information about the message.</p>
+</dd>
     <dt><code>Code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-    <dt><code>Severity</code> <a class="xref" href="NuvTools.Common.ResultWrapper.Severity.html">Severity</a>?</dt>
-    <dd></dd>
+    <dd><p>An optional identifier that uniquely represents the message type or
+category, useful for localization, logging, or client-side handling.</p>
+</dd>
+    <dt><code>Severity</code> <a class="xref" href="NuvTools.Common.ResultWrapper.Enumerations.Severity.html">Severity</a>?</dt>
+    <dd><p>The severity level of the message (e.g., <a class="xref" href="NuvTools.Common.ResultWrapper.Enumerations.Severity.html#NuvTools_Common_ResultWrapper_Enumerations_Severity_Information">Information</a>,
+<a class="xref" href="NuvTools.Common.ResultWrapper.Enumerations.Severity.html#NuvTools_Common_ResultWrapper_Enumerations_Severity_Warning">Warning</a>, <a class="xref" href="NuvTools.Common.ResultWrapper.Enumerations.Severity.html#NuvTools_Common_ResultWrapper_Enumerations_Severity_Error">Error</a>).</p>
+</dd>
   </dl>
 
 
@@ -225,7 +252,23 @@ Class MessageDetail  <a class="header-action link-secondary" title="View source"
 
 
 
+  <h4 class="section" id="NuvTools_Common_ResultWrapper_MessageDetail__ctor_System_String_System_String_System_String_System_Nullable_NuvTools_Common_ResultWrapper_Enumerations_Severity___examples">Examples</h4>
+  <p>Example usage:</p>
+<pre><code class="lang-csharp">var message = new MessageDetail(
+    Title: "Validation failed",
+    Detail: "The email address format is invalid.",
+    Code: "VAL001",
+    Severity: Severity.Warning
+);</code></pre>
 
+
+  <h4 class="section" id="NuvTools_Common_ResultWrapper_MessageDetail__ctor_System_String_System_String_System_String_System_Nullable_NuvTools_Common_ResultWrapper_Enumerations_Severity___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The <a class="xref" href="NuvTools.Common.ResultWrapper.MessageDetail.html">MessageDetail</a> record is typically used as part of a
+<a class="xref" href="NuvTools.Common.ResultWrapper.Result.html">Result</a> or <a class="xref" href="NuvTools.Common.ResultWrapper.Result-1.html">Result&lt;T&gt;</a> object to provide
+structured feedback about an operation.
+It allows developers to capture human-readable messages along with
+metadata such as message code and severity.</p>
+</div>
 
 
 
@@ -238,10 +281,12 @@ Class MessageDetail  <a class="header-action link-secondary" title="View source"
 
   <h3 id="NuvTools_Common_ResultWrapper_MessageDetail_Code" data-uid="NuvTools.Common.ResultWrapper.MessageDetail.Code">
   Code
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>An optional identifier that uniquely represents the message type or
+category, useful for localization, logging, or client-side handling.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -269,10 +314,12 @@ Class MessageDetail  <a class="header-action link-secondary" title="View source"
 
   <h3 id="NuvTools_Common_ResultWrapper_MessageDetail_Detail" data-uid="NuvTools.Common.ResultWrapper.MessageDetail.Detail">
   Detail
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>An optional detailed description that provides more context or
+technical information about the message.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -300,7 +347,7 @@ Class MessageDetail  <a class="header-action link-secondary" title="View source"
 
   <h3 id="NuvTools_Common_ResultWrapper_MessageDetail_EqualityContract" data-uid="NuvTools.Common.ResultWrapper.MessageDetail.EqualityContract">
   EqualityContract
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -331,10 +378,12 @@ Class MessageDetail  <a class="header-action link-secondary" title="View source"
 
   <h3 id="NuvTools_Common_ResultWrapper_MessageDetail_Severity" data-uid="NuvTools.Common.ResultWrapper.MessageDetail.Severity">
   Severity
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The severity level of the message (e.g., <a class="xref" href="NuvTools.Common.ResultWrapper.Enumerations.Severity.html#NuvTools_Common_ResultWrapper_Enumerations_Severity_Information">Information</a>,
+<a class="xref" href="NuvTools.Common.ResultWrapper.Enumerations.Severity.html#NuvTools_Common_ResultWrapper_Enumerations_Severity_Warning">Warning</a>, <a class="xref" href="NuvTools.Common.ResultWrapper.Enumerations.Severity.html#NuvTools_Common_ResultWrapper_Enumerations_Severity_Error">Error</a>).</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -347,7 +396,7 @@ Class MessageDetail  <a class="header-action link-secondary" title="View source"
 
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="NuvTools.Common.ResultWrapper.Severity.html">Severity</a>?</dt>
+    <dt><a class="xref" href="NuvTools.Common.ResultWrapper.Enumerations.Severity.html">Severity</a>?</dt>
     <dd></dd>
   </dl>
 
@@ -362,10 +411,11 @@ Class MessageDetail  <a class="header-action link-secondary" title="View source"
 
   <h3 id="NuvTools_Common_ResultWrapper_MessageDetail_Title" data-uid="NuvTools.Common.ResultWrapper.MessageDetail.Title">
   Title
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The short, human-readable message summarizing the event or result.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -395,9 +445,9 @@ Class MessageDetail  <a class="header-action link-secondary" title="View source"
 
   <a id="NuvTools_Common_ResultWrapper_MessageDetail_Deconstruct_" data-uid="NuvTools.Common.ResultWrapper.MessageDetail.Deconstruct*"></a>
 
-  <h3 id="NuvTools_Common_ResultWrapper_MessageDetail_Deconstruct_System_String__System_String__System_String__System_Nullable_NuvTools_Common_ResultWrapper_Severity___" data-uid="NuvTools.Common.ResultWrapper.MessageDetail.Deconstruct(System.String@,System.String@,System.String@,System.Nullable{NuvTools.Common.ResultWrapper.Severity}@)">
+  <h3 id="NuvTools_Common_ResultWrapper_MessageDetail_Deconstruct_System_String__System_String__System_String__System_Nullable_NuvTools_Common_ResultWrapper_Enumerations_Severity___" data-uid="NuvTools.Common.ResultWrapper.MessageDetail.Deconstruct(System.String@,System.String@,System.String@,System.Nullable{NuvTools.Common.ResultWrapper.Enumerations.Severity}@)">
   Deconstruct(out string, out string?, out string?, out Severity?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -415,7 +465,7 @@ Class MessageDetail  <a class="header-action link-secondary" title="View source"
     <dd></dd>
     <dt><code>Code</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
     <dd></dd>
-    <dt><code>Severity</code> <a class="xref" href="NuvTools.Common.ResultWrapper.Severity.html">Severity</a>?</dt>
+    <dt><code>Severity</code> <a class="xref" href="NuvTools.Common.ResultWrapper.Enumerations.Severity.html">Severity</a>?</dt>
     <dd></dd>
   </dl>
 
@@ -434,7 +484,7 @@ Class MessageDetail  <a class="header-action link-secondary" title="View source"
 
   <h3 id="NuvTools_Common_ResultWrapper_MessageDetail_Equals_NuvTools_Common_ResultWrapper_MessageDetail_" data-uid="NuvTools.Common.ResultWrapper.MessageDetail.Equals(NuvTools.Common.ResultWrapper.MessageDetail)">
   Equals(MessageDetail?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -470,7 +520,7 @@ Class MessageDetail  <a class="header-action link-secondary" title="View source"
 
   <h3 id="NuvTools_Common_ResultWrapper_MessageDetail_Equals_System_Object_" data-uid="NuvTools.Common.ResultWrapper.MessageDetail.Equals(System.Object)">
   Equals(object?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -506,7 +556,7 @@ Class MessageDetail  <a class="header-action link-secondary" title="View source"
 
   <h3 id="NuvTools_Common_ResultWrapper_MessageDetail_GetHashCode" data-uid="NuvTools.Common.ResultWrapper.MessageDetail.GetHashCode">
   GetHashCode()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -537,7 +587,7 @@ Class MessageDetail  <a class="header-action link-secondary" title="View source"
 
   <h3 id="NuvTools_Common_ResultWrapper_MessageDetail_PrintMembers_System_Text_StringBuilder_" data-uid="NuvTools.Common.ResultWrapper.MessageDetail.PrintMembers(System.Text.StringBuilder)">
   PrintMembers(StringBuilder)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -573,7 +623,7 @@ Class MessageDetail  <a class="header-action link-secondary" title="View source"
 
   <h3 id="NuvTools_Common_ResultWrapper_MessageDetail_ToString" data-uid="NuvTools.Common.ResultWrapper.MessageDetail.ToString">
   ToString()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -608,7 +658,7 @@ Class MessageDetail  <a class="header-action link-secondary" title="View source"
 
   <h3 id="NuvTools_Common_ResultWrapper_MessageDetail_op_Equality_NuvTools_Common_ResultWrapper_MessageDetail_NuvTools_Common_ResultWrapper_MessageDetail_" data-uid="NuvTools.Common.ResultWrapper.MessageDetail.op_Equality(NuvTools.Common.ResultWrapper.MessageDetail,NuvTools.Common.ResultWrapper.MessageDetail)">
   operator ==(MessageDetail?, MessageDetail?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -646,7 +696,7 @@ Class MessageDetail  <a class="header-action link-secondary" title="View source"
 
   <h3 id="NuvTools_Common_ResultWrapper_MessageDetail_op_Inequality_NuvTools_Common_ResultWrapper_MessageDetail_NuvTools_Common_ResultWrapper_MessageDetail_" data-uid="NuvTools.Common.ResultWrapper.MessageDetail.op_Inequality(NuvTools.Common.ResultWrapper.MessageDetail,NuvTools.Common.ResultWrapper.MessageDetail)">
   operator !=(MessageDetail?, MessageDetail?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -684,7 +734,7 @@ Class MessageDetail  <a class="header-action link-secondary" title="View source"
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-common/blob/92ee44c1f28a3d5f107793180daa52695d704abf/src/NuvTools.Common/ResultWrapper/IResult.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/MessageDetail.cs" class="edit-link">Edit this page</a>
         </div>
 
 

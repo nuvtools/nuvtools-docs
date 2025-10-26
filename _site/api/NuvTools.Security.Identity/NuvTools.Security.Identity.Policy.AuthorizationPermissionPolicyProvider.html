@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class AuthorizationPermissionPolicyProvider | Nuv Tools Framework Docs ">
       
-      
+      <meta name="description" content="Custom implementation of  that dynamically generates authorization policies based on permission claims.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Security_Identity_Policy_AuthorizationPermissionPolicyProvider" data-uid="NuvTools.Security.Identity.Policy.AuthorizationPermissionPolicyProvider" class="text-break">
-Class AuthorizationPermissionPolicyProvider  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity/Policy/AuthorizationPermissionPolicyProvider.cs"><i class="bi bi-code-slash"></i></a>
+Class AuthorizationPermissionPolicyProvider  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity/Policy/AuthorizationPermissionPolicyProvider.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,9 @@ Class AuthorizationPermissionPolicyProvider  <a class="header-action link-second
   <dl><dt>Assembly</dt><dd>NuvTools.Security.Identity.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Custom implementation of <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationpolicyprovider">IAuthorizationPolicyProvider</a> that dynamically generates
+authorization policies based on permission claims.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -152,6 +154,12 @@ Class AuthorizationPermissionPolicyProvider  <a class="header-action link-second
 
 
 
+  <h2 id="NuvTools_Security_Identity_Policy_AuthorizationPermissionPolicyProvider_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This provider enables runtime creation of policies following a naming convention.<br>
+If a policy name starts with <a class="xref" href="../NuvTools.Security/NuvTools.Security.Models.ClaimTypes.html#NuvTools_Security_Models_ClaimTypes_Permission">Permission</a>, it creates a policy that requires
+a <a class="xref" href="NuvTools.Security.Identity.Policy.PermissionRequirement.html">PermissionRequirement</a> with the corresponding value.<br>
+Otherwise, it delegates to the default <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.defaultauthorizationpolicyprovider">DefaultAuthorizationPolicyProvider</a>.</p>
+</div>
 
 
   <h2 class="section" id="constructors">Constructors
@@ -162,10 +170,12 @@ Class AuthorizationPermissionPolicyProvider  <a class="header-action link-second
 
   <h3 id="NuvTools_Security_Identity_Policy_AuthorizationPermissionPolicyProvider__ctor_Microsoft_Extensions_Options_IOptions_Microsoft_AspNetCore_Authorization_AuthorizationOptions__" data-uid="NuvTools.Security.Identity.Policy.AuthorizationPermissionPolicyProvider.#ctor(Microsoft.Extensions.Options.IOptions{Microsoft.AspNetCore.Authorization.AuthorizationOptions})">
   AuthorizationPermissionPolicyProvider(IOptions&lt;AuthorizationOptions&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity/Policy/AuthorizationPermissionPolicyProvider.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity/Policy/AuthorizationPermissionPolicyProvider.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Custom implementation of <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationpolicyprovider">IAuthorizationPolicyProvider</a> that dynamically generates
+authorization policies based on permission claims.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -185,6 +195,12 @@ Class AuthorizationPermissionPolicyProvider  <a class="header-action link-second
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_Policy_AuthorizationPermissionPolicyProvider__ctor_Microsoft_Extensions_Options_IOptions_Microsoft_AspNetCore_Authorization_AuthorizationOptions___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This provider enables runtime creation of policies following a naming convention.<br>
+If a policy name starts with <a class="xref" href="../NuvTools.Security/NuvTools.Security.Models.ClaimTypes.html#NuvTools_Security_Models_ClaimTypes_Permission">Permission</a>, it creates a policy that requires
+a <a class="xref" href="NuvTools.Security.Identity.Policy.PermissionRequirement.html">PermissionRequirement</a> with the corresponding value.<br>
+Otherwise, it delegates to the default <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.defaultauthorizationpolicyprovider">DefaultAuthorizationPolicyProvider</a>.</p>
+</div>
 
 
 
@@ -197,10 +213,11 @@ Class AuthorizationPermissionPolicyProvider  <a class="header-action link-second
 
   <h3 id="NuvTools_Security_Identity_Policy_AuthorizationPermissionPolicyProvider_FallbackPolicyProvider" data-uid="NuvTools.Security.Identity.Policy.AuthorizationPermissionPolicyProvider.FallbackPolicyProvider">
   FallbackPolicyProvider
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity/Policy/AuthorizationPermissionPolicyProvider.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity/Policy/AuthorizationPermissionPolicyProvider.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The default fallback policy provider used for standard authorization policies.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -232,10 +249,10 @@ Class AuthorizationPermissionPolicyProvider  <a class="header-action link-second
 
   <h3 id="NuvTools_Security_Identity_Policy_AuthorizationPermissionPolicyProvider_GetDefaultPolicyAsync" data-uid="NuvTools.Security.Identity.Policy.AuthorizationPermissionPolicyProvider.GetDefaultPolicyAsync">
   GetDefaultPolicyAsync()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity/Policy/AuthorizationPermissionPolicyProvider.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity/Policy/AuthorizationPermissionPolicyProvider.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets the default authorization policy.</p>
+  <div class="markdown level1 summary"><p>Retrieves the default authorization policy.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -247,7 +264,7 @@ Class AuthorizationPermissionPolicyProvider  <a class="header-action link-second
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationpolicy">AuthorizationPolicy</a>&gt;</dt>
-    <dd><p>The default authorization policy.</p>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task&lt;TResult&gt;</a> containing the default <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationpolicy">AuthorizationPolicy</a>.</p>
 </dd>
   </dl>
 
@@ -265,10 +282,10 @@ Class AuthorizationPermissionPolicyProvider  <a class="header-action link-second
 
   <h3 id="NuvTools_Security_Identity_Policy_AuthorizationPermissionPolicyProvider_GetFallbackPolicyAsync" data-uid="NuvTools.Security.Identity.Policy.AuthorizationPermissionPolicyProvider.GetFallbackPolicyAsync">
   GetFallbackPolicyAsync()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity/Policy/AuthorizationPermissionPolicyProvider.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity/Policy/AuthorizationPermissionPolicyProvider.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets the fallback authorization policy.</p>
+  <div class="markdown level1 summary"><p>Retrieves the fallback authorization policy, if defined.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -280,7 +297,7 @@ Class AuthorizationPermissionPolicyProvider  <a class="header-action link-second
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationpolicy">AuthorizationPolicy</a>&gt;</dt>
-    <dd><p>The fallback authorization policy.</p>
+    <dd><p>Always returns <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> since this provider does not define a fallback policy.</p>
 </dd>
   </dl>
 
@@ -298,10 +315,10 @@ Class AuthorizationPermissionPolicyProvider  <a class="header-action link-second
 
   <h3 id="NuvTools_Security_Identity_Policy_AuthorizationPermissionPolicyProvider_GetPolicyAsync_System_String_" data-uid="NuvTools.Security.Identity.Policy.AuthorizationPermissionPolicyProvider.GetPolicyAsync(System.String)">
   GetPolicyAsync(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity/Policy/AuthorizationPermissionPolicyProvider.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity/Policy/AuthorizationPermissionPolicyProvider.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets a <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationpolicy">AuthorizationPolicy</a> from the given <code class="paramref">policyName</code></p>
+  <div class="markdown level1 summary"><p>Retrieves an authorization policy based on the specified policy name.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -312,14 +329,14 @@ Class AuthorizationPermissionPolicyProvider  <a class="header-action link-second
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>policyName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>The policy name to retrieve.</p>
+    <dd><p>The name of the policy to retrieve.</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationpolicy">AuthorizationPolicy</a>&gt;</dt>
-    <dd><p>The named <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationpolicy">AuthorizationPolicy</a>.</p>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task&lt;TResult&gt;</a> containing the <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.authorizationpolicy">AuthorizationPolicy</a>, or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> if none exists.</p>
 </dd>
   </dl>
 
@@ -329,6 +346,11 @@ Class AuthorizationPermissionPolicyProvider  <a class="header-action link-second
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_Policy_AuthorizationPermissionPolicyProvider_GetPolicyAsync_System_String__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>If the <code class="paramref">policyName</code> starts with <a class="xref" href="../NuvTools.Security/NuvTools.Security.Models.ClaimTypes.html#NuvTools_Security_Models_ClaimTypes_Permission">Permission</a>,<br>
+a new policy will be built dynamically that enforces a <a class="xref" href="NuvTools.Security.Identity.Policy.PermissionRequirement.html">PermissionRequirement</a>.<br>
+Otherwise, the request is delegated to the fallback provider.</p>
+</div>
 
 
 
@@ -337,7 +359,7 @@ Class AuthorizationPermissionPolicyProvider  <a class="header-action link-second
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity/Policy/AuthorizationPermissionPolicyProvider.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity/Policy/AuthorizationPermissionPolicyProvider.cs" class="edit-link">Edit this page</a>
         </div>
 
 

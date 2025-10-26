@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class UserBase&lt;TKey&gt; | Nuv Tools Framework Docs ">
       
-      
+      <meta name="description" content="Represents the base class for application users within the identity system.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Security_Identity_Models_UserBase_1" data-uid="NuvTools.Security.Identity.Models.UserBase`1" class="text-break">
-Class UserBase&lt;TKey&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
+Class UserBase&lt;TKey&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class UserBase&lt;TKey&gt;  <a class="header-action link-secondary" title="View 
   <dl><dt>Assembly</dt><dd>NuvTools.Security.Identity.Models.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Represents the base class for application users within the identity system.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -109,7 +110,8 @@ Class UserBase&lt;TKey&gt;  <a class="header-action link-secondary" title="View 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TKey</code></dt>
-    <dd></dd>
+    <dd><p>The type of the user's primary key (e.g., <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a> or <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>).</p>
+</dd>
   </dl>
 
   <dl class="typelist inheritance">
@@ -194,6 +196,11 @@ Class UserBase&lt;TKey&gt;  <a class="header-action link-secondary" title="View 
 
 
 
+  <h2 id="NuvTools_Security_Identity_Models_UserBase_1_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This abstract class extends <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1">IdentityUser&lt;TKey&gt;</a> to include
+additional profile data and validation attributes for multilingual applications.
+It also introduces password and refresh token fields that are not persisted in the database.</p>
+</div>
 
 
   <h2 class="section" id="constructors">Constructors
@@ -204,7 +211,7 @@ Class UserBase&lt;TKey&gt;  <a class="header-action link-secondary" title="View 
 
   <h3 id="NuvTools_Security_Identity_Models_UserBase_1__ctor" data-uid="NuvTools.Security.Identity.Models.UserBase`1.#ctor">
   UserBase()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -234,10 +241,10 @@ Class UserBase&lt;TKey&gt;  <a class="header-action link-secondary" title="View 
 
   <h3 id="NuvTools_Security_Identity_Models_UserBase_1_Email" data-uid="NuvTools.Security.Identity.Models.UserBase`1.Email">
   Email
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets or sets the email address for this user.</p>
+  <div class="markdown level1 summary"><p>Gets or sets the user's email address.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -262,6 +269,10 @@ public override string? Email { get; set; }</code></pre>
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_Models_UserBase_1_Email_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This property overrides the base <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1.email">Email</a> property
+to add localized display names and validation attributes.</p>
+</div>
 
 
 
@@ -270,10 +281,11 @@ public override string? Email { get; set; }</code></pre>
 
   <h3 id="NuvTools_Security_Identity_Models_UserBase_1_Name" data-uid="NuvTools.Security.Identity.Models.UserBase`1.Name">
   Name
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets the user's first name.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -303,10 +315,12 @@ public virtual string? Name { get; set; }</code></pre>
 
   <h3 id="NuvTools_Security_Identity_Models_UserBase_1_Password" data-uid="NuvTools.Security.Identity.Models.UserBase`1.Password">
   Password
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets the user's password.<br>
+This property is <strong>not persisted</strong> in the database.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -315,9 +329,6 @@ public virtual string? Name { get; set; }</code></pre>
 [Required(ErrorMessageResourceName = &quot;XRequired&quot;, ErrorMessageResourceType = typeof(DynamicValidationMessages))]
 [MaxLength(40, ErrorMessageResourceName = &quot;XMustHaveUpToYCharacters&quot;, ErrorMessageResourceType = typeof(DynamicValidationMessages))]
 [MinLength(6, ErrorMessageResourceName = &quot;XMustHaveAtLeastYCharacters&quot;, ErrorMessageResourceType = typeof(DynamicValidationMessages))]
-[PasswordComplexityCapitalLetters(1)]
-[PasswordComplexityLowerCaseLetters(1)]
-[PasswordComplexityDigits(1)]
 public virtual string? Password { get; set; }</code></pre>
   </div>
 
@@ -334,6 +345,10 @@ public virtual string? Password { get; set; }</code></pre>
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_Models_UserBase_1_Password_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>It is intended for use during user registration or password updates.
+The complexity attributes are enforced through <a class="xref" href="../NuvTools.Validation/NuvTools.Validation.Annotations.html">NuvTools.Validation.Annotations</a>.</p>
+</div>
 
 
 
@@ -342,10 +357,11 @@ public virtual string? Password { get; set; }</code></pre>
 
   <h3 id="NuvTools_Security_Identity_Models_UserBase_1_RefreshToken" data-uid="NuvTools.Security.Identity.Models.UserBase`1.RefreshToken">
   RefreshToken
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets the refresh token used for renewing authentication sessions.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -366,6 +382,9 @@ public string? RefreshToken { get; set; }</code></pre>
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_Models_UserBase_1_RefreshToken_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This property is not mapped to the database and is meant for temporary runtime storage.</p>
+</div>
 
 
 
@@ -374,10 +393,11 @@ public string? RefreshToken { get; set; }</code></pre>
 
   <h3 id="NuvTools_Security_Identity_Models_UserBase_1_RefreshTokenExpiryTime" data-uid="NuvTools.Security.Identity.Models.UserBase`1.RefreshTokenExpiryTime">
   RefreshTokenExpiryTime
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets the date and time when the refresh token expires.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -398,6 +418,9 @@ public DateTime RefreshTokenExpiryTime { get; set; }</code></pre>
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_Models_UserBase_1_RefreshTokenExpiryTime_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This property is not persisted in the database.</p>
+</div>
 
 
 
@@ -406,10 +429,11 @@ public DateTime RefreshTokenExpiryTime { get; set; }</code></pre>
 
   <h3 id="NuvTools_Security_Identity_Models_UserBase_1_Status" data-uid="NuvTools.Security.Identity.Models.UserBase`1.Status">
   Status
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets a value indicating whether the user account is active.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -438,10 +462,11 @@ public virtual bool Status { get; set; }</code></pre>
 
   <h3 id="NuvTools_Security_Identity_Models_UserBase_1_Surname" data-uid="NuvTools.Security.Identity.Models.UserBase`1.Surname">
   Surname
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/UserBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets the user's last name or surname.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -471,7 +496,7 @@ public virtual string? Surname { get; set; }</code></pre>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/UserBase.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/UserBase.cs" class="edit-link">Edit this page</a>
         </div>
 
 

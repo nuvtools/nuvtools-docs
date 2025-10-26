@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class RoleBase&lt;TKey&gt; | Nuv Tools Framework Docs ">
       
-      
+      <meta name="description" content="Represents the base model for application roles within the identity system.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Security_Identity_Models_RoleBase_1" data-uid="NuvTools.Security.Identity.Models.RoleBase`1" class="text-break">
-Class RoleBase&lt;TKey&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/RoleBase.cs"><i class="bi bi-code-slash"></i></a>
+Class RoleBase&lt;TKey&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/RoleBase.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class RoleBase&lt;TKey&gt;  <a class="header-action link-secondary" title="View 
   <dl><dt>Assembly</dt><dd>NuvTools.Security.Identity.Models.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Represents the base model for application roles within the identity system.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -109,7 +110,8 @@ Class RoleBase&lt;TKey&gt;  <a class="header-action link-secondary" title="View 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TKey</code></dt>
-    <dd></dd>
+    <dd><p>The type of the primary key used for the role (e.g., <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.guid">Guid</a> or <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>).</p>
+</dd>
   </dl>
 
   <dl class="typelist inheritance">
@@ -161,6 +163,10 @@ Class RoleBase&lt;TKey&gt;  <a class="header-action link-secondary" title="View 
 
 
 
+  <h2 id="NuvTools_Security_Identity_Models_RoleBase_1_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This abstract class extends <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityrole-1">IdentityRole&lt;TKey&gt;</a> to provide additional
+validation, display metadata, and support for storing associated claims in memory.</p>
+</div>
 
 
   <h2 class="section" id="constructors">Constructors
@@ -171,14 +177,15 @@ Class RoleBase&lt;TKey&gt;  <a class="header-action link-secondary" title="View 
 
   <h3 id="NuvTools_Security_Identity_Models_RoleBase_1__ctor" data-uid="NuvTools.Security.Identity.Models.RoleBase`1.#ctor">
   RoleBase()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/RoleBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/RoleBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="NuvTools.Security.Identity.Models.RoleBase-1.html">RoleBase&lt;TKey&gt;</a> class.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public RoleBase()</code></pre>
+    <pre><code class="lang-csharp hljs">protected RoleBase()</code></pre>
   </div>
 
 
@@ -197,20 +204,22 @@ Class RoleBase&lt;TKey&gt;  <a class="header-action link-secondary" title="View 
 
   <h3 id="NuvTools_Security_Identity_Models_RoleBase_1__ctor_System_String_" data-uid="NuvTools.Security.Identity.Models.RoleBase`1.#ctor(System.String)">
   RoleBase(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/RoleBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/RoleBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="NuvTools.Security.Identity.Models.RoleBase-1.html">RoleBase&lt;TKey&gt;</a> class with the specified name.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public RoleBase(string name)</code></pre>
+    <pre><code class="lang-csharp hljs">protected RoleBase(string name)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The name of the role.</p>
+</dd>
   </dl>
 
 
@@ -232,10 +241,11 @@ Class RoleBase&lt;TKey&gt;  <a class="header-action link-secondary" title="View 
 
   <h3 id="NuvTools_Security_Identity_Models_RoleBase_1_Claims" data-uid="NuvTools.Security.Identity.Models.RoleBase`1.Claims">
   Claims
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/RoleBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/RoleBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets the list of claims associated with this role.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -256,6 +266,11 @@ public List&lt;KeyValuePair&lt;string, string&gt;&gt;? Claims { get; set; }</cod
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_Models_RoleBase_1_Claims_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This property is marked as &quot;NotMapped&quot; since claims are managed
+through the <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.rolemanager-1">RoleManager&lt;TRole&gt;</a> API and are not persisted directly
+in the database.</p>
+</div>
 
 
 
@@ -264,10 +279,10 @@ public List&lt;KeyValuePair&lt;string, string&gt;&gt;? Claims { get; set; }</cod
 
   <h3 id="NuvTools_Security_Identity_Models_RoleBase_1_Name" data-uid="NuvTools.Security.Identity.Models.RoleBase`1.Name">
   Name
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/RoleBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/RoleBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets or sets the name for this role.</p>
+  <div class="markdown level1 summary"><p>Gets or sets the display name of the role.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -291,6 +306,10 @@ public override string? Name { get; set; }</code></pre>
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_Models_RoleBase_1_Name_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This property overrides the base <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityrole-1.name">Name</a> property
+to apply validation and localization-friendly display attributes.</p>
+</div>
 
 
 
@@ -299,7 +318,7 @@ public override string? Name { get; set; }</code></pre>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-security-identity/blob/0c4c963af2ca279ae14ecfb8ce9b7894f466b8a8/src/NuvTools.Security.Identity.Models/RoleBase.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/RoleBase.cs" class="edit-link">Edit this page</a>
         </div>
 
 
