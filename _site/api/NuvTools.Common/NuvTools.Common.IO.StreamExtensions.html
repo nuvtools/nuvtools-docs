@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class StreamExtensions | Nuv Tools Framework Docs ">
       
-      
+      <meta name="description" content="Provides extension methods for  objects.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Common_IO_StreamExtensions" data-uid="NuvTools.Common.IO.StreamExtensions" class="text-break">
-Class StreamExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/IO/StreamExtensions.cs"><i class="bi bi-code-slash"></i></a>
+Class StreamExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/IO/StreamExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class StreamExtensions  <a class="header-action link-secondary" title="View sour
   <dl><dt>Assembly</dt><dd>NuvTools.Common.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Provides extension methods for <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a> objects.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -156,10 +157,11 @@ Class StreamExtensions  <a class="header-action link-secondary" title="View sour
 
   <h3 id="NuvTools_Common_IO_StreamExtensions_ToByteList_System_IO_Stream_" data-uid="NuvTools.Common.IO.StreamExtensions.ToByteList(System.IO.Stream)">
   ToByteList(Stream)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/IO/StreamExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/IO/StreamExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Converts the stream to a byte array synchronously.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -169,13 +171,15 @@ Class StreamExtensions  <a class="header-action link-secondary" title="View sour
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
-    <dd></dd>
+    <dd><p>The stream to convert.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
-    <dd></dd>
+    <dd><p>A byte array containing the stream data.</p>
+</dd>
   </dl>
 
 
@@ -184,7 +188,16 @@ Class StreamExtensions  <a class="header-action link-secondary" title="View sour
 
 
 
+  <h4 class="section" id="NuvTools_Common_IO_StreamExtensions_ToByteList_System_IO_Stream__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method blocks synchronously. For asynchronous operations, use <a class="xref" href="NuvTools.Common.IO.StreamExtensions.html#NuvTools_Common_IO_StreamExtensions_ToByteListAsync_System_IO_Stream_">ToByteListAsync(Stream)</a>.</p>
+</div>
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Thrown when <code class="paramref">value</code> is null.</p>
+</dd>
+  </dl>
 
 
 
@@ -192,10 +205,11 @@ Class StreamExtensions  <a class="header-action link-secondary" title="View sour
 
   <h3 id="NuvTools_Common_IO_StreamExtensions_ToByteListAsync_System_IO_Stream_" data-uid="NuvTools.Common.IO.StreamExtensions.ToByteListAsync(System.IO.Stream)">
   ToByteListAsync(Stream)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/IO/StreamExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/IO/StreamExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Converts the stream to a byte array asynchronously.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -205,13 +219,15 @@ Class StreamExtensions  <a class="header-action link-secondary" title="View sour
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
-    <dd></dd>
+    <dd><p>The stream to convert.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]&gt;</dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation. The task result contains a byte array with the stream data.</p>
+</dd>
   </dl>
 
 
@@ -220,7 +236,17 @@ Class StreamExtensions  <a class="header-action link-secondary" title="View sour
 
 
 
+  <h4 class="section" id="NuvTools_Common_IO_StreamExtensions_ToByteListAsync_System_IO_Stream__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method reads the entire stream based on its <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.length">Length</a> property.
+The stream must support seeking and have a known length.</p>
+</div>
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Thrown when <code class="paramref">value</code> is null.</p>
+</dd>
+  </dl>
 
 
 
@@ -228,7 +254,7 @@ Class StreamExtensions  <a class="header-action link-secondary" title="View sour
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/IO/StreamExtensions.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/IO/StreamExtensions.cs" class="edit-link">Edit this page</a>
         </div>
 
 

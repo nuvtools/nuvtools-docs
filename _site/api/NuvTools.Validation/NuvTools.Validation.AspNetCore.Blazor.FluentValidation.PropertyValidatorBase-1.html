@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class PropertyValidatorBase&lt;T&gt; | Nuv Tools Framework Docs </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class PropertyValidatorBase&lt;T&gt; | Nuv Tools Framework Docs ">
+      
+      <meta name="description" content="Base abstract validator that provides property-level validation support using FluentValidation, specifically designed for MudBlazor MudForm integration.">
+      <link rel="icon" href="../../images/icon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/NuvToolsLogoLandscape.svg" alt="Framework Docs">
+            Framework Docs
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="NuvTools.Validation.AspNetCore.Blazor.FluentValidation.PropertyValidatorBase`1">
+
+
+
+  <h1 id="NuvTools_Validation_AspNetCore_Blazor_FluentValidation_PropertyValidatorBase_1" data-uid="NuvTools.Validation.AspNetCore.Blazor.FluentValidation.PropertyValidatorBase`1" class="text-break">
+Class PropertyValidatorBase&lt;T&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation.AspNetCore.Blazor/FluentValidation/PropertyValidatorBase.cs"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="NuvTools.html">NuvTools</a>.<a class="xref" href="NuvTools.Validation.html">Validation</a>.<a class="xref" href="NuvTools.Validation.AspNetCore.html">AspNetCore</a>.<a class="xref" href="NuvTools.Validation.AspNetCore.Blazor.html">Blazor</a>.<a class="xref" href="NuvTools.Validation.AspNetCore.Blazor.FluentValidation.html">FluentValidation</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NuvTools.Validation.AspNetCore.Blazor.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Base abstract validator that provides property-level validation support
+using FluentValidation, specifically designed for MudBlazor MudForm integration.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class PropertyValidatorBase&lt;T&gt; : AbstractValidator&lt;T&gt;, IValidator&lt;T&gt;, IValidator, IEnumerable&lt;IValidationRule&gt;, IEnumerable</code></pre>
+  </div>
+
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The type of the model being validated.</p>
+</dd>
+  </dl>
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">AbstractValidator</span>&lt;T&gt;</div>
+      <div><span class="xref">PropertyValidatorBase&lt;T&gt;</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><span class="xref">IValidator</span>&lt;T&gt;</div>
+      <div><span class="xref">IValidator</span></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<span class="xref">IValidationRule</span>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <span class="xref">AbstractValidator&lt;T&gt;.Validate(T)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">AbstractValidator&lt;T&gt;.ValidateAsync(T, CancellationToken)</a>
+    </div>
+    <div>
+      <span class="xref">AbstractValidator&lt;T&gt;.Validate(ValidationContext&lt;T&gt;)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">AbstractValidator&lt;T&gt;.ValidateAsync(ValidationContext&lt;T&gt;, CancellationToken)</a>
+    </div>
+    <div>
+      <span class="xref">AbstractValidator&lt;T&gt;.CreateDescriptor()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">AbstractValidator&lt;T&gt;.RuleFor&lt;TProperty&gt;(Expression&lt;Func&lt;T, TProperty&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">AbstractValidator&lt;T&gt;.RuleForEach&lt;TElement&gt;(Expression&lt;Func&lt;T, IEnumerable&lt;TElement&gt;&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">AbstractValidator&lt;T&gt;.RuleSet(string, Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">AbstractValidator&lt;T&gt;.When(Func&lt;T, bool&gt;, Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-3">AbstractValidator&lt;T&gt;.When(Func&lt;T, ValidationContext&lt;T&gt;, bool&gt;, Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">AbstractValidator&lt;T&gt;.Unless(Func&lt;T, bool&gt;, Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-3">AbstractValidator&lt;T&gt;.Unless(Func&lt;T, ValidationContext&lt;T&gt;, bool&gt;, Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-3">AbstractValidator&lt;T&gt;.WhenAsync(Func&lt;T, CancellationToken, Task&lt;bool&gt;&gt;, Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-4">AbstractValidator&lt;T&gt;.WhenAsync(Func&lt;T, ValidationContext&lt;T&gt;, CancellationToken, Task&lt;bool&gt;&gt;, Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-3">AbstractValidator&lt;T&gt;.UnlessAsync(Func&lt;T, CancellationToken, Task&lt;bool&gt;&gt;, Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-4">AbstractValidator&lt;T&gt;.UnlessAsync(Func&lt;T, ValidationContext&lt;T&gt;, CancellationToken, Task&lt;bool&gt;&gt;, Action)</a>
+    </div>
+    <div>
+      <span class="xref">AbstractValidator&lt;T&gt;.Include(IValidator&lt;T&gt;)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">AbstractValidator&lt;T&gt;.Include&lt;TValidator&gt;(Func&lt;T, TValidator&gt;)</a>
+    </div>
+    <div>
+      <span class="xref">AbstractValidator&lt;T&gt;.GetEnumerator()</span>
+    </div>
+    <div>
+      <span class="xref">AbstractValidator&lt;T&gt;.PreValidate(ValidationContext&lt;T&gt;, ValidationResult)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractValidator&lt;T&gt;.RaiseValidationException(ValidationContext&lt;T&gt;, ValidationResult)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractValidator&lt;T&gt;.OnRuleAdded(IValidationRule&lt;T&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">AbstractValidator&lt;T&gt;.ClassLevelCascadeMode</span>
+    </div>
+    <div>
+      <span class="xref">AbstractValidator&lt;T&gt;.RuleLevelCascadeMode</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="NuvTools.Validation.Annotations.Validator.html#NuvTools_Validation_Annotations_Validator_Validate__1___0_">Validator.Validate&lt;T&gt;(T)</a>
+  </div>
+  </dd></dl>
+
+
+  <h2 id="NuvTools_Validation_AspNetCore_Blazor_FluentValidation_PropertyValidatorBase_1_examples">Examples</h2>
+  <pre><code class="lang-csharp">public class MyModelValidator : PropertyValidatorBase&lt;MyModel&gt;
+{
+    public MyModelValidator()
+    {
+        RuleFor(x =&gt; x.Email).NotEmpty().EmailAddress();
+    }
+}
+
+// In Blazor component:
+&lt;MudForm Model="@model" Validation="@(validator.ValidatePropertyAsync)"&gt;
+    &lt;MudTextField @bind-Value="model.Email" For="@(() =&gt; model.Email)" /&gt;
+&lt;/MudForm&gt;</code></pre>
+
+
+  <h2 id="NuvTools_Validation_AspNetCore_Blazor_FluentValidation_PropertyValidatorBase_1_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>MudBlazor's MudForm component expects a validation delegate with the signature
+<code>Func&lt;object, string, Task&lt;IEnumerable&lt;string&gt;&gt;&gt;</code>.
+This base class exposes the <a class="xref" href="NuvTools.Validation.AspNetCore.Blazor.FluentValidation.PropertyValidatorBase-1.html#NuvTools_Validation_AspNetCore_Blazor_FluentValidation_PropertyValidatorBase_1_ValidatePropertyAsync">ValidatePropertyAsync</a> property that
+matches this signature, enabling seamless integration with MudForm's Validation parameter.</p>
+</div>
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="NuvTools_Validation_AspNetCore_Blazor_FluentValidation_PropertyValidatorBase_1__ctor_" data-uid="NuvTools.Validation.AspNetCore.Blazor.FluentValidation.PropertyValidatorBase`1.#ctor*"></a>
+
+  <h3 id="NuvTools_Validation_AspNetCore_Blazor_FluentValidation_PropertyValidatorBase_1__ctor" data-uid="NuvTools.Validation.AspNetCore.Blazor.FluentValidation.PropertyValidatorBase`1.#ctor">
+  PropertyValidatorBase()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation.AspNetCore.Blazor/FluentValidation/PropertyValidatorBase.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected PropertyValidatorBase()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="NuvTools_Validation_AspNetCore_Blazor_FluentValidation_PropertyValidatorBase_1_ValidatePropertyAsync_" data-uid="NuvTools.Validation.AspNetCore.Blazor.FluentValidation.PropertyValidatorBase`1.ValidatePropertyAsync*"></a>
+
+  <h3 id="NuvTools_Validation_AspNetCore_Blazor_FluentValidation_PropertyValidatorBase_1_ValidatePropertyAsync" data-uid="NuvTools.Validation.AspNetCore.Blazor.FluentValidation.PropertyValidatorBase`1.ValidatePropertyAsync">
+  ValidatePropertyAsync
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation.AspNetCore.Blazor/FluentValidation/PropertyValidatorBase.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets a delegate that validates a single property asynchronously.
+This delegate is designed to be passed directly to MudBlazor's MudForm Validation parameter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Func&lt;object, string, Task&lt;IEnumerable&lt;string&gt;&gt;&gt; ValidatePropertyAsync { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-3">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;&gt;&gt;</dt>
+    <dd><p>A delegate that takes a model instance and a property name, and returns a task containing a sequence of validation error messages.
+Returns an empty collection when the property is valid.</p>
+</dd>
+  </dl>
+
+
+
+
+  <h4 class="section" id="NuvTools_Validation_AspNetCore_Blazor_FluentValidation_PropertyValidatorBase_1_ValidatePropertyAsync_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>MudForm calls this delegate automatically for each field during validation.
+Only the specified property will be evaluated by FluentValidation.</p>
+</div>
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation.AspNetCore.Blazor/FluentValidation/PropertyValidatorBase.cs" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Supported by the <a href="https://nuvtools.com" target="_blank">Nuv Tools</a>. Documentation generated by <a href="https://dotnet.github.io/docfx" target="_blank">docfx</a></span>.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

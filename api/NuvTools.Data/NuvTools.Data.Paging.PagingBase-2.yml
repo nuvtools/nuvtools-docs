@@ -17,15 +17,19 @@ items:
   fullName: NuvTools.Data.Paging.PagingBase<T, R>
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data/Paging/PagingBase.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Paging/PagingBase.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Paging
+  summary: Base class for paging results with collection data.
+  example: []
   syntax:
     content: 'public abstract class PagingBase<T, R> where T : IEnumerable<R>'
     typeParameters:
     - id: T
+      description: The type of collection (IQueryable or IEnumerable).
     - id: R
+      description: The type of items in the collection.
     content.vb: Public MustInherit Class PagingBase(Of T As IEnumerable(Of R), R)
   inheritance:
   - System.Object
@@ -55,7 +59,7 @@ items:
   fullName: NuvTools.Data.Paging.PagingBase<T, R>.PagingBase()
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data/Paging/PagingBase.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Paging/PagingBase.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Paging
@@ -78,10 +82,12 @@ items:
   fullName: NuvTools.Data.Paging.PagingBase<T, R>.PageNumber
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data/Paging/PagingBase.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Paging/PagingBase.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Paging
+  summary: Gets or sets the current page number (1-indexed).
+  example: []
   syntax:
     content: public required int PageNumber { get; set; }
     parameters: []
@@ -103,10 +109,12 @@ items:
   fullName: NuvTools.Data.Paging.PagingBase<T, R>.Total
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data/Paging/PagingBase.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Paging/PagingBase.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Paging
+  summary: Gets or sets the total number of items across all pages.
+  example: []
   syntax:
     content: public required int Total { get; set; }
     parameters: []
@@ -128,10 +136,12 @@ items:
   fullName: NuvTools.Data.Paging.PagingBase<T, R>.List
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data/Paging/PagingBase.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Paging/PagingBase.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Paging
+  summary: Gets or sets the collection of items for the current page.
+  example: []
   syntax:
     content: public required T List { get; set; }
     parameters: []

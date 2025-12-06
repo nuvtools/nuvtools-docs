@@ -22,17 +22,30 @@ items:
   fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs
   assemblies:
   - NuvTools.AspNetCore.EntityFrameworkCore
   namespace: NuvTools.AspNetCore.EntityFrameworkCore.Mapper
+  summary: >-
+    Provides a base class for service classes that require CRUD (Create, Read, Update, Delete) operations
+
+    with Entity Framework Core and AutoMapper integration.
+  remarks: >-
+    This class extends <xref href="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase%602" data-throw-if-not-resolved="false"></xref> and adds database operation capabilities
+
+    including finding, adding, updating, and removing entities with automatic DTO-to-entity conversion.
+  example: []
   syntax:
     content: 'public abstract class ServiceWithCrudBase<TContext, TDTO, TEntity, TKey> : ServiceWithMapperBase<TDTO, TEntity> where TContext : DbContext where TDTO : class where TEntity : class where TKey : notnull'
     typeParameters:
     - id: TContext
+      description: The type of the Entity Framework <xref href="Microsoft.EntityFrameworkCore.DbContext" data-throw-if-not-resolved="false"></xref>.
     - id: TDTO
+      description: The type of the Data Transfer Object (DTO).
     - id: TEntity
+      description: The type of the entity.
     - id: TKey
+      description: The type of the entity's primary key.
     content.vb: Public MustInherit Class ServiceWithCrudBase(Of TContext As DbContext, TDTO As Class, TEntity As Class, TKey) Inherits ServiceWithMapperBase(Of TDTO, TEntity)
   inheritance:
   - System.Object
@@ -68,10 +81,12 @@ items:
   fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.Context
   type: Field
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs
   assemblies:
   - NuvTools.AspNetCore.EntityFrameworkCore
   namespace: NuvTools.AspNetCore.EntityFrameworkCore.Mapper
+  summary: Gets the Entity Framework <xref href="Microsoft.EntityFrameworkCore.DbContext" data-throw-if-not-resolved="false"></xref> instance.
+  example: []
   syntax:
     content: protected readonly TContext Context
     return:
@@ -91,10 +106,19 @@ items:
   fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.ServiceWithCrudBase(TContext, AutoMapper.IMapper)
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs
   assemblies:
   - NuvTools.AspNetCore.EntityFrameworkCore
   namespace: NuvTools.AspNetCore.EntityFrameworkCore.Mapper
+  summary: >-
+    Provides a base class for service classes that require CRUD (Create, Read, Update, Delete) operations
+
+    with Entity Framework Core and AutoMapper integration.
+  remarks: >-
+    This class extends <xref href="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase%602" data-throw-if-not-resolved="false"></xref> and adds database operation capabilities
+
+    including finding, adding, updating, and removing entities with automatic DTO-to-entity conversion.
+  example: []
   syntax:
     content: protected ServiceWithCrudBase(TContext context, IMapper mapper)
     parameters:
@@ -119,17 +143,24 @@ items:
   fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.FindAsync(TKey)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs
   assemblies:
   - NuvTools.AspNetCore.EntityFrameworkCore
   namespace: NuvTools.AspNetCore.EntityFrameworkCore.Mapper
+  summary: Finds an entity by its primary key asynchronously and converts it to a DTO.
+  example: []
   syntax:
     content: public Task<TDTO?> FindAsync(TKey id)
     parameters:
     - id: id
       type: '{TKey}'
+      description: The primary key value.
     return:
       type: System.Threading.Tasks.Task{{TDTO}}
+      description: >-
+        A task that represents the asynchronous operation. The task result contains the DTO
+
+        if the entity is found; otherwise, <code>null</code>.
     content.vb: Public Function FindAsync(id As TKey) As Task(Of TDTO)
   overload: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.FindAsync*
   nameWithType.vb: ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).FindAsync(TKey)
@@ -146,17 +177,24 @@ items:
   fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.FindAsync(object[])
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs
   assemblies:
   - NuvTools.AspNetCore.EntityFrameworkCore
   namespace: NuvTools.AspNetCore.EntityFrameworkCore.Mapper
+  summary: Finds an entity by its composite key asynchronously and converts it to a DTO.
+  example: []
   syntax:
     content: public Task<TDTO?> FindAsync(object[] keys)
     parameters:
     - id: keys
       type: System.Object[]
+      description: An array of key values representing a composite key.
     return:
       type: System.Threading.Tasks.Task{{TDTO}}
+      description: >-
+        A task that represents the asynchronous operation. The task result contains the DTO
+
+        if the entity is found; otherwise, <code>null</code>.
     content.vb: Public Function FindAsync(keys As Object()) As Task(Of TDTO)
   overload: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.FindAsync*
   nameWithType.vb: ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).FindAsync(Object())
@@ -174,17 +212,24 @@ items:
   fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.FindFromExpressionAsync(System.Linq.Expressions.Expression<System.Func<System.Linq.IQueryable<TEntity>>>)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs
   assemblies:
   - NuvTools.AspNetCore.EntityFrameworkCore
   namespace: NuvTools.AspNetCore.EntityFrameworkCore.Mapper
+  summary: Finds entities using a LINQ expression asynchronously and converts them to DTOs.
+  example: []
   syntax:
     content: public Task<IEnumerable<TDTO>?> FindFromExpressionAsync(Expression<Func<IQueryable<TEntity>>> expression)
     parameters:
     - id: expression
       type: System.Linq.Expressions.Expression{System.Func{System.Linq.IQueryable{{TEntity}}}}
+      description: An expression that returns an <xref href="System.Linq.IQueryable%601" data-throw-if-not-resolved="false"></xref>.
     return:
       type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{{TDTO}}}
+      description: >-
+        A task that represents the asynchronous operation. The task result contains a collection of DTOs,
+
+        or <code>null</code> if no entities are found.
     content.vb: Public Function FindFromExpressionAsync(expression As Expression(Of Func(Of IQueryable(Of TEntity)))) As Task(Of IEnumerable(Of TDTO))
   overload: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.FindFromExpressionAsync*
   nameWithType.vb: ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).FindFromExpressionAsync(Expression(Of Func(Of IQueryable(Of TEntity))))
@@ -202,19 +247,30 @@ items:
   fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.AddAndSaveAsync(TDTO)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs
   assemblies:
   - NuvTools.AspNetCore.EntityFrameworkCore
   namespace: NuvTools.AspNetCore.EntityFrameworkCore.Mapper
+  summary: Adds a new entity to the database and saves changes asynchronously.
+  example: []
   syntax:
     content: public virtual Task<IResult<TKey>> AddAndSaveAsync(TDTO model)
     parameters:
     - id: model
       type: '{TDTO}'
+      description: The DTO representing the entity to add.
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{{TKey}}}
+      description: >-
+        A task that represents the asynchronous operation. The task result contains an <xref href="NuvTools.Common.ResultWrapper.IResult%601" data-throw-if-not-resolved="false"></xref>
+
+        with the primary key of the added entity if successful.
     content.vb: Public Overridable Function AddAndSaveAsync(model As TDTO) As Task(Of IResult(Of TKey))
   overload: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.AddAndSaveAsync*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown when <code class="paramref">model</code> is <code>null</code>.
   nameWithType.vb: ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).AddAndSaveAsync(TDTO)
   fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).AddAndSaveAsync(TDTO)
 - uid: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.UpdateAndSaveAsync(`3,`1)
@@ -229,19 +285,27 @@ items:
   fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.UpdateAndSaveAsync(TKey, TDTO)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs
   assemblies:
   - NuvTools.AspNetCore.EntityFrameworkCore
   namespace: NuvTools.AspNetCore.EntityFrameworkCore.Mapper
+  summary: Updates an existing entity in the database and saves changes asynchronously.
+  example: []
   syntax:
     content: public virtual Task<IResult> UpdateAndSaveAsync(TKey id, TDTO model)
     parameters:
     - id: id
       type: '{TKey}'
+      description: The primary key of the entity to update.
     - id: model
       type: '{TDTO}'
+      description: The DTO containing the updated values.
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+      description: >-
+        A task that represents the asynchronous operation. The task result contains an <xref href="NuvTools.Common.ResultWrapper.IResult" data-throw-if-not-resolved="false"></xref>
+
+        indicating the success or failure of the operation.
     content.vb: Public Overridable Function UpdateAndSaveAsync(id As TKey, model As TDTO) As Task(Of IResult)
   overload: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.UpdateAndSaveAsync*
   nameWithType.vb: ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).UpdateAndSaveAsync(TKey, TDTO)
@@ -258,17 +322,24 @@ items:
   fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.RemoveAndSaveAsync(TKey)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs
   assemblies:
   - NuvTools.AspNetCore.EntityFrameworkCore
   namespace: NuvTools.AspNetCore.EntityFrameworkCore.Mapper
+  summary: Removes an entity from the database and saves changes asynchronously.
+  example: []
   syntax:
     content: public virtual Task<IResult> RemoveAndSaveAsync(TKey id)
     parameters:
     - id: id
       type: '{TKey}'
+      description: The primary key of the entity to remove.
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+      description: >-
+        A task that represents the asynchronous operation. The task result contains an <xref href="NuvTools.Common.ResultWrapper.IResult" data-throw-if-not-resolved="false"></xref>
+
+        indicating the success or failure of the operation.
     content.vb: Public Overridable Function RemoveAndSaveAsync(id As TKey) As Task(Of IResult)
   overload: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.RemoveAndSaveAsync*
   nameWithType.vb: ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).RemoveAndSaveAsync(TKey)
@@ -285,10 +356,12 @@ items:
   fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.Dataset
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs
   assemblies:
   - NuvTools.AspNetCore.EntityFrameworkCore
   namespace: NuvTools.AspNetCore.EntityFrameworkCore.Mapper
+  summary: Gets the <xref href="Microsoft.EntityFrameworkCore.DbSet%601" data-throw-if-not-resolved="false"></xref> for the entity type.
+  example: []
   syntax:
     content: public DbSet<TEntity> Dataset { get; }
     parameters: []
@@ -299,6 +372,47 @@ items:
   nameWithType.vb: ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).Dataset
   fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).Dataset
 references:
+- uid: Microsoft.EntityFrameworkCore.DbContext
+  commentId: T:Microsoft.EntityFrameworkCore.DbContext
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext
+  name: DbContext
+  nameWithType: DbContext
+  fullName: Microsoft.EntityFrameworkCore.DbContext
+- uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2
+  commentId: T:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2
+  isExternal: true
+  href: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase-2.html
+  name: ServiceWithMapperBase<TDTO, TEntity>
+  nameWithType: ServiceWithMapperBase<TDTO, TEntity>
+  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>
+  nameWithType.vb: ServiceWithMapperBase(Of TDTO, TEntity)
+  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TDTO, TEntity)
+  name.vb: ServiceWithMapperBase(Of TDTO, TEntity)
+  spec.csharp:
+  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2
+    name: ServiceWithMapperBase
+    isExternal: true
+    href: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase-2.html
+  - name: <
+  - name: TDTO
+  - name: ','
+  - name: " "
+  - name: TEntity
+  - name: '>'
+  spec.vb:
+  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2
+    name: ServiceWithMapperBase
+    isExternal: true
+    href: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TDTO
+  - name: ','
+  - name: " "
+  - name: TEntity
+  - name: )
 - uid: NuvTools.AspNetCore.EntityFrameworkCore.Mapper
   commentId: N:NuvTools.AspNetCore.EntityFrameworkCore.Mapper
   isExternal: true
@@ -361,7 +475,7 @@ references:
   commentId: T:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}
   parent: NuvTools.AspNetCore.Mapper
   definition: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2
-  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   name: ServiceWithMapperBase<TDTO, TEntity>
   nameWithType: ServiceWithMapperBase<TDTO, TEntity>
   fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>
@@ -372,7 +486,7 @@ references:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2
     name: ServiceWithMapperBase
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: <
   - name: TDTO
   - name: ','
@@ -383,7 +497,7 @@ references:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2
     name: ServiceWithMapperBase
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - name: Of
   - name: " "
@@ -396,7 +510,7 @@ references:
   commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertTo``1(`2)
   parent: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}
   definition: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertTo``1(`1)
-  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   name: ConvertTo<TReturn>(TEntity)
   nameWithType: ServiceWithMapperBase<TDTO, TEntity>.ConvertTo<TReturn>(TEntity)
   fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertTo<TReturn>(TEntity)
@@ -407,7 +521,7 @@ references:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertTo``1(`2)
     name: ConvertTo
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: <
   - name: TReturn
   - name: '>'
@@ -418,7 +532,7 @@ references:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertTo``1(`2)
     name: ConvertTo
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - name: Of
   - name: " "
@@ -431,7 +545,7 @@ references:
   commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertTo``1(System.Collections.Generic.IEnumerable{`2})
   parent: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}
   definition: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertTo``1(System.Collections.Generic.IEnumerable{`1})
-  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   name: ConvertTo<TReturn>(IEnumerable<TEntity>)
   nameWithType: ServiceWithMapperBase<TDTO, TEntity>.ConvertTo<TReturn>(IEnumerable<TEntity>)
   fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertTo<TReturn>(System.Collections.Generic.IEnumerable<TEntity>)
@@ -442,7 +556,7 @@ references:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertTo``1(System.Collections.Generic.IEnumerable{`2})
     name: ConvertTo
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: <
   - name: TReturn
   - name: '>'
@@ -459,7 +573,7 @@ references:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertTo``1(System.Collections.Generic.IEnumerable{`2})
     name: ConvertTo
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - name: Of
   - name: " "
@@ -480,7 +594,7 @@ references:
   commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToEntity(`1)
   parent: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}
   definition: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToEntity(`0)
-  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   name: ConvertToEntity(TDTO)
   nameWithType: ServiceWithMapperBase<TDTO, TEntity>.ConvertToEntity(TDTO)
   fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertToEntity(TDTO)
@@ -490,7 +604,7 @@ references:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToEntity(`1)
     name: ConvertToEntity
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - name: TDTO
   - name: )
@@ -498,7 +612,7 @@ references:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToEntity(`1)
     name: ConvertToEntity
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - name: TDTO
   - name: )
@@ -506,7 +620,7 @@ references:
   commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToDTO(`2)
   parent: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}
   definition: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(`1)
-  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   name: ConvertToDTO(TEntity)
   nameWithType: ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(TEntity)
   fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(TEntity)
@@ -516,7 +630,7 @@ references:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToDTO(`2)
     name: ConvertToDTO
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - name: TEntity
   - name: )
@@ -524,7 +638,7 @@ references:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToDTO(`2)
     name: ConvertToDTO
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - name: TEntity
   - name: )
@@ -532,7 +646,7 @@ references:
   commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToDTO(System.Collections.Generic.IEnumerable{`2})
   parent: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}
   definition: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(System.Collections.Generic.IEnumerable{`1})
-  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   name: ConvertToDTO(IEnumerable<TEntity>)
   nameWithType: ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(IEnumerable<TEntity>)
   fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(System.Collections.Generic.IEnumerable<TEntity>)
@@ -543,7 +657,7 @@ references:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToDTO(System.Collections.Generic.IEnumerable{`2})
     name: ConvertToDTO
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
@@ -557,7 +671,7 @@ references:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToDTO(System.Collections.Generic.IEnumerable{`2})
     name: ConvertToDTO
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
@@ -573,7 +687,7 @@ references:
   commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToDTO(System.Collections.Generic.IList{`2})
   parent: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}
   definition: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(System.Collections.Generic.IList{`1})
-  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   name: ConvertToDTO(IList<TEntity>)
   nameWithType: ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(IList<TEntity>)
   fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(System.Collections.Generic.IList<TEntity>)
@@ -584,7 +698,7 @@ references:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToDTO(System.Collections.Generic.IList{`2})
     name: ConvertToDTO
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - uid: System.Collections.Generic.IList`1
     name: IList
@@ -598,7 +712,7 @@ references:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToDTO(System.Collections.Generic.IList{`2})
     name: ConvertToDTO
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - uid: System.Collections.Generic.IList`1
     name: IList
@@ -614,7 +728,7 @@ references:
   commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToDTO(`2[])
   parent: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}
   definition: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(`1[])
-  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   name: ConvertToDTO(TEntity[])
   nameWithType: ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(TEntity[])
   fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(TEntity[])
@@ -625,7 +739,7 @@ references:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToDTO(`2[])
     name: ConvertToDTO
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - name: TEntity
   - name: '['
@@ -635,7 +749,7 @@ references:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.ConvertToDTO(`2[])
     name: ConvertToDTO
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - name: TEntity
   - name: (
@@ -645,7 +759,7 @@ references:
   commentId: P:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{`1,`2}.Mapper
   parent: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase{{TDTO},{TEntity}}
   definition: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.Mapper
-  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   name: Mapper
   nameWithType: ServiceWithMapperBase<TDTO, TEntity>.Mapper
   fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.Mapper
@@ -877,40 +991,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2
-  commentId: T:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2
-  isExternal: true
-  href: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase-2.html
-  name: ServiceWithMapperBase<TDTO, TEntity>
-  nameWithType: ServiceWithMapperBase<TDTO, TEntity>
-  fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>
-  nameWithType.vb: ServiceWithMapperBase(Of TDTO, TEntity)
-  fullName.vb: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase(Of TDTO, TEntity)
-  name.vb: ServiceWithMapperBase(Of TDTO, TEntity)
-  spec.csharp:
-  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2
-    name: ServiceWithMapperBase
-    isExternal: true
-    href: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase-2.html
-  - name: <
-  - name: TDTO
-  - name: ','
-  - name: " "
-  - name: TEntity
-  - name: '>'
-  spec.vb:
-  - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2
-    name: ServiceWithMapperBase
-    isExternal: true
-    href: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase-2.html
-  - name: (
-  - name: Of
-  - name: " "
-  - name: TDTO
-  - name: ','
-  - name: " "
-  - name: TEntity
-  - name: )
 - uid: NuvTools.AspNetCore.Mapper
   commentId: N:NuvTools.AspNetCore.Mapper
   isExternal: true
@@ -951,7 +1031,7 @@ references:
 - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertTo``1(`1)
   commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertTo``1(`1)
   isExternal: true
-  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   name: ConvertTo<TReturn>(TEntity)
   nameWithType: ServiceWithMapperBase<TDTO, TEntity>.ConvertTo<TReturn>(TEntity)
   fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertTo<TReturn>(TEntity)
@@ -962,7 +1042,7 @@ references:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertTo``1(`1)
     name: ConvertTo
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: <
   - name: TReturn
   - name: '>'
@@ -973,7 +1053,7 @@ references:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertTo``1(`1)
     name: ConvertTo
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - name: Of
   - name: " "
@@ -985,7 +1065,7 @@ references:
 - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertTo``1(System.Collections.Generic.IEnumerable{`1})
   commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertTo``1(System.Collections.Generic.IEnumerable{`1})
   isExternal: true
-  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   name: ConvertTo<TReturn>(IEnumerable<TEntity>)
   nameWithType: ServiceWithMapperBase<TDTO, TEntity>.ConvertTo<TReturn>(IEnumerable<TEntity>)
   fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertTo<TReturn>(System.Collections.Generic.IEnumerable<TEntity>)
@@ -996,7 +1076,7 @@ references:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertTo``1(System.Collections.Generic.IEnumerable{`1})
     name: ConvertTo
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: <
   - name: TReturn
   - name: '>'
@@ -1013,7 +1093,7 @@ references:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertTo``1(System.Collections.Generic.IEnumerable{`1})
     name: ConvertTo
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - name: Of
   - name: " "
@@ -1033,7 +1113,7 @@ references:
 - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToEntity(`0)
   commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToEntity(`0)
   isExternal: true
-  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   name: ConvertToEntity(TDTO)
   nameWithType: ServiceWithMapperBase<TDTO, TEntity>.ConvertToEntity(TDTO)
   fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertToEntity(TDTO)
@@ -1043,7 +1123,7 @@ references:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToEntity(`0)
     name: ConvertToEntity
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - name: TDTO
   - name: )
@@ -1051,14 +1131,14 @@ references:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToEntity(`0)
     name: ConvertToEntity
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - name: TDTO
   - name: )
 - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(`1)
   commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(`1)
   isExternal: true
-  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   name: ConvertToDTO(TEntity)
   nameWithType: ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(TEntity)
   fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(TEntity)
@@ -1068,7 +1148,7 @@ references:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(`1)
     name: ConvertToDTO
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - name: TEntity
   - name: )
@@ -1076,14 +1156,14 @@ references:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(`1)
     name: ConvertToDTO
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - name: TEntity
   - name: )
 - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(System.Collections.Generic.IEnumerable{`1})
   commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(System.Collections.Generic.IEnumerable{`1})
   isExternal: true
-  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   name: ConvertToDTO(IEnumerable<TEntity>)
   nameWithType: ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(IEnumerable<TEntity>)
   fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(System.Collections.Generic.IEnumerable<TEntity>)
@@ -1094,7 +1174,7 @@ references:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(System.Collections.Generic.IEnumerable{`1})
     name: ConvertToDTO
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
@@ -1108,7 +1188,7 @@ references:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(System.Collections.Generic.IEnumerable{`1})
     name: ConvertToDTO
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
@@ -1123,7 +1203,7 @@ references:
 - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(System.Collections.Generic.IList{`1})
   commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(System.Collections.Generic.IList{`1})
   isExternal: true
-  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   name: ConvertToDTO(IList<TEntity>)
   nameWithType: ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(IList<TEntity>)
   fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(System.Collections.Generic.IList<TEntity>)
@@ -1134,7 +1214,7 @@ references:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(System.Collections.Generic.IList{`1})
     name: ConvertToDTO
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - uid: System.Collections.Generic.IList`1
     name: IList
@@ -1148,7 +1228,7 @@ references:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(System.Collections.Generic.IList{`1})
     name: ConvertToDTO
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - uid: System.Collections.Generic.IList`1
     name: IList
@@ -1163,7 +1243,7 @@ references:
 - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(`1[])
   commentId: M:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(`1[])
   isExternal: true
-  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   name: ConvertToDTO(TEntity[])
   nameWithType: ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(TEntity[])
   fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(TEntity[])
@@ -1174,7 +1254,7 @@ references:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(`1[])
     name: ConvertToDTO
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - name: TEntity
   - name: '['
@@ -1184,7 +1264,7 @@ references:
   - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO(`1[])
     name: ConvertToDTO
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   - name: (
   - name: TEntity
   - name: (
@@ -1193,7 +1273,7 @@ references:
 - uid: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.Mapper
   commentId: P:NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.Mapper
   isExternal: true
-  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+  href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   name: Mapper
   nameWithType: ServiceWithMapperBase<TDTO, TEntity>.Mapper
   fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.Mapper
@@ -1367,6 +1447,34 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: (
+  - name: )
+- uid: System.Linq.IQueryable`1
+  commentId: T:System.Linq.IQueryable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  name: IQueryable<T>
+  nameWithType: IQueryable<T>
+  fullName: System.Linq.IQueryable<T>
+  nameWithType.vb: IQueryable(Of T)
+  fullName.vb: System.Linq.IQueryable(Of T)
+  name.vb: IQueryable(Of T)
+  spec.csharp:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Linq.IQueryable`1
+    name: IQueryable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
   - name: )
 - uid: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.FindFromExpressionAsync*
   commentId: Overload:NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.FindFromExpressionAsync
@@ -1542,6 +1650,38 @@ references:
     name: Expressions
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.linq.expressions
+- uid: NuvTools.Common.ResultWrapper.IResult`1
+  commentId: T:NuvTools.Common.ResultWrapper.IResult`1
+  isExternal: true
+  name: IResult<T>
+  nameWithType: IResult<T>
+  fullName: NuvTools.Common.ResultWrapper.IResult<T>
+  nameWithType.vb: IResult(Of T)
+  fullName.vb: NuvTools.Common.ResultWrapper.IResult(Of T)
+  name.vb: IResult(Of T)
+  spec.csharp:
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
 - uid: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.AddAndSaveAsync*
   commentId: Overload:NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.AddAndSaveAsync
   isExternal: true
@@ -1602,6 +1742,12 @@ references:
   name: TDTO
   nameWithType: TDTO
   fullName: TDTO
+- uid: NuvTools.Common.ResultWrapper.IResult
+  commentId: T:NuvTools.Common.ResultWrapper.IResult
+  isExternal: true
+  name: IResult
+  nameWithType: IResult
+  fullName: NuvTools.Common.ResultWrapper.IResult
 - uid: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.UpdateAndSaveAsync*
   commentId: Overload:NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.UpdateAndSaveAsync
   isExternal: true
@@ -1653,19 +1799,9 @@ references:
   fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.RemoveAndSaveAsync
   nameWithType.vb: ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).RemoveAndSaveAsync
   fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).RemoveAndSaveAsync
-- uid: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.Dataset*
-  commentId: Overload:NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.Dataset
+- uid: Microsoft.EntityFrameworkCore.DbSet`1
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet`1
   isExternal: true
-  href: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase-4.html#NuvTools_AspNetCore_EntityFrameworkCore_Mapper_ServiceWithCrudBase_4_Dataset
-  name: Dataset
-  nameWithType: ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.Dataset
-  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.Dataset
-  nameWithType.vb: ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).Dataset
-  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).Dataset
-- uid: Microsoft.EntityFrameworkCore.DbSet{{TEntity}}
-  commentId: T:Microsoft.EntityFrameworkCore.DbSet{`2}
-  parent: Microsoft.EntityFrameworkCore
-  definition: Microsoft.EntityFrameworkCore.DbSet`1
   href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
   name: DbSet<TEntity>
   nameWithType: DbSet<TEntity>
@@ -1691,9 +1827,19 @@ references:
   - name: " "
   - name: TEntity
   - name: )
-- uid: Microsoft.EntityFrameworkCore.DbSet`1
-  commentId: T:Microsoft.EntityFrameworkCore.DbSet`1
+- uid: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.Dataset*
+  commentId: Overload:NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.Dataset
   isExternal: true
+  href: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase-4.html#NuvTools_AspNetCore_EntityFrameworkCore_Mapper_ServiceWithCrudBase_4_Dataset
+  name: Dataset
+  nameWithType: ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.Dataset
+  fullName: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase<TContext, TDTO, TEntity, TKey>.Dataset
+  nameWithType.vb: ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).Dataset
+  fullName.vb: NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase(Of TContext, TDTO, TEntity, TKey).Dataset
+- uid: Microsoft.EntityFrameworkCore.DbSet{{TEntity}}
+  commentId: T:Microsoft.EntityFrameworkCore.DbSet{`2}
+  parent: Microsoft.EntityFrameworkCore
+  definition: Microsoft.EntityFrameworkCore.DbSet`1
   href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1
   name: DbSet<TEntity>
   nameWithType: DbSet<TEntity>

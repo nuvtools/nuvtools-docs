@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class CompositeLocalizer | Nuv Tools Framework Docs ">
       
-      
+      <meta name="description" content="Provides a composite localization system that combines multiple  instances with support for prefix-based routing and fallback resolution.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_AspNetCore_Localization_CompositeLocalizer" data-uid="NuvTools.AspNetCore.Localization.CompositeLocalizer" class="text-break">
-Class CompositeLocalizer  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Localization/CompositeLocalizer.cs"><i class="bi bi-code-slash"></i></a>
+Class CompositeLocalizer  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Localization/CompositeLocalizer.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,9 @@ Class CompositeLocalizer  <a class="header-action link-secondary" title="View so
   <dl><dt>Assembly</dt><dd>NuvTools.AspNetCore.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Provides a composite localization system that combines multiple <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.localization.istringlocalizer">IStringLocalizer</a> instances
+with support for prefix-based routing and fallback resolution.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -146,6 +148,11 @@ Class CompositeLocalizer  <a class="header-action link-secondary" title="View so
 
 
 
+  <h2 id="NuvTools_AspNetCore_Localization_CompositeLocalizer_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>Keys can be prefixed with a localizer name followed by a colon (e.g., &quot;Errors:ValidationFailed&quot;)
+to target a specific localizer. If the prefix is not found or the key is not found in the specified
+localizer, the system falls back to searching all registered localizers.</p>
+</div>
 
 
   <h2 class="section" id="constructors">Constructors
@@ -156,10 +163,12 @@ Class CompositeLocalizer  <a class="header-action link-secondary" title="View so
 
   <h3 id="NuvTools_AspNetCore_Localization_CompositeLocalizer__ctor_System_Collections_Generic_Dictionary_System_String_Microsoft_Extensions_Localization_IStringLocalizer__Microsoft_Extensions_Logging_ILogger_NuvTools_AspNetCore_Localization_CompositeLocalizer__" data-uid="NuvTools.AspNetCore.Localization.CompositeLocalizer.#ctor(System.Collections.Generic.Dictionary{System.String,Microsoft.Extensions.Localization.IStringLocalizer},Microsoft.Extensions.Logging.ILogger{NuvTools.AspNetCore.Localization.CompositeLocalizer})">
   CompositeLocalizer(Dictionary&lt;string, IStringLocalizer&gt;, ILogger&lt;CompositeLocalizer&gt;?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Localization/CompositeLocalizer.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Localization/CompositeLocalizer.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Provides a composite localization system that combines multiple <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.localization.istringlocalizer">IStringLocalizer</a> instances
+with support for prefix-based routing and fallback resolution.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -181,6 +190,11 @@ Class CompositeLocalizer  <a class="header-action link-secondary" title="View so
 
 
 
+  <h4 class="section" id="NuvTools_AspNetCore_Localization_CompositeLocalizer__ctor_System_Collections_Generic_Dictionary_System_String_Microsoft_Extensions_Localization_IStringLocalizer__Microsoft_Extensions_Logging_ILogger_NuvTools_AspNetCore_Localization_CompositeLocalizer___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Keys can be prefixed with a localizer name followed by a colon (e.g., &quot;Errors:ValidationFailed&quot;)
+to target a specific localizer. If the prefix is not found or the key is not found in the specified
+localizer, the system falls back to searching all registered localizers.</p>
+</div>
 
 
 
@@ -193,10 +207,11 @@ Class CompositeLocalizer  <a class="header-action link-secondary" title="View so
 
   <h3 id="NuvTools_AspNetCore_Localization_CompositeLocalizer_Item_System_String_" data-uid="NuvTools.AspNetCore.Localization.CompositeLocalizer.Item(System.String)">
   this[string]
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Localization/CompositeLocalizer.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Localization/CompositeLocalizer.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the localized string for the specified key.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -206,7 +221,8 @@ Class CompositeLocalizer  <a class="header-action link-secondary" title="View so
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The localization key. Can be prefixed with a localizer name (e.g., &quot;Errors:KeyName&quot;).</p>
+</dd>
   </dl>
 
 
@@ -215,7 +231,8 @@ Class CompositeLocalizer  <a class="header-action link-secondary" title="View so
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.localization.localizedstring">LocalizedString</a></dt>
-    <dd></dd>
+    <dd><p>The localized string, or the key itself if not found.</p>
+</dd>
   </dl>
 
 
@@ -229,10 +246,11 @@ Class CompositeLocalizer  <a class="header-action link-secondary" title="View so
 
   <h3 id="NuvTools_AspNetCore_Localization_CompositeLocalizer_Item_System_String_System_Object___" data-uid="NuvTools.AspNetCore.Localization.CompositeLocalizer.Item(System.String,System.Object[])">
   this[string, object[]]
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Localization/CompositeLocalizer.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Localization/CompositeLocalizer.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the localized string for the specified key with formatting arguments.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -242,9 +260,11 @@ Class CompositeLocalizer  <a class="header-action link-secondary" title="View so
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The localization key. Can be prefixed with a localizer name (e.g., &quot;Errors:KeyName&quot;).</p>
+</dd>
     <dt><code>arguments</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
-    <dd></dd>
+    <dd><p>The formatting arguments to apply to the localized string.</p>
+</dd>
   </dl>
 
 
@@ -253,7 +273,8 @@ Class CompositeLocalizer  <a class="header-action link-secondary" title="View so
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.localization.localizedstring">LocalizedString</a></dt>
-    <dd></dd>
+    <dd><p>The formatted localized string, or the key itself if not found.</p>
+</dd>
   </dl>
 
 
@@ -271,10 +292,11 @@ Class CompositeLocalizer  <a class="header-action link-secondary" title="View so
 
   <h3 id="NuvTools_AspNetCore_Localization_CompositeLocalizer_TryGetValue_System_String_System_String__System_Object___" data-uid="NuvTools.AspNetCore.Localization.CompositeLocalizer.TryGetValue(System.String,System.String@,System.Object[])">
   TryGetValue(string, out string, params object[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Localization/CompositeLocalizer.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Localization/CompositeLocalizer.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Attempts to retrieve the localized value for the specified key.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -284,17 +306,21 @@ Class CompositeLocalizer  <a class="header-action link-secondary" title="View so
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>key</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The localization key. Can be prefixed with a localizer name (e.g., &quot;Errors:KeyName&quot;).</p>
+</dd>
     <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>When this method returns, contains the localized value if found; otherwise, the key itself.</p>
+</dd>
     <dt><code>arguments</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
-    <dd></dd>
+    <dd><p>The formatting arguments to apply to the localized string.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p><code>true</code> if the key was found and localized; otherwise, <code>false</code>.</p>
+</dd>
   </dl>
 
 
@@ -311,7 +337,7 @@ Class CompositeLocalizer  <a class="header-action link-secondary" title="View so
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Localization/CompositeLocalizer.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Localization/CompositeLocalizer.cs" class="edit-link">Edit this page</a>
         </div>
 
 

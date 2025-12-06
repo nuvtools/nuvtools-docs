@@ -30,16 +30,57 @@ items:
   fullName: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase<TUser, TRole, TIdentityKey>
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
   assemblies:
   - NuvTools.Security.Identity.EntityFrameworkCore
   namespace: NuvTools.Security.Identity.EntityFrameworkCore
+  summary: >-
+    Provides a base implementation of <xref href="Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext%603" data-throw-if-not-resolved="false"></xref> with enhanced
+
+    transaction support, execution strategies, and batch operation capabilities.
+  remarks: >-
+    <p>
+
+    This abstract base class extends <xref href="Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext%603" data-throw-if-not-resolved="false"></xref> and implements
+
+    <xref href="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands" data-throw-if-not-resolved="false"></xref> and <xref href="NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands" data-throw-if-not-resolved="false"></xref> to provide:
+
+    </p>
+
+    <ul><li>Transaction management with begin, commit, and rollback operations</li><li>Execution strategies for handling transient database failures</li><li>Convenient CRUD operations that automatically save changes and return <xref href="NuvTools.Common.ResultWrapper.IResult" data-throw-if-not-resolved="false"></xref> wrappers</li><li>Batch operations for synchronizing collections of entities</li><li>Support for composite key operations</li></ul>
+
+    <p>
+
+    All operations use the Result pattern, returning <xref href="NuvTools.Common.ResultWrapper.IResult" data-throw-if-not-resolved="false"></xref> or <xref href="NuvTools.Common.ResultWrapper.IResult%601" data-throw-if-not-resolved="false"></xref>
+
+    instead of throwing exceptions for business logic failures.
+
+    </p>
+  example:
+  - >-
+    <pre><code class="lang-csharp">public class ApplicationDbContext : IdentityDbContextBase&lt;ApplicationUser, ApplicationRole, Guid&gt;
+
+    {
+        public ApplicationDbContext(DbContextOptions&lt;ApplicationDbContext&gt; options)
+            : base(options)
+        {
+        }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            // Configure your entities here
+        }
+    }</code></pre>
   syntax:
     content: 'public abstract class IdentityDbContextBase<TUser, TRole, TIdentityKey> : IdentityDbContext<TUser, TRole, TIdentityKey>, IInfrastructure<IServiceProvider>, IDbContextDependencies, IDbSetCache, IDbContextPoolable, IResettableService, IDisposable, IAsyncDisposable, IDbContextCommands, IDbContextWithListCommands where TUser : IdentityUser<TIdentityKey> where TRole : IdentityRole<TIdentityKey> where TIdentityKey : IEquatable<TIdentityKey>'
     typeParameters:
     - id: TUser
+      description: The type representing a user in the system, must inherit from <xref href="Microsoft.AspNetCore.Identity.IdentityUser%601" data-throw-if-not-resolved="false"></xref>.
     - id: TRole
+      description: The type representing a role in the system, must inherit from <xref href="Microsoft.AspNetCore.Identity.IdentityRole%601" data-throw-if-not-resolved="false"></xref>.
     - id: TIdentityKey
+      description: The type of the primary key for users and roles, must implement <xref href="System.IEquatable%601" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public MustInherit Class IdentityDbContextBase(Of TUser As IdentityUser(Of TIdentityKey), TRole As IdentityRole(Of TIdentityKey), TIdentityKey As IEquatable(Of TIdentityKey)) Inherits IdentityDbContext(Of TUser, TRole, TIdentityKey) Implements IInfrastructure(Of IServiceProvider), IDbContextDependencies, IDbSetCache, IDbContextPoolable, IResettableService, IDisposable, IAsyncDisposable, IDbContextCommands, IDbContextWithListCommands
   inheritance:
   - System.Object
@@ -137,10 +178,13 @@ items:
   fullName: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase<TUser, TRole, TIdentityKey>.IdentityDbContextBase()
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
   assemblies:
   - NuvTools.Security.Identity.EntityFrameworkCore
   namespace: NuvTools.Security.Identity.EntityFrameworkCore
+  summary: Initializes a new instance of the <xref href="NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase%603" data-throw-if-not-resolved="false"></xref> class.
+  remarks: This parameterless constructor is typically used for design-time tools and migrations.
+  example: []
   syntax:
     content: protected IdentityDbContextBase()
     content.vb: Protected Sub New()
@@ -160,15 +204,22 @@ items:
   fullName: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase<TUser, TRole, TIdentityKey>.IdentityDbContextBase(Microsoft.EntityFrameworkCore.DbContextOptions)
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
   assemblies:
   - NuvTools.Security.Identity.EntityFrameworkCore
   namespace: NuvTools.Security.Identity.EntityFrameworkCore
+  summary: >-
+    Initializes a new instance of the <xref href="NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase%603" data-throw-if-not-resolved="false"></xref> class
+
+    with the specified options.
+  remarks: This constructor is used for runtime configuration and dependency injection scenarios.
+  example: []
   syntax:
     content: protected IdentityDbContextBase(DbContextOptions options)
     parameters:
     - id: options
       type: Microsoft.EntityFrameworkCore.DbContextOptions
+      description: The options to be used by the <xref href="Microsoft.EntityFrameworkCore.DbContext" data-throw-if-not-resolved="false"></xref>.
     content.vb: Protected Sub New(options As DbContextOptions)
   overload: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.#ctor*
   nameWithType.vb: IdentityDbContextBase(Of TUser, TRole, TIdentityKey).New(DbContextOptions)
@@ -186,18 +237,28 @@ items:
   fullName: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase<TUser, TRole, TIdentityKey>.BeginTransactionAsync(System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
   assemblies:
   - NuvTools.Security.Identity.EntityFrameworkCore
   namespace: NuvTools.Security.Identity.EntityFrameworkCore
+  summary: Asynchronously begins a new database transaction.
+  remarks: >-
+    Transactions allow multiple database operations to be executed as a single atomic unit.
+
+    Use <xref href="NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase%603.CommitTransactionAsync(System.Threading.CancellationToken)" data-throw-if-not-resolved="false"></xref> to commit the transaction or <xref href="NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase%603.RollbackTransactionAsync(System.Threading.CancellationToken)" data-throw-if-not-resolved="false"></xref> to roll it back.
   example: []
   syntax:
     content: public Task<IDbContextTransaction> BeginTransactionAsync(CancellationToken cancellationToken = default)
     parameters:
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: A <xref href="System.Threading.CancellationToken" data-throw-if-not-resolved="false"></xref> to observe while waiting for the task to complete.
     return:
       type: System.Threading.Tasks.Task{Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction}
+      description: >-
+        A task that represents the asynchronous operation. The task result contains an <xref href="Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction" data-throw-if-not-resolved="false"></xref>
+
+        that represents the started transaction.
     content.vb: Public Function BeginTransactionAsync(cancellationToken As CancellationToken = Nothing) As Task(Of IDbContextTransaction)
   overload: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.BeginTransactionAsync*
   implements:
@@ -216,20 +277,28 @@ items:
   fullName: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase<TUser, TRole, TIdentityKey>.ExecuteWithStrategyAsync(System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task>, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
   assemblies:
   - NuvTools.Security.Identity.EntityFrameworkCore
   namespace: NuvTools.Security.Identity.EntityFrameworkCore
+  summary: Executes an action within the configured execution strategy to handle transient database failures.
+  remarks: >-
+    The execution strategy automatically retries operations that fail due to transient errors,
+
+    such as temporary network issues or database deadlocks, according to the configured retry policy.
   example: []
   syntax:
     content: public Task ExecuteWithStrategyAsync(Func<CancellationToken, Task> action, CancellationToken cancellationToken = default)
     parameters:
     - id: action
       type: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task}
+      description: The action to execute that takes a <xref href="System.Threading.CancellationToken" data-throw-if-not-resolved="false"></xref> and returns a <xref href="System.Threading.Tasks.Task" data-throw-if-not-resolved="false"></xref>.
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: A <xref href="System.Threading.CancellationToken" data-throw-if-not-resolved="false"></xref> to observe while waiting for the task to complete.
     return:
       type: System.Threading.Tasks.Task
+      description: A task that represents the asynchronous operation.
     content.vb: Public Function ExecuteWithStrategyAsync(action As Func(Of CancellationToken, Task), cancellationToken As CancellationToken = Nothing) As Task
   overload: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.ExecuteWithStrategyAsync*
   implements:
@@ -249,22 +318,31 @@ items:
   fullName: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase<TUser, TRole, TIdentityKey>.ExecuteWithStrategyAsync<T>(System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<T>>, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
   assemblies:
   - NuvTools.Security.Identity.EntityFrameworkCore
   namespace: NuvTools.Security.Identity.EntityFrameworkCore
+  summary: Executes a function within the configured execution strategy to handle transient database failures.
+  remarks: >-
+    The execution strategy automatically retries operations that fail due to transient errors,
+
+    such as temporary network issues or database deadlocks, according to the configured retry policy.
   example: []
   syntax:
     content: public Task<T> ExecuteWithStrategyAsync<T>(Func<CancellationToken, Task<T>> action, CancellationToken cancellationToken = default)
     parameters:
     - id: action
       type: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{{T}}}
+      description: The function to execute that takes a <xref href="System.Threading.CancellationToken" data-throw-if-not-resolved="false"></xref> and returns a <xref href="System.Threading.Tasks.Task%601" data-throw-if-not-resolved="false"></xref>.
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: A <xref href="System.Threading.CancellationToken" data-throw-if-not-resolved="false"></xref> to observe while waiting for the task to complete.
     typeParameters:
     - id: T
+      description: The type of the result returned by the function.
     return:
       type: System.Threading.Tasks.Task{{T}}
+      description: A task that represents the asynchronous operation. The task result contains the value returned by the function.
     content.vb: Public Function ExecuteWithStrategyAsync(Of T)(action As Func(Of CancellationToken, Task(Of T)), cancellationToken As CancellationToken = Nothing) As Task(Of T)
   overload: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.ExecuteWithStrategyAsync*
   implements:
@@ -284,20 +362,31 @@ items:
   fullName: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase<TUser, TRole, TIdentityKey>.CommitTransactionAsync(System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
   assemblies:
   - NuvTools.Security.Identity.EntityFrameworkCore
   namespace: NuvTools.Security.Identity.EntityFrameworkCore
+  summary: Asynchronously commits all changes made in the current transaction to the database.
+  remarks: >-
+    This method should be called after <xref href="NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase%603.BeginTransactionAsync(System.Threading.CancellationToken)" data-throw-if-not-resolved="false"></xref> to persist the changes.
+
+    If the commit fails, the transaction remains active and can be rolled back.
   example: []
   syntax:
     content: public Task CommitTransactionAsync(CancellationToken cancellationToken = default)
     parameters:
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: A <xref href="System.Threading.CancellationToken" data-throw-if-not-resolved="false"></xref> to observe while waiting for the task to complete.
     return:
       type: System.Threading.Tasks.Task
+      description: A task that represents the asynchronous operation.
     content.vb: Public Function CommitTransactionAsync(cancellationToken As CancellationToken = Nothing) As Task
   overload: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.CommitTransactionAsync*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: Thrown when there is no active transaction.
   implements:
   - NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CommitTransactionAsync(System.Threading.CancellationToken)
   nameWithType.vb: IdentityDbContextBase(Of TUser, TRole, TIdentityKey).CommitTransactionAsync(CancellationToken)
@@ -314,20 +403,31 @@ items:
   fullName: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase<TUser, TRole, TIdentityKey>.RollbackTransactionAsync(System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
   assemblies:
   - NuvTools.Security.Identity.EntityFrameworkCore
   namespace: NuvTools.Security.Identity.EntityFrameworkCore
+  summary: Asynchronously rolls back all changes made in the current transaction.
+  remarks: >-
+    This method discards all changes made within the current transaction and closes it.
+
+    After rolling back, you need to call <xref href="NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase%603.BeginTransactionAsync(System.Threading.CancellationToken)" data-throw-if-not-resolved="false"></xref> to start a new transaction.
   example: []
   syntax:
     content: public Task RollbackTransactionAsync(CancellationToken cancellationToken = default)
     parameters:
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: A <xref href="System.Threading.CancellationToken" data-throw-if-not-resolved="false"></xref> to observe while waiting for the task to complete.
     return:
       type: System.Threading.Tasks.Task
+      description: A task that represents the asynchronous operation.
     content.vb: Public Function RollbackTransactionAsync(cancellationToken As CancellationToken = Nothing) As Task
   overload: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.RollbackTransactionAsync*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: Thrown when there is no active transaction.
   implements:
   - NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RollbackTransactionAsync(System.Threading.CancellationToken)
   nameWithType.vb: IdentityDbContextBase(Of TUser, TRole, TIdentityKey).RollbackTransactionAsync(CancellationToken)
@@ -344,23 +444,36 @@ items:
   fullName: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase<TUser, TRole, TIdentityKey>.AddAndSaveAsync<TEntity, TKey>(TEntity, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
   assemblies:
   - NuvTools.Security.Identity.EntityFrameworkCore
   namespace: NuvTools.Security.Identity.EntityFrameworkCore
+  summary: Asynchronously adds an entity to the database and saves the changes, returning the generated primary key.
+  remarks: >-
+    This method automatically calls <xref href="Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(System.Threading.CancellationToken)" data-throw-if-not-resolved="false"></xref> after adding the entity.
+
+    The result will contain the primary key value generated by the database (for identity columns or sequences).
   example: []
   syntax:
     content: 'public Task<IResult<TKey>> AddAndSaveAsync<TEntity, TKey>(TEntity entity, CancellationToken cancellationToken = default) where TEntity : class'
     parameters:
     - id: entity
       type: '{TEntity}'
+      description: The entity instance to add to the database.
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: A <xref href="System.Threading.CancellationToken" data-throw-if-not-resolved="false"></xref> to observe while waiting for the task to complete.
     typeParameters:
     - id: TEntity
+      description: The type of entity to add. Must be a reference type.
     - id: TKey
+      description: The type of the primary key.
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{{TKey}}}
+      description: >-
+        A task that represents the asynchronous operation. The task result contains an <xref href="NuvTools.Common.ResultWrapper.IResult%601" data-throw-if-not-resolved="false"></xref>
+
+        with the generated primary key value if successful.
     content.vb: Public Function AddAndSaveAsync(Of TEntity As Class, TKey)(entity As TEntity, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of TKey))
   overload: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.AddAndSaveAsync*
   implements:
@@ -380,22 +493,34 @@ items:
   fullName: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase<TUser, TRole, TIdentityKey>.UpdateAndSaveAsync<TEntity>(TEntity, params object[])
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
   assemblies:
   - NuvTools.Security.Identity.EntityFrameworkCore
   namespace: NuvTools.Security.Identity.EntityFrameworkCore
+  summary: Asynchronously updates an existing entity in the database and saves the changes.
+  remarks: >-
+    This method finds the entity by its primary key, updates its values, and automatically saves the changes.
+
+    If the entity is not found, the operation will fail and return an unsuccessful result.
   example: []
   syntax:
     content: 'public Task<IResult> UpdateAndSaveAsync<TEntity>(TEntity entity, params object[] keyValues) where TEntity : class'
     parameters:
     - id: entity
       type: '{TEntity}'
+      description: The entity instance with updated values.
     - id: keyValues
       type: System.Object[]
+      description: The primary key values used to locate the existing entity in the database.
     typeParameters:
     - id: TEntity
+      description: The type of entity to update. Must be a reference type.
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+      description: >-
+        A task that represents the asynchronous operation. The task result contains an <xref href="NuvTools.Common.ResultWrapper.IResult" data-throw-if-not-resolved="false"></xref>
+
+        indicating whether the update was successful.
     content.vb: Public Function UpdateAndSaveAsync(Of TEntity As Class)(entity As TEntity, ParamArray keyValues As Object()) As Task(Of IResult)
   overload: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.UpdateAndSaveAsync*
   implements:
@@ -415,24 +540,37 @@ items:
   fullName: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase<TUser, TRole, TIdentityKey>.UpdateAndSaveAsync<TEntity>(TEntity, object[], System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
   assemblies:
   - NuvTools.Security.Identity.EntityFrameworkCore
   namespace: NuvTools.Security.Identity.EntityFrameworkCore
+  summary: Asynchronously updates an existing entity in the database and saves the changes.
+  remarks: >-
+    This method finds the entity by its primary key, updates its values, and automatically saves the changes.
+
+    If the entity is not found, the operation will fail and return an unsuccessful result.
   example: []
   syntax:
     content: 'public Task<IResult> UpdateAndSaveAsync<TEntity>(TEntity entity, object[] keyValues, CancellationToken cancellationToken = default) where TEntity : class'
     parameters:
     - id: entity
       type: '{TEntity}'
+      description: The entity instance with updated values.
     - id: keyValues
       type: System.Object[]
+      description: The primary key values used to locate the existing entity in the database.
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: A <xref href="System.Threading.CancellationToken" data-throw-if-not-resolved="false"></xref> to observe while waiting for the task to complete.
     typeParameters:
     - id: TEntity
+      description: The type of entity to update. Must be a reference type.
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+      description: >-
+        A task that represents the asynchronous operation. The task result contains an <xref href="NuvTools.Common.ResultWrapper.IResult" data-throw-if-not-resolved="false"></xref>
+
+        indicating whether the update was successful.
     content.vb: Public Function UpdateAndSaveAsync(Of TEntity As Class)(entity As TEntity, keyValues As Object(), cancellationToken As CancellationToken = Nothing) As Task(Of IResult)
   overload: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.UpdateAndSaveAsync*
   implements:
@@ -452,20 +590,31 @@ items:
   fullName: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase<TUser, TRole, TIdentityKey>.RemoveAndSaveAsync<TEntity>(params object[])
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
   assemblies:
   - NuvTools.Security.Identity.EntityFrameworkCore
   namespace: NuvTools.Security.Identity.EntityFrameworkCore
+  summary: Asynchronously removes an entity from the database by its primary key and saves the changes.
+  remarks: >-
+    This method finds the entity by its primary key, removes it, and automatically saves the changes.
+
+    If the entity is not found, the operation may still succeed (idempotent deletion).
   example: []
   syntax:
     content: 'public Task<IResult> RemoveAndSaveAsync<TEntity>(params object[] keyValues) where TEntity : class'
     parameters:
     - id: keyValues
       type: System.Object[]
+      description: The primary key values identifying the entity to remove.
     typeParameters:
     - id: TEntity
+      description: The type of entity to remove. Must be a reference type.
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+      description: >-
+        A task that represents the asynchronous operation. The task result contains an <xref href="NuvTools.Common.ResultWrapper.IResult" data-throw-if-not-resolved="false"></xref>
+
+        indicating whether the removal was successful.
     content.vb: Public Function RemoveAndSaveAsync(Of TEntity As Class)(ParamArray keyValues As Object()) As Task(Of IResult)
   overload: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.RemoveAndSaveAsync*
   implements:
@@ -485,22 +634,34 @@ items:
   fullName: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase<TUser, TRole, TIdentityKey>.RemoveAndSaveAsync<TEntity>(object[], System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
   assemblies:
   - NuvTools.Security.Identity.EntityFrameworkCore
   namespace: NuvTools.Security.Identity.EntityFrameworkCore
+  summary: Asynchronously removes an entity from the database by its primary key and saves the changes.
+  remarks: >-
+    This method finds the entity by its primary key, removes it, and automatically saves the changes.
+
+    If the entity is not found, the operation may still succeed (idempotent deletion).
   example: []
   syntax:
     content: 'public Task<IResult> RemoveAndSaveAsync<TEntity>(object[] keyValues, CancellationToken cancellationToken = default) where TEntity : class'
     parameters:
     - id: keyValues
       type: System.Object[]
+      description: The primary key values identifying the entity to remove.
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: A <xref href="System.Threading.CancellationToken" data-throw-if-not-resolved="false"></xref> to observe while waiting for the task to complete.
     typeParameters:
     - id: TEntity
+      description: The type of entity to remove. Must be a reference type.
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+      description: >-
+        A task that represents the asynchronous operation. The task result contains an <xref href="NuvTools.Common.ResultWrapper.IResult" data-throw-if-not-resolved="false"></xref>
+
+        indicating whether the removal was successful.
     content.vb: Public Function RemoveAndSaveAsync(Of TEntity As Class)(keyValues As Object(), cancellationToken As CancellationToken = Nothing) As Task(Of IResult)
   overload: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.RemoveAndSaveAsync*
   implements:
@@ -520,22 +681,37 @@ items:
   fullName: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase<TUser, TRole, TIdentityKey>.AddAndSaveWithCompositeKeyAsync<TEntity>(TEntity, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
   assemblies:
   - NuvTools.Security.Identity.EntityFrameworkCore
   namespace: NuvTools.Security.Identity.EntityFrameworkCore
+  summary: >-
+    Asynchronously adds an entity with a composite key to the database and saves the changes,
+
+    returning the composite key values.
+  remarks: >-
+    This method is used for entities that have composite primary keys (multiple columns forming the primary key).
+
+    The returned array contains the key values in the order they are defined in the entity configuration.
   example: []
   syntax:
     content: 'public Task<IResult<object[]>> AddAndSaveWithCompositeKeyAsync<TEntity>(TEntity entity, CancellationToken cancellationToken = default) where TEntity : class'
     parameters:
     - id: entity
       type: '{TEntity}'
+      description: The entity instance to add to the database.
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: A <xref href="System.Threading.CancellationToken" data-throw-if-not-resolved="false"></xref> to observe while waiting for the task to complete.
     typeParameters:
     - id: TEntity
+      description: The type of entity to add. Must be a reference type.
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.Object[]}}
+      description: >-
+        A task that represents the asynchronous operation. The task result contains an <xref href="NuvTools.Common.ResultWrapper.IResult%601" data-throw-if-not-resolved="false"></xref>
+
+        with an array of composite key values if successful.
     content.vb: Public Function AddAndSaveWithCompositeKeyAsync(Of TEntity As Class)(entity As TEntity, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of Object()))
   overload: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.AddAndSaveWithCompositeKeyAsync*
   implements:
@@ -555,44 +731,61 @@ items:
   fullName: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase<TUser, TRole, TIdentityKey>.SyncFromListAsync<TEntity, TKey>(System.Collections.Generic.IEnumerable<TEntity>, System.Func<TEntity, TKey>, System.Linq.Expressions.Expression<System.Func<TEntity, bool>>?, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
   assemblies:
   - NuvTools.Security.Identity.EntityFrameworkCore
   namespace: NuvTools.Security.Identity.EntityFrameworkCore
-  summary: Synchronizes a DbSet with a provided list by adding, updating, or removing entities.
-  remarks: >-
-    This method adds entities in the list that are not in the database, updates entities that exist in both,
+  summary: >-
+    Asynchronously synchronizes a collection of entities with the database by adding new entities,
 
-    and removes entities in the database that are not in the list.
+    updating existing ones, and removing entities not present in the collection.
+  remarks: >-
+    <p>
+
+    This method performs a full synchronization:
+
+    </p>
+
+    <ul><li>Entities in the collection but not in the database are added</li><li>Entities in both the collection and database are updated with values from the collection</li><li>Entities in the database (matching the filter) but not in the collection are removed</li></ul>
+
+    <p>
+
+    This is useful for maintaining master-detail relationships or synchronizing complete lists.
+
+    </p>
   example:
   - >-
-    await context.SyncFromListAsync(
-        updatedEmployees,
-        e =&gt; e.Id,
-        e =&gt; e.IsActive
-    );
+    <pre><code class="lang-csharp">// Synchronize user roles - adds new, updates existing, removes missing
+
+    var userRoles = newRoleIds.Select(roleId =&gt; new IdentityUserRole&lt;Guid&gt; { UserId = userId, RoleId = roleId });
+
+    await context.SyncFromListAsync(userRoles, ur =&gt; ur.RoleId, ur =&gt; ur.UserId == userId);</code></pre>
   syntax:
     content: 'public Task<IResult> SyncFromListAsync<TEntity, TKey>(IEnumerable<TEntity> entities, Func<TEntity, TKey> keySelector, Expression<Func<TEntity, bool>>? filter = null, CancellationToken cancellationToken = default) where TEntity : class where TKey : notnull'
     parameters:
     - id: entities
       type: System.Collections.Generic.IEnumerable{{TEntity}}
-      description: The list of entities to synchronize with the database.
+      description: The collection of entities to synchronize with the database.
     - id: keySelector
       type: System.Func{{TEntity},{TKey}}
-      description: A function to select the key for matching entities.
+      description: A function to extract the key from an entity for comparison.
     - id: filter
       type: System.Linq.Expressions.Expression{System.Func{{TEntity},System.Boolean}}
-      description: An optional filter predicate to apply to the database entities.
+      description: An optional filter expression to limit which database entities are considered for synchronization.
     - id: cancellationToken
       type: System.Threading.CancellationToken
-      description: A token to monitor for cancellation requests.
+      description: A <xref href="System.Threading.CancellationToken" data-throw-if-not-resolved="false"></xref> to observe while waiting for the task to complete.
     typeParameters:
     - id: TEntity
-      description: The type of the entity.
+      description: The type of entity to synchronize. Must be a reference type.
     - id: TKey
-      description: The type of the key used to uniquely identify entities.
+      description: The type of the key used to identify entities. Must be non-nullable.
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+      description: >-
+        A task that represents the asynchronous operation. The task result contains an <xref href="NuvTools.Common.ResultWrapper.IResult" data-throw-if-not-resolved="false"></xref>
+
+        indicating whether the synchronization was successful.
     content.vb: Public Function SyncFromListAsync(Of TEntity As Class, TKey)(entities As IEnumerable(Of TEntity), keySelector As Func(Of TEntity, TKey), filter As Expression(Of Func(Of TEntity, Boolean)) = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of IResult)
   overload: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.SyncFromListAsync*
   implements:
@@ -612,44 +805,58 @@ items:
   fullName: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase<TUser, TRole, TIdentityKey>.AddOrUpdateFromListAsync<TEntity, TKey>(System.Collections.Generic.IEnumerable<TEntity>, System.Func<TEntity, TKey>, System.Linq.Expressions.Expression<System.Func<TEntity, bool>>?, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
   assemblies:
   - NuvTools.Security.Identity.EntityFrameworkCore
   namespace: NuvTools.Security.Identity.EntityFrameworkCore
-  summary: Synchronizes a DbSet with a provided list by adding or updating entities, without removing any entities.
+  summary: Asynchronously adds new entities from a collection or updates existing ones, without removing any entities.
   remarks: >-
-    This method adds entities in the list that are not in the database and updates entities that exist in both.
+    <p>
 
-    It does not remove any entities from the database.
+    This method performs an upsert operation:
+
+    </p>
+
+    <ul><li>Entities not found in the database are added</li><li>Entities found in the database are updated with values from the collection</li><li>No entities are removed from the database</li></ul>
+
+    <p>
+
+    This is useful when you want to ensure certain entities exist and are up-to-date without deleting others.
+
+    </p>
   example:
   - >-
-    await context.AddOrUpdateFromListAsync(
-        updatedProducts,
-        p =&gt; p.ProductCode,
-        p =&gt; p.IsActive
-    );
+    <pre><code class="lang-csharp">// Add or update permissions without removing existing ones
+
+    var permissions = new[] { "Read", "Write", "Execute" }.Select(p =&gt; new Permission { Name = p });
+
+    await context.AddOrUpdateFromListAsync(permissions, p =&gt; p.Name);</code></pre>
   syntax:
     content: 'public Task<IResult> AddOrUpdateFromListAsync<TEntity, TKey>(IEnumerable<TEntity> entities, Func<TEntity, TKey> keySelector, Expression<Func<TEntity, bool>>? filter = null, CancellationToken cancellationToken = default) where TEntity : class where TKey : notnull'
     parameters:
     - id: entities
       type: System.Collections.Generic.IEnumerable{{TEntity}}
-      description: The list of entities to synchronize with the database.
+      description: The collection of entities to add or update in the database.
     - id: keySelector
       type: System.Func{{TEntity},{TKey}}
-      description: A function to select the key for matching entities.
+      description: A function to extract the key from an entity for comparison.
     - id: filter
       type: System.Linq.Expressions.Expression{System.Func{{TEntity},System.Boolean}}
-      description: An optional filter predicate to apply to the database entities.
+      description: An optional filter expression to limit which database entities are considered for matching.
     - id: cancellationToken
       type: System.Threading.CancellationToken
-      description: A token to monitor for cancellation requests.
+      description: A <xref href="System.Threading.CancellationToken" data-throw-if-not-resolved="false"></xref> to observe while waiting for the task to complete.
     typeParameters:
     - id: TEntity
-      description: The type of the entity.
+      description: The type of entity to add or update. Must be a reference type.
     - id: TKey
-      description: The type of the key used to uniquely identify entities.
+      description: The type of the key used to identify entities. Must be non-nullable.
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+      description: >-
+        A task that represents the asynchronous operation. The task result contains an <xref href="NuvTools.Common.ResultWrapper.IResult" data-throw-if-not-resolved="false"></xref>
+
+        indicating whether the operation was successful.
     content.vb: Public Function AddOrUpdateFromListAsync(Of TEntity As Class, TKey)(entities As IEnumerable(Of TEntity), keySelector As Func(Of TEntity, TKey), filter As Expression(Of Func(Of TEntity, Boolean)) = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of IResult)
   overload: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.AddOrUpdateFromListAsync*
   implements:
@@ -669,44 +876,61 @@ items:
   fullName: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase<TUser, TRole, TIdentityKey>.AddOrRemoveFromListAsync<TEntity, TKey>(System.Collections.Generic.IEnumerable<TEntity>, System.Func<TEntity, TKey>, System.Linq.Expressions.Expression<System.Func<TEntity, bool>>?, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
   assemblies:
   - NuvTools.Security.Identity.EntityFrameworkCore
   namespace: NuvTools.Security.Identity.EntityFrameworkCore
-  summary: Synchronizes a DbSet with a provided list by adding or removing entities, without updating any entities.
-  remarks: >-
-    This method adds entities in the list that are not in the database and removes entities in the database
+  summary: >-
+    Asynchronously adds new entities from a collection or removes existing ones that are not in the collection,
 
-    that are not in the list. It does not update any entities.
+    without updating existing entities.
+  remarks: >-
+    <p>
+
+    This method performs selective add/remove operations:
+
+    </p>
+
+    <ul><li>Entities in the collection but not in the database are added</li><li>Entities in the database (matching the filter) but not in the collection are removed</li><li>Existing entities that are in both the collection and database are left unchanged (not updated)</li></ul>
+
+    <p>
+
+    This is useful when you only care about the presence of entities, not their current values.
+
+    </p>
   example:
   - >-
-    await context.AddOrRemoveFromListAsync(
-        updatedOrders,
-        o =&gt; o.OrderId,
-        o =&gt; o.IsPending
-    );
+    <pre><code class="lang-csharp">// Ensure specific tags exist for a post without updating existing tag data
+
+    var tags = new[] { "C#", "ASP.NET", "EF Core" }.Select(t =&gt; new Tag { Name = t, PostId = postId });
+
+    await context.AddOrRemoveFromListAsync(tags, t =&gt; t.Name, t =&gt; t.PostId == postId);</code></pre>
   syntax:
     content: 'public Task<IResult> AddOrRemoveFromListAsync<TEntity, TKey>(IEnumerable<TEntity> entities, Func<TEntity, TKey> keySelector, Expression<Func<TEntity, bool>>? filter = null, CancellationToken cancellationToken = default) where TEntity : class where TKey : notnull'
     parameters:
     - id: entities
       type: System.Collections.Generic.IEnumerable{{TEntity}}
-      description: The list of entities to synchronize with the database.
+      description: The collection of entities to ensure exist in the database.
     - id: keySelector
       type: System.Func{{TEntity},{TKey}}
-      description: A function to select the key for matching entities.
+      description: A function to extract the key from an entity for comparison.
     - id: filter
       type: System.Linq.Expressions.Expression{System.Func{{TEntity},System.Boolean}}
-      description: An optional filter predicate to apply to the database entities.
+      description: An optional filter expression to limit which database entities are considered for removal.
     - id: cancellationToken
       type: System.Threading.CancellationToken
-      description: A token to monitor for cancellation requests.
+      description: A <xref href="System.Threading.CancellationToken" data-throw-if-not-resolved="false"></xref> to observe while waiting for the task to complete.
     typeParameters:
     - id: TEntity
-      description: The type of the entity.
+      description: The type of entity to add or remove. Must be a reference type.
     - id: TKey
-      description: The type of the key used to uniquely identify entities.
+      description: The type of the key used to identify entities. Must be non-nullable.
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+      description: >-
+        A task that represents the asynchronous operation. The task result contains an <xref href="NuvTools.Common.ResultWrapper.IResult" data-throw-if-not-resolved="false"></xref>
+
+        indicating whether the operation was successful.
     content.vb: Public Function AddOrRemoveFromListAsync(Of TEntity As Class, TKey)(entities As IEnumerable(Of TEntity), keySelector As Func(Of TEntity, TKey), filter As Expression(Of Func(Of TEntity, Boolean)) = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of IResult)
   overload: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.AddOrRemoveFromListAsync*
   implements:
@@ -726,16 +950,19 @@ items:
   fullName: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase<TUser, TRole, TIdentityKey>.CurrentTransaction
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs
   assemblies:
   - NuvTools.Security.Identity.EntityFrameworkCore
   namespace: NuvTools.Security.Identity.EntityFrameworkCore
+  summary: Gets the current active transaction, or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> if no transaction is active.
+  remarks: Use this property to check whether a transaction is currently active before performing transaction-specific operations.
   example: []
   syntax:
     content: public IDbContextTransaction? CurrentTransaction { get; }
     parameters: []
     return:
       type: Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction
+      description: An <xref href="Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction" data-throw-if-not-resolved="false"></xref> representing the current transaction, or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> if no transaction has been started.
     content.vb: Public ReadOnly Property CurrentTransaction As IDbContextTransaction
   overload: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.CurrentTransaction*
   implements:
@@ -743,6 +970,175 @@ items:
   nameWithType.vb: IdentityDbContextBase(Of TUser, TRole, TIdentityKey).CurrentTransaction
   fullName.vb: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase(Of TUser, TRole, TIdentityKey).CurrentTransaction
 references:
+- uid: Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext`3
+  commentId: T:Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext`3
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identitydbcontext-3
+  name: IdentityDbContext<TUser, TRole, TKey>
+  nameWithType: IdentityDbContext<TUser, TRole, TKey>
+  fullName: Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext<TUser, TRole, TKey>
+  nameWithType.vb: IdentityDbContext(Of TUser, TRole, TKey)
+  fullName.vb: Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext(Of TUser, TRole, TKey)
+  name.vb: IdentityDbContext(Of TUser, TRole, TKey)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext`3
+    name: IdentityDbContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identitydbcontext-3
+  - name: <
+  - name: TUser
+  - name: ','
+  - name: " "
+  - name: TRole
+  - name: ','
+  - name: " "
+  - name: TKey
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext`3
+    name: IdentityDbContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identitydbcontext-3
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TUser
+  - name: ','
+  - name: " "
+  - name: TRole
+  - name: ','
+  - name: " "
+  - name: TKey
+  - name: )
+- uid: Microsoft.AspNetCore.Identity.IdentityUser`1
+  commentId: T:Microsoft.AspNetCore.Identity.IdentityUser`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1
+  name: IdentityUser<TKey>
+  nameWithType: IdentityUser<TKey>
+  fullName: Microsoft.AspNetCore.Identity.IdentityUser<TKey>
+  nameWithType.vb: IdentityUser(Of TKey)
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityUser(Of TKey)
+  name.vb: IdentityUser(Of TKey)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Identity.IdentityUser`1
+    name: IdentityUser
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1
+  - name: <
+  - name: TKey
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Identity.IdentityUser`1
+    name: IdentityUser
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: )
+- uid: Microsoft.AspNetCore.Identity.IdentityRole`1
+  commentId: T:Microsoft.AspNetCore.Identity.IdentityRole`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityrole-1
+  name: IdentityRole<TKey>
+  nameWithType: IdentityRole<TKey>
+  fullName: Microsoft.AspNetCore.Identity.IdentityRole<TKey>
+  nameWithType.vb: IdentityRole(Of TKey)
+  fullName.vb: Microsoft.AspNetCore.Identity.IdentityRole(Of TKey)
+  name.vb: IdentityRole(Of TKey)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Identity.IdentityRole`1
+    name: IdentityRole
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityrole-1
+  - name: <
+  - name: TKey
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Identity.IdentityRole`1
+    name: IdentityRole
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityrole-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: )
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
+  commentId: T:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
+  parent: NuvTools.Data.EntityFrameworkCore.Context
+  isExternal: true
+  name: IDbContextCommands
+  nameWithType: IDbContextCommands
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands
+  commentId: T:NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands
+  parent: NuvTools.Data.EntityFrameworkCore.Context
+  isExternal: true
+  name: IDbContextWithListCommands
+  nameWithType: IDbContextWithListCommands
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands
+- uid: NuvTools.Common.ResultWrapper.IResult
+  commentId: T:NuvTools.Common.ResultWrapper.IResult
+  isExternal: true
+  name: IResult
+  nameWithType: IResult
+  fullName: NuvTools.Common.ResultWrapper.IResult
+- uid: NuvTools.Common.ResultWrapper.IResult`1
+  commentId: T:NuvTools.Common.ResultWrapper.IResult`1
+  isExternal: true
+  name: IResult<T>
+  nameWithType: IResult<T>
+  fullName: NuvTools.Common.ResultWrapper.IResult<T>
+  nameWithType.vb: IResult(Of T)
+  fullName.vb: NuvTools.Common.ResultWrapper.IResult(Of T)
+  name.vb: IResult(Of T)
+  spec.csharp:
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: NuvTools.Security.Identity.EntityFrameworkCore
   commentId: N:NuvTools.Security.Identity.EntityFrameworkCore
   isExternal: true
@@ -1169,20 +1565,6 @@ references:
   name: IAsyncDisposable
   nameWithType: IAsyncDisposable
   fullName: System.IAsyncDisposable
-- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
-  commentId: T:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
-  parent: NuvTools.Data.EntityFrameworkCore.Context
-  isExternal: true
-  name: IDbContextCommands
-  nameWithType: IDbContextCommands
-  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
-- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands
-  commentId: T:NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands
-  parent: NuvTools.Data.EntityFrameworkCore.Context
-  isExternal: true
-  name: IDbContextWithListCommands
-  nameWithType: IDbContextWithListCommands
-  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands
 - uid: Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext{{TUser},{TRole},{TIdentityKey},Microsoft.AspNetCore.Identity.IdentityUserClaim{{TIdentityKey}},Microsoft.AspNetCore.Identity.IdentityUserRole{{TIdentityKey}},Microsoft.AspNetCore.Identity.IdentityUserLogin{{TIdentityKey}},Microsoft.AspNetCore.Identity.IdentityRoleClaim{{TIdentityKey}},Microsoft.AspNetCore.Identity.IdentityUserToken{{TIdentityKey}}}.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)
   commentId: M:Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext{`0,`1,`2,Microsoft.AspNetCore.Identity.IdentityUserClaim{`2},Microsoft.AspNetCore.Identity.IdentityUserRole{`2},Microsoft.AspNetCore.Identity.IdentityUserLogin{`2},Microsoft.AspNetCore.Identity.IdentityRoleClaim{`2},Microsoft.AspNetCore.Identity.IdentityUserToken{`2}}.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)
   parent: Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext{{TUser},{TRole},{TIdentityKey},Microsoft.AspNetCore.Identity.IdentityUserClaim{{TIdentityKey}},Microsoft.AspNetCore.Identity.IdentityUserRole{{TIdentityKey}},Microsoft.AspNetCore.Identity.IdentityUserLogin{{TIdentityKey}},Microsoft.AspNetCore.Identity.IdentityRoleClaim{{TIdentityKey}},Microsoft.AspNetCore.Identity.IdentityUserToken{{TIdentityKey}}}
@@ -3223,6 +3605,44 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
   - name: (
   - name: )
+- uid: NuvTools.Data.EntityFrameworkCore.Context
+  commentId: N:NuvTools.Data.EntityFrameworkCore.Context
+  isExternal: true
+  name: NuvTools.Data.EntityFrameworkCore.Context
+  nameWithType: NuvTools.Data.EntityFrameworkCore.Context
+  fullName: NuvTools.Data.EntityFrameworkCore.Context
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+  - name: .
+  - uid: NuvTools.Data
+    name: Data
+    isExternal: true
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore.Context
+    name: Context
+    isExternal: true
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+  - name: .
+  - uid: NuvTools.Data
+    name: Data
+    isExternal: true
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore.Context
+    name: Context
+    isExternal: true
 - uid: System
   commentId: N:System
   isExternal: true
@@ -3426,46 +3846,6 @@ references:
   - name: " "
   - name: TUserToken
   - name: )
-- uid: Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext`3
-  commentId: T:Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext`3
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identitydbcontext-3
-  name: IdentityDbContext<TUser, TRole, TKey>
-  nameWithType: IdentityDbContext<TUser, TRole, TKey>
-  fullName: Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext<TUser, TRole, TKey>
-  nameWithType.vb: IdentityDbContext(Of TUser, TRole, TKey)
-  fullName.vb: Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext(Of TUser, TRole, TKey)
-  name.vb: IdentityDbContext(Of TUser, TRole, TKey)
-  spec.csharp:
-  - uid: Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext`3
-    name: IdentityDbContext
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identitydbcontext-3
-  - name: <
-  - name: TUser
-  - name: ','
-  - name: " "
-  - name: TRole
-  - name: ','
-  - name: " "
-  - name: TKey
-  - name: '>'
-  spec.vb:
-  - uid: Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext`3
-    name: IdentityDbContext
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identitydbcontext-3
-  - name: (
-  - name: Of
-  - name: " "
-  - name: TUser
-  - name: ','
-  - name: " "
-  - name: TRole
-  - name: ','
-  - name: " "
-  - name: TKey
-  - name: )
 - uid: Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure`1
   commentId: T:Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure`1
   isExternal: true
@@ -3568,44 +3948,6 @@ references:
     name: Internal
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.internal
-- uid: NuvTools.Data.EntityFrameworkCore.Context
-  commentId: N:NuvTools.Data.EntityFrameworkCore.Context
-  isExternal: true
-  name: NuvTools.Data.EntityFrameworkCore.Context
-  nameWithType: NuvTools.Data.EntityFrameworkCore.Context
-  fullName: NuvTools.Data.EntityFrameworkCore.Context
-  spec.csharp:
-  - uid: NuvTools
-    name: NuvTools
-    isExternal: true
-  - name: .
-  - uid: NuvTools.Data
-    name: Data
-    isExternal: true
-  - name: .
-  - uid: NuvTools.Data.EntityFrameworkCore
-    name: EntityFrameworkCore
-    isExternal: true
-  - name: .
-  - uid: NuvTools.Data.EntityFrameworkCore.Context
-    name: Context
-    isExternal: true
-  spec.vb:
-  - uid: NuvTools
-    name: NuvTools
-    isExternal: true
-  - name: .
-  - uid: NuvTools.Data
-    name: Data
-    isExternal: true
-  - name: .
-  - uid: NuvTools.Data.EntityFrameworkCore
-    name: EntityFrameworkCore
-    isExternal: true
-  - name: .
-  - uid: NuvTools.Data.EntityFrameworkCore.Context
-    name: Context
-    isExternal: true
 - uid: Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext`8.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)
   commentId: M:Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext`8.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)
   isExternal: true
@@ -4032,6 +4374,46 @@ references:
   - name: )
   - name: )
   - name: )
+- uid: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3
+  commentId: T:NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3
+  isExternal: true
+  href: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase-3.html
+  name: IdentityDbContextBase<TUser, TRole, TIdentityKey>
+  nameWithType: IdentityDbContextBase<TUser, TRole, TIdentityKey>
+  fullName: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase<TUser, TRole, TIdentityKey>
+  nameWithType.vb: IdentityDbContextBase(Of TUser, TRole, TIdentityKey)
+  fullName.vb: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase(Of TUser, TRole, TIdentityKey)
+  name.vb: IdentityDbContextBase(Of TUser, TRole, TIdentityKey)
+  spec.csharp:
+  - uid: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3
+    name: IdentityDbContextBase
+    isExternal: true
+    href: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase-3.html
+  - name: <
+  - name: TUser
+  - name: ','
+  - name: " "
+  - name: TRole
+  - name: ','
+  - name: " "
+  - name: TIdentityKey
+  - name: '>'
+  spec.vb:
+  - uid: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3
+    name: IdentityDbContextBase
+    isExternal: true
+    href: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase-3.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TUser
+  - name: ','
+  - name: " "
+  - name: TRole
+  - name: ','
+  - name: " "
+  - name: TIdentityKey
+  - name: )
 - uid: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.#ctor*
   commentId: Overload:NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.#ctor
   isExternal: true
@@ -4050,6 +4432,84 @@ references:
   name: DbContextOptions
   nameWithType: DbContextOptions
   fullName: Microsoft.EntityFrameworkCore.DbContextOptions
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction
+  commentId: T:Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction
+  parent: Microsoft.EntityFrameworkCore.Storage
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.storage.idbcontexttransaction
+  name: IDbContextTransaction
+  nameWithType: IDbContextTransaction
+  fullName: Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction
+- uid: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.CommitTransactionAsync(System.Threading.CancellationToken)
+  commentId: M:NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.CommitTransactionAsync(System.Threading.CancellationToken)
+  isExternal: true
+  href: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase-3.html#NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_CommitTransactionAsync_System_Threading_CancellationToken_
+  name: CommitTransactionAsync(CancellationToken)
+  nameWithType: IdentityDbContextBase<TUser, TRole, TIdentityKey>.CommitTransactionAsync(CancellationToken)
+  fullName: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase<TUser, TRole, TIdentityKey>.CommitTransactionAsync(System.Threading.CancellationToken)
+  nameWithType.vb: IdentityDbContextBase(Of TUser, TRole, TIdentityKey).CommitTransactionAsync(CancellationToken)
+  fullName.vb: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase(Of TUser, TRole, TIdentityKey).CommitTransactionAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.CommitTransactionAsync(System.Threading.CancellationToken)
+    name: CommitTransactionAsync
+    isExternal: true
+    href: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase-3.html#NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_CommitTransactionAsync_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.CommitTransactionAsync(System.Threading.CancellationToken)
+    name: CommitTransactionAsync
+    isExternal: true
+    href: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase-3.html#NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_CommitTransactionAsync_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.RollbackTransactionAsync(System.Threading.CancellationToken)
+  commentId: M:NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.RollbackTransactionAsync(System.Threading.CancellationToken)
+  isExternal: true
+  href: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase-3.html#NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_RollbackTransactionAsync_System_Threading_CancellationToken_
+  name: RollbackTransactionAsync(CancellationToken)
+  nameWithType: IdentityDbContextBase<TUser, TRole, TIdentityKey>.RollbackTransactionAsync(CancellationToken)
+  fullName: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase<TUser, TRole, TIdentityKey>.RollbackTransactionAsync(System.Threading.CancellationToken)
+  nameWithType.vb: IdentityDbContextBase(Of TUser, TRole, TIdentityKey).RollbackTransactionAsync(CancellationToken)
+  fullName.vb: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase(Of TUser, TRole, TIdentityKey).RollbackTransactionAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.RollbackTransactionAsync(System.Threading.CancellationToken)
+    name: RollbackTransactionAsync
+    isExternal: true
+    href: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase-3.html#NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_RollbackTransactionAsync_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.RollbackTransactionAsync(System.Threading.CancellationToken)
+    name: RollbackTransactionAsync
+    isExternal: true
+    href: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase-3.html#NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_RollbackTransactionAsync_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
 - uid: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.BeginTransactionAsync*
   commentId: Overload:NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.BeginTransactionAsync
   isExternal: true
@@ -4087,14 +4547,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
   - name: )
-- uid: System.Threading.CancellationToken
-  commentId: T:System.Threading.CancellationToken
-  parent: System.Threading
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
-  name: CancellationToken
-  nameWithType: CancellationToken
-  fullName: System.Threading.CancellationToken
 - uid: System.Threading.Tasks.Task{Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction}
   commentId: T:System.Threading.Tasks.Task{Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction}
   parent: System.Threading.Tasks
@@ -4157,6 +4609,43 @@ references:
     name: Threading
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: Microsoft.EntityFrameworkCore.Storage
+  commentId: N:Microsoft.EntityFrameworkCore.Storage
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.EntityFrameworkCore.Storage
+  nameWithType: Microsoft.EntityFrameworkCore.Storage
+  fullName: Microsoft.EntityFrameworkCore.Storage
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore.Storage
+    name: Storage
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.storage
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore.Storage
+    name: Storage
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.storage
 - uid: System.Threading.Tasks.Task`1
   commentId: T:System.Threading.Tasks.Task`1
   isExternal: true
@@ -4222,6 +4711,14 @@ references:
     name: Tasks
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
 - uid: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.ExecuteWithStrategyAsync*
   commentId: Overload:NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.ExecuteWithStrategyAsync
   isExternal: true
@@ -4347,14 +4844,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
   - name: )
-- uid: System.Threading.Tasks.Task
-  commentId: T:System.Threading.Tasks.Task
-  parent: System.Threading.Tasks
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
-  name: Task
-  nameWithType: Task
-  fullName: System.Threading.Tasks.Task
 - uid: System.Func`2
   commentId: T:System.Func`2
   isExternal: true
@@ -4642,6 +5131,44 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
   - name: )
+- uid: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.BeginTransactionAsync(System.Threading.CancellationToken)
+  commentId: M:NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.BeginTransactionAsync(System.Threading.CancellationToken)
+  isExternal: true
+  href: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase-3.html#NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_BeginTransactionAsync_System_Threading_CancellationToken_
+  name: BeginTransactionAsync(CancellationToken)
+  nameWithType: IdentityDbContextBase<TUser, TRole, TIdentityKey>.BeginTransactionAsync(CancellationToken)
+  fullName: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase<TUser, TRole, TIdentityKey>.BeginTransactionAsync(System.Threading.CancellationToken)
+  nameWithType.vb: IdentityDbContextBase(Of TUser, TRole, TIdentityKey).BeginTransactionAsync(CancellationToken)
+  fullName.vb: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase(Of TUser, TRole, TIdentityKey).BeginTransactionAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.BeginTransactionAsync(System.Threading.CancellationToken)
+    name: BeginTransactionAsync
+    isExternal: true
+    href: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase-3.html#NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_BeginTransactionAsync_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.BeginTransactionAsync(System.Threading.CancellationToken)
+    name: BeginTransactionAsync
+    isExternal: true
+    href: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase-3.html#NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_BeginTransactionAsync_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.invalidoperationexception
+  name: InvalidOperationException
+  nameWithType: InvalidOperationException
+  fullName: System.InvalidOperationException
 - uid: NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.CommitTransactionAsync*
   commentId: Overload:NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.CommitTransactionAsync
   isExternal: true
@@ -6539,48 +7066,3 @@ references:
   name: CurrentTransaction
   nameWithType: IDbContextCommands.CurrentTransaction
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CurrentTransaction
-- uid: Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction
-  commentId: T:Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction
-  parent: Microsoft.EntityFrameworkCore.Storage
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.storage.idbcontexttransaction
-  name: IDbContextTransaction
-  nameWithType: IDbContextTransaction
-  fullName: Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction
-- uid: Microsoft.EntityFrameworkCore.Storage
-  commentId: N:Microsoft.EntityFrameworkCore.Storage
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/microsoft
-  name: Microsoft.EntityFrameworkCore.Storage
-  nameWithType: Microsoft.EntityFrameworkCore.Storage
-  fullName: Microsoft.EntityFrameworkCore.Storage
-  spec.csharp:
-  - uid: Microsoft
-    name: Microsoft
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft
-  - name: .
-  - uid: Microsoft.EntityFrameworkCore
-    name: EntityFrameworkCore
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
-  - name: .
-  - uid: Microsoft.EntityFrameworkCore.Storage
-    name: Storage
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.storage
-  spec.vb:
-  - uid: Microsoft
-    name: Microsoft
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft
-  - name: .
-  - uid: Microsoft.EntityFrameworkCore
-    name: EntityFrameworkCore
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
-  - name: .
-  - uid: Microsoft.EntityFrameworkCore.Storage
-    name: Storage
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.storage

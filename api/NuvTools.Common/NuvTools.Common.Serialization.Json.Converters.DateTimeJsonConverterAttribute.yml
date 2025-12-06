@@ -15,19 +15,24 @@ items:
   fullName: NuvTools.Common.Serialization.Json.Converters.DateTimeJsonConverterAttribute
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Serialization/Json/Converters/DateTimeJsonConverterAttribute.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/Serialization/Json/Converters/DateTimeJsonConverterAttribute.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Serialization.Json.Converters
+  summary: >-
+    Allows applying a <xref href="NuvTools.Common.Serialization.Json.Converters.DateTimeJsonConverter%601" data-throw-if-not-resolved="false"></xref> directly on a property,
+
+    specifying the exact serialization/deserialization date format.
+  example: []
   syntax:
     content: >-
       [AttributeUsage(AttributeTargets.Property|AttributeTargets.Field, AllowMultiple = false)]
 
-      public class DateTimeJsonConverterAttribute : JsonConverterAttribute
+      public sealed class DateTimeJsonConverterAttribute : JsonConverterAttribute
     content.vb: >-
       <AttributeUsage(AttributeTargets.PropertyOrAttributeTargets.Field, AllowMultiple:=False)>
 
-      Public Class DateTimeJsonConverterAttribute Inherits JsonConverterAttribute
+      Public NotInheritable Class DateTimeJsonConverterAttribute Inherits JsonConverterAttribute
   inheritance:
   - System.Object
   - System.Attribute
@@ -73,7 +78,6 @@ items:
   - System.Attribute.IsDefaultAttribute
   - System.Attribute.TypeId
   - System.Object.GetType
-  - System.Object.MemberwiseClone
   - System.Object.ToString
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.ReferenceEquals(System.Object,System.Object)
@@ -103,10 +107,15 @@ items:
   fullName: NuvTools.Common.Serialization.Json.Converters.DateTimeJsonConverterAttribute.DateTimeJsonConverterAttribute(string)
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Serialization/Json/Converters/DateTimeJsonConverterAttribute.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/Serialization/Json/Converters/DateTimeJsonConverterAttribute.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Serialization.Json.Converters
+  summary: >-
+    Allows applying a <xref href="NuvTools.Common.Serialization.Json.Converters.DateTimeJsonConverter%601" data-throw-if-not-resolved="false"></xref> directly on a property,
+
+    specifying the exact serialization/deserialization date format.
+  example: []
   syntax:
     content: public DateTimeJsonConverterAttribute(string format)
     parameters:
@@ -129,10 +138,11 @@ items:
   fullName: NuvTools.Common.Serialization.Json.Converters.DateTimeJsonConverterAttribute.CreateConverter(System.Type)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Serialization/Json/Converters/DateTimeJsonConverterAttribute.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/Serialization/Json/Converters/DateTimeJsonConverterAttribute.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Serialization.Json.Converters
+  summary: Creates a typed <xref href="NuvTools.Common.Serialization.Json.Converters.DateTimeJsonConverter%601" data-throw-if-not-resolved="false"></xref> for supported date types.
   example: []
   syntax:
     content: public override JsonConverter CreateConverter(Type typeToConvert)
@@ -145,6 +155,34 @@ items:
   overridden: System.Text.Json.Serialization.JsonConverterAttribute.CreateConverter(System.Type)
   overload: NuvTools.Common.Serialization.Json.Converters.DateTimeJsonConverterAttribute.CreateConverter*
 references:
+- uid: NuvTools.Common.Serialization.Json.Converters.DateTimeJsonConverter`1
+  commentId: T:NuvTools.Common.Serialization.Json.Converters.DateTimeJsonConverter`1
+  isExternal: true
+  href: NuvTools.Common.Serialization.Json.Converters.DateTimeJsonConverter-1.html
+  name: DateTimeJsonConverter<T>
+  nameWithType: DateTimeJsonConverter<T>
+  fullName: NuvTools.Common.Serialization.Json.Converters.DateTimeJsonConverter<T>
+  nameWithType.vb: DateTimeJsonConverter(Of T)
+  fullName.vb: NuvTools.Common.Serialization.Json.Converters.DateTimeJsonConverter(Of T)
+  name.vb: DateTimeJsonConverter(Of T)
+  spec.csharp:
+  - uid: NuvTools.Common.Serialization.Json.Converters.DateTimeJsonConverter`1
+    name: DateTimeJsonConverter
+    isExternal: true
+    href: NuvTools.Common.Serialization.Json.Converters.DateTimeJsonConverter-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: NuvTools.Common.Serialization.Json.Converters.DateTimeJsonConverter`1
+    name: DateTimeJsonConverter
+    isExternal: true
+    href: NuvTools.Common.Serialization.Json.Converters.DateTimeJsonConverter-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
 - uid: NuvTools.Common.Serialization.Json.Converters
   commentId: N:NuvTools.Common.Serialization.Json.Converters
   isExternal: true
@@ -1873,30 +1911,6 @@ references:
     name: GetType
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object.gettype
-  - name: (
-  - name: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  name: MemberwiseClone()
-  nameWithType: object.MemberwiseClone()
-  fullName: object.MemberwiseClone()
-  nameWithType.vb: Object.MemberwiseClone()
-  fullName.vb: Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
-  - name: (
-  - name: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
   - name: (
   - name: )
 - uid: System.Object.ToString

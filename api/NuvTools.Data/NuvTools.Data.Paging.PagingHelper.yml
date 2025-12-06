@@ -14,10 +14,12 @@ items:
   fullName: NuvTools.Data.Paging.PagingHelper
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data/Paging/PagingHelper.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Paging/PagingHelper.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Paging
+  summary: Helper methods for paging calculations.
+  example: []
   syntax:
     content: public static class PagingHelper
     content.vb: Public Module PagingHelper
@@ -43,21 +45,27 @@ items:
   fullName: NuvTools.Data.Paging.PagingHelper.GetPageNumber(int, int, int)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data/Paging/PagingHelper.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Paging/PagingHelper.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Paging
+  summary: Calculates the valid page number, ensuring it doesn't exceed the total number of pages.
+  example: []
   syntax:
     content: public static int GetPageNumber(int index, int pageSize, int total)
     parameters:
     - id: index
       type: System.Int32
+      description: The requested page number (1-indexed).
     - id: pageSize
       type: System.Int32
+      description: The number of items per page.
     - id: total
       type: System.Int32
+      description: The total number of items.
     return:
       type: System.Int32
+      description: A valid page number that doesn't exceed the total pages available.
     content.vb: Public Shared Function GetPageNumber(index As Integer, pageSize As Integer, total As Integer) As Integer
   overload: NuvTools.Data.Paging.PagingHelper.GetPageNumber*
   nameWithType.vb: PagingHelper.GetPageNumber(Integer, Integer, Integer)

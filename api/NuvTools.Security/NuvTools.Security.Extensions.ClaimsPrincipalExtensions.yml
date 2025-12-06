@@ -26,10 +26,16 @@ items:
   fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
   assemblies:
   - NuvTools.Security
   namespace: NuvTools.Security.Extensions
+  summary: Provides extension methods for extracting user information from <xref href="System.Security.Claims.ClaimsPrincipal" data-throw-if-not-resolved="false"></xref> objects.
+  remarks: >-
+    These extensions simplify the process of extracting common user identity information from claims,
+
+    handling multiple claim type variations and validating values where appropriate.
+  example: []
   syntax:
     content: public static class ClaimsPrincipalExtensions
     content.vb: Public Module ClaimsPrincipalExtensions
@@ -56,19 +62,31 @@ items:
   fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetId(System.Security.Claims.ClaimsPrincipal)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
   assemblies:
   - NuvTools.Security
   namespace: NuvTools.Security.Extensions
+  summary: Gets the unique identifier of the user from either the NameIdentifier or Sub claim.
+  remarks: >-
+    This method first tries to get the NameIdentifier claim, then falls back to the Sub claim.
+
+    At least one of these claims must be present.
+  example: []
   syntax:
     content: public static string GetId(this ClaimsPrincipal user)
     parameters:
     - id: user
       type: System.Security.Claims.ClaimsPrincipal
+      description: The claims principal representing the user.
     return:
       type: System.String
+      description: The user's unique identifier.
     content.vb: Public Shared Function GetId(user As ClaimsPrincipal) As String
   overload: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetId*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: Thrown when neither NameIdentifier nor Sub claim is present.
 - uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSub(System.Security.Claims.ClaimsPrincipal)
   commentId: M:NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSub(System.Security.Claims.ClaimsPrincipal)
   id: GetSub(System.Security.Claims.ClaimsPrincipal)
@@ -82,17 +100,22 @@ items:
   fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSub(System.Security.Claims.ClaimsPrincipal)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
   assemblies:
   - NuvTools.Security
   namespace: NuvTools.Security.Extensions
+  summary: Gets the subject identifier (sub claim) of the user.
+  remarks: The 'sub' claim is the standard JWT claim for the unique user identifier.
+  example: []
   syntax:
     content: public static string? GetSub(this ClaimsPrincipal user)
     parameters:
     - id: user
       type: System.Security.Claims.ClaimsPrincipal
+      description: The claims principal representing the user.
     return:
       type: System.String
+      description: The subject identifier, or null if not present.
     content.vb: Public Shared Function GetSub(user As ClaimsPrincipal) As String
   overload: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSub*
 - uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetNameIdentifier(System.Security.Claims.ClaimsPrincipal)
@@ -108,17 +131,22 @@ items:
   fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetNameIdentifier(System.Security.Claims.ClaimsPrincipal)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
   assemblies:
   - NuvTools.Security
   namespace: NuvTools.Security.Extensions
+  summary: Gets the name identifier claim of the user.
+  remarks: This is typically used in ASP.NET Identity-based authentication systems.
+  example: []
   syntax:
     content: public static string? GetNameIdentifier(this ClaimsPrincipal user)
     parameters:
     - id: user
       type: System.Security.Claims.ClaimsPrincipal
+      description: The claims principal representing the user.
     return:
       type: System.String
+      description: The name identifier, or null if not present.
     content.vb: Public Shared Function GetNameIdentifier(user As ClaimsPrincipal) As String
   overload: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetNameIdentifier*
 - uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetName(System.Security.Claims.ClaimsPrincipal)
@@ -134,17 +162,22 @@ items:
   fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetName(System.Security.Claims.ClaimsPrincipal)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
   assemblies:
   - NuvTools.Security
   namespace: NuvTools.Security.Extensions
+  summary: Gets the display name of the user.
+  remarks: This method checks both the standard ClaimTypes.Name and the "name" claim.
+  example: []
   syntax:
     content: public static string? GetName(this ClaimsPrincipal user)
     parameters:
     - id: user
       type: System.Security.Claims.ClaimsPrincipal
+      description: The claims principal representing the user.
     return:
       type: System.String
+      description: The user's display name, or null if not present.
     content.vb: Public Shared Function GetName(user As ClaimsPrincipal) As String
   overload: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetName*
 - uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetGivenName(System.Security.Claims.ClaimsPrincipal)
@@ -160,17 +193,21 @@ items:
   fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetGivenName(System.Security.Claims.ClaimsPrincipal)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
   assemblies:
   - NuvTools.Security
   namespace: NuvTools.Security.Extensions
+  summary: Gets the given name (first name) of the user.
+  example: []
   syntax:
     content: public static string? GetGivenName(this ClaimsPrincipal user)
     parameters:
     - id: user
       type: System.Security.Claims.ClaimsPrincipal
+      description: The claims principal representing the user.
     return:
       type: System.String
+      description: The user's given name, or null if not present.
     content.vb: Public Shared Function GetGivenName(user As ClaimsPrincipal) As String
   overload: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetGivenName*
 - uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSurname(System.Security.Claims.ClaimsPrincipal)
@@ -186,17 +223,25 @@ items:
   fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSurname(System.Security.Claims.ClaimsPrincipal)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
   assemblies:
   - NuvTools.Security
   namespace: NuvTools.Security.Extensions
+  summary: Gets the surname (last name) of the user from the Surname claim.
+  remarks: >-
+    This uses the standard ClaimTypes.Surname claim type.
+
+    For OIDC tokens, use <xref href="NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetFamilyName(System.Security.Claims.ClaimsPrincipal)" data-throw-if-not-resolved="false"></xref> instead.
+  example: []
   syntax:
     content: public static string? GetSurname(this ClaimsPrincipal user)
     parameters:
     - id: user
       type: System.Security.Claims.ClaimsPrincipal
+      description: The claims principal representing the user.
     return:
       type: System.String
+      description: The user's surname, or null if not present.
     content.vb: Public Shared Function GetSurname(user As ClaimsPrincipal) As String
   overload: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSurname*
 - uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetFamilyName(System.Security.Claims.ClaimsPrincipal)
@@ -212,17 +257,25 @@ items:
   fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetFamilyName(System.Security.Claims.ClaimsPrincipal)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
   assemblies:
   - NuvTools.Security
   namespace: NuvTools.Security.Extensions
+  summary: Gets the family name (last name) of the user from the OIDC family_name claim.
+  remarks: >-
+    This uses the OIDC standard "family_name" claim.
+
+    For traditional ASP.NET claims, use <xref href="NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSurname(System.Security.Claims.ClaimsPrincipal)" data-throw-if-not-resolved="false"></xref> instead.
+  example: []
   syntax:
     content: public static string? GetFamilyName(this ClaimsPrincipal user)
     parameters:
     - id: user
       type: System.Security.Claims.ClaimsPrincipal
+      description: The claims principal representing the user.
     return:
       type: System.String
+      description: The user's family name, or null if not present.
     content.vb: Public Shared Function GetFamilyName(user As ClaimsPrincipal) As String
   overload: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetFamilyName*
 - uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetEmail(System.Security.Claims.ClaimsPrincipal)
@@ -238,17 +291,25 @@ items:
   fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetEmail(System.Security.Claims.ClaimsPrincipal)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
   assemblies:
   - NuvTools.Security
   namespace: NuvTools.Security.Extensions
+  summary: Gets the email address of the user, checking multiple claim sources and validating the format.
+  remarks: >-
+    This method checks the following claims in order: Email, email (OIDC), UPN, PreferredUsername, UniqueName.
+
+    The value is validated to ensure it's a properly formatted email address before returning.
+  example: []
   syntax:
     content: public static string? GetEmail(this ClaimsPrincipal user)
     parameters:
     - id: user
       type: System.Security.Claims.ClaimsPrincipal
+      description: The claims principal representing the user.
     return:
       type: System.String
+      description: A valid email address, or null if not found or invalid.
     content.vb: Public Shared Function GetEmail(user As ClaimsPrincipal) As String
   overload: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetEmail*
 - uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetUpn(System.Security.Claims.ClaimsPrincipal)
@@ -264,17 +325,25 @@ items:
   fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetUpn(System.Security.Claims.ClaimsPrincipal)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
   assemblies:
   - NuvTools.Security
   namespace: NuvTools.Security.Extensions
+  summary: Gets the User Principal Name (UPN) of the user.
+  remarks: >-
+    UPN is commonly used in Microsoft Azure AD and Active Directory scenarios.
+
+    It typically has the format username@domain.
+  example: []
   syntax:
     content: public static string? GetUpn(this ClaimsPrincipal user)
     parameters:
     - id: user
       type: System.Security.Claims.ClaimsPrincipal
+      description: The claims principal representing the user.
     return:
       type: System.String
+      description: The UPN, or null if not present.
     content.vb: Public Shared Function GetUpn(user As ClaimsPrincipal) As String
   overload: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetUpn*
 - uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetPreferredUsername(System.Security.Claims.ClaimsPrincipal)
@@ -290,17 +359,22 @@ items:
   fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetPreferredUsername(System.Security.Claims.ClaimsPrincipal)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
   assemblies:
   - NuvTools.Security
   namespace: NuvTools.Security.Extensions
+  summary: Gets the preferred username of the user.
+  remarks: This is a standard OIDC claim representing the user's preferred display username.
+  example: []
   syntax:
     content: public static string? GetPreferredUsername(this ClaimsPrincipal user)
     parameters:
     - id: user
       type: System.Security.Claims.ClaimsPrincipal
+      description: The claims principal representing the user.
     return:
       type: System.String
+      description: The preferred username, or null if not present.
     content.vb: Public Shared Function GetPreferredUsername(user As ClaimsPrincipal) As String
   overload: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetPreferredUsername*
 - uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetUniqueName(System.Security.Claims.ClaimsPrincipal)
@@ -316,17 +390,22 @@ items:
   fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetUniqueName(System.Security.Claims.ClaimsPrincipal)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
   assemblies:
   - NuvTools.Security
   namespace: NuvTools.Security.Extensions
+  summary: Gets the unique name of the user.
+  remarks: This is often used in legacy authentication systems as a unique identifier.
+  example: []
   syntax:
     content: public static string? GetUniqueName(this ClaimsPrincipal user)
     parameters:
     - id: user
       type: System.Security.Claims.ClaimsPrincipal
+      description: The claims principal representing the user.
     return:
       type: System.String
+      description: The unique name, or null if not present.
     content.vb: Public Shared Function GetUniqueName(user As ClaimsPrincipal) As String
   overload: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetUniqueName*
 - uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.HasValue``1(System.Security.Claims.ClaimsPrincipal,System.String,``0)
@@ -342,23 +421,34 @@ items:
   fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.HasValue<T>(System.Security.Claims.ClaimsPrincipal, string, T)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
   assemblies:
   - NuvTools.Security
   namespace: NuvTools.Security.Extensions
+  summary: Determines whether the user has a specific value in a custom extension attribute claim.
+  remarks: >-
+    This method looks for a claim with type "extension_{customAttributeName}" and checks if
+
+    the specified value exists in the comma-separated list of values.
+  example: []
   syntax:
     content: public static bool HasValue<T>(this ClaimsPrincipal user, string customAttriuteName, T value)
     parameters:
     - id: user
       type: System.Security.Claims.ClaimsPrincipal
+      description: The claims principal representing the user.
     - id: customAttriuteName
       type: System.String
+      description: The name of the custom attribute (without the "extension_" prefix).
     - id: value
       type: '{T}'
+      description: The value to check for.
     typeParameters:
     - id: T
+      description: The type to parse the attribute values as (string, int, double, bool, or enum).
     return:
       type: System.Boolean
+      description: True if the user has the specified value in the custom attribute; otherwise, false.
     content.vb: Public Shared Function HasValue(Of T)(user As ClaimsPrincipal, customAttriuteName As String, value As T) As Boolean
   overload: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.HasValue*
   nameWithType.vb: ClaimsPrincipalExtensions.HasValue(Of T)(ClaimsPrincipal, String, T)
@@ -377,27 +467,76 @@ items:
   fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetCustomAttributeValues<T>(System.Security.Claims.ClaimsPrincipal, string)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs
   assemblies:
   - NuvTools.Security
   namespace: NuvTools.Security.Extensions
+  summary: Gets all values from a custom extension attribute claim and parses them as the specified type.
+  remarks: >-
+    <p>
+
+    This method looks for a claim with type "extension_{customAttributeName}" and expects
+
+    a comma-separated list of values. It parses each value to the specified type.
+
+    </p>
+
+    <p>Supported types: string, int, double, bool, and enum types.</p>
+
+    <p>
+
+    This is commonly used with Azure AD B2C custom attributes that are passed as extension claims.
+
+    </p>
+  example:
+  - >-
+    <pre><code class="lang-csharp">// Get a list of role IDs stored as integers in an extension attribute
+
+    var roleIds = user.GetCustomAttributeValues&lt;int&gt;("roleIds");
+
+
+    // Get an enum value from a custom attribute
+
+    var permissions = user.GetCustomAttributeValues&lt;PermissionLevel&gt;("permissions");</code></pre>
   syntax:
     content: public static IEnumerable<T>? GetCustomAttributeValues<T>(this ClaimsPrincipal user, string customAttributeName)
     parameters:
     - id: user
       type: System.Security.Claims.ClaimsPrincipal
+      description: The claims principal representing the user.
     - id: customAttributeName
       type: System.String
+      description: The name of the custom attribute (without the "extension_" prefix).
     typeParameters:
     - id: T
+      description: The type to parse the attribute values as (string, int, double, bool, or enum).
     return:
       type: System.Collections.Generic.IEnumerable{{T}}
+      description: >-
+        A collection of parsed values, or null if the claim doesn't exist.
+
+        Invalid values are filtered out for enum types.
     content.vb: Public Shared Function GetCustomAttributeValues(Of T)(user As ClaimsPrincipal, customAttributeName As String) As IEnumerable(Of T)
   overload: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetCustomAttributeValues*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: Thrown when the type T is not supported.
+  - type: System.FormatException
+    commentId: T:System.FormatException
+    description: Thrown when values cannot be parsed to the specified type.
   nameWithType.vb: ClaimsPrincipalExtensions.GetCustomAttributeValues(Of T)(ClaimsPrincipal, String)
   fullName.vb: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetCustomAttributeValues(Of T)(System.Security.Claims.ClaimsPrincipal, String)
   name.vb: GetCustomAttributeValues(Of T)(ClaimsPrincipal, String)
 references:
+- uid: System.Security.Claims.ClaimsPrincipal
+  commentId: T:System.Security.Claims.ClaimsPrincipal
+  parent: System.Security.Claims
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal
+  name: ClaimsPrincipal
+  nameWithType: ClaimsPrincipal
+  fullName: System.Security.Claims.ClaimsPrincipal
 - uid: NuvTools.Security.Extensions
   commentId: N:NuvTools.Security.Extensions
   isExternal: true
@@ -665,39 +804,6 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
   - name: (
   - name: )
-- uid: System
-  commentId: N:System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System
-  nameWithType: System
-  fullName: System
-- uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetId*
-  commentId: Overload:NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetId
-  isExternal: true
-  href: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.html#NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetId_System_Security_Claims_ClaimsPrincipal_
-  name: GetId
-  nameWithType: ClaimsPrincipalExtensions.GetId
-  fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetId
-- uid: System.Security.Claims.ClaimsPrincipal
-  commentId: T:System.Security.Claims.ClaimsPrincipal
-  parent: System.Security.Claims
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal
-  name: ClaimsPrincipal
-  nameWithType: ClaimsPrincipal
-  fullName: System.Security.Claims.ClaimsPrincipal
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
 - uid: System.Security.Claims
   commentId: N:System.Security.Claims
   isExternal: true
@@ -735,6 +841,38 @@ references:
     name: Claims
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.security.claims
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.invalidoperationexception
+  name: InvalidOperationException
+  nameWithType: InvalidOperationException
+  fullName: System.InvalidOperationException
+- uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetId*
+  commentId: Overload:NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetId
+  isExternal: true
+  href: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.html#NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetId_System_Security_Claims_ClaimsPrincipal_
+  name: GetId
+  nameWithType: ClaimsPrincipalExtensions.GetId
+  fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetId
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
 - uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSub*
   commentId: Overload:NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSub
   isExternal: true
@@ -763,6 +901,35 @@ references:
   name: GetGivenName
   nameWithType: ClaimsPrincipalExtensions.GetGivenName
   fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetGivenName
+- uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetFamilyName(System.Security.Claims.ClaimsPrincipal)
+  commentId: M:NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetFamilyName(System.Security.Claims.ClaimsPrincipal)
+  isExternal: true
+  href: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.html#NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetFamilyName_System_Security_Claims_ClaimsPrincipal_
+  name: GetFamilyName(ClaimsPrincipal)
+  nameWithType: ClaimsPrincipalExtensions.GetFamilyName(ClaimsPrincipal)
+  fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetFamilyName(System.Security.Claims.ClaimsPrincipal)
+  spec.csharp:
+  - uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetFamilyName(System.Security.Claims.ClaimsPrincipal)
+    name: GetFamilyName
+    isExternal: true
+    href: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.html#NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetFamilyName_System_Security_Claims_ClaimsPrincipal_
+  - name: (
+  - uid: System.Security.Claims.ClaimsPrincipal
+    name: ClaimsPrincipal
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetFamilyName(System.Security.Claims.ClaimsPrincipal)
+    name: GetFamilyName
+    isExternal: true
+    href: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.html#NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetFamilyName_System_Security_Claims_ClaimsPrincipal_
+  - name: (
+  - uid: System.Security.Claims.ClaimsPrincipal
+    name: ClaimsPrincipal
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal
+  - name: )
 - uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSurname*
   commentId: Overload:NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSurname
   isExternal: true
@@ -770,6 +937,35 @@ references:
   name: GetSurname
   nameWithType: ClaimsPrincipalExtensions.GetSurname
   fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSurname
+- uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSurname(System.Security.Claims.ClaimsPrincipal)
+  commentId: M:NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSurname(System.Security.Claims.ClaimsPrincipal)
+  isExternal: true
+  href: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.html#NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetSurname_System_Security_Claims_ClaimsPrincipal_
+  name: GetSurname(ClaimsPrincipal)
+  nameWithType: ClaimsPrincipalExtensions.GetSurname(ClaimsPrincipal)
+  fullName: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSurname(System.Security.Claims.ClaimsPrincipal)
+  spec.csharp:
+  - uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSurname(System.Security.Claims.ClaimsPrincipal)
+    name: GetSurname
+    isExternal: true
+    href: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.html#NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetSurname_System_Security_Claims_ClaimsPrincipal_
+  - name: (
+  - uid: System.Security.Claims.ClaimsPrincipal
+    name: ClaimsPrincipal
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSurname(System.Security.Claims.ClaimsPrincipal)
+    name: GetSurname
+    isExternal: true
+    href: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.html#NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetSurname_System_Security_Claims_ClaimsPrincipal_
+  - name: (
+  - uid: System.Security.Claims.ClaimsPrincipal
+    name: ClaimsPrincipal
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal
+  - name: )
 - uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetFamilyName*
   commentId: Overload:NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetFamilyName
   isExternal: true
@@ -833,6 +1029,20 @@ references:
   name: T
   nameWithType: T
   fullName: T
+- uid: System.NotSupportedException
+  commentId: T:System.NotSupportedException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.notsupportedexception
+  name: NotSupportedException
+  nameWithType: NotSupportedException
+  fullName: System.NotSupportedException
+- uid: System.FormatException
+  commentId: T:System.FormatException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.formatexception
+  name: FormatException
+  nameWithType: FormatException
+  fullName: System.FormatException
 - uid: NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetCustomAttributeValues*
   commentId: Overload:NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetCustomAttributeValues
   isExternal: true

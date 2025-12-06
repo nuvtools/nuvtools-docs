@@ -14,10 +14,12 @@ items:
   fullName: NuvTools.Common.Exceptions.ExceptionExtensions
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Exceptions/ExceptionExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/Exceptions/ExceptionExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Exceptions
+  summary: Provides extension methods for <xref href="System.Exception" data-throw-if-not-resolved="false"></xref> objects.
+  example: []
   syntax:
     content: public static class ExceptionExtensions
     content.vb: Public Module ExceptionExtensions
@@ -44,25 +46,48 @@ items:
   fullName: NuvTools.Common.Exceptions.ExceptionExtensions.AggregateExceptionMessages(System.Exception, short)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Exceptions/ExceptionExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/Exceptions/ExceptionExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Exceptions
+  summary: Aggregates exception messages including inner exceptions up to a specified level.
+  remarks: >-
+    When level is 0, only the top-level exception message is returned.
+
+    When level is greater than 0, inner exceptions are included up to the specified depth,
+
+    with each level clearly marked (e.g., "Level 0: ...", "Level 1: ...").
+  example: []
   syntax:
     content: public static string AggregateExceptionMessages(this Exception exception, short level = 0)
     parameters:
     - id: exception
       type: System.Exception
+      description: The exception to process.
     - id: level
       type: System.Int16
+      description: The number of inner exception levels to include. Use 0 to include only the top-level exception message.
     return:
       type: System.String
+      description: A formatted string containing the exception message(s) with level indicators.
     content.vb: Public Shared Function AggregateExceptionMessages(exception As Exception, level As Short = 0) As String
   overload: NuvTools.Common.Exceptions.ExceptionExtensions.AggregateExceptionMessages*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown when <code class="paramref">exception</code> is null.
   nameWithType.vb: ExceptionExtensions.AggregateExceptionMessages(Exception, Short)
   fullName.vb: NuvTools.Common.Exceptions.ExceptionExtensions.AggregateExceptionMessages(System.Exception, Short)
   name.vb: AggregateExceptionMessages(Exception, Short)
 references:
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
 - uid: NuvTools.Common.Exceptions
   commentId: N:NuvTools.Common.Exceptions
   isExternal: true
@@ -337,6 +362,13 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
 - uid: NuvTools.Common.Exceptions.ExceptionExtensions.AggregateExceptionMessages*
   commentId: Overload:NuvTools.Common.Exceptions.ExceptionExtensions.AggregateExceptionMessages
   isExternal: true
@@ -344,14 +376,6 @@ references:
   name: AggregateExceptionMessages
   nameWithType: ExceptionExtensions.AggregateExceptionMessages
   fullName: NuvTools.Common.Exceptions.ExceptionExtensions.AggregateExceptionMessages
-- uid: System.Exception
-  commentId: T:System.Exception
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.exception
-  name: Exception
-  nameWithType: Exception
-  fullName: System.Exception
 - uid: System.Int16
   commentId: T:System.Int16
   parent: System

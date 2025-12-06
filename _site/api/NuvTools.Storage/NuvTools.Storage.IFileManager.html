@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface IFileManager | Nuv Tools Framework Docs ">
       
-      
+      <meta name="description" content="Defines the contract for managing file storage operations.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Storage_IFileManager" data-uid="NuvTools.Storage.IFileManager" class="text-break">
-Interface IFileManager  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/IFileManager.cs"><i class="bi bi-code-slash"></i></a>
+Interface IFileManager  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/IFileManager.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Interface IFileManager  <a class="header-action link-secondary" title="View sour
   <dl><dt>Assembly</dt><dd>NuvTools.Storage.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Defines the contract for managing file storage operations.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -124,10 +125,11 @@ Interface IFileManager  <a class="header-action link-secondary" title="View sour
 
   <h3 id="NuvTools_Storage_IFileManager_AddFileAsync_NuvTools_Storage_IFile_System_String_System_Threading_CancellationToken_" data-uid="NuvTools.Storage.IFileManager.AddFileAsync(NuvTools.Storage.IFile,System.String,System.Threading.CancellationToken)">
   AddFileAsync(IFile, string?, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/IFileManager.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/IFileManager.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds a single file to the storage repository.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -137,17 +139,21 @@ Interface IFileManager  <a class="header-action link-secondary" title="View sour
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>file</code> <a class="xref" href="NuvTools.Storage.IFile.html">IFile</a></dt>
-    <dd></dd>
+    <dd><p>The file to add.</p>
+</dd>
     <dt><code>rootDir</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>Optional root directory path where the file should be stored.</p>
+</dd>
     <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd></dd>
+    <dd><p>A token to cancel the asynchronous operation.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="NuvTools.Storage.IFile.html">IFile</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>A task representing the asynchronous operation, containing the added file with updated metadata.</p>
+</dd>
   </dl>
 
 
@@ -164,10 +170,11 @@ Interface IFileManager  <a class="header-action link-secondary" title="View sour
 
   <h3 id="NuvTools_Storage_IFileManager_AddFilesAsync_NuvTools_Storage_IFile___System_Threading_CancellationToken_" data-uid="NuvTools.Storage.IFileManager.AddFilesAsync(NuvTools.Storage.IFile[],System.Threading.CancellationToken)">
   AddFilesAsync(IFile[], CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/IFileManager.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/IFileManager.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds multiple files to the storage repository.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -177,15 +184,18 @@ Interface IFileManager  <a class="header-action link-secondary" title="View sour
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>files</code> <a class="xref" href="NuvTools.Storage.IFile.html">IFile</a>[]</dt>
-    <dd></dd>
+    <dd><p>The array of files to add.</p>
+</dd>
     <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd></dd>
+    <dd><p>A token to cancel the asynchronous operation.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="NuvTools.Storage.IFile.html">IFile</a>&gt;&gt;</dt>
-    <dd></dd>
+    <dd><p>A task representing the asynchronous operation, containing the collection of added files with updated metadata.</p>
+</dd>
   </dl>
 
 
@@ -202,10 +212,11 @@ Interface IFileManager  <a class="header-action link-secondary" title="View sour
 
   <h3 id="NuvTools_Storage_IFileManager_AddFilesAsync_System_String_NuvTools_Storage_IFile___System_Threading_CancellationToken_" data-uid="NuvTools.Storage.IFileManager.AddFilesAsync(System.String,NuvTools.Storage.IFile[],System.Threading.CancellationToken)">
   AddFilesAsync(string, IFile[], CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/IFileManager.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/IFileManager.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds multiple files to a specified root directory in the storage repository.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -215,17 +226,21 @@ Interface IFileManager  <a class="header-action link-secondary" title="View sour
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>rootDir</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The root directory path where files should be stored.</p>
+</dd>
     <dt><code>files</code> <a class="xref" href="NuvTools.Storage.IFile.html">IFile</a>[]</dt>
-    <dd></dd>
+    <dd><p>The array of files to add.</p>
+</dd>
     <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd></dd>
+    <dd><p>A token to cancel the asynchronous operation.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="NuvTools.Storage.IFile.html">IFile</a>&gt;&gt;</dt>
-    <dd></dd>
+    <dd><p>A task representing the asynchronous operation, containing the collection of added files with updated metadata.</p>
+</dd>
   </dl>
 
 
@@ -242,10 +257,11 @@ Interface IFileManager  <a class="header-action link-secondary" title="View sour
 
   <h3 id="NuvTools_Storage_IFileManager_FileExistsAsync_System_String_System_Threading_CancellationToken_" data-uid="NuvTools.Storage.IFileManager.FileExistsAsync(System.String,System.Threading.CancellationToken)">
   FileExistsAsync(string, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/IFileManager.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/IFileManager.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Checks whether a file exists in the storage repository.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -255,15 +271,18 @@ Interface IFileManager  <a class="header-action link-secondary" title="View sour
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The unique identifier of the file.</p>
+</dd>
     <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd></dd>
+    <dd><p>A token to cancel the asynchronous operation.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>A task representing the asynchronous operation, containing <code>true</code> if the file exists; otherwise, <code>false</code>.</p>
+</dd>
   </dl>
 
 
@@ -280,10 +299,11 @@ Interface IFileManager  <a class="header-action link-secondary" title="View sour
 
   <h3 id="NuvTools_Storage_IFileManager_GetAccessRepositoryUri_NuvTools_Storage_AccessPermissions_" data-uid="NuvTools.Storage.IFileManager.GetAccessRepositoryUri(NuvTools.Storage.AccessPermissions)">
   GetAccessRepositoryUri(AccessPermissions)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/IFileManager.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/IFileManager.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a URI for accessing the storage repository with specified permissions.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -293,13 +313,15 @@ Interface IFileManager  <a class="header-action link-secondary" title="View sour
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>permissions</code> <a class="xref" href="NuvTools.Storage.AccessPermissions.html">AccessPermissions</a></dt>
-    <dd></dd>
+    <dd><p>The access permissions to grant. Defaults to <a class="xref" href="NuvTools.Storage.AccessPermissions.html#NuvTools_Storage_AccessPermissions_Read">Read</a>.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><span class="xref">Uri</span></dt>
-    <dd></dd>
+    <dd><p>A URI that can be used to access the repository with the specified permissions.</p>
+</dd>
   </dl>
 
 
@@ -316,10 +338,11 @@ Interface IFileManager  <a class="header-action link-secondary" title="View sour
 
   <h3 id="NuvTools_Storage_IFileManager_GetFileAsync_System_String_System_Boolean_System_Threading_CancellationToken_" data-uid="NuvTools.Storage.IFileManager.GetFileAsync(System.String,System.Boolean,System.Threading.CancellationToken)">
   GetFileAsync(string, bool, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/IFileManager.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/IFileManager.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Retrieves a file from the storage repository by its identifier.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -329,17 +352,21 @@ Interface IFileManager  <a class="header-action link-secondary" title="View sour
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The unique identifier of the file.</p>
+</dd>
     <dt><code>download</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>If <code>true</code>, downloads the file content; otherwise, returns only metadata.</p>
+</dd>
     <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd></dd>
+    <dd><p>A token to cancel the asynchronous operation.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="NuvTools.Storage.IFile.html">IFile</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>A task representing the asynchronous operation, containing the file if found; otherwise, <code>null</code>.</p>
+</dd>
   </dl>
 
 
@@ -356,10 +383,11 @@ Interface IFileManager  <a class="header-action link-secondary" title="View sour
 
   <h3 id="NuvTools_Storage_IFileManager_GetFilesAsync_System_Nullable_System_Int32__System_Threading_CancellationToken_" data-uid="NuvTools.Storage.IFileManager.GetFilesAsync(System.Nullable{System.Int32},System.Threading.CancellationToken)">
   GetFilesAsync(int?, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/IFileManager.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/IFileManager.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Retrieves a paginated list of files from the storage repository.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -369,15 +397,18 @@ Interface IFileManager  <a class="header-action link-secondary" title="View sour
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>pageSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
-    <dd></dd>
+    <dd><p>The maximum number of files to retrieve per page. If <code>null</code>, all files are retrieved.</p>
+</dd>
     <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd></dd>
+    <dd><p>A token to cancel the asynchronous operation.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="NuvTools.Storage.IFile.html">IFile</a>&gt;&gt;</dt>
-    <dd></dd>
+    <dd><p>A task representing the asynchronous operation, containing the collection of files.</p>
+</dd>
   </dl>
 
 
@@ -394,10 +425,11 @@ Interface IFileManager  <a class="header-action link-secondary" title="View sour
 
   <h3 id="NuvTools_Storage_IFileManager_RemoveFileAsync_System_String_System_Threading_CancellationToken_" data-uid="NuvTools.Storage.IFileManager.RemoveFileAsync(System.String,System.Threading.CancellationToken)">
   RemoveFileAsync(string, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/IFileManager.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/IFileManager.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Removes a file from the storage repository.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -407,15 +439,18 @@ Interface IFileManager  <a class="header-action link-secondary" title="View sour
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The unique identifier of the file to remove.</p>
+</dd>
     <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd></dd>
+    <dd><p>A token to cancel the asynchronous operation.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
-    <dd></dd>
+    <dd><p>A task representing the asynchronous operation.</p>
+</dd>
   </dl>
 
 
@@ -432,7 +467,7 @@ Interface IFileManager  <a class="header-action link-secondary" title="View sour
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/IFileManager.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/IFileManager.cs" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class FluentValidation&lt;TModel&gt; | Nuv Tools Framework Docs ">
       
-      
+      <meta name="description" content="Integrates FluentValidation with Blazor&#39;s EditContext and ValidationMessageStore. Provides automatic validation on form submission and field changes, with support for nested property paths.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Validation_AspNetCore_Blazor_FluentValidation_1" data-uid="NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1" class="text-break">
-Class FluentValidation&lt;TModel&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation.AspNetCore.Blazor/FluentValidation.cs"><i class="bi bi-code-slash"></i></a>
+Class FluentValidation&lt;TModel&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation.AspNetCore.Blazor/FluentValidation.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,9 @@ Class FluentValidation&lt;TModel&gt;  <a class="header-action link-secondary" ti
   <dl><dt>Assembly</dt><dd>NuvTools.Validation.AspNetCore.Blazor.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Integrates FluentValidation with Blazor's EditContext and ValidationMessageStore.
+Provides automatic validation on form submission and field changes, with support for nested property paths.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -109,7 +111,8 @@ Class FluentValidation&lt;TModel&gt;  <a class="header-action link-secondary" ti
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TModel</code></dt>
-    <dd></dd>
+    <dd><p>The type of the model being validated.</p>
+</dd>
   </dl>
 
   <dl class="typelist inheritance">
@@ -152,7 +155,7 @@ Class FluentValidation&lt;TModel&gt;  <a class="header-action link-secondary" ti
     <dt>Extension Methods</dt>
     <dd>
   <div>
-      <a class="xref" href="NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_Validate__1___0_">Validator.Validate&lt;T&gt;(T)</a>
+      <a class="xref" href="NuvTools.Validation.Annotations.Validator.html#NuvTools_Validation_Annotations_Validator_Validate__1___0_">Validator.Validate&lt;T&gt;(T)</a>
   </div>
   </dd></dl>
 
@@ -168,10 +171,11 @@ Class FluentValidation&lt;TModel&gt;  <a class="header-action link-secondary" ti
 
   <h3 id="NuvTools_Validation_AspNetCore_Blazor_FluentValidation_1__ctor__0_FluentValidation_IValidator__0__Microsoft_AspNetCore_Components_Forms_EditContext_System_Boolean_System_Boolean_System_Boolean_" data-uid="NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.#ctor(`0,FluentValidation.IValidator{`0},Microsoft.AspNetCore.Components.Forms.EditContext,System.Boolean,System.Boolean,System.Boolean)">
   FluentValidation(TModel, IValidator&lt;TModel&gt;, EditContext, bool, bool, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation.AspNetCore.Blazor/FluentValidation.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation.AspNetCore.Blazor/FluentValidation.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="NuvTools.Validation.AspNetCore.Blazor.FluentValidation-1.html">FluentValidation&lt;TModel&gt;</a> class.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -181,17 +185,23 @@ Class FluentValidation&lt;TModel&gt;  <a class="header-action link-secondary" ti
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>model</code> <span class="xref">TModel</span></dt>
-    <dd></dd>
+    <dd><p>The model instance to validate.</p>
+</dd>
     <dt><code>validator</code> <span class="xref">IValidator</span>&lt;TModel&gt;</dt>
-    <dd></dd>
+    <dd><p>The FluentValidation validator for the model.</p>
+</dd>
     <dt><code>editContext</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.forms.editcontext">EditContext</a></dt>
-    <dd></dd>
+    <dd><p>The Blazor EditContext to integrate with.</p>
+</dd>
     <dt><code>autoValidationOnRequested</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>If true, automatically validates the entire model when EditContext.Validate() is called. Default is true.</p>
+</dd>
     <dt><code>autoValidationOnFieldChanged</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>If true, automatically validates individual fields as they change. Default is true.</p>
+</dd>
     <dt><code>highlightInvalidFields</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>If true, notifies the EditContext of validation state changes to highlight invalid fields. Default is true.</p>
+</dd>
   </dl>
 
 
@@ -213,7 +223,7 @@ Class FluentValidation&lt;TModel&gt;  <a class="header-action link-secondary" ti
 
   <h3 id="NuvTools_Validation_AspNetCore_Blazor_FluentValidation_1_Validate_System_Boolean_" data-uid="NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.Validate(System.Boolean)">
   Validate(bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation.AspNetCore.Blazor/FluentValidation.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation.AspNetCore.Blazor/FluentValidation.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -249,10 +259,11 @@ Class FluentValidation&lt;TModel&gt;  <a class="header-action link-secondary" ti
 
   <h3 id="NuvTools_Validation_AspNetCore_Blazor_FluentValidation_1_ValidateField_Microsoft_AspNetCore_Components_Forms_FieldIdentifier_System_Boolean_" data-uid="NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.ValidateField(Microsoft.AspNetCore.Components.Forms.FieldIdentifier,System.Boolean)">
   ValidateField(FieldIdentifier, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation.AspNetCore.Blazor/FluentValidation.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation.AspNetCore.Blazor/FluentValidation.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Validates a specific field and updates its validation state in the EditContext.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -262,9 +273,11 @@ Class FluentValidation&lt;TModel&gt;  <a class="header-action link-secondary" ti
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>fieldIdentifier</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.forms.fieldidentifier">FieldIdentifier</a></dt>
-    <dd></dd>
+    <dd><p>The field to validate.</p>
+</dd>
     <dt><code>highlightInvalidField</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>If true, notifies the EditContext to highlight the field if invalid. Default is true.</p>
+</dd>
   </dl>
 
 
@@ -282,7 +295,7 @@ Class FluentValidation&lt;TModel&gt;  <a class="header-action link-secondary" ti
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation.AspNetCore.Blazor/FluentValidation.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation.AspNetCore.Blazor/FluentValidation.cs" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class ResultBase | Nuv Tools Framework Docs ">
       
-      <meta name="description" content="Base class for operation results, containing shared properties and logic.">
+      <meta name="description" content="Base class for operation results. Holds common metadata such as success flag, result type, messages and &amp;quot;not found&amp;quot; indicator.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Common_ResultWrapper_ResultBase" data-uid="NuvTools.Common.ResultWrapper.ResultBase" class="text-break">
-Class ResultBase  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/ResultBase.cs"><i class="bi bi-code-slash"></i></a>
+Class ResultBase  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/ResultWrapper/ResultBase.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class ResultBase  <a class="header-action link-secondary" title="View source" hr
   <dl><dt>Assembly</dt><dd>NuvTools.Common.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Base class for operation results, containing shared properties and logic.</p>
+  <div class="markdown summary"><p>Base class for operation results. Holds common metadata such as success flag,
+result type, messages and &quot;not found&quot; indicator.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -177,7 +178,7 @@ Class ResultBase  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="NuvTools_Common_ResultWrapper_ResultBase__ctor" data-uid="NuvTools.Common.ResultWrapper.ResultBase.#ctor">
   ResultBase()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/ResultBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/ResultWrapper/ResultBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -207,10 +208,11 @@ Class ResultBase  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="NuvTools_Common_ResultWrapper_ResultBase_ContainsNotFound" data-uid="NuvTools.Common.ResultWrapper.ResultBase.ContainsNotFound">
   ContainsNotFound
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/ResultBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/ResultWrapper/ResultBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Indicates whether the result contains a &quot;not found&quot; message.</p>
+  <div class="markdown level1 summary"><p>Indicates whether the result contains a &quot;not found&quot; condition (HTTP 404).
+Useful for consumers that differentiate between logical and technical errors.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -239,11 +241,11 @@ Class ResultBase  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="NuvTools_Common_ResultWrapper_ResultBase_Message" data-uid="NuvTools.Common.ResultWrapper.ResultBase.Message">
   Message
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/ResultBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/ResultWrapper/ResultBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Returns a formatted string with the first message (e.g., &quot;Title - Detail&quot;).
-Ignored in JSON serialization to prevent duplication.</p>
+  <div class="markdown level1 summary"><p>Returns a formatted string with Title (and Detail if present).
+Ignored in JSON serialization to avoid duplication.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -273,11 +275,11 @@ public string? Message { get; }</code></pre>
 
   <h3 id="NuvTools_Common_ResultWrapper_ResultBase_MessageDetail" data-uid="NuvTools.Common.ResultWrapper.ResultBase.MessageDetail">
   MessageDetail
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/ResultBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/ResultWrapper/ResultBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Returns the first message detail (usually the main one).
-Ignored during JSON serialization to avoid redundancy.</p>
+  <div class="markdown level1 summary"><p>Returns the first message detail (most important message).
+Ignored in JSON serialization to avoid redundancy.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -307,7 +309,7 @@ public MessageDetail? MessageDetail { get; }</code></pre>
 
   <h3 id="NuvTools_Common_ResultWrapper_ResultBase_Messages" data-uid="NuvTools.Common.ResultWrapper.ResultBase.Messages">
   Messages
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/ResultBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/ResultWrapper/ResultBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>List of message details returned by the operation.</p>
@@ -339,10 +341,10 @@ public MessageDetail? MessageDetail { get; }</code></pre>
 
   <h3 id="NuvTools_Common_ResultWrapper_ResultBase_ResultType" data-uid="NuvTools.Common.ResultWrapper.ResultBase.ResultType">
   ResultType
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/ResultBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/ResultWrapper/ResultBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Represents the type of the result (Success, Error, ValidationError, etc.).</p>
+  <div class="markdown level1 summary"><p>Defines the type of result (Success, Error, ValidationError, etc.).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -371,7 +373,7 @@ public MessageDetail? MessageDetail { get; }</code></pre>
 
   <h3 id="NuvTools_Common_ResultWrapper_ResultBase_Succeeded" data-uid="NuvTools.Common.ResultWrapper.ResultBase.Succeeded">
   Succeeded
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/ResultBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/ResultWrapper/ResultBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Indicates whether the operation succeeded.</p>
@@ -407,20 +409,20 @@ public MessageDetail? MessageDetail { get; }</code></pre>
 
   <h3 id="NuvTools_Common_ResultWrapper_ResultBase_ConvertToMessageDetail_System_Collections_Generic_IEnumerable_System_String__" data-uid="NuvTools.Common.ResultWrapper.ResultBase.ConvertToMessageDetail(System.Collections.Generic.IEnumerable{System.String})">
   ConvertToMessageDetail(IEnumerable&lt;string&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/ResultBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/ResultWrapper/ResultBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Converts a list of strings into a list of message details.</p>
+  <div class="markdown level1 summary"><p>Converts a list of strings into message details.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected static List&lt;MessageDetail&gt; ConvertToMessageDetail(IEnumerable&lt;string&gt; value)</code></pre>
+    <pre><code class="lang-csharp hljs">protected static List&lt;MessageDetail&gt; ConvertToMessageDetail(IEnumerable&lt;string&gt; values)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dt><code>values</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
     <dd></dd>
   </dl>
 
@@ -444,10 +446,11 @@ public MessageDetail? MessageDetail { get; }</code></pre>
 
   <h3 id="NuvTools_Common_ResultWrapper_ResultBase_CreateResult__1_NuvTools_Common_ResultWrapper_Enumerations_ResultType___0_System_Collections_Generic_List_NuvTools_Common_ResultWrapper_MessageDetail__Microsoft_Extensions_Logging_ILogger_" data-uid="NuvTools.Common.ResultWrapper.ResultBase.CreateResult``1(NuvTools.Common.ResultWrapper.Enumerations.ResultType,``0,System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)">
   CreateResult&lt;T&gt;(ResultType, T, List&lt;MessageDetail&gt;?, ILogger?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/ResultBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/ResultWrapper/ResultBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Creates a new instance of a result.</p>
+  <div class="markdown level1 summary"><p>Centralized factory logic used by all Result classes.
+Applies success flag, not-found detection, message list assignment and optional logging.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -492,10 +495,10 @@ public MessageDetail? MessageDetail { get; }</code></pre>
 
   <h3 id="NuvTools_Common_ResultWrapper_ResultBase_Log_System_Collections_Generic_List_NuvTools_Common_ResultWrapper_MessageDetail__Microsoft_Extensions_Logging_ILogger_" data-uid="NuvTools.Common.ResultWrapper.ResultBase.Log(System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail},Microsoft.Extensions.Logging.ILogger)">
   Log(List&lt;MessageDetail&gt;?, ILogger?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/ResultBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/ResultWrapper/ResultBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Logs all message details using the specified logger.</p>
+  <div class="markdown level1 summary"><p>Logs each message using the appropriate log level from <a class="xref" href="NuvTools.Common.ResultWrapper.Enumerations.Severity.html">Severity</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -526,7 +529,7 @@ public MessageDetail? MessageDetail { get; }</code></pre>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/ResultBase.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/ResultWrapper/ResultBase.cs" class="edit-link">Edit this page</a>
         </div>
 
 

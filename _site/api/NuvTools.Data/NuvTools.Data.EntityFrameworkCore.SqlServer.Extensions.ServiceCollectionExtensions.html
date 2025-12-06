@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class ServiceCollectionExtensions | Nuv Tools Framework Docs ">
       
-      
+      <meta name="description" content="Extension methods for registering SQL Server DbContext instances in the dependency injection container.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Data_EntityFrameworkCore_SqlServer_Extensions_ServiceCollectionExtensions" data-uid="NuvTools.Data.EntityFrameworkCore.SqlServer.Extensions.ServiceCollectionExtensions" class="text-break">
-Class ServiceCollectionExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore.SqlServer/Extensions/ServiceCollectionExtensions.cs"><i class="bi bi-code-slash"></i></a>
+Class ServiceCollectionExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore.SqlServer/Extensions/ServiceCollectionExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class ServiceCollectionExtensions  <a class="header-action link-secondary" title
   <dl><dt>Assembly</dt><dd>NuvTools.Data.EntityFrameworkCore.SqlServer.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Extension methods for registering SQL Server DbContext instances in the dependency injection container.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -156,10 +157,11 @@ Class ServiceCollectionExtensions  <a class="header-action link-secondary" title
 
   <h3 id="NuvTools_Data_EntityFrameworkCore_SqlServer_Extensions_ServiceCollectionExtensions_AddDatabaseByConnectionName__1_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_System_String_System_Action_Microsoft_EntityFrameworkCore_Infrastructure_SqlServerDbContextOptionsBuilder__Microsoft_Extensions_DependencyInjection_ServiceLifetime_" data-uid="NuvTools.Data.EntityFrameworkCore.SqlServer.Extensions.ServiceCollectionExtensions.AddDatabaseByConnectionName``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String,System.Action{Microsoft.EntityFrameworkCore.Infrastructure.SqlServerDbContextOptionsBuilder},Microsoft.Extensions.DependencyInjection.ServiceLifetime)">
   AddDatabaseByConnectionName&lt;TContext&gt;(IServiceCollection, IConfiguration, string, Action&lt;SqlServerDbContextOptionsBuilder&gt;?, ServiceLifetime)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore.SqlServer/Extensions/ServiceCollectionExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore.SqlServer/Extensions/ServiceCollectionExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Registers a SQL Server DbContext in the service collection using a connection name from an existing configuration.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -169,27 +171,34 @@ Class ServiceCollectionExtensions  <a class="header-action link-secondary" title
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>services</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection">IServiceCollection</a></dt>
-    <dd></dd>
+    <dd><p>The service collection.</p>
+</dd>
     <dt><code>configuration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration">IConfiguration</a></dt>
-    <dd></dd>
+    <dd><p>The configuration containing connection strings.</p>
+</dd>
     <dt><code>connectionName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The name of the connection string in the configuration.</p>
+</dd>
     <dt><code>sqlServerOptionsAction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.infrastructure.sqlserverdbcontextoptionsbuilder">SqlServerDbContextOptionsBuilder</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>Optional action to configure SQL Server-specific options.</p>
+</dd>
     <dt><code>contextLifetime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.servicelifetime">ServiceLifetime</a></dt>
-    <dd></dd>
+    <dd><p>The lifetime of the DbContext in the DI container. Defaults to Scoped.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection">IServiceCollection</a></dt>
-    <dd></dd>
+    <dd><p>The service collection for chaining.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TContext</code></dt>
-    <dd></dd>
+    <dd><p>The type of DbContext to register.</p>
+</dd>
   </dl>
 
 
@@ -205,10 +214,11 @@ Class ServiceCollectionExtensions  <a class="header-action link-secondary" title
 
   <h3 id="NuvTools_Data_EntityFrameworkCore_SqlServer_Extensions_ServiceCollectionExtensions_AddDatabaseByConnectionName__1_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_String_System_String_System_Action_Microsoft_EntityFrameworkCore_Infrastructure_SqlServerDbContextOptionsBuilder__Microsoft_Extensions_DependencyInjection_ServiceLifetime_" data-uid="NuvTools.Data.EntityFrameworkCore.SqlServer.Extensions.ServiceCollectionExtensions.AddDatabaseByConnectionName``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String,System.String,System.Action{Microsoft.EntityFrameworkCore.Infrastructure.SqlServerDbContextOptionsBuilder},Microsoft.Extensions.DependencyInjection.ServiceLifetime)">
   AddDatabaseByConnectionName&lt;TContext&gt;(IServiceCollection, string, string, Action&lt;SqlServerDbContextOptionsBuilder&gt;?, ServiceLifetime)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore.SqlServer/Extensions/ServiceCollectionExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore.SqlServer/Extensions/ServiceCollectionExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Registers a SQL Server DbContext in the service collection using a connection name from a settings file.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -218,27 +228,34 @@ Class ServiceCollectionExtensions  <a class="header-action link-secondary" title
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>services</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection">IServiceCollection</a></dt>
-    <dd></dd>
+    <dd><p>The service collection.</p>
+</dd>
     <dt><code>connectionName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The name of the connection string in the settings file.</p>
+</dd>
     <dt><code>settingsFileName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The settings file name. Defaults to &quot;appsettings.json&quot;.</p>
+</dd>
     <dt><code>sqlServerOptionsAction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.infrastructure.sqlserverdbcontextoptionsbuilder">SqlServerDbContextOptionsBuilder</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>Optional action to configure SQL Server-specific options.</p>
+</dd>
     <dt><code>contextLifetime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.servicelifetime">ServiceLifetime</a></dt>
-    <dd></dd>
+    <dd><p>The lifetime of the DbContext in the DI container. Defaults to Scoped.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection">IServiceCollection</a></dt>
-    <dd></dd>
+    <dd><p>The service collection for chaining.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TContext</code></dt>
-    <dd></dd>
+    <dd><p>The type of DbContext to register.</p>
+</dd>
   </dl>
 
 
@@ -254,10 +271,11 @@ Class ServiceCollectionExtensions  <a class="header-action link-secondary" title
 
   <h3 id="NuvTools_Data_EntityFrameworkCore_SqlServer_Extensions_ServiceCollectionExtensions_AddDatabase__1_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_String_System_Action_Microsoft_EntityFrameworkCore_Infrastructure_SqlServerDbContextOptionsBuilder__Microsoft_Extensions_DependencyInjection_ServiceLifetime_" data-uid="NuvTools.Data.EntityFrameworkCore.SqlServer.Extensions.ServiceCollectionExtensions.AddDatabase``1(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String,System.Action{Microsoft.EntityFrameworkCore.Infrastructure.SqlServerDbContextOptionsBuilder},Microsoft.Extensions.DependencyInjection.ServiceLifetime)">
   AddDatabase&lt;TContext&gt;(IServiceCollection, string?, Action&lt;SqlServerDbContextOptionsBuilder&gt;?, ServiceLifetime)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore.SqlServer/Extensions/ServiceCollectionExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore.SqlServer/Extensions/ServiceCollectionExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Registers a SQL Server DbContext in the service collection using a connection string.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -267,25 +285,31 @@ Class ServiceCollectionExtensions  <a class="header-action link-secondary" title
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>services</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection">IServiceCollection</a></dt>
-    <dd></dd>
+    <dd><p>The service collection.</p>
+</dd>
     <dt><code>connectionString</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The SQL Server connection string.</p>
+</dd>
     <dt><code>sqlServerOptionsAction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.infrastructure.sqlserverdbcontextoptionsbuilder">SqlServerDbContextOptionsBuilder</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>Optional action to configure SQL Server-specific options.</p>
+</dd>
     <dt><code>contextLifetime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.servicelifetime">ServiceLifetime</a></dt>
-    <dd></dd>
+    <dd><p>The lifetime of the DbContext in the DI container. Defaults to Scoped.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection">IServiceCollection</a></dt>
-    <dd></dd>
+    <dd><p>The service collection for chaining.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TContext</code></dt>
-    <dd></dd>
+    <dd><p>The type of DbContext to register.</p>
+</dd>
   </dl>
 
 
@@ -301,7 +325,7 @@ Class ServiceCollectionExtensions  <a class="header-action link-secondary" title
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore.SqlServer/Extensions/ServiceCollectionExtensions.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore.SqlServer/Extensions/ServiceCollectionExtensions.cs" class="edit-link">Edit this page</a>
         </div>
 
 

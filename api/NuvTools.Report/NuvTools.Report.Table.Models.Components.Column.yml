@@ -18,10 +18,12 @@ items:
   fullName: NuvTools.Report.Table.Models.Components.Column
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-report/blob/0bd46ca08c48d8e1dda37b98da5d10e57b08d50c/src/NuvTools.Report/Table/Models/Components/Column.cs
+    href: https://github.com/nuvtools/nuvtools-report/blob/6b7c4cdb59b469a26019e0945adf84064ece8bb9/src/NuvTools.Report/Table/Models/Components/Column.cs
   assemblies:
   - NuvTools.Report
   namespace: NuvTools.Report.Table.Models.Components
+  summary: Represents a column definition in a table, specifying how data should be displayed.
+  example: []
   syntax:
     content: public class Column
     content.vb: Public Class Column
@@ -47,7 +49,7 @@ items:
   fullName: NuvTools.Report.Table.Models.Components.Column.Column()
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-report/blob/0bd46ca08c48d8e1dda37b98da5d10e57b08d50c/src/NuvTools.Report/Table/Models/Components/Column.cs
+    href: https://github.com/nuvtools/nuvtools-report/blob/6b7c4cdb59b469a26019e0945adf84064ece8bb9/src/NuvTools.Report/Table/Models/Components/Column.cs
   assemblies:
   - NuvTools.Report
   namespace: NuvTools.Report.Table.Models.Components
@@ -70,12 +72,18 @@ items:
   fullName: NuvTools.Report.Table.Models.Components.Column.Name
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-report/blob/0bd46ca08c48d8e1dda37b98da5d10e57b08d50c/src/NuvTools.Report/Table/Models/Components/Column.cs
+    href: https://github.com/nuvtools/nuvtools-report/blob/6b7c4cdb59b469a26019e0945adf84064ece8bb9/src/NuvTools.Report/Table/Models/Components/Column.cs
   assemblies:
   - NuvTools.Report
   namespace: NuvTools.Report.Table.Models.Components
+  summary: Gets or sets the property name to extract from source objects.
+  remarks: >-
+    This name is used with reflection in Table.SetRows to read property values from objects.
+
+    Must match the exact property name on the source object (case-sensitive).
+  example: []
   syntax:
-    content: public string Name { get; set; }
+    content: public string? Name { get; set; }
     parameters: []
     return:
       type: System.String
@@ -93,12 +101,15 @@ items:
   fullName: NuvTools.Report.Table.Models.Components.Column.Label
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-report/blob/0bd46ca08c48d8e1dda37b98da5d10e57b08d50c/src/NuvTools.Report/Table/Models/Components/Column.cs
+    href: https://github.com/nuvtools/nuvtools-report/blob/6b7c4cdb59b469a26019e0945adf84064ece8bb9/src/NuvTools.Report/Table/Models/Components/Column.cs
   assemblies:
   - NuvTools.Report
   namespace: NuvTools.Report.Table.Models.Components
+  summary: Gets or sets the display label shown in the column header.
+  remarks: This is the user-friendly text displayed in the table header, which can differ from the property Name.
+  example: []
   syntax:
-    content: public string Label { get; set; }
+    content: public string? Label { get; set; }
     parameters: []
     return:
       type: System.String
@@ -116,10 +127,13 @@ items:
   fullName: NuvTools.Report.Table.Models.Components.Column.Order
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-report/blob/0bd46ca08c48d8e1dda37b98da5d10e57b08d50c/src/NuvTools.Report/Table/Models/Components/Column.cs
+    href: https://github.com/nuvtools/nuvtools-report/blob/6b7c4cdb59b469a26019e0945adf84064ece8bb9/src/NuvTools.Report/Table/Models/Components/Column.cs
   assemblies:
   - NuvTools.Report
   namespace: NuvTools.Report.Table.Models.Components
+  summary: Gets or sets the display order/position of this column in the table.
+  remarks: Lower values appear first (leftmost). Columns are sorted by this value when rendered.
+  example: []
   syntax:
     content: public short Order { get; set; }
     parameters: []
@@ -139,12 +153,15 @@ items:
   fullName: NuvTools.Report.Table.Models.Components.Column.Format
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-report/blob/0bd46ca08c48d8e1dda37b98da5d10e57b08d50c/src/NuvTools.Report/Table/Models/Components/Column.cs
+    href: https://github.com/nuvtools/nuvtools-report/blob/6b7c4cdb59b469a26019e0945adf84064ece8bb9/src/NuvTools.Report/Table/Models/Components/Column.cs
   assemblies:
   - NuvTools.Report
   namespace: NuvTools.Report.Table.Models.Components
+  summary: Gets or sets the format string for displaying values in this column.
+  remarks: 'Used for formatting dates, numbers, and other data types. Examples: "yyyy-MM-dd", "N2", "C".'
+  example: []
   syntax:
-    content: public string Format { get; set; }
+    content: public string? Format { get; set; }
     parameters: []
     return:
       type: System.String

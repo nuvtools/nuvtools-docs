@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class ClaimsPrincipalExtensions | Nuv Tools Framework Docs ">
       
-      
+      <meta name="description" content="Provides extension methods for extracting user information from  objects.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Security_Extensions_ClaimsPrincipalExtensions" data-uid="NuvTools.Security.Extensions.ClaimsPrincipalExtensions" class="text-break">
-Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs"><i class="bi bi-code-slash"></i></a>
+Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
   <dl><dt>Assembly</dt><dd>NuvTools.Security.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Provides extension methods for extracting user information from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a> objects.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -146,6 +147,10 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
 
 
 
+  <h2 id="NuvTools_Security_Extensions_ClaimsPrincipalExtensions_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>These extensions simplify the process of extracting common user identity information from claims,
+handling multiple claim type variations and validating values where appropriate.</p>
+</div>
 
 
   <h2 class="section" id="methods">Methods
@@ -156,10 +161,11 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
 
   <h3 id="NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetCustomAttributeValues__1_System_Security_Claims_ClaimsPrincipal_System_String_" data-uid="NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetCustomAttributeValues``1(System.Security.Claims.ClaimsPrincipal,System.String)">
   GetCustomAttributeValues&lt;T&gt;(ClaimsPrincipal, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets all values from a custom extension attribute claim and parses them as the specified type.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -169,29 +175,60 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>user</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></dt>
-    <dd></dd>
+    <dd><p>The claims principal representing the user.</p>
+</dd>
     <dt><code>customAttributeName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The name of the custom attribute (without the &quot;extension_&quot; prefix).</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</dt>
-    <dd></dd>
+    <dd><p>A collection of parsed values, or null if the claim doesn't exist.
+Invalid values are filtered out for enum types.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>The type to parse the attribute values as (string, int, double, bool, or enum).</p>
+</dd>
   </dl>
 
 
 
 
 
+  <h4 class="section" id="NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetCustomAttributeValues__1_System_Security_Claims_ClaimsPrincipal_System_String__examples">Examples</h4>
+  <pre><code class="lang-csharp">// Get a list of role IDs stored as integers in an extension attribute
+var roleIds = user.GetCustomAttributeValues&lt;int&gt;("roleIds");
+
+// Get an enum value from a custom attribute
+var permissions = user.GetCustomAttributeValues&lt;PermissionLevel&gt;("permissions");</code></pre>
 
 
+  <h4 class="section" id="NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetCustomAttributeValues__1_System_Security_Claims_ClaimsPrincipal_System_String__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>
+This method looks for a claim with type "extension_{customAttributeName}" and expects
+a comma-separated list of values. It parses each value to the specified type.
+</p>
+<p>Supported types: string, int, double, bool, and enum types.</p>
+<p>
+This is commonly used with Azure AD B2C custom attributes that are passed as extension claims.
+</p>
+</div>
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></dt>
+    <dd><p>Thrown when the type T is not supported.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.formatexception">FormatException</a></dt>
+    <dd><p>Thrown when values cannot be parsed to the specified type.</p>
+</dd>
+  </dl>
 
 
 
@@ -199,10 +236,11 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
 
   <h3 id="NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetEmail_System_Security_Claims_ClaimsPrincipal_" data-uid="NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetEmail(System.Security.Claims.ClaimsPrincipal)">
   GetEmail(ClaimsPrincipal)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the email address of the user, checking multiple claim sources and validating the format.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -212,13 +250,15 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>user</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></dt>
-    <dd></dd>
+    <dd><p>The claims principal representing the user.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>A valid email address, or null if not found or invalid.</p>
+</dd>
   </dl>
 
 
@@ -227,6 +267,10 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section" id="NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetEmail_System_Security_Claims_ClaimsPrincipal__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method checks the following claims in order: Email, email (OIDC), UPN, PreferredUsername, UniqueName.
+The value is validated to ensure it's a properly formatted email address before returning.</p>
+</div>
 
 
 
@@ -235,10 +279,11 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
 
   <h3 id="NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetFamilyName_System_Security_Claims_ClaimsPrincipal_" data-uid="NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetFamilyName(System.Security.Claims.ClaimsPrincipal)">
   GetFamilyName(ClaimsPrincipal)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the family name (last name) of the user from the OIDC family_name claim.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -248,13 +293,15 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>user</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></dt>
-    <dd></dd>
+    <dd><p>The claims principal representing the user.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The user's family name, or null if not present.</p>
+</dd>
   </dl>
 
 
@@ -263,6 +310,10 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section" id="NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetFamilyName_System_Security_Claims_ClaimsPrincipal__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This uses the OIDC standard &quot;family_name&quot; claim.
+For traditional ASP.NET claims, use <a class="xref" href="NuvTools.Security.Extensions.ClaimsPrincipalExtensions.html#NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetSurname_System_Security_Claims_ClaimsPrincipal_">GetSurname(ClaimsPrincipal)</a> instead.</p>
+</div>
 
 
 
@@ -271,10 +322,11 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
 
   <h3 id="NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetGivenName_System_Security_Claims_ClaimsPrincipal_" data-uid="NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetGivenName(System.Security.Claims.ClaimsPrincipal)">
   GetGivenName(ClaimsPrincipal)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the given name (first name) of the user.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -284,13 +336,15 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>user</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></dt>
-    <dd></dd>
+    <dd><p>The claims principal representing the user.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The user's given name, or null if not present.</p>
+</dd>
   </dl>
 
 
@@ -307,10 +361,11 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
 
   <h3 id="NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetId_System_Security_Claims_ClaimsPrincipal_" data-uid="NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetId(System.Security.Claims.ClaimsPrincipal)">
   GetId(ClaimsPrincipal)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the unique identifier of the user from either the NameIdentifier or Sub claim.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -320,13 +375,15 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>user</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></dt>
-    <dd></dd>
+    <dd><p>The claims principal representing the user.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The user's unique identifier.</p>
+</dd>
   </dl>
 
 
@@ -335,7 +392,17 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section" id="NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetId_System_Security_Claims_ClaimsPrincipal__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method first tries to get the NameIdentifier claim, then falls back to the Sub claim.
+At least one of these claims must be present.</p>
+</div>
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></dt>
+    <dd><p>Thrown when neither NameIdentifier nor Sub claim is present.</p>
+</dd>
+  </dl>
 
 
 
@@ -343,10 +410,11 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
 
   <h3 id="NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetName_System_Security_Claims_ClaimsPrincipal_" data-uid="NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetName(System.Security.Claims.ClaimsPrincipal)">
   GetName(ClaimsPrincipal)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the display name of the user.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -356,13 +424,15 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>user</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></dt>
-    <dd></dd>
+    <dd><p>The claims principal representing the user.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The user's display name, or null if not present.</p>
+</dd>
   </dl>
 
 
@@ -371,6 +441,9 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section" id="NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetName_System_Security_Claims_ClaimsPrincipal__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method checks both the standard ClaimTypes.Name and the &quot;name&quot; claim.</p>
+</div>
 
 
 
@@ -379,10 +452,11 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
 
   <h3 id="NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetNameIdentifier_System_Security_Claims_ClaimsPrincipal_" data-uid="NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetNameIdentifier(System.Security.Claims.ClaimsPrincipal)">
   GetNameIdentifier(ClaimsPrincipal)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the name identifier claim of the user.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -392,13 +466,15 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>user</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></dt>
-    <dd></dd>
+    <dd><p>The claims principal representing the user.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The name identifier, or null if not present.</p>
+</dd>
   </dl>
 
 
@@ -407,6 +483,9 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section" id="NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetNameIdentifier_System_Security_Claims_ClaimsPrincipal__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is typically used in ASP.NET Identity-based authentication systems.</p>
+</div>
 
 
 
@@ -415,10 +494,11 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
 
   <h3 id="NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetPreferredUsername_System_Security_Claims_ClaimsPrincipal_" data-uid="NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetPreferredUsername(System.Security.Claims.ClaimsPrincipal)">
   GetPreferredUsername(ClaimsPrincipal)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the preferred username of the user.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -428,13 +508,15 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>user</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></dt>
-    <dd></dd>
+    <dd><p>The claims principal representing the user.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The preferred username, or null if not present.</p>
+</dd>
   </dl>
 
 
@@ -443,6 +525,9 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section" id="NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetPreferredUsername_System_Security_Claims_ClaimsPrincipal__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is a standard OIDC claim representing the user's preferred display username.</p>
+</div>
 
 
 
@@ -451,10 +536,11 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
 
   <h3 id="NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetSub_System_Security_Claims_ClaimsPrincipal_" data-uid="NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSub(System.Security.Claims.ClaimsPrincipal)">
   GetSub(ClaimsPrincipal)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the subject identifier (sub claim) of the user.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -464,13 +550,15 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>user</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></dt>
-    <dd></dd>
+    <dd><p>The claims principal representing the user.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The subject identifier, or null if not present.</p>
+</dd>
   </dl>
 
 
@@ -479,6 +567,9 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section" id="NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetSub_System_Security_Claims_ClaimsPrincipal__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The 'sub' claim is the standard JWT claim for the unique user identifier.</p>
+</div>
 
 
 
@@ -487,10 +578,11 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
 
   <h3 id="NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetSurname_System_Security_Claims_ClaimsPrincipal_" data-uid="NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetSurname(System.Security.Claims.ClaimsPrincipal)">
   GetSurname(ClaimsPrincipal)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the surname (last name) of the user from the Surname claim.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -500,13 +592,15 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>user</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></dt>
-    <dd></dd>
+    <dd><p>The claims principal representing the user.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The user's surname, or null if not present.</p>
+</dd>
   </dl>
 
 
@@ -515,6 +609,10 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section" id="NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetSurname_System_Security_Claims_ClaimsPrincipal__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This uses the standard ClaimTypes.Surname claim type.
+For OIDC tokens, use <a class="xref" href="NuvTools.Security.Extensions.ClaimsPrincipalExtensions.html#NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetFamilyName_System_Security_Claims_ClaimsPrincipal_">GetFamilyName(ClaimsPrincipal)</a> instead.</p>
+</div>
 
 
 
@@ -523,10 +621,11 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
 
   <h3 id="NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetUniqueName_System_Security_Claims_ClaimsPrincipal_" data-uid="NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetUniqueName(System.Security.Claims.ClaimsPrincipal)">
   GetUniqueName(ClaimsPrincipal)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the unique name of the user.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -536,13 +635,15 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>user</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></dt>
-    <dd></dd>
+    <dd><p>The claims principal representing the user.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The unique name, or null if not present.</p>
+</dd>
   </dl>
 
 
@@ -551,6 +652,9 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section" id="NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetUniqueName_System_Security_Claims_ClaimsPrincipal__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is often used in legacy authentication systems as a unique identifier.</p>
+</div>
 
 
 
@@ -559,10 +663,11 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
 
   <h3 id="NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetUpn_System_Security_Claims_ClaimsPrincipal_" data-uid="NuvTools.Security.Extensions.ClaimsPrincipalExtensions.GetUpn(System.Security.Claims.ClaimsPrincipal)">
   GetUpn(ClaimsPrincipal)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the User Principal Name (UPN) of the user.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -572,13 +677,15 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>user</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></dt>
-    <dd></dd>
+    <dd><p>The claims principal representing the user.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The UPN, or null if not present.</p>
+</dd>
   </dl>
 
 
@@ -587,6 +694,10 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section" id="NuvTools_Security_Extensions_ClaimsPrincipalExtensions_GetUpn_System_Security_Claims_ClaimsPrincipal__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>UPN is commonly used in Microsoft Azure AD and Active Directory scenarios.
+It typically has the format username@domain.</p>
+</div>
 
 
 
@@ -595,10 +706,11 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
 
   <h3 id="NuvTools_Security_Extensions_ClaimsPrincipalExtensions_HasValue__1_System_Security_Claims_ClaimsPrincipal_System_String___0_" data-uid="NuvTools.Security.Extensions.ClaimsPrincipalExtensions.HasValue``1(System.Security.Claims.ClaimsPrincipal,System.String,``0)">
   HasValue&lt;T&gt;(ClaimsPrincipal, string, T)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Determines whether the user has a specific value in a custom extension attribute claim.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -608,23 +720,28 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>user</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></dt>
-    <dd></dd>
+    <dd><p>The claims principal representing the user.</p>
+</dd>
     <dt><code>customAttriuteName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The name of the custom attribute (without the &quot;extension_&quot; prefix).</p>
+</dd>
     <dt><code>value</code> <span class="xref">T</span></dt>
-    <dd></dd>
+    <dd><p>The value to check for.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True if the user has the specified value in the custom attribute; otherwise, false.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>The type to parse the attribute values as (string, int, double, bool, or enum).</p>
+</dd>
   </dl>
 
 
@@ -632,6 +749,10 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
 
 
 
+  <h4 class="section" id="NuvTools_Security_Extensions_ClaimsPrincipalExtensions_HasValue__1_System_Security_Claims_ClaimsPrincipal_System_String___0__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method looks for a claim with type &quot;extension_{customAttributeName}&quot; and checks if
+the specified value exists in the comma-separated list of values.</p>
+</div>
 
 
 
@@ -640,7 +761,7 @@ Class ClaimsPrincipalExtensions  <a class="header-action link-secondary" title="
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimsPrincipalExtensions.cs" class="edit-link">Edit this page</a>
         </div>
 
 

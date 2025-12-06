@@ -15,10 +15,18 @@ items:
   fullName: NuvTools.Notification.Mail.Smtp.SMTPMailService
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail.Smtp/SMTPMailService.cs
+    href: https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail.Smtp/SMTPMailService.cs
   assemblies:
   - NuvTools.Notification.Mail.Smtp
   namespace: NuvTools.Notification.Mail.Smtp
+  summary: SMTP implementation of <xref href="NuvTools.Notification.Mail.IMailService" data-throw-if-not-resolved="false"></xref> using MailKit for sending email messages.
+  remarks: >-
+    This service uses the MailKit library to send emails via SMTP protocol.
+
+    It supports HTML body content, multiple recipients, and file attachments.
+
+    The SMTP connection is configured using settings from <xref href="NuvTools.Notification.Mail.Configuration.MailConfigurationSection" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: 'public class SMTPMailService : IMailService'
     content.vb: Public Class SMTPMailService Implements IMailService
@@ -46,15 +54,24 @@ items:
   fullName: NuvTools.Notification.Mail.Smtp.SMTPMailService.SMTPMailService(Microsoft.Extensions.Options.IOptions<NuvTools.Notification.Mail.Configuration.MailConfigurationSection>)
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail.Smtp/SMTPMailService.cs
+    href: https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail.Smtp/SMTPMailService.cs
   assemblies:
   - NuvTools.Notification.Mail.Smtp
   namespace: NuvTools.Notification.Mail.Smtp
+  summary: SMTP implementation of <xref href="NuvTools.Notification.Mail.IMailService" data-throw-if-not-resolved="false"></xref> using MailKit for sending email messages.
+  remarks: >-
+    This service uses the MailKit library to send emails via SMTP protocol.
+
+    It supports HTML body content, multiple recipients, and file attachments.
+
+    The SMTP connection is configured using settings from <xref href="NuvTools.Notification.Mail.Configuration.MailConfigurationSection" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public SMTPMailService(IOptions<MailConfigurationSection> appMailConfiguration)
     parameters:
     - id: appMailConfiguration
       type: Microsoft.Extensions.Options.IOptions{NuvTools.Notification.Mail.Configuration.MailConfigurationSection}
+      description: The mail configuration options containing SMTP server settings.
     content.vb: Public Sub New(appMailConfiguration As IOptions(Of MailConfigurationSection))
   overload: NuvTools.Notification.Mail.Smtp.SMTPMailService.#ctor*
   nameWithType.vb: SMTPMailService.New(IOptions(Of MailConfigurationSection))
@@ -72,25 +89,49 @@ items:
   fullName: NuvTools.Notification.Mail.Smtp.SMTPMailService.SendAsync(NuvTools.Notification.Mail.MailMessage)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail.Smtp/SMTPMailService.cs
+    href: https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail.Smtp/SMTPMailService.cs
   assemblies:
   - NuvTools.Notification.Mail.Smtp
   namespace: NuvTools.Notification.Mail.Smtp
-  summary: Send mail based on selected infraestructure.
+  summary: Sends an email message asynchronously using the configured SMTP server.
+  remarks: >-
+    This method constructs a MIME message from the provided <code class="paramref">request</code>, connects to the SMTP server,
+
+    authenticates using the configured credentials, sends the message, and disconnects.
+
+    If the message includes attachments via <xref href="NuvTools.Notification.Mail.MailMessage.Parts" data-throw-if-not-resolved="false"></xref>, they are added as MIME attachments.
+
+    The sender address and display name can be overridden per message or fall back to configuration defaults.
   example: []
   syntax:
     content: public Task SendAsync(MailMessage request)
     parameters:
     - id: request
       type: NuvTools.Notification.Mail.MailMessage
+      description: The mail message to send, including sender, recipients, subject, body, and optional attachments.
     return:
       type: System.Threading.Tasks.Task
-      description: ''
+      description: A task representing the asynchronous send operation.
     content.vb: Public Function SendAsync(request As MailMessage) As Task
   overload: NuvTools.Notification.Mail.Smtp.SMTPMailService.SendAsync*
   implements:
   - NuvTools.Notification.Mail.IMailService.SendAsync(NuvTools.Notification.Mail.MailMessage)
 references:
+- uid: NuvTools.Notification.Mail.IMailService
+  commentId: T:NuvTools.Notification.Mail.IMailService
+  parent: NuvTools.Notification.Mail
+  isExternal: true
+  href: NuvTools.Notification.Mail.IMailService.html
+  name: IMailService
+  nameWithType: IMailService
+  fullName: NuvTools.Notification.Mail.IMailService
+- uid: NuvTools.Notification.Mail.Configuration.MailConfigurationSection
+  commentId: T:NuvTools.Notification.Mail.Configuration.MailConfigurationSection
+  isExternal: true
+  href: NuvTools.Notification.Mail.Configuration.MailConfigurationSection.html
+  name: MailConfigurationSection
+  nameWithType: MailConfigurationSection
+  fullName: NuvTools.Notification.Mail.Configuration.MailConfigurationSection
 - uid: NuvTools.Notification.Mail.Smtp
   commentId: N:NuvTools.Notification.Mail.Smtp
   isExternal: true
@@ -149,14 +190,6 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: NuvTools.Notification.Mail.IMailService
-  commentId: T:NuvTools.Notification.Mail.IMailService
-  parent: NuvTools.Notification.Mail
-  isExternal: true
-  href: NuvTools.Notification.Mail.IMailService.html
-  name: IMailService
-  nameWithType: IMailService
-  fullName: NuvTools.Notification.Mail.IMailService
 - uid: System.Object.GetType
   commentId: M:System.Object.GetType
   parent: System.Object
@@ -376,13 +409,6 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
   - name: (
   - name: )
-- uid: System
-  commentId: N:System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System
-  nameWithType: System
-  fullName: System
 - uid: NuvTools.Notification.Mail
   commentId: N:NuvTools.Notification.Mail
   isExternal: true
@@ -420,6 +446,13 @@ references:
     name: Mail
     isExternal: true
     href: NuvTools.Notification.Mail.html
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: NuvTools.Notification.Mail.Smtp.SMTPMailService.#ctor*
   commentId: Overload:NuvTools.Notification.Mail.Smtp.SMTPMailService.#ctor
   isExternal: true
@@ -450,7 +483,7 @@ references:
   - uid: NuvTools.Notification.Mail.Configuration.MailConfigurationSection
     name: MailConfigurationSection
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail/Configuration/MailConfigurationSection.cs
+    href: https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail/Configuration/MailConfigurationSection.cs
   - name: '>'
   spec.vb:
   - uid: Microsoft.Extensions.Options.IOptions`1
@@ -463,7 +496,7 @@ references:
   - uid: NuvTools.Notification.Mail.Configuration.MailConfigurationSection
     name: MailConfigurationSection
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail/Configuration/MailConfigurationSection.cs
+    href: https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail/Configuration/MailConfigurationSection.cs
   - name: )
 - uid: Microsoft.Extensions.Options.IOptions`1
   commentId: T:Microsoft.Extensions.Options.IOptions`1
@@ -530,6 +563,13 @@ references:
     name: Options
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options
+- uid: NuvTools.Notification.Mail.MailMessage.Parts
+  commentId: P:NuvTools.Notification.Mail.MailMessage.Parts
+  isExternal: true
+  href: NuvTools.Notification.Mail.MailMessage.html#NuvTools_Notification_Mail_MailMessage_Parts
+  name: Parts
+  nameWithType: MailMessage.Parts
+  fullName: NuvTools.Notification.Mail.MailMessage.Parts
 - uid: NuvTools.Notification.Mail.Smtp.SMTPMailService.SendAsync*
   commentId: Overload:NuvTools.Notification.Mail.Smtp.SMTPMailService.SendAsync
   isExternal: true
@@ -541,7 +581,7 @@ references:
   commentId: M:NuvTools.Notification.Mail.IMailService.SendAsync(NuvTools.Notification.Mail.MailMessage)
   parent: NuvTools.Notification.Mail.IMailService
   isExternal: true
-  href: https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail/IMailService.cs
+  href: https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail/IMailService.cs
   name: SendAsync(MailMessage)
   nameWithType: IMailService.SendAsync(MailMessage)
   fullName: NuvTools.Notification.Mail.IMailService.SendAsync(NuvTools.Notification.Mail.MailMessage)
@@ -549,23 +589,23 @@ references:
   - uid: NuvTools.Notification.Mail.IMailService.SendAsync(NuvTools.Notification.Mail.MailMessage)
     name: SendAsync
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail/IMailService.cs
+    href: https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail/IMailService.cs
   - name: (
   - uid: NuvTools.Notification.Mail.MailMessage
     name: MailMessage
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail/MailMessage.cs
+    href: https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail/MailMessage.cs
   - name: )
   spec.vb:
   - uid: NuvTools.Notification.Mail.IMailService.SendAsync(NuvTools.Notification.Mail.MailMessage)
     name: SendAsync
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail/IMailService.cs
+    href: https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail/IMailService.cs
   - name: (
   - uid: NuvTools.Notification.Mail.MailMessage
     name: MailMessage
     isExternal: true
-    href: https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail/MailMessage.cs
+    href: https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail/MailMessage.cs
   - name: )
 - uid: NuvTools.Notification.Mail.MailMessage
   commentId: T:NuvTools.Notification.Mail.MailMessage

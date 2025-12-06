@@ -16,10 +16,16 @@ items:
   fullName: NuvTools.Security.Identity.Models.Api.RefreshTokenRequest
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Api/RefreshTokenRequest.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Api/RefreshTokenRequest.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models.Api
+  summary: Represents the request for refreshing an expired access token.
+  remarks: >-
+    This request is used to obtain a new access token without requiring the user to re-authenticate.
+
+    Both the expired access token and a valid refresh token must be provided.
+  example: []
   syntax:
     content: public class RefreshTokenRequest
     content.vb: Public Class RefreshTokenRequest
@@ -45,7 +51,7 @@ items:
   fullName: NuvTools.Security.Identity.Models.Api.RefreshTokenRequest.RefreshTokenRequest()
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Api/RefreshTokenRequest.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Api/RefreshTokenRequest.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models.Api
@@ -68,10 +74,16 @@ items:
   fullName: NuvTools.Security.Identity.Models.Api.RefreshTokenRequest.Token
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Api/RefreshTokenRequest.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Api/RefreshTokenRequest.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models.Api
+  summary: Gets or sets the expired or soon-to-expire JWT access token.
+  remarks: >-
+    This token may be expired but is still needed to validate the refresh request
+
+    and extract user information for generating a new token.
+  example: []
   syntax:
     content: public string? Token { get; set; }
     parameters: []
@@ -91,10 +103,16 @@ items:
   fullName: NuvTools.Security.Identity.Models.Api.RefreshTokenRequest.RefreshToken
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Api/RefreshTokenRequest.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Api/RefreshTokenRequest.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models.Api
+  summary: Gets or sets the refresh token issued during the original authentication.
+  remarks: >-
+    This token must be valid and not expired. It is used to verify that the refresh request
+
+    is legitimate and to generate a new access token and refresh token pair.
+  example: []
   syntax:
     content: public string? RefreshToken { get; set; }
     parameters: []

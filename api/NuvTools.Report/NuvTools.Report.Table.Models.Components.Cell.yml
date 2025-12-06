@@ -16,10 +16,12 @@ items:
   fullName: NuvTools.Report.Table.Models.Components.Cell
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-report/blob/0bd46ca08c48d8e1dda37b98da5d10e57b08d50c/src/NuvTools.Report/Table/Models/Components/Cell.cs
+    href: https://github.com/nuvtools/nuvtools-report/blob/6b7c4cdb59b469a26019e0945adf84064ece8bb9/src/NuvTools.Report/Table/Models/Components/Cell.cs
   assemblies:
   - NuvTools.Report
   namespace: NuvTools.Report.Table.Models.Components
+  summary: Represents a single cell in a table row, containing a value and its associated column definition.
+  example: []
   syntax:
     content: public class Cell
     content.vb: Public Class Cell
@@ -45,7 +47,7 @@ items:
   fullName: NuvTools.Report.Table.Models.Components.Cell.Cell()
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-report/blob/0bd46ca08c48d8e1dda37b98da5d10e57b08d50c/src/NuvTools.Report/Table/Models/Components/Cell.cs
+    href: https://github.com/nuvtools/nuvtools-report/blob/6b7c4cdb59b469a26019e0945adf84064ece8bb9/src/NuvTools.Report/Table/Models/Components/Cell.cs
   assemblies:
   - NuvTools.Report
   namespace: NuvTools.Report.Table.Models.Components
@@ -68,12 +70,15 @@ items:
   fullName: NuvTools.Report.Table.Models.Components.Cell.Column
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-report/blob/0bd46ca08c48d8e1dda37b98da5d10e57b08d50c/src/NuvTools.Report/Table/Models/Components/Cell.cs
+    href: https://github.com/nuvtools/nuvtools-report/blob/6b7c4cdb59b469a26019e0945adf84064ece8bb9/src/NuvTools.Report/Table/Models/Components/Cell.cs
   assemblies:
   - NuvTools.Report
   namespace: NuvTools.Report.Table.Models.Components
+  summary: Gets or sets the column definition that this cell belongs to.
+  remarks: The column provides metadata such as formatting, order, and display label for this cell.
+  example: []
   syntax:
-    content: public Column Column { get; set; }
+    content: public required Column Column { get; set; }
     parameters: []
     return:
       type: NuvTools.Report.Table.Models.Components.Column
@@ -91,12 +96,15 @@ items:
   fullName: NuvTools.Report.Table.Models.Components.Cell.Value
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-report/blob/0bd46ca08c48d8e1dda37b98da5d10e57b08d50c/src/NuvTools.Report/Table/Models/Components/Cell.cs
+    href: https://github.com/nuvtools/nuvtools-report/blob/6b7c4cdb59b469a26019e0945adf84064ece8bb9/src/NuvTools.Report/Table/Models/Components/Cell.cs
   assemblies:
   - NuvTools.Report
   namespace: NuvTools.Report.Table.Models.Components
+  summary: Gets or sets the string representation of the cell's value.
+  remarks: All values are stored as strings. Formatting is applied based on the Column.Format property.
+  example: []
   syntax:
-    content: public string Value { get; set; }
+    content: public string? Value { get; set; }
     parameters: []
     return:
       type: System.String

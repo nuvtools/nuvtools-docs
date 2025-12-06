@@ -15,10 +15,12 @@ items:
   fullName: NuvTools.Report.Sheet.Extensions.CsvExtensions
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-report/blob/0bd46ca08c48d8e1dda37b98da5d10e57b08d50c/src/NuvTools.Report.Sheet/Extensions/CsvExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-report/blob/6b7c4cdb59b469a26019e0945adf84064ece8bb9/src/NuvTools.Report.Sheet/Extensions/CsvExtensions.cs
   assemblies:
   - NuvTools.Report.Sheet
   namespace: NuvTools.Report.Sheet.Extensions
+  summary: Provides extension methods for exporting documents to CSV format.
+  example: []
   syntax:
     content: public static class CsvExtensions
     content.vb: Public Module CsvExtensions
@@ -45,17 +47,22 @@ items:
   fullName: NuvTools.Report.Sheet.Extensions.CsvExtensions.ExportToCsv(NuvTools.Report.Table.Models.Document)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-report/blob/0bd46ca08c48d8e1dda37b98da5d10e57b08d50c/src/NuvTools.Report.Sheet/Extensions/CsvExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-report/blob/6b7c4cdb59b469a26019e0945adf84064ece8bb9/src/NuvTools.Report.Sheet/Extensions/CsvExtensions.cs
   assemblies:
   - NuvTools.Report.Sheet
   namespace: NuvTools.Report.Sheet.Extensions
+  summary: Exports all tables in a document to separate CSV files encoded as base64 strings.
+  remarks: CSV files use semicolon (;) as the delimiter. Headers are excluded from the export.
+  example: []
   syntax:
     content: public static List<string> ExportToCsv(this Document document)
     parameters:
     - id: document
       type: NuvTools.Report.Table.Models.Document
+      description: The document containing tables to export.
     return:
       type: System.Collections.Generic.List{System.String}
+      description: A list of base64-encoded CSV strings, one for each table in the document.
     content.vb: Public Shared Function ExportToCsv(document As Document) As List(Of String)
   overload: NuvTools.Report.Sheet.Extensions.CsvExtensions.ExportToCsv*
 - uid: NuvTools.Report.Sheet.Extensions.CsvExtensions.ExportFirstSheetToCsv(NuvTools.Report.Table.Models.Document)
@@ -71,17 +78,22 @@ items:
   fullName: NuvTools.Report.Sheet.Extensions.CsvExtensions.ExportFirstSheetToCsv(NuvTools.Report.Table.Models.Document)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-report/blob/0bd46ca08c48d8e1dda37b98da5d10e57b08d50c/src/NuvTools.Report.Sheet/Extensions/CsvExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-report/blob/6b7c4cdb59b469a26019e0945adf84064ece8bb9/src/NuvTools.Report.Sheet/Extensions/CsvExtensions.cs
   assemblies:
   - NuvTools.Report.Sheet
   namespace: NuvTools.Report.Sheet.Extensions
+  summary: Exports the first table in a document to a CSV file encoded as a base64 string.
+  remarks: CSV uses semicolon (;) as the delimiter. Headers are excluded from the export.
+  example: []
   syntax:
     content: public static string ExportFirstSheetToCsv(this Document document)
     parameters:
     - id: document
       type: NuvTools.Report.Table.Models.Document
+      description: The document containing the table to export.
     return:
       type: System.String
+      description: A base64-encoded CSV string of the first table.
     content.vb: Public Shared Function ExportFirstSheetToCsv(document As Document) As String
   overload: NuvTools.Report.Sheet.Extensions.CsvExtensions.ExportFirstSheetToCsv*
 references:

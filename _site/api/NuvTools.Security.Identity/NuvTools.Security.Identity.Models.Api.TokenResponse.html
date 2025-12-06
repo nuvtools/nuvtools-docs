@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class TokenResponse | Nuv Tools Framework Docs ">
       
-      
+      <meta name="description" content="Represents the response containing authentication tokens returned after successful login.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Security_Identity_Models_Api_TokenResponse" data-uid="NuvTools.Security.Identity.Models.Api.TokenResponse" class="text-break">
-Class TokenResponse  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Api/TokenResponse.cs"><i class="bi bi-code-slash"></i></a>
+Class TokenResponse  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Api/TokenResponse.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class TokenResponse  <a class="header-action link-secondary" title="View source"
   <dl><dt>Assembly</dt><dd>NuvTools.Security.Identity.Models.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Represents the response containing authentication tokens returned after successful login.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -146,6 +147,10 @@ Class TokenResponse  <a class="header-action link-secondary" title="View source"
 
 
 
+  <h2 id="NuvTools_Security_Identity_Models_Api_TokenResponse_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This response typically includes a JWT access token, a refresh token, and the expiry time
+for the refresh token. It is commonly used in API authentication scenarios.</p>
+</div>
 
 
   <h2 class="section" id="constructors">Constructors
@@ -156,7 +161,7 @@ Class TokenResponse  <a class="header-action link-secondary" title="View source"
 
   <h3 id="NuvTools_Security_Identity_Models_Api_TokenResponse__ctor" data-uid="NuvTools.Security.Identity.Models.Api.TokenResponse.#ctor">
   TokenResponse()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Api/TokenResponse.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Api/TokenResponse.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -186,10 +191,11 @@ Class TokenResponse  <a class="header-action link-secondary" title="View source"
 
   <h3 id="NuvTools_Security_Identity_Models_Api_TokenResponse_RefreshToken" data-uid="NuvTools.Security.Identity.Models.Api.TokenResponse.RefreshToken">
   RefreshToken
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Api/TokenResponse.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Api/TokenResponse.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets the refresh token.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -209,6 +215,10 @@ Class TokenResponse  <a class="header-action link-secondary" title="View source"
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_Models_Api_TokenResponse_RefreshToken_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This token is used to obtain a new access token when the current one expires.
+Refresh tokens typically have a longer lifespan than access tokens and should be stored securely.</p>
+</div>
 
 
 
@@ -217,10 +227,11 @@ Class TokenResponse  <a class="header-action link-secondary" title="View source"
 
   <h3 id="NuvTools_Security_Identity_Models_Api_TokenResponse_RefreshTokenExpiryTime" data-uid="NuvTools.Security.Identity.Models.Api.TokenResponse.RefreshTokenExpiryTime">
   RefreshTokenExpiryTime
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Api/TokenResponse.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Api/TokenResponse.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets the expiry date and time for the refresh token.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -240,6 +251,9 @@ Class TokenResponse  <a class="header-action link-secondary" title="View source"
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_Models_Api_TokenResponse_RefreshTokenExpiryTime_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>After this time, the refresh token is no longer valid and the user must re-authenticate.</p>
+</div>
 
 
 
@@ -248,10 +262,11 @@ Class TokenResponse  <a class="header-action link-secondary" title="View source"
 
   <h3 id="NuvTools_Security_Identity_Models_Api_TokenResponse_Token" data-uid="NuvTools.Security.Identity.Models.Api.TokenResponse.Token">
   Token
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Api/TokenResponse.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Api/TokenResponse.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets the JWT access token.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -271,6 +286,10 @@ Class TokenResponse  <a class="header-action link-secondary" title="View source"
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_Models_Api_TokenResponse_Token_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This token is used to authenticate API requests and typically has a short lifespan.
+It should be included in the Authorization header as a Bearer token for authenticated requests.</p>
+</div>
 
 
 
@@ -279,7 +298,7 @@ Class TokenResponse  <a class="header-action link-secondary" title="View source"
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Api/TokenResponse.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Api/TokenResponse.cs" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class SMTPMailService | Nuv Tools Framework Docs ">
       
-      
+      <meta name="description" content="SMTP implementation of  using MailKit for sending email messages.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Notification_Mail_Smtp_SMTPMailService" data-uid="NuvTools.Notification.Mail.Smtp.SMTPMailService" class="text-break">
-Class SMTPMailService  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail.Smtp/SMTPMailService.cs"><i class="bi bi-code-slash"></i></a>
+Class SMTPMailService  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail.Smtp/SMTPMailService.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class SMTPMailService  <a class="header-action link-secondary" title="View sourc
   <dl><dt>Assembly</dt><dd>NuvTools.Notification.Mail.Smtp.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>SMTP implementation of <a class="xref" href="NuvTools.Notification.Mail.IMailService.html">IMailService</a> using MailKit for sending email messages.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -152,6 +153,11 @@ Class SMTPMailService  <a class="header-action link-secondary" title="View sourc
 
 
 
+  <h2 id="NuvTools_Notification_Mail_Smtp_SMTPMailService_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This service uses the MailKit library to send emails via SMTP protocol.
+It supports HTML body content, multiple recipients, and file attachments.
+The SMTP connection is configured using settings from <a class="xref" href="NuvTools.Notification.Mail.Configuration.MailConfigurationSection.html">MailConfigurationSection</a>.</p>
+</div>
 
 
   <h2 class="section" id="constructors">Constructors
@@ -162,10 +168,11 @@ Class SMTPMailService  <a class="header-action link-secondary" title="View sourc
 
   <h3 id="NuvTools_Notification_Mail_Smtp_SMTPMailService__ctor_Microsoft_Extensions_Options_IOptions_NuvTools_Notification_Mail_Configuration_MailConfigurationSection__" data-uid="NuvTools.Notification.Mail.Smtp.SMTPMailService.#ctor(Microsoft.Extensions.Options.IOptions{NuvTools.Notification.Mail.Configuration.MailConfigurationSection})">
   SMTPMailService(IOptions&lt;MailConfigurationSection&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail.Smtp/SMTPMailService.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail.Smtp/SMTPMailService.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>SMTP implementation of <a class="xref" href="NuvTools.Notification.Mail.IMailService.html">IMailService</a> using MailKit for sending email messages.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -174,8 +181,9 @@ Class SMTPMailService  <a class="header-action link-secondary" title="View sourc
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>appMailConfiguration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1">IOptions</a>&lt;<a class="xref" href="https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail/Configuration/MailConfigurationSection.cs">MailConfigurationSection</a>&gt;</dt>
-    <dd></dd>
+    <dt><code>appMailConfiguration</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1">IOptions</a>&lt;<a class="xref" href="https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail/Configuration/MailConfigurationSection.cs">MailConfigurationSection</a>&gt;</dt>
+    <dd><p>The mail configuration options containing SMTP server settings.</p>
+</dd>
   </dl>
 
 
@@ -185,6 +193,11 @@ Class SMTPMailService  <a class="header-action link-secondary" title="View sourc
 
 
 
+  <h4 class="section" id="NuvTools_Notification_Mail_Smtp_SMTPMailService__ctor_Microsoft_Extensions_Options_IOptions_NuvTools_Notification_Mail_Configuration_MailConfigurationSection___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This service uses the MailKit library to send emails via SMTP protocol.
+It supports HTML body content, multiple recipients, and file attachments.
+The SMTP connection is configured using settings from <a class="xref" href="NuvTools.Notification.Mail.Configuration.MailConfigurationSection.html">MailConfigurationSection</a>.</p>
+</div>
 
 
 
@@ -197,10 +210,10 @@ Class SMTPMailService  <a class="header-action link-secondary" title="View sourc
 
   <h3 id="NuvTools_Notification_Mail_Smtp_SMTPMailService_SendAsync_NuvTools_Notification_Mail_MailMessage_" data-uid="NuvTools.Notification.Mail.Smtp.SMTPMailService.SendAsync(NuvTools.Notification.Mail.MailMessage)">
   SendAsync(MailMessage)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail.Smtp/SMTPMailService.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail.Smtp/SMTPMailService.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Send mail based on selected infraestructure.</p>
+  <div class="markdown level1 summary"><p>Sends an email message asynchronously using the configured SMTP server.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -211,13 +224,15 @@ Class SMTPMailService  <a class="header-action link-secondary" title="View sourc
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>request</code> <a class="xref" href="NuvTools.Notification.Mail.MailMessage.html">MailMessage</a></dt>
-    <dd></dd>
+    <dd><p>The mail message to send, including sender, recipients, subject, body, and optional attachments.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
-    <dd></dd>
+    <dd><p>A task representing the asynchronous send operation.</p>
+</dd>
   </dl>
 
 
@@ -226,6 +241,12 @@ Class SMTPMailService  <a class="header-action link-secondary" title="View sourc
 
 
 
+  <h4 class="section" id="NuvTools_Notification_Mail_Smtp_SMTPMailService_SendAsync_NuvTools_Notification_Mail_MailMessage__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method constructs a MIME message from the provided <code class="paramref">request</code>, connects to the SMTP server,
+authenticates using the configured credentials, sends the message, and disconnects.
+If the message includes attachments via <a class="xref" href="NuvTools.Notification.Mail.MailMessage.html#NuvTools_Notification_Mail_MailMessage_Parts">Parts</a>, they are added as MIME attachments.
+The sender address and display name can be overridden per message or fall back to configuration defaults.</p>
+</div>
 
 
 
@@ -234,7 +255,7 @@ Class SMTPMailService  <a class="header-action link-secondary" title="View sourc
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail.Smtp/SMTPMailService.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail.Smtp/SMTPMailService.cs" class="edit-link">Edit this page</a>
         </div>
 
 

@@ -15,10 +15,22 @@ items:
   fullName: NuvTools.Validation.Brazil.Annotations.CPFAttribute
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Brazil/Annotations/CPFttribute.cs
+    href: https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Brazil/Annotations/CPFAttribute.cs
   assemblies:
   - NuvTools.Validation
   namespace: NuvTools.Validation.Brazil.Annotations
+  summary: >-
+    Validation attribute that validates Brazilian CPF (Cadastro de Pessoas Físicas) numbers.
+
+    Validates the CPF checksum algorithm and accepts formatted (XXX.XXX.XXX-XX) or unformatted (XXXXXXXXXXX) input.
+  example:
+  - >-
+    <pre><code class="lang-csharp">public class PersonModel
+
+    {
+        [CPF]
+        public string CPF { get; set; }
+    }</code></pre>
   syntax:
     content: 'public class CPFAttribute : StringValueBaseAttribute'
     content.vb: Public Class CPFAttribute Inherits StringValueBaseAttribute
@@ -82,7 +94,7 @@ items:
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.ReferenceEquals(System.Object,System.Object)
   extensionMethods:
-  - NuvTools.Validation.Brazil.Annotations.CPFAttribute.NuvTools.Validation.Validator.Validate``1
+  - NuvTools.Validation.Brazil.Annotations.CPFAttribute.NuvTools.Validation.Annotations.Validator.Validate``1
 - uid: NuvTools.Validation.Brazil.Annotations.CPFAttribute.#ctor
   commentId: M:NuvTools.Validation.Brazil.Annotations.CPFAttribute.#ctor
   id: '#ctor'
@@ -95,10 +107,12 @@ items:
   fullName: NuvTools.Validation.Brazil.Annotations.CPFAttribute.CPFAttribute()
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Brazil/Annotations/CPFttribute.cs
+    href: https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Brazil/Annotations/CPFAttribute.cs
   assemblies:
   - NuvTools.Validation
   namespace: NuvTools.Validation.Brazil.Annotations
+  summary: Initializes a new instance of the <xref href="NuvTools.Validation.Brazil.Annotations.CPFAttribute" data-throw-if-not-resolved="false"></xref> class.
+  example: []
   syntax:
     content: public CPFAttribute()
     content.vb: Public Sub New()
@@ -118,18 +132,21 @@ items:
   fullName: NuvTools.Validation.Brazil.Annotations.CPFAttribute.IsValid(object?)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Brazil/Annotations/CPFttribute.cs
+    href: https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Brazil/Annotations/CPFAttribute.cs
   assemblies:
   - NuvTools.Validation
   namespace: NuvTools.Validation.Brazil.Annotations
+  summary: Validates that the value is a valid Brazilian CPF number.
   example: []
   syntax:
     content: public override bool IsValid(object? value)
     parameters:
     - id: value
       type: System.Object
+      description: The CPF value to validate.
     return:
       type: System.Boolean
+      description: True if the CPF is valid or if the value is null/empty; otherwise, false.
     content.vb: Public Overrides Function IsValid(value As Object) As Boolean
   overridden: System.ComponentModel.DataAnnotations.ValidationAttribute.IsValid(System.Object)
   overload: NuvTools.Validation.Brazil.Annotations.CPFAttribute.IsValid*
@@ -2273,22 +2290,22 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-- uid: NuvTools.Validation.Brazil.Annotations.CPFAttribute.NuvTools.Validation.Validator.Validate``1
-  commentId: M:NuvTools.Validation.Validator.Validate``1(``0)
-  parent: NuvTools.Validation.Validator
-  definition: NuvTools.Validation.Validator.Validate``1(``0)
-  href: NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_Validate__1___0_
+- uid: NuvTools.Validation.Brazil.Annotations.CPFAttribute.NuvTools.Validation.Annotations.Validator.Validate``1
+  commentId: M:NuvTools.Validation.Annotations.Validator.Validate``1(``0)
+  parent: NuvTools.Validation.Annotations.Validator
+  definition: NuvTools.Validation.Annotations.Validator.Validate``1(``0)
+  href: NuvTools.Validation.Annotations.Validator.html#NuvTools_Validation_Annotations_Validator_Validate__1___0_
   name: Validate<CPFAttribute>(CPFAttribute)
   nameWithType: Validator.Validate<CPFAttribute>(CPFAttribute)
-  fullName: NuvTools.Validation.Validator.Validate<NuvTools.Validation.Brazil.Annotations.CPFAttribute>(NuvTools.Validation.Brazil.Annotations.CPFAttribute)
+  fullName: NuvTools.Validation.Annotations.Validator.Validate<NuvTools.Validation.Brazil.Annotations.CPFAttribute>(NuvTools.Validation.Brazil.Annotations.CPFAttribute)
   nameWithType.vb: Validator.Validate(Of CPFAttribute)(CPFAttribute)
-  fullName.vb: NuvTools.Validation.Validator.Validate(Of NuvTools.Validation.Brazil.Annotations.CPFAttribute)(NuvTools.Validation.Brazil.Annotations.CPFAttribute)
+  fullName.vb: NuvTools.Validation.Annotations.Validator.Validate(Of NuvTools.Validation.Brazil.Annotations.CPFAttribute)(NuvTools.Validation.Brazil.Annotations.CPFAttribute)
   name.vb: Validate(Of CPFAttribute)(CPFAttribute)
   spec.csharp:
-  - uid: NuvTools.Validation.Validator.Validate``1(NuvTools.Validation.Brazil.Annotations.CPFAttribute)
+  - uid: NuvTools.Validation.Annotations.Validator.Validate``1(NuvTools.Validation.Brazil.Annotations.CPFAttribute)
     name: Validate
     isExternal: true
-    href: NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_Validate__1___0_
+    href: NuvTools.Validation.Annotations.Validator.html#NuvTools_Validation_Annotations_Validator_Validate__1___0_
   - name: <
   - uid: NuvTools.Validation.Brazil.Annotations.CPFAttribute
     name: CPFAttribute
@@ -2302,10 +2319,10 @@ references:
     href: NuvTools.Validation.Brazil.Annotations.CPFAttribute.html
   - name: )
   spec.vb:
-  - uid: NuvTools.Validation.Validator.Validate``1(NuvTools.Validation.Brazil.Annotations.CPFAttribute)
+  - uid: NuvTools.Validation.Annotations.Validator.Validate``1(NuvTools.Validation.Brazil.Annotations.CPFAttribute)
     name: Validate
     isExternal: true
-    href: NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_Validate__1___0_
+    href: NuvTools.Validation.Annotations.Validator.html#NuvTools_Validation_Annotations_Validator_Validate__1___0_
   - name: (
   - name: Of
   - name: " "
@@ -2401,21 +2418,21 @@ references:
     name: Annotations
     isExternal: true
     href: NuvTools.Validation.Annotations.html
-- uid: NuvTools.Validation.Validator.Validate``1(``0)
-  commentId: M:NuvTools.Validation.Validator.Validate``1(``0)
+- uid: NuvTools.Validation.Annotations.Validator.Validate``1(``0)
+  commentId: M:NuvTools.Validation.Annotations.Validator.Validate``1(``0)
   isExternal: true
-  href: NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_Validate__1___0_
+  href: NuvTools.Validation.Annotations.Validator.html#NuvTools_Validation_Annotations_Validator_Validate__1___0_
   name: Validate<T>(T)
   nameWithType: Validator.Validate<T>(T)
-  fullName: NuvTools.Validation.Validator.Validate<T>(T)
+  fullName: NuvTools.Validation.Annotations.Validator.Validate<T>(T)
   nameWithType.vb: Validator.Validate(Of T)(T)
-  fullName.vb: NuvTools.Validation.Validator.Validate(Of T)(T)
+  fullName.vb: NuvTools.Validation.Annotations.Validator.Validate(Of T)(T)
   name.vb: Validate(Of T)(T)
   spec.csharp:
-  - uid: NuvTools.Validation.Validator.Validate``1(``0)
+  - uid: NuvTools.Validation.Annotations.Validator.Validate``1(``0)
     name: Validate
     isExternal: true
-    href: NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_Validate__1___0_
+    href: NuvTools.Validation.Annotations.Validator.html#NuvTools_Validation_Annotations_Validator_Validate__1___0_
   - name: <
   - name: T
   - name: '>'
@@ -2423,10 +2440,10 @@ references:
   - name: T
   - name: )
   spec.vb:
-  - uid: NuvTools.Validation.Validator.Validate``1(``0)
+  - uid: NuvTools.Validation.Annotations.Validator.Validate``1(``0)
     name: Validate
     isExternal: true
-    href: NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_Validate__1___0_
+    href: NuvTools.Validation.Annotations.Validator.html#NuvTools_Validation_Annotations_Validator_Validate__1___0_
   - name: (
   - name: Of
   - name: " "
@@ -2435,41 +2452,21 @@ references:
   - name: (
   - name: T
   - name: )
-- uid: NuvTools.Validation.Validator
-  commentId: T:NuvTools.Validation.Validator
-  parent: NuvTools.Validation
+- uid: NuvTools.Validation.Annotations.Validator
+  commentId: T:NuvTools.Validation.Annotations.Validator
+  parent: NuvTools.Validation.Annotations
   isExternal: true
-  href: NuvTools.Validation.Validator.html
+  href: NuvTools.Validation.Annotations.Validator.html
   name: Validator
   nameWithType: Validator
-  fullName: NuvTools.Validation.Validator
-- uid: NuvTools.Validation
-  commentId: N:NuvTools.Validation
+  fullName: NuvTools.Validation.Annotations.Validator
+- uid: NuvTools.Validation.Brazil.Annotations.CPFAttribute
+  commentId: T:NuvTools.Validation.Brazil.Annotations.CPFAttribute
   isExternal: true
-  href: NuvTools.html
-  name: NuvTools.Validation
-  nameWithType: NuvTools.Validation
-  fullName: NuvTools.Validation
-  spec.csharp:
-  - uid: NuvTools
-    name: NuvTools
-    isExternal: true
-    href: NuvTools.html
-  - name: .
-  - uid: NuvTools.Validation
-    name: Validation
-    isExternal: true
-    href: NuvTools.Validation.html
-  spec.vb:
-  - uid: NuvTools
-    name: NuvTools
-    isExternal: true
-    href: NuvTools.html
-  - name: .
-  - uid: NuvTools.Validation
-    name: Validation
-    isExternal: true
-    href: NuvTools.Validation.html
+  href: NuvTools.Validation.Brazil.Annotations.CPFAttribute.html
+  name: CPFAttribute
+  nameWithType: CPFAttribute
+  fullName: NuvTools.Validation.Brazil.Annotations.CPFAttribute
 - uid: NuvTools.Validation.Brazil.Annotations.CPFAttribute.#ctor*
   commentId: Overload:NuvTools.Validation.Brazil.Annotations.CPFAttribute.#ctor
   isExternal: true

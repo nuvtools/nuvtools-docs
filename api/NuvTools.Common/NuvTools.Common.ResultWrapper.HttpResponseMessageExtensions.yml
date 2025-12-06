@@ -1,32 +1,33 @@
 ### YamlMime:ManagedReference
 items:
-- uid: NuvTools.Common.ResultWrapper.ResultExtensions
-  commentId: T:NuvTools.Common.ResultWrapper.ResultExtensions
-  id: ResultExtensions
+- uid: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions
+  commentId: T:NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions
+  id: HttpResponseMessageExtensions
   parent: NuvTools.Common.ResultWrapper
   children:
-  - NuvTools.Common.ResultWrapper.ResultExtensions.ToResultAsync(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
-  - NuvTools.Common.ResultWrapper.ResultExtensions.ToResultAsync``1(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
+  - NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
+  - NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync``1(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
+  - NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync``2(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
   langs:
   - csharp
   - vb
-  name: ResultExtensions
-  nameWithType: ResultExtensions
-  fullName: NuvTools.Common.ResultWrapper.ResultExtensions
+  name: HttpResponseMessageExtensions
+  nameWithType: HttpResponseMessageExtensions
+  fullName: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/ResultExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/ResultWrapper/HttpResponseMessageExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
   summary: >-
     Extension methods to convert <xref href="System.Net.Http.HttpResponseMessage" data-throw-if-not-resolved="false"></xref> into <xref href="NuvTools.Common.ResultWrapper.IResult" data-throw-if-not-resolved="false"></xref> or <xref href="NuvTools.Common.ResultWrapper.IResult%601" data-throw-if-not-resolved="false"></xref>.
 
-    Handles both success and error responses (e.g., 404, 500) that may contain a serialized <xref href="NuvTools.Common.ResultWrapper.Result" data-throw-if-not-resolved="false"></xref>.
+    Handles both success and error responses that may contain a serialized <xref href="NuvTools.Common.ResultWrapper.Result" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
-    content: public static class ResultExtensions
-    content.vb: Public Module ResultExtensions
+    content: public static class HttpResponseMessageExtensions
+    content.vb: Public Module HttpResponseMessageExtensions
   inheritance:
   - System.Object
   inheritedMembers:
@@ -37,28 +38,51 @@ items:
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.GetHashCode
-- uid: NuvTools.Common.ResultWrapper.ResultExtensions.ToResultAsync``1(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
-  commentId: M:NuvTools.Common.ResultWrapper.ResultExtensions.ToResultAsync``1(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
+- uid: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
+  id: ToResultAsync(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
+  isExtensionMethod: true
+  parent: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToResultAsync(HttpResponseMessage, CancellationToken)
+  nameWithType: HttpResponseMessageExtensions.ToResultAsync(HttpResponseMessage, CancellationToken)
+  fullName: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync(System.Net.Http.HttpResponseMessage, System.Threading.CancellationToken)
+  type: Method
+  source:
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/ResultWrapper/HttpResponseMessageExtensions.cs
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.ResultWrapper
+  syntax:
+    content: public static Task<IResult> ToResultAsync(this HttpResponseMessage response, CancellationToken cancellationToken = default)
+    parameters:
+    - id: response
+      type: System.Net.Http.HttpResponseMessage
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+    content.vb: Public Shared Function ToResultAsync(response As HttpResponseMessage, cancellationToken As CancellationToken = Nothing) As Task(Of IResult)
+  overload: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync*
+- uid: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync``1(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync``1(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
   id: ToResultAsync``1(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
   isExtensionMethod: true
-  parent: NuvTools.Common.ResultWrapper.ResultExtensions
+  parent: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions
   langs:
   - csharp
   - vb
   name: ToResultAsync<T>(HttpResponseMessage, CancellationToken)
-  nameWithType: ResultExtensions.ToResultAsync<T>(HttpResponseMessage, CancellationToken)
-  fullName: NuvTools.Common.ResultWrapper.ResultExtensions.ToResultAsync<T>(System.Net.Http.HttpResponseMessage, System.Threading.CancellationToken)
+  nameWithType: HttpResponseMessageExtensions.ToResultAsync<T>(HttpResponseMessage, CancellationToken)
+  fullName: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync<T>(System.Net.Http.HttpResponseMessage, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/ResultExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/ResultWrapper/HttpResponseMessageExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
-  summary: >-
-    Converts an <xref href="System.Net.Http.HttpResponseMessage" data-throw-if-not-resolved="false"></xref> into a strongly typed <xref href="NuvTools.Common.ResultWrapper.IResult%601" data-throw-if-not-resolved="false"></xref>.
-
-    Always returns a valid <xref href="NuvTools.Common.ResultWrapper.IResult%601" data-throw-if-not-resolved="false"></xref> (never null), even for non-successful responses or invalid bodies.
-  example: []
   syntax:
     content: public static Task<IResult<T>> ToResultAsync<T>(this HttpResponseMessage response, CancellationToken cancellationToken = default)
     parameters:
@@ -71,43 +95,44 @@ items:
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{{T}}}
     content.vb: Public Shared Function ToResultAsync(Of T)(response As HttpResponseMessage, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of T))
-  overload: NuvTools.Common.ResultWrapper.ResultExtensions.ToResultAsync*
-  nameWithType.vb: ResultExtensions.ToResultAsync(Of T)(HttpResponseMessage, CancellationToken)
-  fullName.vb: NuvTools.Common.ResultWrapper.ResultExtensions.ToResultAsync(Of T)(System.Net.Http.HttpResponseMessage, System.Threading.CancellationToken)
+  overload: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync*
+  nameWithType.vb: HttpResponseMessageExtensions.ToResultAsync(Of T)(HttpResponseMessage, CancellationToken)
+  fullName.vb: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync(Of T)(System.Net.Http.HttpResponseMessage, System.Threading.CancellationToken)
   name.vb: ToResultAsync(Of T)(HttpResponseMessage, CancellationToken)
-- uid: NuvTools.Common.ResultWrapper.ResultExtensions.ToResultAsync(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
-  commentId: M:NuvTools.Common.ResultWrapper.ResultExtensions.ToResultAsync(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
-  id: ToResultAsync(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
+- uid: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync``2(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync``2(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
+  id: ToResultAsync``2(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
   isExtensionMethod: true
-  parent: NuvTools.Common.ResultWrapper.ResultExtensions
+  parent: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions
   langs:
   - csharp
   - vb
-  name: ToResultAsync(HttpResponseMessage, CancellationToken)
-  nameWithType: ResultExtensions.ToResultAsync(HttpResponseMessage, CancellationToken)
-  fullName: NuvTools.Common.ResultWrapper.ResultExtensions.ToResultAsync(System.Net.Http.HttpResponseMessage, System.Threading.CancellationToken)
+  name: ToResultAsync<T, E>(HttpResponseMessage, CancellationToken)
+  nameWithType: HttpResponseMessageExtensions.ToResultAsync<T, E>(HttpResponseMessage, CancellationToken)
+  fullName: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync<T, E>(System.Net.Http.HttpResponseMessage, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/ResultExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/ResultWrapper/HttpResponseMessageExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
-  summary: >-
-    Converts an <xref href="System.Net.Http.HttpResponseMessage" data-throw-if-not-resolved="false"></xref> into a non-generic <xref href="NuvTools.Common.ResultWrapper.IResult" data-throw-if-not-resolved="false"></xref>.
-
-    Always returns a valid <xref href="NuvTools.Common.ResultWrapper.IResult" data-throw-if-not-resolved="false"></xref> (never null), even for non-successful responses or invalid bodies.
-  example: []
   syntax:
-    content: public static Task<IResult> ToResultAsync(this HttpResponseMessage response, CancellationToken cancellationToken = default)
+    content: public static Task<IResult<T, E>> ToResultAsync<T, E>(this HttpResponseMessage response, CancellationToken cancellationToken = default)
     parameters:
     - id: response
       type: System.Net.Http.HttpResponseMessage
     - id: cancellationToken
       type: System.Threading.CancellationToken
+    typeParameters:
+    - id: T
+    - id: E
     return:
-      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
-    content.vb: Public Shared Function ToResultAsync(response As HttpResponseMessage, cancellationToken As CancellationToken = Nothing) As Task(Of IResult)
-  overload: NuvTools.Common.ResultWrapper.ResultExtensions.ToResultAsync*
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{{T},{E}}}
+    content.vb: Public Shared Function ToResultAsync(Of T, E)(response As HttpResponseMessage, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of T, E))
+  overload: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync*
+  nameWithType.vb: HttpResponseMessageExtensions.ToResultAsync(Of T, E)(HttpResponseMessage, CancellationToken)
+  fullName.vb: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync(Of T, E)(System.Net.Http.HttpResponseMessage, System.Threading.CancellationToken)
+  name.vb: ToResultAsync(Of T, E)(HttpResponseMessage, CancellationToken)
 references:
 - uid: System.Net.Http.HttpResponseMessage
   commentId: T:System.Net.Http.HttpResponseMessage
@@ -471,13 +496,13 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: NuvTools.Common.ResultWrapper.ResultExtensions.ToResultAsync*
-  commentId: Overload:NuvTools.Common.ResultWrapper.ResultExtensions.ToResultAsync
+- uid: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync*
+  commentId: Overload:NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync
   isExternal: true
-  href: NuvTools.Common.ResultWrapper.ResultExtensions.html#NuvTools_Common_ResultWrapper_ResultExtensions_ToResultAsync__1_System_Net_Http_HttpResponseMessage_System_Threading_CancellationToken_
+  href: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.html#NuvTools_Common_ResultWrapper_HttpResponseMessageExtensions_ToResultAsync_System_Net_Http_HttpResponseMessage_System_Threading_CancellationToken_
   name: ToResultAsync
-  nameWithType: ResultExtensions.ToResultAsync
-  fullName: NuvTools.Common.ResultWrapper.ResultExtensions.ToResultAsync
+  nameWithType: HttpResponseMessageExtensions.ToResultAsync
+  fullName: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync
 - uid: System.Threading.CancellationToken
   commentId: T:System.Threading.CancellationToken
   parent: System.Threading
@@ -486,30 +511,27 @@ references:
   name: CancellationToken
   nameWithType: CancellationToken
   fullName: System.Threading.CancellationToken
-- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{{T}}}
-  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{``0}}
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<IResult<T>>
-  nameWithType: Task<IResult<T>>
-  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<T>>
-  nameWithType.vb: Task(Of IResult(Of T))
-  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of T))
-  name.vb: Task(Of IResult(Of T))
+  name: Task<IResult>
+  nameWithType: Task<IResult>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult>
+  nameWithType.vb: Task(Of IResult)
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult)
+  name.vb: Task(Of IResult)
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
-  - uid: NuvTools.Common.ResultWrapper.IResult`1
+  - uid: NuvTools.Common.ResultWrapper.IResult
     name: IResult
     isExternal: true
-    href: NuvTools.Common.ResultWrapper.IResult-1.html
-  - name: <
-  - name: T
-  - name: '>'
+    href: NuvTools.Common.ResultWrapper.IResult.html
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -519,15 +541,10 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: NuvTools.Common.ResultWrapper.IResult`1
+  - uid: NuvTools.Common.ResultWrapper.IResult
     name: IResult
     isExternal: true
-    href: NuvTools.Common.ResultWrapper.IResult-1.html
-  - name: (
-  - name: Of
-  - name: " "
-  - name: T
-  - name: )
+    href: NuvTools.Common.ResultWrapper.IResult.html
   - name: )
 - uid: System.Threading
   commentId: N:System.Threading
@@ -621,27 +638,30 @@ references:
     name: Tasks
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
-- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
-  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{{T}}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{``0}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<IResult>
-  nameWithType: Task<IResult>
-  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult>
-  nameWithType.vb: Task(Of IResult)
-  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult)
-  name.vb: Task(Of IResult)
+  name: Task<IResult<T>>
+  nameWithType: Task<IResult<T>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<T>>
+  nameWithType.vb: Task(Of IResult(Of T))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of T))
+  name.vb: Task(Of IResult(Of T))
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
-  - uid: NuvTools.Common.ResultWrapper.IResult
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
     name: IResult
     isExternal: true
-    href: NuvTools.Common.ResultWrapper.IResult.html
+    href: NuvTools.Common.ResultWrapper.IResult-1.html
+  - name: <
+  - name: T
+  - name: '>'
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -651,8 +671,62 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: NuvTools.Common.ResultWrapper.IResult
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
     name: IResult
     isExternal: true
-    href: NuvTools.Common.ResultWrapper.IResult.html
+    href: NuvTools.Common.ResultWrapper.IResult-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{{T},{E}}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{``0,``1}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<T, E>>
+  nameWithType: Task<IResult<T, E>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<T, E>>
+  nameWithType.vb: Task(Of IResult(Of T, E))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of T, E))
+  name.vb: Task(Of IResult(Of T, E))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`2
+    name: IResult
+    isExternal: true
+    href: NuvTools.Common.ResultWrapper.IResult-2.html
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: E
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`2
+    name: IResult
+    isExternal: true
+    href: NuvTools.Common.ResultWrapper.IResult-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: E
+  - name: )
   - name: )

@@ -14,10 +14,12 @@ items:
   fullName: NuvTools.Common.Reflection.AssemblyHelper
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Reflection/AssemblyHelper.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/Reflection/AssemblyHelper.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Reflection
+  summary: Provides helper methods for working with assemblies and embedded resources.
+  example: []
   syntax:
     content: public static class AssemblyHelper
     content.vb: Public Module AssemblyHelper
@@ -43,21 +45,30 @@ items:
   fullName: NuvTools.Common.Reflection.AssemblyHelper.ResourceByName(string, string)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Reflection/AssemblyHelper.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/Reflection/AssemblyHelper.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Reflection
+  summary: Retrieves an embedded resource stream by name from a specified assembly.
+  example: []
   syntax:
     content: public static Stream? ResourceByName(string resourceName, string assemblyName)
     parameters:
     - id: resourceName
       type: System.String
+      description: The name of the embedded resource to retrieve.
     - id: assemblyName
       type: System.String
+      description: The name of the assembly containing the resource.
     return:
       type: System.IO.Stream
+      description: A <xref href="System.IO.Stream" data-throw-if-not-resolved="false"></xref> containing the resource data, or null if the resource is not found.
     content.vb: Public Shared Function ResourceByName(resourceName As String, assemblyName As String) As Stream
   overload: NuvTools.Common.Reflection.AssemblyHelper.ResourceByName*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown when <code class="paramref">resourceName</code> or <code class="paramref">assemblyName</code> is null or empty.
   nameWithType.vb: AssemblyHelper.ResourceByName(String, String)
   fullName.vb: NuvTools.Common.Reflection.AssemblyHelper.ResourceByName(String, String)
   name.vb: ResourceByName(String, String)
@@ -336,6 +347,21 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: System.IO.Stream
+  commentId: T:System.IO.Stream
+  parent: System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  name: Stream
+  nameWithType: Stream
+  fullName: System.IO.Stream
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException
 - uid: NuvTools.Common.Reflection.AssemblyHelper.ResourceByName*
   commentId: Overload:NuvTools.Common.Reflection.AssemblyHelper.ResourceByName
   isExternal: true
@@ -354,14 +380,6 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: System.IO.Stream
-  commentId: T:System.IO.Stream
-  parent: System.IO
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.io.stream
-  name: Stream
-  nameWithType: Stream
-  fullName: System.IO.Stream
 - uid: System.IO
   commentId: N:System.IO
   isExternal: true

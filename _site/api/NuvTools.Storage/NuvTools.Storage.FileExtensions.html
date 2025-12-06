@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class FileExtensions | Nuv Tools Framework Docs ">
       
-      
+      <meta name="description" content="Provides extension methods for converting file content between different formats.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Storage_FileExtensions" data-uid="NuvTools.Storage.FileExtensions" class="text-break">
-Class FileExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/FileExtensions.cs"><i class="bi bi-code-slash"></i></a>
+Class FileExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/FileExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class FileExtensions  <a class="header-action link-secondary" title="View source
   <dl><dt>Assembly</dt><dd>NuvTools.Storage.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Provides extension methods for converting file content between different formats.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -156,10 +157,11 @@ Class FileExtensions  <a class="header-action link-secondary" title="View source
 
   <h3 id="NuvTools_Storage_FileExtensions_Base64StringFromContent_NuvTools_Storage_IFile_" data-uid="NuvTools.Storage.FileExtensions.Base64StringFromContent(NuvTools.Storage.IFile)">
   Base64StringFromContent(IFile)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/FileExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/FileExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Converts a stream to a Base64-encoded string.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -169,13 +171,15 @@ Class FileExtensions  <a class="header-action link-secondary" title="View source
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>value</code> <a class="xref" href="NuvTools.Storage.IFile.html">IFile</a></dt>
-    <dd></dd>
+    <dd><p>The file containing the stream to convert.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>A Base64-encoded string representing the stream content, or <code>null</code> if the stream is null.</p>
+</dd>
   </dl>
 
 
@@ -185,6 +189,12 @@ Class FileExtensions  <a class="header-action link-secondary" title="View source
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Thrown when <code class="paramref">value</code> is null.</p>
+</dd>
+  </dl>
 
 
 
@@ -192,10 +202,11 @@ Class FileExtensions  <a class="header-action link-secondary" title="View source
 
   <h3 id="NuvTools_Storage_FileExtensions_ContentFromBase64String_NuvTools_Storage_IFile_" data-uid="NuvTools.Storage.FileExtensions.ContentFromBase64String(NuvTools.Storage.IFile)">
   ContentFromBase64String(IFile)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/FileExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/FileExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Converts a Base64-encoded string to a stream.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -205,13 +216,15 @@ Class FileExtensions  <a class="header-action link-secondary" title="View source
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>value</code> <a class="xref" href="NuvTools.Storage.IFile.html">IFile</a></dt>
-    <dd></dd>
+    <dd><p>The file containing the Base64 string to convert.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
-    <dd></dd>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.memorystream">MemoryStream</a> containing the decoded bytes, or <code>null</code> if the Base64 string is null or empty.</p>
+</dd>
   </dl>
 
 
@@ -221,6 +234,12 @@ Class FileExtensions  <a class="header-action link-secondary" title="View source
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Thrown when <code class="paramref">value</code> is null.</p>
+</dd>
+  </dl>
 
 
 
@@ -228,7 +247,7 @@ Class FileExtensions  <a class="header-action link-secondary" title="View source
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/FileExtensions.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/FileExtensions.cs" class="edit-link">Edit this page</a>
         </div>
 
 

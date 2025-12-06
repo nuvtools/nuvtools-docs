@@ -19,10 +19,16 @@ items:
   fullName: NuvTools.Notification.Mail.MailMessage
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail/MailMessage.cs
+    href: https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail/MailMessage.cs
   assemblies:
   - NuvTools.Notification.Mail
   namespace: NuvTools.Notification.Mail
+  summary: Represents an email message with sender, recipients, subject, body, and optional attachments.
+  remarks: >-
+    This class serves as the abstraction for composing email messages across different mail providers.
+
+    It supports HTML body content and optional attachments through the <xref href="NuvTools.Notification.Mail.MailMessage.Parts" data-throw-if-not-resolved="false"></xref> property.
+  example: []
   syntax:
     content: public class MailMessage
     content.vb: Public Class MailMessage
@@ -48,7 +54,7 @@ items:
   fullName: NuvTools.Notification.Mail.MailMessage.MailMessage()
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail/MailMessage.cs
+    href: https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail/MailMessage.cs
   assemblies:
   - NuvTools.Notification.Mail
   namespace: NuvTools.Notification.Mail
@@ -71,10 +77,12 @@ items:
   fullName: NuvTools.Notification.Mail.MailMessage.From
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail/MailMessage.cs
+    href: https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail/MailMessage.cs
   assemblies:
   - NuvTools.Notification.Mail
   namespace: NuvTools.Notification.Mail
+  summary: Gets or sets the sender's email address.
+  example: []
   syntax:
     content: public required MailAddress From { get; set; }
     parameters: []
@@ -94,10 +102,12 @@ items:
   fullName: NuvTools.Notification.Mail.MailMessage.To
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail/MailMessage.cs
+    href: https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail/MailMessage.cs
   assemblies:
   - NuvTools.Notification.Mail
   namespace: NuvTools.Notification.Mail
+  summary: Gets or sets the list of recipient email addresses.
+  example: []
   syntax:
     content: public required List<MailAddress> To { get; set; }
     parameters: []
@@ -117,10 +127,12 @@ items:
   fullName: NuvTools.Notification.Mail.MailMessage.Subject
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail/MailMessage.cs
+    href: https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail/MailMessage.cs
   assemblies:
   - NuvTools.Notification.Mail
   namespace: NuvTools.Notification.Mail
+  summary: Gets or sets the subject line of the email.
+  example: []
   syntax:
     content: public required string Subject { get; set; }
     parameters: []
@@ -140,10 +152,15 @@ items:
   fullName: NuvTools.Notification.Mail.MailMessage.Body
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail/MailMessage.cs
+    href: https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail/MailMessage.cs
   assemblies:
   - NuvTools.Notification.Mail
   namespace: NuvTools.Notification.Mail
+  summary: >-
+    Gets or sets the body content of the email.
+
+    This is typically HTML content that will be rendered by the email client.
+  example: []
   syntax:
     content: public required string Body { get; set; }
     parameters: []
@@ -163,10 +180,12 @@ items:
   fullName: NuvTools.Notification.Mail.MailMessage.Parts
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail/MailMessage.cs
+    href: https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail/MailMessage.cs
   assemblies:
   - NuvTools.Notification.Mail
   namespace: NuvTools.Notification.Mail
+  summary: Gets or sets the optional list of attachments to include with the email.
+  example: []
   syntax:
     content: public List<MailPart>? Parts { get; set; }
     parameters: []
@@ -175,6 +194,13 @@ items:
     content.vb: Public Property Parts As List(Of MailPart)
   overload: NuvTools.Notification.Mail.MailMessage.Parts*
 references:
+- uid: NuvTools.Notification.Mail.MailMessage.Parts
+  commentId: P:NuvTools.Notification.Mail.MailMessage.Parts
+  isExternal: true
+  href: NuvTools.Notification.Mail.MailMessage.html#NuvTools_Notification_Mail_MailMessage_Parts
+  name: Parts
+  nameWithType: MailMessage.Parts
+  fullName: NuvTools.Notification.Mail.MailMessage.Parts
 - uid: NuvTools.Notification.Mail
   commentId: N:NuvTools.Notification.Mail
   isExternal: true

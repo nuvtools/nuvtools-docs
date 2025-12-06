@@ -16,10 +16,16 @@ items:
   fullName: NuvTools.Security.Extensions.ClaimExtensions
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimExtensions.cs
   assemblies:
   - NuvTools.Security
   namespace: NuvTools.Security.Extensions
+  summary: Provides extension methods for working with collections of <xref href="System.Security.Claims.Claim" data-throw-if-not-resolved="false"></xref> objects.
+  remarks: >-
+    These extensions simplify the process of adding permission claims and bulk-adding claims
+
+    from static class constants.
+  example: []
   syntax:
     content: public static class ClaimExtensions
     content.vb: Public Module ClaimExtensions
@@ -46,17 +52,31 @@ items:
   fullName: NuvTools.Security.Extensions.ClaimExtensions.AddPermission(System.Collections.Generic.List<System.Security.Claims.Claim>, string)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimExtensions.cs
   assemblies:
   - NuvTools.Security
   namespace: NuvTools.Security.Extensions
+  summary: Adds a permission claim to the claims collection.
+  remarks: >-
+    This is a convenience method that creates a claim with the
+
+    <xref href="NuvTools.Security.Models.ClaimTypes.Permission" data-throw-if-not-resolved="false"></xref> claim type.
+  example:
+  - >-
+    <pre><code class="lang-csharp">var claims = new List&lt;Claim&gt;();
+
+    claims.AddPermission("users.read");
+
+    claims.AddPermission("users.write");</code></pre>
   syntax:
     content: public static void AddPermission(this List<Claim> claims, string value)
     parameters:
     - id: claims
       type: System.Collections.Generic.List{System.Security.Claims.Claim}
+      description: The list of claims to add to.
     - id: value
       type: System.String
+      description: The permission value to add.
     content.vb: Public Shared Sub AddPermission(claims As List(Of Claim), value As String)
   overload: NuvTools.Security.Extensions.ClaimExtensions.AddPermission*
   nameWithType.vb: ClaimExtensions.AddPermission(List(Of Claim), String)
@@ -75,19 +95,45 @@ items:
   fullName: NuvTools.Security.Extensions.ClaimExtensions.AddByClass(System.Collections.Generic.List<System.Security.Claims.Claim>, string, System.Type)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimExtensions.cs
   assemblies:
   - NuvTools.Security
   namespace: NuvTools.Security.Extensions
+  summary: Adds claims to the collection by reading all public static string constants from a specified class type.
+  remarks: >-
+    This method uses reflection to find all public, static, readonly string fields in the specified class
+
+    and creates a claim for each one using the specified claim type. This is useful when you have a
+
+    permissions class with multiple permission constant values.
+  example:
+  - >-
+    <pre><code class="lang-csharp">public static class UserPermissions
+
+    {
+        public const string Read = "users.read";
+        public const string Write = "users.write";
+        public const string Delete = "users.delete";
+    }
+
+
+    var claims = new List&lt;Claim&gt;();
+
+    claims.AddByClass("permission", typeof(UserPermissions));
+
+    // Results in 3 claims with type "permission" and values "users.read", "users.write", "users.delete"</code></pre>
   syntax:
     content: public static void AddByClass(this List<Claim> claims, string claimType, Type classType)
     parameters:
     - id: claims
       type: System.Collections.Generic.List{System.Security.Claims.Claim}
+      description: The list of claims to add to.
     - id: claimType
       type: System.String
+      description: The claim type to assign to all extracted values.
     - id: classType
       type: System.Type
+      description: The type of the class containing the constant values.
     content.vb: Public Shared Sub AddByClass(claims As List(Of Claim), claimType As String, classType As Type)
   overload: NuvTools.Security.Extensions.ClaimExtensions.AddByClass*
   nameWithType.vb: ClaimExtensions.AddByClass(List(Of Claim), String, Type)
@@ -106,23 +152,55 @@ items:
   fullName: NuvTools.Security.Extensions.ClaimExtensions.AddPermissionByClass(System.Collections.Generic.List<System.Security.Claims.Claim>, System.Type)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Extensions/ClaimExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Extensions/ClaimExtensions.cs
   assemblies:
   - NuvTools.Security
   namespace: NuvTools.Security.Extensions
+  summary: >-
+    Adds permission claims to the collection by reading all public static string constants
+
+    from a specified class type.
+  remarks: >-
+    This is a convenience method that calls <xref href="NuvTools.Security.Extensions.ClaimExtensions.AddByClass(System.Collections.Generic.List%7bSystem.Security.Claims.Claim%7d%2cSystem.String%2cSystem.Type)" data-throw-if-not-resolved="false"></xref> with
+
+    <xref href="NuvTools.Security.Models.ClaimTypes.Permission" data-throw-if-not-resolved="false"></xref> as the claim type.
+  example:
+  - >-
+    <pre><code class="lang-csharp">public static class UserPermissions
+
+    {
+        public const string Read = "users.read";
+        public const string Write = "users.write";
+    }
+
+
+    var claims = new List&lt;Claim&gt;();
+
+    claims.AddPermissionByClass(typeof(UserPermissions));
+
+    // Results in 2 permission claims</code></pre>
   syntax:
     content: public static void AddPermissionByClass(this List<Claim> claims, Type classType)
     parameters:
     - id: claims
       type: System.Collections.Generic.List{System.Security.Claims.Claim}
+      description: The list of claims to add to.
     - id: classType
       type: System.Type
+      description: The type of the class containing the permission constant values.
     content.vb: Public Shared Sub AddPermissionByClass(claims As List(Of Claim), classType As Type)
   overload: NuvTools.Security.Extensions.ClaimExtensions.AddPermissionByClass*
   nameWithType.vb: ClaimExtensions.AddPermissionByClass(List(Of Claim), Type)
   fullName.vb: NuvTools.Security.Extensions.ClaimExtensions.AddPermissionByClass(System.Collections.Generic.List(Of System.Security.Claims.Claim), System.Type)
   name.vb: AddPermissionByClass(List(Of Claim), Type)
 references:
+- uid: System.Security.Claims.Claim
+  commentId: T:System.Security.Claims.Claim
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.security.claims.claim
+  name: Claim
+  nameWithType: Claim
+  fullName: System.Security.Claims.Claim
 - uid: NuvTools.Security.Extensions
   commentId: N:NuvTools.Security.Extensions
   isExternal: true
@@ -397,6 +475,13 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: NuvTools.Security.Models.ClaimTypes.Permission
+  commentId: F:NuvTools.Security.Models.ClaimTypes.Permission
+  isExternal: true
+  href: NuvTools.Security.Models.ClaimTypes.html#NuvTools_Security_Models_ClaimTypes_Permission
+  name: Permission
+  nameWithType: ClaimTypes.Permission
+  fullName: NuvTools.Security.Models.ClaimTypes.Permission
 - uid: NuvTools.Security.Extensions.ClaimExtensions.AddPermission*
   commentId: Overload:NuvTools.Security.Extensions.ClaimExtensions.AddPermission
   isExternal: true
@@ -530,6 +615,76 @@ references:
   name: Type
   nameWithType: Type
   fullName: System.Type
+- uid: NuvTools.Security.Extensions.ClaimExtensions.AddByClass(System.Collections.Generic.List{System.Security.Claims.Claim},System.String,System.Type)
+  commentId: M:NuvTools.Security.Extensions.ClaimExtensions.AddByClass(System.Collections.Generic.List{System.Security.Claims.Claim},System.String,System.Type)
+  isExternal: true
+  href: NuvTools.Security.Extensions.ClaimExtensions.html#NuvTools_Security_Extensions_ClaimExtensions_AddByClass_System_Collections_Generic_List_System_Security_Claims_Claim__System_String_System_Type_
+  name: AddByClass(List<Claim>, string, Type)
+  nameWithType: ClaimExtensions.AddByClass(List<Claim>, string, Type)
+  fullName: NuvTools.Security.Extensions.ClaimExtensions.AddByClass(System.Collections.Generic.List<System.Security.Claims.Claim>, string, System.Type)
+  nameWithType.vb: ClaimExtensions.AddByClass(List(Of Claim), String, Type)
+  fullName.vb: NuvTools.Security.Extensions.ClaimExtensions.AddByClass(System.Collections.Generic.List(Of System.Security.Claims.Claim), String, System.Type)
+  name.vb: AddByClass(List(Of Claim), String, Type)
+  spec.csharp:
+  - uid: NuvTools.Security.Extensions.ClaimExtensions.AddByClass(System.Collections.Generic.List{System.Security.Claims.Claim},System.String,System.Type)
+    name: AddByClass
+    isExternal: true
+    href: NuvTools.Security.Extensions.ClaimExtensions.html#NuvTools_Security_Extensions_ClaimExtensions_AddByClass_System_Collections_Generic_List_System_Security_Claims_Claim__System_String_System_Type_
+  - name: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.Security.Claims.Claim
+    name: Claim
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.security.claims.claim
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Security.Extensions.ClaimExtensions.AddByClass(System.Collections.Generic.List{System.Security.Claims.Claim},System.String,System.Type)
+    name: AddByClass
+    isExternal: true
+    href: NuvTools.Security.Extensions.ClaimExtensions.html#NuvTools_Security_Extensions_ClaimExtensions_AddByClass_System_Collections_Generic_List_System_Security_Claims_Claim__System_String_System_Type_
+  - name: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Security.Claims.Claim
+    name: Claim
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.security.claims.claim
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
 - uid: NuvTools.Security.Extensions.ClaimExtensions.AddPermissionByClass*
   commentId: Overload:NuvTools.Security.Extensions.ClaimExtensions.AddPermissionByClass
   isExternal: true

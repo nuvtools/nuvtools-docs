@@ -16,14 +16,20 @@ items:
   fullName: NuvTools.Validation.AspNetCore.Blazor.FluentValidation<TModel>
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation.AspNetCore.Blazor/FluentValidation.cs
+    href: https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation.AspNetCore.Blazor/FluentValidation.cs
   assemblies:
   - NuvTools.Validation.AspNetCore.Blazor
   namespace: NuvTools.Validation.AspNetCore.Blazor
+  summary: >-
+    Integrates FluentValidation with Blazor's EditContext and ValidationMessageStore.
+
+    Provides automatic validation on form submission and field changes, with support for nested property paths.
+  example: []
   syntax:
     content: 'public class FluentValidation<TModel> where TModel : class, new()'
     typeParameters:
     - id: TModel
+      description: The type of the model being validated.
     content.vb: Public Class FluentValidation(Of TModel As {Class, New})
   inheritance:
   - System.Object
@@ -36,7 +42,7 @@ items:
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.GetHashCode
   extensionMethods:
-  - NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.NuvTools.Validation.Validator.Validate``1
+  - NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.NuvTools.Validation.Annotations.Validator.Validate``1
   nameWithType.vb: FluentValidation(Of TModel)
   fullName.vb: NuvTools.Validation.AspNetCore.Blazor.FluentValidation(Of TModel)
   name.vb: FluentValidation(Of TModel)
@@ -52,25 +58,33 @@ items:
   fullName: NuvTools.Validation.AspNetCore.Blazor.FluentValidation<TModel>.FluentValidation(TModel, FluentValidation.IValidator<TModel>, Microsoft.AspNetCore.Components.Forms.EditContext, bool, bool, bool)
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation.AspNetCore.Blazor/FluentValidation.cs
+    href: https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation.AspNetCore.Blazor/FluentValidation.cs
   assemblies:
   - NuvTools.Validation.AspNetCore.Blazor
   namespace: NuvTools.Validation.AspNetCore.Blazor
+  summary: Initializes a new instance of the <xref href="NuvTools.Validation.AspNetCore.Blazor.FluentValidation%601" data-throw-if-not-resolved="false"></xref> class.
+  example: []
   syntax:
     content: public FluentValidation(TModel model, IValidator<TModel> validator, EditContext editContext, bool autoValidationOnRequested = true, bool autoValidationOnFieldChanged = true, bool highlightInvalidFields = true)
     parameters:
     - id: model
       type: '{TModel}'
+      description: The model instance to validate.
     - id: validator
       type: FluentValidation.IValidator{{TModel}}
+      description: The FluentValidation validator for the model.
     - id: editContext
       type: Microsoft.AspNetCore.Components.Forms.EditContext
+      description: The Blazor EditContext to integrate with.
     - id: autoValidationOnRequested
       type: System.Boolean
+      description: If true, automatically validates the entire model when EditContext.Validate() is called. Default is true.
     - id: autoValidationOnFieldChanged
       type: System.Boolean
+      description: If true, automatically validates individual fields as they change. Default is true.
     - id: highlightInvalidFields
       type: System.Boolean
+      description: If true, notifies the EditContext of validation state changes to highlight invalid fields. Default is true.
     content.vb: Public Sub New(model As TModel, validator As IValidator(Of TModel), editContext As EditContext, autoValidationOnRequested As Boolean = True, autoValidationOnFieldChanged As Boolean = True, highlightInvalidFields As Boolean = True)
   overload: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.#ctor*
   nameWithType.vb: FluentValidation(Of TModel).New(TModel, IValidator(Of TModel), EditContext, Boolean, Boolean, Boolean)
@@ -88,7 +102,7 @@ items:
   fullName: NuvTools.Validation.AspNetCore.Blazor.FluentValidation<TModel>.Validate(bool)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation.AspNetCore.Blazor/FluentValidation.cs
+    href: https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation.AspNetCore.Blazor/FluentValidation.cs
   assemblies:
   - NuvTools.Validation.AspNetCore.Blazor
   namespace: NuvTools.Validation.AspNetCore.Blazor
@@ -116,17 +130,21 @@ items:
   fullName: NuvTools.Validation.AspNetCore.Blazor.FluentValidation<TModel>.ValidateField(Microsoft.AspNetCore.Components.Forms.FieldIdentifier, bool)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation.AspNetCore.Blazor/FluentValidation.cs
+    href: https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation.AspNetCore.Blazor/FluentValidation.cs
   assemblies:
   - NuvTools.Validation.AspNetCore.Blazor
   namespace: NuvTools.Validation.AspNetCore.Blazor
+  summary: Validates a specific field and updates its validation state in the EditContext.
+  example: []
   syntax:
     content: public void ValidateField(FieldIdentifier fieldIdentifier, bool highlightInvalidField = true)
     parameters:
     - id: fieldIdentifier
       type: Microsoft.AspNetCore.Components.Forms.FieldIdentifier
+      description: The field to validate.
     - id: highlightInvalidField
       type: System.Boolean
+      description: If true, notifies the EditContext to highlight the field if invalid. Default is true.
     content.vb: Public Sub ValidateField(fieldIdentifier As FieldIdentifier, highlightInvalidField As Boolean = True)
   overload: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.ValidateField*
   nameWithType.vb: FluentValidation(Of TModel).ValidateField(FieldIdentifier, Boolean)
@@ -410,22 +428,22 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
   - name: (
   - name: )
-- uid: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.NuvTools.Validation.Validator.Validate``1
-  commentId: M:NuvTools.Validation.Validator.Validate``1(``0)
-  parent: NuvTools.Validation.Validator
-  definition: NuvTools.Validation.Validator.Validate``1(``0)
-  href: NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_Validate__1___0_
+- uid: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.NuvTools.Validation.Annotations.Validator.Validate``1
+  commentId: M:NuvTools.Validation.Annotations.Validator.Validate``1(``0)
+  parent: NuvTools.Validation.Annotations.Validator
+  definition: NuvTools.Validation.Annotations.Validator.Validate``1(``0)
+  href: NuvTools.Validation.Annotations.Validator.html#NuvTools_Validation_Annotations_Validator_Validate__1___0_
   name: Validate<FluentValidation<TModel>>(FluentValidation<TModel>)
   nameWithType: Validator.Validate<FluentValidation<TModel>>(FluentValidation<TModel>)
-  fullName: NuvTools.Validation.Validator.Validate<NuvTools.Validation.AspNetCore.Blazor.FluentValidation<TModel>>(NuvTools.Validation.AspNetCore.Blazor.FluentValidation<TModel>)
+  fullName: NuvTools.Validation.Annotations.Validator.Validate<NuvTools.Validation.AspNetCore.Blazor.FluentValidation<TModel>>(NuvTools.Validation.AspNetCore.Blazor.FluentValidation<TModel>)
   nameWithType.vb: Validator.Validate(Of FluentValidation(Of TModel))(FluentValidation(Of TModel))
-  fullName.vb: NuvTools.Validation.Validator.Validate(Of NuvTools.Validation.AspNetCore.Blazor.FluentValidation(Of TModel))(NuvTools.Validation.AspNetCore.Blazor.FluentValidation(Of TModel))
+  fullName.vb: NuvTools.Validation.Annotations.Validator.Validate(Of NuvTools.Validation.AspNetCore.Blazor.FluentValidation(Of TModel))(NuvTools.Validation.AspNetCore.Blazor.FluentValidation(Of TModel))
   name.vb: Validate(Of FluentValidation(Of TModel))(FluentValidation(Of TModel))
   spec.csharp:
-  - uid: NuvTools.Validation.Validator.Validate``1(NuvTools.Validation.AspNetCore.Blazor.FluentValidation{`0})
+  - uid: NuvTools.Validation.Annotations.Validator.Validate``1(NuvTools.Validation.AspNetCore.Blazor.FluentValidation{`0})
     name: Validate
     isExternal: true
-    href: NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_Validate__1___0_
+    href: NuvTools.Validation.Annotations.Validator.html#NuvTools_Validation_Annotations_Validator_Validate__1___0_
   - name: <
   - uid: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1
     name: FluentValidation
@@ -445,10 +463,10 @@ references:
   - name: '>'
   - name: )
   spec.vb:
-  - uid: NuvTools.Validation.Validator.Validate``1(NuvTools.Validation.AspNetCore.Blazor.FluentValidation{`0})
+  - uid: NuvTools.Validation.Annotations.Validator.Validate``1(NuvTools.Validation.AspNetCore.Blazor.FluentValidation{`0})
     name: Validate
     isExternal: true
-    href: NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_Validate__1___0_
+    href: NuvTools.Validation.Annotations.Validator.html#NuvTools_Validation_Annotations_Validator_Validate__1___0_
   - name: (
   - name: Of
   - name: " "
@@ -480,21 +498,21 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: NuvTools.Validation.Validator.Validate``1(``0)
-  commentId: M:NuvTools.Validation.Validator.Validate``1(``0)
+- uid: NuvTools.Validation.Annotations.Validator.Validate``1(``0)
+  commentId: M:NuvTools.Validation.Annotations.Validator.Validate``1(``0)
   isExternal: true
-  href: NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_Validate__1___0_
+  href: NuvTools.Validation.Annotations.Validator.html#NuvTools_Validation_Annotations_Validator_Validate__1___0_
   name: Validate<T>(T)
   nameWithType: Validator.Validate<T>(T)
-  fullName: NuvTools.Validation.Validator.Validate<T>(T)
+  fullName: NuvTools.Validation.Annotations.Validator.Validate<T>(T)
   nameWithType.vb: Validator.Validate(Of T)(T)
-  fullName.vb: NuvTools.Validation.Validator.Validate(Of T)(T)
+  fullName.vb: NuvTools.Validation.Annotations.Validator.Validate(Of T)(T)
   name.vb: Validate(Of T)(T)
   spec.csharp:
-  - uid: NuvTools.Validation.Validator.Validate``1(``0)
+  - uid: NuvTools.Validation.Annotations.Validator.Validate``1(``0)
     name: Validate
     isExternal: true
-    href: NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_Validate__1___0_
+    href: NuvTools.Validation.Annotations.Validator.html#NuvTools_Validation_Annotations_Validator_Validate__1___0_
   - name: <
   - name: T
   - name: '>'
@@ -502,10 +520,10 @@ references:
   - name: T
   - name: )
   spec.vb:
-  - uid: NuvTools.Validation.Validator.Validate``1(``0)
+  - uid: NuvTools.Validation.Annotations.Validator.Validate``1(``0)
     name: Validate
     isExternal: true
-    href: NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_Validate__1___0_
+    href: NuvTools.Validation.Annotations.Validator.html#NuvTools_Validation_Annotations_Validator_Validate__1___0_
   - name: (
   - name: Of
   - name: " "
@@ -514,21 +532,21 @@ references:
   - name: (
   - name: T
   - name: )
-- uid: NuvTools.Validation.Validator
-  commentId: T:NuvTools.Validation.Validator
-  parent: NuvTools.Validation
+- uid: NuvTools.Validation.Annotations.Validator
+  commentId: T:NuvTools.Validation.Annotations.Validator
+  parent: NuvTools.Validation.Annotations
   isExternal: true
-  href: NuvTools.Validation.Validator.html
+  href: NuvTools.Validation.Annotations.Validator.html
   name: Validator
   nameWithType: Validator
-  fullName: NuvTools.Validation.Validator
-- uid: NuvTools.Validation
-  commentId: N:NuvTools.Validation
+  fullName: NuvTools.Validation.Annotations.Validator
+- uid: NuvTools.Validation.Annotations
+  commentId: N:NuvTools.Validation.Annotations
   isExternal: true
   href: NuvTools.html
-  name: NuvTools.Validation
-  nameWithType: NuvTools.Validation
-  fullName: NuvTools.Validation
+  name: NuvTools.Validation.Annotations
+  nameWithType: NuvTools.Validation.Annotations
+  fullName: NuvTools.Validation.Annotations
   spec.csharp:
   - uid: NuvTools
     name: NuvTools
@@ -539,6 +557,11 @@ references:
     name: Validation
     isExternal: true
     href: NuvTools.Validation.html
+  - name: .
+  - uid: NuvTools.Validation.Annotations
+    name: Annotations
+    isExternal: true
+    href: NuvTools.Validation.Annotations.html
   spec.vb:
   - uid: NuvTools
     name: NuvTools
@@ -549,6 +572,39 @@ references:
     name: Validation
     isExternal: true
     href: NuvTools.Validation.html
+  - name: .
+  - uid: NuvTools.Validation.Annotations
+    name: Annotations
+    isExternal: true
+    href: NuvTools.Validation.Annotations.html
+- uid: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1
+  commentId: T:NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1
+  isExternal: true
+  href: NuvTools.Validation.AspNetCore.Blazor.FluentValidation-1.html
+  name: FluentValidation<TModel>
+  nameWithType: FluentValidation<TModel>
+  fullName: NuvTools.Validation.AspNetCore.Blazor.FluentValidation<TModel>
+  nameWithType.vb: FluentValidation(Of TModel)
+  fullName.vb: NuvTools.Validation.AspNetCore.Blazor.FluentValidation(Of TModel)
+  name.vb: FluentValidation(Of TModel)
+  spec.csharp:
+  - uid: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1
+    name: FluentValidation
+    isExternal: true
+    href: NuvTools.Validation.AspNetCore.Blazor.FluentValidation-1.html
+  - name: <
+  - name: TModel
+  - name: '>'
+  spec.vb:
+  - uid: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1
+    name: FluentValidation
+    isExternal: true
+    href: NuvTools.Validation.AspNetCore.Blazor.FluentValidation-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TModel
+  - name: )
 - uid: NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.#ctor*
   commentId: Overload:NuvTools.Validation.AspNetCore.Blazor.FluentValidation`1.#ctor
   isExternal: true

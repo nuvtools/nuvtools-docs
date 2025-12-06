@@ -17,10 +17,12 @@ items:
   fullName: NuvTools.Data.Paging.PagingExtensions
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data/Paging/PagingExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Paging/PagingExtensions.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Paging
+  summary: Extension methods for paging collections.
+  example: []
   syntax:
     content: public static class PagingExtensions
     content.vb: Public Module PagingExtensions
@@ -47,23 +49,30 @@ items:
   fullName: NuvTools.Data.Paging.PagingExtensions.PagingWrap<T>(System.Collections.Generic.IEnumerable<T>, int, int)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data/Paging/PagingExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Paging/PagingExtensions.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Paging
+  summary: Wraps an enumerable collection into a paged result with metadata.
+  example: []
   syntax:
     content: public static PagingWithEnumerableList<T> PagingWrap<T>(this IEnumerable<T> list, int pageNumber = 1, int pageSize = 50)
     parameters:
     - id: list
       type: System.Collections.Generic.IEnumerable{{T}}
+      description: The source enumerable collection.
     - id: pageNumber
       type: System.Int32
+      description: The page number (1-indexed). Defaults to 1.
     - id: pageSize
       type: System.Int32
+      description: The number of items per page. Defaults to 50.
     typeParameters:
     - id: T
+      description: The type of items in the collection.
     return:
       type: NuvTools.Data.Paging.PagingWithEnumerableList{{T}}
+      description: A paged result containing the requested page of data with total count.
     content.vb: Public Shared Function PagingWrap(Of T)(list As IEnumerable(Of T), pageNumber As Integer = 1, pageSize As Integer = 50) As PagingWithEnumerableList(Of T)
   overload: NuvTools.Data.Paging.PagingExtensions.PagingWrap*
   nameWithType.vb: PagingExtensions.PagingWrap(Of T)(IEnumerable(Of T), Integer, Integer)
@@ -82,23 +91,30 @@ items:
   fullName: NuvTools.Data.Paging.PagingExtensions.Paging<T>(System.Linq.IQueryable<T>, int, int)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data/Paging/PagingExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Paging/PagingExtensions.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Paging
+  summary: Applies paging to an IQueryable collection by skipping and taking the appropriate number of items.
+  example: []
   syntax:
     content: public static IQueryable<T> Paging<T>(this IQueryable<T> list, int pageNumber = 1, int pageSize = 50)
     parameters:
     - id: list
       type: System.Linq.IQueryable{{T}}
+      description: The source queryable collection.
     - id: pageNumber
       type: System.Int32
+      description: The page number (1-indexed). Defaults to 1.
     - id: pageSize
       type: System.Int32
+      description: The number of items per page. Defaults to 50.
     typeParameters:
     - id: T
+      description: The type of items in the queryable collection.
     return:
       type: System.Linq.IQueryable{{T}}
+      description: A queryable collection containing only the items for the requested page.
     content.vb: Public Shared Function Paging(Of T)(list As IQueryable(Of T), pageNumber As Integer = 1, pageSize As Integer = 50) As IQueryable(Of T)
   overload: NuvTools.Data.Paging.PagingExtensions.Paging*
   nameWithType.vb: PagingExtensions.Paging(Of T)(IQueryable(Of T), Integer, Integer)
@@ -117,23 +133,30 @@ items:
   fullName: NuvTools.Data.Paging.PagingExtensions.Paging<T>(System.Collections.Generic.IEnumerable<T>, int, int)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data/Paging/PagingExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Paging/PagingExtensions.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Paging
+  summary: Applies paging to an IEnumerable collection by skipping and taking the appropriate number of items.
+  example: []
   syntax:
     content: public static IEnumerable<T> Paging<T>(this IEnumerable<T> list, int pageNumber = 1, int pageSize = 50)
     parameters:
     - id: list
       type: System.Collections.Generic.IEnumerable{{T}}
+      description: The source enumerable collection.
     - id: pageNumber
       type: System.Int32
+      description: The page number (1-indexed). Defaults to 1.
     - id: pageSize
       type: System.Int32
+      description: The number of items per page. Defaults to 50.
     typeParameters:
     - id: T
+      description: The type of items in the enumerable collection.
     return:
       type: System.Collections.Generic.IEnumerable{{T}}
+      description: An enumerable collection containing only the items for the requested page.
     content.vb: Public Shared Function Paging(Of T)(list As IEnumerable(Of T), pageNumber As Integer = 1, pageSize As Integer = 50) As IEnumerable(Of T)
   overload: NuvTools.Data.Paging.PagingExtensions.Paging*
   nameWithType.vb: PagingExtensions.Paging(Of T)(IEnumerable(Of T), Integer, Integer)
@@ -152,21 +175,30 @@ items:
   fullName: NuvTools.Data.Paging.PagingExtensions.ToPagingEnumerable<T>(NuvTools.Data.Paging.PagingWithQueryableList<T>)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data/Paging/PagingExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Paging/PagingExtensions.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Paging
+  summary: Converts a PagingWithQueryableList to a PagingWithEnumerableList by materializing the queryable collection.
+  example: []
   syntax:
     content: public static PagingWithEnumerableList<T> ToPagingEnumerable<T>(this PagingWithQueryableList<T> paging)
     parameters:
     - id: paging
       type: NuvTools.Data.Paging.PagingWithQueryableList{{T}}
+      description: The source paging result with queryable list.
     typeParameters:
     - id: T
+      description: The type of items in the collection.
     return:
       type: NuvTools.Data.Paging.PagingWithEnumerableList{{T}}
+      description: A paging result with an enumerable list.
     content.vb: Public Shared Function ToPagingEnumerable(Of T)(paging As PagingWithQueryableList(Of T)) As PagingWithEnumerableList(Of T)
   overload: NuvTools.Data.Paging.PagingExtensions.ToPagingEnumerable*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown when paging is null.
   nameWithType.vb: PagingExtensions.ToPagingEnumerable(Of T)(PagingWithQueryableList(Of T))
   fullName.vb: NuvTools.Data.Paging.PagingExtensions.ToPagingEnumerable(Of T)(NuvTools.Data.Paging.PagingWithQueryableList(Of T))
   name.vb: ToPagingEnumerable(Of T)(PagingWithQueryableList(Of T))
@@ -705,6 +737,13 @@ references:
     name: Linq
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.linq
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
 - uid: NuvTools.Data.Paging.PagingExtensions.ToPagingEnumerable*
   commentId: Overload:NuvTools.Data.Paging.PagingExtensions.ToPagingEnumerable
   isExternal: true

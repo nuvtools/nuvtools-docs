@@ -17,10 +17,12 @@ items:
   fullName: NuvTools.Data.Sorting.SortingExtensions
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data/Sorting/SortingExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Sorting/SortingExtensions.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Sorting
+  summary: Extension methods for sorting collections in both ascending and descending order.
+  example: []
   syntax:
     content: public static class SortingExtensions
     content.vb: Public Module SortingExtensions
@@ -47,24 +49,32 @@ items:
   fullName: NuvTools.Data.Sorting.SortingExtensions.Sort<T, TKey>(System.Linq.IQueryable<T>, System.Linq.Expressions.Expression<System.Func<T, TKey>>, NuvTools.Data.Sorting.Enumerations.SortDirection)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data/Sorting/SortingExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Sorting/SortingExtensions.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Sorting
+  summary: Sorts a queryable collection by the specified property and direction.
+  example: []
   syntax:
     content: public static IOrderedQueryable<T> Sort<T, TKey>(this IQueryable<T> list, Expression<Func<T, TKey>> property, SortDirection direction = SortDirection.ASC)
     parameters:
     - id: list
       type: System.Linq.IQueryable{{T}}
+      description: The source queryable collection.
     - id: property
       type: System.Linq.Expressions.Expression{System.Func{{T},{TKey}}}
+      description: An expression that identifies the property to sort by.
     - id: direction
       type: NuvTools.Data.Sorting.Enumerations.SortDirection
+      description: The sort direction (ascending or descending). Defaults to ascending.
     typeParameters:
     - id: T
+      description: The type of items in the queryable collection.
     - id: TKey
+      description: The type of the property to sort by.
     return:
       type: System.Linq.IOrderedQueryable{{T}}
+      description: An ordered queryable collection.
     content.vb: Public Shared Function Sort(Of T, TKey)(list As IQueryable(Of T), [property] As Expression(Of Func(Of T, TKey)), direction As SortDirection = SortDirection.ASC) As IOrderedQueryable(Of T)
   overload: NuvTools.Data.Sorting.SortingExtensions.Sort*
   nameWithType.vb: SortingExtensions.Sort(Of T, TKey)(IQueryable(Of T), Expression(Of Func(Of T, TKey)), SortDirection)
@@ -83,24 +93,32 @@ items:
   fullName: NuvTools.Data.Sorting.SortingExtensions.ThenSort<T, TKey>(System.Linq.IOrderedQueryable<T>, System.Linq.Expressions.Expression<System.Func<T, TKey>>, NuvTools.Data.Sorting.Enumerations.SortDirection)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data/Sorting/SortingExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Sorting/SortingExtensions.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Sorting
+  summary: Performs a secondary sort on an already ordered queryable collection.
+  example: []
   syntax:
     content: public static IOrderedQueryable<T> ThenSort<T, TKey>(this IOrderedQueryable<T> list, Expression<Func<T, TKey>> property, SortDirection direction = SortDirection.ASC)
     parameters:
     - id: list
       type: System.Linq.IOrderedQueryable{{T}}
+      description: The source ordered queryable collection.
     - id: property
       type: System.Linq.Expressions.Expression{System.Func{{T},{TKey}}}
+      description: An expression that identifies the property to sort by.
     - id: direction
       type: NuvTools.Data.Sorting.Enumerations.SortDirection
+      description: The sort direction (ascending or descending). Defaults to ascending.
     typeParameters:
     - id: T
+      description: The type of items in the queryable collection.
     - id: TKey
+      description: The type of the property to sort by.
     return:
       type: System.Linq.IOrderedQueryable{{T}}
+      description: An ordered queryable collection with the secondary sort applied.
     content.vb: Public Shared Function ThenSort(Of T, TKey)(list As IOrderedQueryable(Of T), [property] As Expression(Of Func(Of T, TKey)), direction As SortDirection = SortDirection.ASC) As IOrderedQueryable(Of T)
   overload: NuvTools.Data.Sorting.SortingExtensions.ThenSort*
   nameWithType.vb: SortingExtensions.ThenSort(Of T, TKey)(IOrderedQueryable(Of T), Expression(Of Func(Of T, TKey)), SortDirection)
@@ -119,24 +137,32 @@ items:
   fullName: NuvTools.Data.Sorting.SortingExtensions.Sort<T, TKey>(System.Collections.Generic.IEnumerable<T>, System.Func<T, TKey>, NuvTools.Data.Sorting.Enumerations.SortDirection)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data/Sorting/SortingExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Sorting/SortingExtensions.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Sorting
+  summary: Sorts an enumerable collection by the specified property and direction.
+  example: []
   syntax:
     content: public static IOrderedEnumerable<T> Sort<T, TKey>(this IEnumerable<T> list, Func<T, TKey> property, SortDirection direction = SortDirection.ASC)
     parameters:
     - id: list
       type: System.Collections.Generic.IEnumerable{{T}}
+      description: The source enumerable collection.
     - id: property
       type: System.Func{{T},{TKey}}
+      description: A function that identifies the property to sort by.
     - id: direction
       type: NuvTools.Data.Sorting.Enumerations.SortDirection
+      description: The sort direction (ascending or descending). Defaults to ascending.
     typeParameters:
     - id: T
+      description: The type of items in the enumerable collection.
     - id: TKey
+      description: The type of the property to sort by.
     return:
       type: System.Linq.IOrderedEnumerable{{T}}
+      description: An ordered enumerable collection.
     content.vb: Public Shared Function Sort(Of T, TKey)(list As IEnumerable(Of T), [property] As Func(Of T, TKey), direction As SortDirection = SortDirection.ASC) As IOrderedEnumerable(Of T)
   overload: NuvTools.Data.Sorting.SortingExtensions.Sort*
   nameWithType.vb: SortingExtensions.Sort(Of T, TKey)(IEnumerable(Of T), Func(Of T, TKey), SortDirection)
@@ -155,24 +181,32 @@ items:
   fullName: NuvTools.Data.Sorting.SortingExtensions.ThenSort<T, TKey>(System.Linq.IOrderedEnumerable<T>, System.Func<T, TKey>, NuvTools.Data.Sorting.Enumerations.SortDirection)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data/Sorting/SortingExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Sorting/SortingExtensions.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Sorting
+  summary: Performs a secondary sort on an already ordered enumerable collection.
+  example: []
   syntax:
     content: public static IOrderedEnumerable<T> ThenSort<T, TKey>(this IOrderedEnumerable<T> list, Func<T, TKey> property, SortDirection direction = SortDirection.ASC)
     parameters:
     - id: list
       type: System.Linq.IOrderedEnumerable{{T}}
+      description: The source ordered enumerable collection.
     - id: property
       type: System.Func{{T},{TKey}}
+      description: A function that identifies the property to sort by.
     - id: direction
       type: NuvTools.Data.Sorting.Enumerations.SortDirection
+      description: The sort direction (ascending or descending). Defaults to ascending.
     typeParameters:
     - id: T
+      description: The type of items in the enumerable collection.
     - id: TKey
+      description: The type of the property to sort by.
     return:
       type: System.Linq.IOrderedEnumerable{{T}}
+      description: An ordered enumerable collection with the secondary sort applied.
     content.vb: Public Shared Function ThenSort(Of T, TKey)(list As IOrderedEnumerable(Of T), [property] As Func(Of T, TKey), direction As SortDirection = SortDirection.ASC) As IOrderedEnumerable(Of T)
   overload: NuvTools.Data.Sorting.SortingExtensions.ThenSort*
   nameWithType.vb: SortingExtensions.ThenSort(Of T, TKey)(IOrderedEnumerable(Of T), Func(Of T, TKey), SortDirection)

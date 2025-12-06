@@ -14,10 +14,12 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions.ModelBuilderExtensions
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ModelBuilderExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ModelBuilderExtensions.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore.PostgreSQL
   namespace: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions
+  summary: Extension methods for configuring Entity Framework Core models for PostgreSQL databases.
+  example: []
   syntax:
     content: public static class ModelBuilderExtensions
     content.vb: Public Module ModelBuilderExtensions
@@ -44,15 +46,32 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions.ModelBuilderExtensions.UseSnakeCaseNamingConvention(Microsoft.EntityFrameworkCore.ModelBuilder)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ModelBuilderExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ModelBuilderExtensions.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore.PostgreSQL
   namespace: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions
+  summary: >-
+    Applies snake_case naming convention to all database objects (tables, columns, keys, foreign keys, and indexes).
+
+    This is a common convention in PostgreSQL databases where names are lowercase with underscores.
+  remarks: >-
+    Converts PascalCase names like "OrderDetails" to snake_case like "order_details".
+
+    This affects table names, column names, schema names, key names, foreign key constraints, and index names.
+  example:
+  - >-
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+
+    {
+        modelBuilder.UseSnakeCaseNamingConvention();
+        base.OnModelCreating(modelBuilder);
+    }
   syntax:
     content: public static void UseSnakeCaseNamingConvention(this ModelBuilder builder)
     parameters:
     - id: builder
       type: Microsoft.EntityFrameworkCore.ModelBuilder
+      description: The model builder to configure.
     content.vb: Public Shared Sub UseSnakeCaseNamingConvention(builder As ModelBuilder)
   overload: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions.ModelBuilderExtensions.UseSnakeCaseNamingConvention*
 references:

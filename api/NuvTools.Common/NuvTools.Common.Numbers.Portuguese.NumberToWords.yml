@@ -14,7 +14,7 @@ items:
   fullName: NuvTools.Common.Numbers.Portuguese.NumberToWords
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Numbers/Portuguese/NumberToWords.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/Numbers/Portuguese/NumberToWords.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Numbers.Portuguese
@@ -45,19 +45,27 @@ items:
   fullName: NuvTools.Common.Numbers.Portuguese.NumberToWords.ToWords(decimal)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Numbers/Portuguese/NumberToWords.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/Numbers/Portuguese/NumberToWords.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Numbers.Portuguese
+  summary: Converts a decimal value to its written form in Portuguese (Brazil), including currency representation.
+  example: []
   syntax:
     content: public static string ToWords(decimal value)
     parameters:
     - id: value
       type: System.Decimal
+      description: The decimal value to convert. Must be between 0.01 and 999,999,999,999,999.99.
     return:
       type: System.String
+      description: The value written out in Portuguese with currency (reais/centavos).
     content.vb: Public Shared Function ToWords(value As Decimal) As String
   overload: NuvTools.Common.Numbers.Portuguese.NumberToWords.ToWords*
+  exceptions:
+  - type: System.Exception
+    commentId: T:System.Exception
+    description: Thrown when the value is outside the allowed range.
   nameWithType.vb: NumberToWords.ToWords(Decimal)
   fullName.vb: NuvTools.Common.Numbers.Portuguese.NumberToWords.ToWords(Decimal)
   name.vb: ToWords(Decimal)
@@ -346,6 +354,14 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
 - uid: NuvTools.Common.Numbers.Portuguese.NumberToWords.ToWords*
   commentId: Overload:NuvTools.Common.Numbers.Portuguese.NumberToWords.ToWords
   isExternal: true

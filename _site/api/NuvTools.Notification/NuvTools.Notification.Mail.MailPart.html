@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class MailPart | Nuv Tools Framework Docs ">
       
-      
+      <meta name="description" content="Represents an email attachment with media type, extension, and content stream.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Notification_Mail_MailPart" data-uid="NuvTools.Notification.Mail.MailPart" class="text-break">
-Class MailPart  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail/MailPart.cs"><i class="bi bi-code-slash"></i></a>
+Class MailPart  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail/MailPart.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class MailPart  <a class="header-action link-secondary" title="View source" href
   <dl><dt>Assembly</dt><dd>NuvTools.Notification.Mail.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Represents an email attachment with media type, extension, and content stream.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -145,7 +146,19 @@ Class MailPart  <a class="header-action link-secondary" title="View source" href
 
 
 
+  <h2 id="NuvTools_Notification_Mail_MailPart_examples">Examples</h2>
+  <pre><code class="lang-c#">var attachment = new MailPart
+{
+    MediaType = "application",
+    MediaExtension = "pdf",
+    Content = fileStream
+};</code></pre>
 
+
+  <h2 id="NuvTools_Notification_Mail_MailPart_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This class is used to attach files to email messages. The content is provided as a stream,
+and both the media type and extension are required to properly identify the attachment format.</p>
+</div>
 
 
   <h2 class="section" id="constructors">Constructors
@@ -156,7 +169,7 @@ Class MailPart  <a class="header-action link-secondary" title="View source" href
 
   <h3 id="NuvTools_Notification_Mail_MailPart__ctor" data-uid="NuvTools.Notification.Mail.MailPart.#ctor">
   MailPart()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail/MailPart.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail/MailPart.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -186,10 +199,11 @@ Class MailPart  <a class="header-action link-secondary" title="View source" href
 
   <h3 id="NuvTools_Notification_Mail_MailPart_Content" data-uid="NuvTools.Notification.Mail.MailPart.Content">
   Content
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail/MailPart.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail/MailPart.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets the content stream of the attachment.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -217,10 +231,11 @@ Class MailPart  <a class="header-action link-secondary" title="View source" href
 
   <h3 id="NuvTools_Notification_Mail_MailPart_MediaExtension" data-uid="NuvTools.Notification.Mail.MailPart.MediaExtension">
   MediaExtension
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail/MailPart.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail/MailPart.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets the file extension or media subtype of the attachment (e.g., &quot;pdf&quot;, &quot;png&quot;, &quot;plain&quot;).</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -248,10 +263,11 @@ Class MailPart  <a class="header-action link-secondary" title="View source" href
 
   <h3 id="NuvTools_Notification_Mail_MailPart_MediaType" data-uid="NuvTools.Notification.Mail.MailPart.MediaType">
   MediaType
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail/MailPart.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail/MailPart.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets the MIME media type of the attachment (e.g., &quot;application&quot;, &quot;image&quot;, &quot;text&quot;).</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -279,7 +295,7 @@ Class MailPart  <a class="header-action link-secondary" title="View source" href
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail/MailPart.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail/MailPart.cs" class="edit-link">Edit this page</a>
         </div>
 
 

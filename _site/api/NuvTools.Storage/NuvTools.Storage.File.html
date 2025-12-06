@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class File | Nuv Tools Framework Docs ">
       
-      
+      <meta name="description" content="Represents a file with its metadata and content. Supports three initialization modes: URI-only, stream-based, or Base64-encoded content.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Storage_File" data-uid="NuvTools.Storage.File" class="text-break">
-Class File  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/File.cs"><i class="bi bi-code-slash"></i></a>
+Class File  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/File.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,9 @@ Class File  <a class="header-action link-secondary" title="View source" href="ht
   <dl><dt>Assembly</dt><dd>NuvTools.Storage.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Represents a file with its metadata and content.
+Supports three initialization modes: URI-only, stream-based, or Base64-encoded content.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -172,10 +174,12 @@ Class File  <a class="header-action link-secondary" title="View source" href="ht
 
   <h3 id="NuvTools_Storage_File__ctor_System_String_System_String_System_IO_Stream_" data-uid="NuvTools.Storage.File.#ctor(System.String,System.String,System.IO.Stream)">
   File(string, string, Stream)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/File.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/File.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="NuvTools.Storage.File.html">File</a> class with stream content.
+The stream is automatically converted to a Base64-encoded string.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -185,11 +189,14 @@ Class File  <a class="header-action link-secondary" title="View source" href="ht
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The name of the file.</p>
+</dd>
     <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The MIME type of the file.</p>
+</dd>
     <dt><code>content</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
-    <dd></dd>
+    <dd><p>The file content as a stream.</p>
+</dd>
   </dl>
 
 
@@ -207,10 +214,12 @@ Class File  <a class="header-action link-secondary" title="View source" href="ht
 
   <h3 id="NuvTools_Storage_File__ctor_System_String_System_String_System_String_" data-uid="NuvTools.Storage.File.#ctor(System.String,System.String,System.String)">
   File(string, string, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/File.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/File.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="NuvTools.Storage.File.html">File</a> class with Base64-encoded content.
+The Base64 string is automatically converted to a stream.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -220,11 +229,14 @@ Class File  <a class="header-action link-secondary" title="View source" href="ht
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The name of the file.</p>
+</dd>
     <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The MIME type of the file.</p>
+</dd>
     <dt><code>base64String</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The file content as a Base64-encoded string.</p>
+</dd>
   </dl>
 
 
@@ -242,10 +254,11 @@ Class File  <a class="header-action link-secondary" title="View source" href="ht
 
   <h3 id="NuvTools_Storage_File__ctor_System_String_System_String_System_Uri_" data-uid="NuvTools.Storage.File.#ctor(System.String,System.String,System.Uri)">
   File(string, string, Uri)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/File.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/File.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="NuvTools.Storage.File.html">File</a> class with a URI location.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -255,11 +268,14 @@ Class File  <a class="header-action link-secondary" title="View source" href="ht
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The name of the file.</p>
+</dd>
     <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The MIME type of the file.</p>
+</dd>
     <dt><code>uri</code> <span class="xref">Uri</span></dt>
-    <dd></dd>
+    <dd><p>The URI location of the file in storage.</p>
+</dd>
   </dl>
 
 
@@ -281,10 +297,11 @@ Class File  <a class="header-action link-secondary" title="View source" href="ht
 
   <h3 id="NuvTools_Storage_File_Base64String" data-uid="NuvTools.Storage.File.Base64String">
   Base64String
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/File.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/File.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the file content as a Base64-encoded string.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -312,10 +329,11 @@ Class File  <a class="header-action link-secondary" title="View source" href="ht
 
   <h3 id="NuvTools_Storage_File_Content" data-uid="NuvTools.Storage.File.Content">
   Content
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/File.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/File.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the file content as a stream.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -343,10 +361,11 @@ Class File  <a class="header-action link-secondary" title="View source" href="ht
 
   <h3 id="NuvTools_Storage_File_Name" data-uid="NuvTools.Storage.File.Name">
   Name
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/File.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/File.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the name of the file.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -374,10 +393,11 @@ Class File  <a class="header-action link-secondary" title="View source" href="ht
 
   <h3 id="NuvTools_Storage_File_Type" data-uid="NuvTools.Storage.File.Type">
   Type
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/File.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/File.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the MIME type of the file.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -405,10 +425,11 @@ Class File  <a class="header-action link-secondary" title="View source" href="ht
 
   <h3 id="NuvTools_Storage_File_Uri" data-uid="NuvTools.Storage.File.Uri">
   Uri
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/File.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/File.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the URI location of the file in storage.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -436,7 +457,7 @@ Class File  <a class="header-action link-secondary" title="View source" href="ht
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/File.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/File.cs" class="edit-link">Edit this page</a>
         </div>
 
 

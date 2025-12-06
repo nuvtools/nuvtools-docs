@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class UpdateProfileForm | Nuv Tools Framework Docs ">
       
-      
+      <meta name="description" content="Represents the form data for updating a user&#39;s profile information.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Security_Identity_Models_Form_UpdateProfileForm" data-uid="NuvTools.Security.Identity.Models.Form.UpdateProfileForm" class="text-break">
-Class UpdateProfileForm  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Form/UpdateProfileForm.cs"><i class="bi bi-code-slash"></i></a>
+Class UpdateProfileForm  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Form/UpdateProfileForm.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class UpdateProfileForm  <a class="header-action link-secondary" title="View sou
   <dl><dt>Assembly</dt><dd>NuvTools.Security.Identity.Models.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Represents the form data for updating a user's profile information.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -146,6 +147,10 @@ Class UpdateProfileForm  <a class="header-action link-secondary" title="View sou
 
 
 
+  <h2 id="NuvTools_Security_Identity_Models_Form_UpdateProfileForm_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This form allows users to update their basic profile information such as name and surname.
+It can also be used for email change operations when a token is provided.</p>
+</div>
 
 
   <h2 class="section" id="constructors">Constructors
@@ -156,7 +161,7 @@ Class UpdateProfileForm  <a class="header-action link-secondary" title="View sou
 
   <h3 id="NuvTools_Security_Identity_Models_Form_UpdateProfileForm__ctor" data-uid="NuvTools.Security.Identity.Models.Form.UpdateProfileForm.#ctor">
   UpdateProfileForm()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Form/UpdateProfileForm.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Form/UpdateProfileForm.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -186,10 +191,11 @@ Class UpdateProfileForm  <a class="header-action link-secondary" title="View sou
 
   <h3 id="NuvTools_Security_Identity_Models_Form_UpdateProfileForm_Email" data-uid="NuvTools.Security.Identity.Models.Form.UpdateProfileForm.Email">
   Email
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Form/UpdateProfileForm.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Form/UpdateProfileForm.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets the new email address when changing the user's email.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -209,6 +215,10 @@ Class UpdateProfileForm  <a class="header-action link-secondary" title="View sou
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_Models_Form_UpdateProfileForm_Email_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This field is optional and only used when the user is requesting an email change.
+A confirmation token must be provided via the <a class="xref" href="NuvTools.Security.Identity.Models.Form.UpdateProfileForm.html#NuvTools_Security_Identity_Models_Form_UpdateProfileForm_Token">Token</a> property for email changes.</p>
+</div>
 
 
 
@@ -217,16 +227,17 @@ Class UpdateProfileForm  <a class="header-action link-secondary" title="View sou
 
   <h3 id="NuvTools_Security_Identity_Models_Form_UpdateProfileForm_Name" data-uid="NuvTools.Security.Identity.Models.Form.UpdateProfileForm.Name">
   Name
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Form/UpdateProfileForm.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Form/UpdateProfileForm.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets the user's first name.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Display(Name = &quot;Name&quot;, ResourceType = typeof(Fields))]
-[Required(ErrorMessageResourceName = &quot;XRequired&quot;, ErrorMessageResourceType = typeof(DynamicValidationMessages))]
-[MaxLength(50, ErrorMessageResourceName = &quot;XMustHaveUpToYCharacters&quot;, ErrorMessageResourceType = typeof(DynamicValidationMessages))]
+[Required(ErrorMessageResourceName = &quot;XRequired&quot;, ErrorMessageResourceType = typeof(Messages))]
+[MaxLength(50, ErrorMessageResourceName = &quot;XMustHaveUpToYCharacters&quot;, ErrorMessageResourceType = typeof(Messages))]
 public string? Name { get; set; }</code></pre>
   </div>
 
@@ -243,6 +254,9 @@ public string? Name { get; set; }</code></pre>
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_Models_Form_UpdateProfileForm_Name_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This field is required with a maximum length of 50 characters.</p>
+</div>
 
 
 
@@ -251,16 +265,17 @@ public string? Name { get; set; }</code></pre>
 
   <h3 id="NuvTools_Security_Identity_Models_Form_UpdateProfileForm_Surname" data-uid="NuvTools.Security.Identity.Models.Form.UpdateProfileForm.Surname">
   Surname
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Form/UpdateProfileForm.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Form/UpdateProfileForm.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets the user's surname (last name).</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Display(Name = &quot;Surname&quot;, ResourceType = typeof(Fields))]
-[Required(ErrorMessageResourceName = &quot;XRequired&quot;, ErrorMessageResourceType = typeof(DynamicValidationMessages))]
-[MaxLength(50, ErrorMessageResourceName = &quot;XMustHaveUpToYCharacters&quot;, ErrorMessageResourceType = typeof(DynamicValidationMessages))]
+[Required(ErrorMessageResourceName = &quot;XRequired&quot;, ErrorMessageResourceType = typeof(Messages))]
+[MaxLength(50, ErrorMessageResourceName = &quot;XMustHaveUpToYCharacters&quot;, ErrorMessageResourceType = typeof(Messages))]
 public string? Surname { get; set; }</code></pre>
   </div>
 
@@ -277,6 +292,9 @@ public string? Surname { get; set; }</code></pre>
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_Models_Form_UpdateProfileForm_Surname_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This field is required with a maximum length of 50 characters.</p>
+</div>
 
 
 
@@ -285,10 +303,11 @@ public string? Surname { get; set; }</code></pre>
 
   <h3 id="NuvTools_Security_Identity_Models_Form_UpdateProfileForm_Token" data-uid="NuvTools.Security.Identity.Models.Form.UpdateProfileForm.Token">
   Token
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Form/UpdateProfileForm.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Form/UpdateProfileForm.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets the email change confirmation token.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -308,6 +327,10 @@ public string? Surname { get; set; }</code></pre>
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_Models_Form_UpdateProfileForm_Token_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This token is required when changing the user's email address.
+The token is typically sent to the new email address for verification.</p>
+</div>
 
 
 
@@ -316,7 +339,7 @@ public string? Surname { get; set; }</code></pre>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Form/UpdateProfileForm.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Form/UpdateProfileForm.cs" class="edit-link">Edit this page</a>
         </div>
 
 

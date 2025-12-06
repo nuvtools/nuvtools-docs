@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class UserForm | Nuv Tools Framework Docs ">
       
-      
+      <meta name="description" content="Represents the form data for creating or updating a user profile.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Security_Identity_Models_Form_UserForm" data-uid="NuvTools.Security.Identity.Models.Form.UserForm" class="text-break">
-Class UserForm  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Form/UserForm.cs"><i class="bi bi-code-slash"></i></a>
+Class UserForm  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Form/UserForm.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class UserForm  <a class="header-action link-secondary" title="View source" href
   <dl><dt>Assembly</dt><dd>NuvTools.Security.Identity.Models.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Represents the form data for creating or updating a user profile.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -152,6 +153,10 @@ Class UserForm  <a class="header-action link-secondary" title="View source" href
 
 
 
+  <h2 id="NuvTools_Security_Identity_Models_Form_UserForm_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This form includes basic user information such as name, email, and account status.
+It is commonly used for user management operations in administrative interfaces.</p>
+</div>
 
 
   <h2 class="section" id="constructors">Constructors
@@ -162,7 +167,7 @@ Class UserForm  <a class="header-action link-secondary" title="View source" href
 
   <h3 id="NuvTools_Security_Identity_Models_Form_UserForm__ctor" data-uid="NuvTools.Security.Identity.Models.Form.UserForm.#ctor">
   UserForm()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Form/UserForm.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Form/UserForm.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -192,16 +197,17 @@ Class UserForm  <a class="header-action link-secondary" title="View source" href
 
   <h3 id="NuvTools_Security_Identity_Models_Form_UserForm_Email" data-uid="NuvTools.Security.Identity.Models.Form.UserForm.Email">
   Email
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Form/UserForm.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Form/UserForm.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets the user's email address.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Display(Name = &quot;Email&quot;, ResourceType = typeof(Fields))]
-[Required(ErrorMessageResourceName = &quot;XRequired&quot;, ErrorMessageResourceType = typeof(DynamicValidationMessages))]
-[MaxLength(100, ErrorMessageResourceName = &quot;XMustHaveUpToYCharacters&quot;, ErrorMessageResourceType = typeof(DynamicValidationMessages))]
+[Required(ErrorMessageResourceName = &quot;XRequired&quot;, ErrorMessageResourceType = typeof(Messages))]
+[MaxLength(100, ErrorMessageResourceName = &quot;XMustHaveUpToYCharacters&quot;, ErrorMessageResourceType = typeof(Messages))]
 [EmailAddress(ErrorMessageResourceName = &quot;InvalidEmail&quot;, ErrorMessageResourceType = typeof(Messages))]
 public virtual string? Email { get; set; }</code></pre>
   </div>
@@ -219,6 +225,9 @@ public virtual string? Email { get; set; }</code></pre>
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_Models_Form_UserForm_Email_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This field is required and must be a valid email format with a maximum length of 100 characters.</p>
+</div>
 
 
 
@@ -227,10 +236,11 @@ public virtual string? Email { get; set; }</code></pre>
 
   <h3 id="NuvTools_Security_Identity_Models_Form_UserForm_EmailConfirmed" data-uid="NuvTools.Security.Identity.Models.Form.UserForm.EmailConfirmed">
   EmailConfirmed
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Form/UserForm.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Form/UserForm.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets a value indicating whether the user's email address has been confirmed.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -250,6 +260,9 @@ public virtual string? Email { get; set; }</code></pre>
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_Models_Form_UserForm_EmailConfirmed_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is typically set to <code>true</code> after the user verifies their email via a confirmation link.</p>
+</div>
 
 
 
@@ -258,10 +271,11 @@ public virtual string? Email { get; set; }</code></pre>
 
   <h3 id="NuvTools_Security_Identity_Models_Form_UserForm_Id" data-uid="NuvTools.Security.Identity.Models.Form.UserForm.Id">
   Id
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Form/UserForm.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Form/UserForm.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets the unique identifier for the user.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -281,6 +295,9 @@ public virtual string? Email { get; set; }</code></pre>
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_Models_Form_UserForm_Id_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This is typically the primary key in the database. For new users, this may be 0 or uninitialized.</p>
+</div>
 
 
 
@@ -289,16 +306,17 @@ public virtual string? Email { get; set; }</code></pre>
 
   <h3 id="NuvTools_Security_Identity_Models_Form_UserForm_Name" data-uid="NuvTools.Security.Identity.Models.Form.UserForm.Name">
   Name
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Form/UserForm.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Form/UserForm.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets the user's first name.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Display(Name = &quot;Name&quot;, ResourceType = typeof(Fields))]
-[Required(ErrorMessageResourceName = &quot;XRequired&quot;, ErrorMessageResourceType = typeof(DynamicValidationMessages))]
-[MaxLength(50, ErrorMessageResourceName = &quot;XMustHaveUpToYCharacters&quot;, ErrorMessageResourceType = typeof(DynamicValidationMessages))]
+[Required(ErrorMessageResourceName = &quot;XRequired&quot;, ErrorMessageResourceType = typeof(Messages))]
+[MaxLength(50, ErrorMessageResourceName = &quot;XMustHaveUpToYCharacters&quot;, ErrorMessageResourceType = typeof(Messages))]
 public virtual string? Name { get; set; }</code></pre>
   </div>
 
@@ -315,6 +333,9 @@ public virtual string? Name { get; set; }</code></pre>
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_Models_Form_UserForm_Name_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This field is required with a maximum length of 50 characters.</p>
+</div>
 
 
 
@@ -323,10 +344,11 @@ public virtual string? Name { get; set; }</code></pre>
 
   <h3 id="NuvTools_Security_Identity_Models_Form_UserForm_Status" data-uid="NuvTools.Security.Identity.Models.Form.UserForm.Status">
   Status
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Form/UserForm.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Form/UserForm.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets a value indicating whether the user account is active.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -347,6 +369,9 @@ public virtual bool Status { get; set; }</code></pre>
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_Models_Form_UserForm_Status_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>When <code>true</code>, the user account is active and can authenticate. When <code>false</code>, the account is disabled.</p>
+</div>
 
 
 
@@ -355,16 +380,17 @@ public virtual bool Status { get; set; }</code></pre>
 
   <h3 id="NuvTools_Security_Identity_Models_Form_UserForm_Surname" data-uid="NuvTools.Security.Identity.Models.Form.UserForm.Surname">
   Surname
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Form/UserForm.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Form/UserForm.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets the user's surname (last name).</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Display(Name = &quot;Surname&quot;, ResourceType = typeof(Fields))]
-[Required(ErrorMessageResourceName = &quot;XRequired&quot;, ErrorMessageResourceType = typeof(DynamicValidationMessages))]
-[MaxLength(50, ErrorMessageResourceName = &quot;XMustHaveUpToYCharacters&quot;, ErrorMessageResourceType = typeof(DynamicValidationMessages))]
+[Required(ErrorMessageResourceName = &quot;XRequired&quot;, ErrorMessageResourceType = typeof(Messages))]
+[MaxLength(50, ErrorMessageResourceName = &quot;XMustHaveUpToYCharacters&quot;, ErrorMessageResourceType = typeof(Messages))]
 public virtual string? Surname { get; set; }</code></pre>
   </div>
 
@@ -381,6 +407,9 @@ public virtual string? Surname { get; set; }</code></pre>
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_Models_Form_UserForm_Surname_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This field is required with a maximum length of 50 characters.</p>
+</div>
 
 
 
@@ -389,7 +418,7 @@ public virtual string? Surname { get; set; }</code></pre>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Form/UserForm.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Form/UserForm.cs" class="edit-link">Edit this page</a>
         </div>
 
 

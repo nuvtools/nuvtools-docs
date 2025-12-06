@@ -5,9 +5,9 @@ items:
   id: RegexPattern
   parent: NuvTools.Validation
   children:
-  - NuvTools.Validation.RegexPattern.BASE64_CONTENT
-  - NuvTools.Validation.RegexPattern.BASE64_DATAURI
-  - NuvTools.Validation.RegexPattern.EMAIL_ADDRESS
+  - NuvTools.Validation.RegexPattern.Base64ContentRegex
+  - NuvTools.Validation.RegexPattern.Base64DataUriRegex
+  - NuvTools.Validation.RegexPattern.EmailRegex
   langs:
   - csharp
   - vb
@@ -16,11 +16,14 @@ items:
   fullName: NuvTools.Validation.RegexPattern
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/RegexPattern.cs
+    href: https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/RegexPattern.cs
   assemblies:
   - NuvTools.Validation
   namespace: NuvTools.Validation
-  summary: Regex patterns class.
+  summary: >-
+    Provides strongly-typed and pre-compiled regex patterns commonly used in the application.
+
+    This class exposes both the raw pattern constants and pre-generated compiled Regex instances.
   example: []
   syntax:
     content: public static class RegexPattern
@@ -35,75 +38,261 @@ items:
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.GetHashCode
-- uid: NuvTools.Validation.RegexPattern.EMAIL_ADDRESS
-  commentId: F:NuvTools.Validation.RegexPattern.EMAIL_ADDRESS
-  id: EMAIL_ADDRESS
+- uid: NuvTools.Validation.RegexPattern.EmailRegex
+  commentId: M:NuvTools.Validation.RegexPattern.EmailRegex
+  id: EmailRegex
   parent: NuvTools.Validation.RegexPattern
   langs:
   - csharp
   - vb
-  name: EMAIL_ADDRESS
-  nameWithType: RegexPattern.EMAIL_ADDRESS
-  fullName: NuvTools.Validation.RegexPattern.EMAIL_ADDRESS
-  type: Field
+  name: EmailRegex()
+  nameWithType: RegexPattern.EmailRegex()
+  fullName: NuvTools.Validation.RegexPattern.EmailRegex()
+  type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/RegexPattern.cs
+    href: https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/obj/Release/net9/System.Text.RegularExpressions.Generator/System.Text.RegularExpressions.Generator.RegexGenerator/RegexGenerator.g.cs
   assemblies:
   - NuvTools.Validation
   namespace: NuvTools.Validation
-  summary: Regex pattern for e-mail address validation.
+  remarks: >-
+    Pattern:<br />
+
+
+    <pre><code class="lang-csharp">^([a-z0-9_\\-])([a-z0-9_\\-\\.]*)@((\\[((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\\])|((([a-z0-9\\-]+)\\.)+([a-z]{2,})))$</code></pre><br />
+
+    Options:<br />
+
+
+    <pre><code class="lang-csharp">RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.CultureInvariant</code></pre><br />
+
+    Explanation:<br />
+
+
+    <pre><code class="lang-csharp">○ Match if at the beginning of the string.
+
+    ○ 1st capture group.
+        ○ Match a character in the set [-0-9A-Z_a-z\u212A].
+    ○ 2nd capture group.
+        ○ Match a character in the set [-.0-9A-Z_a-z\u212A] atomically any number of times.
+    ○ Match '@'.
+
+    ○ 3rd capture group.
+        ○ Match with 2 alternative expressions.
+            ○ 4th capture group.
+                ○ Match '['.
+                ○ Loop exactly 3 times.
+                    ○ 5th capture group.
+                        ○ 6th capture group.
+                            ○ Match with 4 alternative expressions.
+                                ○ Match a sequence of expressions.
+                                    ○ Match '2'.
+                                    ○ Match with 2 alternative expressions.
+                                        ○ Match a sequence of expressions.
+                                            ○ Match an empty string.
+                                            ○ Match a character in the set [0-5].
+                                        ○ Match a sequence of expressions.
+                                            ○ Match an empty string.
+                                            ○ Match a character in the set [0-9].
+                                ○ Match a sequence of expressions.
+                                    ○ Match '1'.
+                                    ○ Match a character in the set [0-9] exactly 2 times.
+                                ○ Match a sequence of expressions.
+                                    ○ Match a character in the set [1-9].
+                                    ○ Match a character in the set [0-9].
+                                ○ Match a character in the set [0-9].
+                        ○ Match '.'.
+                ○ 7th capture group.
+                    ○ Match with 4 alternative expressions.
+                        ○ Match a sequence of expressions.
+                            ○ Match '2'.
+                            ○ Match with 2 alternative expressions.
+                                ○ Match a sequence of expressions.
+                                    ○ Match an empty string.
+                                    ○ Match a character in the set [0-5].
+                                ○ Match a sequence of expressions.
+                                    ○ Match an empty string.
+                                    ○ Match a character in the set [0-9].
+                        ○ Match a sequence of expressions.
+                            ○ Match '1'.
+                            ○ Match a character in the set [0-9] exactly 2 times.
+                        ○ Match a sequence of expressions.
+                            ○ Match a character in the set [1-9].
+                            ○ Match a character in the set [0-9].
+                        ○ Match a character in the set [0-9].
+                ○ Match ']'.
+            ○ 8th capture group.
+                ○ Loop greedily at least once.
+                    ○ 9th capture group.
+                        ○ 10th capture group.
+                            ○ Match a character in the set [-0-9A-Za-z\u212A] atomically at least once.
+                        ○ Match '.'.
+                ○ 11th capture group.
+                    ○ Match a character in the set [A-Za-z\u212A] atomically at least twice.
+    ○ Match if at the end of the string or if before an ending newline.</code></pre>
   example: []
   syntax:
-    content: public const string EMAIL_ADDRESS = "^([a-z0-9_\\-])([a-z0-9_\\-\\.]*)@(\\[((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\\.){3}|((([a-z0-9\\-]+)\\.)+))([a-z]{2,}|(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\\])$"
+    content: >-
+      [GeneratedRegex("^([a-z0-9_\\-])([a-z0-9_\\-\\.]*)@((\\[((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\\])|((([a-z0-9\\-]+)\\.)+([a-z]{2,})))$", RegexOptions.IgnoreCase|RegexOptions.Compiled|RegexOptions.CultureInvariant)]
+
+      public static Regex EmailRegex()
     return:
-      type: System.String
-    content.vb: Public Const EMAIL_ADDRESS As String = "^([a-z0-9_\-])([a-z0-9_\-\.]*)@(\[((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}|((([a-z0-9\-]+)\.)+))([a-z]{2,}|(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\])$"
-- uid: NuvTools.Validation.RegexPattern.BASE64_CONTENT
-  commentId: F:NuvTools.Validation.RegexPattern.BASE64_CONTENT
-  id: BASE64_CONTENT
+      type: System.Text.RegularExpressions.Regex
+    content.vb: >-
+      <GeneratedRegex("^([a-z0-9_\-])([a-z0-9_\-\.]*)@((\[((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\])|((([a-z0-9\-]+)\.)+([a-z]{2,})))$", RegexOptions.IgnoreCaseOrRegexOptions.CompiledOrRegexOptions.CultureInvariant)>
+
+      Public Shared Function EmailRegex() As Regex
+  overload: NuvTools.Validation.RegexPattern.EmailRegex*
+  attributes:
+  - type: System.Text.RegularExpressions.GeneratedRegexAttribute
+    ctor: System.Text.RegularExpressions.GeneratedRegexAttribute.#ctor(System.String,System.Text.RegularExpressions.RegexOptions)
+    arguments:
+    - type: System.String
+      value: ^([a-z0-9_\-])([a-z0-9_\-\.]*)@((\[((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\])|((([a-z0-9\-]+)\.)+([a-z]{2,})))$
+    - type: System.Text.RegularExpressions.RegexOptions
+      value: 521
+- uid: NuvTools.Validation.RegexPattern.Base64ContentRegex
+  commentId: M:NuvTools.Validation.RegexPattern.Base64ContentRegex
+  id: Base64ContentRegex
   parent: NuvTools.Validation.RegexPattern
   langs:
   - csharp
   - vb
-  name: BASE64_CONTENT
-  nameWithType: RegexPattern.BASE64_CONTENT
-  fullName: NuvTools.Validation.RegexPattern.BASE64_CONTENT
-  type: Field
+  name: Base64ContentRegex()
+  nameWithType: RegexPattern.Base64ContentRegex()
+  fullName: NuvTools.Validation.RegexPattern.Base64ContentRegex()
+  type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/RegexPattern.cs
+    href: https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/obj/Release/net9/System.Text.RegularExpressions.Generator/System.Text.RegularExpressions.Generator.RegexGenerator/RegexGenerator.g.cs
   assemblies:
   - NuvTools.Validation
   namespace: NuvTools.Validation
-  summary: Regex to validate Base64 and extract using content label.
+  remarks: >-
+    Pattern:<br />
+
+
+    <pre><code class="lang-csharp">^(?&lt;content&gt;(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4}))$</code></pre><br />
+
+    Options:<br />
+
+
+    <pre><code class="lang-csharp">RegexOptions.Compiled | RegexOptions.CultureInvariant</code></pre><br />
+
+    Explanation:<br />
+
+
+    <pre><code class="lang-csharp">○ Match if at the beginning of the string.
+
+    ○ "content" capture group.
+        ○ Loop greedily any number of times.
+            ○ Match a character in the set [+/-9A-Za-z] exactly 4 times.
+        ○ Match with 3 alternative expressions.
+            ○ Match a sequence of expressions.
+                ○ Match a character in the set [+/-9A-Za-z] exactly 2 times.
+                ○ Match the string "==".
+            ○ Match a sequence of expressions.
+                ○ Match a character in the set [+/-9A-Za-z] exactly 3 times.
+                ○ Match '='.
+            ○ Match a character in the set [+/-9A-Za-z] exactly 4 times.
+    ○ Match if at the end of the string or if before an ending newline.</code></pre>
   example: []
   syntax:
-    content: public const string BASE64_CONTENT = "^(?<content>(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4}))$"
+    content: >-
+      [GeneratedRegex("^(?<content>(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4}))$", RegexOptions.Compiled|RegexOptions.CultureInvariant)]
+
+      public static Regex Base64ContentRegex()
     return:
-      type: System.String
-    content.vb: Public Const BASE64_CONTENT As String = "^(?<content>(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4}))$"
-- uid: NuvTools.Validation.RegexPattern.BASE64_DATAURI
-  commentId: F:NuvTools.Validation.RegexPattern.BASE64_DATAURI
-  id: BASE64_DATAURI
+      type: System.Text.RegularExpressions.Regex
+    content.vb: >-
+      <GeneratedRegex("^(?<content>(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4}))$", RegexOptions.CompiledOrRegexOptions.CultureInvariant)>
+
+      Public Shared Function Base64ContentRegex() As Regex
+  overload: NuvTools.Validation.RegexPattern.Base64ContentRegex*
+  attributes:
+  - type: System.Text.RegularExpressions.GeneratedRegexAttribute
+    ctor: System.Text.RegularExpressions.GeneratedRegexAttribute.#ctor(System.String,System.Text.RegularExpressions.RegexOptions)
+    arguments:
+    - type: System.String
+      value: ^(?<content>(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4}))$
+    - type: System.Text.RegularExpressions.RegexOptions
+      value: 520
+- uid: NuvTools.Validation.RegexPattern.Base64DataUriRegex
+  commentId: M:NuvTools.Validation.RegexPattern.Base64DataUriRegex
+  id: Base64DataUriRegex
   parent: NuvTools.Validation.RegexPattern
   langs:
   - csharp
   - vb
-  name: BASE64_DATAURI
-  nameWithType: RegexPattern.BASE64_DATAURI
-  fullName: NuvTools.Validation.RegexPattern.BASE64_DATAURI
-  type: Field
+  name: Base64DataUriRegex()
+  nameWithType: RegexPattern.Base64DataUriRegex()
+  fullName: NuvTools.Validation.RegexPattern.Base64DataUriRegex()
+  type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/RegexPattern.cs
+    href: https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/obj/Release/net9/System.Text.RegularExpressions.Generator/System.Text.RegularExpressions.Generator.RegexGenerator/RegexGenerator.g.cs
   assemblies:
   - NuvTools.Validation
   namespace: NuvTools.Validation
-  summary: Regex to validate and extract informations (type, extension and content) from Data URI Base64.
+  remarks: >-
+    Pattern:<br />
+
+
+    <pre><code class="lang-csharp">^data:(?&lt;type&gt;.+?\\/(?&lt;extension&gt;.+?));(?&lt;base&gt;.+),(?&lt;content&gt;(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4}))$</code></pre><br />
+
+    Options:<br />
+
+
+    <pre><code class="lang-csharp">RegexOptions.Compiled | RegexOptions.CultureInvariant</code></pre><br />
+
+    Explanation:<br />
+
+
+    <pre><code class="lang-csharp">○ Match if at the beginning of the string.
+
+    ○ Match the string "data:".
+
+    ○ "type" capture group.
+        ○ Match a character other than '\n' lazily at least once.
+        ○ Match '/'.
+        ○ "extension" capture group.
+            ○ Match a character other than '\n' lazily at least once.
+    ○ Match ';'.
+
+    ○ "base" capture group.
+        ○ Match a character other than '\n' greedily at least once.
+    ○ Match ','.
+
+    ○ "content" capture group.
+        ○ Loop greedily any number of times.
+            ○ Match a character in the set [+/-9A-Za-z] exactly 4 times.
+        ○ Match with 3 alternative expressions.
+            ○ Match a sequence of expressions.
+                ○ Match a character in the set [+/-9A-Za-z] exactly 2 times.
+                ○ Match the string "==".
+            ○ Match a sequence of expressions.
+                ○ Match a character in the set [+/-9A-Za-z] exactly 3 times.
+                ○ Match '='.
+            ○ Match a character in the set [+/-9A-Za-z] exactly 4 times.
+    ○ Match if at the end of the string or if before an ending newline.</code></pre>
   example: []
   syntax:
-    content: public const string BASE64_DATAURI = "^data:(?<type>.+?/(?<extension>.+?));(?<base>.+),(?<content>(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4}))$"
+    content: >-
+      [GeneratedRegex("^data:(?<type>.+?\\/(?<extension>.+?));(?<base>.+),(?<content>(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4}))$", RegexOptions.Compiled|RegexOptions.CultureInvariant)]
+
+      public static Regex Base64DataUriRegex()
     return:
-      type: System.String
-    content.vb: Public Const BASE64_DATAURI As String = "^data:(?<type>.+?/(?<extension>.+?));(?<base>.+),(?<content>(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4}))$"
+      type: System.Text.RegularExpressions.Regex
+    content.vb: >-
+      <GeneratedRegex("^data:(?<type>.+?\/(?<extension>.+?));(?<base>.+),(?<content>(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4}))$", RegexOptions.CompiledOrRegexOptions.CultureInvariant)>
+
+      Public Shared Function Base64DataUriRegex() As Regex
+  overload: NuvTools.Validation.RegexPattern.Base64DataUriRegex*
+  attributes:
+  - type: System.Text.RegularExpressions.GeneratedRegexAttribute
+    ctor: System.Text.RegularExpressions.GeneratedRegexAttribute.#ctor(System.String,System.Text.RegularExpressions.RegexOptions)
+    arguments:
+    - type: System.String
+      value: ^data:(?<type>.+?\/(?<extension>.+?));(?<base>.+),(?<content>(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4}))$
+    - type: System.Text.RegularExpressions.RegexOptions
+      value: 520
 references:
 - uid: NuvTools.Validation
   commentId: N:NuvTools.Validation
@@ -369,14 +558,69 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: System.String
-  commentId: T:System.String
-  parent: System
+- uid: NuvTools.Validation.RegexPattern.EmailRegex*
+  commentId: Overload:NuvTools.Validation.RegexPattern.EmailRegex
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.string
-  name: string
-  nameWithType: string
-  fullName: string
-  nameWithType.vb: String
-  fullName.vb: String
-  name.vb: String
+  href: NuvTools.Validation.RegexPattern.html#NuvTools_Validation_RegexPattern_EmailRegex
+  name: EmailRegex
+  nameWithType: RegexPattern.EmailRegex
+  fullName: NuvTools.Validation.RegexPattern.EmailRegex
+- uid: System.Text.RegularExpressions.Regex
+  commentId: T:System.Text.RegularExpressions.Regex
+  parent: System.Text.RegularExpressions
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.text.regularexpressions.regex
+  name: Regex
+  nameWithType: Regex
+  fullName: System.Text.RegularExpressions.Regex
+- uid: System.Text.RegularExpressions
+  commentId: N:System.Text.RegularExpressions
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Text.RegularExpressions
+  nameWithType: System.Text.RegularExpressions
+  fullName: System.Text.RegularExpressions
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Text
+    name: Text
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text
+  - name: .
+  - uid: System.Text.RegularExpressions
+    name: RegularExpressions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.regularexpressions
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Text
+    name: Text
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text
+  - name: .
+  - uid: System.Text.RegularExpressions
+    name: RegularExpressions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text.regularexpressions
+- uid: NuvTools.Validation.RegexPattern.Base64ContentRegex*
+  commentId: Overload:NuvTools.Validation.RegexPattern.Base64ContentRegex
+  isExternal: true
+  href: NuvTools.Validation.RegexPattern.html#NuvTools_Validation_RegexPattern_Base64ContentRegex
+  name: Base64ContentRegex
+  nameWithType: RegexPattern.Base64ContentRegex
+  fullName: NuvTools.Validation.RegexPattern.Base64ContentRegex
+- uid: NuvTools.Validation.RegexPattern.Base64DataUriRegex*
+  commentId: Overload:NuvTools.Validation.RegexPattern.Base64DataUriRegex
+  isExternal: true
+  href: NuvTools.Validation.RegexPattern.html#NuvTools_Validation_RegexPattern_Base64DataUriRegex
+  name: Base64DataUriRegex
+  nameWithType: RegexPattern.Base64DataUriRegex
+  fullName: NuvTools.Validation.RegexPattern.Base64DataUriRegex

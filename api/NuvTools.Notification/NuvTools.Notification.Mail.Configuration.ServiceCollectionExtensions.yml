@@ -14,10 +14,12 @@ items:
   fullName: NuvTools.Notification.Mail.Configuration.ServiceCollectionExtensions
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail/Configuration/ServiceCollectionExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail/Configuration/ServiceCollectionExtensions.cs
   assemblies:
   - NuvTools.Notification.Mail
   namespace: NuvTools.Notification.Mail.Configuration
+  summary: Provides extension methods for configuring mail-related services in the dependency injection container.
+  example: []
   syntax:
     content: public static class ServiceCollectionExtensions
     content.vb: Public Module ServiceCollectionExtensions
@@ -44,27 +46,31 @@ items:
   fullName: NuvTools.Notification.Mail.Configuration.ServiceCollectionExtensions.AddMailConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration, string)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail/Configuration/ServiceCollectionExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail/Configuration/ServiceCollectionExtensions.cs
   assemblies:
   - NuvTools.Notification.Mail
   namespace: NuvTools.Notification.Mail.Configuration
-  summary: Configures mail section (MailConfigurationSection) to use with TOptions injection.
+  summary: Registers and configures a mail configuration section for options-based dependency injection.
+  remarks: >-
+    This method binds the specified configuration section to the <xref href="NuvTools.Notification.Mail.Configuration.MailConfigurationSection" data-throw-if-not-resolved="false"></xref> options class,
+
+    allowing it to be injected via <code>IOptions&lt;MailConfigurationSection&gt;</code> throughout the application.
   example: []
   syntax:
     content: public static IServiceCollection AddMailConfiguration(this IServiceCollection services, IConfiguration configuration, string sectionName = "NuvTools.Notification.Mail")
     parameters:
     - id: services
       type: Microsoft.Extensions.DependencyInjection.IServiceCollection
-      description: ''
+      description: The <xref href="Microsoft.Extensions.DependencyInjection.IServiceCollection" data-throw-if-not-resolved="false"></xref> to which the configuration will be added.
     - id: configuration
       type: Microsoft.Extensions.Configuration.IConfiguration
-      description: ''
+      description: The application <xref href="Microsoft.Extensions.Configuration.IConfiguration" data-throw-if-not-resolved="false"></xref> instance containing the mail configuration section.
     - id: sectionName
       type: System.String
-      description: Just in case to use another section instead the default one.
+      description: The configuration section name to bind. Defaults to <code>"NuvTools.Notification.Mail"</code>.
     return:
       type: Microsoft.Extensions.DependencyInjection.IServiceCollection
-      description: ''
+      description: The updated <xref href="Microsoft.Extensions.DependencyInjection.IServiceCollection" data-throw-if-not-resolved="false"></xref> instance, enabling method chaining.
     content.vb: Public Shared Function AddMailConfiguration(services As IServiceCollection, configuration As IConfiguration, sectionName As String = "NuvTools.Notification.Mail") As IServiceCollection
   overload: NuvTools.Notification.Mail.Configuration.ServiceCollectionExtensions.AddMailConfiguration*
   nameWithType.vb: ServiceCollectionExtensions.AddMailConfiguration(IServiceCollection, IConfiguration, String)
@@ -355,13 +361,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: NuvTools.Notification.Mail.Configuration.ServiceCollectionExtensions.AddMailConfiguration*
-  commentId: Overload:NuvTools.Notification.Mail.Configuration.ServiceCollectionExtensions.AddMailConfiguration
-  isExternal: true
-  href: NuvTools.Notification.Mail.Configuration.ServiceCollectionExtensions.html#NuvTools_Notification_Mail_Configuration_ServiceCollectionExtensions_AddMailConfiguration_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_System_String_
-  name: AddMailConfiguration
-  nameWithType: ServiceCollectionExtensions.AddMailConfiguration
-  fullName: NuvTools.Notification.Mail.Configuration.ServiceCollectionExtensions.AddMailConfiguration
 - uid: Microsoft.Extensions.DependencyInjection.IServiceCollection
   commentId: T:Microsoft.Extensions.DependencyInjection.IServiceCollection
   parent: Microsoft.Extensions.DependencyInjection
@@ -378,6 +377,20 @@ references:
   name: IConfiguration
   nameWithType: IConfiguration
   fullName: Microsoft.Extensions.Configuration.IConfiguration
+- uid: NuvTools.Notification.Mail.Configuration.MailConfigurationSection
+  commentId: T:NuvTools.Notification.Mail.Configuration.MailConfigurationSection
+  isExternal: true
+  href: NuvTools.Notification.Mail.Configuration.MailConfigurationSection.html
+  name: MailConfigurationSection
+  nameWithType: MailConfigurationSection
+  fullName: NuvTools.Notification.Mail.Configuration.MailConfigurationSection
+- uid: NuvTools.Notification.Mail.Configuration.ServiceCollectionExtensions.AddMailConfiguration*
+  commentId: Overload:NuvTools.Notification.Mail.Configuration.ServiceCollectionExtensions.AddMailConfiguration
+  isExternal: true
+  href: NuvTools.Notification.Mail.Configuration.ServiceCollectionExtensions.html#NuvTools_Notification_Mail_Configuration_ServiceCollectionExtensions_AddMailConfiguration_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_System_String_
+  name: AddMailConfiguration
+  nameWithType: ServiceCollectionExtensions.AddMailConfiguration
+  fullName: NuvTools.Notification.Mail.Configuration.ServiceCollectionExtensions.AddMailConfiguration
 - uid: System.String
   commentId: T:System.String
   parent: System

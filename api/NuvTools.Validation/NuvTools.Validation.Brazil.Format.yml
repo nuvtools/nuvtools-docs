@@ -15,10 +15,12 @@ items:
   fullName: NuvTools.Validation.Brazil.Format
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Brazil/Format.cs
+    href: https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Brazil/Format.cs
   assemblies:
   - NuvTools.Validation
   namespace: NuvTools.Validation.Brazil
+  summary: Provides formatting utilities for Brazilian document numbers.
+  example: []
   syntax:
     content: public static class Format
     content.vb: Public Module Format
@@ -45,17 +47,25 @@ items:
   fullName: NuvTools.Validation.Brazil.Format.FormatCNPJ(string)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Brazil/Format.cs
+    href: https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Brazil/Format.cs
   assemblies:
   - NuvTools.Validation
   namespace: NuvTools.Validation.Brazil
+  summary: 'Formats a CNPJ string into the standard Brazilian format: XX.XXX.XXX/XXXX-XX'
+  example:
+  - >-
+    <pre><code class="lang-csharp">string formatted = "12345678000195".FormatCNPJ();
+
+    // Returns: "12.345.678/0001-95"</code></pre>
   syntax:
     content: public static string FormatCNPJ(this string cnpj)
     parameters:
     - id: cnpj
       type: System.String
+      description: The CNPJ number as a string (digits only).
     return:
       type: System.String
+      description: The formatted CNPJ string.
     content.vb: Public Shared Function FormatCNPJ(cnpj As String) As String
   overload: NuvTools.Validation.Brazil.Format.FormatCNPJ*
   nameWithType.vb: Format.FormatCNPJ(String)
@@ -74,17 +84,25 @@ items:
   fullName: NuvTools.Validation.Brazil.Format.FormatCPF(string)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Brazil/Format.cs
+    href: https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Brazil/Format.cs
   assemblies:
   - NuvTools.Validation
   namespace: NuvTools.Validation.Brazil
+  summary: 'Formats a CPF string into the standard Brazilian format: XXX.XXX.XXX-XX'
+  example:
+  - >-
+    <pre><code class="lang-csharp">string formatted = "12345678901".FormatCPF();
+
+    // Returns: "123.456.789-01"</code></pre>
   syntax:
     content: public static string FormatCPF(this string cpf)
     parameters:
     - id: cpf
       type: System.String
+      description: The CPF number as a string (digits only).
     return:
       type: System.String
+      description: The formatted CPF string.
     content.vb: Public Shared Function FormatCPF(cpf As String) As String
   overload: NuvTools.Validation.Brazil.Format.FormatCPF*
   nameWithType.vb: Format.FormatCPF(String)

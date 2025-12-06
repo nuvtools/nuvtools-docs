@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class LocalizationServiceExtensions | Nuv Tools Framework Docs ">
       
-      
+      <meta name="description" content="Provides extension methods for configuring composite localization services.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_AspNetCore_Localization_LocalizationServiceExtensions" data-uid="NuvTools.AspNetCore.Localization.LocalizationServiceExtensions" class="text-break">
-Class LocalizationServiceExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Localization/LocalizationServiceExtensions.cs"><i class="bi bi-code-slash"></i></a>
+Class LocalizationServiceExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Localization/LocalizationServiceExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class LocalizationServiceExtensions  <a class="header-action link-secondary" tit
   <dl><dt>Assembly</dt><dd>NuvTools.AspNetCore.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Provides extension methods for configuring composite localization services.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -156,10 +157,12 @@ Class LocalizationServiceExtensions  <a class="header-action link-secondary" tit
 
   <h3 id="NuvTools_AspNetCore_Localization_LocalizationServiceExtensions_AddCompositeLocalizer_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_Collections_Generic_IDictionary_System_String_System_Type__System_Collections_Generic_IEnumerable_System_Type__" data-uid="NuvTools.AspNetCore.Localization.LocalizationServiceExtensions.AddCompositeLocalizer(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Collections.Generic.IDictionary{System.String,System.Type},System.Collections.Generic.IEnumerable{System.Type})">
   AddCompositeLocalizer(IServiceCollection, IDictionary&lt;string, Type&gt;?, IEnumerable&lt;Type&gt;?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Localization/LocalizationServiceExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Localization/LocalizationServiceExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds the composite localizer to the service collection, enabling multiple localization sources
+with prefix-based routing and fallback resolution.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -169,17 +172,24 @@ Class LocalizationServiceExtensions  <a class="header-action link-secondary" tit
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>services</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection">IServiceCollection</a></dt>
-    <dd></dd>
+    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection">IServiceCollection</a> to add services to.</p>
+</dd>
     <dt><code>namedResourceTypes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>A dictionary of named resource types where the key is the prefix name (e.g., &quot;Errors&quot;)
+and the value is the resource type. Named localizers can be targeted using prefix syntax
+(e.g., &quot;Errors:ValidationFailed&quot;).</p>
+</dd>
     <dt><code>unnamedResourceTypes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>A collection of resource types to be used as fallback localizers. These are searched
+when a key is not found in named localizers.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection">IServiceCollection</a></dt>
-    <dd></dd>
+    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection">IServiceCollection</a> so that additional calls can be chained.</p>
+</dd>
   </dl>
 
 
@@ -187,7 +197,31 @@ Class LocalizationServiceExtensions  <a class="header-action link-secondary" tit
 
 
 
+  <h4 class="section" id="NuvTools_AspNetCore_Localization_LocalizationServiceExtensions_AddCompositeLocalizer_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_Collections_Generic_IDictionary_System_String_System_Type__System_Collections_Generic_IEnumerable_System_Type___examples">Examples</h4>
+  <pre><code class="lang-csharp">services.AddCompositeLocalizer(
+    namedResourceTypes: new Dictionary&lt;string, Type&gt;
+    {
+        ["Errors"] = typeof(ErrorResources),
+        ["Messages"] = typeof(MessageResources)
+    },
+    unnamedResourceTypes: new[] { typeof(SharedResources) }
+);</code></pre>
 
+
+  <h4 class="section" id="NuvTools_AspNetCore_Localization_LocalizationServiceExtensions_AddCompositeLocalizer_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_Collections_Generic_IDictionary_System_String_System_Type__System_Collections_Generic_IEnumerable_System_Type___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>
+This method registers all necessary <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.localization.istringlocalizer-1">IStringLocalizer&lt;T&gt;</a> instances and
+a scoped <a class="xref" href="NuvTools.AspNetCore.Localization.CompositeLocalizer.html">CompositeLocalizer</a> that combines them.
+</p>
+<p>
+Named resource types take precedence when using prefix syntax. Unnamed resource types
+are used for fallback resolution when a key is not found in any named localizer.
+</p>
+<p>
+Duplicate types between named and unnamed collections are automatically handled,
+with named registrations taking precedence.
+</p>
+</div>
 
 
 
@@ -196,7 +230,7 @@ Class LocalizationServiceExtensions  <a class="header-action link-secondary" tit
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Localization/LocalizationServiceExtensions.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Localization/LocalizationServiceExtensions.cs" class="edit-link">Edit this page</a>
         </div>
 
 

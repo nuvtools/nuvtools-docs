@@ -15,10 +15,12 @@ items:
   fullName: NuvTools.Storage.Azure.Security
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage.Azure/Security.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage.Azure/Security.cs
   assemblies:
   - NuvTools.Storage.Azure
   namespace: NuvTools.Storage.Azure
+  summary: Provides security-related functionality for Azure Storage, including SAS token generation.
+  example: []
   syntax:
     content: public class Security
     content.vb: Public Class Security
@@ -44,21 +46,30 @@ items:
   fullName: NuvTools.Storage.Azure.Security.GetAccessAccountToken(string, string, NuvTools.Storage.AccessPermissions)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage.Azure/Security.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage.Azure/Security.cs
   assemblies:
   - NuvTools.Storage.Azure
   namespace: NuvTools.Storage.Azure
+  summary: >-
+    Generates a Shared Access Signature (SAS) token for accessing Azure Storage account resources.
+
+    The token is valid for 24 hours and uses HTTPS protocol.
+  example: []
   syntax:
     content: public static string GetAccessAccountToken(string accountName, string accountKey, AccessPermissions permissions = AccessPermissions.Read)
     parameters:
     - id: accountName
       type: System.String
+      description: The name of the Azure Storage account.
     - id: accountKey
       type: System.String
+      description: The access key for the Azure Storage account.
     - id: permissions
       type: NuvTools.Storage.AccessPermissions
+      description: The access permissions to grant. Defaults to <xref href="NuvTools.Storage.AccessPermissions.Read" data-throw-if-not-resolved="false"></xref>.
     return:
       type: System.String
+      description: A SAS token string that can be appended to Azure Storage URLs for authenticated access.
     content.vb: Public Shared Function GetAccessAccountToken(accountName As String, accountKey As String, permissions As AccessPermissions = AccessPermissions.Read) As String
   overload: NuvTools.Storage.Azure.Security.GetAccessAccountToken*
   nameWithType.vb: Security.GetAccessAccountToken(String, String, AccessPermissions)
@@ -76,7 +87,7 @@ items:
   fullName: NuvTools.Storage.Azure.Security.Security()
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage.Azure/Security.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage.Azure/Security.cs
   assemblies:
   - NuvTools.Storage.Azure
   namespace: NuvTools.Storage.Azure
@@ -362,6 +373,13 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: NuvTools.Storage.AccessPermissions.Read
+  commentId: F:NuvTools.Storage.AccessPermissions.Read
+  isExternal: true
+  href: NuvTools.Storage.AccessPermissions.html#NuvTools_Storage_AccessPermissions_Read
+  name: Read
+  nameWithType: AccessPermissions.Read
+  fullName: NuvTools.Storage.AccessPermissions.Read
 - uid: NuvTools.Storage.Azure.Security.GetAccessAccountToken*
   commentId: Overload:NuvTools.Storage.Azure.Security.GetAccessAccountToken
   isExternal: true

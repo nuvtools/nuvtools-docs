@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class LoginForm | Nuv Tools Framework Docs ">
       
-      
+      <meta name="description" content="Represents the form data for user login authentication.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Security_Identity_Models_Form_LoginForm" data-uid="NuvTools.Security.Identity.Models.Form.LoginForm" class="text-break">
-Class LoginForm  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Form/LoginForm.cs"><i class="bi bi-code-slash"></i></a>
+Class LoginForm  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Form/LoginForm.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class LoginForm  <a class="header-action link-secondary" title="View source" hre
   <dl><dt>Assembly</dt><dd>NuvTools.Security.Identity.Models.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Represents the form data for user login authentication.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -146,6 +147,10 @@ Class LoginForm  <a class="header-action link-secondary" title="View source" hre
 
 
 
+  <h2 id="NuvTools_Security_Identity_Models_Form_LoginForm_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This form is typically used for authenticating users via email and password credentials.
+It includes validation attributes for input verification.</p>
+</div>
 
 
   <h2 class="section" id="constructors">Constructors
@@ -156,7 +161,7 @@ Class LoginForm  <a class="header-action link-secondary" title="View source" hre
 
   <h3 id="NuvTools_Security_Identity_Models_Form_LoginForm__ctor" data-uid="NuvTools.Security.Identity.Models.Form.LoginForm.#ctor">
   LoginForm()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Form/LoginForm.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Form/LoginForm.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"></div>
@@ -186,16 +191,17 @@ Class LoginForm  <a class="header-action link-secondary" title="View source" hre
 
   <h3 id="NuvTools_Security_Identity_Models_Form_LoginForm_Email" data-uid="NuvTools.Security.Identity.Models.Form.LoginForm.Email">
   Email
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Form/LoginForm.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Form/LoginForm.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets the user's email address for login.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Display(Name = &quot;Email&quot;, ResourceType = typeof(Fields))]
-[Required(ErrorMessageResourceName = &quot;XRequired&quot;, ErrorMessageResourceType = typeof(DynamicValidationMessages))]
-[MaxLength(50, ErrorMessageResourceName = &quot;XMustHaveUpToYCharacters&quot;, ErrorMessageResourceType = typeof(DynamicValidationMessages))]
+[Required(ErrorMessageResourceName = &quot;XRequired&quot;, ErrorMessageResourceType = typeof(Messages))]
+[MaxLength(50, ErrorMessageResourceName = &quot;XMustHaveUpToYCharacters&quot;, ErrorMessageResourceType = typeof(Messages))]
 [EmailAddress(ErrorMessageResourceName = &quot;InvalidEmail&quot;, ErrorMessageResourceType = typeof(Messages))]
 public virtual string? Email { get; set; }</code></pre>
   </div>
@@ -213,6 +219,9 @@ public virtual string? Email { get; set; }</code></pre>
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_Models_Form_LoginForm_Email_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This field is required and must be a valid email format with a maximum length of 50 characters.</p>
+</div>
 
 
 
@@ -221,16 +230,17 @@ public virtual string? Email { get; set; }</code></pre>
 
   <h3 id="NuvTools_Security_Identity_Models_Form_LoginForm_Password" data-uid="NuvTools.Security.Identity.Models.Form.LoginForm.Password">
   Password
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Form/LoginForm.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Form/LoginForm.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets or sets the user's password for login.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Display(Name = &quot;Password&quot;, ResourceType = typeof(Fields))]
-[Required(ErrorMessageResourceName = &quot;XRequired&quot;, ErrorMessageResourceType = typeof(DynamicValidationMessages))]
-[MaxLength(50, ErrorMessageResourceName = &quot;XMustHaveUpToYCharacters&quot;, ErrorMessageResourceType = typeof(DynamicValidationMessages))]
+[Required(ErrorMessageResourceName = &quot;XRequired&quot;, ErrorMessageResourceType = typeof(Messages))]
+[MaxLength(50, ErrorMessageResourceName = &quot;XMustHaveUpToYCharacters&quot;, ErrorMessageResourceType = typeof(Messages))]
 public virtual string? Password { get; set; }</code></pre>
   </div>
 
@@ -247,6 +257,9 @@ public virtual string? Password { get; set; }</code></pre>
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_Models_Form_LoginForm_Password_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This field is required with a maximum length of 50 characters.</p>
+</div>
 
 
 
@@ -255,7 +268,7 @@ public virtual string? Password { get; set; }</code></pre>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Form/LoginForm.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Form/LoginForm.cs" class="edit-link">Edit this page</a>
         </div>
 
 

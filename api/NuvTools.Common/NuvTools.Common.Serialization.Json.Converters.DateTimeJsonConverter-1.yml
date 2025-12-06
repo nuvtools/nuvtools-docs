@@ -16,14 +16,20 @@ items:
   fullName: NuvTools.Common.Serialization.Json.Converters.DateTimeJsonConverter<T>
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Serialization/Json/Converters/DateTimeJsonConverter.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/Serialization/Json/Converters/DateTimeJsonConverter.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Serialization.Json.Converters
+  summary: >-
+    JSON converter for <xref href="System.DateTime" data-throw-if-not-resolved="false"></xref>, <xref href="System.DateTimeOffset" data-throw-if-not-resolved="false"></xref> and <xref href="System.DateOnly" data-throw-if-not-resolved="false"></xref>
+
+    allowing serialization and deserialization using a custom format.
+  example: []
   syntax:
     content: 'public class DateTimeJsonConverter<T> : JsonConverter<T> where T : struct'
     typeParameters:
     - id: T
+      description: 'Supported types: DateTime, DateTime?, DateTimeOffset, DateTimeOffset?, DateOnly, DateOnly?'
     content.vb: Public Class DateTimeJsonConverter(Of T As Structure) Inherits JsonConverter(Of T)
   inheritance:
   - System.Object
@@ -61,10 +67,15 @@ items:
   fullName: NuvTools.Common.Serialization.Json.Converters.DateTimeJsonConverter<T>.DateTimeJsonConverter(string)
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Serialization/Json/Converters/DateTimeJsonConverter.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/Serialization/Json/Converters/DateTimeJsonConverter.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Serialization.Json.Converters
+  summary: >-
+    JSON converter for <xref href="System.DateTime" data-throw-if-not-resolved="false"></xref>, <xref href="System.DateTimeOffset" data-throw-if-not-resolved="false"></xref> and <xref href="System.DateOnly" data-throw-if-not-resolved="false"></xref>
+
+    allowing serialization and deserialization using a custom format.
+  example: []
   syntax:
     content: public DateTimeJsonConverter(string format)
     parameters:
@@ -87,7 +98,7 @@ items:
   fullName: NuvTools.Common.Serialization.Json.Converters.DateTimeJsonConverter<T>.Read(ref System.Text.Json.Utf8JsonReader, System.Type, System.Text.Json.JsonSerializerOptions)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Serialization/Json/Converters/DateTimeJsonConverter.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/Serialization/Json/Converters/DateTimeJsonConverter.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Serialization.Json.Converters
@@ -121,7 +132,7 @@ items:
   fullName: NuvTools.Common.Serialization.Json.Converters.DateTimeJsonConverter<T>.Write(System.Text.Json.Utf8JsonWriter, T, System.Text.Json.JsonSerializerOptions)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Serialization/Json/Converters/DateTimeJsonConverter.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/Serialization/Json/Converters/DateTimeJsonConverter.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Serialization.Json.Converters
@@ -141,6 +152,32 @@ items:
   nameWithType.vb: DateTimeJsonConverter(Of T).Write(Utf8JsonWriter, T, JsonSerializerOptions)
   fullName.vb: NuvTools.Common.Serialization.Json.Converters.DateTimeJsonConverter(Of T).Write(System.Text.Json.Utf8JsonWriter, T, System.Text.Json.JsonSerializerOptions)
 references:
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: System.DateTimeOffset
+  commentId: T:System.DateTimeOffset
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetimeoffset
+  name: DateTimeOffset
+  nameWithType: DateTimeOffset
+  fullName: System.DateTimeOffset
+- uid: System.DateOnly
+  commentId: T:System.DateOnly
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.dateonly
+  name: DateOnly
+  nameWithType: DateOnly
+  fullName: System.DateOnly
 - uid: NuvTools.Common.Serialization.Json.Converters
   commentId: N:NuvTools.Common.Serialization.Json.Converters
   isExternal: true

@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class Validator | Nuv Tools Framework Docs ">
       
-      <meta name="description" content="Responsible for validating rules used in Brazil.">
+      <meta name="description" content="Provides validation methods for Brazilian document numbers and identification formats.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Validation_Brazil_Validator" data-uid="NuvTools.Validation.Brazil.Validator" class="text-break">
-Class Validator  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Brazil/Validator.cs"><i class="bi bi-code-slash"></i></a>
+Class Validator  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Brazil/Validator.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,7 @@ Class Validator  <a class="header-action link-secondary" title="View source" hre
   <dl><dt>Assembly</dt><dd>NuvTools.Validation.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Responsible for validating rules used in Brazil.</p>
+  <div class="markdown summary"><p>Provides validation methods for Brazilian document numbers and identification formats.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -157,10 +157,11 @@ Class Validator  <a class="header-action link-secondary" title="View source" hre
 
   <h3 id="NuvTools_Validation_Brazil_Validator_IsCNPJ_System_String_" data-uid="NuvTools.Validation.Brazil.Validator.IsCNPJ(System.String)">
   IsCNPJ(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Brazil/Validator.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Brazil/Validator.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Validates a CNPJ.</p>
+  <div class="markdown level1 summary"><p>Validates a Brazilian CNPJ (Cadastro Nacional da Pessoa Jurídica) number using the official checksum algorithm.
+Accepts both formatted (XX.XXX.XXX/XXXX-XX) and unformatted (XXXXXXXXXXXXXX) input.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -171,14 +172,14 @@ Class Validator  <a class="header-action link-secondary" title="View source" hre
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>Enter a CNPJ.</p>
+    <dd><p>The CNPJ value to validate.</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd><p>Whether CNPJ is valid or not.</p>
+    <dd><p>True if the CNPJ is valid according to the checksum algorithm; otherwise, false.</p>
 </dd>
   </dl>
 
@@ -186,6 +187,10 @@ Class Validator  <a class="header-action link-secondary" title="View source" hre
 
 
 
+
+  <h4 class="section" id="NuvTools_Validation_Brazil_Validator_IsCNPJ_System_String__examples">Examples</h4>
+  <pre><code class="lang-csharp">bool isValid = "12.345.678/0001-95".IsCNPJ();
+bool isValidUnformatted = "12345678000195".IsCNPJ();</code></pre>
 
 
 
@@ -196,10 +201,11 @@ Class Validator  <a class="header-action link-secondary" title="View source" hre
 
   <h3 id="NuvTools_Validation_Brazil_Validator_IsCPF_System_String_" data-uid="NuvTools.Validation.Brazil.Validator.IsCPF(System.String)">
   IsCPF(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Brazil/Validator.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Brazil/Validator.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Validates a CPF.</p>
+  <div class="markdown level1 summary"><p>Validates a Brazilian CPF (Cadastro de Pessoas Físicas) number using the official checksum algorithm.
+Accepts both formatted (XXX.XXX.XXX-XX) and unformatted (XXXXXXXXXXX) input.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -210,14 +216,14 @@ Class Validator  <a class="header-action link-secondary" title="View source" hre
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>Enter a CPF.</p>
+    <dd><p>The CPF value to validate.</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd><p>Whether CPF is valid or not.</p>
+    <dd><p>True if the CPF is valid according to the checksum algorithm; otherwise, false.</p>
 </dd>
   </dl>
 
@@ -225,6 +231,10 @@ Class Validator  <a class="header-action link-secondary" title="View source" hre
 
 
 
+
+  <h4 class="section" id="NuvTools_Validation_Brazil_Validator_IsCPF_System_String__examples">Examples</h4>
+  <pre><code class="lang-csharp">bool isValid = "123.456.789-01".IsCPF();
+bool isValidUnformatted = "12345678901".IsCPF();</code></pre>
 
 
 
@@ -235,10 +245,11 @@ Class Validator  <a class="header-action link-secondary" title="View source" hre
 
   <h3 id="NuvTools_Validation_Brazil_Validator_IsCPForCNPJ_System_String_" data-uid="NuvTools.Validation.Brazil.Validator.IsCPForCNPJ(System.String)">
   IsCPForCNPJ(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Brazil/Validator.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Brazil/Validator.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Validates a CPF or CNPJ.</p>
+  <div class="markdown level1 summary"><p>Validates a CPF or CNPJ by automatically detecting the document type based on length.
+Accepts both formatted and unformatted input.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -249,14 +260,14 @@ Class Validator  <a class="header-action link-secondary" title="View source" hre
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>Enter a CPF or CNPJ.</p>
+    <dd><p>The CPF or CNPJ value to validate (11 digits for CPF, 14 digits for CNPJ).</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd><p>Whether CPF or CNPJ is valid or not.</p>
+    <dd><p>True if the value is a valid CPF or CNPJ; otherwise, false.</p>
 </dd>
   </dl>
 
@@ -264,6 +275,10 @@ Class Validator  <a class="header-action link-secondary" title="View source" hre
 
 
 
+
+  <h4 class="section" id="NuvTools_Validation_Brazil_Validator_IsCPForCNPJ_System_String__examples">Examples</h4>
+  <pre><code class="lang-csharp">bool isValid1 = "123.456.789-01".IsCPForCNPJ(); // Validates as CPF
+bool isValid2 = "12.345.678/0001-95".IsCPForCNPJ(); // Validates as CNPJ</code></pre>
 
 
 
@@ -272,39 +287,43 @@ Class Validator  <a class="header-action link-secondary" title="View source" hre
 
   <a id="NuvTools_Validation_Brazil_Validator_IsMobileNumber_" data-uid="NuvTools.Validation.Brazil.Validator.IsMobileNumber*"></a>
 
-  <h3 id="NuvTools_Validation_Brazil_Validator_IsMobileNumber_System_String_System_Boolean_" data-uid="NuvTools.Validation.Brazil.Validator.IsMobileNumber(System.String,System.Boolean)">
-  IsMobileNumber(string, bool)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Brazil/Validator.cs"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NuvTools_Validation_Brazil_Validator_IsMobileNumber_System_String_" data-uid="NuvTools.Validation.Brazil.Validator.IsMobileNumber(System.String)">
+  IsMobileNumber(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Brazil/Validator.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Validates a mobile phone number based on a specific regex pattern. The method checks if the phone number contains a valid Brazilian Code Area, followed by the digit 9 and then exactly eight digits.</p>
+  <div class="markdown level1 summary"><p>Validates a Brazilian mobile phone number.
+The method checks if the phone number contains a valid Brazilian area code (DDD),
+followed by the digit 9 and then exactly eight digits (format: XX 9 XXXX-XXXX).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool IsMobileNumber(this string mobileNumber, bool clearMask = true)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool IsMobileNumber(this string mobileNumber)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>mobileNumber</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>Mobile number.</p>
-</dd>
-    <dt><code>clearMask</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd><p>Clear mask before validate.</p>
+    <dd><p>The mobile number to validate (accepts formatted or unformatted input).</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True if the mobile number is valid; otherwise, false.</p>
+</dd>
   </dl>
 
 
 
 
 
+
+  <h4 class="section" id="NuvTools_Validation_Brazil_Validator_IsMobileNumber_System_String__examples">Examples</h4>
+  <pre><code class="lang-csharp">bool isValid = "11987654321".IsMobileNumber(); // São Paulo mobile
+bool isValid2 = "(21) 98765-4321".IsMobileNumber(); // Rio de Janeiro mobile</code></pre>
 
 
 
@@ -315,10 +334,11 @@ Class Validator  <a class="header-action link-secondary" title="View source" hre
 
   <h3 id="NuvTools_Validation_Brazil_Validator_IsZipCodeNumber_System_String_" data-uid="NuvTools.Validation.Brazil.Validator.IsZipCodeNumber(System.String)">
   IsZipCodeNumber(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Brazil/Validator.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Brazil/Validator.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Validates Zip Code number</p>
+  <div class="markdown level1 summary"><p>Validates a Brazilian ZIP code (CEP - Código de Endereçamento Postal).
+Accepts formats: XXXXX-XXX or XXXXXXXX (with or without hyphen).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -329,20 +349,25 @@ Class Validator  <a class="header-action link-secondary" title="View source" hre
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>zipCode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>Zip Code.</p>
+    <dd><p>The ZIP code to validate.</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True if the ZIP code format is valid; otherwise, false.</p>
+</dd>
   </dl>
 
 
 
 
 
+
+  <h4 class="section" id="NuvTools_Validation_Brazil_Validator_IsZipCodeNumber_System_String__examples">Examples</h4>
+  <pre><code class="lang-csharp">bool isValid = "01310-100".IsZipCodeNumber(); // With hyphen
+bool isValid2 = "01310100".IsZipCodeNumber(); // Without hyphen</code></pre>
 
 
 
@@ -353,7 +378,7 @@ Class Validator  <a class="header-action link-secondary" title="View source" hre
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Brazil/Validator.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Brazil/Validator.cs" class="edit-link">Edit this page</a>
         </div>
 
 

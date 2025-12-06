@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Validation_Brazil_RegexPattern" data-uid="NuvTools.Validation.Brazil.RegexPattern" class="text-break">
-Class RegexPattern  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Brazil/RegexPattern.cs"><i class="bi bi-code-slash"></i></a>
+Class RegexPattern  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Brazil/RegexPattern.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -149,30 +149,29 @@ Class RegexPattern  <a class="header-action link-secondary" title="View source" 
 
 
 
-  <h2 class="section" id="fields">Fields
+  <h2 class="section" id="methods">Methods
 </h2>
 
 
+  <a id="NuvTools_Validation_Brazil_RegexPattern_MobileNumberRegex_" data-uid="NuvTools.Validation.Brazil.RegexPattern.MobileNumberRegex*"></a>
 
-  <h3 id="NuvTools_Validation_Brazil_RegexPattern_MobileNumber" data-uid="NuvTools.Validation.Brazil.RegexPattern.MobileNumber">
-  MobileNumber
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Brazil/RegexPattern.cs"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NuvTools_Validation_Brazil_RegexPattern_MobileNumberRegex" data-uid="NuvTools.Validation.Brazil.RegexPattern.MobileNumberRegex">
+  MobileNumberRegex()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/obj/Release/net9/System.Text.RegularExpressions.Generator/System.Text.RegularExpressions.Generator.RegexGenerator/RegexGenerator.g.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Regex pattern for mobile phone validation.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string MobileNumber = &quot;(?&lt;CodeArea&gt;11|12|13|14|15|16|17|18|19|21|22|24|27|28|31|32|33|34|35|37|38|41|42|43|44|45|46|47|48|49|51|53|54|55|61|62|63|64|65|66|67|68|69|71|73|74|75|77|79|81|82|83|84|85|86|87|88|89|91|92|93|94|95|96|97|98|99)(?&lt;FirstDigit&gt;9)(?&lt;Number&gt;\\d{8})&quot;</code></pre>
+    <pre><code class="lang-csharp hljs">[GeneratedRegex(&quot;^(?&lt;CodeArea&gt;11|12|13|14|15|16|17|18|19|21|22|24|27|28|31|32|33|34|35|37|38|41|42|43|44|45|46|47|48|49|51|53|54|55|61|62|63|64|65|66|67|68|69|71|73|74|75|77|79|81|82|83|84|85|86|87|88|89|91|92|93|94|95|96|97|98|99)(?&lt;FirstDigit&gt;9)(?&lt;Number&gt;\\d{8})$&quot;)]
+public static Regex MobileNumberRegex()</code></pre>
   </div>
 
 
-
-
-  <h4 class="section">Field Value</h4>
+  <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.regularexpressions.regex">Regex</a></dt>
     <dd></dd>
   </dl>
 
@@ -182,13 +181,97 @@ Class RegexPattern  <a class="header-action link-secondary" title="View source" 
 
 
 
+  <h4 class="section" id="NuvTools_Validation_Brazil_RegexPattern_MobileNumberRegex_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Pattern:<br></p>
+<pre><code class="lang-csharp">^(?&lt;CodeArea&gt;11|12|13|14|15|16|17|18|19|21|22|24|27|28|31|32|33|34|35|37|38|41|42|43|44|45|46|47|48|49|51|53|54|55|61|62|63|64|65|66|67|68|69|71|73|74|75|77|79|81|82|83|84|85|86|87|88|89|91|92|93|94|95|96|97|98|99)(?&lt;FirstDigit&gt;9)(?&lt;Number&gt;\\d{8})$</code></pre><br>
+<p>Explanation:<br></p>
+<pre><code class="lang-csharp">○ Match if at the beginning of the string.
+○ "CodeArea" capture group.
+    ○ Match with 9 alternative expressions.
+        ○ Match a sequence of expressions.
+            ○ Match an empty string.
+            ○ Match a character in the set [1-9].
+        ○ Match a sequence of expressions.
+            ○ Match an empty string.
+            ○ Match a character in the set [12478].
+        ○ Match a sequence of expressions.
+            ○ Match an empty string.
+            ○ Match a character in the set [1-578].
+        ○ Match a sequence of expressions.
+            ○ Match an empty string.
+            ○ Match a character in the set [1-9].
+        ○ Match a sequence of expressions.
+            ○ Match an empty string.
+            ○ Match a character in the set [13-5].
+        ○ Match a sequence of expressions.
+            ○ Match an empty string.
+            ○ Match a character in the set [1-9].
+        ○ Match a sequence of expressions.
+            ○ Match an empty string.
+            ○ Match a character in the set [13-579].
+        ○ Match a sequence of expressions.
+            ○ Match an empty string.
+            ○ Match a character in the set [1-9].
+        ○ Match a sequence of expressions.
+            ○ Match an empty string.
+            ○ Match a character in the set [1-9].
+○ "FirstDigit" capture group.
+    ○ Match '9'.
+○ "Number" capture group.
+    ○ Match a Unicode digit exactly 8 times.
+○ Match if at the end of the string or if before an ending newline.</code></pre>
+</div>
+
+
+
+
+  <a id="NuvTools_Validation_Brazil_RegexPattern_ZipCodeRegex_" data-uid="NuvTools.Validation.Brazil.RegexPattern.ZipCodeRegex*"></a>
+
+  <h3 id="NuvTools_Validation_Brazil_RegexPattern_ZipCodeRegex" data-uid="NuvTools.Validation.Brazil.RegexPattern.ZipCodeRegex">
+  ZipCodeRegex()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/obj/Release/net9/System.Text.RegularExpressions.Generator/System.Text.RegularExpressions.Generator.RegexGenerator/RegexGenerator.g.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[GeneratedRegex(&quot;^\\d{5}-?\\d{3}$&quot;)]
+public static Regex ZipCodeRegex()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.regularexpressions.regex">Regex</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="NuvTools_Validation_Brazil_RegexPattern_ZipCodeRegex_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Pattern:<br></p>
+<pre><code class="lang-csharp">^\\d{5}-?\\d{3}$</code></pre><br>
+<p>Explanation:<br></p>
+<pre><code class="lang-csharp">○ Match if at the beginning of the string.
+○ Match a Unicode digit exactly 5 times.
+○ Match '-' atomically, optionally.
+○ Match a Unicode digit exactly 3 times.
+○ Match if at the end of the string or if before an ending newline.</code></pre>
+</div>
+
+
 
 
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Brazil/RegexPattern.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Brazil/RegexPattern.cs" class="edit-link">Edit this page</a>
         </div>
 
 

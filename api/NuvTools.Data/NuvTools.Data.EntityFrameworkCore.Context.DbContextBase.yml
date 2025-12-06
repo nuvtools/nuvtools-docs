@@ -30,10 +30,19 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: >-
+    Abstract base class for DbContext implementations that provides common CRUD operations,
+
+    transaction management, bulk operations, and execution strategies using the Result pattern.
+  remarks: >-
+    This class implements <xref href="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands" data-throw-if-not-resolved="false"></xref> and <xref href="NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands" data-throw-if-not-resolved="false"></xref>
+
+    to provide a consistent interface for database operations across the application.
+  example: []
   syntax:
     content: 'public abstract class DbContextBase : DbContext, IInfrastructure<IServiceProvider>, IDbContextDependencies, IDbSetCache, IDbContextPoolable, IResettableService, IDisposable, IAsyncDisposable, IDbContextCommands, IDbContextWithListCommands'
     content.vb: Public MustInherit Class DbContextBase Inherits DbContext Implements IInfrastructure(Of IServiceProvider), IDbContextDependencies, IDbSetCache, IDbContextPoolable, IResettableService, IDisposable, IAsyncDisposable, IDbContextCommands, IDbContextWithListCommands
@@ -130,10 +139,12 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.DbContextBase()
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Initializes a new instance of the <xref href="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase" data-throw-if-not-resolved="false"></xref> class.
+  example: []
   syntax:
     content: protected DbContextBase()
     content.vb: Protected Sub New()
@@ -153,15 +164,18 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.DbContextBase(Microsoft.EntityFrameworkCore.DbContextOptions)
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Initializes a new instance of the <xref href="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase" data-throw-if-not-resolved="false"></xref> class with the specified options.
+  example: []
   syntax:
     content: protected DbContextBase(DbContextOptions options)
     parameters:
     - id: options
       type: Microsoft.EntityFrameworkCore.DbContextOptions
+      description: The options to be used by the DbContext.
     content.vb: Protected Sub New(options As DbContextOptions)
   overload: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.#ctor*
   nameWithType.vb: DbContextBase.New(DbContextOptions)
@@ -179,18 +193,21 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.BeginTransactionAsync(System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Begins a new database transaction asynchronously.
   example: []
   syntax:
     content: public Task<IDbContextTransaction> BeginTransactionAsync(CancellationToken cancellationToken = default)
     parameters:
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: A cancellation token to observe while waiting for the task to complete.
     return:
       type: System.Threading.Tasks.Task{Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction}
+      description: A task that represents the asynchronous operation, containing the database transaction.
     content.vb: Public Function BeginTransactionAsync(cancellationToken As CancellationToken = Nothing) As Task(Of IDbContextTransaction)
   overload: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.BeginTransactionAsync*
   implements:
@@ -207,22 +224,30 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.ExecuteWithStrategyAsync(System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task>, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Executes an action within the database execution strategy for connection resiliency.
   example: []
   syntax:
     content: public Task ExecuteWithStrategyAsync(Func<CancellationToken, Task> action, CancellationToken cancellationToken = default)
     parameters:
     - id: action
       type: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task}
+      description: The action to execute within the strategy.
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: A cancellation token to observe while waiting for the task to complete.
     return:
       type: System.Threading.Tasks.Task
+      description: A task that represents the asynchronous operation.
     content.vb: Public Function ExecuteWithStrategyAsync(action As Func(Of CancellationToken, Task), cancellationToken As CancellationToken = Nothing) As Task
   overload: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.ExecuteWithStrategyAsync*
+  seealso:
+  - linkType: HRef
+    linkId: https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency
+    altText: https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency
   implements:
   - NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.ExecuteWithStrategyAsync(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Threading.CancellationToken)
   nameWithType.vb: DbContextBase.ExecuteWithStrategyAsync(Func(Of CancellationToken, Task), CancellationToken)
@@ -240,24 +265,33 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.ExecuteWithStrategyAsync<T>(System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<T>>, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Executes an action within the database execution strategy for connection resiliency and returns a result.
   example: []
   syntax:
     content: public Task<T> ExecuteWithStrategyAsync<T>(Func<CancellationToken, Task<T>> action, CancellationToken cancellationToken = default)
     parameters:
     - id: action
       type: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{{T}}}
+      description: The action to execute within the strategy.
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: A cancellation token to observe while waiting for the task to complete.
     typeParameters:
     - id: T
+      description: The type of the result returned by the action.
     return:
       type: System.Threading.Tasks.Task{{T}}
+      description: A task that represents the asynchronous operation, containing the result of the action.
     content.vb: Public Function ExecuteWithStrategyAsync(Of T)(action As Func(Of CancellationToken, Task(Of T)), cancellationToken As CancellationToken = Nothing) As Task(Of T)
   overload: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.ExecuteWithStrategyAsync*
+  seealso:
+  - linkType: HRef
+    linkId: https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency
+    altText: https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency
   implements:
   - NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.ExecuteWithStrategyAsync``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{{T}}},System.Threading.CancellationToken)
   nameWithType.vb: DbContextBase.ExecuteWithStrategyAsync(Of T)(Func(Of CancellationToken, Task(Of T)), CancellationToken)
@@ -275,18 +309,21 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.CommitTransactionAsync(System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Commits the current transaction asynchronously.
   example: []
   syntax:
     content: public Task CommitTransactionAsync(CancellationToken cancellationToken = default)
     parameters:
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: A cancellation token to observe while waiting for the task to complete.
     return:
       type: System.Threading.Tasks.Task
+      description: A task that represents the asynchronous operation.
     content.vb: Public Function CommitTransactionAsync(cancellationToken As CancellationToken = Nothing) As Task
   overload: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.CommitTransactionAsync*
   implements:
@@ -303,18 +340,21 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.RollbackTransactionAsync(System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Rolls back the current transaction asynchronously.
   example: []
   syntax:
     content: public Task RollbackTransactionAsync(CancellationToken cancellationToken = default)
     parameters:
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: A cancellation token to observe while waiting for the task to complete.
     return:
       type: System.Threading.Tasks.Task
+      description: A task that represents the asynchronous operation.
     content.vb: Public Function RollbackTransactionAsync(cancellationToken As CancellationToken = Nothing) As Task
   overload: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.RollbackTransactionAsync*
   implements:
@@ -331,23 +371,29 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.AddAndSaveAsync<TEntity, TKey>(TEntity, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Adds a new entity to the database and saves changes, returning the entity's primary key.
   example: []
   syntax:
     content: 'public Task<IResult<TKey>> AddAndSaveAsync<TEntity, TKey>(TEntity entity, CancellationToken cancellationToken = default) where TEntity : class'
     parameters:
     - id: entity
       type: '{TEntity}'
+      description: The entity to add.
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: A cancellation token to observe while waiting for the task to complete.
     typeParameters:
     - id: TEntity
+      description: The type of the entity.
     - id: TKey
+      description: The type of the primary key.
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{{TKey}}}
+      description: A task that represents the asynchronous operation, containing the result with the primary key.
     content.vb: Public Function AddAndSaveAsync(Of TEntity As Class, TKey)(entity As TEntity, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of TKey))
   overload: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.AddAndSaveAsync*
   implements:
@@ -367,22 +413,27 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.UpdateAndSaveAsync<TEntity>(TEntity, params object[])
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Updates an existing entity in the database and saves changes.
   example: []
   syntax:
     content: 'public Task<IResult> UpdateAndSaveAsync<TEntity>(TEntity entity, params object[] keyValues) where TEntity : class'
     parameters:
     - id: entity
       type: '{TEntity}'
+      description: The entity with updated values.
     - id: keyValues
       type: System.Object[]
+      description: The primary key values of the entity to update.
     typeParameters:
     - id: TEntity
+      description: The type of the entity.
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+      description: A task that represents the asynchronous operation, containing the result of the update operation.
     content.vb: Public Function UpdateAndSaveAsync(Of TEntity As Class)(entity As TEntity, ParamArray keyValues As Object()) As Task(Of IResult)
   overload: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.UpdateAndSaveAsync*
   implements:
@@ -402,24 +453,30 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.UpdateAndSaveAsync<TEntity>(TEntity, object[], System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Updates an existing entity in the database and saves changes.
   example: []
   syntax:
     content: 'public Task<IResult> UpdateAndSaveAsync<TEntity>(TEntity entity, object[] keyValues, CancellationToken cancellationToken = default) where TEntity : class'
     parameters:
     - id: entity
       type: '{TEntity}'
+      description: The entity with updated values.
     - id: keyValues
       type: System.Object[]
+      description: The primary key values of the entity to update.
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: A cancellation token to observe while waiting for the task to complete.
     typeParameters:
     - id: TEntity
+      description: The type of the entity.
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+      description: A task that represents the asynchronous operation, containing the result of the update operation.
     content.vb: Public Function UpdateAndSaveAsync(Of TEntity As Class)(entity As TEntity, keyValues As Object(), cancellationToken As CancellationToken = Nothing) As Task(Of IResult)
   overload: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.UpdateAndSaveAsync*
   implements:
@@ -439,20 +496,24 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.RemoveAndSaveAsync<TEntity>(params object[])
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Removes an entity from the database and saves changes.
   example: []
   syntax:
     content: 'public Task<IResult> RemoveAndSaveAsync<TEntity>(params object[] keyValues) where TEntity : class'
     parameters:
     - id: keyValues
       type: System.Object[]
+      description: The primary key values of the entity to remove.
     typeParameters:
     - id: TEntity
+      description: The type of the entity.
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+      description: A task that represents the asynchronous operation, containing the result of the remove operation.
     content.vb: Public Function RemoveAndSaveAsync(Of TEntity As Class)(ParamArray keyValues As Object()) As Task(Of IResult)
   overload: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.RemoveAndSaveAsync*
   implements:
@@ -472,22 +533,27 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.RemoveAndSaveAsync<TEntity>(object[], System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Removes an entity from the database and saves changes.
   example: []
   syntax:
     content: 'public Task<IResult> RemoveAndSaveAsync<TEntity>(object[] keyValues, CancellationToken cancellationToken = default) where TEntity : class'
     parameters:
     - id: keyValues
       type: System.Object[]
+      description: The primary key values of the entity to remove.
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: A cancellation token to observe while waiting for the task to complete.
     typeParameters:
     - id: TEntity
+      description: The type of the entity.
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+      description: A task that represents the asynchronous operation, containing the result of the remove operation.
     content.vb: Public Function RemoveAndSaveAsync(Of TEntity As Class)(keyValues As Object(), cancellationToken As CancellationToken = Nothing) As Task(Of IResult)
   overload: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.RemoveAndSaveAsync*
   implements:
@@ -507,22 +573,27 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.AddAndSaveWithCompositeKeyAsync<TEntity>(TEntity, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Adds a new entity with a composite key to the database and saves changes.
   example: []
   syntax:
     content: 'public Task<IResult<object[]>> AddAndSaveWithCompositeKeyAsync<TEntity>(TEntity entity, CancellationToken cancellationToken = default) where TEntity : class'
     parameters:
     - id: entity
       type: '{TEntity}'
+      description: The entity to add.
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: A cancellation token to observe while waiting for the task to complete.
     typeParameters:
     - id: TEntity
+      description: The type of the entity.
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.Object[]}}
+      description: A task that represents the asynchronous operation, containing the result with the composite key values.
     content.vb: Public Function AddAndSaveWithCompositeKeyAsync(Of TEntity As Class)(entity As TEntity, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of Object()))
   overload: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.AddAndSaveWithCompositeKeyAsync*
   implements:
@@ -542,7 +613,7 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.SyncFromListAsync<TEntity, TKey>(System.Collections.Generic.IEnumerable<TEntity>, System.Func<TEntity, TKey>, System.Linq.Expressions.Expression<System.Func<TEntity, bool>>?, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
@@ -599,7 +670,7 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.AddOrUpdateFromListAsync<TEntity, TKey>(System.Collections.Generic.IEnumerable<TEntity>, System.Func<TEntity, TKey>, System.Linq.Expressions.Expression<System.Func<TEntity, bool>>?, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
@@ -656,7 +727,7 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.AddOrRemoveFromListAsync<TEntity, TKey>(System.Collections.Generic.IEnumerable<TEntity>, System.Func<TEntity, TKey>, System.Linq.Expressions.Expression<System.Func<TEntity, bool>>?, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
@@ -713,10 +784,11 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.CurrentTransaction
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Gets the current active transaction, or null if no transaction is active.
   example: []
   syntax:
     content: public IDbContextTransaction? CurrentTransaction { get; }
@@ -728,6 +800,22 @@ items:
   implements:
   - NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CurrentTransaction
 references:
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
+  commentId: T:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
+  parent: NuvTools.Data.EntityFrameworkCore.Context
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.html
+  name: IDbContextCommands
+  nameWithType: IDbContextCommands
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands
+  commentId: T:NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands
+  parent: NuvTools.Data.EntityFrameworkCore.Context
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.html
+  name: IDbContextWithListCommands
+  nameWithType: IDbContextWithListCommands
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands
 - uid: NuvTools.Data.EntityFrameworkCore.Context
   commentId: N:NuvTools.Data.EntityFrameworkCore.Context
   isExternal: true
@@ -877,22 +965,6 @@ references:
   name: IAsyncDisposable
   nameWithType: IAsyncDisposable
   fullName: System.IAsyncDisposable
-- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
-  commentId: T:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
-  parent: NuvTools.Data.EntityFrameworkCore.Context
-  isExternal: true
-  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.html
-  name: IDbContextCommands
-  nameWithType: IDbContextCommands
-  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
-- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands
-  commentId: T:NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands
-  parent: NuvTools.Data.EntityFrameworkCore.Context
-  isExternal: true
-  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.html
-  name: IDbContextWithListCommands
-  nameWithType: IDbContextWithListCommands
-  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands
 - uid: Microsoft.EntityFrameworkCore.DbContext.Set``1
   commentId: M:Microsoft.EntityFrameworkCore.DbContext.Set``1
   parent: Microsoft.EntityFrameworkCore.DbContext
@@ -5424,6 +5496,13 @@ references:
     name: Extensions
     isExternal: true
     href: NuvTools.Data.EntityFrameworkCore.Extensions.html
+- uid: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase
+  commentId: T:NuvTools.Data.EntityFrameworkCore.Context.DbContextBase
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.html
+  name: DbContextBase
+  nameWithType: DbContextBase
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase
 - uid: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.#ctor*
   commentId: Overload:NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.#ctor
   isExternal: true

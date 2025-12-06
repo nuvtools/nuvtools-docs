@@ -15,10 +15,12 @@ items:
   fullName: NuvTools.Common.IO.StreamExtensions
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/IO/StreamExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/IO/StreamExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.IO
+  summary: Provides extension methods for <xref href="System.IO.Stream" data-throw-if-not-resolved="false"></xref> objects.
+  example: []
   syntax:
     content: public static class StreamExtensions
     content.vb: Public Module StreamExtensions
@@ -45,19 +47,28 @@ items:
   fullName: NuvTools.Common.IO.StreamExtensions.ToByteList(System.IO.Stream)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/IO/StreamExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/IO/StreamExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.IO
+  summary: Converts the stream to a byte array synchronously.
+  remarks: This method blocks synchronously. For asynchronous operations, use <xref href="NuvTools.Common.IO.StreamExtensions.ToByteListAsync(System.IO.Stream)" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public static byte[] ToByteList(this Stream value)
     parameters:
     - id: value
       type: System.IO.Stream
+      description: The stream to convert.
     return:
       type: System.Byte[]
+      description: A byte array containing the stream data.
     content.vb: Public Shared Function ToByteList(value As Stream) As Byte()
   overload: NuvTools.Common.IO.StreamExtensions.ToByteList*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown when <code class="paramref">value</code> is null.
 - uid: NuvTools.Common.IO.StreamExtensions.ToByteListAsync(System.IO.Stream)
   commentId: M:NuvTools.Common.IO.StreamExtensions.ToByteListAsync(System.IO.Stream)
   id: ToByteListAsync(System.IO.Stream)
@@ -71,20 +82,40 @@ items:
   fullName: NuvTools.Common.IO.StreamExtensions.ToByteListAsync(System.IO.Stream)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/IO/StreamExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/IO/StreamExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.IO
+  summary: Converts the stream to a byte array asynchronously.
+  remarks: >-
+    This method reads the entire stream based on its <xref href="System.IO.Stream.Length" data-throw-if-not-resolved="false"></xref> property.
+
+    The stream must support seeking and have a known length.
+  example: []
   syntax:
     content: public static Task<byte[]> ToByteListAsync(this Stream value)
     parameters:
     - id: value
       type: System.IO.Stream
+      description: The stream to convert.
     return:
       type: System.Threading.Tasks.Task{System.Byte[]}
+      description: A task that represents the asynchronous operation. The task result contains a byte array with the stream data.
     content.vb: Public Shared Function ToByteListAsync(value As Stream) As Task(Of Byte())
   overload: NuvTools.Common.IO.StreamExtensions.ToByteListAsync*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown when <code class="paramref">value</code> is null.
 references:
+- uid: System.IO.Stream
+  commentId: T:System.IO.Stream
+  parent: System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  name: Stream
+  nameWithType: Stream
+  fullName: System.IO.Stream
 - uid: NuvTools.Common.IO
   commentId: N:NuvTools.Common.IO
   isExternal: true
@@ -352,51 +383,6 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
   - name: (
   - name: )
-- uid: System
-  commentId: N:System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System
-  nameWithType: System
-  fullName: System
-- uid: NuvTools.Common.IO.StreamExtensions.ToByteList*
-  commentId: Overload:NuvTools.Common.IO.StreamExtensions.ToByteList
-  isExternal: true
-  href: NuvTools.Common.IO.StreamExtensions.html#NuvTools_Common_IO_StreamExtensions_ToByteList_System_IO_Stream_
-  name: ToByteList
-  nameWithType: StreamExtensions.ToByteList
-  fullName: NuvTools.Common.IO.StreamExtensions.ToByteList
-- uid: System.IO.Stream
-  commentId: T:System.IO.Stream
-  parent: System.IO
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.io.stream
-  name: Stream
-  nameWithType: Stream
-  fullName: System.IO.Stream
-- uid: System.Byte[]
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.byte
-  name: byte[]
-  nameWithType: byte[]
-  fullName: byte[]
-  nameWithType.vb: Byte()
-  fullName.vb: Byte()
-  name.vb: Byte()
-  spec.csharp:
-  - uid: System.Byte
-    name: byte
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.byte
-  - name: '['
-  - name: ']'
-  spec.vb:
-  - uid: System.Byte
-    name: Byte
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.byte
-  - name: (
-  - name: )
 - uid: System.IO
   commentId: N:System.IO
   isExternal: true
@@ -424,6 +410,86 @@ references:
     name: IO
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.io
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NuvTools.Common.IO.StreamExtensions.ToByteListAsync(System.IO.Stream)
+  commentId: M:NuvTools.Common.IO.StreamExtensions.ToByteListAsync(System.IO.Stream)
+  isExternal: true
+  href: NuvTools.Common.IO.StreamExtensions.html#NuvTools_Common_IO_StreamExtensions_ToByteListAsync_System_IO_Stream_
+  name: ToByteListAsync(Stream)
+  nameWithType: StreamExtensions.ToByteListAsync(Stream)
+  fullName: NuvTools.Common.IO.StreamExtensions.ToByteListAsync(System.IO.Stream)
+  spec.csharp:
+  - uid: NuvTools.Common.IO.StreamExtensions.ToByteListAsync(System.IO.Stream)
+    name: ToByteListAsync
+    isExternal: true
+    href: NuvTools.Common.IO.StreamExtensions.html#NuvTools_Common_IO_StreamExtensions_ToByteListAsync_System_IO_Stream_
+  - name: (
+  - uid: System.IO.Stream
+    name: Stream
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Common.IO.StreamExtensions.ToByteListAsync(System.IO.Stream)
+    name: ToByteListAsync
+    isExternal: true
+    href: NuvTools.Common.IO.StreamExtensions.html#NuvTools_Common_IO_StreamExtensions_ToByteListAsync_System_IO_Stream_
+  - name: (
+  - uid: System.IO.Stream
+    name: Stream
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  - name: )
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
+- uid: NuvTools.Common.IO.StreamExtensions.ToByteList*
+  commentId: Overload:NuvTools.Common.IO.StreamExtensions.ToByteList
+  isExternal: true
+  href: NuvTools.Common.IO.StreamExtensions.html#NuvTools_Common_IO_StreamExtensions_ToByteList_System_IO_Stream_
+  name: ToByteList
+  nameWithType: StreamExtensions.ToByteList
+  fullName: NuvTools.Common.IO.StreamExtensions.ToByteList
+- uid: System.Byte[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.byte
+  name: byte[]
+  nameWithType: byte[]
+  fullName: byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: (
+  - name: )
+- uid: System.IO.Stream.Length
+  commentId: P:System.IO.Stream.Length
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.stream.length
+  name: Length
+  nameWithType: Stream.Length
+  fullName: System.IO.Stream.Length
 - uid: NuvTools.Common.IO.StreamExtensions.ToByteListAsync*
   commentId: Overload:NuvTools.Common.IO.StreamExtensions.ToByteListAsync
   isExternal: true

@@ -16,10 +16,12 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions.ServiceCollectionExtensions
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ServiceCollectionExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ServiceCollectionExtensions.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore.PostgreSQL
   namespace: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions
+  summary: Extension methods for registering PostgreSQL DbContext instances in the dependency injection container.
+  example: []
   syntax:
     content: public static class ServiceCollectionExtensions
     content.vb: Public Module ServiceCollectionExtensions
@@ -46,27 +48,36 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions.ServiceCollectionExtensions.AddDatabaseByConnectionName<TContext>(Microsoft.Extensions.DependencyInjection.IServiceCollection, string, string, System.Action<Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure.NpgsqlDbContextOptionsBuilder>?, Microsoft.Extensions.DependencyInjection.ServiceLifetime)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ServiceCollectionExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ServiceCollectionExtensions.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore.PostgreSQL
   namespace: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions
+  summary: Registers a PostgreSQL DbContext in the service collection using a connection name from a settings file.
+  example: []
   syntax:
     content: 'public static IServiceCollection AddDatabaseByConnectionName<TContext>(this IServiceCollection services, string connectionName, string settingsFileName = "appsettings.json", Action<NpgsqlDbContextOptionsBuilder>? npgsqlOptionsAction = null, ServiceLifetime contextLifetime = ServiceLifetime.Scoped) where TContext : DbContext'
     parameters:
     - id: services
       type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: The service collection.
     - id: connectionName
       type: System.String
+      description: The name of the connection string in the settings file.
     - id: settingsFileName
       type: System.String
+      description: The settings file name. Defaults to "appsettings.json".
     - id: npgsqlOptionsAction
       type: System.Action{Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure.NpgsqlDbContextOptionsBuilder}
+      description: Optional action to configure PostgreSQL-specific options via Npgsql.
     - id: contextLifetime
       type: Microsoft.Extensions.DependencyInjection.ServiceLifetime
+      description: The lifetime of the DbContext in the DI container. Defaults to Scoped.
     typeParameters:
     - id: TContext
+      description: The type of DbContext to register.
     return:
       type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: The service collection for chaining.
     content.vb: Public Shared Function AddDatabaseByConnectionName(Of TContext As DbContext)(services As IServiceCollection, connectionName As String, settingsFileName As String = "appsettings.json", npgsqlOptionsAction As Action(Of NpgsqlDbContextOptionsBuilder) = Nothing, contextLifetime As ServiceLifetime = ServiceLifetime.Scoped) As IServiceCollection
   overload: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions.ServiceCollectionExtensions.AddDatabaseByConnectionName*
   nameWithType.vb: ServiceCollectionExtensions.AddDatabaseByConnectionName(Of TContext)(IServiceCollection, String, String, Action(Of NpgsqlDbContextOptionsBuilder), ServiceLifetime)
@@ -85,27 +96,36 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions.ServiceCollectionExtensions.AddDatabaseByConnectionName<TContext>(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration, string, System.Action<Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure.NpgsqlDbContextOptionsBuilder>?, Microsoft.Extensions.DependencyInjection.ServiceLifetime)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ServiceCollectionExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ServiceCollectionExtensions.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore.PostgreSQL
   namespace: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions
+  summary: Registers a PostgreSQL DbContext in the service collection using a connection name from an existing configuration.
+  example: []
   syntax:
     content: 'public static IServiceCollection AddDatabaseByConnectionName<TContext>(this IServiceCollection services, IConfiguration configuration, string connectionName, Action<NpgsqlDbContextOptionsBuilder>? npgsqlOptionsAction = null, ServiceLifetime contextLifetime = ServiceLifetime.Scoped) where TContext : DbContext'
     parameters:
     - id: services
       type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: The service collection.
     - id: configuration
       type: Microsoft.Extensions.Configuration.IConfiguration
+      description: The configuration containing connection strings.
     - id: connectionName
       type: System.String
+      description: The name of the connection string in the configuration.
     - id: npgsqlOptionsAction
       type: System.Action{Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure.NpgsqlDbContextOptionsBuilder}
+      description: Optional action to configure PostgreSQL-specific options via Npgsql.
     - id: contextLifetime
       type: Microsoft.Extensions.DependencyInjection.ServiceLifetime
+      description: The lifetime of the DbContext in the DI container. Defaults to Scoped.
     typeParameters:
     - id: TContext
+      description: The type of DbContext to register.
     return:
       type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: The service collection for chaining.
     content.vb: Public Shared Function AddDatabaseByConnectionName(Of TContext As DbContext)(services As IServiceCollection, configuration As IConfiguration, connectionName As String, npgsqlOptionsAction As Action(Of NpgsqlDbContextOptionsBuilder) = Nothing, contextLifetime As ServiceLifetime = ServiceLifetime.Scoped) As IServiceCollection
   overload: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions.ServiceCollectionExtensions.AddDatabaseByConnectionName*
   nameWithType.vb: ServiceCollectionExtensions.AddDatabaseByConnectionName(Of TContext)(IServiceCollection, IConfiguration, String, Action(Of NpgsqlDbContextOptionsBuilder), ServiceLifetime)
@@ -124,25 +144,33 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions.ServiceCollectionExtensions.AddDatabase<TContext>(Microsoft.Extensions.DependencyInjection.IServiceCollection, string?, System.Action<Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure.NpgsqlDbContextOptionsBuilder>?, Microsoft.Extensions.DependencyInjection.ServiceLifetime)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ServiceCollectionExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ServiceCollectionExtensions.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore.PostgreSQL
   namespace: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions
+  summary: Registers a PostgreSQL DbContext in the service collection using a connection string.
+  example: []
   syntax:
     content: 'public static IServiceCollection AddDatabase<TContext>(this IServiceCollection services, string? connectionString, Action<NpgsqlDbContextOptionsBuilder>? npgsqlOptionsAction = null, ServiceLifetime contextLifetime = ServiceLifetime.Scoped) where TContext : DbContext'
     parameters:
     - id: services
       type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: The service collection.
     - id: connectionString
       type: System.String
+      description: The PostgreSQL connection string.
     - id: npgsqlOptionsAction
       type: System.Action{Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure.NpgsqlDbContextOptionsBuilder}
+      description: Optional action to configure PostgreSQL-specific options via Npgsql.
     - id: contextLifetime
       type: Microsoft.Extensions.DependencyInjection.ServiceLifetime
+      description: The lifetime of the DbContext in the DI container. Defaults to Scoped.
     typeParameters:
     - id: TContext
+      description: The type of DbContext to register.
     return:
       type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: The service collection for chaining.
     content.vb: Public Shared Function AddDatabase(Of TContext As DbContext)(services As IServiceCollection, connectionString As String, npgsqlOptionsAction As Action(Of NpgsqlDbContextOptionsBuilder) = Nothing, contextLifetime As ServiceLifetime = ServiceLifetime.Scoped) As IServiceCollection
   overload: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions.ServiceCollectionExtensions.AddDatabase*
   nameWithType.vb: ServiceCollectionExtensions.AddDatabase(Of TContext)(IServiceCollection, String, Action(Of NpgsqlDbContextOptionsBuilder), ServiceLifetime)

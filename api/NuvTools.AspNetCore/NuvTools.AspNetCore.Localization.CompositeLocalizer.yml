@@ -17,10 +17,21 @@ items:
   fullName: NuvTools.AspNetCore.Localization.CompositeLocalizer
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Localization/CompositeLocalizer.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Localization/CompositeLocalizer.cs
   assemblies:
   - NuvTools.AspNetCore
   namespace: NuvTools.AspNetCore.Localization
+  summary: >-
+    Provides a composite localization system that combines multiple <xref href="Microsoft.Extensions.Localization.IStringLocalizer" data-throw-if-not-resolved="false"></xref> instances
+
+    with support for prefix-based routing and fallback resolution.
+  remarks: >-
+    Keys can be prefixed with a localizer name followed by a colon (e.g., "Errors:ValidationFailed")
+
+    to target a specific localizer. If the prefix is not found or the key is not found in the specified
+
+    localizer, the system falls back to searching all registered localizers.
+  example: []
   syntax:
     content: public class CompositeLocalizer
     content.vb: Public Class CompositeLocalizer
@@ -46,10 +57,21 @@ items:
   fullName: NuvTools.AspNetCore.Localization.CompositeLocalizer.CompositeLocalizer(System.Collections.Generic.Dictionary<string, Microsoft.Extensions.Localization.IStringLocalizer>, Microsoft.Extensions.Logging.ILogger<NuvTools.AspNetCore.Localization.CompositeLocalizer>?)
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Localization/CompositeLocalizer.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Localization/CompositeLocalizer.cs
   assemblies:
   - NuvTools.AspNetCore
   namespace: NuvTools.AspNetCore.Localization
+  summary: >-
+    Provides a composite localization system that combines multiple <xref href="Microsoft.Extensions.Localization.IStringLocalizer" data-throw-if-not-resolved="false"></xref> instances
+
+    with support for prefix-based routing and fallback resolution.
+  remarks: >-
+    Keys can be prefixed with a localizer name followed by a colon (e.g., "Errors:ValidationFailed")
+
+    to target a specific localizer. If the prefix is not found or the key is not found in the specified
+
+    localizer, the system falls back to searching all registered localizers.
+  example: []
   syntax:
     content: public CompositeLocalizer(Dictionary<string, IStringLocalizer> namedLocalizers, ILogger<CompositeLocalizer>? logger = null)
     parameters:
@@ -74,21 +96,27 @@ items:
   fullName: NuvTools.AspNetCore.Localization.CompositeLocalizer.TryGetValue(string, out string, params object[])
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Localization/CompositeLocalizer.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Localization/CompositeLocalizer.cs
   assemblies:
   - NuvTools.AspNetCore
   namespace: NuvTools.AspNetCore.Localization
+  summary: Attempts to retrieve the localized value for the specified key.
+  example: []
   syntax:
     content: public bool TryGetValue(string key, out string value, params object[] arguments)
     parameters:
     - id: key
       type: System.String
+      description: The localization key. Can be prefixed with a localizer name (e.g., "Errors:KeyName").
     - id: value
       type: System.String
+      description: When this method returns, contains the localized value if found; otherwise, the key itself.
     - id: arguments
       type: System.Object[]
+      description: The formatting arguments to apply to the localized string.
     return:
       type: System.Boolean
+      description: <code>true</code> if the key was found and localized; otherwise, <code>false</code>.
     content.vb: Public Function TryGetValue(key As String, value As String, ParamArray arguments As Object()) As Boolean
   overload: NuvTools.AspNetCore.Localization.CompositeLocalizer.TryGetValue*
   nameWithType.vb: CompositeLocalizer.TryGetValue(String, String, ParamArray Object())
@@ -106,17 +134,21 @@ items:
   fullName: NuvTools.AspNetCore.Localization.CompositeLocalizer.this[string]
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Localization/CompositeLocalizer.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Localization/CompositeLocalizer.cs
   assemblies:
   - NuvTools.AspNetCore
   namespace: NuvTools.AspNetCore.Localization
+  summary: Gets the localized string for the specified key.
+  example: []
   syntax:
     content: public LocalizedString this[string key] { get; }
     parameters:
     - id: key
       type: System.String
+      description: The localization key. Can be prefixed with a localizer name (e.g., "Errors:KeyName").
     return:
       type: Microsoft.Extensions.Localization.LocalizedString
+      description: The localized string, or the key itself if not found.
     content.vb: Public ReadOnly Default Property this[](key As String) As LocalizedString
   overload: NuvTools.AspNetCore.Localization.CompositeLocalizer.Item*
   nameWithType.vb: CompositeLocalizer.this[](String)
@@ -134,25 +166,37 @@ items:
   fullName: NuvTools.AspNetCore.Localization.CompositeLocalizer.this[string, object[]]
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Localization/CompositeLocalizer.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Localization/CompositeLocalizer.cs
   assemblies:
   - NuvTools.AspNetCore
   namespace: NuvTools.AspNetCore.Localization
+  summary: Gets the localized string for the specified key with formatting arguments.
+  example: []
   syntax:
     content: public LocalizedString this[string key, params object[] arguments] { get; }
     parameters:
     - id: key
       type: System.String
+      description: The localization key. Can be prefixed with a localizer name (e.g., "Errors:KeyName").
     - id: arguments
       type: System.Object[]
+      description: The formatting arguments to apply to the localized string.
     return:
       type: Microsoft.Extensions.Localization.LocalizedString
+      description: The formatted localized string, or the key itself if not found.
     content.vb: Public ReadOnly Default Property this[](key As String, ParamArray arguments As Object()) As LocalizedString
   overload: NuvTools.AspNetCore.Localization.CompositeLocalizer.Item*
   nameWithType.vb: CompositeLocalizer.this[](String, Object())
   fullName.vb: NuvTools.AspNetCore.Localization.CompositeLocalizer.this[](String, Object())
   name.vb: this[](String, Object())
 references:
+- uid: Microsoft.Extensions.Localization.IStringLocalizer
+  commentId: T:Microsoft.Extensions.Localization.IStringLocalizer
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.localization.istringlocalizer
+  name: IStringLocalizer
+  nameWithType: IStringLocalizer
+  fullName: Microsoft.Extensions.Localization.IStringLocalizer
 - uid: NuvTools.AspNetCore.Localization
   commentId: N:NuvTools.AspNetCore.Localization
   isExternal: true

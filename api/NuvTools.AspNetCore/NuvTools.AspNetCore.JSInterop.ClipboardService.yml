@@ -16,10 +16,12 @@ items:
   fullName: NuvTools.AspNetCore.JSInterop.ClipboardService
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/JSInterop/ClipboardService.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/JSInterop/ClipboardService.cs
   assemblies:
   - NuvTools.AspNetCore
   namespace: NuvTools.AspNetCore.JSInterop
+  summary: Provides JavaScript interop functionality for clipboard operations.
+  example: []
   syntax:
     content: public sealed class ClipboardService
     content.vb: Public NotInheritable Class ClipboardService
@@ -44,15 +46,18 @@ items:
   fullName: NuvTools.AspNetCore.JSInterop.ClipboardService.ClipboardService(Microsoft.JSInterop.IJSRuntime)
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/JSInterop/ClipboardService.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/JSInterop/ClipboardService.cs
   assemblies:
   - NuvTools.AspNetCore
   namespace: NuvTools.AspNetCore.JSInterop
+  summary: Initializes a new instance of the <xref href="NuvTools.AspNetCore.JSInterop.ClipboardService" data-throw-if-not-resolved="false"></xref> class.
+  example: []
   syntax:
     content: public ClipboardService(IJSRuntime jsRuntime)
     parameters:
     - id: jsRuntime
       type: Microsoft.JSInterop.IJSRuntime
+      description: The JavaScript runtime for interop operations.
     content.vb: Public Sub New(jsRuntime As IJSRuntime)
   overload: NuvTools.AspNetCore.JSInterop.ClipboardService.#ctor*
   nameWithType.vb: ClipboardService.New(IJSRuntime)
@@ -70,14 +75,17 @@ items:
   fullName: NuvTools.AspNetCore.JSInterop.ClipboardService.ReadTextAsync()
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/JSInterop/ClipboardService.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/JSInterop/ClipboardService.cs
   assemblies:
   - NuvTools.AspNetCore
   namespace: NuvTools.AspNetCore.JSInterop
+  summary: Reads text from the system clipboard asynchronously.
+  example: []
   syntax:
     content: public ValueTask<string> ReadTextAsync()
     return:
       type: System.Threading.Tasks.ValueTask{System.String}
+      description: A <xref href="System.Threading.Tasks.ValueTask%601" data-throw-if-not-resolved="false"></xref> representing the asynchronous operation, containing the clipboard text.
     content.vb: Public Function ReadTextAsync() As ValueTask(Of String)
   overload: NuvTools.AspNetCore.JSInterop.ClipboardService.ReadTextAsync*
 - uid: NuvTools.AspNetCore.JSInterop.ClipboardService.WriteTextAsync(System.String)
@@ -92,19 +100,27 @@ items:
   fullName: NuvTools.AspNetCore.JSInterop.ClipboardService.WriteTextAsync(string)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/JSInterop/ClipboardService.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/JSInterop/ClipboardService.cs
   assemblies:
   - NuvTools.AspNetCore
   namespace: NuvTools.AspNetCore.JSInterop
+  summary: Writes text to the system clipboard asynchronously.
+  example: []
   syntax:
     content: public ValueTask WriteTextAsync(string text)
     parameters:
     - id: text
       type: System.String
+      description: The text to write to the clipboard.
     return:
       type: System.Threading.Tasks.ValueTask
+      description: A <xref href="System.Threading.Tasks.ValueTask" data-throw-if-not-resolved="false"></xref> representing the asynchronous operation.
     content.vb: Public Function WriteTextAsync(text As String) As ValueTask
   overload: NuvTools.AspNetCore.JSInterop.ClipboardService.WriteTextAsync*
+  exceptions:
+  - type: System.Exception
+    commentId: T:System.Exception
+    description: Thrown when the clipboard write operation fails.
   nameWithType.vb: ClipboardService.WriteTextAsync(String)
   fullName.vb: NuvTools.AspNetCore.JSInterop.ClipboardService.WriteTextAsync(String)
   name.vb: WriteTextAsync(String)
@@ -359,6 +375,13 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: NuvTools.AspNetCore.JSInterop.ClipboardService
+  commentId: T:NuvTools.AspNetCore.JSInterop.ClipboardService
+  isExternal: true
+  href: NuvTools.AspNetCore.JSInterop.ClipboardService.html
+  name: ClipboardService
+  nameWithType: ClipboardService
+  fullName: NuvTools.AspNetCore.JSInterop.ClipboardService
 - uid: NuvTools.AspNetCore.JSInterop.ClipboardService.#ctor*
   commentId: Overload:NuvTools.AspNetCore.JSInterop.ClipboardService.#ctor
   isExternal: true
@@ -404,6 +427,34 @@ references:
     name: JSInterop
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.jsinterop
+- uid: System.Threading.Tasks.ValueTask`1
+  commentId: T:System.Threading.Tasks.ValueTask`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  name: ValueTask<TResult>
+  nameWithType: ValueTask<TResult>
+  fullName: System.Threading.Tasks.ValueTask<TResult>
+  nameWithType.vb: ValueTask(Of TResult)
+  fullName.vb: System.Threading.Tasks.ValueTask(Of TResult)
+  name.vb: ValueTask(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.ValueTask`1
+    name: ValueTask
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.ValueTask`1
+    name: ValueTask
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
 - uid: NuvTools.AspNetCore.JSInterop.ClipboardService.ReadTextAsync*
   commentId: Overload:NuvTools.AspNetCore.JSInterop.ClipboardService.ReadTextAsync
   isExternal: true
@@ -446,34 +497,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
-- uid: System.Threading.Tasks.ValueTask`1
-  commentId: T:System.Threading.Tasks.ValueTask`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
-  name: ValueTask<TResult>
-  nameWithType: ValueTask<TResult>
-  fullName: System.Threading.Tasks.ValueTask<TResult>
-  nameWithType.vb: ValueTask(Of TResult)
-  fullName.vb: System.Threading.Tasks.ValueTask(Of TResult)
-  name.vb: ValueTask(Of TResult)
-  spec.csharp:
-  - uid: System.Threading.Tasks.ValueTask`1
-    name: ValueTask
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
-  - name: <
-  - name: TResult
-  - name: '>'
-  spec.vb:
-  - uid: System.Threading.Tasks.ValueTask`1
-    name: ValueTask
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
-  - name: (
-  - name: Of
-  - name: " "
-  - name: TResult
-  - name: )
 - uid: System.Threading.Tasks
   commentId: N:System.Threading.Tasks
   isExternal: true
@@ -511,6 +534,21 @@ references:
     name: Tasks
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: System.Threading.Tasks.ValueTask
+  commentId: T:System.Threading.Tasks.ValueTask
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask
+  name: ValueTask
+  nameWithType: ValueTask
+  fullName: System.Threading.Tasks.ValueTask
+- uid: System.Exception
+  commentId: T:System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
 - uid: NuvTools.AspNetCore.JSInterop.ClipboardService.WriteTextAsync*
   commentId: Overload:NuvTools.AspNetCore.JSInterop.ClipboardService.WriteTextAsync
   isExternal: true
@@ -529,11 +567,3 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: System.Threading.Tasks.ValueTask
-  commentId: T:System.Threading.Tasks.ValueTask
-  parent: System.Threading.Tasks
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask
-  name: ValueTask
-  nameWithType: ValueTask
-  fullName: System.Threading.Tasks.ValueTask

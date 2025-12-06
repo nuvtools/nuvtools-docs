@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class ModelBuilderExtensions | Nuv Tools Framework Docs ">
       
-      
+      <meta name="description" content="Extension methods for configuring Entity Framework Core models for PostgreSQL databases.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Data_EntityFrameworkCore_PostgreSQL_Extensions_ModelBuilderExtensions" data-uid="NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions.ModelBuilderExtensions" class="text-break">
-Class ModelBuilderExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ModelBuilderExtensions.cs"><i class="bi bi-code-slash"></i></a>
+Class ModelBuilderExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ModelBuilderExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class ModelBuilderExtensions  <a class="header-action link-secondary" title="Vie
   <dl><dt>Assembly</dt><dd>NuvTools.Data.EntityFrameworkCore.PostgreSQL.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Extension methods for configuring Entity Framework Core models for PostgreSQL databases.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -156,10 +157,12 @@ Class ModelBuilderExtensions  <a class="header-action link-secondary" title="Vie
 
   <h3 id="NuvTools_Data_EntityFrameworkCore_PostgreSQL_Extensions_ModelBuilderExtensions_UseSnakeCaseNamingConvention_Microsoft_EntityFrameworkCore_ModelBuilder_" data-uid="NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions.ModelBuilderExtensions.UseSnakeCaseNamingConvention(Microsoft.EntityFrameworkCore.ModelBuilder)">
   UseSnakeCaseNamingConvention(ModelBuilder)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ModelBuilderExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ModelBuilderExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Applies snake_case naming convention to all database objects (tables, columns, keys, foreign keys, and indexes).
+This is a common convention in PostgreSQL databases where names are lowercase with underscores.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -169,7 +172,8 @@ Class ModelBuilderExtensions  <a class="header-action link-secondary" title="Vie
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>builder</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.modelbuilder">ModelBuilder</a></dt>
-    <dd></dd>
+    <dd><p>The model builder to configure.</p>
+</dd>
   </dl>
 
 
@@ -178,7 +182,18 @@ Class ModelBuilderExtensions  <a class="header-action link-secondary" title="Vie
 
 
 
+  <h4 class="section" id="NuvTools_Data_EntityFrameworkCore_PostgreSQL_Extensions_ModelBuilderExtensions_UseSnakeCaseNamingConvention_Microsoft_EntityFrameworkCore_ModelBuilder__examples">Examples</h4>
+  <p>protected override void OnModelCreating(ModelBuilder modelBuilder)
+{
+modelBuilder.UseSnakeCaseNamingConvention();
+base.OnModelCreating(modelBuilder);
+}</p>
 
+
+  <h4 class="section" id="NuvTools_Data_EntityFrameworkCore_PostgreSQL_Extensions_ModelBuilderExtensions_UseSnakeCaseNamingConvention_Microsoft_EntityFrameworkCore_ModelBuilder__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Converts PascalCase names like &quot;OrderDetails&quot; to snake_case like &quot;order_details&quot;.
+This affects table names, column names, schema names, key names, foreign key constraints, and index names.</p>
+</div>
 
 
 
@@ -187,7 +202,7 @@ Class ModelBuilderExtensions  <a class="header-action link-secondary" title="Vie
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ModelBuilderExtensions.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore.PostgreSQL/Extensions/ModelBuilderExtensions.cs" class="edit-link">Edit this page</a>
         </div>
 
 

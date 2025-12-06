@@ -17,10 +17,24 @@ items:
   fullName: NuvTools.Notification.Mail.MailPart
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail/MailPart.cs
+    href: https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail/MailPart.cs
   assemblies:
   - NuvTools.Notification.Mail
   namespace: NuvTools.Notification.Mail
+  summary: Represents an email attachment with media type, extension, and content stream.
+  remarks: >-
+    This class is used to attach files to email messages. The content is provided as a stream,
+
+    and both the media type and extension are required to properly identify the attachment format.
+  example:
+  - >-
+    <pre><code class="lang-c#">var attachment = new MailPart
+
+    {
+        MediaType = "application",
+        MediaExtension = "pdf",
+        Content = fileStream
+    };</code></pre>
   syntax:
     content: public class MailPart
     content.vb: Public Class MailPart
@@ -46,7 +60,7 @@ items:
   fullName: NuvTools.Notification.Mail.MailPart.MailPart()
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail/MailPart.cs
+    href: https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail/MailPart.cs
   assemblies:
   - NuvTools.Notification.Mail
   namespace: NuvTools.Notification.Mail
@@ -69,10 +83,12 @@ items:
   fullName: NuvTools.Notification.Mail.MailPart.MediaType
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail/MailPart.cs
+    href: https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail/MailPart.cs
   assemblies:
   - NuvTools.Notification.Mail
   namespace: NuvTools.Notification.Mail
+  summary: Gets or sets the MIME media type of the attachment (e.g., "application", "image", "text").
+  example: []
   syntax:
     content: public required string MediaType { get; set; }
     parameters: []
@@ -92,10 +108,12 @@ items:
   fullName: NuvTools.Notification.Mail.MailPart.MediaExtension
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail/MailPart.cs
+    href: https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail/MailPart.cs
   assemblies:
   - NuvTools.Notification.Mail
   namespace: NuvTools.Notification.Mail
+  summary: Gets or sets the file extension or media subtype of the attachment (e.g., "pdf", "png", "plain").
+  example: []
   syntax:
     content: public required string MediaExtension { get; set; }
     parameters: []
@@ -115,10 +133,12 @@ items:
   fullName: NuvTools.Notification.Mail.MailPart.Content
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-notification/blob/75e1abbebd1f66bcef210e63d1da7a6d71f8c3ff/src/NuvTools.Notification.Mail/MailPart.cs
+    href: https://github.com/nuvtools/nuvtools-notification/blob/424a271d55a917d4bc4e27dc9b207c9e47161171/src/NuvTools.Notification.Mail/MailPart.cs
   assemblies:
   - NuvTools.Notification.Mail
   namespace: NuvTools.Notification.Mail
+  summary: Gets or sets the content stream of the attachment.
+  example: []
   syntax:
     content: public required Stream Content { get; set; }
     parameters: []

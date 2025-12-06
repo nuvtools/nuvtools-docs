@@ -2,11 +2,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Class DynamicFields | Nuv Tools Framework Docs </title>
+      <title>Class PdfUtil | Nuv Tools Framework Docs </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Class DynamicFields | Nuv Tools Framework Docs ">
+      <meta name="title" content="Class PdfUtil | Nuv Tools Framework Docs ">
       
-      <meta name="description" content="A strongly-typed resource class, for looking up localized strings, etc.">
+      <meta name="description" content="Provides utility methods for working with PDF documents.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -84,25 +84,25 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="NuvTools.Resources.DynamicFields">
+        <article data-uid="NuvTools.Report.Pdf.Util.PdfUtil">
 
 
 
-  <h1 id="NuvTools_Resources_DynamicFields" data-uid="NuvTools.Resources.DynamicFields" class="text-break">
-Class DynamicFields  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-resources/blob/879b1f7f779a2744d566a9d6b2d5110e4a2f8144/src/NuvTools.Resources/DynamicFields.Designer.cs"><i class="bi bi-code-slash"></i></a>
+  <h1 id="NuvTools_Report_Pdf_Util_PdfUtil" data-uid="NuvTools.Report.Pdf.Util.PdfUtil" class="text-break">
+Class PdfUtil  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-report/blob/6b7c4cdb59b469a26019e0945adf84064ece8bb9/src/NuvTools.Report.Pdf/Util/Pdf.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
-    <dl><dt>Namespace</dt><dd><a class="xref" href="NuvTools.html">NuvTools</a>.<a class="xref" href="NuvTools.Resources.html">Resources</a></dd></dl>
-  <dl><dt>Assembly</dt><dd>NuvTools.Resources.dll</dd></dl>
+    <dl><dt>Namespace</dt><dd><a class="xref" href="NuvTools.html">NuvTools</a>.<a class="xref" href="NuvTools.Report.html">Report</a>.<a class="xref" href="NuvTools.Report.Pdf.html">Pdf</a>.<a class="xref" href="NuvTools.Report.Pdf.Util.html">Util</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NuvTools.Report.Pdf.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>A strongly-typed resource class, for looking up localized strings, etc.</p>
+  <div class="markdown summary"><p>Provides utility methods for working with PDF documents.</p>
 </div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class DynamicFields</code></pre>
+    <pre><code class="lang-csharp hljs">public static class PdfUtil</code></pre>
   </div>
 
 
@@ -112,7 +112,7 @@ Class DynamicFields  <a class="header-action link-secondary" title="View source"
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><span class="xref">DynamicFields</span></div>
+      <div><span class="xref">PdfUtil</span></div>
     </dd>
   </dl>
 
@@ -149,34 +149,37 @@ Class DynamicFields  <a class="header-action link-secondary" title="View source"
 
 
 
-  <h2 class="section" id="properties">Properties
+  <h2 class="section" id="methods">Methods
 </h2>
 
 
-  <a id="NuvTools_Resources_DynamicFields_Culture_" data-uid="NuvTools.Resources.DynamicFields.Culture*"></a>
+  <a id="NuvTools_Report_Pdf_Util_PdfUtil_Merge_" data-uid="NuvTools.Report.Pdf.Util.PdfUtil.Merge*"></a>
 
-  <h3 id="NuvTools_Resources_DynamicFields_Culture" data-uid="NuvTools.Resources.DynamicFields.Culture">
-  Culture
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-resources/blob/879b1f7f779a2744d566a9d6b2d5110e4a2f8144/src/NuvTools.Resources/DynamicFields.Designer.cs"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NuvTools_Report_Pdf_Util_PdfUtil_Merge_System_Collections_Generic_IEnumerable_System_Byte____" data-uid="NuvTools.Report.Pdf.Util.PdfUtil.Merge(System.Collections.Generic.IEnumerable{System.Byte[]})">
+  Merge(IEnumerable&lt;byte[]&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-report/blob/6b7c4cdb59b469a26019e0945adf84064ece8bb9/src/NuvTools.Report.Pdf/Util/Pdf.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Overrides the current thread's CurrentUICulture property for all
-resource lookups using this strongly typed resource class.</p>
+  <div class="markdown level1 summary"><p>Merges multiple PDF documents into a single PDF document.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static CultureInfo Culture { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public static byte[] Merge(IEnumerable&lt;byte[]&gt; pdfs)</code></pre>
   </div>
 
-
-
-
-
-  <h4 class="section">Property Value</h4>
+  <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.globalization.cultureinfo">CultureInfo</a></dt>
-    <dd></dd>
+    <dt><code>pdfs</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]&gt;</dt>
+    <dd><p>An enumerable collection of PDF documents represented as byte arrays.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>A byte array representing the merged PDF document.</p>
+</dd>
   </dl>
 
 
@@ -185,67 +188,10 @@ resource lookups using this strongly typed resource class.</p>
 
 
 
-
-  <a id="NuvTools_Resources_DynamicFields_ResourceManager_" data-uid="NuvTools.Resources.DynamicFields.ResourceManager*"></a>
-
-  <h3 id="NuvTools_Resources_DynamicFields_ResourceManager" data-uid="NuvTools.Resources.DynamicFields.ResourceManager">
-  ResourceManager
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-resources/blob/879b1f7f779a2744d566a9d6b2d5110e4a2f8144/src/NuvTools.Resources/DynamicFields.Designer.cs"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Returns the cached ResourceManager instance used by this class.</p>
+  <h4 class="section" id="NuvTools_Report_Pdf_Util_PdfUtil_Merge_System_Collections_Generic_IEnumerable_System_Byte_____remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>All pages from each input PDF are combined sequentially into the output document.
+The order of pages in the output matches the order of PDFs in the input collection.</p>
 </div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static ResourceManager ResourceManager { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.resources.resourcemanager">ResourceManager</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-  <a id="NuvTools_Resources_DynamicFields_RowsPerPageInfoFormat_" data-uid="NuvTools.Resources.DynamicFields.RowsPerPageInfoFormat*"></a>
-
-  <h3 id="NuvTools_Resources_DynamicFields_RowsPerPageInfoFormat" data-uid="NuvTools.Resources.DynamicFields.RowsPerPageInfoFormat">
-  RowsPerPageInfoFormat
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-resources/blob/879b1f7f779a2744d566a9d6b2d5110e4a2f8144/src/NuvTools.Resources/DynamicFields.Designer.cs"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Looks up a localized string similar to {first_item}-{last_item} of {all_items}.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RowsPerPageInfoFormat { get; }</code></pre>
-  </div>
-
-
-
-
-
-  <h4 class="section">Property Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
 
 
 
@@ -254,7 +200,7 @@ resource lookups using this strongly typed resource class.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-resources/blob/879b1f7f779a2744d566a9d6b2d5110e4a2f8144/src/NuvTools.Resources/DynamicFields.Designer.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-report/blob/6b7c4cdb59b469a26019e0945adf84064ece8bb9/src/NuvTools.Report.Pdf/Util/Pdf.cs" class="edit-link">Edit this page</a>
         </div>
 
 

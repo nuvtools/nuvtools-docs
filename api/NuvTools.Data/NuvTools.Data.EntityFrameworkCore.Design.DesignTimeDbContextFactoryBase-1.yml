@@ -18,14 +18,20 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase<TContext>
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Design/DesignTimeDbContextFactoryBase.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Design/DesignTimeDbContextFactoryBase.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Design
+  summary: >-
+    Base class for implementing design-time DbContext factories.
+
+    Used by Entity Framework Core tools (like migrations) to create DbContext instances at design time.
+  example: []
   syntax:
     content: 'public abstract class DesignTimeDbContextFactoryBase<TContext> : IDesignTimeDbContextFactory<TContext> where TContext : DbContext'
     typeParameters:
     - id: TContext
+      description: The type of DbContext to create.
     content.vb: Public MustInherit Class DesignTimeDbContextFactoryBase(Of TContext As DbContext) Implements IDesignTimeDbContextFactory(Of TContext)
   inheritance:
   - System.Object
@@ -54,18 +60,21 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase<TContext>.InitializeConfiguration(params Microsoft.Extensions.Configuration.Json.JsonConfigurationSource[])
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Design/DesignTimeDbContextFactoryBase.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Design/DesignTimeDbContextFactoryBase.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Design
-  summary: Allows initialize the Configuration settings for later use.
+  summary: >-
+    Initializes the configuration settings from one or more JSON files.
+
+    The base path is set to the current directory.
   example: []
   syntax:
     content: protected void InitializeConfiguration(params JsonConfigurationSource[] files)
     parameters:
     - id: files
       type: Microsoft.Extensions.Configuration.Json.JsonConfigurationSource[]
-      description: 'Json file to be added into Configuration settings. Note: The base path is set to the current directory application.'
+      description: One or more JSON configuration sources to load settings from.
     content.vb: Protected Sub InitializeConfiguration(ParamArray files As JsonConfigurationSource())
   overload: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.InitializeConfiguration*
   nameWithType.vb: DesignTimeDbContextFactoryBase(Of TContext).InitializeConfiguration(ParamArray JsonConfigurationSource())
@@ -83,21 +92,21 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase<TContext>.CreateDbContext(string[])
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Design/DesignTimeDbContextFactoryBase.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Design/DesignTimeDbContextFactoryBase.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Design
-  summary: Creates a new instance of a derived context.
+  summary: Creates a new instance of the DbContext. Called by Entity Framework Core tools.
   example: []
   syntax:
     content: public TContext CreateDbContext(string[] args)
     parameters:
     - id: args
       type: System.String[]
-      description: Arguments provided by the design-time service.
+      description: Command-line arguments passed by the tooling.
     return:
       type: '{TContext}'
-      description: An instance of <code class="typeparamref">TContext</code>.
+      description: A new instance of the DbContext.
     content.vb: Public Function CreateDbContext(args As String()) As TContext
   overload: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.CreateDbContext*
   implements:
@@ -117,17 +126,24 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase<TContext>.CreateNewInstance(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder<TContext>)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Design/DesignTimeDbContextFactoryBase.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Design/DesignTimeDbContextFactoryBase.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Design
+  summary: >-
+    Creates a new instance of the DbContext with the specified options builder.
+
+    Override this method to configure the DbContext options (e.g., connection string, database provider).
+  example: []
   syntax:
     content: protected abstract TContext CreateNewInstance(DbContextOptionsBuilder<TContext> optionsBuilder)
     parameters:
     - id: optionsBuilder
       type: Microsoft.EntityFrameworkCore.DbContextOptionsBuilder{{TContext}}
+      description: The options builder to configure.
     return:
       type: '{TContext}'
+      description: A new instance of the DbContext.
     content.vb: Protected MustOverride Function CreateNewInstance(optionsBuilder As DbContextOptionsBuilder(Of TContext)) As TContext
   overload: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.CreateNewInstance*
   nameWithType.vb: DesignTimeDbContextFactoryBase(Of TContext).CreateNewInstance(DbContextOptionsBuilder(Of TContext))
@@ -145,7 +161,7 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase<TContext>.DesignTimeDbContextFactoryBase()
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Design/DesignTimeDbContextFactoryBase.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Design/DesignTimeDbContextFactoryBase.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Design
@@ -168,14 +184,11 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase<TContext>.Configuration
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Design/DesignTimeDbContextFactoryBase.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Design/DesignTimeDbContextFactoryBase.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Design
-  summary: >-
-    Contains the configuration settings loaded from files.
-
-    <p><xref href="NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase%601.InitializeConfiguration(Microsoft.Extensions.Configuration.Json.JsonConfigurationSource%5b%5d)" data-throw-if-not-resolved="false"></xref></p>
+  summary: Contains the configuration settings loaded from JSON files.
   example: []
   syntax:
     content: protected IConfiguration? Configuration { get; }
@@ -184,6 +197,9 @@ items:
       type: Microsoft.Extensions.Configuration.IConfiguration
     content.vb: Protected ReadOnly Property Configuration As IConfiguration
   overload: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.Configuration*
+  seealso:
+  - linkId: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.InitializeConfiguration(Microsoft.Extensions.Configuration.Json.JsonConfigurationSource[])
+    commentId: M:NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase`1.InitializeConfiguration(Microsoft.Extensions.Configuration.Json.JsonConfigurationSource[])
   nameWithType.vb: DesignTimeDbContextFactoryBase(Of TContext).Configuration
   fullName.vb: NuvTools.Data.EntityFrameworkCore.Design.DesignTimeDbContextFactoryBase(Of TContext).Configuration
 references:

@@ -19,10 +19,12 @@ items:
   fullName: NuvTools.Common.Reflection.AssemblyExtensions
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Reflection/AssemblyExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/Reflection/AssemblyExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Reflection
+  summary: Provides extension methods for <xref href="System.Reflection.Assembly" data-throw-if-not-resolved="false"></xref> objects.
+  example: []
   syntax:
     content: public static class AssemblyExtensions
     content.vb: Public Module AssemblyExtensions
@@ -49,21 +51,30 @@ items:
   fullName: NuvTools.Common.Reflection.AssemblyExtensions.ListComponent(System.Reflection.Assembly, bool)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Reflection/AssemblyExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/Reflection/AssemblyExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Reflection
+  summary: Lists all referenced assemblies (components) from the specified assembly.
+  example: []
   syntax:
     content: public static List<string>? ListComponent(this Assembly assembly, bool fullName = false)
     parameters:
     - id: assembly
       type: System.Reflection.Assembly
+      description: The assembly to inspect.
     - id: fullName
       type: System.Boolean
+      description: If true, returns full assembly names; otherwise returns name and version.
     return:
       type: System.Collections.Generic.List{System.String}
+      description: A list of component names, or null if the assembly is null.
     content.vb: Public Shared Function ListComponent(assembly As Assembly, fullName As Boolean = False) As List(Of String)
   overload: NuvTools.Common.Reflection.AssemblyExtensions.ListComponent*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown when <code class="paramref">assembly</code> is null.
   nameWithType.vb: AssemblyExtensions.ListComponent(Assembly, Boolean)
   fullName.vb: NuvTools.Common.Reflection.AssemblyExtensions.ListComponent(System.Reflection.Assembly, Boolean)
   name.vb: ListComponent(Assembly, Boolean)
@@ -80,19 +91,27 @@ items:
   fullName: NuvTools.Common.Reflection.AssemblyExtensions.Name(System.Reflection.Assembly)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Reflection/AssemblyExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/Reflection/AssemblyExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Reflection
+  summary: Gets the name of the assembly.
+  example: []
   syntax:
     content: public static string? Name(this Assembly assembly)
     parameters:
     - id: assembly
       type: System.Reflection.Assembly
+      description: The assembly to get the name from.
     return:
       type: System.String
+      description: The name of the assembly, or null if not available.
     content.vb: Public Shared Function Name(assembly As Assembly) As String
   overload: NuvTools.Common.Reflection.AssemblyExtensions.Name*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown when <code class="paramref">assembly</code> is null.
 - uid: NuvTools.Common.Reflection.AssemblyExtensions.Description(System.Reflection.Assembly)
   commentId: M:NuvTools.Common.Reflection.AssemblyExtensions.Description(System.Reflection.Assembly)
   id: Description(System.Reflection.Assembly)
@@ -106,17 +125,21 @@ items:
   fullName: NuvTools.Common.Reflection.AssemblyExtensions.Description(System.Reflection.Assembly)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Reflection/AssemblyExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/Reflection/AssemblyExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Reflection
+  summary: Gets the description of the assembly from its <xref href="System.Reflection.AssemblyDescriptionAttribute" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public static string? Description(this Assembly assembly)
     parameters:
     - id: assembly
       type: System.Reflection.Assembly
+      description: The assembly to get the description from.
     return:
       type: System.String
+      description: The description of the assembly, or null if not available.
     content.vb: Public Shared Function Description(assembly As Assembly) As String
   overload: NuvTools.Common.Reflection.AssemblyExtensions.Description*
 - uid: NuvTools.Common.Reflection.AssemblyExtensions.Version(System.Reflection.Assembly)
@@ -132,19 +155,30 @@ items:
   fullName: NuvTools.Common.Reflection.AssemblyExtensions.Version(System.Reflection.Assembly)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Reflection/AssemblyExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/Reflection/AssemblyExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Reflection
+  summary: Gets the version of the assembly in the format "major.minor.build.revision".
+  example: []
   syntax:
     content: public static string? Version(this Assembly assembly)
     parameters:
     - id: assembly
       type: System.Reflection.Assembly
+      description: The assembly to get the version from.
     return:
       type: System.String
+      description: The formatted version string, or null if not available.
     content.vb: Public Shared Function Version(assembly As Assembly) As String
   overload: NuvTools.Common.Reflection.AssemblyExtensions.Version*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown when <code class="paramref">assembly</code> is null.
+  - type: NuvTools.Common.Reflection.VersionException
+    commentId: T:NuvTools.Common.Reflection.VersionException
+    description: Thrown when there is an error retrieving the version information.
 - uid: NuvTools.Common.Reflection.AssemblyExtensions.ProgramInfo(System.Reflection.Assembly)
   commentId: M:NuvTools.Common.Reflection.AssemblyExtensions.ProgramInfo(System.Reflection.Assembly)
   id: ProgramInfo(System.Reflection.Assembly)
@@ -158,19 +192,27 @@ items:
   fullName: NuvTools.Common.Reflection.AssemblyExtensions.ProgramInfo(System.Reflection.Assembly)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Reflection/AssemblyExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/Reflection/AssemblyExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Reflection
+  summary: Extracts comprehensive program information from the assembly.
+  example: []
   syntax:
     content: public static IProgramInfo ProgramInfo(this Assembly assembly)
     parameters:
     - id: assembly
       type: System.Reflection.Assembly
+      description: The assembly to extract information from.
     return:
       type: NuvTools.Common.Reflection.IProgramInfo
+      description: An <xref href="NuvTools.Common.Reflection.IProgramInfo" data-throw-if-not-resolved="false"></xref> object containing name, description, version, and component information.
     content.vb: Public Shared Function ProgramInfo(assembly As Assembly) As IProgramInfo
   overload: NuvTools.Common.Reflection.AssemblyExtensions.ProgramInfo*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown when <code class="paramref">assembly</code> is null or assembly name is null.
 - uid: NuvTools.Common.Reflection.AssemblyExtensions.Resource(System.Reflection.Assembly,System.String)
   commentId: M:NuvTools.Common.Reflection.AssemblyExtensions.Resource(System.Reflection.Assembly,System.String)
   id: Resource(System.Reflection.Assembly,System.String)
@@ -184,7 +226,7 @@ items:
   fullName: NuvTools.Common.Reflection.AssemblyExtensions.Resource(System.Reflection.Assembly, string)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/Reflection/AssemblyExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/Reflection/AssemblyExtensions.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.Reflection
@@ -208,6 +250,14 @@ items:
   fullName.vb: NuvTools.Common.Reflection.AssemblyExtensions.Resource(System.Reflection.Assembly, String)
   name.vb: Resource(Assembly, String)
 references:
+- uid: System.Reflection.Assembly
+  commentId: T:System.Reflection.Assembly
+  parent: System.Reflection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.reflection.assembly
+  name: Assembly
+  nameWithType: Assembly
+  fullName: System.Reflection.Assembly
 - uid: NuvTools.Common.Reflection
   commentId: N:NuvTools.Common.Reflection
   isExternal: true
@@ -475,6 +525,33 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
   - name: (
   - name: )
+- uid: System.Reflection
+  commentId: N:System.Reflection
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Reflection
+  nameWithType: System.Reflection
+  fullName: System.Reflection
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Reflection
+    name: Reflection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Reflection
+    name: Reflection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.reflection
 - uid: System
   commentId: N:System
   isExternal: true
@@ -482,6 +559,13 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
 - uid: NuvTools.Common.Reflection.AssemblyExtensions.ListComponent*
   commentId: Overload:NuvTools.Common.Reflection.AssemblyExtensions.ListComponent
   isExternal: true
@@ -489,14 +573,6 @@ references:
   name: ListComponent
   nameWithType: AssemblyExtensions.ListComponent
   fullName: NuvTools.Common.Reflection.AssemblyExtensions.ListComponent
-- uid: System.Reflection.Assembly
-  commentId: T:System.Reflection.Assembly
-  parent: System.Reflection
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.reflection.assembly
-  name: Assembly
-  nameWithType: Assembly
-  fullName: System.Reflection.Assembly
 - uid: System.Boolean
   commentId: T:System.Boolean
   parent: System
@@ -543,33 +619,6 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
-- uid: System.Reflection
-  commentId: N:System.Reflection
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system
-  name: System.Reflection
-  nameWithType: System.Reflection
-  fullName: System.Reflection
-  spec.csharp:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Reflection
-    name: Reflection
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.reflection
-  spec.vb:
-  - uid: System
-    name: System
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system
-  - name: .
-  - uid: System.Reflection
-    name: Reflection
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.reflection
 - uid: System.Collections.Generic.List`1
   commentId: T:System.Collections.Generic.List`1
   isExternal: true
@@ -653,6 +702,13 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: System.Reflection.AssemblyDescriptionAttribute
+  commentId: T:System.Reflection.AssemblyDescriptionAttribute
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.reflection.assemblydescriptionattribute
+  name: AssemblyDescriptionAttribute
+  nameWithType: AssemblyDescriptionAttribute
+  fullName: System.Reflection.AssemblyDescriptionAttribute
 - uid: NuvTools.Common.Reflection.AssemblyExtensions.Description*
   commentId: Overload:NuvTools.Common.Reflection.AssemblyExtensions.Description
   isExternal: true
@@ -660,6 +716,13 @@ references:
   name: Description
   nameWithType: AssemblyExtensions.Description
   fullName: NuvTools.Common.Reflection.AssemblyExtensions.Description
+- uid: NuvTools.Common.Reflection.VersionException
+  commentId: T:NuvTools.Common.Reflection.VersionException
+  isExternal: true
+  href: NuvTools.Common.Reflection.VersionException.html
+  name: VersionException
+  nameWithType: VersionException
+  fullName: NuvTools.Common.Reflection.VersionException
 - uid: NuvTools.Common.Reflection.AssemblyExtensions.Version*
   commentId: Overload:NuvTools.Common.Reflection.AssemblyExtensions.Version
   isExternal: true
@@ -667,13 +730,6 @@ references:
   name: Version
   nameWithType: AssemblyExtensions.Version
   fullName: NuvTools.Common.Reflection.AssemblyExtensions.Version
-- uid: NuvTools.Common.Reflection.AssemblyExtensions.ProgramInfo*
-  commentId: Overload:NuvTools.Common.Reflection.AssemblyExtensions.ProgramInfo
-  isExternal: true
-  href: NuvTools.Common.Reflection.AssemblyExtensions.html#NuvTools_Common_Reflection_AssemblyExtensions_ProgramInfo_System_Reflection_Assembly_
-  name: ProgramInfo
-  nameWithType: AssemblyExtensions.ProgramInfo
-  fullName: NuvTools.Common.Reflection.AssemblyExtensions.ProgramInfo
 - uid: NuvTools.Common.Reflection.IProgramInfo
   commentId: T:NuvTools.Common.Reflection.IProgramInfo
   parent: NuvTools.Common.Reflection
@@ -682,6 +738,13 @@ references:
   name: IProgramInfo
   nameWithType: IProgramInfo
   fullName: NuvTools.Common.Reflection.IProgramInfo
+- uid: NuvTools.Common.Reflection.AssemblyExtensions.ProgramInfo*
+  commentId: Overload:NuvTools.Common.Reflection.AssemblyExtensions.ProgramInfo
+  isExternal: true
+  href: NuvTools.Common.Reflection.AssemblyExtensions.html#NuvTools_Common_Reflection_AssemblyExtensions_ProgramInfo_System_Reflection_Assembly_
+  name: ProgramInfo
+  nameWithType: AssemblyExtensions.ProgramInfo
+  fullName: NuvTools.Common.Reflection.AssemblyExtensions.ProgramInfo
 - uid: NuvTools.Common.Reflection.AssemblyExtensions.Resource*
   commentId: Overload:NuvTools.Common.Reflection.AssemblyExtensions.Resource
   isExternal: true

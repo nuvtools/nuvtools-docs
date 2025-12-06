@@ -14,10 +14,18 @@ items:
   fullName: NuvTools.Security.Models.ClaimTypes
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Models/ClaimTypes.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Models/ClaimTypes.cs
   assemblies:
   - NuvTools.Security
   namespace: NuvTools.Security.Models
+  summary: Provides custom claim type URIs used by NuvTools security libraries.
+  remarks: >-
+    These claim types are in addition to the standard claim types provided by
+
+    <xref href="System.Security.Claims.ClaimTypes" data-throw-if-not-resolved="false"></xref> and follow the URI-based
+
+    naming convention for custom claims.
+  example: []
   syntax:
     content: public static class ClaimTypes
     content.vb: Public Module ClaimTypes
@@ -43,11 +51,15 @@ items:
   fullName: NuvTools.Security.Models.ClaimTypes.Permission
   type: Field
   source:
-    href: https://github.com/nuvtools/nuvtools-security/blob/df3a29d6884af083cc54b94cce25b3ecb1ceb8f6/src/NuvTools.Security/Models/ClaimTypes.cs
+    href: https://github.com/nuvtools/nuvtools-security/blob/7669738f43ffd55b9fc0eca226498e3b0f6acd8c/src/NuvTools.Security/Models/ClaimTypes.cs
   assemblies:
   - NuvTools.Security
   namespace: NuvTools.Security.Models
   summary: The URI for a claim that specifies the permission, http://schemas.nuv.tools/ws/2021/10/identity/claims/permission.
+  remarks: >-
+    Use this claim type when defining permission-based authorization policies with
+
+    the AuthorizationOptionsExtensions class from NuvTools.Security.AspNetCore.Extensions.
   example: []
   syntax:
     content: public const string Permission = "http://schemas.nuv.tools/ws/2021/10/identity/claims/permission"
@@ -55,6 +67,13 @@ items:
       type: System.String
     content.vb: Public Const Permission As String = "http://schemas.nuv.tools/ws/2021/10/identity/claims/permission"
 references:
+- uid: System.Security.Claims.ClaimTypes
+  commentId: T:System.Security.Claims.ClaimTypes
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.security.claims.claimtypes
+  name: ClaimTypes
+  nameWithType: ClaimTypes
+  fullName: System.Security.Claims.ClaimTypes
 - uid: NuvTools.Security.Models
   commentId: N:NuvTools.Security.Models
   isExternal: true

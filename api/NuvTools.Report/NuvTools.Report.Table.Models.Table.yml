@@ -18,10 +18,12 @@ items:
   fullName: NuvTools.Report.Table.Models.Table
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-report/blob/0bd46ca08c48d8e1dda37b98da5d10e57b08d50c/src/NuvTools.Report/Table/Models/Table.cs
+    href: https://github.com/nuvtools/nuvtools-report/blob/6b7c4cdb59b469a26019e0945adf84064ece8bb9/src/NuvTools.Report/Table/Models/Table.cs
   assemblies:
   - NuvTools.Report
   namespace: NuvTools.Report.Table.Models
+  summary: Represents a table within a report document, containing metadata, styling, and content.
+  example: []
   syntax:
     content: public class Table
     content.vb: Public Class Table
@@ -47,19 +49,28 @@ items:
   fullName: NuvTools.Report.Table.Models.Table.SetRows<T>(System.Collections.Generic.List<NuvTools.Report.Table.Models.Components.Column>, System.Collections.Generic.List<T>)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-report/blob/0bd46ca08c48d8e1dda37b98da5d10e57b08d50c/src/NuvTools.Report/Table/Models/Table.cs
+    href: https://github.com/nuvtools/nuvtools-report/blob/6b7c4cdb59b469a26019e0945adf84064ece8bb9/src/NuvTools.Report/Table/Models/Table.cs
   assemblies:
   - NuvTools.Report
   namespace: NuvTools.Report.Table.Models
+  summary: Populates the table rows from a list of objects using reflection to extract property values.
+  remarks: >-
+    This method uses reflection to read property values from each object based on the Column.Name property.
+
+    Properties that don't exist or are null will be represented as empty strings.
+  example: []
   syntax:
     content: public void SetRows<T>(List<Column> columns, List<T> objList)
     parameters:
     - id: columns
       type: System.Collections.Generic.List{NuvTools.Report.Table.Models.Components.Column}
+      description: The column definitions that specify which properties to extract.
     - id: objList
       type: System.Collections.Generic.List{{T}}
+      description: The list of objects to convert into table rows.
     typeParameters:
     - id: T
+      description: The type of objects in the list.
     content.vb: Public Sub SetRows(Of T)(columns As List(Of Column), objList As List(Of T))
   overload: NuvTools.Report.Table.Models.Table.SetRows*
   nameWithType.vb: Table.SetRows(Of T)(List(Of Column), List(Of T))
@@ -77,7 +88,7 @@ items:
   fullName: NuvTools.Report.Table.Models.Table.Table()
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-report/blob/0bd46ca08c48d8e1dda37b98da5d10e57b08d50c/src/NuvTools.Report/Table/Models/Table.cs
+    href: https://github.com/nuvtools/nuvtools-report/blob/6b7c4cdb59b469a26019e0945adf84064ece8bb9/src/NuvTools.Report/Table/Models/Table.cs
   assemblies:
   - NuvTools.Report
   namespace: NuvTools.Report.Table.Models
@@ -100,10 +111,12 @@ items:
   fullName: NuvTools.Report.Table.Models.Table.Info
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-report/blob/0bd46ca08c48d8e1dda37b98da5d10e57b08d50c/src/NuvTools.Report/Table/Models/Table.cs
+    href: https://github.com/nuvtools/nuvtools-report/blob/6b7c4cdb59b469a26019e0945adf84064ece8bb9/src/NuvTools.Report/Table/Models/Table.cs
   assemblies:
   - NuvTools.Report
   namespace: NuvTools.Report.Table.Models
+  summary: Gets or sets the metadata information for this table, including title, company details, and issue information.
+  example: []
   syntax:
     content: public required Info Info { get; set; }
     parameters: []
@@ -123,10 +136,12 @@ items:
   fullName: NuvTools.Report.Table.Models.Table.Style
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-report/blob/0bd46ca08c48d8e1dda37b98da5d10e57b08d50c/src/NuvTools.Report/Table/Models/Table.cs
+    href: https://github.com/nuvtools/nuvtools-report/blob/6b7c4cdb59b469a26019e0945adf84064ece8bb9/src/NuvTools.Report/Table/Models/Table.cs
   assemblies:
   - NuvTools.Report
   namespace: NuvTools.Report.Table.Models
+  summary: Gets or sets the styling options for this table, such as colors and font properties.
+  example: []
   syntax:
     content: public Style? Style { get; set; }
     parameters: []
@@ -146,10 +161,12 @@ items:
   fullName: NuvTools.Report.Table.Models.Table.Content
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-report/blob/0bd46ca08c48d8e1dda37b98da5d10e57b08d50c/src/NuvTools.Report/Table/Models/Table.cs
+    href: https://github.com/nuvtools/nuvtools-report/blob/6b7c4cdb59b469a26019e0945adf84064ece8bb9/src/NuvTools.Report/Table/Models/Table.cs
   assemblies:
   - NuvTools.Report
   namespace: NuvTools.Report.Table.Models
+  summary: Gets or sets the content body of the table, including header and data rows.
+  example: []
   syntax:
     content: public required Body Content { get; set; }
     parameters: []

@@ -18,10 +18,16 @@ items:
   fullName: NuvTools.Security.Identity.Models.Form.UpdateProfileForm
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Form/UpdateProfileForm.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Form/UpdateProfileForm.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models.Form
+  summary: Represents the form data for updating a user's profile information.
+  remarks: >-
+    This form allows users to update their basic profile information such as name and surname.
+
+    It can also be used for email change operations when a token is provided.
+  example: []
   syntax:
     content: public class UpdateProfileForm
     content.vb: Public Class UpdateProfileForm
@@ -47,7 +53,7 @@ items:
   fullName: NuvTools.Security.Identity.Models.Form.UpdateProfileForm.UpdateProfileForm()
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Form/UpdateProfileForm.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Form/UpdateProfileForm.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models.Form
@@ -70,17 +76,20 @@ items:
   fullName: NuvTools.Security.Identity.Models.Form.UpdateProfileForm.Name
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Form/UpdateProfileForm.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Form/UpdateProfileForm.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models.Form
+  summary: Gets or sets the user's first name.
+  remarks: This field is required with a maximum length of 50 characters.
+  example: []
   syntax:
     content: >-
       [Display(Name = "Name", ResourceType = typeof(Fields))]
 
-      [Required(ErrorMessageResourceName = "XRequired", ErrorMessageResourceType = typeof(DynamicValidationMessages))]
+      [Required(ErrorMessageResourceName = "XRequired", ErrorMessageResourceType = typeof(Messages))]
 
-      [MaxLength(50, ErrorMessageResourceName = "XMustHaveUpToYCharacters", ErrorMessageResourceType = typeof(DynamicValidationMessages))]
+      [MaxLength(50, ErrorMessageResourceName = "XMustHaveUpToYCharacters", ErrorMessageResourceType = typeof(Messages))]
 
       public string? Name { get; set; }
     parameters: []
@@ -89,9 +98,9 @@ items:
     content.vb: >-
       <Display(Name:="Name", ResourceType:=GetType(Fields))>
 
-      <Required(ErrorMessageResourceName:="XRequired", ErrorMessageResourceType:=GetType(DynamicValidationMessages))>
+      <Required(ErrorMessageResourceName:="XRequired", ErrorMessageResourceType:=GetType(Messages))>
 
-      <MaxLength(50, ErrorMessageResourceName:="XMustHaveUpToYCharacters", ErrorMessageResourceType:=GetType(DynamicValidationMessages))>
+      <MaxLength(50, ErrorMessageResourceName:="XMustHaveUpToYCharacters", ErrorMessageResourceType:=GetType(Messages))>
 
       Public Property Name As String
   overload: NuvTools.Security.Identity.Models.Form.UpdateProfileForm.Name*
@@ -115,7 +124,7 @@ items:
       value: XRequired
     - name: ErrorMessageResourceType
       type: System.Type
-      value: NuvTools.Resources.DynamicValidationMessages
+      value: NuvTools.Resources.Messages
   - type: System.ComponentModel.DataAnnotations.MaxLengthAttribute
     ctor: System.ComponentModel.DataAnnotations.MaxLengthAttribute.#ctor(System.Int32)
     arguments:
@@ -127,7 +136,7 @@ items:
       value: XMustHaveUpToYCharacters
     - name: ErrorMessageResourceType
       type: System.Type
-      value: NuvTools.Resources.DynamicValidationMessages
+      value: NuvTools.Resources.Messages
 - uid: NuvTools.Security.Identity.Models.Form.UpdateProfileForm.Surname
   commentId: P:NuvTools.Security.Identity.Models.Form.UpdateProfileForm.Surname
   id: Surname
@@ -140,17 +149,20 @@ items:
   fullName: NuvTools.Security.Identity.Models.Form.UpdateProfileForm.Surname
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Form/UpdateProfileForm.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Form/UpdateProfileForm.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models.Form
+  summary: Gets or sets the user's surname (last name).
+  remarks: This field is required with a maximum length of 50 characters.
+  example: []
   syntax:
     content: >-
       [Display(Name = "Surname", ResourceType = typeof(Fields))]
 
-      [Required(ErrorMessageResourceName = "XRequired", ErrorMessageResourceType = typeof(DynamicValidationMessages))]
+      [Required(ErrorMessageResourceName = "XRequired", ErrorMessageResourceType = typeof(Messages))]
 
-      [MaxLength(50, ErrorMessageResourceName = "XMustHaveUpToYCharacters", ErrorMessageResourceType = typeof(DynamicValidationMessages))]
+      [MaxLength(50, ErrorMessageResourceName = "XMustHaveUpToYCharacters", ErrorMessageResourceType = typeof(Messages))]
 
       public string? Surname { get; set; }
     parameters: []
@@ -159,9 +171,9 @@ items:
     content.vb: >-
       <Display(Name:="Surname", ResourceType:=GetType(Fields))>
 
-      <Required(ErrorMessageResourceName:="XRequired", ErrorMessageResourceType:=GetType(DynamicValidationMessages))>
+      <Required(ErrorMessageResourceName:="XRequired", ErrorMessageResourceType:=GetType(Messages))>
 
-      <MaxLength(50, ErrorMessageResourceName:="XMustHaveUpToYCharacters", ErrorMessageResourceType:=GetType(DynamicValidationMessages))>
+      <MaxLength(50, ErrorMessageResourceName:="XMustHaveUpToYCharacters", ErrorMessageResourceType:=GetType(Messages))>
 
       Public Property Surname As String
   overload: NuvTools.Security.Identity.Models.Form.UpdateProfileForm.Surname*
@@ -185,7 +197,7 @@ items:
       value: XRequired
     - name: ErrorMessageResourceType
       type: System.Type
-      value: NuvTools.Resources.DynamicValidationMessages
+      value: NuvTools.Resources.Messages
   - type: System.ComponentModel.DataAnnotations.MaxLengthAttribute
     ctor: System.ComponentModel.DataAnnotations.MaxLengthAttribute.#ctor(System.Int32)
     arguments:
@@ -197,7 +209,7 @@ items:
       value: XMustHaveUpToYCharacters
     - name: ErrorMessageResourceType
       type: System.Type
-      value: NuvTools.Resources.DynamicValidationMessages
+      value: NuvTools.Resources.Messages
 - uid: NuvTools.Security.Identity.Models.Form.UpdateProfileForm.Email
   commentId: P:NuvTools.Security.Identity.Models.Form.UpdateProfileForm.Email
   id: Email
@@ -210,10 +222,16 @@ items:
   fullName: NuvTools.Security.Identity.Models.Form.UpdateProfileForm.Email
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Form/UpdateProfileForm.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Form/UpdateProfileForm.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models.Form
+  summary: Gets or sets the new email address when changing the user's email.
+  remarks: >-
+    This field is optional and only used when the user is requesting an email change.
+
+    A confirmation token must be provided via the <xref href="NuvTools.Security.Identity.Models.Form.UpdateProfileForm.Token" data-throw-if-not-resolved="false"></xref> property for email changes.
+  example: []
   syntax:
     content: public string? Email { get; set; }
     parameters: []
@@ -233,10 +251,16 @@ items:
   fullName: NuvTools.Security.Identity.Models.Form.UpdateProfileForm.Token
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.Models/Form/UpdateProfileForm.cs
+    href: https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.Models/Form/UpdateProfileForm.cs
   assemblies:
   - NuvTools.Security.Identity.Models
   namespace: NuvTools.Security.Identity.Models.Form
+  summary: Gets or sets the email change confirmation token.
+  remarks: >-
+    This token is required when changing the user's email address.
+
+    The token is typically sent to the new email address for verification.
+  example: []
   syntax:
     content: public string? Token { get; set; }
     parameters: []
@@ -574,6 +598,13 @@ references:
   name: Surname
   nameWithType: UpdateProfileForm.Surname
   fullName: NuvTools.Security.Identity.Models.Form.UpdateProfileForm.Surname
+- uid: NuvTools.Security.Identity.Models.Form.UpdateProfileForm.Token
+  commentId: P:NuvTools.Security.Identity.Models.Form.UpdateProfileForm.Token
+  isExternal: true
+  href: NuvTools.Security.Identity.Models.Form.UpdateProfileForm.html#NuvTools_Security_Identity_Models_Form_UpdateProfileForm_Token
+  name: Token
+  nameWithType: UpdateProfileForm.Token
+  fullName: NuvTools.Security.Identity.Models.Form.UpdateProfileForm.Token
 - uid: NuvTools.Security.Identity.Models.Form.UpdateProfileForm.Email*
   commentId: Overload:NuvTools.Security.Identity.Models.Form.UpdateProfileForm.Email
   isExternal: true

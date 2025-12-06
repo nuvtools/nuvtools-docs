@@ -1,26 +1,28 @@
 ### YamlMime:ManagedReference
 items:
-- uid: NuvTools.Report.Pdf.Util.Pdf
-  commentId: T:NuvTools.Report.Pdf.Util.Pdf
-  id: Pdf
-  parent: NuvTools.Report.Pdf.Util
+- uid: NuvTools.Validation.Annotations.Validator
+  commentId: T:NuvTools.Validation.Annotations.Validator
+  id: Validator
+  parent: NuvTools.Validation.Annotations
   children:
-  - NuvTools.Report.Pdf.Util.Pdf.Merge(System.Collections.Generic.IEnumerable{System.Byte[]})
+  - NuvTools.Validation.Annotations.Validator.Validate``1(``0)
   langs:
   - csharp
   - vb
-  name: Pdf
-  nameWithType: Pdf
-  fullName: NuvTools.Report.Pdf.Util.Pdf
+  name: Validator
+  nameWithType: Validator
+  fullName: NuvTools.Validation.Annotations.Validator
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-report/blob/0bd46ca08c48d8e1dda37b98da5d10e57b08d50c/src/NuvTools.Report.Pdf/Util/Pdf.cs
+    href: https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Annotations/Validator.cs
   assemblies:
-  - NuvTools.Report.Pdf
-  namespace: NuvTools.Report.Pdf.Util
+  - NuvTools.Validation
+  namespace: NuvTools.Validation.Annotations
+  summary: Provides validation methods for objects decorated with data annotation attributes.
+  example: []
   syntax:
-    content: public static class Pdf
-    content.vb: Public Module Pdf
+    content: public static class Validator
+    content.vb: Public Module Validator
   inheritance:
   - System.Object
   inheritedMembers:
@@ -31,82 +33,84 @@ items:
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.GetHashCode
-- uid: NuvTools.Report.Pdf.Util.Pdf.Merge(System.Collections.Generic.IEnumerable{System.Byte[]})
-  commentId: M:NuvTools.Report.Pdf.Util.Pdf.Merge(System.Collections.Generic.IEnumerable{System.Byte[]})
-  id: Merge(System.Collections.Generic.IEnumerable{System.Byte[]})
-  parent: NuvTools.Report.Pdf.Util.Pdf
+- uid: NuvTools.Validation.Annotations.Validator.Validate``1(``0)
+  commentId: M:NuvTools.Validation.Annotations.Validator.Validate``1(``0)
+  id: Validate``1(``0)
+  isExtensionMethod: true
+  parent: NuvTools.Validation.Annotations.Validator
   langs:
   - csharp
   - vb
-  name: Merge(IEnumerable<byte[]>)
-  nameWithType: Pdf.Merge(IEnumerable<byte[]>)
-  fullName: NuvTools.Report.Pdf.Util.Pdf.Merge(System.Collections.Generic.IEnumerable<byte[]>)
+  name: Validate<T>(T)
+  nameWithType: Validator.Validate<T>(T)
+  fullName: NuvTools.Validation.Annotations.Validator.Validate<T>(T)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-report/blob/0bd46ca08c48d8e1dda37b98da5d10e57b08d50c/src/NuvTools.Report.Pdf/Util/Pdf.cs
+    href: https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Annotations/Validator.cs
   assemblies:
-  - NuvTools.Report.Pdf
-  namespace: NuvTools.Report.Pdf.Util
+  - NuvTools.Validation
+  namespace: NuvTools.Validation.Annotations
+  summary: Validates an object using its data annotation attributes.
+  example: []
   syntax:
-    content: public static byte[] Merge(IEnumerable<byte[]> pdfs)
+    content: public static List<string>? Validate<T>(this T obj)
     parameters:
-    - id: pdfs
-      type: System.Collections.Generic.IEnumerable{System.Byte[]}
+    - id: obj
+      type: '{T}'
+      description: The object to validate.
+    typeParameters:
+    - id: T
+      description: The type of the object to validate.
     return:
-      type: System.Byte[]
-    content.vb: Public Shared Function Merge(pdfs As IEnumerable(Of Byte())) As Byte()
-  overload: NuvTools.Report.Pdf.Util.Pdf.Merge*
-  nameWithType.vb: Pdf.Merge(IEnumerable(Of Byte()))
-  fullName.vb: NuvTools.Report.Pdf.Util.Pdf.Merge(System.Collections.Generic.IEnumerable(Of Byte()))
-  name.vb: Merge(IEnumerable(Of Byte()))
+      type: System.Collections.Generic.List{System.String}
+      description: A list of error messages if validation fails; otherwise, null if the object is valid.
+    content.vb: Public Shared Function Validate(Of T)(obj As T) As List(Of String)
+  overload: NuvTools.Validation.Annotations.Validator.Validate*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown when <code class="paramref">obj</code> is null.
+  nameWithType.vb: Validator.Validate(Of T)(T)
+  fullName.vb: NuvTools.Validation.Annotations.Validator.Validate(Of T)(T)
+  name.vb: Validate(Of T)(T)
 references:
-- uid: NuvTools.Report.Pdf.Util
-  commentId: N:NuvTools.Report.Pdf.Util
+- uid: NuvTools.Validation.Annotations
+  commentId: N:NuvTools.Validation.Annotations
   isExternal: true
   href: NuvTools.html
-  name: NuvTools.Report.Pdf.Util
-  nameWithType: NuvTools.Report.Pdf.Util
-  fullName: NuvTools.Report.Pdf.Util
+  name: NuvTools.Validation.Annotations
+  nameWithType: NuvTools.Validation.Annotations
+  fullName: NuvTools.Validation.Annotations
   spec.csharp:
   - uid: NuvTools
     name: NuvTools
     isExternal: true
     href: NuvTools.html
   - name: .
-  - uid: NuvTools.Report
-    name: Report
+  - uid: NuvTools.Validation
+    name: Validation
     isExternal: true
-    href: NuvTools.Report.html
+    href: NuvTools.Validation.html
   - name: .
-  - uid: NuvTools.Report.Pdf
-    name: Pdf
+  - uid: NuvTools.Validation.Annotations
+    name: Annotations
     isExternal: true
-    href: NuvTools.Report.Pdf.html
-  - name: .
-  - uid: NuvTools.Report.Pdf.Util
-    name: Util
-    isExternal: true
-    href: NuvTools.Report.Pdf.Util.html
+    href: NuvTools.Validation.Annotations.html
   spec.vb:
   - uid: NuvTools
     name: NuvTools
     isExternal: true
     href: NuvTools.html
   - name: .
-  - uid: NuvTools.Report
-    name: Report
+  - uid: NuvTools.Validation
+    name: Validation
     isExternal: true
-    href: NuvTools.Report.html
+    href: NuvTools.Validation.html
   - name: .
-  - uid: NuvTools.Report.Pdf
-    name: Pdf
+  - uid: NuvTools.Validation.Annotations
+    name: Annotations
     isExternal: true
-    href: NuvTools.Report.Pdf.html
-  - name: .
-  - uid: NuvTools.Report.Pdf.Util
-    name: Util
-    isExternal: true
-    href: NuvTools.Report.Pdf.Util.html
+    href: NuvTools.Validation.Annotations.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -344,98 +348,89 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: NuvTools.Report.Pdf.Util.Pdf.Merge*
-  commentId: Overload:NuvTools.Report.Pdf.Util.Pdf.Merge
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
   isExternal: true
-  href: NuvTools.Report.Pdf.Util.Pdf.html#NuvTools_Report_Pdf_Util_Pdf_Merge_System_Collections_Generic_IEnumerable_System_Byte____
-  name: Merge
-  nameWithType: Pdf.Merge
-  fullName: NuvTools.Report.Pdf.Util.Pdf.Merge
-- uid: System.Collections.Generic.IEnumerable{System.Byte[]}
-  commentId: T:System.Collections.Generic.IEnumerable{System.Byte[]}
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
+- uid: NuvTools.Validation.Annotations.Validator.Validate*
+  commentId: Overload:NuvTools.Validation.Annotations.Validator.Validate
+  isExternal: true
+  href: NuvTools.Validation.Annotations.Validator.html#NuvTools_Validation_Annotations_Validator_Validate__1___0_
+  name: Validate
+  nameWithType: Validator.Validate
+  fullName: NuvTools.Validation.Annotations.Validator.Validate
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Collections.Generic.List{System.String}
+  commentId: T:System.Collections.Generic.List{System.String}
   parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<byte[]>
-  nameWithType: IEnumerable<byte[]>
-  fullName: System.Collections.Generic.IEnumerable<byte[]>
-  nameWithType.vb: IEnumerable(Of Byte())
-  fullName.vb: System.Collections.Generic.IEnumerable(Of Byte())
-  name.vb: IEnumerable(Of Byte())
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<string>
+  nameWithType: List<string>
+  fullName: System.Collections.Generic.List<string>
+  nameWithType.vb: List(Of String)
+  fullName.vb: System.Collections.Generic.List(Of String)
+  name.vb: List(Of String)
   spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.List`1
+    name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
-  - uid: System.Byte
-    name: byte
+  - uid: System.String
+    name: string
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.byte
-  - name: '['
-  - name: ']'
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.List`1
+    name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "
-  - uid: System.Byte
-    name: Byte
+  - uid: System.String
+    name: String
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.byte
-  - name: (
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
-  - name: )
-- uid: System.Byte[]
+- uid: T
+  commentId: '!:T'
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.byte
-  name: byte[]
-  nameWithType: byte[]
-  fullName: byte[]
-  nameWithType.vb: Byte()
-  fullName.vb: Byte()
-  name.vb: Byte()
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
   spec.csharp:
-  - uid: System.Byte
-    name: byte
+  - uid: System.Collections.Generic.List`1
+    name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.byte
-  - name: '['
-  - name: ']'
-  spec.vb:
-  - uid: System.Byte
-    name: Byte
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.byte
-  - name: (
-  - name: )
-- uid: System.Collections.Generic.IEnumerable`1
-  commentId: T:System.Collections.Generic.IEnumerable`1
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  name: IEnumerable<T>
-  nameWithType: IEnumerable<T>
-  fullName: System.Collections.Generic.IEnumerable<T>
-  nameWithType.vb: IEnumerable(Of T)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
-  name.vb: IEnumerable(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
   - name: T
   - name: '>'
   spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
+  - uid: System.Collections.Generic.List`1
+    name: List
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: (
   - name: Of
   - name: " "

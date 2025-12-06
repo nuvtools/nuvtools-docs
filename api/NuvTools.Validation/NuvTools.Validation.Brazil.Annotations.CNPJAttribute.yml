@@ -15,10 +15,22 @@ items:
   fullName: NuvTools.Validation.Brazil.Annotations.CNPJAttribute
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Brazil/Annotations/CNPJAttribute.cs
+    href: https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Brazil/Annotations/CNPJAttribute.cs
   assemblies:
   - NuvTools.Validation
   namespace: NuvTools.Validation.Brazil.Annotations
+  summary: >-
+    Validation attribute that validates Brazilian CNPJ (Cadastro Nacional da Pessoa Jurídica) numbers.
+
+    Validates the CNPJ checksum algorithm and accepts formatted (XX.XXX.XXX/XXXX-XX) or unformatted (XXXXXXXXXXXXXX) input.
+  example:
+  - >-
+    <pre><code class="lang-csharp">public class CompanyModel
+
+    {
+        [CNPJ]
+        public string CNPJ { get; set; }
+    }</code></pre>
   syntax:
     content: 'public class CNPJAttribute : StringValueBaseAttribute'
     content.vb: Public Class CNPJAttribute Inherits StringValueBaseAttribute
@@ -82,7 +94,7 @@ items:
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.ReferenceEquals(System.Object,System.Object)
   extensionMethods:
-  - NuvTools.Validation.Brazil.Annotations.CNPJAttribute.NuvTools.Validation.Validator.Validate``1
+  - NuvTools.Validation.Brazil.Annotations.CNPJAttribute.NuvTools.Validation.Annotations.Validator.Validate``1
 - uid: NuvTools.Validation.Brazil.Annotations.CNPJAttribute.#ctor
   commentId: M:NuvTools.Validation.Brazil.Annotations.CNPJAttribute.#ctor
   id: '#ctor'
@@ -95,10 +107,12 @@ items:
   fullName: NuvTools.Validation.Brazil.Annotations.CNPJAttribute.CNPJAttribute()
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Brazil/Annotations/CNPJAttribute.cs
+    href: https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Brazil/Annotations/CNPJAttribute.cs
   assemblies:
   - NuvTools.Validation
   namespace: NuvTools.Validation.Brazil.Annotations
+  summary: Initializes a new instance of the <xref href="NuvTools.Validation.Brazil.Annotations.CNPJAttribute" data-throw-if-not-resolved="false"></xref> class.
+  example: []
   syntax:
     content: public CNPJAttribute()
     content.vb: Public Sub New()
@@ -118,18 +132,21 @@ items:
   fullName: NuvTools.Validation.Brazil.Annotations.CNPJAttribute.IsValid(object?)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Brazil/Annotations/CNPJAttribute.cs
+    href: https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Brazil/Annotations/CNPJAttribute.cs
   assemblies:
   - NuvTools.Validation
   namespace: NuvTools.Validation.Brazil.Annotations
+  summary: Validates that the value is a valid Brazilian CNPJ number.
   example: []
   syntax:
     content: public override bool IsValid(object? value)
     parameters:
     - id: value
       type: System.Object
+      description: The CNPJ value to validate.
     return:
       type: System.Boolean
+      description: True if the CNPJ is valid or if the value is null/empty; otherwise, false.
     content.vb: Public Overrides Function IsValid(value As Object) As Boolean
   overridden: System.ComponentModel.DataAnnotations.ValidationAttribute.IsValid(System.Object)
   overload: NuvTools.Validation.Brazil.Annotations.CNPJAttribute.IsValid*
@@ -2273,22 +2290,22 @@ references:
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-- uid: NuvTools.Validation.Brazil.Annotations.CNPJAttribute.NuvTools.Validation.Validator.Validate``1
-  commentId: M:NuvTools.Validation.Validator.Validate``1(``0)
-  parent: NuvTools.Validation.Validator
-  definition: NuvTools.Validation.Validator.Validate``1(``0)
-  href: NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_Validate__1___0_
+- uid: NuvTools.Validation.Brazil.Annotations.CNPJAttribute.NuvTools.Validation.Annotations.Validator.Validate``1
+  commentId: M:NuvTools.Validation.Annotations.Validator.Validate``1(``0)
+  parent: NuvTools.Validation.Annotations.Validator
+  definition: NuvTools.Validation.Annotations.Validator.Validate``1(``0)
+  href: NuvTools.Validation.Annotations.Validator.html#NuvTools_Validation_Annotations_Validator_Validate__1___0_
   name: Validate<CNPJAttribute>(CNPJAttribute)
   nameWithType: Validator.Validate<CNPJAttribute>(CNPJAttribute)
-  fullName: NuvTools.Validation.Validator.Validate<NuvTools.Validation.Brazil.Annotations.CNPJAttribute>(NuvTools.Validation.Brazil.Annotations.CNPJAttribute)
+  fullName: NuvTools.Validation.Annotations.Validator.Validate<NuvTools.Validation.Brazil.Annotations.CNPJAttribute>(NuvTools.Validation.Brazil.Annotations.CNPJAttribute)
   nameWithType.vb: Validator.Validate(Of CNPJAttribute)(CNPJAttribute)
-  fullName.vb: NuvTools.Validation.Validator.Validate(Of NuvTools.Validation.Brazil.Annotations.CNPJAttribute)(NuvTools.Validation.Brazil.Annotations.CNPJAttribute)
+  fullName.vb: NuvTools.Validation.Annotations.Validator.Validate(Of NuvTools.Validation.Brazil.Annotations.CNPJAttribute)(NuvTools.Validation.Brazil.Annotations.CNPJAttribute)
   name.vb: Validate(Of CNPJAttribute)(CNPJAttribute)
   spec.csharp:
-  - uid: NuvTools.Validation.Validator.Validate``1(NuvTools.Validation.Brazil.Annotations.CNPJAttribute)
+  - uid: NuvTools.Validation.Annotations.Validator.Validate``1(NuvTools.Validation.Brazil.Annotations.CNPJAttribute)
     name: Validate
     isExternal: true
-    href: NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_Validate__1___0_
+    href: NuvTools.Validation.Annotations.Validator.html#NuvTools_Validation_Annotations_Validator_Validate__1___0_
   - name: <
   - uid: NuvTools.Validation.Brazil.Annotations.CNPJAttribute
     name: CNPJAttribute
@@ -2302,10 +2319,10 @@ references:
     href: NuvTools.Validation.Brazil.Annotations.CNPJAttribute.html
   - name: )
   spec.vb:
-  - uid: NuvTools.Validation.Validator.Validate``1(NuvTools.Validation.Brazil.Annotations.CNPJAttribute)
+  - uid: NuvTools.Validation.Annotations.Validator.Validate``1(NuvTools.Validation.Brazil.Annotations.CNPJAttribute)
     name: Validate
     isExternal: true
-    href: NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_Validate__1___0_
+    href: NuvTools.Validation.Annotations.Validator.html#NuvTools_Validation_Annotations_Validator_Validate__1___0_
   - name: (
   - name: Of
   - name: " "
@@ -2401,21 +2418,21 @@ references:
     name: Annotations
     isExternal: true
     href: NuvTools.Validation.Annotations.html
-- uid: NuvTools.Validation.Validator.Validate``1(``0)
-  commentId: M:NuvTools.Validation.Validator.Validate``1(``0)
+- uid: NuvTools.Validation.Annotations.Validator.Validate``1(``0)
+  commentId: M:NuvTools.Validation.Annotations.Validator.Validate``1(``0)
   isExternal: true
-  href: NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_Validate__1___0_
+  href: NuvTools.Validation.Annotations.Validator.html#NuvTools_Validation_Annotations_Validator_Validate__1___0_
   name: Validate<T>(T)
   nameWithType: Validator.Validate<T>(T)
-  fullName: NuvTools.Validation.Validator.Validate<T>(T)
+  fullName: NuvTools.Validation.Annotations.Validator.Validate<T>(T)
   nameWithType.vb: Validator.Validate(Of T)(T)
-  fullName.vb: NuvTools.Validation.Validator.Validate(Of T)(T)
+  fullName.vb: NuvTools.Validation.Annotations.Validator.Validate(Of T)(T)
   name.vb: Validate(Of T)(T)
   spec.csharp:
-  - uid: NuvTools.Validation.Validator.Validate``1(``0)
+  - uid: NuvTools.Validation.Annotations.Validator.Validate``1(``0)
     name: Validate
     isExternal: true
-    href: NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_Validate__1___0_
+    href: NuvTools.Validation.Annotations.Validator.html#NuvTools_Validation_Annotations_Validator_Validate__1___0_
   - name: <
   - name: T
   - name: '>'
@@ -2423,10 +2440,10 @@ references:
   - name: T
   - name: )
   spec.vb:
-  - uid: NuvTools.Validation.Validator.Validate``1(``0)
+  - uid: NuvTools.Validation.Annotations.Validator.Validate``1(``0)
     name: Validate
     isExternal: true
-    href: NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_Validate__1___0_
+    href: NuvTools.Validation.Annotations.Validator.html#NuvTools_Validation_Annotations_Validator_Validate__1___0_
   - name: (
   - name: Of
   - name: " "
@@ -2435,41 +2452,21 @@ references:
   - name: (
   - name: T
   - name: )
-- uid: NuvTools.Validation.Validator
-  commentId: T:NuvTools.Validation.Validator
-  parent: NuvTools.Validation
+- uid: NuvTools.Validation.Annotations.Validator
+  commentId: T:NuvTools.Validation.Annotations.Validator
+  parent: NuvTools.Validation.Annotations
   isExternal: true
-  href: NuvTools.Validation.Validator.html
+  href: NuvTools.Validation.Annotations.Validator.html
   name: Validator
   nameWithType: Validator
-  fullName: NuvTools.Validation.Validator
-- uid: NuvTools.Validation
-  commentId: N:NuvTools.Validation
+  fullName: NuvTools.Validation.Annotations.Validator
+- uid: NuvTools.Validation.Brazil.Annotations.CNPJAttribute
+  commentId: T:NuvTools.Validation.Brazil.Annotations.CNPJAttribute
   isExternal: true
-  href: NuvTools.html
-  name: NuvTools.Validation
-  nameWithType: NuvTools.Validation
-  fullName: NuvTools.Validation
-  spec.csharp:
-  - uid: NuvTools
-    name: NuvTools
-    isExternal: true
-    href: NuvTools.html
-  - name: .
-  - uid: NuvTools.Validation
-    name: Validation
-    isExternal: true
-    href: NuvTools.Validation.html
-  spec.vb:
-  - uid: NuvTools
-    name: NuvTools
-    isExternal: true
-    href: NuvTools.html
-  - name: .
-  - uid: NuvTools.Validation
-    name: Validation
-    isExternal: true
-    href: NuvTools.Validation.html
+  href: NuvTools.Validation.Brazil.Annotations.CNPJAttribute.html
+  name: CNPJAttribute
+  nameWithType: CNPJAttribute
+  fullName: NuvTools.Validation.Brazil.Annotations.CNPJAttribute
 - uid: NuvTools.Validation.Brazil.Annotations.CNPJAttribute.#ctor*
   commentId: Overload:NuvTools.Validation.Brazil.Annotations.CNPJAttribute.#ctor
   isExternal: true

@@ -26,10 +26,12 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
   type: Interface
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Defines common database context operations for transaction management, CRUD operations with Result pattern, and execution strategies.
+  example: []
   syntax:
     content: public interface IDbContextCommands
     content.vb: Public Interface IDbContextCommands
@@ -45,17 +47,21 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.BeginTransactionAsync(System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Begins a new database transaction asynchronously.
+  example: []
   syntax:
     content: Task<IDbContextTransaction> BeginTransactionAsync(CancellationToken cancellationToken = default)
     parameters:
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: A cancellation token to observe while waiting for the task to complete.
     return:
       type: System.Threading.Tasks.Task{Microsoft.EntityFrameworkCore.Storage.IDbContextTransaction}
+      description: A task that represents the asynchronous operation, containing the database transaction.
     content.vb: Function BeginTransactionAsync(cancellationToken As CancellationToken = Nothing) As Task(Of IDbContextTransaction)
   overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.BeginTransactionAsync*
 - uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RollbackTransactionAsync(System.Threading.CancellationToken)
@@ -70,17 +76,21 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RollbackTransactionAsync(System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Rolls back the current transaction asynchronously.
+  example: []
   syntax:
     content: Task RollbackTransactionAsync(CancellationToken cancellationToken = default)
     parameters:
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: A cancellation token to observe while waiting for the task to complete.
     return:
       type: System.Threading.Tasks.Task
+      description: A task that represents the asynchronous operation.
     content.vb: Function RollbackTransactionAsync(cancellationToken As CancellationToken = Nothing) As Task
   overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RollbackTransactionAsync*
 - uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CommitTransactionAsync(System.Threading.CancellationToken)
@@ -95,17 +105,21 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CommitTransactionAsync(System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Commits the current transaction asynchronously.
+  example: []
   syntax:
     content: Task CommitTransactionAsync(CancellationToken cancellationToken = default)
     parameters:
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: A cancellation token to observe while waiting for the task to complete.
     return:
       type: System.Threading.Tasks.Task
+      description: A task that represents the asynchronous operation.
     content.vb: Function CommitTransactionAsync(cancellationToken As CancellationToken = Nothing) As Task
   overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CommitTransactionAsync*
 - uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.ExecuteWithStrategyAsync(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Threading.CancellationToken)
@@ -120,21 +134,30 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.ExecuteWithStrategyAsync(System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task>, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Executes an action within the database execution strategy for connection resiliency.
+  example: []
   syntax:
     content: Task ExecuteWithStrategyAsync(Func<CancellationToken, Task> action, CancellationToken cancellationToken = default)
     parameters:
     - id: action
       type: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task}
+      description: The action to execute within the strategy.
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: A cancellation token to observe while waiting for the task to complete.
     return:
       type: System.Threading.Tasks.Task
+      description: A task that represents the asynchronous operation.
     content.vb: Function ExecuteWithStrategyAsync(action As Func(Of CancellationToken, Task), cancellationToken As CancellationToken = Nothing) As Task
   overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.ExecuteWithStrategyAsync*
+  seealso:
+  - linkType: HRef
+    linkId: https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency
+    altText: https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency
   nameWithType.vb: IDbContextCommands.ExecuteWithStrategyAsync(Func(Of CancellationToken, Task), CancellationToken)
   fullName.vb: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.ExecuteWithStrategyAsync(System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task), System.Threading.CancellationToken)
   name.vb: ExecuteWithStrategyAsync(Func(Of CancellationToken, Task), CancellationToken)
@@ -150,23 +173,33 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.ExecuteWithStrategyAsync<T>(System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<T>>, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Executes an action within the database execution strategy for connection resiliency and returns a result.
+  example: []
   syntax:
     content: Task<T> ExecuteWithStrategyAsync<T>(Func<CancellationToken, Task<T>> action, CancellationToken cancellationToken = default)
     parameters:
     - id: action
       type: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{{T}}}
+      description: The action to execute within the strategy.
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: A cancellation token to observe while waiting for the task to complete.
     typeParameters:
     - id: T
+      description: The type of the result returned by the action.
     return:
       type: System.Threading.Tasks.Task{{T}}
+      description: A task that represents the asynchronous operation, containing the result of the action.
     content.vb: Function ExecuteWithStrategyAsync(Of T)(action As Func(Of CancellationToken, Task(Of T)), cancellationToken As CancellationToken = Nothing) As Task(Of T)
   overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.ExecuteWithStrategyAsync*
+  seealso:
+  - linkType: HRef
+    linkId: https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency
+    altText: https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency
   nameWithType.vb: IDbContextCommands.ExecuteWithStrategyAsync(Of T)(Func(Of CancellationToken, Task(Of T)), CancellationToken)
   fullName.vb: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.ExecuteWithStrategyAsync(Of T)(System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task(Of T)), System.Threading.CancellationToken)
   name.vb: ExecuteWithStrategyAsync(Of T)(Func(Of CancellationToken, Task(Of T)), CancellationToken)
@@ -182,17 +215,21 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.SaveChangesAsync(System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Saves all changes made in this context to the database asynchronously.
+  example: []
   syntax:
     content: Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     parameters:
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: A cancellation token to observe while waiting for the task to complete.
     return:
       type: System.Threading.Tasks.Task{System.Int32}
+      description: A task that represents the asynchronous operation, containing the number of state entries written to the database.
     content.vb: Function SaveChangesAsync(cancellationToken As CancellationToken = Nothing) As Task(Of Integer)
   overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.SaveChangesAsync*
 - uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveAsync``2(``0,System.Threading.CancellationToken)
@@ -207,22 +244,29 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveAsync<TEntity, TKey>(TEntity, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Adds a new entity to the database and saves changes, returning the entity's primary key.
+  example: []
   syntax:
     content: 'Task<IResult<TKey>> AddAndSaveAsync<TEntity, TKey>(TEntity entity, CancellationToken cancellationToken = default) where TEntity : class'
     parameters:
     - id: entity
       type: '{TEntity}'
+      description: The entity to add.
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: A cancellation token to observe while waiting for the task to complete.
     typeParameters:
     - id: TEntity
+      description: The type of the entity.
     - id: TKey
+      description: The type of the primary key.
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{{TKey}}}
+      description: A task that represents the asynchronous operation, containing the result with the primary key.
     content.vb: Function AddAndSaveAsync(Of TEntity As Class, TKey)(entity As TEntity, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of TKey))
   overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveAsync*
   nameWithType.vb: IDbContextCommands.AddAndSaveAsync(Of TEntity, TKey)(TEntity, CancellationToken)
@@ -240,21 +284,27 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.UpdateAndSaveAsync<TEntity>(TEntity, params object[])
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Updates an existing entity in the database and saves changes.
+  example: []
   syntax:
     content: 'Task<IResult> UpdateAndSaveAsync<TEntity>(TEntity entity, params object[] keyValues) where TEntity : class'
     parameters:
     - id: entity
       type: '{TEntity}'
+      description: The entity with updated values.
     - id: keyValues
       type: System.Object[]
+      description: The primary key values of the entity to update.
     typeParameters:
     - id: TEntity
+      description: The type of the entity.
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+      description: A task that represents the asynchronous operation, containing the result of the update operation.
     content.vb: Function UpdateAndSaveAsync(Of TEntity As Class)(entity As TEntity, ParamArray keyValues As Object()) As Task(Of IResult)
   overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.UpdateAndSaveAsync*
   nameWithType.vb: IDbContextCommands.UpdateAndSaveAsync(Of TEntity)(TEntity, ParamArray Object())
@@ -272,23 +322,30 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.UpdateAndSaveAsync<TEntity>(TEntity, object[], System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Updates an existing entity in the database and saves changes.
+  example: []
   syntax:
     content: 'Task<IResult> UpdateAndSaveAsync<TEntity>(TEntity entity, object[] keyValues, CancellationToken cancellationToken = default) where TEntity : class'
     parameters:
     - id: entity
       type: '{TEntity}'
+      description: The entity with updated values.
     - id: keyValues
       type: System.Object[]
+      description: The primary key values of the entity to update.
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: A cancellation token to observe while waiting for the task to complete.
     typeParameters:
     - id: TEntity
+      description: The type of the entity.
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+      description: A task that represents the asynchronous operation, containing the result of the update operation.
     content.vb: Function UpdateAndSaveAsync(Of TEntity As Class)(entity As TEntity, keyValues As Object(), cancellationToken As CancellationToken = Nothing) As Task(Of IResult)
   overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.UpdateAndSaveAsync*
   nameWithType.vb: IDbContextCommands.UpdateAndSaveAsync(Of TEntity)(TEntity, Object(), CancellationToken)
@@ -306,21 +363,27 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveWithCompositeKeyAsync<TEntity>(TEntity, System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Adds a new entity with a composite key to the database and saves changes.
+  example: []
   syntax:
     content: 'Task<IResult<object[]>> AddAndSaveWithCompositeKeyAsync<TEntity>(TEntity entity, CancellationToken cancellationToken = default) where TEntity : class'
     parameters:
     - id: entity
       type: '{TEntity}'
+      description: The entity to add.
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: A cancellation token to observe while waiting for the task to complete.
     typeParameters:
     - id: TEntity
+      description: The type of the entity.
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.Object[]}}
+      description: A task that represents the asynchronous operation, containing the result with the composite key values.
     content.vb: Function AddAndSaveWithCompositeKeyAsync(Of TEntity As Class)(entity As TEntity, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of Object()))
   overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveWithCompositeKeyAsync*
   nameWithType.vb: IDbContextCommands.AddAndSaveWithCompositeKeyAsync(Of TEntity)(TEntity, CancellationToken)
@@ -338,19 +401,24 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RemoveAndSaveAsync<TEntity>(params object[])
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Removes an entity from the database and saves changes.
+  example: []
   syntax:
     content: 'Task<IResult> RemoveAndSaveAsync<TEntity>(params object[] keyValues) where TEntity : class'
     parameters:
     - id: keyValues
       type: System.Object[]
+      description: The primary key values of the entity to remove.
     typeParameters:
     - id: TEntity
+      description: The type of the entity.
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+      description: A task that represents the asynchronous operation, containing the result of the remove operation.
     content.vb: Function RemoveAndSaveAsync(Of TEntity As Class)(ParamArray keyValues As Object()) As Task(Of IResult)
   overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RemoveAndSaveAsync*
   nameWithType.vb: IDbContextCommands.RemoveAndSaveAsync(Of TEntity)(ParamArray Object())
@@ -368,21 +436,27 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RemoveAndSaveAsync<TEntity>(object[], System.Threading.CancellationToken)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Removes an entity from the database and saves changes.
+  example: []
   syntax:
     content: 'Task<IResult> RemoveAndSaveAsync<TEntity>(object[] keyValues, CancellationToken cancellationToken = default) where TEntity : class'
     parameters:
     - id: keyValues
       type: System.Object[]
+      description: The primary key values of the entity to remove.
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: A cancellation token to observe while waiting for the task to complete.
     typeParameters:
     - id: TEntity
+      description: The type of the entity.
     return:
       type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+      description: A task that represents the asynchronous operation, containing the result of the remove operation.
     content.vb: Function RemoveAndSaveAsync(Of TEntity As Class)(keyValues As Object(), cancellationToken As CancellationToken = Nothing) As Task(Of IResult)
   overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RemoveAndSaveAsync*
   nameWithType.vb: IDbContextCommands.RemoveAndSaveAsync(Of TEntity)(Object(), CancellationToken)
@@ -400,10 +474,12 @@ items:
   fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CurrentTransaction
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/IDbContextCommands.cs
   assemblies:
   - NuvTools.Data.EntityFrameworkCore
   namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: Gets the current active transaction, or null if no transaction is active.
+  example: []
   syntax:
     content: IDbContextTransaction? CurrentTransaction { get; }
     parameters: []

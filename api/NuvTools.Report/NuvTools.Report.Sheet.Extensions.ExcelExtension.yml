@@ -15,10 +15,12 @@ items:
   fullName: NuvTools.Report.Sheet.Extensions.ExcelExtension
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-report/blob/0bd46ca08c48d8e1dda37b98da5d10e57b08d50c/src/NuvTools.Report.Sheet/Extensions/ExcelExtension.cs
+    href: https://github.com/nuvtools/nuvtools-report/blob/6b7c4cdb59b469a26019e0945adf84064ece8bb9/src/NuvTools.Report.Sheet/Extensions/ExcelExtension.cs
   assemblies:
   - NuvTools.Report.Sheet
   namespace: NuvTools.Report.Sheet.Extensions
+  summary: Provides extension methods for exporting documents to Excel format.
+  example: []
   syntax:
     content: public static class ExcelExtension
     content.vb: Public Module ExcelExtension
@@ -45,21 +47,25 @@ items:
   fullName: NuvTools.Report.Sheet.Extensions.ExcelExtension.ExportToExcel(NuvTools.Report.Table.Models.Document)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-report/blob/0bd46ca08c48d8e1dda37b98da5d10e57b08d50c/src/NuvTools.Report.Sheet/Extensions/ExcelExtension.cs
+    href: https://github.com/nuvtools/nuvtools-report/blob/6b7c4cdb59b469a26019e0945adf84064ece8bb9/src/NuvTools.Report.Sheet/Extensions/ExcelExtension.cs
   assemblies:
   - NuvTools.Report.Sheet
   namespace: NuvTools.Report.Sheet.Extensions
-  summary: Export document to Excel format.
+  summary: Exports a document to Excel (.xlsx) format encoded as a base64 string.
+  remarks: >-
+    Each table in the document becomes a separate worksheet in the Excel file.
+
+    The export includes full headers with company information, titles, and filters.
   example: []
   syntax:
     content: public static string ExportToExcel(this Document document)
     parameters:
     - id: document
       type: NuvTools.Report.Table.Models.Document
-      description: Document data.
+      description: The document containing tables to export.
     return:
       type: System.String
-      description: Excel (.xlsx) file in base 64 string.
+      description: A base64-encoded string representing the Excel (.xlsx) file.
     content.vb: Public Shared Function ExportToExcel(document As Document) As String
   overload: NuvTools.Report.Sheet.Extensions.ExcelExtension.ExportToExcel*
 - uid: NuvTools.Report.Sheet.Extensions.ExcelExtension.AddWorksheet(ClosedXML.Excel.XLWorkbook,NuvTools.Report.Table.Models.Table,System.Boolean)
@@ -75,19 +81,28 @@ items:
   fullName: NuvTools.Report.Sheet.Extensions.ExcelExtension.AddWorksheet(ClosedXML.Excel.XLWorkbook, NuvTools.Report.Table.Models.Table, bool)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-report/blob/0bd46ca08c48d8e1dda37b98da5d10e57b08d50c/src/NuvTools.Report.Sheet/Extensions/ExcelExtension.cs
+    href: https://github.com/nuvtools/nuvtools-report/blob/6b7c4cdb59b469a26019e0945adf84064ece8bb9/src/NuvTools.Report.Sheet/Extensions/ExcelExtension.cs
   assemblies:
   - NuvTools.Report.Sheet
   namespace: NuvTools.Report.Sheet.Extensions
+  summary: Adds a table as a worksheet to an Excel workbook.
+  remarks: >-
+    When includeHeader is true, the worksheet includes title, company info, filter description,
+
+    and issue user/date before the data table. The header uses custom styling from the table's Style property.
+  example: []
   syntax:
     content: public static void AddWorksheet(this XLWorkbook xlWbook, Table worksheet, bool includeHeader)
     parameters:
     - id: xlWbook
       type: ClosedXML.Excel.XLWorkbook
+      description: The workbook to add the worksheet to.
     - id: worksheet
       type: NuvTools.Report.Table.Models.Table
+      description: The table to add as a worksheet.
     - id: includeHeader
       type: System.Boolean
+      description: Whether to include report headers with company info and titles.
     content.vb: Public Shared Sub AddWorksheet(xlWbook As XLWorkbook, worksheet As Table, includeHeader As Boolean)
   overload: NuvTools.Report.Sheet.Extensions.ExcelExtension.AddWorksheet*
   nameWithType.vb: ExcelExtension.AddWorksheet(XLWorkbook, Table, Boolean)

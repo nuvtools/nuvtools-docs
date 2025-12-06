@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class ServiceWithCrudBase&lt;TContext, TDTO, TEntity, TKey&gt; | Nuv Tools Framework Docs ">
       
-      
+      <meta name="description" content="Provides a base class for service classes that require CRUD (Create, Read, Update, Delete) operations with Entity Framework Core and AutoMapper integration.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_AspNetCore_EntityFrameworkCore_Mapper_ServiceWithCrudBase_4" data-uid="NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4" class="text-break">
-Class ServiceWithCrudBase&lt;TContext, TDTO, TEntity, TKey&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs"><i class="bi bi-code-slash"></i></a>
+Class ServiceWithCrudBase&lt;TContext, TDTO, TEntity, TKey&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,9 @@ Class ServiceWithCrudBase&lt;TContext, TDTO, TEntity, TKey&gt;  <a class="header
   <dl><dt>Assembly</dt><dd>NuvTools.AspNetCore.EntityFrameworkCore.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Provides a base class for service classes that require CRUD (Create, Read, Update, Delete) operations
+with Entity Framework Core and AutoMapper integration.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -109,20 +111,24 @@ Class ServiceWithCrudBase&lt;TContext, TDTO, TEntity, TKey&gt;  <a class="header
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TContext</code></dt>
-    <dd></dd>
+    <dd><p>The type of the Entity Framework <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext">DbContext</a>.</p>
+</dd>
     <dt><code>TDTO</code></dt>
-    <dd></dd>
+    <dd><p>The type of the Data Transfer Object (DTO).</p>
+</dd>
     <dt><code>TEntity</code></dt>
-    <dd></dd>
+    <dd><p>The type of the entity.</p>
+</dd>
     <dt><code>TKey</code></dt>
-    <dd></dd>
+    <dd><p>The type of the entity's primary key.</p>
+</dd>
   </dl>
 
   <dl class="typelist inheritance">
     <dt>Inheritance</dt>
     <dd>
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-      <div><a class="xref" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs">ServiceWithMapperBase</a>&lt;TDTO, TEntity&gt;</div>
+      <div><a class="xref" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs">ServiceWithMapperBase</a>&lt;TDTO, TEntity&gt;</div>
       <div><span class="xref">ServiceWithCrudBase&lt;TContext, TDTO, TEntity, TKey&gt;</span></div>
     </dd>
   </dl>
@@ -182,6 +188,10 @@ Class ServiceWithCrudBase&lt;TContext, TDTO, TEntity, TKey&gt;  <a class="header
 
 
 
+  <h2 id="NuvTools_AspNetCore_EntityFrameworkCore_Mapper_ServiceWithCrudBase_4_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This class extends <a class="xref" href="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase-2.html">ServiceWithMapperBase&lt;TDTO, TEntity&gt;</a> and adds database operation capabilities
+including finding, adding, updating, and removing entities with automatic DTO-to-entity conversion.</p>
+</div>
 
 
   <h2 class="section" id="constructors">Constructors
@@ -192,10 +202,12 @@ Class ServiceWithCrudBase&lt;TContext, TDTO, TEntity, TKey&gt;  <a class="header
 
   <h3 id="NuvTools_AspNetCore_EntityFrameworkCore_Mapper_ServiceWithCrudBase_4__ctor__0_AutoMapper_IMapper_" data-uid="NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.#ctor(`0,AutoMapper.IMapper)">
   ServiceWithCrudBase(TContext, IMapper)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Provides a base class for service classes that require CRUD (Create, Read, Update, Delete) operations
+with Entity Framework Core and AutoMapper integration.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -217,6 +229,10 @@ Class ServiceWithCrudBase&lt;TContext, TDTO, TEntity, TKey&gt;  <a class="header
 
 
 
+  <h4 class="section" id="NuvTools_AspNetCore_EntityFrameworkCore_Mapper_ServiceWithCrudBase_4__ctor__0_AutoMapper_IMapper__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This class extends <a class="xref" href="NuvTools.AspNetCore.Mapper.ServiceWithMapperBase-2.html">ServiceWithMapperBase&lt;TDTO, TEntity&gt;</a> and adds database operation capabilities
+including finding, adding, updating, and removing entities with automatic DTO-to-entity conversion.</p>
+</div>
 
 
 
@@ -228,10 +244,11 @@ Class ServiceWithCrudBase&lt;TContext, TDTO, TEntity, TKey&gt;  <a class="header
 
   <h3 id="NuvTools_AspNetCore_EntityFrameworkCore_Mapper_ServiceWithCrudBase_4_Context" data-uid="NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.Context">
   Context
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the Entity Framework <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext">DbContext</a> instance.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -263,10 +280,11 @@ Class ServiceWithCrudBase&lt;TContext, TDTO, TEntity, TKey&gt;  <a class="header
 
   <h3 id="NuvTools_AspNetCore_EntityFrameworkCore_Mapper_ServiceWithCrudBase_4_Dataset" data-uid="NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.Dataset">
   Dataset
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbset-1">DbSet&lt;TEntity&gt;</a> for the entity type.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -298,10 +316,11 @@ Class ServiceWithCrudBase&lt;TContext, TDTO, TEntity, TKey&gt;  <a class="header
 
   <h3 id="NuvTools_AspNetCore_EntityFrameworkCore_Mapper_ServiceWithCrudBase_4_AddAndSaveAsync__1_" data-uid="NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.AddAndSaveAsync(`1)">
   AddAndSaveAsync(TDTO)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds a new entity to the database and saves changes asynchronously.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -311,13 +330,16 @@ Class ServiceWithCrudBase&lt;TContext, TDTO, TEntity, TKey&gt;  <a class="header
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>model</code> <span class="xref">TDTO</span></dt>
-    <dd></dd>
+    <dd><p>The DTO representing the entity to add.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;TKey&gt;&gt;</dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation. The task result contains an <a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult-1.html">IResult&lt;T&gt;</a>
+with the primary key of the added entity if successful.</p>
+</dd>
   </dl>
 
 
@@ -327,6 +349,12 @@ Class ServiceWithCrudBase&lt;TContext, TDTO, TEntity, TKey&gt;  <a class="header
 
 
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Thrown when <code class="paramref">model</code> is <code>null</code>.</p>
+</dd>
+  </dl>
 
 
 
@@ -334,10 +362,11 @@ Class ServiceWithCrudBase&lt;TContext, TDTO, TEntity, TKey&gt;  <a class="header
 
   <h3 id="NuvTools_AspNetCore_EntityFrameworkCore_Mapper_ServiceWithCrudBase_4_FindAsync_System_Object___" data-uid="NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.FindAsync(System.Object[])">
   FindAsync(object[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Finds an entity by its composite key asynchronously and converts it to a DTO.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -347,13 +376,16 @@ Class ServiceWithCrudBase&lt;TContext, TDTO, TEntity, TKey&gt;  <a class="header
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>keys</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
-    <dd></dd>
+    <dd><p>An array of key values representing a composite key.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TDTO&gt;</dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation. The task result contains the DTO
+if the entity is found; otherwise, <code>null</code>.</p>
+</dd>
   </dl>
 
 
@@ -370,10 +402,11 @@ Class ServiceWithCrudBase&lt;TContext, TDTO, TEntity, TKey&gt;  <a class="header
 
   <h3 id="NuvTools_AspNetCore_EntityFrameworkCore_Mapper_ServiceWithCrudBase_4_FindAsync__3_" data-uid="NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.FindAsync(`3)">
   FindAsync(TKey)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Finds an entity by its primary key asynchronously and converts it to a DTO.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -383,13 +416,16 @@ Class ServiceWithCrudBase&lt;TContext, TDTO, TEntity, TKey&gt;  <a class="header
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>id</code> <span class="xref">TKey</span></dt>
-    <dd></dd>
+    <dd><p>The primary key value.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;TDTO&gt;</dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation. The task result contains the DTO
+if the entity is found; otherwise, <code>null</code>.</p>
+</dd>
   </dl>
 
 
@@ -406,10 +442,11 @@ Class ServiceWithCrudBase&lt;TContext, TDTO, TEntity, TKey&gt;  <a class="header
 
   <h3 id="NuvTools_AspNetCore_EntityFrameworkCore_Mapper_ServiceWithCrudBase_4_FindFromExpressionAsync_System_Linq_Expressions_Expression_System_Func_System_Linq_IQueryable__2____" data-uid="NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.FindFromExpressionAsync(System.Linq.Expressions.Expression{System.Func{System.Linq.IQueryable{`2}}})">
   FindFromExpressionAsync(Expression&lt;Func&lt;IQueryable&lt;TEntity&gt;&gt;&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Finds entities using a LINQ expression asynchronously and converts them to DTOs.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -419,13 +456,16 @@ Class ServiceWithCrudBase&lt;TContext, TDTO, TEntity, TKey&gt;  <a class="header
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>expression</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;TEntity&gt;&gt;&gt;</dt>
-    <dd></dd>
+    <dd><p>An expression that returns an <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable&lt;T&gt;</a>.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TDTO&gt;&gt;</dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation. The task result contains a collection of DTOs,
+or <code>null</code> if no entities are found.</p>
+</dd>
   </dl>
 
 
@@ -442,10 +482,11 @@ Class ServiceWithCrudBase&lt;TContext, TDTO, TEntity, TKey&gt;  <a class="header
 
   <h3 id="NuvTools_AspNetCore_EntityFrameworkCore_Mapper_ServiceWithCrudBase_4_RemoveAndSaveAsync__3_" data-uid="NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.RemoveAndSaveAsync(`3)">
   RemoveAndSaveAsync(TKey)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Removes an entity from the database and saves changes asynchronously.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -455,13 +496,16 @@ Class ServiceWithCrudBase&lt;TContext, TDTO, TEntity, TKey&gt;  <a class="header
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>id</code> <span class="xref">TKey</span></dt>
-    <dd></dd>
+    <dd><p>The primary key of the entity to remove.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation. The task result contains an <a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>
+indicating the success or failure of the operation.</p>
+</dd>
   </dl>
 
 
@@ -478,10 +522,11 @@ Class ServiceWithCrudBase&lt;TContext, TDTO, TEntity, TKey&gt;  <a class="header
 
   <h3 id="NuvTools_AspNetCore_EntityFrameworkCore_Mapper_ServiceWithCrudBase_4_UpdateAndSaveAsync__3__1_" data-uid="NuvTools.AspNetCore.EntityFrameworkCore.Mapper.ServiceWithCrudBase`4.UpdateAndSaveAsync(`3,`1)">
   UpdateAndSaveAsync(TKey, TDTO)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Updates an existing entity in the database and saves changes asynchronously.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -491,15 +536,19 @@ Class ServiceWithCrudBase&lt;TContext, TDTO, TEntity, TKey&gt;  <a class="header
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>id</code> <span class="xref">TKey</span></dt>
-    <dd></dd>
+    <dd><p>The primary key of the entity to update.</p>
+</dd>
     <dt><code>model</code> <span class="xref">TDTO</span></dt>
-    <dd></dd>
+    <dd><p>The DTO containing the updated values.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation. The task result contains an <a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>
+indicating the success or failure of the operation.</p>
+</dd>
   </dl>
 
 
@@ -516,7 +565,7 @@ Class ServiceWithCrudBase&lt;TContext, TDTO, TEntity, TKey&gt;  <a class="header
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore.EntityFrameworkCore/Mapper/ServiceWithCrudBase.cs" class="edit-link">Edit this page</a>
         </div>
 
 

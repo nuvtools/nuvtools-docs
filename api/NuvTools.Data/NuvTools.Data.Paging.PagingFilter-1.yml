@@ -16,17 +16,17 @@ items:
   fullName: NuvTools.Data.Paging.PagingFilter<T>
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data/Paging/PagingFilter.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Paging/PagingFilter.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Paging
-  summary: Filter for paging purpose.
+  summary: Represents a filter for paging operations with sorting capabilities.
   example: []
   syntax:
     content: 'public class PagingFilter<T> : PagingFilter where T : Enum'
     typeParameters:
     - id: T
-      description: Enum type with column option to sort.
+      description: Enum type representing the available columns to sort by.
     content.vb: Public Class PagingFilter(Of T As [Enum]) Inherits PagingFilter
   inheritance:
   - System.Object
@@ -56,7 +56,7 @@ items:
   fullName: NuvTools.Data.Paging.PagingFilter<T>.PagingFilter()
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data/Paging/PagingFilter.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Paging/PagingFilter.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Paging
@@ -79,10 +79,12 @@ items:
   fullName: NuvTools.Data.Paging.PagingFilter<T>.SortColumn
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data/Paging/PagingFilter.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Paging/PagingFilter.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Paging
+  summary: Gets or sets the column to sort by.
+  example: []
   syntax:
     content: public required T SortColumn { get; set; }
     parameters: []
@@ -104,10 +106,12 @@ items:
   fullName: NuvTools.Data.Paging.PagingFilter<T>.SortDirection
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data/Paging/PagingFilter.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Paging/PagingFilter.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Paging
+  summary: Gets or sets the sort direction (ascending or descending). Defaults to ascending.
+  example: []
   syntax:
     content: public SortDirection SortDirection { get; set; }
     parameters: []

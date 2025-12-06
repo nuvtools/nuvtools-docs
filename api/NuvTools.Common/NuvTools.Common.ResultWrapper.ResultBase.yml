@@ -23,11 +23,14 @@ items:
   fullName: NuvTools.Common.ResultWrapper.ResultBase
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/ResultBase.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/ResultWrapper/ResultBase.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
-  summary: Base class for operation results, containing shared properties and logic.
+  summary: >-
+    Base class for operation results. Holds common metadata such as success flag,
+
+    result type, messages and "not found" indicator.
   example: []
   syntax:
     content: public abstract class ResultBase
@@ -61,11 +64,11 @@ items:
   fullName: NuvTools.Common.ResultWrapper.ResultBase.Log(System.Collections.Generic.List<NuvTools.Common.ResultWrapper.MessageDetail>?, Microsoft.Extensions.Logging.ILogger?)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/ResultBase.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/ResultWrapper/ResultBase.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
-  summary: Logs all message details using the specified logger.
+  summary: Logs each message using the appropriate log level from <xref href="NuvTools.Common.ResultWrapper.Enumerations.Severity" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
     content: protected static void Log(List<MessageDetail>? messages, ILogger? logger)
@@ -91,20 +94,20 @@ items:
   fullName: NuvTools.Common.ResultWrapper.ResultBase.ConvertToMessageDetail(System.Collections.Generic.IEnumerable<string>)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/ResultBase.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/ResultWrapper/ResultBase.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
-  summary: Converts a list of strings into a list of message details.
+  summary: Converts a list of strings into message details.
   example: []
   syntax:
-    content: protected static List<MessageDetail> ConvertToMessageDetail(IEnumerable<string> value)
+    content: protected static List<MessageDetail> ConvertToMessageDetail(IEnumerable<string> values)
     parameters:
-    - id: value
+    - id: values
       type: System.Collections.Generic.IEnumerable{System.String}
     return:
       type: System.Collections.Generic.List{NuvTools.Common.ResultWrapper.MessageDetail}
-    content.vb: Protected Shared Function ConvertToMessageDetail(value As IEnumerable(Of String)) As List(Of MessageDetail)
+    content.vb: Protected Shared Function ConvertToMessageDetail(values As IEnumerable(Of String)) As List(Of MessageDetail)
   overload: NuvTools.Common.ResultWrapper.ResultBase.ConvertToMessageDetail*
   nameWithType.vb: ResultBase.ConvertToMessageDetail(IEnumerable(Of String))
   fullName.vb: NuvTools.Common.ResultWrapper.ResultBase.ConvertToMessageDetail(System.Collections.Generic.IEnumerable(Of String))
@@ -121,11 +124,14 @@ items:
   fullName: NuvTools.Common.ResultWrapper.ResultBase.CreateResult<T>(NuvTools.Common.ResultWrapper.Enumerations.ResultType, T, System.Collections.Generic.List<NuvTools.Common.ResultWrapper.MessageDetail>?, Microsoft.Extensions.Logging.ILogger?)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/ResultBase.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/ResultWrapper/ResultBase.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
-  summary: Creates a new instance of a result.
+  summary: >-
+    Centralized factory logic used by all Result classes.
+
+    Applies success flag, not-found detection, message list assignment and optional logging.
   example: []
   syntax:
     content: 'protected static T CreateResult<T>(ResultType resultType, T instance, List<MessageDetail>? messages = null, ILogger? logger = null) where T : ResultBase'
@@ -159,7 +165,7 @@ items:
   fullName: NuvTools.Common.ResultWrapper.ResultBase.ResultBase()
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/ResultBase.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/ResultWrapper/ResultBase.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
@@ -182,7 +188,7 @@ items:
   fullName: NuvTools.Common.ResultWrapper.ResultBase.Succeeded
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/ResultBase.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/ResultWrapper/ResultBase.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
@@ -207,11 +213,14 @@ items:
   fullName: NuvTools.Common.ResultWrapper.ResultBase.ContainsNotFound
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/ResultBase.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/ResultWrapper/ResultBase.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
-  summary: Indicates whether the result contains a "not found" message.
+  summary: >-
+    Indicates whether the result contains a "not found" condition (HTTP 404).
+
+    Useful for consumers that differentiate between logical and technical errors.
   example: []
   syntax:
     content: public bool ContainsNotFound { get; set; }
@@ -232,11 +241,11 @@ items:
   fullName: NuvTools.Common.ResultWrapper.ResultBase.ResultType
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/ResultBase.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/ResultWrapper/ResultBase.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
-  summary: Represents the type of the result (Success, Error, ValidationError, etc.).
+  summary: Defines the type of result (Success, Error, ValidationError, etc.).
   example: []
   syntax:
     content: public ResultType ResultType { get; set; }
@@ -257,7 +266,7 @@ items:
   fullName: NuvTools.Common.ResultWrapper.ResultBase.Messages
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/ResultBase.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/ResultWrapper/ResultBase.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
@@ -282,14 +291,14 @@ items:
   fullName: NuvTools.Common.ResultWrapper.ResultBase.MessageDetail
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/ResultBase.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/ResultWrapper/ResultBase.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
   summary: >-
-    Returns the first message detail (usually the main one).
+    Returns the first message detail (most important message).
 
-    Ignored during JSON serialization to avoid redundancy.
+    Ignored in JSON serialization to avoid redundancy.
   example: []
   syntax:
     content: >-
@@ -320,14 +329,14 @@ items:
   fullName: NuvTools.Common.ResultWrapper.ResultBase.Message
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-common/blob/aa990821ee74894d4e5db5af04128c16e76a699e/src/NuvTools.Common/ResultWrapper/ResultBase.cs
+    href: https://github.com/nuvtools/nuvtools-common/blob/7b0a3f43086221e191600d76037ab1ac00397848/src/NuvTools.Common/ResultWrapper/ResultBase.cs
   assemblies:
   - NuvTools.Common
   namespace: NuvTools.Common.ResultWrapper
   summary: >-
-    Returns a formatted string with the first message (e.g., "Title - Detail").
+    Returns a formatted string with Title (and Detail if present).
 
-    Ignored in JSON serialization to prevent duplication.
+    Ignored in JSON serialization to avoid duplication.
   example: []
   syntax:
     content: >-
@@ -1040,6 +1049,14 @@ references:
     name: Web
     isExternal: true
     href: NuvTools.Common.Web.html
+- uid: NuvTools.Common.ResultWrapper.Enumerations.Severity
+  commentId: T:NuvTools.Common.ResultWrapper.Enumerations.Severity
+  parent: NuvTools.Common.ResultWrapper.Enumerations
+  isExternal: true
+  href: NuvTools.Common.ResultWrapper.Enumerations.Severity.html
+  name: Severity
+  nameWithType: Severity
+  fullName: NuvTools.Common.ResultWrapper.Enumerations.Severity
 - uid: NuvTools.Common.ResultWrapper.ResultBase.Log*
   commentId: Overload:NuvTools.Common.ResultWrapper.ResultBase.Log
   isExternal: true
@@ -1090,6 +1107,53 @@ references:
   name: ILogger
   nameWithType: ILogger
   fullName: Microsoft.Extensions.Logging.ILogger
+- uid: NuvTools.Common.ResultWrapper.Enumerations
+  commentId: N:NuvTools.Common.ResultWrapper.Enumerations
+  isExternal: true
+  href: NuvTools.html
+  name: NuvTools.Common.ResultWrapper.Enumerations
+  nameWithType: NuvTools.Common.ResultWrapper.Enumerations
+  fullName: NuvTools.Common.ResultWrapper.Enumerations
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Common
+    name: Common
+    isExternal: true
+    href: NuvTools.Common.html
+  - name: .
+  - uid: NuvTools.Common.ResultWrapper
+    name: ResultWrapper
+    isExternal: true
+    href: NuvTools.Common.ResultWrapper.html
+  - name: .
+  - uid: NuvTools.Common.ResultWrapper.Enumerations
+    name: Enumerations
+    isExternal: true
+    href: NuvTools.Common.ResultWrapper.Enumerations.html
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+    href: NuvTools.html
+  - name: .
+  - uid: NuvTools.Common
+    name: Common
+    isExternal: true
+    href: NuvTools.Common.html
+  - name: .
+  - uid: NuvTools.Common.ResultWrapper
+    name: ResultWrapper
+    isExternal: true
+    href: NuvTools.Common.ResultWrapper.html
+  - name: .
+  - uid: NuvTools.Common.ResultWrapper.Enumerations
+    name: Enumerations
+    isExternal: true
+    href: NuvTools.Common.ResultWrapper.Enumerations.html
 - uid: System.Collections.Generic.List`1
   commentId: T:System.Collections.Generic.List`1
   isExternal: true
@@ -1283,53 +1347,6 @@ references:
   name: T
   nameWithType: T
   fullName: T
-- uid: NuvTools.Common.ResultWrapper.Enumerations
-  commentId: N:NuvTools.Common.ResultWrapper.Enumerations
-  isExternal: true
-  href: NuvTools.html
-  name: NuvTools.Common.ResultWrapper.Enumerations
-  nameWithType: NuvTools.Common.ResultWrapper.Enumerations
-  fullName: NuvTools.Common.ResultWrapper.Enumerations
-  spec.csharp:
-  - uid: NuvTools
-    name: NuvTools
-    isExternal: true
-    href: NuvTools.html
-  - name: .
-  - uid: NuvTools.Common
-    name: Common
-    isExternal: true
-    href: NuvTools.Common.html
-  - name: .
-  - uid: NuvTools.Common.ResultWrapper
-    name: ResultWrapper
-    isExternal: true
-    href: NuvTools.Common.ResultWrapper.html
-  - name: .
-  - uid: NuvTools.Common.ResultWrapper.Enumerations
-    name: Enumerations
-    isExternal: true
-    href: NuvTools.Common.ResultWrapper.Enumerations.html
-  spec.vb:
-  - uid: NuvTools
-    name: NuvTools
-    isExternal: true
-    href: NuvTools.html
-  - name: .
-  - uid: NuvTools.Common
-    name: Common
-    isExternal: true
-    href: NuvTools.Common.html
-  - name: .
-  - uid: NuvTools.Common.ResultWrapper
-    name: ResultWrapper
-    isExternal: true
-    href: NuvTools.Common.ResultWrapper.html
-  - name: .
-  - uid: NuvTools.Common.ResultWrapper.Enumerations
-    name: Enumerations
-    isExternal: true
-    href: NuvTools.Common.ResultWrapper.Enumerations.html
 - uid: T
   name: T
   nameWithType: T

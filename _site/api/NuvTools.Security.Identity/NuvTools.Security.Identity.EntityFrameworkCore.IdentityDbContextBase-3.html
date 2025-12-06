@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class IdentityDbContextBase&lt;TUser, TRole, TIdentityKey&gt; | Nuv Tools Framework Docs ">
       
-      
+      <meta name="description" content="Provides a base implementation of  with enhanced transaction support, execution strategies, and batch operation capabilities.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3" data-uid="NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3" class="text-break">
-Class IdentityDbContextBase&lt;TUser, TRole, TIdentityKey&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+Class IdentityDbContextBase&lt;TUser, TRole, TIdentityKey&gt;  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,9 @@ Class IdentityDbContextBase&lt;TUser, TRole, TIdentityKey&gt;  <a class="header-
   <dl><dt>Assembly</dt><dd>NuvTools.Security.Identity.EntityFrameworkCore.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Provides a base implementation of <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identitydbcontext-3">IdentityDbContext&lt;TUser, TRole, TKey&gt;</a> with enhanced
+transaction support, execution strategies, and batch operation capabilities.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -109,11 +111,14 @@ Class IdentityDbContextBase&lt;TUser, TRole, TIdentityKey&gt;  <a class="header-
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TUser</code></dt>
-    <dd></dd>
+    <dd><p>The type representing a user in the system, must inherit from <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityuser-1">IdentityUser&lt;TKey&gt;</a>.</p>
+</dd>
     <dt><code>TRole</code></dt>
-    <dd></dd>
+    <dd><p>The type representing a role in the system, must inherit from <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.identityrole-1">IdentityRole&lt;TKey&gt;</a>.</p>
+</dd>
     <dt><code>TIdentityKey</code></dt>
-    <dd></dd>
+    <dd><p>The type of the primary key for users and roles, must implement <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>.</p>
+</dd>
   </dl>
 
   <dl class="typelist inheritance">
@@ -343,7 +348,33 @@ Class IdentityDbContextBase&lt;TUser, TRole, TIdentityKey&gt;  <a class="header-
 
 
 
+  <h2 id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_examples">Examples</h2>
+  <pre><code class="lang-csharp">public class ApplicationDbContext : IdentityDbContextBase&lt;ApplicationUser, ApplicationRole, Guid&gt;
+{
+    public ApplicationDbContext(DbContextOptions&lt;ApplicationDbContext&gt; options)
+        : base(options)
+    {
+    }
 
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        base.OnModelCreating(builder);
+        // Configure your entities here
+    }
+}</code></pre>
+
+
+  <h2 id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>
+This abstract base class extends <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identitydbcontext-3">IdentityDbContext&lt;TUser, TRole, TKey&gt;</a> and implements
+<a class="xref" href="../NuvTools.Data/NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.html">IDbContextCommands</a> and <a class="xref" href="../NuvTools.Data/NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.html">IDbContextWithListCommands</a> to provide:
+</p>
+<ul><li>Transaction management with begin, commit, and rollback operations</li><li>Execution strategies for handling transient database failures</li><li>Convenient CRUD operations that automatically save changes and return <a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a> wrappers</li><li>Batch operations for synchronizing collections of entities</li><li>Support for composite key operations</li></ul>
+<p>
+All operations use the Result pattern, returning <a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a> or <a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult-1.html">IResult&lt;T&gt;</a>
+instead of throwing exceptions for business logic failures.
+</p>
+</div>
 
 
   <h2 class="section" id="constructors">Constructors
@@ -354,10 +385,11 @@ Class IdentityDbContextBase&lt;TUser, TRole, TIdentityKey&gt;  <a class="header-
 
   <h3 id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3__ctor" data-uid="NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.#ctor">
   IdentityDbContextBase()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase-3.html">IdentityDbContextBase&lt;TUser, TRole, TIdentityKey&gt;</a> class.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -372,6 +404,9 @@ Class IdentityDbContextBase&lt;TUser, TRole, TIdentityKey&gt;  <a class="header-
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3__ctor_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This parameterless constructor is typically used for design-time tools and migrations.</p>
+</div>
 
 
 
@@ -380,10 +415,12 @@ Class IdentityDbContextBase&lt;TUser, TRole, TIdentityKey&gt;  <a class="header-
 
   <h3 id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3__ctor_Microsoft_EntityFrameworkCore_DbContextOptions_" data-uid="NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions)">
   IdentityDbContextBase(DbContextOptions)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase-3.html">IdentityDbContextBase&lt;TUser, TRole, TIdentityKey&gt;</a> class
+with the specified options.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -393,7 +430,8 @@ Class IdentityDbContextBase&lt;TUser, TRole, TIdentityKey&gt;  <a class="header-
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>options</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontextoptions">DbContextOptions</a></dt>
-    <dd></dd>
+    <dd><p>The options to be used by the <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext">DbContext</a>.</p>
+</dd>
   </dl>
 
 
@@ -403,6 +441,9 @@ Class IdentityDbContextBase&lt;TUser, TRole, TIdentityKey&gt;  <a class="header-
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3__ctor_Microsoft_EntityFrameworkCore_DbContextOptions__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This constructor is used for runtime configuration and dependency injection scenarios.</p>
+</div>
 
 
 
@@ -415,10 +456,11 @@ Class IdentityDbContextBase&lt;TUser, TRole, TIdentityKey&gt;  <a class="header-
 
   <h3 id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_CurrentTransaction" data-uid="NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.CurrentTransaction">
   CurrentTransaction
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the current active transaction, or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> if no transaction is active.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -432,12 +474,16 @@ Class IdentityDbContextBase&lt;TUser, TRole, TIdentityKey&gt;  <a class="header-
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.storage.idbcontexttransaction">IDbContextTransaction</a></dt>
-    <dd></dd>
+    <dd><p>An <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.storage.idbcontexttransaction">IDbContextTransaction</a> representing the current transaction, or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> if no transaction has been started.</p>
+</dd>
   </dl>
 
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_CurrentTransaction_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Use this property to check whether a transaction is currently active before performing transaction-specific operations.</p>
+</div>
 
 
 
@@ -450,10 +496,11 @@ Class IdentityDbContextBase&lt;TUser, TRole, TIdentityKey&gt;  <a class="header-
 
   <h3 id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_AddAndSaveAsync__2___0_System_Threading_CancellationToken_" data-uid="NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.AddAndSaveAsync``2(``0,System.Threading.CancellationToken)">
   AddAndSaveAsync&lt;TEntity, TKey&gt;(TEntity, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Asynchronously adds an entity to the database and saves the changes, returning the generated primary key.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -463,23 +510,29 @@ Class IdentityDbContextBase&lt;TUser, TRole, TIdentityKey&gt;  <a class="header-
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>entity</code> <span class="xref">TEntity</span></dt>
-    <dd></dd>
+    <dd><p>The entity instance to add to the database.</p>
+</dd>
     <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd></dd>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> to observe while waiting for the task to complete.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;TKey&gt;&gt;</dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation. The task result contains an <a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult-1.html">IResult&lt;T&gt;</a>
+with the generated primary key value if successful.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TEntity</code></dt>
-    <dd></dd>
+    <dd><p>The type of entity to add. Must be a reference type.</p>
+</dd>
     <dt><code>TKey</code></dt>
-    <dd></dd>
+    <dd><p>The type of the primary key.</p>
+</dd>
   </dl>
 
 
@@ -487,6 +540,10 @@ Class IdentityDbContextBase&lt;TUser, TRole, TIdentityKey&gt;  <a class="header-
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_AddAndSaveAsync__2___0_System_Threading_CancellationToken__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method automatically calls <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechangesasync#microsoft-entityframeworkcore-dbcontext-savechangesasync(system-threading-cancellationtoken)">SaveChangesAsync(CancellationToken)</a> after adding the entity.
+The result will contain the primary key value generated by the database (for identity columns or sequences).</p>
+</div>
 
 
 
@@ -495,10 +552,12 @@ Class IdentityDbContextBase&lt;TUser, TRole, TIdentityKey&gt;  <a class="header-
 
   <h3 id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_AddAndSaveWithCompositeKeyAsync__1___0_System_Threading_CancellationToken_" data-uid="NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.AddAndSaveWithCompositeKeyAsync``1(``0,System.Threading.CancellationToken)">
   AddAndSaveWithCompositeKeyAsync&lt;TEntity&gt;(TEntity, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Asynchronously adds an entity with a composite key to the database and saves the changes,
+returning the composite key values.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -508,21 +567,26 @@ Class IdentityDbContextBase&lt;TUser, TRole, TIdentityKey&gt;  <a class="header-
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>entity</code> <span class="xref">TEntity</span></dt>
-    <dd></dd>
+    <dd><p>The entity instance to add to the database.</p>
+</dd>
     <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd></dd>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> to observe while waiting for the task to complete.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]&gt;&gt;</dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation. The task result contains an <a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult-1.html">IResult&lt;T&gt;</a>
+with an array of composite key values if successful.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TEntity</code></dt>
-    <dd></dd>
+    <dd><p>The type of entity to add. Must be a reference type.</p>
+</dd>
   </dl>
 
 
@@ -530,6 +594,10 @@ Class IdentityDbContextBase&lt;TUser, TRole, TIdentityKey&gt;  <a class="header-
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_AddAndSaveWithCompositeKeyAsync__1___0_System_Threading_CancellationToken__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method is used for entities that have composite primary keys (multiple columns forming the primary key).
+The returned array contains the key values in the order they are defined in the entity configuration.</p>
+</div>
 
 
 
@@ -538,10 +606,11 @@ Class IdentityDbContextBase&lt;TUser, TRole, TIdentityKey&gt;  <a class="header-
 
   <h3 id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_AddOrRemoveFromListAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken_" data-uid="NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.AddOrRemoveFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)">
   AddOrRemoveFromListAsync&lt;TEntity, TKey&gt;(IEnumerable&lt;TEntity&gt;, Func&lt;TEntity, TKey&gt;, Expression&lt;Func&lt;TEntity, bool&gt;&gt;?, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Synchronizes a DbSet with a provided list by adding or removing entities, without updating any entities.</p>
+  <div class="markdown level1 summary"><p>Asynchronously adds new entities from a collection or removes existing ones that are not in the collection,
+without updating existing entities.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -552,32 +621,34 @@ Class IdentityDbContextBase&lt;TUser, TRole, TIdentityKey&gt;  <a class="header-
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>entities</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TEntity&gt;</dt>
-    <dd><p>The list of entities to synchronize with the database.</p>
+    <dd><p>The collection of entities to ensure exist in the database.</p>
 </dd>
     <dt><code>keySelector</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;TEntity, TKey&gt;</dt>
-    <dd><p>A function to select the key for matching entities.</p>
+    <dd><p>A function to extract the key from an entity for comparison.</p>
 </dd>
     <dt><code>filter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;TEntity, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;&gt;</dt>
-    <dd><p>An optional filter predicate to apply to the database entities.</p>
+    <dd><p>An optional filter expression to limit which database entities are considered for removal.</p>
 </dd>
     <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd><p>A token to monitor for cancellation requests.</p>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> to observe while waiting for the task to complete.</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation. The task result contains an <a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>
+indicating whether the operation was successful.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TEntity</code></dt>
-    <dd><p>The type of the entity.</p>
+    <dd><p>The type of entity to add or remove. Must be a reference type.</p>
 </dd>
     <dt><code>TKey</code></dt>
-    <dd><p>The type of the key used to uniquely identify entities.</p>
+    <dd><p>The type of the key used to identify entities. Must be non-nullable.</p>
 </dd>
   </dl>
 
@@ -586,16 +657,19 @@ Class IdentityDbContextBase&lt;TUser, TRole, TIdentityKey&gt;  <a class="header-
 
 
   <h4 class="section" id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_AddOrRemoveFromListAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken__examples">Examples</h4>
-  <p>await context.AddOrRemoveFromListAsync(
-updatedOrders,
-o =&gt; o.OrderId,
-o =&gt; o.IsPending
-);</p>
+  <pre><code class="lang-csharp">// Ensure specific tags exist for a post without updating existing tag data
+var tags = new[] { "C#", "ASP.NET", "EF Core" }.Select(t =&gt; new Tag { Name = t, PostId = postId });
+await context.AddOrRemoveFromListAsync(tags, t =&gt; t.Name, t =&gt; t.PostId == postId);</code></pre>
 
 
   <h4 class="section" id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_AddOrRemoveFromListAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken__remarks">Remarks</h4>
-  <div class="markdown level1 remarks"><p>This method adds entities in the list that are not in the database and removes entities in the database
-that are not in the list. It does not update any entities.</p>
+  <div class="markdown level1 remarks"><p>
+This method performs selective add/remove operations:
+</p>
+<ul><li>Entities in the collection but not in the database are added</li><li>Entities in the database (matching the filter) but not in the collection are removed</li><li>Existing entities that are in both the collection and database are left unchanged (not updated)</li></ul>
+<p>
+This is useful when you only care about the presence of entities, not their current values.
+</p>
 </div>
 
 
@@ -605,10 +679,10 @@ that are not in the list. It does not update any entities.</p>
 
   <h3 id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_AddOrUpdateFromListAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken_" data-uid="NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.AddOrUpdateFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)">
   AddOrUpdateFromListAsync&lt;TEntity, TKey&gt;(IEnumerable&lt;TEntity&gt;, Func&lt;TEntity, TKey&gt;, Expression&lt;Func&lt;TEntity, bool&gt;&gt;?, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Synchronizes a DbSet with a provided list by adding or updating entities, without removing any entities.</p>
+  <div class="markdown level1 summary"><p>Asynchronously adds new entities from a collection or updates existing ones, without removing any entities.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -619,32 +693,34 @@ that are not in the list. It does not update any entities.</p>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>entities</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TEntity&gt;</dt>
-    <dd><p>The list of entities to synchronize with the database.</p>
+    <dd><p>The collection of entities to add or update in the database.</p>
 </dd>
     <dt><code>keySelector</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;TEntity, TKey&gt;</dt>
-    <dd><p>A function to select the key for matching entities.</p>
+    <dd><p>A function to extract the key from an entity for comparison.</p>
 </dd>
     <dt><code>filter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;TEntity, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;&gt;</dt>
-    <dd><p>An optional filter predicate to apply to the database entities.</p>
+    <dd><p>An optional filter expression to limit which database entities are considered for matching.</p>
 </dd>
     <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd><p>A token to monitor for cancellation requests.</p>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> to observe while waiting for the task to complete.</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation. The task result contains an <a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>
+indicating whether the operation was successful.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TEntity</code></dt>
-    <dd><p>The type of the entity.</p>
+    <dd><p>The type of entity to add or update. Must be a reference type.</p>
 </dd>
     <dt><code>TKey</code></dt>
-    <dd><p>The type of the key used to uniquely identify entities.</p>
+    <dd><p>The type of the key used to identify entities. Must be non-nullable.</p>
 </dd>
   </dl>
 
@@ -653,16 +729,19 @@ that are not in the list. It does not update any entities.</p>
 
 
   <h4 class="section" id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_AddOrUpdateFromListAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken__examples">Examples</h4>
-  <p>await context.AddOrUpdateFromListAsync(
-updatedProducts,
-p =&gt; p.ProductCode,
-p =&gt; p.IsActive
-);</p>
+  <pre><code class="lang-csharp">// Add or update permissions without removing existing ones
+var permissions = new[] { "Read", "Write", "Execute" }.Select(p =&gt; new Permission { Name = p });
+await context.AddOrUpdateFromListAsync(permissions, p =&gt; p.Name);</code></pre>
 
 
   <h4 class="section" id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_AddOrUpdateFromListAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken__remarks">Remarks</h4>
-  <div class="markdown level1 remarks"><p>This method adds entities in the list that are not in the database and updates entities that exist in both.
-It does not remove any entities from the database.</p>
+  <div class="markdown level1 remarks"><p>
+This method performs an upsert operation:
+</p>
+<ul><li>Entities not found in the database are added</li><li>Entities found in the database are updated with values from the collection</li><li>No entities are removed from the database</li></ul>
+<p>
+This is useful when you want to ensure certain entities exist and are up-to-date without deleting others.
+</p>
 </div>
 
 
@@ -672,10 +751,11 @@ It does not remove any entities from the database.</p>
 
   <h3 id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_BeginTransactionAsync_System_Threading_CancellationToken_" data-uid="NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.BeginTransactionAsync(System.Threading.CancellationToken)">
   BeginTransactionAsync(CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Asynchronously begins a new database transaction.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -685,13 +765,16 @@ It does not remove any entities from the database.</p>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd></dd>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> to observe while waiting for the task to complete.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.storage.idbcontexttransaction">IDbContextTransaction</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation. The task result contains an <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.storage.idbcontexttransaction">IDbContextTransaction</a>
+that represents the started transaction.</p>
+</dd>
   </dl>
 
 
@@ -700,6 +783,10 @@ It does not remove any entities from the database.</p>
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_BeginTransactionAsync_System_Threading_CancellationToken__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Transactions allow multiple database operations to be executed as a single atomic unit.
+Use <a class="xref" href="NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase-3.html#NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_CommitTransactionAsync_System_Threading_CancellationToken_">CommitTransactionAsync(CancellationToken)</a> to commit the transaction or <a class="xref" href="NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase-3.html#NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_RollbackTransactionAsync_System_Threading_CancellationToken_">RollbackTransactionAsync(CancellationToken)</a> to roll it back.</p>
+</div>
 
 
 
@@ -708,10 +795,11 @@ It does not remove any entities from the database.</p>
 
   <h3 id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_CommitTransactionAsync_System_Threading_CancellationToken_" data-uid="NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.CommitTransactionAsync(System.Threading.CancellationToken)">
   CommitTransactionAsync(CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Asynchronously commits all changes made in the current transaction to the database.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -721,13 +809,15 @@ It does not remove any entities from the database.</p>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd></dd>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> to observe while waiting for the task to complete.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation.</p>
+</dd>
   </dl>
 
 
@@ -736,7 +826,17 @@ It does not remove any entities from the database.</p>
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_CommitTransactionAsync_System_Threading_CancellationToken__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method should be called after <a class="xref" href="NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase-3.html#NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_BeginTransactionAsync_System_Threading_CancellationToken_">BeginTransactionAsync(CancellationToken)</a> to persist the changes.
+If the commit fails, the transaction remains active and can be rolled back.</p>
+</div>
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></dt>
+    <dd><p>Thrown when there is no active transaction.</p>
+</dd>
+  </dl>
 
 
 
@@ -744,10 +844,11 @@ It does not remove any entities from the database.</p>
 
   <h3 id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_ExecuteWithStrategyAsync_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task__System_Threading_CancellationToken_" data-uid="NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.ExecuteWithStrategyAsync(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Threading.CancellationToken)">
   ExecuteWithStrategyAsync(Func&lt;CancellationToken, Task&gt;, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Executes an action within the configured execution strategy to handle transient database failures.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -757,15 +858,18 @@ It does not remove any entities from the database.</p>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>The action to execute that takes a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> and returns a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a>.</p>
+</dd>
     <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd></dd>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> to observe while waiting for the task to complete.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation.</p>
+</dd>
   </dl>
 
 
@@ -774,6 +878,10 @@ It does not remove any entities from the database.</p>
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_ExecuteWithStrategyAsync_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task__System_Threading_CancellationToken__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The execution strategy automatically retries operations that fail due to transient errors,
+such as temporary network issues or database deadlocks, according to the configured retry policy.</p>
+</div>
 
 
 
@@ -782,10 +890,11 @@ It does not remove any entities from the database.</p>
 
   <h3 id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_ExecuteWithStrategyAsync__1_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task___0___System_Threading_CancellationToken_" data-uid="NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.ExecuteWithStrategyAsync``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)">
   ExecuteWithStrategyAsync&lt;T&gt;(Func&lt;CancellationToken, Task&lt;T&gt;&gt;, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Executes a function within the configured execution strategy to handle transient database failures.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -795,21 +904,25 @@ It does not remove any entities from the database.</p>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T&gt;&gt;</dt>
-    <dd></dd>
+    <dd><p>The function to execute that takes a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> and returns a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task&lt;TResult&gt;</a>.</p>
+</dd>
     <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd></dd>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> to observe while waiting for the task to complete.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T&gt;</dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation. The task result contains the value returned by the function.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>The type of the result returned by the function.</p>
+</dd>
   </dl>
 
 
@@ -817,6 +930,10 @@ It does not remove any entities from the database.</p>
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_ExecuteWithStrategyAsync__1_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task___0___System_Threading_CancellationToken__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The execution strategy automatically retries operations that fail due to transient errors,
+such as temporary network issues or database deadlocks, according to the configured retry policy.</p>
+</div>
 
 
 
@@ -825,10 +942,11 @@ It does not remove any entities from the database.</p>
 
   <h3 id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_RemoveAndSaveAsync__1_System_Object___" data-uid="NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.RemoveAndSaveAsync``1(System.Object[])">
   RemoveAndSaveAsync&lt;TEntity&gt;(params object[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Asynchronously removes an entity from the database by its primary key and saves the changes.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -838,19 +956,23 @@ It does not remove any entities from the database.</p>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>keyValues</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
-    <dd></dd>
+    <dd><p>The primary key values identifying the entity to remove.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation. The task result contains an <a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>
+indicating whether the removal was successful.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TEntity</code></dt>
-    <dd></dd>
+    <dd><p>The type of entity to remove. Must be a reference type.</p>
+</dd>
   </dl>
 
 
@@ -858,6 +980,10 @@ It does not remove any entities from the database.</p>
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_RemoveAndSaveAsync__1_System_Object____remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method finds the entity by its primary key, removes it, and automatically saves the changes.
+If the entity is not found, the operation may still succeed (idempotent deletion).</p>
+</div>
 
 
 
@@ -866,10 +992,11 @@ It does not remove any entities from the database.</p>
 
   <h3 id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_RemoveAndSaveAsync__1_System_Object___System_Threading_CancellationToken_" data-uid="NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.RemoveAndSaveAsync``1(System.Object[],System.Threading.CancellationToken)">
   RemoveAndSaveAsync&lt;TEntity&gt;(object[], CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Asynchronously removes an entity from the database by its primary key and saves the changes.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -879,21 +1006,26 @@ It does not remove any entities from the database.</p>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>keyValues</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
-    <dd></dd>
+    <dd><p>The primary key values identifying the entity to remove.</p>
+</dd>
     <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd></dd>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> to observe while waiting for the task to complete.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation. The task result contains an <a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>
+indicating whether the removal was successful.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TEntity</code></dt>
-    <dd></dd>
+    <dd><p>The type of entity to remove. Must be a reference type.</p>
+</dd>
   </dl>
 
 
@@ -901,6 +1033,10 @@ It does not remove any entities from the database.</p>
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_RemoveAndSaveAsync__1_System_Object___System_Threading_CancellationToken__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method finds the entity by its primary key, removes it, and automatically saves the changes.
+If the entity is not found, the operation may still succeed (idempotent deletion).</p>
+</div>
 
 
 
@@ -909,10 +1045,11 @@ It does not remove any entities from the database.</p>
 
   <h3 id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_RollbackTransactionAsync_System_Threading_CancellationToken_" data-uid="NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.RollbackTransactionAsync(System.Threading.CancellationToken)">
   RollbackTransactionAsync(CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Asynchronously rolls back all changes made in the current transaction.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -922,13 +1059,15 @@ It does not remove any entities from the database.</p>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd></dd>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> to observe while waiting for the task to complete.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation.</p>
+</dd>
   </dl>
 
 
@@ -937,7 +1076,17 @@ It does not remove any entities from the database.</p>
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_RollbackTransactionAsync_System_Threading_CancellationToken__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method discards all changes made within the current transaction and closes it.
+After rolling back, you need to call <a class="xref" href="NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase-3.html#NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_BeginTransactionAsync_System_Threading_CancellationToken_">BeginTransactionAsync(CancellationToken)</a> to start a new transaction.</p>
+</div>
 
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></dt>
+    <dd><p>Thrown when there is no active transaction.</p>
+</dd>
+  </dl>
 
 
 
@@ -945,10 +1094,11 @@ It does not remove any entities from the database.</p>
 
   <h3 id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_SyncFromListAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken_" data-uid="NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.SyncFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)">
   SyncFromListAsync&lt;TEntity, TKey&gt;(IEnumerable&lt;TEntity&gt;, Func&lt;TEntity, TKey&gt;, Expression&lt;Func&lt;TEntity, bool&gt;&gt;?, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Synchronizes a DbSet with a provided list by adding, updating, or removing entities.</p>
+  <div class="markdown level1 summary"><p>Asynchronously synchronizes a collection of entities with the database by adding new entities,
+updating existing ones, and removing entities not present in the collection.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -959,32 +1109,34 @@ It does not remove any entities from the database.</p>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>entities</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TEntity&gt;</dt>
-    <dd><p>The list of entities to synchronize with the database.</p>
+    <dd><p>The collection of entities to synchronize with the database.</p>
 </dd>
     <dt><code>keySelector</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;TEntity, TKey&gt;</dt>
-    <dd><p>A function to select the key for matching entities.</p>
+    <dd><p>A function to extract the key from an entity for comparison.</p>
 </dd>
     <dt><code>filter</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.expressions.expression-1">Expression</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;TEntity, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;&gt;</dt>
-    <dd><p>An optional filter predicate to apply to the database entities.</p>
+    <dd><p>An optional filter expression to limit which database entities are considered for synchronization.</p>
 </dd>
     <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd><p>A token to monitor for cancellation requests.</p>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> to observe while waiting for the task to complete.</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation. The task result contains an <a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>
+indicating whether the synchronization was successful.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TEntity</code></dt>
-    <dd><p>The type of the entity.</p>
+    <dd><p>The type of entity to synchronize. Must be a reference type.</p>
 </dd>
     <dt><code>TKey</code></dt>
-    <dd><p>The type of the key used to uniquely identify entities.</p>
+    <dd><p>The type of the key used to identify entities. Must be non-nullable.</p>
 </dd>
   </dl>
 
@@ -993,16 +1145,19 @@ It does not remove any entities from the database.</p>
 
 
   <h4 class="section" id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_SyncFromListAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken__examples">Examples</h4>
-  <p>await context.SyncFromListAsync(
-updatedEmployees,
-e =&gt; e.Id,
-e =&gt; e.IsActive
-);</p>
+  <pre><code class="lang-csharp">// Synchronize user roles - adds new, updates existing, removes missing
+var userRoles = newRoleIds.Select(roleId =&gt; new IdentityUserRole&lt;Guid&gt; { UserId = userId, RoleId = roleId });
+await context.SyncFromListAsync(userRoles, ur =&gt; ur.RoleId, ur =&gt; ur.UserId == userId);</code></pre>
 
 
   <h4 class="section" id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_SyncFromListAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken__remarks">Remarks</h4>
-  <div class="markdown level1 remarks"><p>This method adds entities in the list that are not in the database, updates entities that exist in both,
-and removes entities in the database that are not in the list.</p>
+  <div class="markdown level1 remarks"><p>
+This method performs a full synchronization:
+</p>
+<ul><li>Entities in the collection but not in the database are added</li><li>Entities in both the collection and database are updated with values from the collection</li><li>Entities in the database (matching the filter) but not in the collection are removed</li></ul>
+<p>
+This is useful for maintaining master-detail relationships or synchronizing complete lists.
+</p>
 </div>
 
 
@@ -1012,10 +1167,11 @@ and removes entities in the database that are not in the list.</p>
 
   <h3 id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_UpdateAndSaveAsync__1___0_System_Object___" data-uid="NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.UpdateAndSaveAsync``1(``0,System.Object[])">
   UpdateAndSaveAsync&lt;TEntity&gt;(TEntity, params object[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Asynchronously updates an existing entity in the database and saves the changes.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -1025,21 +1181,26 @@ and removes entities in the database that are not in the list.</p>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>entity</code> <span class="xref">TEntity</span></dt>
-    <dd></dd>
+    <dd><p>The entity instance with updated values.</p>
+</dd>
     <dt><code>keyValues</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
-    <dd></dd>
+    <dd><p>The primary key values used to locate the existing entity in the database.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation. The task result contains an <a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>
+indicating whether the update was successful.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TEntity</code></dt>
-    <dd></dd>
+    <dd><p>The type of entity to update. Must be a reference type.</p>
+</dd>
   </dl>
 
 
@@ -1047,6 +1208,10 @@ and removes entities in the database that are not in the list.</p>
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_UpdateAndSaveAsync__1___0_System_Object____remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method finds the entity by its primary key, updates its values, and automatically saves the changes.
+If the entity is not found, the operation will fail and return an unsuccessful result.</p>
+</div>
 
 
 
@@ -1055,10 +1220,11 @@ and removes entities in the database that are not in the list.</p>
 
   <h3 id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_UpdateAndSaveAsync__1___0_System_Object___System_Threading_CancellationToken_" data-uid="NuvTools.Security.Identity.EntityFrameworkCore.IdentityDbContextBase`3.UpdateAndSaveAsync``1(``0,System.Object[],System.Threading.CancellationToken)">
   UpdateAndSaveAsync&lt;TEntity&gt;(TEntity, object[], CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Asynchronously updates an existing entity in the database and saves the changes.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -1068,23 +1234,29 @@ and removes entities in the database that are not in the list.</p>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>entity</code> <span class="xref">TEntity</span></dt>
-    <dd></dd>
+    <dd><p>The entity instance with updated values.</p>
+</dd>
     <dt><code>keyValues</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
-    <dd></dd>
+    <dd><p>The primary key values used to locate the existing entity in the database.</p>
+</dd>
     <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd></dd>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a> to observe while waiting for the task to complete.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation. The task result contains an <a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>
+indicating whether the update was successful.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TEntity</code></dt>
-    <dd></dd>
+    <dd><p>The type of entity to update. Must be a reference type.</p>
+</dd>
   </dl>
 
 
@@ -1092,6 +1264,10 @@ and removes entities in the database that are not in the list.</p>
 
 
 
+  <h4 class="section" id="NuvTools_Security_Identity_EntityFrameworkCore_IdentityDbContextBase_3_UpdateAndSaveAsync__1___0_System_Object___System_Threading_CancellationToken__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method finds the entity by its primary key, updates its values, and automatically saves the changes.
+If the entity is not found, the operation will fail and return an unsuccessful result.</p>
+</div>
 
 
 
@@ -1100,7 +1276,7 @@ and removes entities in the database that are not in the list.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-security-identity/blob/53a45c22ac12cee6d937982b3d3e4aa5a3f27be8/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-security-identity/blob/c7246738ce8a7d45f942536439df8b1b84d49969/src/NuvTools.Security.Identity.EntityFrameworkCore/IdentityDbContextBase.cs" class="edit-link">Edit this page</a>
         </div>
 
 

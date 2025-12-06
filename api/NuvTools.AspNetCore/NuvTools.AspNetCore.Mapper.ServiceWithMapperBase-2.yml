@@ -22,15 +22,26 @@ items:
   fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   assemblies:
   - NuvTools.AspNetCore
   namespace: NuvTools.AspNetCore.Mapper
+  summary: >-
+    Provides a base class for service classes that require AutoMapper functionality
+
+    for converting between DTOs and entities.
+  remarks: >-
+    This class provides protected helper methods for common mapping operations,
+
+    simplifying conversion between DTOs and entities in derived service classes.
+  example: []
   syntax:
     content: 'public abstract class ServiceWithMapperBase<TDTO, TEntity> where TDTO : class where TEntity : class'
     typeParameters:
     - id: TDTO
+      description: The type of the Data Transfer Object (DTO).
     - id: TEntity
+      description: The type of the entity.
     content.vb: Public MustInherit Class ServiceWithMapperBase(Of TDTO As Class, TEntity As Class)
   inheritance:
   - System.Object
@@ -59,10 +70,19 @@ items:
   fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ServiceWithMapperBase(AutoMapper.IMapper)
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   assemblies:
   - NuvTools.AspNetCore
   namespace: NuvTools.AspNetCore.Mapper
+  summary: >-
+    Provides a base class for service classes that require AutoMapper functionality
+
+    for converting between DTOs and entities.
+  remarks: >-
+    This class provides protected helper methods for common mapping operations,
+
+    simplifying conversion between DTOs and entities in derived service classes.
+  example: []
   syntax:
     content: protected ServiceWithMapperBase(IMapper mapper)
     parameters:
@@ -85,19 +105,24 @@ items:
   fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertTo<TReturn>(TEntity?)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   assemblies:
   - NuvTools.AspNetCore
   namespace: NuvTools.AspNetCore.Mapper
+  summary: Converts an entity to a specified return type using AutoMapper.
+  example: []
   syntax:
     content: protected TReturn? ConvertTo<TReturn>(TEntity? model)
     parameters:
     - id: model
       type: '{TEntity}'
+      description: The entity to convert.
     typeParameters:
     - id: TReturn
+      description: The type to convert to.
     return:
       type: '{TReturn}'
+      description: The converted object, or <code>null</code> if the input is <code>null</code>.
     content.vb: Protected Function ConvertTo(Of TReturn)(model As TEntity) As TReturn
   overload: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertTo*
   nameWithType.vb: ServiceWithMapperBase(Of TDTO, TEntity).ConvertTo(Of TReturn)(TEntity)
@@ -115,19 +140,24 @@ items:
   fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertTo<TReturn>(System.Collections.Generic.IEnumerable<TEntity>?)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   assemblies:
   - NuvTools.AspNetCore
   namespace: NuvTools.AspNetCore.Mapper
+  summary: Converts a collection of entities to a collection of the specified return type using AutoMapper.
+  example: []
   syntax:
     content: protected IEnumerable<TReturn>? ConvertTo<TReturn>(IEnumerable<TEntity>? models)
     parameters:
     - id: models
       type: System.Collections.Generic.IEnumerable{{TEntity}}
+      description: The collection of entities to convert.
     typeParameters:
     - id: TReturn
+      description: The type to convert to.
     return:
       type: System.Collections.Generic.IEnumerable{{TReturn}}
+      description: The converted collection, or <code>null</code> if the input is <code>null</code>.
     content.vb: Protected Function ConvertTo(Of TReturn)(models As IEnumerable(Of TEntity)) As IEnumerable(Of TReturn)
   overload: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertTo*
   nameWithType.vb: ServiceWithMapperBase(Of TDTO, TEntity).ConvertTo(Of TReturn)(IEnumerable(Of TEntity))
@@ -145,17 +175,21 @@ items:
   fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertToEntity(TDTO)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   assemblies:
   - NuvTools.AspNetCore
   namespace: NuvTools.AspNetCore.Mapper
+  summary: Converts a DTO to an entity using AutoMapper.
+  example: []
   syntax:
     content: protected TEntity ConvertToEntity(TDTO model)
     parameters:
     - id: model
       type: '{TDTO}'
+      description: The DTO to convert.
     return:
       type: '{TEntity}'
+      description: The converted entity.
     content.vb: Protected Function ConvertToEntity(model As TDTO) As TEntity
   overload: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToEntity*
   nameWithType.vb: ServiceWithMapperBase(Of TDTO, TEntity).ConvertToEntity(TDTO)
@@ -172,17 +206,21 @@ items:
   fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(TEntity?)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   assemblies:
   - NuvTools.AspNetCore
   namespace: NuvTools.AspNetCore.Mapper
+  summary: Converts an entity to a DTO using AutoMapper.
+  example: []
   syntax:
     content: protected TDTO? ConvertToDTO(TEntity? model)
     parameters:
     - id: model
       type: '{TEntity}'
+      description: The entity to convert.
     return:
       type: '{TDTO}'
+      description: The converted DTO, or <code>null</code> if the input is <code>null</code>.
     content.vb: Protected Function ConvertToDTO(model As TEntity) As TDTO
   overload: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO*
   nameWithType.vb: ServiceWithMapperBase(Of TDTO, TEntity).ConvertToDTO(TEntity)
@@ -200,17 +238,21 @@ items:
   fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(System.Collections.Generic.IEnumerable<TEntity>?)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   assemblies:
   - NuvTools.AspNetCore
   namespace: NuvTools.AspNetCore.Mapper
+  summary: Converts a collection of entities to a collection of DTOs using AutoMapper.
+  example: []
   syntax:
     content: protected IEnumerable<TDTO>? ConvertToDTO(IEnumerable<TEntity>? models)
     parameters:
     - id: models
       type: System.Collections.Generic.IEnumerable{{TEntity}}
+      description: The collection of entities to convert.
     return:
       type: System.Collections.Generic.IEnumerable{{TDTO}}
+      description: The converted collection of DTOs, or <code>null</code> if the input is <code>null</code>.
     content.vb: Protected Function ConvertToDTO(models As IEnumerable(Of TEntity)) As IEnumerable(Of TDTO)
   overload: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO*
   nameWithType.vb: ServiceWithMapperBase(Of TDTO, TEntity).ConvertToDTO(IEnumerable(Of TEntity))
@@ -228,17 +270,21 @@ items:
   fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(System.Collections.Generic.IList<TEntity>?)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   assemblies:
   - NuvTools.AspNetCore
   namespace: NuvTools.AspNetCore.Mapper
+  summary: Converts a list of entities to a list of DTOs using AutoMapper.
+  example: []
   syntax:
     content: protected IList<TDTO>? ConvertToDTO(IList<TEntity>? models)
     parameters:
     - id: models
       type: System.Collections.Generic.IList{{TEntity}}
+      description: The list of entities to convert.
     return:
       type: System.Collections.Generic.IList{{TDTO}}
+      description: The converted list of DTOs, or <code>null</code> if the input is <code>null</code>.
     content.vb: Protected Function ConvertToDTO(models As IList(Of TEntity)) As IList(Of TDTO)
   overload: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO*
   nameWithType.vb: ServiceWithMapperBase(Of TDTO, TEntity).ConvertToDTO(IList(Of TEntity))
@@ -256,17 +302,21 @@ items:
   fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.ConvertToDTO(TEntity[]?)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   assemblies:
   - NuvTools.AspNetCore
   namespace: NuvTools.AspNetCore.Mapper
+  summary: Converts an array of entities to an array of DTOs using AutoMapper.
+  example: []
   syntax:
     content: protected TDTO[]? ConvertToDTO(TEntity[]? models)
     parameters:
     - id: models
       type: '{TEntity}[]'
+      description: The array of entities to convert.
     return:
       type: '{TDTO}[]'
+      description: The converted array of DTOs, or <code>null</code> if the input is <code>null</code>.
     content.vb: Protected Function ConvertToDTO(models As TEntity()) As TDTO()
   overload: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase`2.ConvertToDTO*
   nameWithType.vb: ServiceWithMapperBase(Of TDTO, TEntity).ConvertToDTO(TEntity())
@@ -284,10 +334,12 @@ items:
   fullName: NuvTools.AspNetCore.Mapper.ServiceWithMapperBase<TDTO, TEntity>.Mapper
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Mapper/ServiceWithMapperBase.cs
   assemblies:
   - NuvTools.AspNetCore
   namespace: NuvTools.AspNetCore.Mapper
+  summary: Gets the AutoMapper instance used for object mapping.
+  example: []
   syntax:
     content: protected IMapper Mapper { get; }
     parameters: []

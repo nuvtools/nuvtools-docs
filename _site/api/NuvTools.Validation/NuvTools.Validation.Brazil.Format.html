@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class Format | Nuv Tools Framework Docs ">
       
-      
+      <meta name="description" content="Provides formatting utilities for Brazilian document numbers.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Validation_Brazil_Format" data-uid="NuvTools.Validation.Brazil.Format" class="text-break">
-Class Format  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Brazil/Format.cs"><i class="bi bi-code-slash"></i></a>
+Class Format  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Brazil/Format.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class Format  <a class="header-action link-secondary" title="View source" href="
   <dl><dt>Assembly</dt><dd>NuvTools.Validation.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Provides formatting utilities for Brazilian document numbers.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -156,10 +157,11 @@ Class Format  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="NuvTools_Validation_Brazil_Format_FormatCNPJ_System_String_" data-uid="NuvTools.Validation.Brazil.Format.FormatCNPJ(System.String)">
   FormatCNPJ(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Brazil/Format.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Brazil/Format.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Formats a CNPJ string into the standard Brazilian format: XX.XXX.XXX/XXXX-XX</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -169,19 +171,25 @@ Class Format  <a class="header-action link-secondary" title="View source" href="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>cnpj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The CNPJ number as a string (digits only).</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The formatted CNPJ string.</p>
+</dd>
   </dl>
 
 
 
 
 
+
+  <h4 class="section" id="NuvTools_Validation_Brazil_Format_FormatCNPJ_System_String__examples">Examples</h4>
+  <pre><code class="lang-csharp">string formatted = "12345678000195".FormatCNPJ();
+// Returns: "12.345.678/0001-95"</code></pre>
 
 
 
@@ -192,10 +200,11 @@ Class Format  <a class="header-action link-secondary" title="View source" href="
 
   <h3 id="NuvTools_Validation_Brazil_Format_FormatCPF_System_String_" data-uid="NuvTools.Validation.Brazil.Format.FormatCPF(System.String)">
   FormatCPF(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Brazil/Format.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Brazil/Format.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Formats a CPF string into the standard Brazilian format: XXX.XXX.XXX-XX</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -205,19 +214,25 @@ Class Format  <a class="header-action link-secondary" title="View source" href="
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>cpf</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The CPF number as a string (digits only).</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd></dd>
+    <dd><p>The formatted CPF string.</p>
+</dd>
   </dl>
 
 
 
 
 
+
+  <h4 class="section" id="NuvTools_Validation_Brazil_Format_FormatCPF_System_String__examples">Examples</h4>
+  <pre><code class="lang-csharp">string formatted = "12345678901".FormatCPF();
+// Returns: "123.456.789-01"</code></pre>
 
 
 
@@ -228,7 +243,7 @@ Class Format  <a class="header-action link-secondary" title="View source" href="
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Brazil/Format.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Brazil/Format.cs" class="edit-link">Edit this page</a>
         </div>
 
 

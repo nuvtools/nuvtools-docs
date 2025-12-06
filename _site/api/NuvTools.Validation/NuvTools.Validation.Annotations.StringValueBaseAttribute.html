@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class StringValueBaseAttribute | Nuv Tools Framework Docs ">
       
-      
+      <meta name="description" content="Base class for validation attributes that validate string values. Provides common functionality for string-based validation scenarios.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Validation_Annotations_StringValueBaseAttribute" data-uid="NuvTools.Validation.Annotations.StringValueBaseAttribute" class="text-break">
-Class StringValueBaseAttribute  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Annotations/StringValueBaseAttribute.cs"><i class="bi bi-code-slash"></i></a>
+Class StringValueBaseAttribute  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Annotations/StringValueBaseAttribute.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,9 @@ Class StringValueBaseAttribute  <a class="header-action link-secondary" title="V
   <dl><dt>Assembly</dt><dd>NuvTools.Validation.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Base class for validation attributes that validate string values.
+Provides common functionality for string-based validation scenarios.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -291,7 +293,7 @@ Class StringValueBaseAttribute  <a class="header-action link-secondary" title="V
     <dt>Extension Methods</dt>
     <dd>
   <div>
-      <a class="xref" href="NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_Validate__1___0_">Validator.Validate&lt;T&gt;(T)</a>
+      <a class="xref" href="NuvTools.Validation.Annotations.Validator.html#NuvTools_Validation_Annotations_Validator_Validate__1___0_">Validator.Validate&lt;T&gt;(T)</a>
   </div>
   </dd></dl>
 
@@ -307,10 +309,12 @@ Class StringValueBaseAttribute  <a class="header-action link-secondary" title="V
 
   <h3 id="NuvTools_Validation_Annotations_StringValueBaseAttribute__ctor_System_Func_System_String__" data-uid="NuvTools.Validation.Annotations.StringValueBaseAttribute.#ctor(System.Func{System.String})">
   StringValueBaseAttribute(Func&lt;string&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Annotations/StringValueBaseAttribute.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Annotations/StringValueBaseAttribute.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Base class for validation attributes that validate string values.
+Provides common functionality for string-based validation scenarios.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -320,7 +324,8 @@ Class StringValueBaseAttribute  <a class="header-action link-secondary" title="V
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>errorMessageAccessor</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>A function that returns the error message to use when validation fails.</p>
+</dd>
   </dl>
 
 
@@ -342,7 +347,7 @@ Class StringValueBaseAttribute  <a class="header-action link-secondary" title="V
 
   <h3 id="NuvTools_Validation_Annotations_StringValueBaseAttribute_FormatErrorMessage_System_String_" data-uid="NuvTools.Validation.Annotations.StringValueBaseAttribute.FormatErrorMessage(System.String)">
   FormatErrorMessage(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Annotations/StringValueBaseAttribute.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Annotations/StringValueBaseAttribute.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Applies formatting to a specified error message. (Overrides <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.componentmodel.dataannotations.validationattribute.formaterrormessage">FormatErrorMessage(string)</a>)</p>
@@ -363,7 +368,7 @@ Class StringValueBaseAttribute  <a class="header-action link-secondary" title="V
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>A localized string to describe the minimal occurrences of capital letters.</p>
+    <dd><p>A localized string to describe the validation requirement.</p>
 </dd>
   </dl>
 
@@ -381,10 +386,11 @@ Class StringValueBaseAttribute  <a class="header-action link-secondary" title="V
 
   <h3 id="NuvTools_Validation_Annotations_StringValueBaseAttribute_IsValidValue_System_Object_" data-uid="NuvTools.Validation.Annotations.StringValueBaseAttribute.IsValidValue(System.Object)">
   IsValidValue(object?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Annotations/StringValueBaseAttribute.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Annotations/StringValueBaseAttribute.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Determines whether the provided value is a valid non-empty string.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -394,13 +400,15 @@ Class StringValueBaseAttribute  <a class="header-action link-secondary" title="V
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
-    <dd></dd>
+    <dd><p>The value to check.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True if the value is a non-null, non-empty string; otherwise, false.</p>
+</dd>
   </dl>
 
 
@@ -417,7 +425,7 @@ Class StringValueBaseAttribute  <a class="header-action link-secondary" title="V
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Annotations/StringValueBaseAttribute.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Annotations/StringValueBaseAttribute.cs" class="edit-link">Edit this page</a>
         </div>
 
 

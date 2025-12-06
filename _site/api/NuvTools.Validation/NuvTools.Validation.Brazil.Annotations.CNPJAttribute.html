@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class CNPJAttribute | Nuv Tools Framework Docs ">
       
-      
+      <meta name="description" content="Validation attribute that validates Brazilian CNPJ (Cadastro Nacional da Pessoa Jur&#237;dica) numbers. Validates the CNPJ checksum algorithm and accepts formatted (XX.XXX.XXX/XXXX-XX) or unformatted (XXXXXXXXXXXXXX) input.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Validation_Brazil_Annotations_CNPJAttribute" data-uid="NuvTools.Validation.Brazil.Annotations.CNPJAttribute" class="text-break">
-Class CNPJAttribute  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Brazil/Annotations/CNPJAttribute.cs"><i class="bi bi-code-slash"></i></a>
+Class CNPJAttribute  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Brazil/Annotations/CNPJAttribute.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,9 @@ Class CNPJAttribute  <a class="header-action link-secondary" title="View source"
   <dl><dt>Assembly</dt><dd>NuvTools.Validation.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Validation attribute that validates Brazilian CNPJ (Cadastro Nacional da Pessoa Jurídica) numbers.
+Validates the CNPJ checksum algorithm and accepts formatted (XX.XXX.XXX/XXXX-XX) or unformatted (XXXXXXXXXXXXXX) input.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -288,10 +290,17 @@ Class CNPJAttribute  <a class="header-action link-secondary" title="View source"
     <dt>Extension Methods</dt>
     <dd>
   <div>
-      <a class="xref" href="NuvTools.Validation.Validator.html#NuvTools_Validation_Validator_Validate__1___0_">Validator.Validate&lt;T&gt;(T)</a>
+      <a class="xref" href="NuvTools.Validation.Annotations.Validator.html#NuvTools_Validation_Annotations_Validator_Validate__1___0_">Validator.Validate&lt;T&gt;(T)</a>
   </div>
   </dd></dl>
 
+
+  <h2 id="NuvTools_Validation_Brazil_Annotations_CNPJAttribute_examples">Examples</h2>
+  <pre><code class="lang-csharp">public class CompanyModel
+{
+    [CNPJ]
+    public string CNPJ { get; set; }
+}</code></pre>
 
 
 
@@ -304,10 +313,11 @@ Class CNPJAttribute  <a class="header-action link-secondary" title="View source"
 
   <h3 id="NuvTools_Validation_Brazil_Annotations_CNPJAttribute__ctor" data-uid="NuvTools.Validation.Brazil.Annotations.CNPJAttribute.#ctor">
   CNPJAttribute()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Brazil/Annotations/CNPJAttribute.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Brazil/Annotations/CNPJAttribute.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="NuvTools.Validation.Brazil.Annotations.CNPJAttribute.html">CNPJAttribute</a> class.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -334,10 +344,11 @@ Class CNPJAttribute  <a class="header-action link-secondary" title="View source"
 
   <h3 id="NuvTools_Validation_Brazil_Annotations_CNPJAttribute_IsValid_System_Object_" data-uid="NuvTools.Validation.Brazil.Annotations.CNPJAttribute.IsValid(System.Object)">
   IsValid(object?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Brazil/Annotations/CNPJAttribute.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Brazil/Annotations/CNPJAttribute.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Validates that the value is a valid Brazilian CNPJ number.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -347,13 +358,15 @@ Class CNPJAttribute  <a class="header-action link-secondary" title="View source"
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
-    <dd></dd>
+    <dd><p>The CNPJ value to validate.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
-    <dd></dd>
+    <dd><p>True if the CNPJ is valid or if the value is null/empty; otherwise, false.</p>
+</dd>
   </dl>
 
 
@@ -370,7 +383,7 @@ Class CNPJAttribute  <a class="header-action link-secondary" title="View source"
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/Brazil/Annotations/CNPJAttribute.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/Brazil/Annotations/CNPJAttribute.cs" class="edit-link">Edit this page</a>
         </div>
 
 

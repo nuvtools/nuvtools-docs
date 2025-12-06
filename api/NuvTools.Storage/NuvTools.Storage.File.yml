@@ -21,10 +21,15 @@ items:
   fullName: NuvTools.Storage.File
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/File.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/File.cs
   assemblies:
   - NuvTools.Storage
   namespace: NuvTools.Storage
+  summary: >-
+    Represents a file with its metadata and content.
+
+    Supports three initialization modes: URI-only, stream-based, or Base64-encoded content.
+  example: []
   syntax:
     content: 'public class File : IFile'
     content.vb: Public Class File Implements IFile
@@ -55,19 +60,24 @@ items:
   fullName: NuvTools.Storage.File.File(string, string, System.Uri)
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/File.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/File.cs
   assemblies:
   - NuvTools.Storage
   namespace: NuvTools.Storage
+  summary: Initializes a new instance of the <xref href="NuvTools.Storage.File" data-throw-if-not-resolved="false"></xref> class with a URI location.
+  example: []
   syntax:
     content: public File(string name, string type, Uri uri)
     parameters:
     - id: name
       type: System.String
+      description: The name of the file.
     - id: type
       type: System.String
+      description: The MIME type of the file.
     - id: uri
       type: System.Uri
+      description: The URI location of the file in storage.
     content.vb: Public Sub New(name As String, type As String, uri As Uri)
   overload: NuvTools.Storage.File.#ctor*
   nameWithType.vb: File.New(String, String, Uri)
@@ -85,19 +95,27 @@ items:
   fullName: NuvTools.Storage.File.File(string, string, System.IO.Stream)
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/File.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/File.cs
   assemblies:
   - NuvTools.Storage
   namespace: NuvTools.Storage
+  summary: >-
+    Initializes a new instance of the <xref href="NuvTools.Storage.File" data-throw-if-not-resolved="false"></xref> class with stream content.
+
+    The stream is automatically converted to a Base64-encoded string.
+  example: []
   syntax:
     content: public File(string name, string type, Stream content)
     parameters:
     - id: name
       type: System.String
+      description: The name of the file.
     - id: type
       type: System.String
+      description: The MIME type of the file.
     - id: content
       type: System.IO.Stream
+      description: The file content as a stream.
     content.vb: Public Sub New(name As String, type As String, content As Stream)
   overload: NuvTools.Storage.File.#ctor*
   nameWithType.vb: File.New(String, String, Stream)
@@ -115,19 +133,27 @@ items:
   fullName: NuvTools.Storage.File.File(string, string, string)
   type: Constructor
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/File.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/File.cs
   assemblies:
   - NuvTools.Storage
   namespace: NuvTools.Storage
+  summary: >-
+    Initializes a new instance of the <xref href="NuvTools.Storage.File" data-throw-if-not-resolved="false"></xref> class with Base64-encoded content.
+
+    The Base64 string is automatically converted to a stream.
+  example: []
   syntax:
     content: public File(string name, string type, string base64String)
     parameters:
     - id: name
       type: System.String
+      description: The name of the file.
     - id: type
       type: System.String
+      description: The MIME type of the file.
     - id: base64String
       type: System.String
+      description: The file content as a Base64-encoded string.
     content.vb: Public Sub New(name As String, type As String, base64String As String)
   overload: NuvTools.Storage.File.#ctor*
   nameWithType.vb: File.New(String, String, String)
@@ -145,10 +171,11 @@ items:
   fullName: NuvTools.Storage.File.Name
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/File.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/File.cs
   assemblies:
   - NuvTools.Storage
   namespace: NuvTools.Storage
+  summary: Gets the name of the file.
   example: []
   syntax:
     content: public string Name { get; }
@@ -171,10 +198,11 @@ items:
   fullName: NuvTools.Storage.File.Type
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/File.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/File.cs
   assemblies:
   - NuvTools.Storage
   namespace: NuvTools.Storage
+  summary: Gets the MIME type of the file.
   example: []
   syntax:
     content: public string Type { get; }
@@ -197,10 +225,11 @@ items:
   fullName: NuvTools.Storage.File.Uri
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/File.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/File.cs
   assemblies:
   - NuvTools.Storage
   namespace: NuvTools.Storage
+  summary: Gets the URI location of the file in storage.
   example: []
   syntax:
     content: public Uri? Uri { get; }
@@ -223,10 +252,11 @@ items:
   fullName: NuvTools.Storage.File.Content
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/File.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/File.cs
   assemblies:
   - NuvTools.Storage
   namespace: NuvTools.Storage
+  summary: Gets the file content as a stream.
   example: []
   syntax:
     content: public Stream? Content { get; }
@@ -249,10 +279,11 @@ items:
   fullName: NuvTools.Storage.File.Base64String
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/File.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/File.cs
   assemblies:
   - NuvTools.Storage
   namespace: NuvTools.Storage
+  summary: Gets the file content as a Base64-encoded string.
   example: []
   syntax:
     content: public string? Base64String { get; }
@@ -662,6 +693,13 @@ references:
     isExternal: true
     href: NuvTools.Storage.IFile.html
   - name: )
+- uid: NuvTools.Storage.File
+  commentId: T:NuvTools.Storage.File
+  isExternal: true
+  href: NuvTools.Storage.File.html
+  name: File
+  nameWithType: File
+  fullName: NuvTools.Storage.File
 - uid: NuvTools.Storage.File.#ctor*
   commentId: Overload:NuvTools.Storage.File.#ctor
   isExternal: true

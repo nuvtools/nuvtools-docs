@@ -16,10 +16,12 @@ items:
   fullName: NuvTools.Report.Pdf.Table.PdfExtension
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-report/blob/0bd46ca08c48d8e1dda37b98da5d10e57b08d50c/src/NuvTools.Report.Pdf/Table/PdfExtension.cs
+    href: https://github.com/nuvtools/nuvtools-report/blob/6b7c4cdb59b469a26019e0945adf84064ece8bb9/src/NuvTools.Report.Pdf/Table/PdfExtension.cs
   assemblies:
   - NuvTools.Report.Pdf
   namespace: NuvTools.Report.Pdf.Table
+  summary: Provides extension methods for exporting documents and tables to PDF format.
+  example: []
   syntax:
     content: public static class PdfExtension
     content.vb: Public Module PdfExtension
@@ -46,17 +48,22 @@ items:
   fullName: NuvTools.Report.Pdf.Table.PdfExtension.ExportSheetToPdf(NuvTools.Report.Table.Models.Document)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-report/blob/0bd46ca08c48d8e1dda37b98da5d10e57b08d50c/src/NuvTools.Report.Pdf/Table/PdfExtension.cs
+    href: https://github.com/nuvtools/nuvtools-report/blob/6b7c4cdb59b469a26019e0945adf84064ece8bb9/src/NuvTools.Report.Pdf/Table/PdfExtension.cs
   assemblies:
   - NuvTools.Report.Pdf
   namespace: NuvTools.Report.Pdf.Table
+  summary: Exports all tables in a document to separate PDF files encoded as base64 strings.
+  remarks: Each table is rendered as a separate PDF document in landscape A4 format.
+  example: []
   syntax:
     content: public static List<string> ExportSheetToPdf(this Document document)
     parameters:
     - id: document
       type: NuvTools.Report.Table.Models.Document
+      description: The document containing tables to export.
     return:
       type: System.Collections.Generic.List{System.String}
+      description: A list of base64-encoded PDF strings, one for each table in the document.
     content.vb: Public Shared Function ExportSheetToPdf(document As Document) As List(Of String)
   overload: NuvTools.Report.Pdf.Table.PdfExtension.ExportSheetToPdf*
 - uid: NuvTools.Report.Pdf.Table.PdfExtension.ExportFirstSheetToPdf(NuvTools.Report.Table.Models.Document)
@@ -72,17 +79,22 @@ items:
   fullName: NuvTools.Report.Pdf.Table.PdfExtension.ExportFirstSheetToPdf(NuvTools.Report.Table.Models.Document)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-report/blob/0bd46ca08c48d8e1dda37b98da5d10e57b08d50c/src/NuvTools.Report.Pdf/Table/PdfExtension.cs
+    href: https://github.com/nuvtools/nuvtools-report/blob/6b7c4cdb59b469a26019e0945adf84064ece8bb9/src/NuvTools.Report.Pdf/Table/PdfExtension.cs
   assemblies:
   - NuvTools.Report.Pdf
   namespace: NuvTools.Report.Pdf.Table
+  summary: Exports the first table in a document to a PDF file encoded as a base64 string.
+  remarks: Useful when working with single-table documents. The PDF is rendered in landscape A4 format.
+  example: []
   syntax:
     content: public static string ExportFirstSheetToPdf(this Document document)
     parameters:
     - id: document
       type: NuvTools.Report.Table.Models.Document
+      description: The document containing the table to export.
     return:
       type: System.String
+      description: A base64-encoded PDF string of the first table.
     content.vb: Public Shared Function ExportFirstSheetToPdf(document As Document) As String
   overload: NuvTools.Report.Pdf.Table.PdfExtension.ExportFirstSheetToPdf*
 - uid: NuvTools.Report.Pdf.Table.PdfExtension.GeneratePdfAsString64(QuestPDF.Infrastructure.IDocument)
@@ -98,17 +110,21 @@ items:
   fullName: NuvTools.Report.Pdf.Table.PdfExtension.GeneratePdfAsString64(QuestPDF.Infrastructure.IDocument)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-report/blob/0bd46ca08c48d8e1dda37b98da5d10e57b08d50c/src/NuvTools.Report.Pdf/Table/PdfExtension.cs
+    href: https://github.com/nuvtools/nuvtools-report/blob/6b7c4cdb59b469a26019e0945adf84064ece8bb9/src/NuvTools.Report.Pdf/Table/PdfExtension.cs
   assemblies:
   - NuvTools.Report.Pdf
   namespace: NuvTools.Report.Pdf.Table
+  summary: Converts a QuestPDF document to a base64-encoded string.
+  example: []
   syntax:
     content: public static string GeneratePdfAsString64(this IDocument document)
     parameters:
     - id: document
       type: QuestPDF.Infrastructure.IDocument
+      description: The QuestPDF document to convert.
     return:
       type: System.String
+      description: A base64-encoded string representation of the PDF.
     content.vb: Public Shared Function GeneratePdfAsString64(document As IDocument) As String
   overload: NuvTools.Report.Pdf.Table.PdfExtension.GeneratePdfAsString64*
 references:

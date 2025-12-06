@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class ApplicationBuilderExtensions | Nuv Tools Framework Docs ">
       
-      
+      <meta name="description" content="Provides extension methods for  to support Entity Framework Core operations.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_AspNetCore_EntityFrameworkCore_Extensions_ApplicationBuilderExtensions" data-uid="NuvTools.AspNetCore.EntityFrameworkCore.Extensions.ApplicationBuilderExtensions" class="text-break">
-Class ApplicationBuilderExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore.EntityFrameworkCore/Extensions/ApplicationBuilderExtensions.cs"><i class="bi bi-code-slash"></i></a>
+Class ApplicationBuilderExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore.EntityFrameworkCore/Extensions/ApplicationBuilderExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class ApplicationBuilderExtensions  <a class="header-action link-secondary" titl
   <dl><dt>Assembly</dt><dd>NuvTools.AspNetCore.EntityFrameworkCore.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Provides extension methods for <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder">IApplicationBuilder</a> to support Entity Framework Core operations.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -156,10 +157,12 @@ Class ApplicationBuilderExtensions  <a class="header-action link-secondary" titl
 
   <h3 id="NuvTools_AspNetCore_EntityFrameworkCore_Extensions_ApplicationBuilderExtensions_DatabaseMigrate__1_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_Nullable_System_TimeSpan__" data-uid="NuvTools.AspNetCore.EntityFrameworkCore.Extensions.ApplicationBuilderExtensions.DatabaseMigrate``1(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.Nullable{System.TimeSpan})">
   DatabaseMigrate&lt;TContext&gt;(IApplicationBuilder, TimeSpan?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore.EntityFrameworkCore/Extensions/ApplicationBuilderExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore.EntityFrameworkCore/Extensions/ApplicationBuilderExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Applies any pending Entity Framework Core migrations for the specified database context
+during application startup.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -169,28 +172,53 @@ Class ApplicationBuilderExtensions  <a class="header-action link-secondary" titl
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>app</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder">IApplicationBuilder</a></dt>
-    <dd></dd>
+    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder">IApplicationBuilder</a> instance.</p>
+</dd>
     <dt><code>timeout</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a>?</dt>
-    <dd></dd>
+    <dd><p>An optional timeout for the migration command. If specified, the command timeout is temporarily
+set to this value during migration and then restored to its original value.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder">IApplicationBuilder</a></dt>
-    <dd></dd>
+    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder">IApplicationBuilder</a> so that additional calls can be chained.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TContext</code></dt>
-    <dd></dd>
+    <dd><p>The type of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext">DbContext</a> to migrate.</p>
+</dd>
   </dl>
 
 
 
 
 
+  <h4 class="section" id="NuvTools_AspNetCore_EntityFrameworkCore_Extensions_ApplicationBuilderExtensions_DatabaseMigrate__1_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_Nullable_System_TimeSpan___examples">Examples</h4>
+  <pre><code class="lang-csharp">// Apply migrations with default timeout
+app.DatabaseMigrate&lt;MyDbContext&gt;();
 
+// Apply migrations with 5-minute timeout
+app.DatabaseMigrate&lt;MyDbContext&gt;(TimeSpan.FromMinutes(5));</code></pre>
+
+
+  <h4 class="section" id="NuvTools_AspNetCore_EntityFrameworkCore_Extensions_ApplicationBuilderExtensions_DatabaseMigrate__1_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_Nullable_System_TimeSpan___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>
+This method creates a temporary service scope to resolve the database context and applies
+any pending migrations by calling the Database.Migrate() method.
+</p>
+<p>
+If a timeout is specified, it is applied only during the migration operation and the original
+timeout is restored afterward.
+</p>
+<p>
+If the context or database is not available, the method returns without throwing an exception.
+</p>
+</div>
 
 
 
@@ -199,7 +227,7 @@ Class ApplicationBuilderExtensions  <a class="header-action link-secondary" titl
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore.EntityFrameworkCore/Extensions/ApplicationBuilderExtensions.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore.EntityFrameworkCore/Extensions/ApplicationBuilderExtensions.cs" class="edit-link">Edit this page</a>
         </div>
 
 

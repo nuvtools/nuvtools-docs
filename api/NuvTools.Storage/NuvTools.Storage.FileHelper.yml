@@ -14,10 +14,12 @@ items:
   fullName: NuvTools.Storage.FileHelper
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/FileHelper.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/FileHelper.cs
   assemblies:
   - NuvTools.Storage
   namespace: NuvTools.Storage
+  summary: Provides helper methods for file name manipulation and sanitization.
+  example: []
   syntax:
     content: public static class FileHelper
     content.vb: Public Module FileHelper
@@ -43,17 +45,24 @@ items:
   fullName: NuvTools.Storage.FileHelper.GetFileName(string)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-storage/blob/f52780d47e1790c8478b8f2568e7456fda541478/src/NuvTools.Storage/FileHelper.cs
+    href: https://github.com/nuvtools/nuvtools-storage/blob/2ec941c5b9f903535ca2912f4f4b4c71e00d0209/src/NuvTools.Storage/FileHelper.cs
   assemblies:
   - NuvTools.Storage
   namespace: NuvTools.Storage
+  summary: >-
+    Sanitizes and extracts a valid file name from the provided string.
+
+    Removes quotes, replaces ampersands with "and", and extracts the file name from a full path.
+  example: []
   syntax:
     content: public static string GetFileName(string name)
     parameters:
     - id: name
       type: System.String
+      description: The file name or path to sanitize.
     return:
       type: System.String
+      description: A sanitized file name. Returns "NoName" if the input is null, empty, or whitespace.
     content.vb: Public Shared Function GetFileName(name As String) As String
   overload: NuvTools.Storage.FileHelper.GetFileName*
   nameWithType.vb: FileHelper.GetFileName(String)

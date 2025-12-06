@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class RegexPattern | Nuv Tools Framework Docs ">
       
-      <meta name="description" content="Regex patterns class.">
+      <meta name="description" content="Provides strongly-typed and pre-compiled regex patterns commonly used in the application. This class exposes both the raw pattern constants and pre-generated compiled Regex instances.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Validation_RegexPattern" data-uid="NuvTools.Validation.RegexPattern" class="text-break">
-Class RegexPattern  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/RegexPattern.cs"><i class="bi bi-code-slash"></i></a>
+Class RegexPattern  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/RegexPattern.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,8 @@ Class RegexPattern  <a class="header-action link-secondary" title="View source" 
   <dl><dt>Assembly</dt><dd>NuvTools.Validation.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"><p>Regex patterns class.</p>
+  <div class="markdown summary"><p>Provides strongly-typed and pre-compiled regex patterns commonly used in the application.
+This class exposes both the raw pattern constants and pre-generated compiled Regex instances.</p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -149,30 +150,29 @@ Class RegexPattern  <a class="header-action link-secondary" title="View source" 
 
 
 
-  <h2 class="section" id="fields">Fields
+  <h2 class="section" id="methods">Methods
 </h2>
 
 
+  <a id="NuvTools_Validation_RegexPattern_Base64ContentRegex_" data-uid="NuvTools.Validation.RegexPattern.Base64ContentRegex*"></a>
 
-  <h3 id="NuvTools_Validation_RegexPattern_BASE64_CONTENT" data-uid="NuvTools.Validation.RegexPattern.BASE64_CONTENT">
-  BASE64_CONTENT
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/RegexPattern.cs"><i class="bi bi-code-slash"></i></a>
+  <h3 id="NuvTools_Validation_RegexPattern_Base64ContentRegex" data-uid="NuvTools.Validation.RegexPattern.Base64ContentRegex">
+  Base64ContentRegex()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/obj/Release/net9/System.Text.RegularExpressions.Generator/System.Text.RegularExpressions.Generator.RegexGenerator/RegexGenerator.g.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Regex to validate Base64 and extract using content label.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string BASE64_CONTENT = &quot;^(?&lt;content&gt;(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4}))$&quot;</code></pre>
+    <pre><code class="lang-csharp hljs">[GeneratedRegex(&quot;^(?&lt;content&gt;(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4}))$&quot;, RegexOptions.Compiled|RegexOptions.CultureInvariant)]
+public static Regex Base64ContentRegex()</code></pre>
   </div>
 
 
-
-
-  <h4 class="section">Field Value</h4>
+  <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.regularexpressions.regex">Regex</a></dt>
     <dd></dd>
   </dl>
 
@@ -182,28 +182,49 @@ Class RegexPattern  <a class="header-action link-secondary" title="View source" 
 
 
 
+  <h4 class="section" id="NuvTools_Validation_RegexPattern_Base64ContentRegex_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Pattern:<br></p>
+<pre><code class="lang-csharp">^(?&lt;content&gt;(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4}))$</code></pre><br>
+<p>Options:<br></p>
+<pre><code class="lang-csharp">RegexOptions.Compiled | RegexOptions.CultureInvariant</code></pre><br>
+<p>Explanation:<br></p>
+<pre><code class="lang-csharp">○ Match if at the beginning of the string.
+○ "content" capture group.
+    ○ Loop greedily any number of times.
+        ○ Match a character in the set [+/-9A-Za-z] exactly 4 times.
+    ○ Match with 3 alternative expressions.
+        ○ Match a sequence of expressions.
+            ○ Match a character in the set [+/-9A-Za-z] exactly 2 times.
+            ○ Match the string "==".
+        ○ Match a sequence of expressions.
+            ○ Match a character in the set [+/-9A-Za-z] exactly 3 times.
+            ○ Match '='.
+        ○ Match a character in the set [+/-9A-Za-z] exactly 4 times.
+○ Match if at the end of the string or if before an ending newline.</code></pre>
+</div>
 
 
 
-  <h3 id="NuvTools_Validation_RegexPattern_BASE64_DATAURI" data-uid="NuvTools.Validation.RegexPattern.BASE64_DATAURI">
-  BASE64_DATAURI
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/RegexPattern.cs"><i class="bi bi-code-slash"></i></a>
+
+  <a id="NuvTools_Validation_RegexPattern_Base64DataUriRegex_" data-uid="NuvTools.Validation.RegexPattern.Base64DataUriRegex*"></a>
+
+  <h3 id="NuvTools_Validation_RegexPattern_Base64DataUriRegex" data-uid="NuvTools.Validation.RegexPattern.Base64DataUriRegex">
+  Base64DataUriRegex()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/obj/Release/net9/System.Text.RegularExpressions.Generator/System.Text.RegularExpressions.Generator.RegexGenerator/RegexGenerator.g.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Regex to validate and extract informations (type, extension and content) from Data URI Base64.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string BASE64_DATAURI = &quot;^data:(?&lt;type&gt;.+?/(?&lt;extension&gt;.+?));(?&lt;base&gt;.+),(?&lt;content&gt;(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4}))$&quot;</code></pre>
+    <pre><code class="lang-csharp hljs">[GeneratedRegex(&quot;^data:(?&lt;type&gt;.+?\\/(?&lt;extension&gt;.+?));(?&lt;base&gt;.+),(?&lt;content&gt;(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4}))$&quot;, RegexOptions.Compiled|RegexOptions.CultureInvariant)]
+public static Regex Base64DataUriRegex()</code></pre>
   </div>
 
 
-
-
-  <h4 class="section">Field Value</h4>
+  <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.regularexpressions.regex">Regex</a></dt>
     <dd></dd>
   </dl>
 
@@ -213,28 +234,59 @@ Class RegexPattern  <a class="header-action link-secondary" title="View source" 
 
 
 
+  <h4 class="section" id="NuvTools_Validation_RegexPattern_Base64DataUriRegex_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Pattern:<br></p>
+<pre><code class="lang-csharp">^data:(?&lt;type&gt;.+?\\/(?&lt;extension&gt;.+?));(?&lt;base&gt;.+),(?&lt;content&gt;(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{4}))$</code></pre><br>
+<p>Options:<br></p>
+<pre><code class="lang-csharp">RegexOptions.Compiled | RegexOptions.CultureInvariant</code></pre><br>
+<p>Explanation:<br></p>
+<pre><code class="lang-csharp">○ Match if at the beginning of the string.
+○ Match the string "data:".
+○ "type" capture group.
+    ○ Match a character other than '\n' lazily at least once.
+    ○ Match '/'.
+    ○ "extension" capture group.
+        ○ Match a character other than '\n' lazily at least once.
+○ Match ';'.
+○ "base" capture group.
+    ○ Match a character other than '\n' greedily at least once.
+○ Match ','.
+○ "content" capture group.
+    ○ Loop greedily any number of times.
+        ○ Match a character in the set [+/-9A-Za-z] exactly 4 times.
+    ○ Match with 3 alternative expressions.
+        ○ Match a sequence of expressions.
+            ○ Match a character in the set [+/-9A-Za-z] exactly 2 times.
+            ○ Match the string "==".
+        ○ Match a sequence of expressions.
+            ○ Match a character in the set [+/-9A-Za-z] exactly 3 times.
+            ○ Match '='.
+        ○ Match a character in the set [+/-9A-Za-z] exactly 4 times.
+○ Match if at the end of the string or if before an ending newline.</code></pre>
+</div>
 
 
 
-  <h3 id="NuvTools_Validation_RegexPattern_EMAIL_ADDRESS" data-uid="NuvTools.Validation.RegexPattern.EMAIL_ADDRESS">
-  EMAIL_ADDRESS
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/RegexPattern.cs"><i class="bi bi-code-slash"></i></a>
+
+  <a id="NuvTools_Validation_RegexPattern_EmailRegex_" data-uid="NuvTools.Validation.RegexPattern.EmailRegex*"></a>
+
+  <h3 id="NuvTools_Validation_RegexPattern_EmailRegex" data-uid="NuvTools.Validation.RegexPattern.EmailRegex">
+  EmailRegex()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/obj/Release/net9/System.Text.RegularExpressions.Generator/System.Text.RegularExpressions.Generator.RegexGenerator/RegexGenerator.g.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Regex pattern for e-mail address validation.</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const string EMAIL_ADDRESS = &quot;^([a-z0-9_\\-])([a-z0-9_\\-\\.]*)@(\\[((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\\.){3}|((([a-z0-9\\-]+)\\.)+))([a-z]{2,}|(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\\])$&quot;</code></pre>
+    <pre><code class="lang-csharp hljs">[GeneratedRegex(&quot;^([a-z0-9_\\-])([a-z0-9_\\-\\.]*)@((\\[((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\\])|((([a-z0-9\\-]+)\\.)+([a-z]{2,})))$&quot;, RegexOptions.IgnoreCase|RegexOptions.Compiled|RegexOptions.CultureInvariant)]
+public static Regex EmailRegex()</code></pre>
   </div>
 
 
-
-
-  <h4 class="section">Field Value</h4>
+  <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.text.regularexpressions.regex">Regex</a></dt>
     <dd></dd>
   </dl>
 
@@ -242,6 +294,74 @@ Class RegexPattern  <a class="header-action link-secondary" title="View source" 
 
 
 
+
+
+  <h4 class="section" id="NuvTools_Validation_RegexPattern_EmailRegex_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Pattern:<br></p>
+<pre><code class="lang-csharp">^([a-z0-9_\\-])([a-z0-9_\\-\\.]*)@((\\[((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\\])|((([a-z0-9\\-]+)\\.)+([a-z]{2,})))$</code></pre><br>
+<p>Options:<br></p>
+<pre><code class="lang-csharp">RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.CultureInvariant</code></pre><br>
+<p>Explanation:<br></p>
+<pre><code class="lang-csharp">○ Match if at the beginning of the string.
+○ 1st capture group.
+    ○ Match a character in the set [-0-9A-Z_a-z\u212A].
+○ 2nd capture group.
+    ○ Match a character in the set [-.0-9A-Z_a-z\u212A] atomically any number of times.
+○ Match '@'.
+○ 3rd capture group.
+    ○ Match with 2 alternative expressions.
+        ○ 4th capture group.
+            ○ Match '['.
+            ○ Loop exactly 3 times.
+                ○ 5th capture group.
+                    ○ 6th capture group.
+                        ○ Match with 4 alternative expressions.
+                            ○ Match a sequence of expressions.
+                                ○ Match '2'.
+                                ○ Match with 2 alternative expressions.
+                                    ○ Match a sequence of expressions.
+                                        ○ Match an empty string.
+                                        ○ Match a character in the set [0-5].
+                                    ○ Match a sequence of expressions.
+                                        ○ Match an empty string.
+                                        ○ Match a character in the set [0-9].
+                            ○ Match a sequence of expressions.
+                                ○ Match '1'.
+                                ○ Match a character in the set [0-9] exactly 2 times.
+                            ○ Match a sequence of expressions.
+                                ○ Match a character in the set [1-9].
+                                ○ Match a character in the set [0-9].
+                            ○ Match a character in the set [0-9].
+                    ○ Match '.'.
+            ○ 7th capture group.
+                ○ Match with 4 alternative expressions.
+                    ○ Match a sequence of expressions.
+                        ○ Match '2'.
+                        ○ Match with 2 alternative expressions.
+                            ○ Match a sequence of expressions.
+                                ○ Match an empty string.
+                                ○ Match a character in the set [0-5].
+                            ○ Match a sequence of expressions.
+                                ○ Match an empty string.
+                                ○ Match a character in the set [0-9].
+                    ○ Match a sequence of expressions.
+                        ○ Match '1'.
+                        ○ Match a character in the set [0-9] exactly 2 times.
+                    ○ Match a sequence of expressions.
+                        ○ Match a character in the set [1-9].
+                        ○ Match a character in the set [0-9].
+                    ○ Match a character in the set [0-9].
+            ○ Match ']'.
+        ○ 8th capture group.
+            ○ Loop greedily at least once.
+                ○ 9th capture group.
+                    ○ 10th capture group.
+                        ○ Match a character in the set [-0-9A-Za-z\u212A] atomically at least once.
+                    ○ Match '.'.
+            ○ 11th capture group.
+                ○ Match a character in the set [A-Za-z\u212A] atomically at least twice.
+○ Match if at the end of the string or if before an ending newline.</code></pre>
+</div>
 
 
 
@@ -250,7 +370,7 @@ Class RegexPattern  <a class="header-action link-secondary" title="View source" 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-validation/blob/35a011b4c6463933c1c8f299eb025a785702d53b/src/NuvTools.Validation/RegexPattern.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-validation/blob/1df69657dbcaf55cbf8692ac0cb4f5b4c57c5497/src/NuvTools.Validation/RegexPattern.cs" class="edit-link">Edit this page</a>
         </div>
 
 

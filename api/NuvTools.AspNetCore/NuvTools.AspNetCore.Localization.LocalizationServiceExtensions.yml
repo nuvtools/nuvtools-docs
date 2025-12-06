@@ -14,10 +14,12 @@ items:
   fullName: NuvTools.AspNetCore.Localization.LocalizationServiceExtensions
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Localization/LocalizationServiceExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Localization/LocalizationServiceExtensions.cs
   assemblies:
   - NuvTools.AspNetCore
   namespace: NuvTools.AspNetCore.Localization
+  summary: Provides extension methods for configuring composite localization services.
+  example: []
   syntax:
     content: public static class LocalizationServiceExtensions
     content.vb: Public Module LocalizationServiceExtensions
@@ -44,21 +46,71 @@ items:
   fullName: NuvTools.AspNetCore.Localization.LocalizationServiceExtensions.AddCompositeLocalizer(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Collections.Generic.IDictionary<string, System.Type>?, System.Collections.Generic.IEnumerable<System.Type>?)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/d1cd087f58fac1638c0989caa484e2a34ff2cce6/src/NuvTools.AspNetCore/Localization/LocalizationServiceExtensions.cs
+    href: https://github.com/nuvtools/nuvtools-aspnetcore/blob/866f51bc47173a9777426a6dbe9321f0b2578e2a/src/NuvTools.AspNetCore/Localization/LocalizationServiceExtensions.cs
   assemblies:
   - NuvTools.AspNetCore
   namespace: NuvTools.AspNetCore.Localization
+  summary: >-
+    Adds the composite localizer to the service collection, enabling multiple localization sources
+
+    with prefix-based routing and fallback resolution.
+  remarks: >-
+    <p>
+
+    This method registers all necessary <xref href="Microsoft.Extensions.Localization.IStringLocalizer%601" data-throw-if-not-resolved="false"></xref> instances and
+
+    a scoped <xref href="NuvTools.AspNetCore.Localization.CompositeLocalizer" data-throw-if-not-resolved="false"></xref> that combines them.
+
+    </p>
+
+    <p>
+
+    Named resource types take precedence when using prefix syntax. Unnamed resource types
+
+    are used for fallback resolution when a key is not found in any named localizer.
+
+    </p>
+
+    <p>
+
+    Duplicate types between named and unnamed collections are automatically handled,
+
+    with named registrations taking precedence.
+
+    </p>
+  example:
+  - >-
+    <pre><code class="lang-csharp">services.AddCompositeLocalizer(
+        namedResourceTypes: new Dictionary&lt;string, Type&gt;
+        {
+            ["Errors"] = typeof(ErrorResources),
+            ["Messages"] = typeof(MessageResources)
+        },
+        unnamedResourceTypes: new[] { typeof(SharedResources) }
+    );</code></pre>
   syntax:
     content: public static IServiceCollection AddCompositeLocalizer(this IServiceCollection services, IDictionary<string, Type>? namedResourceTypes = null, IEnumerable<Type>? unnamedResourceTypes = null)
     parameters:
     - id: services
       type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: The <xref href="Microsoft.Extensions.DependencyInjection.IServiceCollection" data-throw-if-not-resolved="false"></xref> to add services to.
     - id: namedResourceTypes
       type: System.Collections.Generic.IDictionary{System.String,System.Type}
+      description: >-
+        A dictionary of named resource types where the key is the prefix name (e.g., "Errors")
+
+        and the value is the resource type. Named localizers can be targeted using prefix syntax
+
+        (e.g., "Errors:ValidationFailed").
     - id: unnamedResourceTypes
       type: System.Collections.Generic.IEnumerable{System.Type}
+      description: >-
+        A collection of resource types to be used as fallback localizers. These are searched
+
+        when a key is not found in named localizers.
     return:
       type: Microsoft.Extensions.DependencyInjection.IServiceCollection
+      description: The <xref href="Microsoft.Extensions.DependencyInjection.IServiceCollection" data-throw-if-not-resolved="false"></xref> so that additional calls can be chained.
     content.vb: Public Shared Function AddCompositeLocalizer(services As IServiceCollection, namedResourceTypes As IDictionary(Of String, Type) = Nothing, unnamedResourceTypes As IEnumerable(Of Type) = Nothing) As IServiceCollection
   overload: NuvTools.AspNetCore.Localization.LocalizationServiceExtensions.AddCompositeLocalizer*
   nameWithType.vb: LocalizationServiceExtensions.AddCompositeLocalizer(IServiceCollection, IDictionary(Of String, Type), IEnumerable(Of Type))
@@ -339,13 +391,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: NuvTools.AspNetCore.Localization.LocalizationServiceExtensions.AddCompositeLocalizer*
-  commentId: Overload:NuvTools.AspNetCore.Localization.LocalizationServiceExtensions.AddCompositeLocalizer
-  isExternal: true
-  href: NuvTools.AspNetCore.Localization.LocalizationServiceExtensions.html#NuvTools_AspNetCore_Localization_LocalizationServiceExtensions_AddCompositeLocalizer_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_Collections_Generic_IDictionary_System_String_System_Type__System_Collections_Generic_IEnumerable_System_Type__
-  name: AddCompositeLocalizer
-  nameWithType: LocalizationServiceExtensions.AddCompositeLocalizer
-  fullName: NuvTools.AspNetCore.Localization.LocalizationServiceExtensions.AddCompositeLocalizer
 - uid: Microsoft.Extensions.DependencyInjection.IServiceCollection
   commentId: T:Microsoft.Extensions.DependencyInjection.IServiceCollection
   parent: Microsoft.Extensions.DependencyInjection
@@ -354,6 +399,48 @@ references:
   name: IServiceCollection
   nameWithType: IServiceCollection
   fullName: Microsoft.Extensions.DependencyInjection.IServiceCollection
+- uid: Microsoft.Extensions.Localization.IStringLocalizer`1
+  commentId: T:Microsoft.Extensions.Localization.IStringLocalizer`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.localization.istringlocalizer-1
+  name: IStringLocalizer<T>
+  nameWithType: IStringLocalizer<T>
+  fullName: Microsoft.Extensions.Localization.IStringLocalizer<T>
+  nameWithType.vb: IStringLocalizer(Of T)
+  fullName.vb: Microsoft.Extensions.Localization.IStringLocalizer(Of T)
+  name.vb: IStringLocalizer(Of T)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Localization.IStringLocalizer`1
+    name: IStringLocalizer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.localization.istringlocalizer-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Localization.IStringLocalizer`1
+    name: IStringLocalizer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.localization.istringlocalizer-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NuvTools.AspNetCore.Localization.CompositeLocalizer
+  commentId: T:NuvTools.AspNetCore.Localization.CompositeLocalizer
+  isExternal: true
+  href: NuvTools.AspNetCore.Localization.CompositeLocalizer.html
+  name: CompositeLocalizer
+  nameWithType: CompositeLocalizer
+  fullName: NuvTools.AspNetCore.Localization.CompositeLocalizer
+- uid: NuvTools.AspNetCore.Localization.LocalizationServiceExtensions.AddCompositeLocalizer*
+  commentId: Overload:NuvTools.AspNetCore.Localization.LocalizationServiceExtensions.AddCompositeLocalizer
+  isExternal: true
+  href: NuvTools.AspNetCore.Localization.LocalizationServiceExtensions.html#NuvTools_AspNetCore_Localization_LocalizationServiceExtensions_AddCompositeLocalizer_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_Collections_Generic_IDictionary_System_String_System_Type__System_Collections_Generic_IEnumerable_System_Type__
+  name: AddCompositeLocalizer
+  nameWithType: LocalizationServiceExtensions.AddCompositeLocalizer
+  fullName: NuvTools.AspNetCore.Localization.LocalizationServiceExtensions.AddCompositeLocalizer
 - uid: System.Collections.Generic.IDictionary{System.String,System.Type}
   commentId: T:System.Collections.Generic.IDictionary{System.String,System.Type}
   parent: System.Collections.Generic

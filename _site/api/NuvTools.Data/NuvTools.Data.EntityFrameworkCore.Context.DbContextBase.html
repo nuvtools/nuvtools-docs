@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class DbContextBase | Nuv Tools Framework Docs ">
       
-      
+      <meta name="description" content="Abstract base class for DbContext implementations that provides common CRUD operations, transaction management, bulk operations, and execution strategies using the Result pattern.">
       <link rel="icon" href="../../images/icon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase" class="text-break">
-Class DbContextBase  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+Class DbContextBase  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -97,7 +97,9 @@ Class DbContextBase  <a class="header-action link-secondary" title="View source"
   <dl><dt>Assembly</dt><dd>NuvTools.Data.EntityFrameworkCore.dll</dd></dl>
   </div>
 
-  <div class="markdown summary"></div>
+  <div class="markdown summary"><p>Abstract base class for DbContext implementations that provides common CRUD operations,
+transaction management, bulk operations, and execution strategies using the Result pattern.</p>
+</div>
   <div class="markdown conceptual"></div>
 
   <div class="codewrapper">
@@ -342,6 +344,10 @@ Class DbContextBase  <a class="header-action link-secondary" title="View source"
 
 
 
+  <h2 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This class implements <a class="xref" href="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.html">IDbContextCommands</a> and <a class="xref" href="NuvTools.Data.EntityFrameworkCore.Context.IDbContextWithListCommands.html">IDbContextWithListCommands</a>
+to provide a consistent interface for database operations across the application.</p>
+</div>
 
 
   <h2 class="section" id="constructors">Constructors
@@ -352,10 +358,11 @@ Class DbContextBase  <a class="header-action link-secondary" title="View source"
 
   <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase__ctor" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.#ctor">
   DbContextBase()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.html">DbContextBase</a> class.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -378,10 +385,11 @@ Class DbContextBase  <a class="header-action link-secondary" title="View source"
 
   <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase__ctor_Microsoft_EntityFrameworkCore_DbContextOptions_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions)">
   DbContextBase(DbContextOptions)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.html">DbContextBase</a> class with the specified options.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -391,7 +399,8 @@ Class DbContextBase  <a class="header-action link-secondary" title="View source"
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>options</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontextoptions">DbContextOptions</a></dt>
-    <dd></dd>
+    <dd><p>The options to be used by the DbContext.</p>
+</dd>
   </dl>
 
 
@@ -413,10 +422,11 @@ Class DbContextBase  <a class="header-action link-secondary" title="View source"
 
   <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_CurrentTransaction" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.CurrentTransaction">
   CurrentTransaction
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets the current active transaction, or null if no transaction is active.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -448,10 +458,11 @@ Class DbContextBase  <a class="header-action link-secondary" title="View source"
 
   <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_AddAndSaveAsync__2___0_System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.AddAndSaveAsync``2(``0,System.Threading.CancellationToken)">
   AddAndSaveAsync&lt;TEntity, TKey&gt;(TEntity, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds a new entity to the database and saves changes, returning the entity's primary key.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -461,23 +472,28 @@ Class DbContextBase  <a class="header-action link-secondary" title="View source"
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>entity</code> <span class="xref">TEntity</span></dt>
-    <dd></dd>
+    <dd><p>The entity to add.</p>
+</dd>
     <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd></dd>
+    <dd><p>A cancellation token to observe while waiting for the task to complete.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;TKey&gt;&gt;</dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation, containing the result with the primary key.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TEntity</code></dt>
-    <dd></dd>
+    <dd><p>The type of the entity.</p>
+</dd>
     <dt><code>TKey</code></dt>
-    <dd></dd>
+    <dd><p>The type of the primary key.</p>
+</dd>
   </dl>
 
 
@@ -493,10 +509,11 @@ Class DbContextBase  <a class="header-action link-secondary" title="View source"
 
   <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_AddAndSaveWithCompositeKeyAsync__1___0_System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.AddAndSaveWithCompositeKeyAsync``1(``0,System.Threading.CancellationToken)">
   AddAndSaveWithCompositeKeyAsync&lt;TEntity&gt;(TEntity, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Adds a new entity with a composite key to the database and saves changes.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -506,21 +523,25 @@ Class DbContextBase  <a class="header-action link-secondary" title="View source"
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>entity</code> <span class="xref">TEntity</span></dt>
-    <dd></dd>
+    <dd><p>The entity to add.</p>
+</dd>
     <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd></dd>
+    <dd><p>A cancellation token to observe while waiting for the task to complete.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]&gt;&gt;</dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation, containing the result with the composite key values.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TEntity</code></dt>
-    <dd></dd>
+    <dd><p>The type of the entity.</p>
+</dd>
   </dl>
 
 
@@ -536,7 +557,7 @@ Class DbContextBase  <a class="header-action link-secondary" title="View source"
 
   <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_AddOrRemoveFromListAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.AddOrRemoveFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)">
   AddOrRemoveFromListAsync&lt;TEntity, TKey&gt;(IEnumerable&lt;TEntity&gt;, Func&lt;TEntity, TKey&gt;, Expression&lt;Func&lt;TEntity, bool&gt;&gt;?, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Synchronizes a DbSet with a provided list by adding or removing entities, without updating any entities.</p>
@@ -603,7 +624,7 @@ that are not in the list. It does not update any entities.</p>
 
   <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_AddOrUpdateFromListAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.AddOrUpdateFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)">
   AddOrUpdateFromListAsync&lt;TEntity, TKey&gt;(IEnumerable&lt;TEntity&gt;, Func&lt;TEntity, TKey&gt;, Expression&lt;Func&lt;TEntity, bool&gt;&gt;?, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Synchronizes a DbSet with a provided list by adding or updating entities, without removing any entities.</p>
@@ -670,10 +691,11 @@ It does not remove any entities from the database.</p>
 
   <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_BeginTransactionAsync_System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.BeginTransactionAsync(System.Threading.CancellationToken)">
   BeginTransactionAsync(CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Begins a new database transaction asynchronously.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -683,13 +705,15 @@ It does not remove any entities from the database.</p>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd></dd>
+    <dd><p>A cancellation token to observe while waiting for the task to complete.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.storage.idbcontexttransaction">IDbContextTransaction</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation, containing the database transaction.</p>
+</dd>
   </dl>
 
 
@@ -706,10 +730,11 @@ It does not remove any entities from the database.</p>
 
   <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_CommitTransactionAsync_System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.CommitTransactionAsync(System.Threading.CancellationToken)">
   CommitTransactionAsync(CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Commits the current transaction asynchronously.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -719,13 +744,15 @@ It does not remove any entities from the database.</p>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd></dd>
+    <dd><p>A cancellation token to observe while waiting for the task to complete.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation.</p>
+</dd>
   </dl>
 
 
@@ -742,10 +769,11 @@ It does not remove any entities from the database.</p>
 
   <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_ExecuteWithStrategyAsync_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task__System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.ExecuteWithStrategyAsync(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Threading.CancellationToken)">
   ExecuteWithStrategyAsync(Func&lt;CancellationToken, Task&gt;, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Executes an action within the database execution strategy for connection resiliency.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -755,15 +783,18 @@ It does not remove any entities from the database.</p>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>The action to execute within the strategy.</p>
+</dd>
     <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd></dd>
+    <dd><p>A cancellation token to observe while waiting for the task to complete.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation.</p>
+</dd>
   </dl>
 
 
@@ -774,16 +805,23 @@ It does not remove any entities from the database.</p>
 
 
 
+  <dl class="typelist seealso">
+    <dt>See Also</dt>
+    <dd>
+    <div><span><a href="https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency">https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency</a></span></div>
+    </dd>
+  </dl>
 
 
   <a id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_ExecuteWithStrategyAsync_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.ExecuteWithStrategyAsync*"></a>
 
   <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_ExecuteWithStrategyAsync__1_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task___0___System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.ExecuteWithStrategyAsync``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)">
   ExecuteWithStrategyAsync&lt;T&gt;(Func&lt;CancellationToken, Task&lt;T&gt;&gt;, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Executes an action within the database execution strategy for connection resiliency and returns a result.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -793,21 +831,25 @@ It does not remove any entities from the database.</p>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T&gt;&gt;</dt>
-    <dd></dd>
+    <dd><p>The action to execute within the strategy.</p>
+</dd>
     <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd></dd>
+    <dd><p>A cancellation token to observe while waiting for the task to complete.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T&gt;</dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation, containing the result of the action.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>T</code></dt>
-    <dd></dd>
+    <dd><p>The type of the result returned by the action.</p>
+</dd>
   </dl>
 
 
@@ -817,16 +859,23 @@ It does not remove any entities from the database.</p>
 
 
 
+  <dl class="typelist seealso">
+    <dt>See Also</dt>
+    <dd>
+    <div><span><a href="https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency">https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency</a></span></div>
+    </dd>
+  </dl>
 
 
   <a id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_RemoveAndSaveAsync_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.RemoveAndSaveAsync*"></a>
 
   <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_RemoveAndSaveAsync__1_System_Object___" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.RemoveAndSaveAsync``1(System.Object[])">
   RemoveAndSaveAsync&lt;TEntity&gt;(params object[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Removes an entity from the database and saves changes.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -836,19 +885,22 @@ It does not remove any entities from the database.</p>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>keyValues</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
-    <dd></dd>
+    <dd><p>The primary key values of the entity to remove.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation, containing the result of the remove operation.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TEntity</code></dt>
-    <dd></dd>
+    <dd><p>The type of the entity.</p>
+</dd>
   </dl>
 
 
@@ -864,10 +916,11 @@ It does not remove any entities from the database.</p>
 
   <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_RemoveAndSaveAsync__1_System_Object___System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.RemoveAndSaveAsync``1(System.Object[],System.Threading.CancellationToken)">
   RemoveAndSaveAsync&lt;TEntity&gt;(object[], CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Removes an entity from the database and saves changes.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -877,21 +930,25 @@ It does not remove any entities from the database.</p>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>keyValues</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
-    <dd></dd>
+    <dd><p>The primary key values of the entity to remove.</p>
+</dd>
     <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd></dd>
+    <dd><p>A cancellation token to observe while waiting for the task to complete.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation, containing the result of the remove operation.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TEntity</code></dt>
-    <dd></dd>
+    <dd><p>The type of the entity.</p>
+</dd>
   </dl>
 
 
@@ -907,10 +964,11 @@ It does not remove any entities from the database.</p>
 
   <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_RollbackTransactionAsync_System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.RollbackTransactionAsync(System.Threading.CancellationToken)">
   RollbackTransactionAsync(CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Rolls back the current transaction asynchronously.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -920,13 +978,15 @@ It does not remove any entities from the database.</p>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd></dd>
+    <dd><p>A cancellation token to observe while waiting for the task to complete.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation.</p>
+</dd>
   </dl>
 
 
@@ -943,7 +1003,7 @@ It does not remove any entities from the database.</p>
 
   <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_SyncFromListAsync__2_System_Collections_Generic_IEnumerable___0__System_Func___0___1__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.SyncFromListAsync``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Threading.CancellationToken)">
   SyncFromListAsync&lt;TEntity, TKey&gt;(IEnumerable&lt;TEntity&gt;, Func&lt;TEntity, TKey&gt;, Expression&lt;Func&lt;TEntity, bool&gt;&gt;?, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Synchronizes a DbSet with a provided list by adding, updating, or removing entities.</p>
@@ -1010,10 +1070,11 @@ and removes entities in the database that are not in the list.</p>
 
   <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_UpdateAndSaveAsync__1___0_System_Object___" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.UpdateAndSaveAsync``1(``0,System.Object[])">
   UpdateAndSaveAsync&lt;TEntity&gt;(TEntity, params object[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Updates an existing entity in the database and saves changes.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -1023,21 +1084,25 @@ and removes entities in the database that are not in the list.</p>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>entity</code> <span class="xref">TEntity</span></dt>
-    <dd></dd>
+    <dd><p>The entity with updated values.</p>
+</dd>
     <dt><code>keyValues</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
-    <dd></dd>
+    <dd><p>The primary key values of the entity to update.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation, containing the result of the update operation.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TEntity</code></dt>
-    <dd></dd>
+    <dd><p>The type of the entity.</p>
+</dd>
   </dl>
 
 
@@ -1053,10 +1118,11 @@ and removes entities in the database that are not in the list.</p>
 
   <h3 id="NuvTools_Data_EntityFrameworkCore_Context_DbContextBase_UpdateAndSaveAsync__1___0_System_Object___System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.UpdateAndSaveAsync``1(``0,System.Object[],System.Threading.CancellationToken)">
   UpdateAndSaveAsync&lt;TEntity&gt;(TEntity, object[], CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Updates an existing entity in the database and saves changes.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
@@ -1066,23 +1132,28 @@ and removes entities in the database that are not in the list.</p>
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>entity</code> <span class="xref">TEntity</span></dt>
-    <dd></dd>
+    <dd><p>The entity with updated values.</p>
+</dd>
     <dt><code>keyValues</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
-    <dd></dd>
+    <dd><p>The primary key values of the entity to update.</p>
+</dd>
     <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
-    <dd></dd>
+    <dd><p>A cancellation token to observe while waiting for the task to complete.</p>
+</dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../NuvTools.Common/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
-    <dd></dd>
+    <dd><p>A task that represents the asynchronous operation, containing the result of the update operation.</p>
+</dd>
   </dl>
 
   <h4 class="section">Type Parameters</h4>
   <dl class="parameters">
     <dt><code>TEntity</code></dt>
-    <dd></dd>
+    <dd><p>The type of the entity.</p>
+</dd>
   </dl>
 
 
@@ -1098,7 +1169,7 @@ and removes entities in the database that are not in the list.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-data/blob/1f061c596194209260f37acaaef70ce1334826f5/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Context/DbContextBase.cs" class="edit-link">Edit this page</a>
         </div>
 
 
