@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Data_EntityFrameworkCore_Paging_PagingExtensions" data-uid="NuvTools.Data.EntityFrameworkCore.Paging.PagingExtensions" class="text-break">
-Class PagingExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Paging/PagingExtensions.cs"><i class="bi bi-code-slash"></i></a>
+Class PagingExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/4e3395051dcbb5ea486411d173f06ba44ba4a905/src/NuvTools.Data.EntityFrameworkCore/Paging/PagingExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -157,7 +157,7 @@ Class PagingExtensions  <a class="header-action link-secondary" title="View sour
 
   <h3 id="NuvTools_Data_EntityFrameworkCore_Paging_PagingExtensions_PagingWrapAsync__1_System_Linq_IQueryable___0__System_Int32_System_Int32_System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Paging.PagingExtensions.PagingWrapAsync``1(System.Linq.IQueryable{``0},System.Int32,System.Int32,System.Threading.CancellationToken)">
   PagingWrapAsync&lt;T&gt;(IQueryable&lt;T&gt;, int, int, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Paging/PagingExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/4e3395051dcbb5ea486411d173f06ba44ba4a905/src/NuvTools.Data.EntityFrameworkCore/Paging/PagingExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Wraps a queryable collection into a paged result with metadata, using asynchronous database operations.</p>
@@ -165,7 +165,7 @@ Class PagingExtensions  <a class="header-action link-secondary" title="View sour
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task&lt;PagingWithQueryableList&lt;T&gt;&gt; PagingWrapAsync&lt;T&gt;(this IQueryable&lt;T&gt; list, int pageNumber = 1, int pageSize = 30, CancellationToken cancellationToken = default)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Task&lt;PagingWithQueryableList&lt;T&gt;&gt; PagingWrapAsync&lt;T&gt;(this IQueryable&lt;T&gt; list, int pageIndex = 0, int pageSize = 30, CancellationToken cancellationToken = default)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -173,8 +173,8 @@ Class PagingExtensions  <a class="header-action link-secondary" title="View sour
     <dt><code>list</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;T&gt;</dt>
     <dd><p>The source queryable collection.</p>
 </dd>
-    <dt><code>pageNumber</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>The page number (1-indexed). Defaults to 1.</p>
+    <dt><code>pageIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The page index (0-indexed). Defaults to 0.</p>
 </dd>
     <dt><code>pageSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd><p>The number of items per page. Defaults to 30.</p>
@@ -186,7 +186,7 @@ Class PagingExtensions  <a class="header-action link-secondary" title="View sour
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Paging/PagingWithQueryableList.cs">PagingWithQueryableList</a>&lt;T&gt;&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://github.com/nuvtools/nuvtools-data/blob/4e3395051dcbb5ea486411d173f06ba44ba4a905/src/NuvTools.Data/Paging/PagingWithQueryableList.cs">PagingWithQueryableList</a>&lt;T&gt;&gt;</dt>
     <dd><p>A task that represents the asynchronous operation, containing a paged result with queryable list.</p>
 </dd>
   </dl>
@@ -217,7 +217,7 @@ Class PagingExtensions  <a class="header-action link-secondary" title="View sour
 
   <h3 id="NuvTools_Data_EntityFrameworkCore_Paging_PagingExtensions_PagingWrapWithEnumerableListAsync__1_System_Linq_IQueryable___0__System_Int32_System_Int32_System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Paging.PagingExtensions.PagingWrapWithEnumerableListAsync``1(System.Linq.IQueryable{``0},System.Int32,System.Int32,System.Threading.CancellationToken)">
   PagingWrapWithEnumerableListAsync&lt;T&gt;(IQueryable&lt;T&gt;, int, int, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Paging/PagingExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/4e3395051dcbb5ea486411d173f06ba44ba4a905/src/NuvTools.Data.EntityFrameworkCore/Paging/PagingExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Wraps a queryable collection into a paged result with an enumerable list, materializing the data asynchronously.</p>
@@ -225,7 +225,7 @@ Class PagingExtensions  <a class="header-action link-secondary" title="View sour
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task&lt;PagingWithEnumerableList&lt;T&gt;&gt; PagingWrapWithEnumerableListAsync&lt;T&gt;(this IQueryable&lt;T&gt; list, int pageNumber = 1, int pageSize = 30, CancellationToken cancellationToken = default)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Task&lt;PagingWithEnumerableList&lt;T&gt;&gt; PagingWrapWithEnumerableListAsync&lt;T&gt;(this IQueryable&lt;T&gt; list, int pageIndex = 0, int pageSize = 30, CancellationToken cancellationToken = default)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -233,8 +233,8 @@ Class PagingExtensions  <a class="header-action link-secondary" title="View sour
     <dt><code>list</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;T&gt;</dt>
     <dd><p>The source queryable collection.</p>
 </dd>
-    <dt><code>pageNumber</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>The page number (1-indexed). Defaults to 1.</p>
+    <dt><code>pageIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The page index (0-indexed). Defaults to 0.</p>
 </dd>
     <dt><code>pageSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd><p>The number of items per page. Defaults to 30.</p>
@@ -246,7 +246,7 @@ Class PagingExtensions  <a class="header-action link-secondary" title="View sour
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Paging/PagingWithEnumerableList.cs">PagingWithEnumerableList</a>&lt;T&gt;&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://github.com/nuvtools/nuvtools-data/blob/4e3395051dcbb5ea486411d173f06ba44ba4a905/src/NuvTools.Data/Paging/PagingWithEnumerableList.cs">PagingWithEnumerableList</a>&lt;T&gt;&gt;</dt>
     <dd><p>A task that represents the asynchronous operation, containing a paged result with enumerable list.</p>
 </dd>
   </dl>
@@ -271,7 +271,7 @@ Class PagingExtensions  <a class="header-action link-secondary" title="View sour
 
   <h3 id="NuvTools_Data_EntityFrameworkCore_Paging_PagingExtensions_ToPagingWithEnumerableListAsync__1_NuvTools_Data_Paging_PagingWithQueryableList___0__System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Paging.PagingExtensions.ToPagingWithEnumerableListAsync``1(NuvTools.Data.Paging.PagingWithQueryableList{``0},System.Threading.CancellationToken)">
   ToPagingWithEnumerableListAsync&lt;T&gt;(PagingWithQueryableList&lt;T&gt;, CancellationToken)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Paging/PagingExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/4e3395051dcbb5ea486411d173f06ba44ba4a905/src/NuvTools.Data.EntityFrameworkCore/Paging/PagingExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Converts a PagingWithQueryableList to a PagingWithEnumerableList by materializing the queryable asynchronously.</p>
@@ -294,7 +294,7 @@ Class PagingExtensions  <a class="header-action link-secondary" title="View sour
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Paging/PagingWithEnumerableList.cs">PagingWithEnumerableList</a>&lt;T&gt;&gt;</dt>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://github.com/nuvtools/nuvtools-data/blob/4e3395051dcbb5ea486411d173f06ba44ba4a905/src/NuvTools.Data/Paging/PagingWithEnumerableList.cs">PagingWithEnumerableList</a>&lt;T&gt;&gt;</dt>
     <dd><p>A task that represents the asynchronous operation, containing a paging result with enumerable list.</p>
 </dd>
   </dl>
@@ -325,7 +325,7 @@ Class PagingExtensions  <a class="header-action link-secondary" title="View sour
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data.EntityFrameworkCore/Paging/PagingExtensions.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-data/blob/4e3395051dcbb5ea486411d173f06ba44ba4a905/src/NuvTools.Data.EntityFrameworkCore/Paging/PagingExtensions.cs" class="edit-link">Edit this page</a>
         </div>
 
 

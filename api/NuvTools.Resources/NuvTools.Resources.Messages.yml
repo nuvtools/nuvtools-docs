@@ -5,44 +5,58 @@ items:
   id: Messages
   parent: NuvTools.Resources
   children:
+  - NuvTools.Resources.Messages.AccessDenied
+  - NuvTools.Resources.Messages.AddXClickingY
   - NuvTools.Resources.Messages.AtLeastOneTheseParametersShoudBeFilledX
   - NuvTools.Resources.Messages.CancelDeletion
-  - NuvTools.Resources.Messages.CancelInclusion
-  - NuvTools.Resources.Messages.ConfirmDeletion
-  - NuvTools.Resources.Messages.ConfirmInclusion
-  - NuvTools.Resources.Messages.ConfirmRegistration
+  - NuvTools.Resources.Messages.CodeExpired
+  - NuvTools.Resources.Messages.ConfirmX
+  - NuvTools.Resources.Messages.CouldNotDeleteXExistYAssociated
+  - NuvTools.Resources.Messages.CouldNotDeleteXVerifyAssociatedData
   - NuvTools.Resources.Messages.Culture
   - NuvTools.Resources.Messages.DateXMustBeAfterDateY
-  - NuvTools.Resources.Messages.DeleteConfirmation
   - NuvTools.Resources.Messages.DoYouReallyLogout
   - NuvTools.Resources.Messages.EmailConfirmationContentWithLinkX
   - NuvTools.Resources.Messages.EmailConfirmed
+  - NuvTools.Resources.Messages.EmailMustBeConfirmed
   - NuvTools.Resources.Messages.EmailXAlreadyTaken
-  - NuvTools.Resources.Messages.EnterYourSearch
-  - NuvTools.Resources.Messages.GoHome
-  - NuvTools.Resources.Messages.InvalidEmail
-  - NuvTools.Resources.Messages.InvalidValue
+  - NuvTools.Resources.Messages.EndDateMustBeGreaterThanStartDate
+  - NuvTools.Resources.Messages.ErrorInProvidedParameters
+  - NuvTools.Resources.Messages.FailedToCreateX
+  - NuvTools.Resources.Messages.FailedToDeleteX
+  - NuvTools.Resources.Messages.FailedToGenerateX
+  - NuvTools.Resources.Messages.FailedToUpdateX
+  - NuvTools.Resources.Messages.IdObjectNotMatchUrl
+  - NuvTools.Resources.Messages.InactiveUser
+  - NuvTools.Resources.Messages.InvalidExpiredToken
+  - NuvTools.Resources.Messages.InvalidFileTypeAcceptedFormatX
+  - NuvTools.Resources.Messages.LoginSuccessful
   - NuvTools.Resources.Messages.LogoutConfirmation
+  - NuvTools.Resources.Messages.NoPermissionToDeleteX
   - NuvTools.Resources.Messages.NoneParameterInformed
   - NuvTools.Resources.Messages.NotAllowed
   - NuvTools.Resources.Messages.OperationPerformedSuccessfully
   - NuvTools.Resources.Messages.PasswordResetEmailContentWithLinkX
+  - NuvTools.Resources.Messages.PasswordResetFailed
   - NuvTools.Resources.Messages.PasswordResetMailWasSent
   - NuvTools.Resources.Messages.PasswordResetSuccessful
+  - NuvTools.Resources.Messages.ProcessingCompleted
+  - NuvTools.Resources.Messages.ProvideAtLeastOneParameter
+  - NuvTools.Resources.Messages.ProvideAtLeastOneX
   - NuvTools.Resources.Messages.ResourceManager
-  - NuvTools.Resources.Messages.RoleAlreadyExists
-  - NuvTools.Resources.Messages.RolesRegistered
+  - NuvTools.Resources.Messages.TextCopied
   - NuvTools.Resources.Messages.TheOperationCouldNotBePerformed
-  - NuvTools.Resources.Messages.ThePageYouWereLookingForDoesntExist
   - NuvTools.Resources.Messages.ThereIsNoXRegisteredSoFar
   - NuvTools.Resources.Messages.ToConfirmDeletion
-  - NuvTools.Resources.Messages.TokenNotFound
-  - NuvTools.Resources.Messages.UserNotFound
-  - NuvTools.Resources.Messages.UsersRegistered
+  - NuvTools.Resources.Messages.UploadedFileIsEmpty
+  - NuvTools.Resources.Messages.ValidVerificationCode
   - NuvTools.Resources.Messages.ValidationProblemsFound
   - NuvTools.Resources.Messages.ValueOutsideRange
+  - NuvTools.Resources.Messages.ViewX
   - NuvTools.Resources.Messages.WelcomeX
   - NuvTools.Resources.Messages.XAlreadyExists
+  - NuvTools.Resources.Messages.XDeletedSuccessfully
+  - NuvTools.Resources.Messages.XIncomplete
   - NuvTools.Resources.Messages.XInvalid
   - NuvTools.Resources.Messages.XMustBeEqualY
   - NuvTools.Resources.Messages.XMustBeGreaterThanY
@@ -54,7 +68,11 @@ items:
   - NuvTools.Resources.Messages.XMustHaveAtLeastYCharacters
   - NuvTools.Resources.Messages.XMustHaveUpToYCharacters
   - NuvTools.Resources.Messages.XNotFound
+  - NuvTools.Resources.Messages.XNotProvided
+  - NuvTools.Resources.Messages.XRegisteredSuccessfully
   - NuvTools.Resources.Messages.XRequired
+  - NuvTools.Resources.Messages.XUpdatedSuccessfully
+  - NuvTools.Resources.Messages.XYSuccess
   langs:
   - csharp
   - vb
@@ -63,7 +81,7 @@ items:
   fullName: NuvTools.Resources.Messages
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -94,7 +112,7 @@ items:
   fullName: NuvTools.Resources.Messages.ResourceManager
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -119,7 +137,7 @@ items:
   fullName: NuvTools.Resources.Messages.Culture
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -135,6 +153,56 @@ items:
       type: System.Globalization.CultureInfo
     content.vb: Public Shared Property Culture As CultureInfo
   overload: NuvTools.Resources.Messages.Culture*
+- uid: NuvTools.Resources.Messages.AccessDenied
+  commentId: P:NuvTools.Resources.Messages.AccessDenied
+  id: AccessDenied
+  parent: NuvTools.Resources.Messages
+  langs:
+  - csharp
+  - vb
+  name: AccessDenied
+  nameWithType: Messages.AccessDenied
+  fullName: NuvTools.Resources.Messages.AccessDenied
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
+  assemblies:
+  - NuvTools.Resources
+  namespace: NuvTools.Resources
+  summary: Looks up a localized string similar to Access denied..
+  example: []
+  syntax:
+    content: public static string AccessDenied { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property AccessDenied As String
+  overload: NuvTools.Resources.Messages.AccessDenied*
+- uid: NuvTools.Resources.Messages.AddXClickingY
+  commentId: P:NuvTools.Resources.Messages.AddXClickingY
+  id: AddXClickingY
+  parent: NuvTools.Resources.Messages
+  langs:
+  - csharp
+  - vb
+  name: AddXClickingY
+  nameWithType: Messages.AddXClickingY
+  fullName: NuvTools.Resources.Messages.AddXClickingY
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
+  assemblies:
+  - NuvTools.Resources
+  namespace: NuvTools.Resources
+  summary: Looks up a localized string similar to Add new {0} by clicking {1}..
+  example: []
+  syntax:
+    content: public static string AddXClickingY { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property AddXClickingY As String
+  overload: NuvTools.Resources.Messages.AddXClickingY*
 - uid: NuvTools.Resources.Messages.AtLeastOneTheseParametersShoudBeFilledX
   commentId: P:NuvTools.Resources.Messages.AtLeastOneTheseParametersShoudBeFilledX
   id: AtLeastOneTheseParametersShoudBeFilledX
@@ -147,7 +215,7 @@ items:
   fullName: NuvTools.Resources.Messages.AtLeastOneTheseParametersShoudBeFilledX
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -172,11 +240,11 @@ items:
   fullName: NuvTools.Resources.Messages.CancelDeletion
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
-  summary: Looks up a localized string similar to Cancel deletion.
+  summary: Looks up a localized string similar to Cancel Deletion.
   example: []
   syntax:
     content: public static string CancelDeletion { get; }
@@ -185,106 +253,106 @@ items:
       type: System.String
     content.vb: Public Shared ReadOnly Property CancelDeletion As String
   overload: NuvTools.Resources.Messages.CancelDeletion*
-- uid: NuvTools.Resources.Messages.CancelInclusion
-  commentId: P:NuvTools.Resources.Messages.CancelInclusion
-  id: CancelInclusion
+- uid: NuvTools.Resources.Messages.CodeExpired
+  commentId: P:NuvTools.Resources.Messages.CodeExpired
+  id: CodeExpired
   parent: NuvTools.Resources.Messages
   langs:
   - csharp
   - vb
-  name: CancelInclusion
-  nameWithType: Messages.CancelInclusion
-  fullName: NuvTools.Resources.Messages.CancelInclusion
+  name: CodeExpired
+  nameWithType: Messages.CodeExpired
+  fullName: NuvTools.Resources.Messages.CodeExpired
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
-  summary: Looks up a localized string similar to Cancel inclusion.
+  summary: Looks up a localized string similar to Code expired..
   example: []
   syntax:
-    content: public static string CancelInclusion { get; }
+    content: public static string CodeExpired { get; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Shared ReadOnly Property CancelInclusion As String
-  overload: NuvTools.Resources.Messages.CancelInclusion*
-- uid: NuvTools.Resources.Messages.ConfirmDeletion
-  commentId: P:NuvTools.Resources.Messages.ConfirmDeletion
-  id: ConfirmDeletion
+    content.vb: Public Shared ReadOnly Property CodeExpired As String
+  overload: NuvTools.Resources.Messages.CodeExpired*
+- uid: NuvTools.Resources.Messages.ConfirmX
+  commentId: P:NuvTools.Resources.Messages.ConfirmX
+  id: ConfirmX
   parent: NuvTools.Resources.Messages
   langs:
   - csharp
   - vb
-  name: ConfirmDeletion
-  nameWithType: Messages.ConfirmDeletion
-  fullName: NuvTools.Resources.Messages.ConfirmDeletion
+  name: ConfirmX
+  nameWithType: Messages.ConfirmX
+  fullName: NuvTools.Resources.Messages.ConfirmX
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
-  summary: Looks up a localized string similar to Confirm the deletion?.
+  summary: Looks up a localized string similar to Confirm {0}?.
   example: []
   syntax:
-    content: public static string ConfirmDeletion { get; }
+    content: public static string ConfirmX { get; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Shared ReadOnly Property ConfirmDeletion As String
-  overload: NuvTools.Resources.Messages.ConfirmDeletion*
-- uid: NuvTools.Resources.Messages.ConfirmInclusion
-  commentId: P:NuvTools.Resources.Messages.ConfirmInclusion
-  id: ConfirmInclusion
+    content.vb: Public Shared ReadOnly Property ConfirmX As String
+  overload: NuvTools.Resources.Messages.ConfirmX*
+- uid: NuvTools.Resources.Messages.CouldNotDeleteXExistYAssociated
+  commentId: P:NuvTools.Resources.Messages.CouldNotDeleteXExistYAssociated
+  id: CouldNotDeleteXExistYAssociated
   parent: NuvTools.Resources.Messages
   langs:
   - csharp
   - vb
-  name: ConfirmInclusion
-  nameWithType: Messages.ConfirmInclusion
-  fullName: NuvTools.Resources.Messages.ConfirmInclusion
+  name: CouldNotDeleteXExistYAssociated
+  nameWithType: Messages.CouldNotDeleteXExistYAssociated
+  fullName: NuvTools.Resources.Messages.CouldNotDeleteXExistYAssociated
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
-  summary: Looks up a localized string similar to Confirm inclusion.
+  summary: Looks up a localized string similar to Could not delete {0}. There are {1} associated..
   example: []
   syntax:
-    content: public static string ConfirmInclusion { get; }
+    content: public static string CouldNotDeleteXExistYAssociated { get; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Shared ReadOnly Property ConfirmInclusion As String
-  overload: NuvTools.Resources.Messages.ConfirmInclusion*
-- uid: NuvTools.Resources.Messages.ConfirmRegistration
-  commentId: P:NuvTools.Resources.Messages.ConfirmRegistration
-  id: ConfirmRegistration
+    content.vb: Public Shared ReadOnly Property CouldNotDeleteXExistYAssociated As String
+  overload: NuvTools.Resources.Messages.CouldNotDeleteXExistYAssociated*
+- uid: NuvTools.Resources.Messages.CouldNotDeleteXVerifyAssociatedData
+  commentId: P:NuvTools.Resources.Messages.CouldNotDeleteXVerifyAssociatedData
+  id: CouldNotDeleteXVerifyAssociatedData
   parent: NuvTools.Resources.Messages
   langs:
   - csharp
   - vb
-  name: ConfirmRegistration
-  nameWithType: Messages.ConfirmRegistration
-  fullName: NuvTools.Resources.Messages.ConfirmRegistration
+  name: CouldNotDeleteXVerifyAssociatedData
+  nameWithType: Messages.CouldNotDeleteXVerifyAssociatedData
+  fullName: NuvTools.Resources.Messages.CouldNotDeleteXVerifyAssociatedData
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
-  summary: Looks up a localized string similar to Confirm registration.
+  summary: Looks up a localized string similar to Could not delete {0}. Verify if there is associated data..
   example: []
   syntax:
-    content: public static string ConfirmRegistration { get; }
+    content: public static string CouldNotDeleteXVerifyAssociatedData { get; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Shared ReadOnly Property ConfirmRegistration As String
-  overload: NuvTools.Resources.Messages.ConfirmRegistration*
+    content.vb: Public Shared ReadOnly Property CouldNotDeleteXVerifyAssociatedData As String
+  overload: NuvTools.Resources.Messages.CouldNotDeleteXVerifyAssociatedData*
 - uid: NuvTools.Resources.Messages.DateXMustBeAfterDateY
   commentId: P:NuvTools.Resources.Messages.DateXMustBeAfterDateY
   id: DateXMustBeAfterDateY
@@ -297,7 +365,7 @@ items:
   fullName: NuvTools.Resources.Messages.DateXMustBeAfterDateY
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -310,31 +378,6 @@ items:
       type: System.String
     content.vb: Public Shared ReadOnly Property DateXMustBeAfterDateY As String
   overload: NuvTools.Resources.Messages.DateXMustBeAfterDateY*
-- uid: NuvTools.Resources.Messages.DeleteConfirmation
-  commentId: P:NuvTools.Resources.Messages.DeleteConfirmation
-  id: DeleteConfirmation
-  parent: NuvTools.Resources.Messages
-  langs:
-  - csharp
-  - vb
-  name: DeleteConfirmation
-  nameWithType: Messages.DeleteConfirmation
-  fullName: NuvTools.Resources.Messages.DeleteConfirmation
-  type: Property
-  source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
-  assemblies:
-  - NuvTools.Resources
-  namespace: NuvTools.Resources
-  summary: Looks up a localized string similar to Delete Confirmation.
-  example: []
-  syntax:
-    content: public static string DeleteConfirmation { get; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public Shared ReadOnly Property DeleteConfirmation As String
-  overload: NuvTools.Resources.Messages.DeleteConfirmation*
 - uid: NuvTools.Resources.Messages.DoYouReallyLogout
   commentId: P:NuvTools.Resources.Messages.DoYouReallyLogout
   id: DoYouReallyLogout
@@ -347,11 +390,11 @@ items:
   fullName: NuvTools.Resources.Messages.DoYouReallyLogout
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
-  summary: Looks up a localized string similar to Do you really logout?.
+  summary: Looks up a localized string similar to Do you really want to logout?.
   example: []
   syntax:
     content: public static string DoYouReallyLogout { get; }
@@ -372,7 +415,7 @@ items:
   fullName: NuvTools.Resources.Messages.EmailConfirmationContentWithLinkX
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -397,7 +440,7 @@ items:
   fullName: NuvTools.Resources.Messages.EmailConfirmed
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -410,6 +453,31 @@ items:
       type: System.String
     content.vb: Public Shared ReadOnly Property EmailConfirmed As String
   overload: NuvTools.Resources.Messages.EmailConfirmed*
+- uid: NuvTools.Resources.Messages.EmailMustBeConfirmed
+  commentId: P:NuvTools.Resources.Messages.EmailMustBeConfirmed
+  id: EmailMustBeConfirmed
+  parent: NuvTools.Resources.Messages
+  langs:
+  - csharp
+  - vb
+  name: EmailMustBeConfirmed
+  nameWithType: Messages.EmailMustBeConfirmed
+  fullName: NuvTools.Resources.Messages.EmailMustBeConfirmed
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
+  assemblies:
+  - NuvTools.Resources
+  namespace: NuvTools.Resources
+  summary: Looks up a localized string similar to E-mail must be confirmed..
+  example: []
+  syntax:
+    content: public static string EmailMustBeConfirmed { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property EmailMustBeConfirmed As String
+  overload: NuvTools.Resources.Messages.EmailMustBeConfirmed*
 - uid: NuvTools.Resources.Messages.EmailXAlreadyTaken
   commentId: P:NuvTools.Resources.Messages.EmailXAlreadyTaken
   id: EmailXAlreadyTaken
@@ -422,7 +490,7 @@ items:
   fullName: NuvTools.Resources.Messages.EmailXAlreadyTaken
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -435,106 +503,281 @@ items:
       type: System.String
     content.vb: Public Shared ReadOnly Property EmailXAlreadyTaken As String
   overload: NuvTools.Resources.Messages.EmailXAlreadyTaken*
-- uid: NuvTools.Resources.Messages.EnterYourSearch
-  commentId: P:NuvTools.Resources.Messages.EnterYourSearch
-  id: EnterYourSearch
+- uid: NuvTools.Resources.Messages.EndDateMustBeGreaterThanStartDate
+  commentId: P:NuvTools.Resources.Messages.EndDateMustBeGreaterThanStartDate
+  id: EndDateMustBeGreaterThanStartDate
   parent: NuvTools.Resources.Messages
   langs:
   - csharp
   - vb
-  name: EnterYourSearch
-  nameWithType: Messages.EnterYourSearch
-  fullName: NuvTools.Resources.Messages.EnterYourSearch
+  name: EndDateMustBeGreaterThanStartDate
+  nameWithType: Messages.EndDateMustBeGreaterThanStartDate
+  fullName: NuvTools.Resources.Messages.EndDateMustBeGreaterThanStartDate
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
-  summary: Looks up a localized string similar to Enter your search.
+  summary: Looks up a localized string similar to End date must be greater than start date..
   example: []
   syntax:
-    content: public static string EnterYourSearch { get; }
+    content: public static string EndDateMustBeGreaterThanStartDate { get; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Shared ReadOnly Property EnterYourSearch As String
-  overload: NuvTools.Resources.Messages.EnterYourSearch*
-- uid: NuvTools.Resources.Messages.GoHome
-  commentId: P:NuvTools.Resources.Messages.GoHome
-  id: GoHome
+    content.vb: Public Shared ReadOnly Property EndDateMustBeGreaterThanStartDate As String
+  overload: NuvTools.Resources.Messages.EndDateMustBeGreaterThanStartDate*
+- uid: NuvTools.Resources.Messages.ErrorInProvidedParameters
+  commentId: P:NuvTools.Resources.Messages.ErrorInProvidedParameters
+  id: ErrorInProvidedParameters
   parent: NuvTools.Resources.Messages
   langs:
   - csharp
   - vb
-  name: GoHome
-  nameWithType: Messages.GoHome
-  fullName: NuvTools.Resources.Messages.GoHome
+  name: ErrorInProvidedParameters
+  nameWithType: Messages.ErrorInProvidedParameters
+  fullName: NuvTools.Resources.Messages.ErrorInProvidedParameters
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
-  summary: Looks up a localized string similar to Go home.
+  summary: Looks up a localized string similar to Error in provided parameters..
   example: []
   syntax:
-    content: public static string GoHome { get; }
+    content: public static string ErrorInProvidedParameters { get; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Shared ReadOnly Property GoHome As String
-  overload: NuvTools.Resources.Messages.GoHome*
-- uid: NuvTools.Resources.Messages.InvalidEmail
-  commentId: P:NuvTools.Resources.Messages.InvalidEmail
-  id: InvalidEmail
+    content.vb: Public Shared ReadOnly Property ErrorInProvidedParameters As String
+  overload: NuvTools.Resources.Messages.ErrorInProvidedParameters*
+- uid: NuvTools.Resources.Messages.FailedToCreateX
+  commentId: P:NuvTools.Resources.Messages.FailedToCreateX
+  id: FailedToCreateX
   parent: NuvTools.Resources.Messages
   langs:
   - csharp
   - vb
-  name: InvalidEmail
-  nameWithType: Messages.InvalidEmail
-  fullName: NuvTools.Resources.Messages.InvalidEmail
+  name: FailedToCreateX
+  nameWithType: Messages.FailedToCreateX
+  fullName: NuvTools.Resources.Messages.FailedToCreateX
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
-  summary: Looks up a localized string similar to Invalid e-mail..
+  summary: Looks up a localized string similar to Failed to create {0}..
   example: []
   syntax:
-    content: public static string InvalidEmail { get; }
+    content: public static string FailedToCreateX { get; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Shared ReadOnly Property InvalidEmail As String
-  overload: NuvTools.Resources.Messages.InvalidEmail*
-- uid: NuvTools.Resources.Messages.InvalidValue
-  commentId: P:NuvTools.Resources.Messages.InvalidValue
-  id: InvalidValue
+    content.vb: Public Shared ReadOnly Property FailedToCreateX As String
+  overload: NuvTools.Resources.Messages.FailedToCreateX*
+- uid: NuvTools.Resources.Messages.FailedToDeleteX
+  commentId: P:NuvTools.Resources.Messages.FailedToDeleteX
+  id: FailedToDeleteX
   parent: NuvTools.Resources.Messages
   langs:
   - csharp
   - vb
-  name: InvalidValue
-  nameWithType: Messages.InvalidValue
-  fullName: NuvTools.Resources.Messages.InvalidValue
+  name: FailedToDeleteX
+  nameWithType: Messages.FailedToDeleteX
+  fullName: NuvTools.Resources.Messages.FailedToDeleteX
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
-  summary: Looks up a localized string similar to Invalid value..
+  summary: Looks up a localized string similar to Failed to delete {0}..
   example: []
   syntax:
-    content: public static string InvalidValue { get; }
+    content: public static string FailedToDeleteX { get; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Shared ReadOnly Property InvalidValue As String
-  overload: NuvTools.Resources.Messages.InvalidValue*
+    content.vb: Public Shared ReadOnly Property FailedToDeleteX As String
+  overload: NuvTools.Resources.Messages.FailedToDeleteX*
+- uid: NuvTools.Resources.Messages.FailedToGenerateX
+  commentId: P:NuvTools.Resources.Messages.FailedToGenerateX
+  id: FailedToGenerateX
+  parent: NuvTools.Resources.Messages
+  langs:
+  - csharp
+  - vb
+  name: FailedToGenerateX
+  nameWithType: Messages.FailedToGenerateX
+  fullName: NuvTools.Resources.Messages.FailedToGenerateX
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
+  assemblies:
+  - NuvTools.Resources
+  namespace: NuvTools.Resources
+  summary: Looks up a localized string similar to Failed to generate {0}..
+  example: []
+  syntax:
+    content: public static string FailedToGenerateX { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property FailedToGenerateX As String
+  overload: NuvTools.Resources.Messages.FailedToGenerateX*
+- uid: NuvTools.Resources.Messages.FailedToUpdateX
+  commentId: P:NuvTools.Resources.Messages.FailedToUpdateX
+  id: FailedToUpdateX
+  parent: NuvTools.Resources.Messages
+  langs:
+  - csharp
+  - vb
+  name: FailedToUpdateX
+  nameWithType: Messages.FailedToUpdateX
+  fullName: NuvTools.Resources.Messages.FailedToUpdateX
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
+  assemblies:
+  - NuvTools.Resources
+  namespace: NuvTools.Resources
+  summary: Looks up a localized string similar to Failed to update {0}..
+  example: []
+  syntax:
+    content: public static string FailedToUpdateX { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property FailedToUpdateX As String
+  overload: NuvTools.Resources.Messages.FailedToUpdateX*
+- uid: NuvTools.Resources.Messages.IdObjectNotMatchUrl
+  commentId: P:NuvTools.Resources.Messages.IdObjectNotMatchUrl
+  id: IdObjectNotMatchUrl
+  parent: NuvTools.Resources.Messages
+  langs:
+  - csharp
+  - vb
+  name: IdObjectNotMatchUrl
+  nameWithType: Messages.IdObjectNotMatchUrl
+  fullName: NuvTools.Resources.Messages.IdObjectNotMatchUrl
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
+  assemblies:
+  - NuvTools.Resources
+  namespace: NuvTools.Resources
+  summary: Looks up a localized string similar to The ID in the object does not match the ID in the URL..
+  example: []
+  syntax:
+    content: public static string IdObjectNotMatchUrl { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property IdObjectNotMatchUrl As String
+  overload: NuvTools.Resources.Messages.IdObjectNotMatchUrl*
+- uid: NuvTools.Resources.Messages.InactiveUser
+  commentId: P:NuvTools.Resources.Messages.InactiveUser
+  id: InactiveUser
+  parent: NuvTools.Resources.Messages
+  langs:
+  - csharp
+  - vb
+  name: InactiveUser
+  nameWithType: Messages.InactiveUser
+  fullName: NuvTools.Resources.Messages.InactiveUser
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
+  assemblies:
+  - NuvTools.Resources
+  namespace: NuvTools.Resources
+  summary: Looks up a localized string similar to Inactive user..
+  example: []
+  syntax:
+    content: public static string InactiveUser { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property InactiveUser As String
+  overload: NuvTools.Resources.Messages.InactiveUser*
+- uid: NuvTools.Resources.Messages.InvalidExpiredToken
+  commentId: P:NuvTools.Resources.Messages.InvalidExpiredToken
+  id: InvalidExpiredToken
+  parent: NuvTools.Resources.Messages
+  langs:
+  - csharp
+  - vb
+  name: InvalidExpiredToken
+  nameWithType: Messages.InvalidExpiredToken
+  fullName: NuvTools.Resources.Messages.InvalidExpiredToken
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
+  assemblies:
+  - NuvTools.Resources
+  namespace: NuvTools.Resources
+  summary: Looks up a localized string similar to Invalid or expired token..
+  example: []
+  syntax:
+    content: public static string InvalidExpiredToken { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property InvalidExpiredToken As String
+  overload: NuvTools.Resources.Messages.InvalidExpiredToken*
+- uid: NuvTools.Resources.Messages.InvalidFileTypeAcceptedFormatX
+  commentId: P:NuvTools.Resources.Messages.InvalidFileTypeAcceptedFormatX
+  id: InvalidFileTypeAcceptedFormatX
+  parent: NuvTools.Resources.Messages
+  langs:
+  - csharp
+  - vb
+  name: InvalidFileTypeAcceptedFormatX
+  nameWithType: Messages.InvalidFileTypeAcceptedFormatX
+  fullName: NuvTools.Resources.Messages.InvalidFileTypeAcceptedFormatX
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
+  assemblies:
+  - NuvTools.Resources
+  namespace: NuvTools.Resources
+  summary: 'Looks up a localized string similar to Invalid file type. Accepted format: {0}..'
+  example: []
+  syntax:
+    content: public static string InvalidFileTypeAcceptedFormatX { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property InvalidFileTypeAcceptedFormatX As String
+  overload: NuvTools.Resources.Messages.InvalidFileTypeAcceptedFormatX*
+- uid: NuvTools.Resources.Messages.LoginSuccessful
+  commentId: P:NuvTools.Resources.Messages.LoginSuccessful
+  id: LoginSuccessful
+  parent: NuvTools.Resources.Messages
+  langs:
+  - csharp
+  - vb
+  name: LoginSuccessful
+  nameWithType: Messages.LoginSuccessful
+  fullName: NuvTools.Resources.Messages.LoginSuccessful
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
+  assemblies:
+  - NuvTools.Resources
+  namespace: NuvTools.Resources
+  summary: Looks up a localized string similar to Login successful..
+  example: []
+  syntax:
+    content: public static string LoginSuccessful { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property LoginSuccessful As String
+  overload: NuvTools.Resources.Messages.LoginSuccessful*
 - uid: NuvTools.Resources.Messages.LogoutConfirmation
   commentId: P:NuvTools.Resources.Messages.LogoutConfirmation
   id: LogoutConfirmation
@@ -547,7 +790,7 @@ items:
   fullName: NuvTools.Resources.Messages.LogoutConfirmation
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -572,7 +815,7 @@ items:
   fullName: NuvTools.Resources.Messages.NoneParameterInformed
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -585,6 +828,31 @@ items:
       type: System.String
     content.vb: Public Shared ReadOnly Property NoneParameterInformed As String
   overload: NuvTools.Resources.Messages.NoneParameterInformed*
+- uid: NuvTools.Resources.Messages.NoPermissionToDeleteX
+  commentId: P:NuvTools.Resources.Messages.NoPermissionToDeleteX
+  id: NoPermissionToDeleteX
+  parent: NuvTools.Resources.Messages
+  langs:
+  - csharp
+  - vb
+  name: NoPermissionToDeleteX
+  nameWithType: Messages.NoPermissionToDeleteX
+  fullName: NuvTools.Resources.Messages.NoPermissionToDeleteX
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
+  assemblies:
+  - NuvTools.Resources
+  namespace: NuvTools.Resources
+  summary: Looks up a localized string similar to No permission to delete {0}..
+  example: []
+  syntax:
+    content: public static string NoPermissionToDeleteX { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property NoPermissionToDeleteX As String
+  overload: NuvTools.Resources.Messages.NoPermissionToDeleteX*
 - uid: NuvTools.Resources.Messages.NotAllowed
   commentId: P:NuvTools.Resources.Messages.NotAllowed
   id: NotAllowed
@@ -597,7 +865,7 @@ items:
   fullName: NuvTools.Resources.Messages.NotAllowed
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -622,7 +890,7 @@ items:
   fullName: NuvTools.Resources.Messages.OperationPerformedSuccessfully
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -647,7 +915,7 @@ items:
   fullName: NuvTools.Resources.Messages.PasswordResetEmailContentWithLinkX
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -660,6 +928,31 @@ items:
       type: System.String
     content.vb: Public Shared ReadOnly Property PasswordResetEmailContentWithLinkX As String
   overload: NuvTools.Resources.Messages.PasswordResetEmailContentWithLinkX*
+- uid: NuvTools.Resources.Messages.PasswordResetFailed
+  commentId: P:NuvTools.Resources.Messages.PasswordResetFailed
+  id: PasswordResetFailed
+  parent: NuvTools.Resources.Messages
+  langs:
+  - csharp
+  - vb
+  name: PasswordResetFailed
+  nameWithType: Messages.PasswordResetFailed
+  fullName: NuvTools.Resources.Messages.PasswordResetFailed
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
+  assemblies:
+  - NuvTools.Resources
+  namespace: NuvTools.Resources
+  summary: Looks up a localized string similar to Password reset failed..
+  example: []
+  syntax:
+    content: public static string PasswordResetFailed { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property PasswordResetFailed As String
+  overload: NuvTools.Resources.Messages.PasswordResetFailed*
 - uid: NuvTools.Resources.Messages.PasswordResetMailWasSent
   commentId: P:NuvTools.Resources.Messages.PasswordResetMailWasSent
   id: PasswordResetMailWasSent
@@ -672,7 +965,7 @@ items:
   fullName: NuvTools.Resources.Messages.PasswordResetMailWasSent
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -697,7 +990,7 @@ items:
   fullName: NuvTools.Resources.Messages.PasswordResetSuccessful
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -710,56 +1003,106 @@ items:
       type: System.String
     content.vb: Public Shared ReadOnly Property PasswordResetSuccessful As String
   overload: NuvTools.Resources.Messages.PasswordResetSuccessful*
-- uid: NuvTools.Resources.Messages.RoleAlreadyExists
-  commentId: P:NuvTools.Resources.Messages.RoleAlreadyExists
-  id: RoleAlreadyExists
+- uid: NuvTools.Resources.Messages.ProcessingCompleted
+  commentId: P:NuvTools.Resources.Messages.ProcessingCompleted
+  id: ProcessingCompleted
   parent: NuvTools.Resources.Messages
   langs:
   - csharp
   - vb
-  name: RoleAlreadyExists
-  nameWithType: Messages.RoleAlreadyExists
-  fullName: NuvTools.Resources.Messages.RoleAlreadyExists
+  name: ProcessingCompleted
+  nameWithType: Messages.ProcessingCompleted
+  fullName: NuvTools.Resources.Messages.ProcessingCompleted
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
-  summary: Looks up a localized string similar to Role already exists..
+  summary: Looks up a localized string similar to Processing completed..
   example: []
   syntax:
-    content: public static string RoleAlreadyExists { get; }
+    content: public static string ProcessingCompleted { get; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Shared ReadOnly Property RoleAlreadyExists As String
-  overload: NuvTools.Resources.Messages.RoleAlreadyExists*
-- uid: NuvTools.Resources.Messages.RolesRegistered
-  commentId: P:NuvTools.Resources.Messages.RolesRegistered
-  id: RolesRegistered
+    content.vb: Public Shared ReadOnly Property ProcessingCompleted As String
+  overload: NuvTools.Resources.Messages.ProcessingCompleted*
+- uid: NuvTools.Resources.Messages.ProvideAtLeastOneParameter
+  commentId: P:NuvTools.Resources.Messages.ProvideAtLeastOneParameter
+  id: ProvideAtLeastOneParameter
   parent: NuvTools.Resources.Messages
   langs:
   - csharp
   - vb
-  name: RolesRegistered
-  nameWithType: Messages.RolesRegistered
-  fullName: NuvTools.Resources.Messages.RolesRegistered
+  name: ProvideAtLeastOneParameter
+  nameWithType: Messages.ProvideAtLeastOneParameter
+  fullName: NuvTools.Resources.Messages.ProvideAtLeastOneParameter
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
-  summary: Looks up a localized string similar to Roles registered.
+  summary: Looks up a localized string similar to Provide at least one parameter..
   example: []
   syntax:
-    content: public static string RolesRegistered { get; }
+    content: public static string ProvideAtLeastOneParameter { get; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Shared ReadOnly Property RolesRegistered As String
-  overload: NuvTools.Resources.Messages.RolesRegistered*
+    content.vb: Public Shared ReadOnly Property ProvideAtLeastOneParameter As String
+  overload: NuvTools.Resources.Messages.ProvideAtLeastOneParameter*
+- uid: NuvTools.Resources.Messages.ProvideAtLeastOneX
+  commentId: P:NuvTools.Resources.Messages.ProvideAtLeastOneX
+  id: ProvideAtLeastOneX
+  parent: NuvTools.Resources.Messages
+  langs:
+  - csharp
+  - vb
+  name: ProvideAtLeastOneX
+  nameWithType: Messages.ProvideAtLeastOneX
+  fullName: NuvTools.Resources.Messages.ProvideAtLeastOneX
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
+  assemblies:
+  - NuvTools.Resources
+  namespace: NuvTools.Resources
+  summary: Looks up a localized string similar to Provide at least one {0}..
+  example: []
+  syntax:
+    content: public static string ProvideAtLeastOneX { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property ProvideAtLeastOneX As String
+  overload: NuvTools.Resources.Messages.ProvideAtLeastOneX*
+- uid: NuvTools.Resources.Messages.TextCopied
+  commentId: P:NuvTools.Resources.Messages.TextCopied
+  id: TextCopied
+  parent: NuvTools.Resources.Messages
+  langs:
+  - csharp
+  - vb
+  name: TextCopied
+  nameWithType: Messages.TextCopied
+  fullName: NuvTools.Resources.Messages.TextCopied
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
+  assemblies:
+  - NuvTools.Resources
+  namespace: NuvTools.Resources
+  summary: Looks up a localized string similar to Text copied..
+  example: []
+  syntax:
+    content: public static string TextCopied { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property TextCopied As String
+  overload: NuvTools.Resources.Messages.TextCopied*
 - uid: NuvTools.Resources.Messages.TheOperationCouldNotBePerformed
   commentId: P:NuvTools.Resources.Messages.TheOperationCouldNotBePerformed
   id: TheOperationCouldNotBePerformed
@@ -772,7 +1115,7 @@ items:
   fullName: NuvTools.Resources.Messages.TheOperationCouldNotBePerformed
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -785,31 +1128,6 @@ items:
       type: System.String
     content.vb: Public Shared ReadOnly Property TheOperationCouldNotBePerformed As String
   overload: NuvTools.Resources.Messages.TheOperationCouldNotBePerformed*
-- uid: NuvTools.Resources.Messages.ThePageYouWereLookingForDoesntExist
-  commentId: P:NuvTools.Resources.Messages.ThePageYouWereLookingForDoesntExist
-  id: ThePageYouWereLookingForDoesntExist
-  parent: NuvTools.Resources.Messages
-  langs:
-  - csharp
-  - vb
-  name: ThePageYouWereLookingForDoesntExist
-  nameWithType: Messages.ThePageYouWereLookingForDoesntExist
-  fullName: NuvTools.Resources.Messages.ThePageYouWereLookingForDoesntExist
-  type: Property
-  source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
-  assemblies:
-  - NuvTools.Resources
-  namespace: NuvTools.Resources
-  summary: Looks up a localized string similar to The page you were looking for doesn't exist..
-  example: []
-  syntax:
-    content: public static string ThePageYouWereLookingForDoesntExist { get; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public Shared ReadOnly Property ThePageYouWereLookingForDoesntExist As String
-  overload: NuvTools.Resources.Messages.ThePageYouWereLookingForDoesntExist*
 - uid: NuvTools.Resources.Messages.ThereIsNoXRegisteredSoFar
   commentId: P:NuvTools.Resources.Messages.ThereIsNoXRegisteredSoFar
   id: ThereIsNoXRegisteredSoFar
@@ -822,7 +1140,7 @@ items:
   fullName: NuvTools.Resources.Messages.ThereIsNoXRegisteredSoFar
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -847,11 +1165,11 @@ items:
   fullName: NuvTools.Resources.Messages.ToConfirmDeletion
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
-  summary: Looks up a localized string similar to Confirm deletion.
+  summary: Looks up a localized string similar to To confirm deletion.
   example: []
   syntax:
     content: public static string ToConfirmDeletion { get; }
@@ -860,81 +1178,31 @@ items:
       type: System.String
     content.vb: Public Shared ReadOnly Property ToConfirmDeletion As String
   overload: NuvTools.Resources.Messages.ToConfirmDeletion*
-- uid: NuvTools.Resources.Messages.TokenNotFound
-  commentId: P:NuvTools.Resources.Messages.TokenNotFound
-  id: TokenNotFound
+- uid: NuvTools.Resources.Messages.UploadedFileIsEmpty
+  commentId: P:NuvTools.Resources.Messages.UploadedFileIsEmpty
+  id: UploadedFileIsEmpty
   parent: NuvTools.Resources.Messages
   langs:
   - csharp
   - vb
-  name: TokenNotFound
-  nameWithType: Messages.TokenNotFound
-  fullName: NuvTools.Resources.Messages.TokenNotFound
+  name: UploadedFileIsEmpty
+  nameWithType: Messages.UploadedFileIsEmpty
+  fullName: NuvTools.Resources.Messages.UploadedFileIsEmpty
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
-  summary: Looks up a localized string similar to Token not found..
+  summary: Looks up a localized string similar to The uploaded file is empty..
   example: []
   syntax:
-    content: public static string TokenNotFound { get; }
+    content: public static string UploadedFileIsEmpty { get; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Shared ReadOnly Property TokenNotFound As String
-  overload: NuvTools.Resources.Messages.TokenNotFound*
-- uid: NuvTools.Resources.Messages.UserNotFound
-  commentId: P:NuvTools.Resources.Messages.UserNotFound
-  id: UserNotFound
-  parent: NuvTools.Resources.Messages
-  langs:
-  - csharp
-  - vb
-  name: UserNotFound
-  nameWithType: Messages.UserNotFound
-  fullName: NuvTools.Resources.Messages.UserNotFound
-  type: Property
-  source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
-  assemblies:
-  - NuvTools.Resources
-  namespace: NuvTools.Resources
-  summary: Looks up a localized string similar to User not found..
-  example: []
-  syntax:
-    content: public static string UserNotFound { get; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public Shared ReadOnly Property UserNotFound As String
-  overload: NuvTools.Resources.Messages.UserNotFound*
-- uid: NuvTools.Resources.Messages.UsersRegistered
-  commentId: P:NuvTools.Resources.Messages.UsersRegistered
-  id: UsersRegistered
-  parent: NuvTools.Resources.Messages
-  langs:
-  - csharp
-  - vb
-  name: UsersRegistered
-  nameWithType: Messages.UsersRegistered
-  fullName: NuvTools.Resources.Messages.UsersRegistered
-  type: Property
-  source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
-  assemblies:
-  - NuvTools.Resources
-  namespace: NuvTools.Resources
-  summary: Looks up a localized string similar to Users registered.
-  example: []
-  syntax:
-    content: public static string UsersRegistered { get; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public Shared ReadOnly Property UsersRegistered As String
-  overload: NuvTools.Resources.Messages.UsersRegistered*
+    content.vb: Public Shared ReadOnly Property UploadedFileIsEmpty As String
+  overload: NuvTools.Resources.Messages.UploadedFileIsEmpty*
 - uid: NuvTools.Resources.Messages.ValidationProblemsFound
   commentId: P:NuvTools.Resources.Messages.ValidationProblemsFound
   id: ValidationProblemsFound
@@ -947,7 +1215,7 @@ items:
   fullName: NuvTools.Resources.Messages.ValidationProblemsFound
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -960,6 +1228,31 @@ items:
       type: System.String
     content.vb: Public Shared ReadOnly Property ValidationProblemsFound As String
   overload: NuvTools.Resources.Messages.ValidationProblemsFound*
+- uid: NuvTools.Resources.Messages.ValidVerificationCode
+  commentId: P:NuvTools.Resources.Messages.ValidVerificationCode
+  id: ValidVerificationCode
+  parent: NuvTools.Resources.Messages
+  langs:
+  - csharp
+  - vb
+  name: ValidVerificationCode
+  nameWithType: Messages.ValidVerificationCode
+  fullName: NuvTools.Resources.Messages.ValidVerificationCode
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
+  assemblies:
+  - NuvTools.Resources
+  namespace: NuvTools.Resources
+  summary: Looks up a localized string similar to Valid verification code..
+  example: []
+  syntax:
+    content: public static string ValidVerificationCode { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property ValidVerificationCode As String
+  overload: NuvTools.Resources.Messages.ValidVerificationCode*
 - uid: NuvTools.Resources.Messages.ValueOutsideRange
   commentId: P:NuvTools.Resources.Messages.ValueOutsideRange
   id: ValueOutsideRange
@@ -972,7 +1265,7 @@ items:
   fullName: NuvTools.Resources.Messages.ValueOutsideRange
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -985,6 +1278,31 @@ items:
       type: System.String
     content.vb: Public Shared ReadOnly Property ValueOutsideRange As String
   overload: NuvTools.Resources.Messages.ValueOutsideRange*
+- uid: NuvTools.Resources.Messages.ViewX
+  commentId: P:NuvTools.Resources.Messages.ViewX
+  id: ViewX
+  parent: NuvTools.Resources.Messages
+  langs:
+  - csharp
+  - vb
+  name: ViewX
+  nameWithType: Messages.ViewX
+  fullName: NuvTools.Resources.Messages.ViewX
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
+  assemblies:
+  - NuvTools.Resources
+  namespace: NuvTools.Resources
+  summary: Looks up a localized string similar to View {0}.
+  example: []
+  syntax:
+    content: public static string ViewX { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property ViewX As String
+  overload: NuvTools.Resources.Messages.ViewX*
 - uid: NuvTools.Resources.Messages.WelcomeX
   commentId: P:NuvTools.Resources.Messages.WelcomeX
   id: WelcomeX
@@ -997,7 +1315,7 @@ items:
   fullName: NuvTools.Resources.Messages.WelcomeX
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -1022,7 +1340,7 @@ items:
   fullName: NuvTools.Resources.Messages.XAlreadyExists
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -1035,6 +1353,56 @@ items:
       type: System.String
     content.vb: Public Shared ReadOnly Property XAlreadyExists As String
   overload: NuvTools.Resources.Messages.XAlreadyExists*
+- uid: NuvTools.Resources.Messages.XDeletedSuccessfully
+  commentId: P:NuvTools.Resources.Messages.XDeletedSuccessfully
+  id: XDeletedSuccessfully
+  parent: NuvTools.Resources.Messages
+  langs:
+  - csharp
+  - vb
+  name: XDeletedSuccessfully
+  nameWithType: Messages.XDeletedSuccessfully
+  fullName: NuvTools.Resources.Messages.XDeletedSuccessfully
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
+  assemblies:
+  - NuvTools.Resources
+  namespace: NuvTools.Resources
+  summary: Looks up a localized string similar to {0} deleted successfully..
+  example: []
+  syntax:
+    content: public static string XDeletedSuccessfully { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property XDeletedSuccessfully As String
+  overload: NuvTools.Resources.Messages.XDeletedSuccessfully*
+- uid: NuvTools.Resources.Messages.XIncomplete
+  commentId: P:NuvTools.Resources.Messages.XIncomplete
+  id: XIncomplete
+  parent: NuvTools.Resources.Messages
+  langs:
+  - csharp
+  - vb
+  name: XIncomplete
+  nameWithType: Messages.XIncomplete
+  fullName: NuvTools.Resources.Messages.XIncomplete
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
+  assemblies:
+  - NuvTools.Resources
+  namespace: NuvTools.Resources
+  summary: Looks up a localized string similar to {0} incomplete..
+  example: []
+  syntax:
+    content: public static string XIncomplete { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property XIncomplete As String
+  overload: NuvTools.Resources.Messages.XIncomplete*
 - uid: NuvTools.Resources.Messages.XInvalid
   commentId: P:NuvTools.Resources.Messages.XInvalid
   id: XInvalid
@@ -1047,7 +1415,7 @@ items:
   fullName: NuvTools.Resources.Messages.XInvalid
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -1072,7 +1440,7 @@ items:
   fullName: NuvTools.Resources.Messages.XMustBeEqualY
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -1097,7 +1465,7 @@ items:
   fullName: NuvTools.Resources.Messages.XMustBeGreaterThanY
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -1122,7 +1490,7 @@ items:
   fullName: NuvTools.Resources.Messages.XMustBeLessThanY
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -1147,7 +1515,7 @@ items:
   fullName: NuvTools.Resources.Messages.XMustContainAtLeastYCapitalLetters
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -1172,7 +1540,7 @@ items:
   fullName: NuvTools.Resources.Messages.XMustContainAtLeastYDigits
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -1197,7 +1565,7 @@ items:
   fullName: NuvTools.Resources.Messages.XMustContainAtLeastYLowerCaseLetters
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -1222,7 +1590,7 @@ items:
   fullName: NuvTools.Resources.Messages.XMustContainBetweenYandZCharacters
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -1247,7 +1615,7 @@ items:
   fullName: NuvTools.Resources.Messages.XMustHaveAtLeastYCharacters
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -1272,7 +1640,7 @@ items:
   fullName: NuvTools.Resources.Messages.XMustHaveUpToYCharacters
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -1297,7 +1665,7 @@ items:
   fullName: NuvTools.Resources.Messages.XNotFound
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -1310,6 +1678,56 @@ items:
       type: System.String
     content.vb: Public Shared ReadOnly Property XNotFound As String
   overload: NuvTools.Resources.Messages.XNotFound*
+- uid: NuvTools.Resources.Messages.XNotProvided
+  commentId: P:NuvTools.Resources.Messages.XNotProvided
+  id: XNotProvided
+  parent: NuvTools.Resources.Messages
+  langs:
+  - csharp
+  - vb
+  name: XNotProvided
+  nameWithType: Messages.XNotProvided
+  fullName: NuvTools.Resources.Messages.XNotProvided
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
+  assemblies:
+  - NuvTools.Resources
+  namespace: NuvTools.Resources
+  summary: Looks up a localized string similar to {0} not provided..
+  example: []
+  syntax:
+    content: public static string XNotProvided { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property XNotProvided As String
+  overload: NuvTools.Resources.Messages.XNotProvided*
+- uid: NuvTools.Resources.Messages.XRegisteredSuccessfully
+  commentId: P:NuvTools.Resources.Messages.XRegisteredSuccessfully
+  id: XRegisteredSuccessfully
+  parent: NuvTools.Resources.Messages
+  langs:
+  - csharp
+  - vb
+  name: XRegisteredSuccessfully
+  nameWithType: Messages.XRegisteredSuccessfully
+  fullName: NuvTools.Resources.Messages.XRegisteredSuccessfully
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
+  assemblies:
+  - NuvTools.Resources
+  namespace: NuvTools.Resources
+  summary: Looks up a localized string similar to {0} registered successfully..
+  example: []
+  syntax:
+    content: public static string XRegisteredSuccessfully { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property XRegisteredSuccessfully As String
+  overload: NuvTools.Resources.Messages.XRegisteredSuccessfully*
 - uid: NuvTools.Resources.Messages.XRequired
   commentId: P:NuvTools.Resources.Messages.XRequired
   id: XRequired
@@ -1322,7 +1740,7 @@ items:
   fullName: NuvTools.Resources.Messages.XRequired
   type: Property
   source:
-    href: https://github.com/nuvtools/nuvtools-resources/blob/330fa14687082d3143f410db22d216c35a2f5d48/src/NuvTools.Resources/Messages.Designer.cs
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
   assemblies:
   - NuvTools.Resources
   namespace: NuvTools.Resources
@@ -1335,6 +1753,56 @@ items:
       type: System.String
     content.vb: Public Shared ReadOnly Property XRequired As String
   overload: NuvTools.Resources.Messages.XRequired*
+- uid: NuvTools.Resources.Messages.XUpdatedSuccessfully
+  commentId: P:NuvTools.Resources.Messages.XUpdatedSuccessfully
+  id: XUpdatedSuccessfully
+  parent: NuvTools.Resources.Messages
+  langs:
+  - csharp
+  - vb
+  name: XUpdatedSuccessfully
+  nameWithType: Messages.XUpdatedSuccessfully
+  fullName: NuvTools.Resources.Messages.XUpdatedSuccessfully
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
+  assemblies:
+  - NuvTools.Resources
+  namespace: NuvTools.Resources
+  summary: Looks up a localized string similar to {0} updated successfully..
+  example: []
+  syntax:
+    content: public static string XUpdatedSuccessfully { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property XUpdatedSuccessfully As String
+  overload: NuvTools.Resources.Messages.XUpdatedSuccessfully*
+- uid: NuvTools.Resources.Messages.XYSuccess
+  commentId: P:NuvTools.Resources.Messages.XYSuccess
+  id: XYSuccess
+  parent: NuvTools.Resources.Messages
+  langs:
+  - csharp
+  - vb
+  name: XYSuccess
+  nameWithType: Messages.XYSuccess
+  fullName: NuvTools.Resources.Messages.XYSuccess
+  type: Property
+  source:
+    href: https://github.com/nuvtools/nuvtools-resources/blob/8b1caf53c1bd30d30939862216deba98163b251f/src/NuvTools.Resources/Messages.Designer.cs
+  assemblies:
+  - NuvTools.Resources
+  namespace: NuvTools.Resources
+  summary: Looks up a localized string similar to {0} {1} successfully..
+  example: []
+  syntax:
+    content: public static string XYSuccess { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property XYSuccess As String
+  overload: NuvTools.Resources.Messages.XYSuccess*
 references:
 - uid: NuvTools.Resources
   commentId: N:NuvTools.Resources
@@ -1684,13 +2152,13 @@ references:
     name: Globalization
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.globalization
-- uid: NuvTools.Resources.Messages.AtLeastOneTheseParametersShoudBeFilledX*
-  commentId: Overload:NuvTools.Resources.Messages.AtLeastOneTheseParametersShoudBeFilledX
+- uid: NuvTools.Resources.Messages.AccessDenied*
+  commentId: Overload:NuvTools.Resources.Messages.AccessDenied
   isExternal: true
-  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_AtLeastOneTheseParametersShoudBeFilledX
-  name: AtLeastOneTheseParametersShoudBeFilledX
-  nameWithType: Messages.AtLeastOneTheseParametersShoudBeFilledX
-  fullName: NuvTools.Resources.Messages.AtLeastOneTheseParametersShoudBeFilledX
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_AccessDenied
+  name: AccessDenied
+  nameWithType: Messages.AccessDenied
+  fullName: NuvTools.Resources.Messages.AccessDenied
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -1702,6 +2170,20 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
+- uid: NuvTools.Resources.Messages.AddXClickingY*
+  commentId: Overload:NuvTools.Resources.Messages.AddXClickingY
+  isExternal: true
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_AddXClickingY
+  name: AddXClickingY
+  nameWithType: Messages.AddXClickingY
+  fullName: NuvTools.Resources.Messages.AddXClickingY
+- uid: NuvTools.Resources.Messages.AtLeastOneTheseParametersShoudBeFilledX*
+  commentId: Overload:NuvTools.Resources.Messages.AtLeastOneTheseParametersShoudBeFilledX
+  isExternal: true
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_AtLeastOneTheseParametersShoudBeFilledX
+  name: AtLeastOneTheseParametersShoudBeFilledX
+  nameWithType: Messages.AtLeastOneTheseParametersShoudBeFilledX
+  fullName: NuvTools.Resources.Messages.AtLeastOneTheseParametersShoudBeFilledX
 - uid: NuvTools.Resources.Messages.CancelDeletion*
   commentId: Overload:NuvTools.Resources.Messages.CancelDeletion
   isExternal: true
@@ -1709,34 +2191,34 @@ references:
   name: CancelDeletion
   nameWithType: Messages.CancelDeletion
   fullName: NuvTools.Resources.Messages.CancelDeletion
-- uid: NuvTools.Resources.Messages.CancelInclusion*
-  commentId: Overload:NuvTools.Resources.Messages.CancelInclusion
+- uid: NuvTools.Resources.Messages.CodeExpired*
+  commentId: Overload:NuvTools.Resources.Messages.CodeExpired
   isExternal: true
-  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_CancelInclusion
-  name: CancelInclusion
-  nameWithType: Messages.CancelInclusion
-  fullName: NuvTools.Resources.Messages.CancelInclusion
-- uid: NuvTools.Resources.Messages.ConfirmDeletion*
-  commentId: Overload:NuvTools.Resources.Messages.ConfirmDeletion
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_CodeExpired
+  name: CodeExpired
+  nameWithType: Messages.CodeExpired
+  fullName: NuvTools.Resources.Messages.CodeExpired
+- uid: NuvTools.Resources.Messages.ConfirmX*
+  commentId: Overload:NuvTools.Resources.Messages.ConfirmX
   isExternal: true
-  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_ConfirmDeletion
-  name: ConfirmDeletion
-  nameWithType: Messages.ConfirmDeletion
-  fullName: NuvTools.Resources.Messages.ConfirmDeletion
-- uid: NuvTools.Resources.Messages.ConfirmInclusion*
-  commentId: Overload:NuvTools.Resources.Messages.ConfirmInclusion
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_ConfirmX
+  name: ConfirmX
+  nameWithType: Messages.ConfirmX
+  fullName: NuvTools.Resources.Messages.ConfirmX
+- uid: NuvTools.Resources.Messages.CouldNotDeleteXExistYAssociated*
+  commentId: Overload:NuvTools.Resources.Messages.CouldNotDeleteXExistYAssociated
   isExternal: true
-  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_ConfirmInclusion
-  name: ConfirmInclusion
-  nameWithType: Messages.ConfirmInclusion
-  fullName: NuvTools.Resources.Messages.ConfirmInclusion
-- uid: NuvTools.Resources.Messages.ConfirmRegistration*
-  commentId: Overload:NuvTools.Resources.Messages.ConfirmRegistration
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_CouldNotDeleteXExistYAssociated
+  name: CouldNotDeleteXExistYAssociated
+  nameWithType: Messages.CouldNotDeleteXExistYAssociated
+  fullName: NuvTools.Resources.Messages.CouldNotDeleteXExistYAssociated
+- uid: NuvTools.Resources.Messages.CouldNotDeleteXVerifyAssociatedData*
+  commentId: Overload:NuvTools.Resources.Messages.CouldNotDeleteXVerifyAssociatedData
   isExternal: true
-  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_ConfirmRegistration
-  name: ConfirmRegistration
-  nameWithType: Messages.ConfirmRegistration
-  fullName: NuvTools.Resources.Messages.ConfirmRegistration
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_CouldNotDeleteXVerifyAssociatedData
+  name: CouldNotDeleteXVerifyAssociatedData
+  nameWithType: Messages.CouldNotDeleteXVerifyAssociatedData
+  fullName: NuvTools.Resources.Messages.CouldNotDeleteXVerifyAssociatedData
 - uid: NuvTools.Resources.Messages.DateXMustBeAfterDateY*
   commentId: Overload:NuvTools.Resources.Messages.DateXMustBeAfterDateY
   isExternal: true
@@ -1744,13 +2226,6 @@ references:
   name: DateXMustBeAfterDateY
   nameWithType: Messages.DateXMustBeAfterDateY
   fullName: NuvTools.Resources.Messages.DateXMustBeAfterDateY
-- uid: NuvTools.Resources.Messages.DeleteConfirmation*
-  commentId: Overload:NuvTools.Resources.Messages.DeleteConfirmation
-  isExternal: true
-  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_DeleteConfirmation
-  name: DeleteConfirmation
-  nameWithType: Messages.DeleteConfirmation
-  fullName: NuvTools.Resources.Messages.DeleteConfirmation
 - uid: NuvTools.Resources.Messages.DoYouReallyLogout*
   commentId: Overload:NuvTools.Resources.Messages.DoYouReallyLogout
   isExternal: true
@@ -1772,6 +2247,13 @@ references:
   name: EmailConfirmed
   nameWithType: Messages.EmailConfirmed
   fullName: NuvTools.Resources.Messages.EmailConfirmed
+- uid: NuvTools.Resources.Messages.EmailMustBeConfirmed*
+  commentId: Overload:NuvTools.Resources.Messages.EmailMustBeConfirmed
+  isExternal: true
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_EmailMustBeConfirmed
+  name: EmailMustBeConfirmed
+  nameWithType: Messages.EmailMustBeConfirmed
+  fullName: NuvTools.Resources.Messages.EmailMustBeConfirmed
 - uid: NuvTools.Resources.Messages.EmailXAlreadyTaken*
   commentId: Overload:NuvTools.Resources.Messages.EmailXAlreadyTaken
   isExternal: true
@@ -1779,34 +2261,83 @@ references:
   name: EmailXAlreadyTaken
   nameWithType: Messages.EmailXAlreadyTaken
   fullName: NuvTools.Resources.Messages.EmailXAlreadyTaken
-- uid: NuvTools.Resources.Messages.EnterYourSearch*
-  commentId: Overload:NuvTools.Resources.Messages.EnterYourSearch
+- uid: NuvTools.Resources.Messages.EndDateMustBeGreaterThanStartDate*
+  commentId: Overload:NuvTools.Resources.Messages.EndDateMustBeGreaterThanStartDate
   isExternal: true
-  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_EnterYourSearch
-  name: EnterYourSearch
-  nameWithType: Messages.EnterYourSearch
-  fullName: NuvTools.Resources.Messages.EnterYourSearch
-- uid: NuvTools.Resources.Messages.GoHome*
-  commentId: Overload:NuvTools.Resources.Messages.GoHome
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_EndDateMustBeGreaterThanStartDate
+  name: EndDateMustBeGreaterThanStartDate
+  nameWithType: Messages.EndDateMustBeGreaterThanStartDate
+  fullName: NuvTools.Resources.Messages.EndDateMustBeGreaterThanStartDate
+- uid: NuvTools.Resources.Messages.ErrorInProvidedParameters*
+  commentId: Overload:NuvTools.Resources.Messages.ErrorInProvidedParameters
   isExternal: true
-  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_GoHome
-  name: GoHome
-  nameWithType: Messages.GoHome
-  fullName: NuvTools.Resources.Messages.GoHome
-- uid: NuvTools.Resources.Messages.InvalidEmail*
-  commentId: Overload:NuvTools.Resources.Messages.InvalidEmail
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_ErrorInProvidedParameters
+  name: ErrorInProvidedParameters
+  nameWithType: Messages.ErrorInProvidedParameters
+  fullName: NuvTools.Resources.Messages.ErrorInProvidedParameters
+- uid: NuvTools.Resources.Messages.FailedToCreateX*
+  commentId: Overload:NuvTools.Resources.Messages.FailedToCreateX
   isExternal: true
-  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_InvalidEmail
-  name: InvalidEmail
-  nameWithType: Messages.InvalidEmail
-  fullName: NuvTools.Resources.Messages.InvalidEmail
-- uid: NuvTools.Resources.Messages.InvalidValue*
-  commentId: Overload:NuvTools.Resources.Messages.InvalidValue
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_FailedToCreateX
+  name: FailedToCreateX
+  nameWithType: Messages.FailedToCreateX
+  fullName: NuvTools.Resources.Messages.FailedToCreateX
+- uid: NuvTools.Resources.Messages.FailedToDeleteX*
+  commentId: Overload:NuvTools.Resources.Messages.FailedToDeleteX
   isExternal: true
-  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_InvalidValue
-  name: InvalidValue
-  nameWithType: Messages.InvalidValue
-  fullName: NuvTools.Resources.Messages.InvalidValue
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_FailedToDeleteX
+  name: FailedToDeleteX
+  nameWithType: Messages.FailedToDeleteX
+  fullName: NuvTools.Resources.Messages.FailedToDeleteX
+- uid: NuvTools.Resources.Messages.FailedToGenerateX*
+  commentId: Overload:NuvTools.Resources.Messages.FailedToGenerateX
+  isExternal: true
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_FailedToGenerateX
+  name: FailedToGenerateX
+  nameWithType: Messages.FailedToGenerateX
+  fullName: NuvTools.Resources.Messages.FailedToGenerateX
+- uid: NuvTools.Resources.Messages.FailedToUpdateX*
+  commentId: Overload:NuvTools.Resources.Messages.FailedToUpdateX
+  isExternal: true
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_FailedToUpdateX
+  name: FailedToUpdateX
+  nameWithType: Messages.FailedToUpdateX
+  fullName: NuvTools.Resources.Messages.FailedToUpdateX
+- uid: NuvTools.Resources.Messages.IdObjectNotMatchUrl*
+  commentId: Overload:NuvTools.Resources.Messages.IdObjectNotMatchUrl
+  isExternal: true
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_IdObjectNotMatchUrl
+  name: IdObjectNotMatchUrl
+  nameWithType: Messages.IdObjectNotMatchUrl
+  fullName: NuvTools.Resources.Messages.IdObjectNotMatchUrl
+- uid: NuvTools.Resources.Messages.InactiveUser*
+  commentId: Overload:NuvTools.Resources.Messages.InactiveUser
+  isExternal: true
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_InactiveUser
+  name: InactiveUser
+  nameWithType: Messages.InactiveUser
+  fullName: NuvTools.Resources.Messages.InactiveUser
+- uid: NuvTools.Resources.Messages.InvalidExpiredToken*
+  commentId: Overload:NuvTools.Resources.Messages.InvalidExpiredToken
+  isExternal: true
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_InvalidExpiredToken
+  name: InvalidExpiredToken
+  nameWithType: Messages.InvalidExpiredToken
+  fullName: NuvTools.Resources.Messages.InvalidExpiredToken
+- uid: NuvTools.Resources.Messages.InvalidFileTypeAcceptedFormatX*
+  commentId: Overload:NuvTools.Resources.Messages.InvalidFileTypeAcceptedFormatX
+  isExternal: true
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_InvalidFileTypeAcceptedFormatX
+  name: InvalidFileTypeAcceptedFormatX
+  nameWithType: Messages.InvalidFileTypeAcceptedFormatX
+  fullName: NuvTools.Resources.Messages.InvalidFileTypeAcceptedFormatX
+- uid: NuvTools.Resources.Messages.LoginSuccessful*
+  commentId: Overload:NuvTools.Resources.Messages.LoginSuccessful
+  isExternal: true
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_LoginSuccessful
+  name: LoginSuccessful
+  nameWithType: Messages.LoginSuccessful
+  fullName: NuvTools.Resources.Messages.LoginSuccessful
 - uid: NuvTools.Resources.Messages.LogoutConfirmation*
   commentId: Overload:NuvTools.Resources.Messages.LogoutConfirmation
   isExternal: true
@@ -1821,6 +2352,13 @@ references:
   name: NoneParameterInformed
   nameWithType: Messages.NoneParameterInformed
   fullName: NuvTools.Resources.Messages.NoneParameterInformed
+- uid: NuvTools.Resources.Messages.NoPermissionToDeleteX*
+  commentId: Overload:NuvTools.Resources.Messages.NoPermissionToDeleteX
+  isExternal: true
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_NoPermissionToDeleteX
+  name: NoPermissionToDeleteX
+  nameWithType: Messages.NoPermissionToDeleteX
+  fullName: NuvTools.Resources.Messages.NoPermissionToDeleteX
 - uid: NuvTools.Resources.Messages.NotAllowed*
   commentId: Overload:NuvTools.Resources.Messages.NotAllowed
   isExternal: true
@@ -1842,6 +2380,13 @@ references:
   name: PasswordResetEmailContentWithLinkX
   nameWithType: Messages.PasswordResetEmailContentWithLinkX
   fullName: NuvTools.Resources.Messages.PasswordResetEmailContentWithLinkX
+- uid: NuvTools.Resources.Messages.PasswordResetFailed*
+  commentId: Overload:NuvTools.Resources.Messages.PasswordResetFailed
+  isExternal: true
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_PasswordResetFailed
+  name: PasswordResetFailed
+  nameWithType: Messages.PasswordResetFailed
+  fullName: NuvTools.Resources.Messages.PasswordResetFailed
 - uid: NuvTools.Resources.Messages.PasswordResetMailWasSent*
   commentId: Overload:NuvTools.Resources.Messages.PasswordResetMailWasSent
   isExternal: true
@@ -1856,20 +2401,34 @@ references:
   name: PasswordResetSuccessful
   nameWithType: Messages.PasswordResetSuccessful
   fullName: NuvTools.Resources.Messages.PasswordResetSuccessful
-- uid: NuvTools.Resources.Messages.RoleAlreadyExists*
-  commentId: Overload:NuvTools.Resources.Messages.RoleAlreadyExists
+- uid: NuvTools.Resources.Messages.ProcessingCompleted*
+  commentId: Overload:NuvTools.Resources.Messages.ProcessingCompleted
   isExternal: true
-  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_RoleAlreadyExists
-  name: RoleAlreadyExists
-  nameWithType: Messages.RoleAlreadyExists
-  fullName: NuvTools.Resources.Messages.RoleAlreadyExists
-- uid: NuvTools.Resources.Messages.RolesRegistered*
-  commentId: Overload:NuvTools.Resources.Messages.RolesRegistered
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_ProcessingCompleted
+  name: ProcessingCompleted
+  nameWithType: Messages.ProcessingCompleted
+  fullName: NuvTools.Resources.Messages.ProcessingCompleted
+- uid: NuvTools.Resources.Messages.ProvideAtLeastOneParameter*
+  commentId: Overload:NuvTools.Resources.Messages.ProvideAtLeastOneParameter
   isExternal: true
-  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_RolesRegistered
-  name: RolesRegistered
-  nameWithType: Messages.RolesRegistered
-  fullName: NuvTools.Resources.Messages.RolesRegistered
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_ProvideAtLeastOneParameter
+  name: ProvideAtLeastOneParameter
+  nameWithType: Messages.ProvideAtLeastOneParameter
+  fullName: NuvTools.Resources.Messages.ProvideAtLeastOneParameter
+- uid: NuvTools.Resources.Messages.ProvideAtLeastOneX*
+  commentId: Overload:NuvTools.Resources.Messages.ProvideAtLeastOneX
+  isExternal: true
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_ProvideAtLeastOneX
+  name: ProvideAtLeastOneX
+  nameWithType: Messages.ProvideAtLeastOneX
+  fullName: NuvTools.Resources.Messages.ProvideAtLeastOneX
+- uid: NuvTools.Resources.Messages.TextCopied*
+  commentId: Overload:NuvTools.Resources.Messages.TextCopied
+  isExternal: true
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_TextCopied
+  name: TextCopied
+  nameWithType: Messages.TextCopied
+  fullName: NuvTools.Resources.Messages.TextCopied
 - uid: NuvTools.Resources.Messages.TheOperationCouldNotBePerformed*
   commentId: Overload:NuvTools.Resources.Messages.TheOperationCouldNotBePerformed
   isExternal: true
@@ -1877,13 +2436,6 @@ references:
   name: TheOperationCouldNotBePerformed
   nameWithType: Messages.TheOperationCouldNotBePerformed
   fullName: NuvTools.Resources.Messages.TheOperationCouldNotBePerformed
-- uid: NuvTools.Resources.Messages.ThePageYouWereLookingForDoesntExist*
-  commentId: Overload:NuvTools.Resources.Messages.ThePageYouWereLookingForDoesntExist
-  isExternal: true
-  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_ThePageYouWereLookingForDoesntExist
-  name: ThePageYouWereLookingForDoesntExist
-  nameWithType: Messages.ThePageYouWereLookingForDoesntExist
-  fullName: NuvTools.Resources.Messages.ThePageYouWereLookingForDoesntExist
 - uid: NuvTools.Resources.Messages.ThereIsNoXRegisteredSoFar*
   commentId: Overload:NuvTools.Resources.Messages.ThereIsNoXRegisteredSoFar
   isExternal: true
@@ -1898,27 +2450,13 @@ references:
   name: ToConfirmDeletion
   nameWithType: Messages.ToConfirmDeletion
   fullName: NuvTools.Resources.Messages.ToConfirmDeletion
-- uid: NuvTools.Resources.Messages.TokenNotFound*
-  commentId: Overload:NuvTools.Resources.Messages.TokenNotFound
+- uid: NuvTools.Resources.Messages.UploadedFileIsEmpty*
+  commentId: Overload:NuvTools.Resources.Messages.UploadedFileIsEmpty
   isExternal: true
-  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_TokenNotFound
-  name: TokenNotFound
-  nameWithType: Messages.TokenNotFound
-  fullName: NuvTools.Resources.Messages.TokenNotFound
-- uid: NuvTools.Resources.Messages.UserNotFound*
-  commentId: Overload:NuvTools.Resources.Messages.UserNotFound
-  isExternal: true
-  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_UserNotFound
-  name: UserNotFound
-  nameWithType: Messages.UserNotFound
-  fullName: NuvTools.Resources.Messages.UserNotFound
-- uid: NuvTools.Resources.Messages.UsersRegistered*
-  commentId: Overload:NuvTools.Resources.Messages.UsersRegistered
-  isExternal: true
-  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_UsersRegistered
-  name: UsersRegistered
-  nameWithType: Messages.UsersRegistered
-  fullName: NuvTools.Resources.Messages.UsersRegistered
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_UploadedFileIsEmpty
+  name: UploadedFileIsEmpty
+  nameWithType: Messages.UploadedFileIsEmpty
+  fullName: NuvTools.Resources.Messages.UploadedFileIsEmpty
 - uid: NuvTools.Resources.Messages.ValidationProblemsFound*
   commentId: Overload:NuvTools.Resources.Messages.ValidationProblemsFound
   isExternal: true
@@ -1926,6 +2464,13 @@ references:
   name: ValidationProblemsFound
   nameWithType: Messages.ValidationProblemsFound
   fullName: NuvTools.Resources.Messages.ValidationProblemsFound
+- uid: NuvTools.Resources.Messages.ValidVerificationCode*
+  commentId: Overload:NuvTools.Resources.Messages.ValidVerificationCode
+  isExternal: true
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_ValidVerificationCode
+  name: ValidVerificationCode
+  nameWithType: Messages.ValidVerificationCode
+  fullName: NuvTools.Resources.Messages.ValidVerificationCode
 - uid: NuvTools.Resources.Messages.ValueOutsideRange*
   commentId: Overload:NuvTools.Resources.Messages.ValueOutsideRange
   isExternal: true
@@ -1933,6 +2478,13 @@ references:
   name: ValueOutsideRange
   nameWithType: Messages.ValueOutsideRange
   fullName: NuvTools.Resources.Messages.ValueOutsideRange
+- uid: NuvTools.Resources.Messages.ViewX*
+  commentId: Overload:NuvTools.Resources.Messages.ViewX
+  isExternal: true
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_ViewX
+  name: ViewX
+  nameWithType: Messages.ViewX
+  fullName: NuvTools.Resources.Messages.ViewX
 - uid: NuvTools.Resources.Messages.WelcomeX*
   commentId: Overload:NuvTools.Resources.Messages.WelcomeX
   isExternal: true
@@ -1947,6 +2499,20 @@ references:
   name: XAlreadyExists
   nameWithType: Messages.XAlreadyExists
   fullName: NuvTools.Resources.Messages.XAlreadyExists
+- uid: NuvTools.Resources.Messages.XDeletedSuccessfully*
+  commentId: Overload:NuvTools.Resources.Messages.XDeletedSuccessfully
+  isExternal: true
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_XDeletedSuccessfully
+  name: XDeletedSuccessfully
+  nameWithType: Messages.XDeletedSuccessfully
+  fullName: NuvTools.Resources.Messages.XDeletedSuccessfully
+- uid: NuvTools.Resources.Messages.XIncomplete*
+  commentId: Overload:NuvTools.Resources.Messages.XIncomplete
+  isExternal: true
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_XIncomplete
+  name: XIncomplete
+  nameWithType: Messages.XIncomplete
+  fullName: NuvTools.Resources.Messages.XIncomplete
 - uid: NuvTools.Resources.Messages.XInvalid*
   commentId: Overload:NuvTools.Resources.Messages.XInvalid
   isExternal: true
@@ -2024,6 +2590,20 @@ references:
   name: XNotFound
   nameWithType: Messages.XNotFound
   fullName: NuvTools.Resources.Messages.XNotFound
+- uid: NuvTools.Resources.Messages.XNotProvided*
+  commentId: Overload:NuvTools.Resources.Messages.XNotProvided
+  isExternal: true
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_XNotProvided
+  name: XNotProvided
+  nameWithType: Messages.XNotProvided
+  fullName: NuvTools.Resources.Messages.XNotProvided
+- uid: NuvTools.Resources.Messages.XRegisteredSuccessfully*
+  commentId: Overload:NuvTools.Resources.Messages.XRegisteredSuccessfully
+  isExternal: true
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_XRegisteredSuccessfully
+  name: XRegisteredSuccessfully
+  nameWithType: Messages.XRegisteredSuccessfully
+  fullName: NuvTools.Resources.Messages.XRegisteredSuccessfully
 - uid: NuvTools.Resources.Messages.XRequired*
   commentId: Overload:NuvTools.Resources.Messages.XRequired
   isExternal: true
@@ -2031,3 +2611,17 @@ references:
   name: XRequired
   nameWithType: Messages.XRequired
   fullName: NuvTools.Resources.Messages.XRequired
+- uid: NuvTools.Resources.Messages.XUpdatedSuccessfully*
+  commentId: Overload:NuvTools.Resources.Messages.XUpdatedSuccessfully
+  isExternal: true
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_XUpdatedSuccessfully
+  name: XUpdatedSuccessfully
+  nameWithType: Messages.XUpdatedSuccessfully
+  fullName: NuvTools.Resources.Messages.XUpdatedSuccessfully
+- uid: NuvTools.Resources.Messages.XYSuccess*
+  commentId: Overload:NuvTools.Resources.Messages.XYSuccess
+  isExternal: true
+  href: NuvTools.Resources.Messages.html#NuvTools_Resources_Messages_XYSuccess
+  name: XYSuccess
+  nameWithType: Messages.XYSuccess
+  fullName: NuvTools.Resources.Messages.XYSuccess

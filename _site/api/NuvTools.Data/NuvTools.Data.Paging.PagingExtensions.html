@@ -89,7 +89,7 @@
 
 
   <h1 id="NuvTools_Data_Paging_PagingExtensions" data-uid="NuvTools.Data.Paging.PagingExtensions" class="text-break">
-Class PagingExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Paging/PagingExtensions.cs"><i class="bi bi-code-slash"></i></a>
+Class PagingExtensions  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/4e3395051dcbb5ea486411d173f06ba44ba4a905/src/NuvTools.Data/Paging/PagingExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -157,7 +157,7 @@ Class PagingExtensions  <a class="header-action link-secondary" title="View sour
 
   <h3 id="NuvTools_Data_Paging_PagingExtensions_PagingWrap__1_System_Collections_Generic_IEnumerable___0__System_Int32_System_Int32_" data-uid="NuvTools.Data.Paging.PagingExtensions.PagingWrap``1(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Int32)">
   PagingWrap&lt;T&gt;(IEnumerable&lt;T&gt;, int, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Paging/PagingExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/4e3395051dcbb5ea486411d173f06ba44ba4a905/src/NuvTools.Data/Paging/PagingExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Wraps an enumerable collection into a paged result with metadata.</p>
@@ -165,7 +165,7 @@ Class PagingExtensions  <a class="header-action link-secondary" title="View sour
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static PagingWithEnumerableList&lt;T&gt; PagingWrap&lt;T&gt;(this IEnumerable&lt;T&gt; list, int pageNumber = 1, int pageSize = 50)</code></pre>
+    <pre><code class="lang-csharp hljs">public static PagingWithEnumerableList&lt;T&gt; PagingWrap&lt;T&gt;(this IEnumerable&lt;T&gt; list, int pageIndex = 0, int pageSize = 50)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -173,8 +173,8 @@ Class PagingExtensions  <a class="header-action link-secondary" title="View sour
     <dt><code>list</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</dt>
     <dd><p>The source enumerable collection.</p>
 </dd>
-    <dt><code>pageNumber</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>The page number (1-indexed). Defaults to 1.</p>
+    <dt><code>pageIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The page index (0-indexed). Defaults to 0.</p>
 </dd>
     <dt><code>pageSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd><p>The number of items per page. Defaults to 50.</p>
@@ -208,7 +208,7 @@ Class PagingExtensions  <a class="header-action link-secondary" title="View sour
 
   <h3 id="NuvTools_Data_Paging_PagingExtensions_Paging__1_System_Collections_Generic_IEnumerable___0__System_Int32_System_Int32_" data-uid="NuvTools.Data.Paging.PagingExtensions.Paging``1(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Int32)">
   Paging&lt;T&gt;(IEnumerable&lt;T&gt;, int, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Paging/PagingExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/4e3395051dcbb5ea486411d173f06ba44ba4a905/src/NuvTools.Data/Paging/PagingExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Applies paging to an IEnumerable collection by skipping and taking the appropriate number of items.</p>
@@ -216,7 +216,7 @@ Class PagingExtensions  <a class="header-action link-secondary" title="View sour
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;T&gt; Paging&lt;T&gt;(this IEnumerable&lt;T&gt; list, int pageNumber = 1, int pageSize = 50)</code></pre>
+    <pre><code class="lang-csharp hljs">public static IEnumerable&lt;T&gt; Paging&lt;T&gt;(this IEnumerable&lt;T&gt; list, int pageIndex = 0, int pageSize = 50)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -224,8 +224,8 @@ Class PagingExtensions  <a class="header-action link-secondary" title="View sour
     <dt><code>list</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</dt>
     <dd><p>The source enumerable collection.</p>
 </dd>
-    <dt><code>pageNumber</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>The page number (1-indexed). Defaults to 1.</p>
+    <dt><code>pageIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The page index (0-indexed). Defaults to 0.</p>
 </dd>
     <dt><code>pageSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd><p>The number of items per page. Defaults to 50.</p>
@@ -259,7 +259,7 @@ Class PagingExtensions  <a class="header-action link-secondary" title="View sour
 
   <h3 id="NuvTools_Data_Paging_PagingExtensions_Paging__1_System_Linq_IQueryable___0__System_Int32_System_Int32_" data-uid="NuvTools.Data.Paging.PagingExtensions.Paging``1(System.Linq.IQueryable{``0},System.Int32,System.Int32)">
   Paging&lt;T&gt;(IQueryable&lt;T&gt;, int, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Paging/PagingExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/4e3395051dcbb5ea486411d173f06ba44ba4a905/src/NuvTools.Data/Paging/PagingExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Applies paging to an IQueryable collection by skipping and taking the appropriate number of items.</p>
@@ -267,7 +267,7 @@ Class PagingExtensions  <a class="header-action link-secondary" title="View sour
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static IQueryable&lt;T&gt; Paging&lt;T&gt;(this IQueryable&lt;T&gt; list, int pageNumber = 1, int pageSize = 50)</code></pre>
+    <pre><code class="lang-csharp hljs">public static IQueryable&lt;T&gt; Paging&lt;T&gt;(this IQueryable&lt;T&gt; list, int pageIndex = 0, int pageSize = 50)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -275,8 +275,8 @@ Class PagingExtensions  <a class="header-action link-secondary" title="View sour
     <dt><code>list</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;T&gt;</dt>
     <dd><p>The source queryable collection.</p>
 </dd>
-    <dt><code>pageNumber</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd><p>The page number (1-indexed). Defaults to 1.</p>
+    <dt><code>pageIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The page index (0-indexed). Defaults to 0.</p>
 </dd>
     <dt><code>pageSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
     <dd><p>The number of items per page. Defaults to 50.</p>
@@ -310,7 +310,7 @@ Class PagingExtensions  <a class="header-action link-secondary" title="View sour
 
   <h3 id="NuvTools_Data_Paging_PagingExtensions_ToPagingEnumerable__1_NuvTools_Data_Paging_PagingWithQueryableList___0__" data-uid="NuvTools.Data.Paging.PagingExtensions.ToPagingEnumerable``1(NuvTools.Data.Paging.PagingWithQueryableList{``0})">
   ToPagingEnumerable&lt;T&gt;(PagingWithQueryableList&lt;T&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Paging/PagingExtensions.cs"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/nuvtools/nuvtools-data/blob/4e3395051dcbb5ea486411d173f06ba44ba4a905/src/NuvTools.Data/Paging/PagingExtensions.cs"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Converts a PagingWithQueryableList to a PagingWithEnumerableList by materializing the queryable collection.</p>
@@ -361,7 +361,7 @@ Class PagingExtensions  <a class="header-action link-secondary" title="View sour
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Paging/PagingExtensions.cs" class="edit-link">Edit this page</a>
+          <a href="https://github.com/nuvtools/nuvtools-data/blob/4e3395051dcbb5ea486411d173f06ba44ba4a905/src/NuvTools.Data/Paging/PagingExtensions.cs" class="edit-link">Edit this page</a>
         </div>
 
 

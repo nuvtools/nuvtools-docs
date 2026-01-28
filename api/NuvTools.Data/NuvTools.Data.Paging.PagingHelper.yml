@@ -5,7 +5,7 @@ items:
   id: PagingHelper
   parent: NuvTools.Data.Paging
   children:
-  - NuvTools.Data.Paging.PagingHelper.GetPageNumber(System.Int32,System.Int32,System.Int32)
+  - NuvTools.Data.Paging.PagingHelper.GetPageIndex(System.Int32,System.Int32,System.Int32)
   langs:
   - csharp
   - vb
@@ -14,7 +14,7 @@ items:
   fullName: NuvTools.Data.Paging.PagingHelper
   type: Class
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Paging/PagingHelper.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/4e3395051dcbb5ea486411d173f06ba44ba4a905/src/NuvTools.Data/Paging/PagingHelper.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Paging
@@ -33,30 +33,30 @@ items:
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.GetHashCode
-- uid: NuvTools.Data.Paging.PagingHelper.GetPageNumber(System.Int32,System.Int32,System.Int32)
-  commentId: M:NuvTools.Data.Paging.PagingHelper.GetPageNumber(System.Int32,System.Int32,System.Int32)
-  id: GetPageNumber(System.Int32,System.Int32,System.Int32)
+- uid: NuvTools.Data.Paging.PagingHelper.GetPageIndex(System.Int32,System.Int32,System.Int32)
+  commentId: M:NuvTools.Data.Paging.PagingHelper.GetPageIndex(System.Int32,System.Int32,System.Int32)
+  id: GetPageIndex(System.Int32,System.Int32,System.Int32)
   parent: NuvTools.Data.Paging.PagingHelper
   langs:
   - csharp
   - vb
-  name: GetPageNumber(int, int, int)
-  nameWithType: PagingHelper.GetPageNumber(int, int, int)
-  fullName: NuvTools.Data.Paging.PagingHelper.GetPageNumber(int, int, int)
+  name: GetPageIndex(int, int, int)
+  nameWithType: PagingHelper.GetPageIndex(int, int, int)
+  fullName: NuvTools.Data.Paging.PagingHelper.GetPageIndex(int, int, int)
   type: Method
   source:
-    href: https://github.com/nuvtools/nuvtools-data/blob/40c4bf5208a80b312fafba56a08e8f69b49f0849/src/NuvTools.Data/Paging/PagingHelper.cs
+    href: https://github.com/nuvtools/nuvtools-data/blob/4e3395051dcbb5ea486411d173f06ba44ba4a905/src/NuvTools.Data/Paging/PagingHelper.cs
   assemblies:
   - NuvTools.Data
   namespace: NuvTools.Data.Paging
-  summary: Calculates the valid page number, ensuring it doesn't exceed the total number of pages.
+  summary: Calculates the valid page index, ensuring it doesn't exceed the total number of pages.
   example: []
   syntax:
-    content: public static int GetPageNumber(int index, int pageSize, int total)
+    content: public static int GetPageIndex(int index, int pageSize, int total)
     parameters:
     - id: index
       type: System.Int32
-      description: The requested page number (1-indexed).
+      description: The requested page index (0-indexed).
     - id: pageSize
       type: System.Int32
       description: The number of items per page.
@@ -65,12 +65,12 @@ items:
       description: The total number of items.
     return:
       type: System.Int32
-      description: A valid page number that doesn't exceed the total pages available.
-    content.vb: Public Shared Function GetPageNumber(index As Integer, pageSize As Integer, total As Integer) As Integer
-  overload: NuvTools.Data.Paging.PagingHelper.GetPageNumber*
-  nameWithType.vb: PagingHelper.GetPageNumber(Integer, Integer, Integer)
-  fullName.vb: NuvTools.Data.Paging.PagingHelper.GetPageNumber(Integer, Integer, Integer)
-  name.vb: GetPageNumber(Integer, Integer, Integer)
+      description: A valid page index (0-indexed) that doesn't exceed the total pages available.
+    content.vb: Public Shared Function GetPageIndex(index As Integer, pageSize As Integer, total As Integer) As Integer
+  overload: NuvTools.Data.Paging.PagingHelper.GetPageIndex*
+  nameWithType.vb: PagingHelper.GetPageIndex(Integer, Integer, Integer)
+  fullName.vb: NuvTools.Data.Paging.PagingHelper.GetPageIndex(Integer, Integer, Integer)
+  name.vb: GetPageIndex(Integer, Integer, Integer)
 references:
 - uid: NuvTools.Data.Paging
   commentId: N:NuvTools.Data.Paging
@@ -346,13 +346,13 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: NuvTools.Data.Paging.PagingHelper.GetPageNumber*
-  commentId: Overload:NuvTools.Data.Paging.PagingHelper.GetPageNumber
+- uid: NuvTools.Data.Paging.PagingHelper.GetPageIndex*
+  commentId: Overload:NuvTools.Data.Paging.PagingHelper.GetPageIndex
   isExternal: true
-  href: NuvTools.Data.Paging.PagingHelper.html#NuvTools_Data_Paging_PagingHelper_GetPageNumber_System_Int32_System_Int32_System_Int32_
-  name: GetPageNumber
-  nameWithType: PagingHelper.GetPageNumber
-  fullName: NuvTools.Data.Paging.PagingHelper.GetPageNumber
+  href: NuvTools.Data.Paging.PagingHelper.html#NuvTools_Data_Paging_PagingHelper_GetPageIndex_System_Int32_System_Int32_System_Int32_
+  name: GetPageIndex
+  nameWithType: PagingHelper.GetPageIndex
+  fullName: NuvTools.Data.Paging.PagingHelper.GetPageIndex
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
