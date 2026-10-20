@@ -43,4 +43,4 @@ flowchart LR
 
 - [NuvTools.Notification](notification/README.md) — installation, configuration and examples; source on [GitHub](https://github.com/nuvtools/nuvtools-notification).
 
-Every type and member is in the [API reference](xref:NuvTools.Notification.Mail).
+Every type and member is in the [API reference](../../api/index.md#area-notification).

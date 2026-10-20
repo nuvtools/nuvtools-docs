@@ -34,4 +34,4 @@ flowchart LR
 
 - [NuvTools.Report](report/README.md) — installation, configuration and examples; source on [GitHub](https://github.com/nuvtools/nuvtools-report).
 
-Every type and member is in the [API reference](xref:NuvTools.Report.FixedLength).
+Every type and member is in the [API reference](../../api/index.md#area-report).

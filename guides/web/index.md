@@ -39,4 +39,4 @@ flowchart LR
 
 - [NuvTools.AspNetCore](aspnetcore/README.md) — installation, configuration and examples; source on [GitHub](https://github.com/nuvtools/nuvtools-aspnetcore).
 
-Every type and member is in the [API reference](xref:NuvTools.AspNetCore.Localization).
+Every type and member is in the [API reference](../../api/index.md#area-web).

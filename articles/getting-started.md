@@ -106,5 +106,5 @@ The major version follows .NET: 10.x packages are built for the .NET 10 generati
 ## Next steps
 
 - Browse the [guides by area](../guides/foundation/index.md).
-- Look up any type in the [API reference](../api/toc.yml).
+- Look up any type in the [API reference](../api/index.md).
 - See how the areas relate in [Architecture](architecture.md).

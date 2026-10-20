@@ -34,4 +34,4 @@ flowchart LR
 - [NuvTools.Storage](storage/README.md) — installation, configuration and examples; source on [GitHub](https://github.com/nuvtools/nuvtools-storage).
 - [NuvTools.Blockchain](blockchain/README.md) — installation, configuration and examples; source on [GitHub](https://github.com/nuvtools/nuvtools-blockchain).
 
-Every type and member is in the [API reference](xref:NuvTools.Blockchain).
+Every type and member is in the [API reference](../../api/index.md#area-storage).

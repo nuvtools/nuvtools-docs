@@ -10,7 +10,7 @@ description: Open source .NET libraries by Nuv Tools — data, ASP.NET Core and 
   <p>The .NET libraries behind every Nuv Tools product: data, ASP.NET Core and Blazor, security and identity, notifications, reports, storage and payments. Neutral contracts, one package per provider, ready for .NET 8, 9 and 10.</p>
   <div class="nt-hero__actions">
     <a class="nt-btn" href="articles/getting-started.md"><i class="bi bi-rocket-takeoff"></i> Get started</a>
-    <a class="nt-btn nt-btn--light" href="api/toc.yml"><i class="bi bi-braces"></i> API reference</a>
+    <a class="nt-btn nt-btn--light" href="api/index.md"><i class="bi bi-braces"></i> API reference</a>
     <a class="nt-btn nt-btn--light" href="https://github.com/nuvtools"><i class="bi bi-github"></i> GitHub</a>
   </div>
   <code class="nt-hero__install">dotnet add package NuvTools.Common</code>

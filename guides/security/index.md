@@ -67,4 +67,4 @@ flowchart LR
 - [NuvTools.Security](security/README.md) — installation, configuration and examples; source on [GitHub](https://github.com/nuvtools/nuvtools-security).
 - [NuvTools.Security.Identity](security-identity/README.md) — installation, configuration and examples; source on [GitHub](https://github.com/nuvtools/nuvtools-security-identity).
 
-Every type and member is in the [API reference](xref:NuvTools.Security.Biometrics).
+Every type and member is in the [API reference](../../api/index.md#area-security).

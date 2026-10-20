@@ -36,4 +36,4 @@ flowchart LR
 
 - [NuvTools.Data](data/README.md) — installation, configuration and examples; source on [GitHub](https://github.com/nuvtools/nuvtools-data).
 
-Every type and member is in the [API reference](xref:NuvTools.Data.Paging).
+Every type and member is in the [API reference](../../api/index.md#area-data).

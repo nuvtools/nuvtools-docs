@@ -31,4 +31,4 @@ flowchart LR
 - [NuvTools.Resources](resources/README.md) — installation, configuration and examples; source on [GitHub](https://github.com/nuvtools/nuvtools-resources).
 - [NuvTools.Validation](validation/README.md) — installation, configuration and examples; source on [GitHub](https://github.com/nuvtools/nuvtools-validation).
 
-Every type and member is in the [API reference](xref:NuvTools.Resources).
+Every type and member is in the [API reference](../../api/index.md#area-foundation).

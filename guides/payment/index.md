@@ -34,4 +34,4 @@ flowchart LR
 
 - [NuvTools.Payment](payment/README.md) — installation, configuration and examples; source on [GitHub](https://github.com/nuvtools/nuvtools-payment).
 
-Every type and member is in the [API reference](xref:NuvTools.Payment).
+Every type and member is in the [API reference](../../api/index.md#area-payment).
