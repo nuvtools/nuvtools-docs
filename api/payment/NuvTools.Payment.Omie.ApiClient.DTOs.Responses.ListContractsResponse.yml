@@ -1,0 +1,679 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse
+  commentId: T:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse
+  id: ListContractsResponse
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  children:
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.Contracts
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.Page
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.Records
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.StatusCode
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.StatusDescription
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.TotalPages
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.TotalRecords
+  langs:
+  - csharp
+  - vb
+  name: ListContractsResponse
+  nameWithType: ListContractsResponse
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse
+  type: Class
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: >-
+    Response of ListarContratos (servicos/contrato) — the page of Service Contracts registered in Omie. A contract is
+
+    a price registry: it holds the negotiated value and the validity period agreed with one client, and must never be
+
+    billed through.
+
+
+    <p>
+
+    The listing exists so callers can resolve a contract by the number the user knows (<code>cNumCtr</code>) without asking
+
+    Omie one call per contract: Omie exposes no search by contract number, and repeated single consults are what trips
+
+    its "Consumo redundante" gate. List once, index in memory — the same approach as the service catalog.
+
+    </p>
+  example: []
+  syntax:
+    content: 'public class ListContractsResponse : IOmieBusinessStatus'
+    content.vb: Public Class ListContractsResponse Implements IOmieBusinessStatus
+  inheritance:
+  - System.Object
+  implements:
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.Page
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.Page
+  id: Page
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse
+  langs:
+  - csharp
+  - vb
+  name: Page
+  nameWithType: ListContractsResponse.Page
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.Page
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  syntax:
+    content: >-
+      [JsonPropertyName("pagina")]
+
+      public int Page { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <JsonPropertyName("pagina")>
+
+      Public Property Page As Integer
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.Page*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: pagina
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.TotalPages
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.TotalPages
+  id: TotalPages
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse
+  langs:
+  - csharp
+  - vb
+  name: TotalPages
+  nameWithType: ListContractsResponse.TotalPages
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.TotalPages
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  syntax:
+    content: >-
+      [JsonPropertyName("total_de_paginas")]
+
+      public int TotalPages { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <JsonPropertyName("total_de_paginas")>
+
+      Public Property TotalPages As Integer
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.TotalPages*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: total_de_paginas
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.Records
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.Records
+  id: Records
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse
+  langs:
+  - csharp
+  - vb
+  name: Records
+  nameWithType: ListContractsResponse.Records
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.Records
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  syntax:
+    content: >-
+      [JsonPropertyName("registros")]
+
+      public int Records { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <JsonPropertyName("registros")>
+
+      Public Property Records As Integer
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.Records*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: registros
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.TotalRecords
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.TotalRecords
+  id: TotalRecords
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse
+  langs:
+  - csharp
+  - vb
+  name: TotalRecords
+  nameWithType: ListContractsResponse.TotalRecords
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.TotalRecords
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  syntax:
+    content: >-
+      [JsonPropertyName("total_de_registros")]
+
+      public int TotalRecords { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: >-
+      <JsonPropertyName("total_de_registros")>
+
+      Public Property TotalRecords As Integer
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.TotalRecords*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: total_de_registros
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.Contracts
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.Contracts
+  id: Contracts
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse
+  langs:
+  - csharp
+  - vb
+  name: Contracts
+  nameWithType: ListContractsResponse.Contracts
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.Contracts
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  syntax:
+    content: >-
+      [JsonPropertyName("contratoCadastro")]
+
+      public ListContractsItem[]? Contracts { get; set; }
+    parameters: []
+    return:
+      type: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsItem[]
+    content.vb: >-
+      <JsonPropertyName("contratoCadastro")>
+
+      Public Property Contracts As ListContractsItem()
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.Contracts*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: contratoCadastro
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.StatusCode
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.StatusCode
+  id: StatusCode
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse
+  langs:
+  - csharp
+  - vb
+  name: StatusCode
+  nameWithType: ListContractsResponse.StatusCode
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.StatusCode
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  example: []
+  syntax:
+    content: >-
+      [JsonPropertyName("cCodStatus")]
+
+      public string? StatusCode { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonPropertyName("cCodStatus")>
+
+      Public Property StatusCode As String
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.StatusCode*
+  implements:
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus.StatusCode
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: cCodStatus
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.StatusDescription
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.StatusDescription
+  id: StatusDescription
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse
+  langs:
+  - csharp
+  - vb
+  name: StatusDescription
+  nameWithType: ListContractsResponse.StatusDescription
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.StatusDescription
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  example: []
+  syntax:
+    content: >-
+      [JsonPropertyName("cDescStatus")]
+
+      public string? StatusDescription { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonPropertyName("cDescStatus")>
+
+      Public Property StatusDescription As String
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.StatusDescription*
+  implements:
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus.StatusDescription
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: cDescStatus
+references:
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  commentId: N:NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  name: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  nameWithType: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Omie
+    name: Omie
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient
+    name: ApiClient
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs
+    name: DTOs
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+    name: Responses
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Omie
+    name: Omie
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient
+    name: ApiClient
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs
+    name: DTOs
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+    name: Responses
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus
+  commentId: T:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus.html
+  name: IOmieBusinessStatus
+  nameWithType: IOmieBusinessStatus
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.Page*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.Page
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_ListContractsResponse_Page
+  name: Page
+  nameWithType: ListContractsResponse.Page
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.Page
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.TotalPages*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.TotalPages
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_ListContractsResponse_TotalPages
+  name: TotalPages
+  nameWithType: ListContractsResponse.TotalPages
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.TotalPages
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.Records*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.Records
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_ListContractsResponse_Records
+  name: Records
+  nameWithType: ListContractsResponse.Records
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.Records
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.TotalRecords*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.TotalRecords
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_ListContractsResponse_TotalRecords
+  name: TotalRecords
+  nameWithType: ListContractsResponse.TotalRecords
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.TotalRecords
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.Contracts*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.Contracts
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_ListContractsResponse_Contracts
+  name: Contracts
+  nameWithType: ListContractsResponse.Contracts
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.Contracts
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsItem[]
+  isExternal: true
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsItem.html
+  name: ListContractsItem[]
+  nameWithType: ListContractsItem[]
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsItem[]
+  nameWithType.vb: ListContractsItem()
+  fullName.vb: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsItem()
+  name.vb: ListContractsItem()
+  spec.csharp:
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsItem
+    name: ListContractsItem
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsItem.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsItem
+    name: ListContractsItem
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsItem.html
+  - name: (
+  - name: )
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.StatusCode*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.StatusCode
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_ListContractsResponse_StatusCode
+  name: StatusCode
+  nameWithType: ListContractsResponse.StatusCode
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.StatusCode
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus.StatusCode
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus.StatusCode
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_IOmieBusinessStatus_StatusCode
+  name: StatusCode
+  nameWithType: IOmieBusinessStatus.StatusCode
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus.StatusCode
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.StatusDescription*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.StatusDescription
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_ListContractsResponse_StatusDescription
+  name: StatusDescription
+  nameWithType: ListContractsResponse.StatusDescription
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.StatusDescription
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus.StatusDescription
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus.StatusDescription
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_IOmieBusinessStatus_StatusDescription
+  name: StatusDescription
+  nameWithType: IOmieBusinessStatus.StatusDescription
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus.StatusDescription

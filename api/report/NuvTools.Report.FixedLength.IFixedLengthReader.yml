@@ -1,0 +1,381 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Report.FixedLength.IFixedLengthReader
+  commentId: T:NuvTools.Report.FixedLength.IFixedLengthReader
+  id: IFixedLengthReader
+  parent: NuvTools.Report.FixedLength
+  children:
+  - NuvTools.Report.FixedLength.IFixedLengthReader.ReadBase64``1(System.String,NuvTools.Report.FixedLength.FixedLengthReaderOptions)
+  - NuvTools.Report.FixedLength.IFixedLengthReader.ReadBytes``1(System.Byte[],NuvTools.Report.FixedLength.FixedLengthReaderOptions)
+  - NuvTools.Report.FixedLength.IFixedLengthReader.ReadStream``1(System.IO.Stream,NuvTools.Report.FixedLength.FixedLengthReaderOptions)
+  - NuvTools.Report.FixedLength.IFixedLengthReader.ReadString``1(System.String,NuvTools.Report.FixedLength.FixedLengthReaderOptions)
+  langs:
+  - csharp
+  - vb
+  name: IFixedLengthReader
+  nameWithType: IFixedLengthReader
+  fullName: NuvTools.Report.FixedLength.IFixedLengthReader
+  type: Interface
+  assemblies:
+  - NuvTools.Report
+  namespace: NuvTools.Report.FixedLength
+  summary: Reads fixed-length (positional) content and maps it to strongly-typed objects using attribute-based field mapping.
+  example: []
+  syntax:
+    content: public interface IFixedLengthReader
+    content.vb: Public Interface IFixedLengthReader
+  derivedClasses:
+  - NuvTools.Report.FixedLength.FixedLengthReader
+- uid: NuvTools.Report.FixedLength.IFixedLengthReader.ReadString``1(System.String,NuvTools.Report.FixedLength.FixedLengthReaderOptions)
+  commentId: M:NuvTools.Report.FixedLength.IFixedLengthReader.ReadString``1(System.String,NuvTools.Report.FixedLength.FixedLengthReaderOptions)
+  id: ReadString``1(System.String,NuvTools.Report.FixedLength.FixedLengthReaderOptions)
+  parent: NuvTools.Report.FixedLength.IFixedLengthReader
+  langs:
+  - csharp
+  - vb
+  name: ReadString<T>(string, FixedLengthReaderOptions?)
+  nameWithType: IFixedLengthReader.ReadString<T>(string, FixedLengthReaderOptions?)
+  fullName: NuvTools.Report.FixedLength.IFixedLengthReader.ReadString<T>(string, NuvTools.Report.FixedLength.FixedLengthReaderOptions?)
+  type: Method
+  assemblies:
+  - NuvTools.Report
+  namespace: NuvTools.Report.FixedLength
+  summary: Reads fixed-length records from a string and returns a list of mapped objects.
+  example: []
+  syntax:
+    content: 'List<T> ReadString<T>(string content, FixedLengthReaderOptions? options = null) where T : new()'
+    parameters:
+    - id: content
+      type: System.String
+    - id: options
+      type: NuvTools.Report.FixedLength.FixedLengthReaderOptions
+    typeParameters:
+    - id: T
+    return:
+      type: System.Collections.Generic.List{{T}}
+    content.vb: Function ReadString(Of T As New)(content As String, options As FixedLengthReaderOptions = Nothing) As List(Of T)
+  overload: NuvTools.Report.FixedLength.IFixedLengthReader.ReadString*
+  nameWithType.vb: IFixedLengthReader.ReadString(Of T)(String, FixedLengthReaderOptions)
+  fullName.vb: NuvTools.Report.FixedLength.IFixedLengthReader.ReadString(Of T)(String, NuvTools.Report.FixedLength.FixedLengthReaderOptions)
+  name.vb: ReadString(Of T)(String, FixedLengthReaderOptions)
+- uid: NuvTools.Report.FixedLength.IFixedLengthReader.ReadBase64``1(System.String,NuvTools.Report.FixedLength.FixedLengthReaderOptions)
+  commentId: M:NuvTools.Report.FixedLength.IFixedLengthReader.ReadBase64``1(System.String,NuvTools.Report.FixedLength.FixedLengthReaderOptions)
+  id: ReadBase64``1(System.String,NuvTools.Report.FixedLength.FixedLengthReaderOptions)
+  parent: NuvTools.Report.FixedLength.IFixedLengthReader
+  langs:
+  - csharp
+  - vb
+  name: ReadBase64<T>(string, FixedLengthReaderOptions?)
+  nameWithType: IFixedLengthReader.ReadBase64<T>(string, FixedLengthReaderOptions?)
+  fullName: NuvTools.Report.FixedLength.IFixedLengthReader.ReadBase64<T>(string, NuvTools.Report.FixedLength.FixedLengthReaderOptions?)
+  type: Method
+  assemblies:
+  - NuvTools.Report
+  namespace: NuvTools.Report.FixedLength
+  summary: Reads fixed-length records from a base64-encoded string and returns a list of mapped objects.
+  example: []
+  syntax:
+    content: 'List<T> ReadBase64<T>(string base64, FixedLengthReaderOptions? options = null) where T : new()'
+    parameters:
+    - id: base64
+      type: System.String
+    - id: options
+      type: NuvTools.Report.FixedLength.FixedLengthReaderOptions
+    typeParameters:
+    - id: T
+    return:
+      type: System.Collections.Generic.List{{T}}
+    content.vb: Function ReadBase64(Of T As New)(base64 As String, options As FixedLengthReaderOptions = Nothing) As List(Of T)
+  overload: NuvTools.Report.FixedLength.IFixedLengthReader.ReadBase64*
+  nameWithType.vb: IFixedLengthReader.ReadBase64(Of T)(String, FixedLengthReaderOptions)
+  fullName.vb: NuvTools.Report.FixedLength.IFixedLengthReader.ReadBase64(Of T)(String, NuvTools.Report.FixedLength.FixedLengthReaderOptions)
+  name.vb: ReadBase64(Of T)(String, FixedLengthReaderOptions)
+- uid: NuvTools.Report.FixedLength.IFixedLengthReader.ReadBytes``1(System.Byte[],NuvTools.Report.FixedLength.FixedLengthReaderOptions)
+  commentId: M:NuvTools.Report.FixedLength.IFixedLengthReader.ReadBytes``1(System.Byte[],NuvTools.Report.FixedLength.FixedLengthReaderOptions)
+  id: ReadBytes``1(System.Byte[],NuvTools.Report.FixedLength.FixedLengthReaderOptions)
+  parent: NuvTools.Report.FixedLength.IFixedLengthReader
+  langs:
+  - csharp
+  - vb
+  name: ReadBytes<T>(byte[], FixedLengthReaderOptions?)
+  nameWithType: IFixedLengthReader.ReadBytes<T>(byte[], FixedLengthReaderOptions?)
+  fullName: NuvTools.Report.FixedLength.IFixedLengthReader.ReadBytes<T>(byte[], NuvTools.Report.FixedLength.FixedLengthReaderOptions?)
+  type: Method
+  assemblies:
+  - NuvTools.Report
+  namespace: NuvTools.Report.FixedLength
+  summary: Reads fixed-length records from a byte array and returns a list of mapped objects.
+  example: []
+  syntax:
+    content: 'List<T> ReadBytes<T>(byte[] data, FixedLengthReaderOptions? options = null) where T : new()'
+    parameters:
+    - id: data
+      type: System.Byte[]
+    - id: options
+      type: NuvTools.Report.FixedLength.FixedLengthReaderOptions
+    typeParameters:
+    - id: T
+    return:
+      type: System.Collections.Generic.List{{T}}
+    content.vb: Function ReadBytes(Of T As New)(data As Byte(), options As FixedLengthReaderOptions = Nothing) As List(Of T)
+  overload: NuvTools.Report.FixedLength.IFixedLengthReader.ReadBytes*
+  nameWithType.vb: IFixedLengthReader.ReadBytes(Of T)(Byte(), FixedLengthReaderOptions)
+  fullName.vb: NuvTools.Report.FixedLength.IFixedLengthReader.ReadBytes(Of T)(Byte(), NuvTools.Report.FixedLength.FixedLengthReaderOptions)
+  name.vb: ReadBytes(Of T)(Byte(), FixedLengthReaderOptions)
+- uid: NuvTools.Report.FixedLength.IFixedLengthReader.ReadStream``1(System.IO.Stream,NuvTools.Report.FixedLength.FixedLengthReaderOptions)
+  commentId: M:NuvTools.Report.FixedLength.IFixedLengthReader.ReadStream``1(System.IO.Stream,NuvTools.Report.FixedLength.FixedLengthReaderOptions)
+  id: ReadStream``1(System.IO.Stream,NuvTools.Report.FixedLength.FixedLengthReaderOptions)
+  parent: NuvTools.Report.FixedLength.IFixedLengthReader
+  langs:
+  - csharp
+  - vb
+  name: ReadStream<T>(Stream, FixedLengthReaderOptions?)
+  nameWithType: IFixedLengthReader.ReadStream<T>(Stream, FixedLengthReaderOptions?)
+  fullName: NuvTools.Report.FixedLength.IFixedLengthReader.ReadStream<T>(System.IO.Stream, NuvTools.Report.FixedLength.FixedLengthReaderOptions?)
+  type: Method
+  assemblies:
+  - NuvTools.Report
+  namespace: NuvTools.Report.FixedLength
+  summary: Reads fixed-length records from a stream and returns a list of mapped objects.
+  example: []
+  syntax:
+    content: 'List<T> ReadStream<T>(Stream stream, FixedLengthReaderOptions? options = null) where T : new()'
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+    - id: options
+      type: NuvTools.Report.FixedLength.FixedLengthReaderOptions
+    typeParameters:
+    - id: T
+    return:
+      type: System.Collections.Generic.List{{T}}
+    content.vb: Function ReadStream(Of T As New)(stream As Stream, options As FixedLengthReaderOptions = Nothing) As List(Of T)
+  overload: NuvTools.Report.FixedLength.IFixedLengthReader.ReadStream*
+  nameWithType.vb: IFixedLengthReader.ReadStream(Of T)(Stream, FixedLengthReaderOptions)
+  fullName.vb: NuvTools.Report.FixedLength.IFixedLengthReader.ReadStream(Of T)(System.IO.Stream, NuvTools.Report.FixedLength.FixedLengthReaderOptions)
+  name.vb: ReadStream(Of T)(Stream, FixedLengthReaderOptions)
+references:
+- uid: NuvTools.Report.FixedLength
+  commentId: N:NuvTools.Report.FixedLength
+  name: NuvTools.Report.FixedLength
+  nameWithType: NuvTools.Report.FixedLength
+  fullName: NuvTools.Report.FixedLength
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Report
+    name: Report
+  - name: .
+  - uid: NuvTools.Report.FixedLength
+    name: FixedLength
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Report
+    name: Report
+  - name: .
+  - uid: NuvTools.Report.FixedLength
+    name: FixedLength
+- uid: NuvTools.Report.FixedLength.IFixedLengthReader.ReadString*
+  commentId: Overload:NuvTools.Report.FixedLength.IFixedLengthReader.ReadString
+  href: NuvTools.Report.FixedLength.IFixedLengthReader.html#NuvTools_Report_FixedLength_IFixedLengthReader_ReadString__1_System_String_NuvTools_Report_FixedLength_FixedLengthReaderOptions_
+  name: ReadString
+  nameWithType: IFixedLengthReader.ReadString
+  fullName: NuvTools.Report.FixedLength.IFixedLengthReader.ReadString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: NuvTools.Report.FixedLength.FixedLengthReaderOptions
+  commentId: T:NuvTools.Report.FixedLength.FixedLengthReaderOptions
+  parent: NuvTools.Report.FixedLength
+  href: NuvTools.Report.FixedLength.FixedLengthReaderOptions.html
+  name: FixedLengthReaderOptions
+  nameWithType: FixedLengthReaderOptions
+  fullName: NuvTools.Report.FixedLength.FixedLengthReaderOptions
+- uid: System.Collections.Generic.List{{T}}
+  commentId: T:System.Collections.Generic.List{``0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: NuvTools.Report.FixedLength.IFixedLengthReader.ReadBase64*
+  commentId: Overload:NuvTools.Report.FixedLength.IFixedLengthReader.ReadBase64
+  href: NuvTools.Report.FixedLength.IFixedLengthReader.html#NuvTools_Report_FixedLength_IFixedLengthReader_ReadBase64__1_System_String_NuvTools_Report_FixedLength_FixedLengthReaderOptions_
+  name: ReadBase64
+  nameWithType: IFixedLengthReader.ReadBase64
+  fullName: NuvTools.Report.FixedLength.IFixedLengthReader.ReadBase64
+- uid: NuvTools.Report.FixedLength.IFixedLengthReader.ReadBytes*
+  commentId: Overload:NuvTools.Report.FixedLength.IFixedLengthReader.ReadBytes
+  href: NuvTools.Report.FixedLength.IFixedLengthReader.html#NuvTools_Report_FixedLength_IFixedLengthReader_ReadBytes__1_System_Byte___NuvTools_Report_FixedLength_FixedLengthReaderOptions_
+  name: ReadBytes
+  nameWithType: IFixedLengthReader.ReadBytes
+  fullName: NuvTools.Report.FixedLength.IFixedLengthReader.ReadBytes
+- uid: System.Byte[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.byte
+  name: byte[]
+  nameWithType: byte[]
+  fullName: byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: (
+  - name: )
+- uid: NuvTools.Report.FixedLength.IFixedLengthReader.ReadStream*
+  commentId: Overload:NuvTools.Report.FixedLength.IFixedLengthReader.ReadStream
+  href: NuvTools.Report.FixedLength.IFixedLengthReader.html#NuvTools_Report_FixedLength_IFixedLengthReader_ReadStream__1_System_IO_Stream_NuvTools_Report_FixedLength_FixedLengthReaderOptions_
+  name: ReadStream
+  nameWithType: IFixedLengthReader.ReadStream
+  fullName: NuvTools.Report.FixedLength.IFixedLengthReader.ReadStream
+- uid: System.IO.Stream
+  commentId: T:System.IO.Stream
+  parent: System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  name: Stream
+  nameWithType: Stream
+  fullName: System.IO.Stream
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io

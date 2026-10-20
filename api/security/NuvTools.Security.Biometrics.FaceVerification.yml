@@ -1,0 +1,595 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Security.Biometrics.FaceVerification
+  commentId: T:NuvTools.Security.Biometrics.FaceVerification
+  id: FaceVerification
+  parent: NuvTools.Security.Biometrics
+  children:
+  - NuvTools.Security.Biometrics.FaceVerification.#ctor(System.Boolean,System.Double,System.String,NuvTools.Security.Biometrics.FaceVerificationFailureType)
+  - NuvTools.Security.Biometrics.FaceVerification.Failed(NuvTools.Security.Biometrics.FaceVerificationFailureType)
+  - NuvTools.Security.Biometrics.FaceVerification.Failure
+  - NuvTools.Security.Biometrics.FaceVerification.Liveness
+  - NuvTools.Security.Biometrics.FaceVerification.Matched
+  - NuvTools.Security.Biometrics.FaceVerification.Similarity
+  langs:
+  - csharp
+  - vb
+  name: FaceVerification
+  nameWithType: FaceVerification
+  fullName: NuvTools.Security.Biometrics.FaceVerification
+  type: Class
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Biometrics
+  summary: Result of comparing a captured face with the one on record.
+  example: []
+  syntax:
+    content: 'public sealed record FaceVerification : IEquatable<FaceVerification>'
+    content.vb: Public NotInheritable Class FaceVerification Implements IEquatable(Of FaceVerification)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{NuvTools.Security.Biometrics.FaceVerification}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NuvTools.Security.Biometrics.FaceVerification.#ctor(System.Boolean,System.Double,System.String,NuvTools.Security.Biometrics.FaceVerificationFailureType)
+  commentId: M:NuvTools.Security.Biometrics.FaceVerification.#ctor(System.Boolean,System.Double,System.String,NuvTools.Security.Biometrics.FaceVerificationFailureType)
+  id: '#ctor(System.Boolean,System.Double,System.String,NuvTools.Security.Biometrics.FaceVerificationFailureType)'
+  parent: NuvTools.Security.Biometrics.FaceVerification
+  langs:
+  - csharp
+  - vb
+  name: FaceVerification(bool, double, string?, FaceVerificationFailureType)
+  nameWithType: FaceVerification.FaceVerification(bool, double, string?, FaceVerificationFailureType)
+  fullName: NuvTools.Security.Biometrics.FaceVerification.FaceVerification(bool, double, string?, NuvTools.Security.Biometrics.FaceVerificationFailureType)
+  type: Constructor
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Biometrics
+  summary: Result of comparing a captured face with the one on record.
+  example: []
+  syntax:
+    content: public FaceVerification(bool Matched, double Similarity, string? Liveness, FaceVerificationFailureType Failure)
+    parameters:
+    - id: Matched
+      type: System.Boolean
+      description: >-
+        Whether the capture was accepted as the person: similarity at or above the configured minimum and,
+
+        when liveness is enforced, a liveness the application accepts.
+    - id: Similarity
+      type: System.Double
+      description: How alike the two faces are (0.0 = different, 1.0 = identical). Zero when no comparison happened.
+    - id: Liveness
+      type: System.String
+      description: >-
+        What the provider reported about the capture being of a live person, in its own words, or
+
+        <code>null</code> when it reported nothing.
+    - id: Failure
+      type: NuvTools.Security.Biometrics.FaceVerificationFailureType
+      description: Why the capture was not accepted, or <xref href="NuvTools.Security.Biometrics.FaceVerificationFailureType.None" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Sub New(Matched As Boolean, Similarity As Double, Liveness As String, Failure As FaceVerificationFailureType)
+  overload: NuvTools.Security.Biometrics.FaceVerification.#ctor*
+  nameWithType.vb: FaceVerification.New(Boolean, Double, String, FaceVerificationFailureType)
+  fullName.vb: NuvTools.Security.Biometrics.FaceVerification.New(Boolean, Double, String, NuvTools.Security.Biometrics.FaceVerificationFailureType)
+  name.vb: New(Boolean, Double, String, FaceVerificationFailureType)
+- uid: NuvTools.Security.Biometrics.FaceVerification.Matched
+  commentId: P:NuvTools.Security.Biometrics.FaceVerification.Matched
+  id: Matched
+  parent: NuvTools.Security.Biometrics.FaceVerification
+  langs:
+  - csharp
+  - vb
+  name: Matched
+  nameWithType: FaceVerification.Matched
+  fullName: NuvTools.Security.Biometrics.FaceVerification.Matched
+  type: Property
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Biometrics
+  summary: >-
+    Whether the capture was accepted as the person: similarity at or above the configured minimum and,
+
+    when liveness is enforced, a liveness the application accepts.
+  example: []
+  syntax:
+    content: public bool Matched { get; init; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property Matched As Boolean
+  overload: NuvTools.Security.Biometrics.FaceVerification.Matched*
+- uid: NuvTools.Security.Biometrics.FaceVerification.Similarity
+  commentId: P:NuvTools.Security.Biometrics.FaceVerification.Similarity
+  id: Similarity
+  parent: NuvTools.Security.Biometrics.FaceVerification
+  langs:
+  - csharp
+  - vb
+  name: Similarity
+  nameWithType: FaceVerification.Similarity
+  fullName: NuvTools.Security.Biometrics.FaceVerification.Similarity
+  type: Property
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Biometrics
+  summary: How alike the two faces are (0.0 = different, 1.0 = identical). Zero when no comparison happened.
+  example: []
+  syntax:
+    content: public double Similarity { get; init; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Similarity As Double
+  overload: NuvTools.Security.Biometrics.FaceVerification.Similarity*
+- uid: NuvTools.Security.Biometrics.FaceVerification.Liveness
+  commentId: P:NuvTools.Security.Biometrics.FaceVerification.Liveness
+  id: Liveness
+  parent: NuvTools.Security.Biometrics.FaceVerification
+  langs:
+  - csharp
+  - vb
+  name: Liveness
+  nameWithType: FaceVerification.Liveness
+  fullName: NuvTools.Security.Biometrics.FaceVerification.Liveness
+  type: Property
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Biometrics
+  summary: >-
+    What the provider reported about the capture being of a live person, in its own words, or
+
+    <code>null</code> when it reported nothing.
+  example: []
+  syntax:
+    content: public string? Liveness { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Liveness As String
+  overload: NuvTools.Security.Biometrics.FaceVerification.Liveness*
+- uid: NuvTools.Security.Biometrics.FaceVerification.Failure
+  commentId: P:NuvTools.Security.Biometrics.FaceVerification.Failure
+  id: Failure
+  parent: NuvTools.Security.Biometrics.FaceVerification
+  langs:
+  - csharp
+  - vb
+  name: Failure
+  nameWithType: FaceVerification.Failure
+  fullName: NuvTools.Security.Biometrics.FaceVerification.Failure
+  type: Property
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Biometrics
+  summary: Why the capture was not accepted, or <xref href="NuvTools.Security.Biometrics.FaceVerificationFailureType.None" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public FaceVerificationFailureType Failure { get; init; }
+    parameters: []
+    return:
+      type: NuvTools.Security.Biometrics.FaceVerificationFailureType
+    content.vb: Public Property Failure As FaceVerificationFailureType
+  overload: NuvTools.Security.Biometrics.FaceVerification.Failure*
+- uid: NuvTools.Security.Biometrics.FaceVerification.Failed(NuvTools.Security.Biometrics.FaceVerificationFailureType)
+  commentId: M:NuvTools.Security.Biometrics.FaceVerification.Failed(NuvTools.Security.Biometrics.FaceVerificationFailureType)
+  id: Failed(NuvTools.Security.Biometrics.FaceVerificationFailureType)
+  parent: NuvTools.Security.Biometrics.FaceVerification
+  langs:
+  - csharp
+  - vb
+  name: Failed(FaceVerificationFailureType)
+  nameWithType: FaceVerification.Failed(FaceVerificationFailureType)
+  fullName: NuvTools.Security.Biometrics.FaceVerification.Failed(NuvTools.Security.Biometrics.FaceVerificationFailureType)
+  type: Method
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Biometrics
+  summary: Creates the result of a verification that never reached a comparison.
+  example: []
+  syntax:
+    content: public static FaceVerification Failed(FaceVerificationFailureType failure)
+    parameters:
+    - id: failure
+      type: NuvTools.Security.Biometrics.FaceVerificationFailureType
+      description: Why it failed.
+    return:
+      type: NuvTools.Security.Biometrics.FaceVerification
+    content.vb: Public Shared Function Failed(failure As FaceVerificationFailureType) As FaceVerification
+  overload: NuvTools.Security.Biometrics.FaceVerification.Failed*
+references:
+- uid: NuvTools.Security.Biometrics.FaceVerificationFailureType.None
+  commentId: F:NuvTools.Security.Biometrics.FaceVerificationFailureType.None
+  href: NuvTools.Security.Biometrics.FaceVerificationFailureType.html#NuvTools_Security_Biometrics_FaceVerificationFailureType_None
+  name: None
+  nameWithType: FaceVerificationFailureType.None
+  fullName: NuvTools.Security.Biometrics.FaceVerificationFailureType.None
+- uid: NuvTools.Security.Biometrics
+  commentId: N:NuvTools.Security.Biometrics
+  name: NuvTools.Security.Biometrics
+  nameWithType: NuvTools.Security.Biometrics
+  fullName: NuvTools.Security.Biometrics
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.Biometrics
+    name: Biometrics
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.Biometrics
+    name: Biometrics
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{NuvTools.Security.Biometrics.FaceVerification}
+  commentId: T:System.IEquatable{NuvTools.Security.Biometrics.FaceVerification}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<FaceVerification>
+  nameWithType: IEquatable<FaceVerification>
+  fullName: System.IEquatable<NuvTools.Security.Biometrics.FaceVerification>
+  nameWithType.vb: IEquatable(Of FaceVerification)
+  fullName.vb: System.IEquatable(Of NuvTools.Security.Biometrics.FaceVerification)
+  name.vb: IEquatable(Of FaceVerification)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: NuvTools.Security.Biometrics.FaceVerification
+    name: FaceVerification
+    href: NuvTools.Security.Biometrics.FaceVerification.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Security.Biometrics.FaceVerification
+    name: FaceVerification
+    href: NuvTools.Security.Biometrics.FaceVerification.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NuvTools.Security.Biometrics.FaceVerification.#ctor*
+  commentId: Overload:NuvTools.Security.Biometrics.FaceVerification.#ctor
+  href: NuvTools.Security.Biometrics.FaceVerification.html#NuvTools_Security_Biometrics_FaceVerification__ctor_System_Boolean_System_Double_System_String_NuvTools_Security_Biometrics_FaceVerificationFailureType_
+  name: FaceVerification
+  nameWithType: FaceVerification.FaceVerification
+  fullName: NuvTools.Security.Biometrics.FaceVerification.FaceVerification
+  nameWithType.vb: FaceVerification.New
+  fullName.vb: NuvTools.Security.Biometrics.FaceVerification.New
+  name.vb: New
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: NuvTools.Security.Biometrics.FaceVerificationFailureType
+  commentId: T:NuvTools.Security.Biometrics.FaceVerificationFailureType
+  parent: NuvTools.Security.Biometrics
+  href: NuvTools.Security.Biometrics.FaceVerificationFailureType.html
+  name: FaceVerificationFailureType
+  nameWithType: FaceVerificationFailureType
+  fullName: NuvTools.Security.Biometrics.FaceVerificationFailureType
+- uid: NuvTools.Security.Biometrics.FaceVerification.Matched*
+  commentId: Overload:NuvTools.Security.Biometrics.FaceVerification.Matched
+  href: NuvTools.Security.Biometrics.FaceVerification.html#NuvTools_Security_Biometrics_FaceVerification_Matched
+  name: Matched
+  nameWithType: FaceVerification.Matched
+  fullName: NuvTools.Security.Biometrics.FaceVerification.Matched
+- uid: NuvTools.Security.Biometrics.FaceVerification.Similarity*
+  commentId: Overload:NuvTools.Security.Biometrics.FaceVerification.Similarity
+  href: NuvTools.Security.Biometrics.FaceVerification.html#NuvTools_Security_Biometrics_FaceVerification_Similarity
+  name: Similarity
+  nameWithType: FaceVerification.Similarity
+  fullName: NuvTools.Security.Biometrics.FaceVerification.Similarity
+- uid: NuvTools.Security.Biometrics.FaceVerification.Liveness*
+  commentId: Overload:NuvTools.Security.Biometrics.FaceVerification.Liveness
+  href: NuvTools.Security.Biometrics.FaceVerification.html#NuvTools_Security_Biometrics_FaceVerification_Liveness
+  name: Liveness
+  nameWithType: FaceVerification.Liveness
+  fullName: NuvTools.Security.Biometrics.FaceVerification.Liveness
+- uid: NuvTools.Security.Biometrics.FaceVerification.Failure*
+  commentId: Overload:NuvTools.Security.Biometrics.FaceVerification.Failure
+  href: NuvTools.Security.Biometrics.FaceVerification.html#NuvTools_Security_Biometrics_FaceVerification_Failure
+  name: Failure
+  nameWithType: FaceVerification.Failure
+  fullName: NuvTools.Security.Biometrics.FaceVerification.Failure
+- uid: NuvTools.Security.Biometrics.FaceVerification.Failed*
+  commentId: Overload:NuvTools.Security.Biometrics.FaceVerification.Failed
+  href: NuvTools.Security.Biometrics.FaceVerification.html#NuvTools_Security_Biometrics_FaceVerification_Failed_NuvTools_Security_Biometrics_FaceVerificationFailureType_
+  name: Failed
+  nameWithType: FaceVerification.Failed
+  fullName: NuvTools.Security.Biometrics.FaceVerification.Failed
+- uid: NuvTools.Security.Biometrics.FaceVerification
+  commentId: T:NuvTools.Security.Biometrics.FaceVerification
+  parent: NuvTools.Security.Biometrics
+  href: NuvTools.Security.Biometrics.FaceVerification.html
+  name: FaceVerification
+  nameWithType: FaceVerification
+  fullName: NuvTools.Security.Biometrics.FaceVerification

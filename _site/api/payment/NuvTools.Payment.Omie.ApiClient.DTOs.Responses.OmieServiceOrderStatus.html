@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Class OmieServiceOrderStatus | Nuv Tools Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class OmieServiceOrderStatus | Nuv Tools Framework ">
+      
+      <meta name="description" content="Fiscal state of a service order in Omie, as StatusOS returns it: which stage it sits in, whether it was cancelled, whether it was already invoiced and — when it was — the NFS-e that came out of it.">
+      <link rel="icon" href="../../images/icon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/nuvtools-brand.svg" alt="Framework">
+            Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceOrderStatus">
+
+
+
+  <h1 id="NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceOrderStatus" data-uid="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceOrderStatus" class="text-break">
+Class OmieServiceOrderStatus  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><span class="xref">NuvTools</span>.<a class="xref" href="NuvTools.Payment.html">Payment</a>.<span class="xref">Omie</span>.<a class="xref" href="NuvTools.Payment.Omie.ApiClient.html">ApiClient</a>.<span class="xref">DTOs</span>.<a class="xref" href="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.html">Responses</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NuvTools.Payment.Omie.ApiClient.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Fiscal state of a service order in Omie, as <code>StatusOS</code> returns it: which stage it sits in, whether it was
+cancelled, whether it was already invoiced and — when it was — the NFS-e that came out of it.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public record OmieServiceOrderStatus : IEquatable&lt;OmieServiceOrderStatus&gt;</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">OmieServiceOrderStatus</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceOrderStatus.html">OmieServiceOrderStatus</a>&gt;</div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceOrderStatus__ctor_" data-uid="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceOrderStatus.#ctor*"></a>
+
+  <h3 id="NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceOrderStatus__ctor_System_Int64_System_String_System_String_System_Boolean_System_Boolean_System_Decimal_NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceInvoiceStatus_" data-uid="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceOrderStatus.#ctor(System.Int64,System.String,System.String,System.Boolean,System.Boolean,System.Decimal,NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus)">
+  OmieServiceOrderStatus(long, string?, string?, bool, bool, decimal, OmieServiceInvoiceStatus?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Fiscal state of a service order in Omie, as <code>StatusOS</code> returns it: which stage it sits in, whether it was
+cancelled, whether it was already invoiced and — when it was — the NFS-e that came out of it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public OmieServiceOrderStatus(long OsCode, string? OsNumber, string? Stage, bool IsCancelled, bool IsInvoiced, decimal TotalValue, OmieServiceInvoiceStatus? Invoice)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>OsCode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>Omie's internal service order identifier (<code>nCodOS</code>).</p>
+</dd>
+    <dt><code>OsNumber</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Service order number as the user sees it (<code>cNumOS</code>).</p>
+</dd>
+    <dt><code>Stage</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Kanban stage (<code>cEtapa</code>).</p>
+</dd>
+    <dt><code>IsCancelled</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>The service order was cancelled in Omie (<code>cCancelada</code>).</p>
+</dd>
+    <dt><code>IsInvoiced</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Invoicing was triggered (<code>cFaturada</code>) — which does not guarantee an authorized invoice.</p>
+</dd>
+    <dt><code>TotalValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">decimal</a></dt>
+    <dd><p>Service order total (<code>nValorTot</code>).</p>
+</dd>
+    <dt><code>Invoice</code> <a class="xref" href="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.html">OmieServiceInvoiceStatus</a></dt>
+    <dd><p>The NFS-e/RPS of the order. Null when it was never invoiced.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceOrderStatus_Invoice_" data-uid="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceOrderStatus.Invoice*"></a>
+
+  <h3 id="NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceOrderStatus_Invoice" data-uid="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceOrderStatus.Invoice">
+  Invoice
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The NFS-e/RPS of the order. Null when it was never invoiced.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public OmieServiceInvoiceStatus? Invoice { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.html">OmieServiceInvoiceStatus</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceOrderStatus_IsCancelled_" data-uid="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceOrderStatus.IsCancelled*"></a>
+
+  <h3 id="NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceOrderStatus_IsCancelled" data-uid="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceOrderStatus.IsCancelled">
+  IsCancelled
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>The service order was cancelled in Omie (<code>cCancelada</code>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsCancelled { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceOrderStatus_IsInvoiced_" data-uid="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceOrderStatus.IsInvoiced*"></a>
+
+  <h3 id="NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceOrderStatus_IsInvoiced" data-uid="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceOrderStatus.IsInvoiced">
+  IsInvoiced
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Invoicing was triggered (<code>cFaturada</code>) — which does not guarantee an authorized invoice.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsInvoiced { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceOrderStatus_OsCode_" data-uid="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceOrderStatus.OsCode*"></a>
+
+  <h3 id="NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceOrderStatus_OsCode" data-uid="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceOrderStatus.OsCode">
+  OsCode
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Omie's internal service order identifier (<code>nCodOS</code>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long OsCode { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceOrderStatus_OsNumber_" data-uid="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceOrderStatus.OsNumber*"></a>
+
+  <h3 id="NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceOrderStatus_OsNumber" data-uid="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceOrderStatus.OsNumber">
+  OsNumber
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Service order number as the user sees it (<code>cNumOS</code>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? OsNumber { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceOrderStatus_Stage_" data-uid="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceOrderStatus.Stage*"></a>
+
+  <h3 id="NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceOrderStatus_Stage" data-uid="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceOrderStatus.Stage">
+  Stage
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Kanban stage (<code>cEtapa</code>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? Stage { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceOrderStatus_TotalValue_" data-uid="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceOrderStatus.TotalValue*"></a>
+
+  <h3 id="NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceOrderStatus_TotalValue" data-uid="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceOrderStatus.TotalValue">
+  TotalValue
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Service order total (<code>nValorTot</code>).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public decimal TotalValue { get; init; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">decimal</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>© Nuv Tools · <a href="https://nuvtools.com/framework/">nuvtools.com</a> · MIT licence · Built with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

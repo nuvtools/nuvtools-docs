@@ -1,0 +1,386 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Security.Certificate.ICertificateAuthenticator
+  commentId: T:NuvTools.Security.Certificate.ICertificateAuthenticator
+  id: ICertificateAuthenticator
+  parent: NuvTools.Security.Certificate
+  children:
+  - NuvTools.Security.Certificate.ICertificateAuthenticator.CompleteAsync(System.String,System.Threading.CancellationToken)
+  - NuvTools.Security.Certificate.ICertificateAuthenticator.StartAsync(System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: ICertificateAuthenticator
+  nameWithType: ICertificateAuthenticator
+  fullName: NuvTools.Security.Certificate.ICertificateAuthenticator
+  type: Interface
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Certificate
+  summary: >-
+    Authenticates a person by a digital certificate, in two steps: the server opens a challenge, the
+
+    client signs it with the certificate's private key, and the server validates the signature.
+  remarks: >-
+    The identity is read from the certificate on the server, after the provider confirmed possession of
+
+    the private key and the trust chain. Call <xref href="NuvTools.Security.Certificate.ICertificateAuthenticator.CompleteAsync(System.String%2cSystem.Threading.CancellationToken)" data-throw-if-not-resolved="false"></xref> inside the sign-in operation
+
+    itself and take the identity from its result — never from a value the client sends.
+  example: []
+  syntax:
+    content: public interface ICertificateAuthenticator
+    content.vb: Public Interface ICertificateAuthenticator
+  derivedClasses:
+  - NuvTools.Security.Certificate.Lacuna.RestPkiCertificateAuthenticator
+- uid: NuvTools.Security.Certificate.ICertificateAuthenticator.StartAsync(System.Threading.CancellationToken)
+  commentId: M:NuvTools.Security.Certificate.ICertificateAuthenticator.StartAsync(System.Threading.CancellationToken)
+  id: StartAsync(System.Threading.CancellationToken)
+  parent: NuvTools.Security.Certificate.ICertificateAuthenticator
+  langs:
+  - csharp
+  - vb
+  name: StartAsync(CancellationToken)
+  nameWithType: ICertificateAuthenticator.StartAsync(CancellationToken)
+  fullName: NuvTools.Security.Certificate.ICertificateAuthenticator.StartAsync(System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Certificate
+  summary: Opens an authentication on the provider.
+  example: []
+  syntax:
+    content: Task<CertificateChallenge> StartAsync(CancellationToken cancellationToken = default)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Token to cancel the operation.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Security.Certificate.CertificateChallenge}
+      description: The challenge the client signs and sends back.
+    content.vb: Function StartAsync(cancellationToken As CancellationToken = Nothing) As Task(Of CertificateChallenge)
+  overload: NuvTools.Security.Certificate.ICertificateAuthenticator.StartAsync*
+  exceptions:
+  - type: System.Exception
+    commentId: T:System.Exception
+    description: The provider could not be reached or refused the request.
+- uid: NuvTools.Security.Certificate.ICertificateAuthenticator.CompleteAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Security.Certificate.ICertificateAuthenticator.CompleteAsync(System.String,System.Threading.CancellationToken)
+  id: CompleteAsync(System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Security.Certificate.ICertificateAuthenticator
+  langs:
+  - csharp
+  - vb
+  name: CompleteAsync(string?, CancellationToken)
+  nameWithType: ICertificateAuthenticator.CompleteAsync(string?, CancellationToken)
+  fullName: NuvTools.Security.Certificate.ICertificateAuthenticator.CompleteAsync(string?, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Certificate
+  summary: Validates the signed challenge and reads the certificate's subject.
+  example: []
+  syntax:
+    content: Task<CertificateAuthentication> CompleteAsync(string? token, CancellationToken cancellationToken = default)
+    parameters:
+    - id: token
+      type: System.String
+      description: The token of the challenge the client signed.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Token to cancel the operation.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Security.Certificate.CertificateAuthentication}
+      description: >-
+        The authentication result. An empty token, a failed validation or a communication failure
+
+        yields <xref href="NuvTools.Security.Certificate.CertificateAuthentication.Valid" data-throw-if-not-resolved="false"></xref> = <code>false</code> (fail-closed).
+    content.vb: Function CompleteAsync(token As String, cancellationToken As CancellationToken = Nothing) As Task(Of CertificateAuthentication)
+  overload: NuvTools.Security.Certificate.ICertificateAuthenticator.CompleteAsync*
+  nameWithType.vb: ICertificateAuthenticator.CompleteAsync(String, CancellationToken)
+  fullName.vb: NuvTools.Security.Certificate.ICertificateAuthenticator.CompleteAsync(String, System.Threading.CancellationToken)
+  name.vb: CompleteAsync(String, CancellationToken)
+references:
+- uid: NuvTools.Security.Certificate.ICertificateAuthenticator.CompleteAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Security.Certificate.ICertificateAuthenticator.CompleteAsync(System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Security.Certificate.ICertificateAuthenticator
+  isExternal: true
+  href: NuvTools.Security.Certificate.ICertificateAuthenticator.html#NuvTools_Security_Certificate_ICertificateAuthenticator_CompleteAsync_System_String_System_Threading_CancellationToken_
+  name: CompleteAsync(string, CancellationToken)
+  nameWithType: ICertificateAuthenticator.CompleteAsync(string, CancellationToken)
+  fullName: NuvTools.Security.Certificate.ICertificateAuthenticator.CompleteAsync(string, System.Threading.CancellationToken)
+  nameWithType.vb: ICertificateAuthenticator.CompleteAsync(String, CancellationToken)
+  fullName.vb: NuvTools.Security.Certificate.ICertificateAuthenticator.CompleteAsync(String, System.Threading.CancellationToken)
+  name.vb: CompleteAsync(String, CancellationToken)
+  spec.csharp:
+  - uid: NuvTools.Security.Certificate.ICertificateAuthenticator.CompleteAsync(System.String,System.Threading.CancellationToken)
+    name: CompleteAsync
+    href: NuvTools.Security.Certificate.ICertificateAuthenticator.html#NuvTools_Security_Certificate_ICertificateAuthenticator_CompleteAsync_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Security.Certificate.ICertificateAuthenticator.CompleteAsync(System.String,System.Threading.CancellationToken)
+    name: CompleteAsync
+    href: NuvTools.Security.Certificate.ICertificateAuthenticator.html#NuvTools_Security_Certificate_ICertificateAuthenticator_CompleteAsync_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: NuvTools.Security.Certificate
+  commentId: N:NuvTools.Security.Certificate
+  name: NuvTools.Security.Certificate
+  nameWithType: NuvTools.Security.Certificate
+  fullName: NuvTools.Security.Certificate
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.Certificate
+    name: Certificate
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.Certificate
+    name: Certificate
+- uid: NuvTools.Security.Certificate.ICertificateAuthenticator
+  commentId: T:NuvTools.Security.Certificate.ICertificateAuthenticator
+  parent: NuvTools.Security.Certificate
+  href: NuvTools.Security.Certificate.ICertificateAuthenticator.html
+  name: ICertificateAuthenticator
+  nameWithType: ICertificateAuthenticator
+  fullName: NuvTools.Security.Certificate.ICertificateAuthenticator
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
+- uid: NuvTools.Security.Certificate.ICertificateAuthenticator.StartAsync*
+  commentId: Overload:NuvTools.Security.Certificate.ICertificateAuthenticator.StartAsync
+  href: NuvTools.Security.Certificate.ICertificateAuthenticator.html#NuvTools_Security_Certificate_ICertificateAuthenticator_StartAsync_System_Threading_CancellationToken_
+  name: StartAsync
+  nameWithType: ICertificateAuthenticator.StartAsync
+  fullName: NuvTools.Security.Certificate.ICertificateAuthenticator.StartAsync
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{NuvTools.Security.Certificate.CertificateChallenge}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Security.Certificate.CertificateChallenge}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<CertificateChallenge>
+  nameWithType: Task<CertificateChallenge>
+  fullName: System.Threading.Tasks.Task<NuvTools.Security.Certificate.CertificateChallenge>
+  nameWithType.vb: Task(Of CertificateChallenge)
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Security.Certificate.CertificateChallenge)
+  name.vb: Task(Of CertificateChallenge)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Security.Certificate.CertificateChallenge
+    name: CertificateChallenge
+    href: NuvTools.Security.Certificate.CertificateChallenge.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Security.Certificate.CertificateChallenge
+    name: CertificateChallenge
+    href: NuvTools.Security.Certificate.CertificateChallenge.html
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NuvTools.Security.Certificate.CertificateAuthentication.Valid
+  commentId: P:NuvTools.Security.Certificate.CertificateAuthentication.Valid
+  href: NuvTools.Security.Certificate.CertificateAuthentication.html#NuvTools_Security_Certificate_CertificateAuthentication_Valid
+  name: Valid
+  nameWithType: CertificateAuthentication.Valid
+  fullName: NuvTools.Security.Certificate.CertificateAuthentication.Valid
+- uid: NuvTools.Security.Certificate.ICertificateAuthenticator.CompleteAsync*
+  commentId: Overload:NuvTools.Security.Certificate.ICertificateAuthenticator.CompleteAsync
+  href: NuvTools.Security.Certificate.ICertificateAuthenticator.html#NuvTools_Security_Certificate_ICertificateAuthenticator_CompleteAsync_System_String_System_Threading_CancellationToken_
+  name: CompleteAsync
+  nameWithType: ICertificateAuthenticator.CompleteAsync
+  fullName: NuvTools.Security.Certificate.ICertificateAuthenticator.CompleteAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.Tasks.Task{NuvTools.Security.Certificate.CertificateAuthentication}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Security.Certificate.CertificateAuthentication}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<CertificateAuthentication>
+  nameWithType: Task<CertificateAuthentication>
+  fullName: System.Threading.Tasks.Task<NuvTools.Security.Certificate.CertificateAuthentication>
+  nameWithType.vb: Task(Of CertificateAuthentication)
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Security.Certificate.CertificateAuthentication)
+  name.vb: Task(Of CertificateAuthentication)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Security.Certificate.CertificateAuthentication
+    name: CertificateAuthentication
+    href: NuvTools.Security.Certificate.CertificateAuthentication.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Security.Certificate.CertificateAuthentication
+    name: CertificateAuthentication
+    href: NuvTools.Security.Certificate.CertificateAuthentication.html
+  - name: )

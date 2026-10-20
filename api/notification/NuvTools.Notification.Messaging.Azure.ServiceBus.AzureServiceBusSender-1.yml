@@ -1,0 +1,972 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1
+  commentId: T:NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1
+  id: AzureServiceBusSender`1
+  parent: NuvTools.Notification.Messaging.Azure.ServiceBus
+  children:
+  - NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1.#ctor(Azure.Messaging.ServiceBus.ServiceBusClient,System.String)
+  - NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1.#ctor(NuvTools.Notification.Messaging.Configuration.MessagingSection,Azure.Core.TokenCredential)
+  - NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1.#ctor(System.String,System.String)
+  - NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1.SendAsync(NuvTools.Notification.Messaging.Message{`0},System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: AzureServiceBusSender<TBody>
+  nameWithType: AzureServiceBusSender<TBody>
+  fullName: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender<TBody>
+  type: Class
+  assemblies:
+  - NuvTools.Notification.Messaging.Azure.ServiceBus
+  namespace: NuvTools.Notification.Messaging.Azure.ServiceBus
+  summary: Provides a base implementation for sending messages to Azure Service Bus entities (queues or topics).
+  remarks: >-
+    This abstract class encapsulates the logic for serializing messages and sending them to Azure Service Bus.
+
+    It supports initialization using a <xref href="Azure.Messaging.ServiceBus.ServiceBusClient" data-throw-if-not-resolved="false"></xref>, a connection string, or a <xref href="NuvTools.Notification.Messaging.Configuration.MessagingSection" data-throw-if-not-resolved="false"></xref> configuration
+
+    (which may authenticate by connection string or by Entra ID credential).
+  example: []
+  syntax:
+    content: 'public abstract class AzureServiceBusSender<TBody> : IMessageSender<TBody> where TBody : class'
+    typeParameters:
+    - id: TBody
+      description: The type of the message body. Must be a reference type.
+    content.vb: Public MustInherit Class AzureServiceBusSender(Of TBody As Class) Implements IMessageSender(Of TBody)
+  inheritance:
+  - System.Object
+  implements:
+  - NuvTools.Notification.Messaging.Interfaces.IMessageSender{{TBody}}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  nameWithType.vb: AzureServiceBusSender(Of TBody)
+  fullName.vb: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender(Of TBody)
+  name.vb: AzureServiceBusSender(Of TBody)
+- uid: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1.#ctor(Azure.Messaging.ServiceBus.ServiceBusClient,System.String)
+  commentId: M:NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1.#ctor(Azure.Messaging.ServiceBus.ServiceBusClient,System.String)
+  id: '#ctor(Azure.Messaging.ServiceBus.ServiceBusClient,System.String)'
+  parent: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1
+  langs:
+  - csharp
+  - vb
+  name: AzureServiceBusSender(ServiceBusClient, string)
+  nameWithType: AzureServiceBusSender<TBody>.AzureServiceBusSender(ServiceBusClient, string)
+  fullName: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender<TBody>.AzureServiceBusSender(Azure.Messaging.ServiceBus.ServiceBusClient, string)
+  type: Constructor
+  assemblies:
+  - NuvTools.Notification.Messaging.Azure.ServiceBus
+  namespace: NuvTools.Notification.Messaging.Azure.ServiceBus
+  summary: Initializes a new instance of the <xref href="NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender%601" data-throw-if-not-resolved="false"></xref> class using an existing <xref href="Azure.Messaging.ServiceBus.ServiceBusClient" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: protected AzureServiceBusSender(ServiceBusClient client, string entityName)
+    parameters:
+    - id: client
+      type: Azure.Messaging.ServiceBus.ServiceBusClient
+      description: The Azure Service Bus client.
+    - id: entityName
+      type: System.String
+      description: The name of the queue or topic to send messages to.
+    content.vb: Protected Sub New(client As ServiceBusClient, entityName As String)
+  overload: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1.#ctor*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">client</code> is null.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <code class="paramref">entityName</code> is null or empty.
+  nameWithType.vb: AzureServiceBusSender(Of TBody).New(ServiceBusClient, String)
+  fullName.vb: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender(Of TBody).New(Azure.Messaging.ServiceBus.ServiceBusClient, String)
+  name.vb: New(ServiceBusClient, String)
+- uid: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1.#ctor(System.String,System.String)
+  commentId: M:NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1.#ctor(System.String,System.String)
+  id: '#ctor(System.String,System.String)'
+  parent: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1
+  langs:
+  - csharp
+  - vb
+  name: AzureServiceBusSender(string, string)
+  nameWithType: AzureServiceBusSender<TBody>.AzureServiceBusSender(string, string)
+  fullName: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender<TBody>.AzureServiceBusSender(string, string)
+  type: Constructor
+  assemblies:
+  - NuvTools.Notification.Messaging.Azure.ServiceBus
+  namespace: NuvTools.Notification.Messaging.Azure.ServiceBus
+  summary: Initializes a new instance of the <xref href="NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender%601" data-throw-if-not-resolved="false"></xref> class using a connection string.
+  example: []
+  syntax:
+    content: protected AzureServiceBusSender(string connectionString, string entityName)
+    parameters:
+    - id: connectionString
+      type: System.String
+      description: The Azure Service Bus connection string.
+    - id: entityName
+      type: System.String
+      description: The name of the queue or topic to send messages to.
+    content.vb: Protected Sub New(connectionString As String, entityName As String)
+  overload: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1.#ctor*
+  nameWithType.vb: AzureServiceBusSender(Of TBody).New(String, String)
+  fullName.vb: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender(Of TBody).New(String, String)
+  name.vb: New(String, String)
+- uid: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1.#ctor(NuvTools.Notification.Messaging.Configuration.MessagingSection,Azure.Core.TokenCredential)
+  commentId: M:NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1.#ctor(NuvTools.Notification.Messaging.Configuration.MessagingSection,Azure.Core.TokenCredential)
+  id: '#ctor(NuvTools.Notification.Messaging.Configuration.MessagingSection,Azure.Core.TokenCredential)'
+  parent: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1
+  langs:
+  - csharp
+  - vb
+  name: AzureServiceBusSender(MessagingSection, TokenCredential?)
+  nameWithType: AzureServiceBusSender<TBody>.AzureServiceBusSender(MessagingSection, TokenCredential?)
+  fullName: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender<TBody>.AzureServiceBusSender(NuvTools.Notification.Messaging.Configuration.MessagingSection, Azure.Core.TokenCredential?)
+  type: Constructor
+  assemblies:
+  - NuvTools.Notification.Messaging.Azure.ServiceBus
+  namespace: NuvTools.Notification.Messaging.Azure.ServiceBus
+  summary: Initializes a new instance of the <xref href="NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender%601" data-throw-if-not-resolved="false"></xref> class using a <xref href="NuvTools.Notification.Messaging.Configuration.MessagingSection" data-throw-if-not-resolved="false"></xref> configuration.
+  example: []
+  syntax:
+    content: protected AzureServiceBusSender(MessagingSection messagingSection, TokenCredential? credential = null)
+    parameters:
+    - id: messagingSection
+      type: NuvTools.Notification.Messaging.Configuration.MessagingSection
+      description: The messaging configuration section containing connection details.
+    - id: credential
+      type: Azure.Core.TokenCredential
+      description: >-
+        Credential used when the section authenticates by fully qualified namespace. When null, one is derived
+
+        from <xref href="NuvTools.Notification.Messaging.Configuration.MessagingSection.ManagedIdentityClientId" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Protected Sub New(messagingSection As MessagingSection, credential As TokenCredential = Nothing)
+  overload: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1.#ctor*
+  nameWithType.vb: AzureServiceBusSender(Of TBody).New(MessagingSection, TokenCredential)
+  fullName.vb: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender(Of TBody).New(NuvTools.Notification.Messaging.Configuration.MessagingSection, Azure.Core.TokenCredential)
+  name.vb: New(MessagingSection, TokenCredential)
+- uid: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1.SendAsync(NuvTools.Notification.Messaging.Message{`0},System.Threading.CancellationToken)
+  commentId: M:NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1.SendAsync(NuvTools.Notification.Messaging.Message{`0},System.Threading.CancellationToken)
+  id: SendAsync(NuvTools.Notification.Messaging.Message{`0},System.Threading.CancellationToken)
+  parent: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1
+  langs:
+  - csharp
+  - vb
+  name: SendAsync(Message<TBody>, CancellationToken)
+  nameWithType: AzureServiceBusSender<TBody>.SendAsync(Message<TBody>, CancellationToken)
+  fullName: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender<TBody>.SendAsync(NuvTools.Notification.Messaging.Message<TBody>, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Notification.Messaging.Azure.ServiceBus
+  namespace: NuvTools.Notification.Messaging.Azure.ServiceBus
+  summary: Sends a message asynchronously to the configured Azure Service Bus entity.
+  example: []
+  syntax:
+    content: public Task SendAsync(Message<TBody> message, CancellationToken cancellationToken = default)
+    parameters:
+    - id: message
+      type: NuvTools.Notification.Messaging.Message{{TBody}}
+      description: The message to send, including body and metadata.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: A token to observe while waiting for the task to complete.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task representing the asynchronous send operation.
+    content.vb: Public Function SendAsync(message As Message(Of TBody), cancellationToken As CancellationToken = Nothing) As Task
+  overload: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1.SendAsync*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code class="paramref">message</code> is null.
+  implements:
+  - NuvTools.Notification.Messaging.Interfaces.IMessageSender{{TBody}}.SendAsync(NuvTools.Notification.Messaging.Message{{TBody}},System.Threading.CancellationToken)
+  nameWithType.vb: AzureServiceBusSender(Of TBody).SendAsync(Message(Of TBody), CancellationToken)
+  fullName.vb: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender(Of TBody).SendAsync(NuvTools.Notification.Messaging.Message(Of TBody), System.Threading.CancellationToken)
+  name.vb: SendAsync(Message(Of TBody), CancellationToken)
+references:
+- uid: Azure.Messaging.ServiceBus.ServiceBusClient
+  commentId: T:Azure.Messaging.ServiceBus.ServiceBusClient
+  parent: Azure.Messaging.ServiceBus
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/azure.messaging.servicebus.servicebusclient
+  name: ServiceBusClient
+  nameWithType: ServiceBusClient
+  fullName: Azure.Messaging.ServiceBus.ServiceBusClient
+- uid: NuvTools.Notification.Messaging.Configuration.MessagingSection
+  commentId: T:NuvTools.Notification.Messaging.Configuration.MessagingSection
+  parent: NuvTools.Notification.Messaging.Configuration
+  href: NuvTools.Notification.Messaging.Configuration.MessagingSection.html
+  name: MessagingSection
+  nameWithType: MessagingSection
+  fullName: NuvTools.Notification.Messaging.Configuration.MessagingSection
+- uid: NuvTools.Notification.Messaging.Azure.ServiceBus
+  commentId: N:NuvTools.Notification.Messaging.Azure.ServiceBus
+  name: NuvTools.Notification.Messaging.Azure.ServiceBus
+  nameWithType: NuvTools.Notification.Messaging.Azure.ServiceBus
+  fullName: NuvTools.Notification.Messaging.Azure.ServiceBus
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Messaging
+    name: Messaging
+  - name: .
+  - uid: NuvTools.Notification.Messaging.Azure
+    name: Azure
+  - name: .
+  - uid: NuvTools.Notification.Messaging.Azure.ServiceBus
+    name: ServiceBus
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Messaging
+    name: Messaging
+  - name: .
+  - uid: NuvTools.Notification.Messaging.Azure
+    name: Azure
+  - name: .
+  - uid: NuvTools.Notification.Messaging.Azure.ServiceBus
+    name: ServiceBus
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: NuvTools.Notification.Messaging.Interfaces.IMessageSender{{TBody}}
+  commentId: T:NuvTools.Notification.Messaging.Interfaces.IMessageSender{`0}
+  parent: NuvTools.Notification.Messaging.Interfaces
+  definition: NuvTools.Notification.Messaging.Interfaces.IMessageSender`1
+  name: IMessageSender<TBody>
+  nameWithType: IMessageSender<TBody>
+  fullName: NuvTools.Notification.Messaging.Interfaces.IMessageSender<TBody>
+  nameWithType.vb: IMessageSender(Of TBody)
+  fullName.vb: NuvTools.Notification.Messaging.Interfaces.IMessageSender(Of TBody)
+  name.vb: IMessageSender(Of TBody)
+  spec.csharp:
+  - uid: NuvTools.Notification.Messaging.Interfaces.IMessageSender`1
+    name: IMessageSender
+  - name: <
+  - name: TBody
+  - name: '>'
+  spec.vb:
+  - uid: NuvTools.Notification.Messaging.Interfaces.IMessageSender`1
+    name: IMessageSender
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TBody
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: Azure.Messaging.ServiceBus
+  commentId: N:Azure.Messaging.ServiceBus
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/azure
+  name: Azure.Messaging.ServiceBus
+  nameWithType: Azure.Messaging.ServiceBus
+  fullName: Azure.Messaging.ServiceBus
+  spec.csharp:
+  - uid: Azure
+    name: Azure
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/azure
+  - name: .
+  - uid: Azure.Messaging
+    name: Messaging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/azure.messaging
+  - name: .
+  - uid: Azure.Messaging.ServiceBus
+    name: ServiceBus
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/azure.messaging.servicebus
+  spec.vb:
+  - uid: Azure
+    name: Azure
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/azure
+  - name: .
+  - uid: Azure.Messaging
+    name: Messaging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/azure.messaging
+  - name: .
+  - uid: Azure.Messaging.ServiceBus
+    name: ServiceBus
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/azure.messaging.servicebus
+- uid: NuvTools.Notification.Messaging.Configuration
+  commentId: N:NuvTools.Notification.Messaging.Configuration
+  name: NuvTools.Notification.Messaging.Configuration
+  nameWithType: NuvTools.Notification.Messaging.Configuration
+  fullName: NuvTools.Notification.Messaging.Configuration
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Messaging
+    name: Messaging
+  - name: .
+  - uid: NuvTools.Notification.Messaging.Configuration
+    name: Configuration
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Messaging
+    name: Messaging
+  - name: .
+  - uid: NuvTools.Notification.Messaging.Configuration
+    name: Configuration
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NuvTools.Notification.Messaging.Interfaces.IMessageSender`1
+  commentId: T:NuvTools.Notification.Messaging.Interfaces.IMessageSender`1
+  href: NuvTools.Notification.Messaging.Interfaces.IMessageSender-1.html
+  name: IMessageSender<TBody>
+  nameWithType: IMessageSender<TBody>
+  fullName: NuvTools.Notification.Messaging.Interfaces.IMessageSender<TBody>
+  nameWithType.vb: IMessageSender(Of TBody)
+  fullName.vb: NuvTools.Notification.Messaging.Interfaces.IMessageSender(Of TBody)
+  name.vb: IMessageSender(Of TBody)
+  spec.csharp:
+  - uid: NuvTools.Notification.Messaging.Interfaces.IMessageSender`1
+    name: IMessageSender
+    href: NuvTools.Notification.Messaging.Interfaces.IMessageSender-1.html
+  - name: <
+  - name: TBody
+  - name: '>'
+  spec.vb:
+  - uid: NuvTools.Notification.Messaging.Interfaces.IMessageSender`1
+    name: IMessageSender
+    href: NuvTools.Notification.Messaging.Interfaces.IMessageSender-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TBody
+  - name: )
+- uid: NuvTools.Notification.Messaging.Interfaces
+  commentId: N:NuvTools.Notification.Messaging.Interfaces
+  name: NuvTools.Notification.Messaging.Interfaces
+  nameWithType: NuvTools.Notification.Messaging.Interfaces
+  fullName: NuvTools.Notification.Messaging.Interfaces
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Messaging
+    name: Messaging
+  - name: .
+  - uid: NuvTools.Notification.Messaging.Interfaces
+    name: Interfaces
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Messaging
+    name: Messaging
+  - name: .
+  - uid: NuvTools.Notification.Messaging.Interfaces
+    name: Interfaces
+- uid: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1
+  commentId: T:NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1
+  href: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender-1.html
+  name: AzureServiceBusSender<TBody>
+  nameWithType: AzureServiceBusSender<TBody>
+  fullName: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender<TBody>
+  nameWithType.vb: AzureServiceBusSender(Of TBody)
+  fullName.vb: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender(Of TBody)
+  name.vb: AzureServiceBusSender(Of TBody)
+  spec.csharp:
+  - uid: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1
+    name: AzureServiceBusSender
+    href: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender-1.html
+  - name: <
+  - name: TBody
+  - name: '>'
+  spec.vb:
+  - uid: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1
+    name: AzureServiceBusSender
+    href: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TBody
+  - name: )
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException
+- uid: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1.#ctor*
+  commentId: Overload:NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1.#ctor
+  href: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender-1.html#NuvTools_Notification_Messaging_Azure_ServiceBus_AzureServiceBusSender_1__ctor_Azure_Messaging_ServiceBus_ServiceBusClient_System_String_
+  name: AzureServiceBusSender
+  nameWithType: AzureServiceBusSender<TBody>.AzureServiceBusSender
+  fullName: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender<TBody>.AzureServiceBusSender
+  nameWithType.vb: AzureServiceBusSender(Of TBody).New
+  fullName.vb: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender(Of TBody).New
+  name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: NuvTools.Notification.Messaging.Configuration.MessagingSection.ManagedIdentityClientId
+  commentId: P:NuvTools.Notification.Messaging.Configuration.MessagingSection.ManagedIdentityClientId
+  name: ManagedIdentityClientId
+  nameWithType: MessagingSection.ManagedIdentityClientId
+  fullName: NuvTools.Notification.Messaging.Configuration.MessagingSection.ManagedIdentityClientId
+- uid: Azure.Core.TokenCredential
+  commentId: T:Azure.Core.TokenCredential
+  parent: Azure.Core
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/azure.core.tokencredential
+  name: TokenCredential
+  nameWithType: TokenCredential
+  fullName: Azure.Core.TokenCredential
+- uid: Azure.Core
+  commentId: N:Azure.Core
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/azure
+  name: Azure.Core
+  nameWithType: Azure.Core
+  fullName: Azure.Core
+  spec.csharp:
+  - uid: Azure
+    name: Azure
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/azure
+  - name: .
+  - uid: Azure.Core
+    name: Core
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/azure.core
+  spec.vb:
+  - uid: Azure
+    name: Azure
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/azure
+  - name: .
+  - uid: Azure.Core
+    name: Core
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/azure.core
+- uid: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1.SendAsync*
+  commentId: Overload:NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1.SendAsync
+  href: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender-1.html#NuvTools_Notification_Messaging_Azure_ServiceBus_AzureServiceBusSender_1_SendAsync_NuvTools_Notification_Messaging_Message__0__System_Threading_CancellationToken_
+  name: SendAsync
+  nameWithType: AzureServiceBusSender<TBody>.SendAsync
+  fullName: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender<TBody>.SendAsync
+  nameWithType.vb: AzureServiceBusSender(Of TBody).SendAsync
+  fullName.vb: NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender(Of TBody).SendAsync
+- uid: NuvTools.Notification.Messaging.Interfaces.IMessageSender{{TBody}}.SendAsync(NuvTools.Notification.Messaging.Message{{TBody}},System.Threading.CancellationToken)
+  commentId: M:NuvTools.Notification.Messaging.Interfaces.IMessageSender{`0}.SendAsync(NuvTools.Notification.Messaging.Message{`0},System.Threading.CancellationToken)
+  parent: NuvTools.Notification.Messaging.Interfaces.IMessageSender{{TBody}}
+  definition: NuvTools.Notification.Messaging.Interfaces.IMessageSender`1.SendAsync(NuvTools.Notification.Messaging.Message{`0},System.Threading.CancellationToken)
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: SendAsync(Message<TBody>, CancellationToken)
+  nameWithType: IMessageSender<TBody>.SendAsync(Message<TBody>, CancellationToken)
+  fullName: NuvTools.Notification.Messaging.Interfaces.IMessageSender<TBody>.SendAsync(NuvTools.Notification.Messaging.Message<TBody>, System.Threading.CancellationToken)
+  nameWithType.vb: IMessageSender(Of TBody).SendAsync(Message(Of TBody), CancellationToken)
+  fullName.vb: NuvTools.Notification.Messaging.Interfaces.IMessageSender(Of TBody).SendAsync(NuvTools.Notification.Messaging.Message(Of TBody), System.Threading.CancellationToken)
+  name.vb: SendAsync(Message(Of TBody), CancellationToken)
+  spec.csharp:
+  - uid: NuvTools.Notification.Messaging.Interfaces.IMessageSender{`0}.SendAsync(NuvTools.Notification.Messaging.Message{`0},System.Threading.CancellationToken)
+    name: SendAsync
+  - name: (
+  - uid: NuvTools.Notification.Messaging.Message`1
+    name: Message
+  - name: <
+  - name: TBody
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Notification.Messaging.Interfaces.IMessageSender{`0}.SendAsync(NuvTools.Notification.Messaging.Message{`0},System.Threading.CancellationToken)
+    name: SendAsync
+  - name: (
+  - uid: NuvTools.Notification.Messaging.Message`1
+    name: Message
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TBody
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: NuvTools.Notification.Messaging.Message{{TBody}}
+  commentId: T:NuvTools.Notification.Messaging.Message{`0}
+  parent: NuvTools.Notification.Messaging
+  definition: NuvTools.Notification.Messaging.Message`1
+  href: NuvTools.Notification.Messaging.Message-1.html
+  name: Message<TBody>
+  nameWithType: Message<TBody>
+  fullName: NuvTools.Notification.Messaging.Message<TBody>
+  nameWithType.vb: Message(Of TBody)
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of TBody)
+  name.vb: Message(Of TBody)
+  spec.csharp:
+  - uid: NuvTools.Notification.Messaging.Message`1
+    name: Message
+    href: NuvTools.Notification.Messaging.Message-1.html
+  - name: <
+  - name: TBody
+  - name: '>'
+  spec.vb:
+  - uid: NuvTools.Notification.Messaging.Message`1
+    name: Message
+    href: NuvTools.Notification.Messaging.Message-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TBody
+  - name: )
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: NuvTools.Notification.Messaging.Interfaces.IMessageSender`1.SendAsync(NuvTools.Notification.Messaging.Message{`0},System.Threading.CancellationToken)
+  commentId: M:NuvTools.Notification.Messaging.Interfaces.IMessageSender`1.SendAsync(NuvTools.Notification.Messaging.Message{`0},System.Threading.CancellationToken)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: SendAsync(Message<TBody>, CancellationToken)
+  nameWithType: IMessageSender<TBody>.SendAsync(Message<TBody>, CancellationToken)
+  fullName: NuvTools.Notification.Messaging.Interfaces.IMessageSender<TBody>.SendAsync(NuvTools.Notification.Messaging.Message<TBody>, System.Threading.CancellationToken)
+  nameWithType.vb: IMessageSender(Of TBody).SendAsync(Message(Of TBody), CancellationToken)
+  fullName.vb: NuvTools.Notification.Messaging.Interfaces.IMessageSender(Of TBody).SendAsync(NuvTools.Notification.Messaging.Message(Of TBody), System.Threading.CancellationToken)
+  name.vb: SendAsync(Message(Of TBody), CancellationToken)
+  spec.csharp:
+  - uid: NuvTools.Notification.Messaging.Interfaces.IMessageSender`1.SendAsync(NuvTools.Notification.Messaging.Message{`0},System.Threading.CancellationToken)
+    name: SendAsync
+  - name: (
+  - uid: NuvTools.Notification.Messaging.Message`1
+    name: Message
+  - name: <
+  - name: TBody
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Notification.Messaging.Interfaces.IMessageSender`1.SendAsync(NuvTools.Notification.Messaging.Message{`0},System.Threading.CancellationToken)
+    name: SendAsync
+  - name: (
+  - uid: NuvTools.Notification.Messaging.Message`1
+    name: Message
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TBody
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: NuvTools.Notification.Messaging.Message`1
+  commentId: T:NuvTools.Notification.Messaging.Message`1
+  href: NuvTools.Notification.Messaging.Message-1.html
+  name: Message<T>
+  nameWithType: Message<T>
+  fullName: NuvTools.Notification.Messaging.Message<T>
+  nameWithType.vb: Message(Of T)
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of T)
+  name.vb: Message(Of T)
+  spec.csharp:
+  - uid: NuvTools.Notification.Messaging.Message`1
+    name: Message
+    href: NuvTools.Notification.Messaging.Message-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: NuvTools.Notification.Messaging.Message`1
+    name: Message
+    href: NuvTools.Notification.Messaging.Message-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NuvTools.Notification.Messaging
+  commentId: N:NuvTools.Notification.Messaging
+  name: NuvTools.Notification.Messaging
+  nameWithType: NuvTools.Notification.Messaging
+  fullName: NuvTools.Notification.Messaging
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Messaging
+    name: Messaging
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Messaging
+    name: Messaging
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

@@ -1,0 +1,270 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Report.Pdf.IPdfExporter
+  commentId: T:NuvTools.Report.Pdf.IPdfExporter
+  id: IPdfExporter
+  parent: NuvTools.Report.Pdf
+  children:
+  - NuvTools.Report.Pdf.IPdfExporter.ExportFirstSheetToPdf(NuvTools.Report.Table.Models.Document)
+  - NuvTools.Report.Pdf.IPdfExporter.ExportSheetToPdf(NuvTools.Report.Table.Models.Document)
+  langs:
+  - csharp
+  - vb
+  name: IPdfExporter
+  nameWithType: IPdfExporter
+  fullName: NuvTools.Report.Pdf.IPdfExporter
+  type: Interface
+  assemblies:
+  - NuvTools.Report
+  namespace: NuvTools.Report.Pdf
+  summary: Exports documents to PDF format encoded as base64 strings.
+  example: []
+  syntax:
+    content: public interface IPdfExporter
+    content.vb: Public Interface IPdfExporter
+  derivedClasses:
+  - NuvTools.Report.Pdf.Table.PdfExporter
+- uid: NuvTools.Report.Pdf.IPdfExporter.ExportSheetToPdf(NuvTools.Report.Table.Models.Document)
+  commentId: M:NuvTools.Report.Pdf.IPdfExporter.ExportSheetToPdf(NuvTools.Report.Table.Models.Document)
+  id: ExportSheetToPdf(NuvTools.Report.Table.Models.Document)
+  parent: NuvTools.Report.Pdf.IPdfExporter
+  langs:
+  - csharp
+  - vb
+  name: ExportSheetToPdf(Document)
+  nameWithType: IPdfExporter.ExportSheetToPdf(Document)
+  fullName: NuvTools.Report.Pdf.IPdfExporter.ExportSheetToPdf(NuvTools.Report.Table.Models.Document)
+  type: Method
+  assemblies:
+  - NuvTools.Report
+  namespace: NuvTools.Report.Pdf
+  summary: Exports all tables in a document to separate PDF files encoded as base64 strings.
+  example: []
+  syntax:
+    content: List<string> ExportSheetToPdf(Document document)
+    parameters:
+    - id: document
+      type: NuvTools.Report.Table.Models.Document
+      description: The document containing tables to export.
+    return:
+      type: System.Collections.Generic.List{System.String}
+      description: A list of base64-encoded PDF strings, one for each table in the document.
+    content.vb: Function ExportSheetToPdf(document As Document) As List(Of String)
+  overload: NuvTools.Report.Pdf.IPdfExporter.ExportSheetToPdf*
+- uid: NuvTools.Report.Pdf.IPdfExporter.ExportFirstSheetToPdf(NuvTools.Report.Table.Models.Document)
+  commentId: M:NuvTools.Report.Pdf.IPdfExporter.ExportFirstSheetToPdf(NuvTools.Report.Table.Models.Document)
+  id: ExportFirstSheetToPdf(NuvTools.Report.Table.Models.Document)
+  parent: NuvTools.Report.Pdf.IPdfExporter
+  langs:
+  - csharp
+  - vb
+  name: ExportFirstSheetToPdf(Document)
+  nameWithType: IPdfExporter.ExportFirstSheetToPdf(Document)
+  fullName: NuvTools.Report.Pdf.IPdfExporter.ExportFirstSheetToPdf(NuvTools.Report.Table.Models.Document)
+  type: Method
+  assemblies:
+  - NuvTools.Report
+  namespace: NuvTools.Report.Pdf
+  summary: Exports the first table in a document to a PDF file encoded as a base64 string.
+  example: []
+  syntax:
+    content: string ExportFirstSheetToPdf(Document document)
+    parameters:
+    - id: document
+      type: NuvTools.Report.Table.Models.Document
+      description: The document containing the table to export.
+    return:
+      type: System.String
+      description: A base64-encoded PDF string of the first table.
+    content.vb: Function ExportFirstSheetToPdf(document As Document) As String
+  overload: NuvTools.Report.Pdf.IPdfExporter.ExportFirstSheetToPdf*
+references:
+- uid: NuvTools.Report.Pdf
+  commentId: N:NuvTools.Report.Pdf
+  name: NuvTools.Report.Pdf
+  nameWithType: NuvTools.Report.Pdf
+  fullName: NuvTools.Report.Pdf
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Report
+    name: Report
+  - name: .
+  - uid: NuvTools.Report.Pdf
+    name: Pdf
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Report
+    name: Report
+  - name: .
+  - uid: NuvTools.Report.Pdf
+    name: Pdf
+- uid: NuvTools.Report.Pdf.IPdfExporter.ExportSheetToPdf*
+  commentId: Overload:NuvTools.Report.Pdf.IPdfExporter.ExportSheetToPdf
+  href: NuvTools.Report.Pdf.IPdfExporter.html#NuvTools_Report_Pdf_IPdfExporter_ExportSheetToPdf_NuvTools_Report_Table_Models_Document_
+  name: ExportSheetToPdf
+  nameWithType: IPdfExporter.ExportSheetToPdf
+  fullName: NuvTools.Report.Pdf.IPdfExporter.ExportSheetToPdf
+- uid: NuvTools.Report.Table.Models.Document
+  commentId: T:NuvTools.Report.Table.Models.Document
+  parent: NuvTools.Report.Table.Models
+  href: NuvTools.Report.Table.Models.Document.html
+  name: Document
+  nameWithType: Document
+  fullName: NuvTools.Report.Table.Models.Document
+- uid: System.Collections.Generic.List{System.String}
+  commentId: T:System.Collections.Generic.List{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<string>
+  nameWithType: List<string>
+  fullName: System.Collections.Generic.List<string>
+  nameWithType.vb: List(Of String)
+  fullName.vb: System.Collections.Generic.List(Of String)
+  name.vb: List(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: NuvTools.Report.Table.Models
+  commentId: N:NuvTools.Report.Table.Models
+  name: NuvTools.Report.Table.Models
+  nameWithType: NuvTools.Report.Table.Models
+  fullName: NuvTools.Report.Table.Models
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Report
+    name: Report
+  - name: .
+  - uid: NuvTools.Report.Table
+    name: Table
+  - name: .
+  - uid: NuvTools.Report.Table.Models
+    name: Models
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Report
+    name: Report
+  - name: .
+  - uid: NuvTools.Report.Table
+    name: Table
+  - name: .
+  - uid: NuvTools.Report.Table.Models
+    name: Models
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: NuvTools.Report.Pdf.IPdfExporter.ExportFirstSheetToPdf*
+  commentId: Overload:NuvTools.Report.Pdf.IPdfExporter.ExportFirstSheetToPdf
+  href: NuvTools.Report.Pdf.IPdfExporter.html#NuvTools_Report_Pdf_IPdfExporter_ExportFirstSheetToPdf_NuvTools_Report_Table_Models_Document_
+  name: ExportFirstSheetToPdf
+  nameWithType: IPdfExporter.ExportFirstSheetToPdf
+  fullName: NuvTools.Report.Pdf.IPdfExporter.ExportFirstSheetToPdf
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

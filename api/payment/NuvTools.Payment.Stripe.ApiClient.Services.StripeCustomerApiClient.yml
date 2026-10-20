@@ -1,0 +1,1488 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient
+  commentId: T:NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient
+  id: StripeCustomerApiClient
+  parent: NuvTools.Payment.Stripe.ApiClient.Services
+  children:
+  - NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.#ctor(Stripe.IStripeClient,Microsoft.Extensions.Options.IOptions{NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig},Microsoft.Extensions.Logging.ILogger{NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient})
+  - NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.CreateCustomerAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)
+  - NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.CreateHostedPaymentMethodPageAsync(NuvTools.Payment.DTOs.Requests.HostedPaymentMethodPageRequest,System.Threading.CancellationToken)
+  - NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.CreatePaymentMethodIntentAsync(System.String,System.Threading.CancellationToken)
+  - NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.GetDefaultPaymentMethodAsync(System.String,System.Threading.CancellationToken)
+  - NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.SetDefaultPaymentMethodAsync(System.String,System.String,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: StripeCustomerApiClient
+  nameWithType: StripeCustomerApiClient
+  fullName: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient
+  type: Class
+  assemblies:
+  - NuvTools.Payment.Stripe.ApiClient
+  namespace: NuvTools.Payment.Stripe.ApiClient.Services
+  summary: 'The paying side: who is charged, and the payment method they saved.'
+  remarks: >-
+    Implemented by a provider package. A caller depends on this and registers the provider in its
+
+    composition root, so which provider takes the money is a deployment decision rather than a
+
+    reference in its business code.
+  example: []
+  syntax:
+    content: 'public class StripeCustomerApiClient : IPaymentCustomerClient'
+    content.vb: Public Class StripeCustomerApiClient Implements IPaymentCustomerClient
+  inheritance:
+  - System.Object
+  implements:
+  - NuvTools.Payment.Contracts.IPaymentCustomerClient
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.#ctor(Stripe.IStripeClient,Microsoft.Extensions.Options.IOptions{NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig},Microsoft.Extensions.Logging.ILogger{NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient})
+  commentId: M:NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.#ctor(Stripe.IStripeClient,Microsoft.Extensions.Options.IOptions{NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig},Microsoft.Extensions.Logging.ILogger{NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient})
+  id: '#ctor(Stripe.IStripeClient,Microsoft.Extensions.Options.IOptions{NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig},Microsoft.Extensions.Logging.ILogger{NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient})'
+  parent: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient
+  langs:
+  - csharp
+  - vb
+  name: StripeCustomerApiClient(IStripeClient, IOptions<StripeApiClientConfig>, ILogger<StripeCustomerApiClient>)
+  nameWithType: StripeCustomerApiClient.StripeCustomerApiClient(IStripeClient, IOptions<StripeApiClientConfig>, ILogger<StripeCustomerApiClient>)
+  fullName: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.StripeCustomerApiClient(Stripe.IStripeClient, Microsoft.Extensions.Options.IOptions<NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig>, Microsoft.Extensions.Logging.ILogger<NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient>)
+  type: Constructor
+  assemblies:
+  - NuvTools.Payment.Stripe.ApiClient
+  namespace: NuvTools.Payment.Stripe.ApiClient.Services
+  summary: 'The paying side: who is charged, and the payment method they saved.'
+  remarks: >-
+    Implemented by a provider package. A caller depends on this and registers the provider in its
+
+    composition root, so which provider takes the money is a deployment decision rather than a
+
+    reference in its business code.
+  example: []
+  syntax:
+    content: public StripeCustomerApiClient(IStripeClient client, IOptions<StripeApiClientConfig> config, ILogger<StripeCustomerApiClient> logger)
+    parameters:
+    - id: client
+      type: Stripe.IStripeClient
+    - id: config
+      type: Microsoft.Extensions.Options.IOptions{NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig}
+    - id: logger
+      type: Microsoft.Extensions.Logging.ILogger{NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient}
+    content.vb: Public Sub New(client As IStripeClient, config As IOptions(Of StripeApiClientConfig), logger As ILogger(Of StripeCustomerApiClient))
+  overload: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.#ctor*
+  nameWithType.vb: StripeCustomerApiClient.New(IStripeClient, IOptions(Of StripeApiClientConfig), ILogger(Of StripeCustomerApiClient))
+  fullName.vb: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.New(Stripe.IStripeClient, Microsoft.Extensions.Options.IOptions(Of NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig), Microsoft.Extensions.Logging.ILogger(Of NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient))
+  name.vb: New(IStripeClient, IOptions(Of StripeApiClientConfig), ILogger(Of StripeCustomerApiClient))
+- uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.CreateCustomerAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.CreateCustomerAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)
+  id: CreateCustomerAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient
+  langs:
+  - csharp
+  - vb
+  name: CreateCustomerAsync(string, string?, IDictionary<string, string>?, CancellationToken)
+  nameWithType: StripeCustomerApiClient.CreateCustomerAsync(string, string?, IDictionary<string, string>?, CancellationToken)
+  fullName: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.CreateCustomerAsync(string, string?, System.Collections.Generic.IDictionary<string, string>?, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Stripe.ApiClient
+  namespace: NuvTools.Payment.Stripe.ApiClient.Services
+  summary: Creates a customer and returns the provider's identifier for it.
+  example: []
+  syntax:
+    content: public Task<IResult<string>> CreateCustomerAsync(string email, string? name, IDictionary<string, string>? metadata = null, CancellationToken cancellationToken = default)
+    parameters:
+    - id: email
+      type: System.String
+      description: Where the provider sends receipts.
+    - id: name
+      type: System.String
+      description: The customer's name as it should appear on them.
+    - id: metadata
+      type: System.Collections.Generic.IDictionary{System.String,System.String}
+      description: Carried on the provider's object; the caller's own identifiers belong here.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancels the call.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.String}}
+    content.vb: Public Function CreateCustomerAsync(email As String, name As String, metadata As IDictionary(Of String, String) = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of String))
+  overload: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.CreateCustomerAsync*
+  implements:
+  - NuvTools.Payment.Contracts.IPaymentCustomerClient.CreateCustomerAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)
+  nameWithType.vb: StripeCustomerApiClient.CreateCustomerAsync(String, String, IDictionary(Of String, String), CancellationToken)
+  fullName.vb: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.CreateCustomerAsync(String, String, System.Collections.Generic.IDictionary(Of String, String), System.Threading.CancellationToken)
+  name.vb: CreateCustomerAsync(String, String, IDictionary(Of String, String), CancellationToken)
+- uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.CreatePaymentMethodIntentAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.CreatePaymentMethodIntentAsync(System.String,System.Threading.CancellationToken)
+  id: CreatePaymentMethodIntentAsync(System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient
+  langs:
+  - csharp
+  - vb
+  name: CreatePaymentMethodIntentAsync(string, CancellationToken)
+  nameWithType: StripeCustomerApiClient.CreatePaymentMethodIntentAsync(string, CancellationToken)
+  fullName: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.CreatePaymentMethodIntentAsync(string, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Stripe.ApiClient
+  namespace: NuvTools.Payment.Stripe.ApiClient.Services
+  summary: >-
+    An attempt at saving a payment method for later, off-session use, for a caller that hosts its
+
+    own form.
+  remarks: >-
+    Hosting the form means the card and the provider's script reach the caller's own origin, which
+
+    is a PCI surface and a content security policy exception.
+
+    <xref href="NuvTools.Payment.Contracts.IPaymentCustomerClient.CreateHostedPaymentMethodPageAsync(NuvTools.Payment.DTOs.Requests.HostedPaymentMethodPageRequest%2cSystem.Threading.CancellationToken)" data-throw-if-not-resolved="false"></xref> is the alternative that avoids both.
+  example: []
+  syntax:
+    content: public Task<IResult<PaymentMethodIntentDTO>> CreatePaymentMethodIntentAsync(string customerId, CancellationToken cancellationToken = default)
+    parameters:
+    - id: customerId
+      type: System.String
+      description: Whose payment method is being saved.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancels the call.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.DTOs.PaymentMethodIntentDTO}}
+    content.vb: Public Function CreatePaymentMethodIntentAsync(customerId As String, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of PaymentMethodIntentDTO))
+  overload: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.CreatePaymentMethodIntentAsync*
+  implements:
+  - NuvTools.Payment.Contracts.IPaymentCustomerClient.CreatePaymentMethodIntentAsync(System.String,System.Threading.CancellationToken)
+  nameWithType.vb: StripeCustomerApiClient.CreatePaymentMethodIntentAsync(String, CancellationToken)
+  fullName.vb: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.CreatePaymentMethodIntentAsync(String, System.Threading.CancellationToken)
+  name.vb: CreatePaymentMethodIntentAsync(String, CancellationToken)
+- uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.CreateHostedPaymentMethodPageAsync(NuvTools.Payment.DTOs.Requests.HostedPaymentMethodPageRequest,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.CreateHostedPaymentMethodPageAsync(NuvTools.Payment.DTOs.Requests.HostedPaymentMethodPageRequest,System.Threading.CancellationToken)
+  id: CreateHostedPaymentMethodPageAsync(NuvTools.Payment.DTOs.Requests.HostedPaymentMethodPageRequest,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient
+  langs:
+  - csharp
+  - vb
+  name: CreateHostedPaymentMethodPageAsync(HostedPaymentMethodPageRequest, CancellationToken)
+  nameWithType: StripeCustomerApiClient.CreateHostedPaymentMethodPageAsync(HostedPaymentMethodPageRequest, CancellationToken)
+  fullName: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.CreateHostedPaymentMethodPageAsync(NuvTools.Payment.DTOs.Requests.HostedPaymentMethodPageRequest, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Stripe.ApiClient
+  namespace: NuvTools.Payment.Stripe.ApiClient.Services
+  summary: A provider-hosted page for saving a payment method, and the address to send the customer to.
+  remarks: >-
+    The saved method is reported by a webhook rather than by the return address, which the
+
+    customer may never reach.
+  example: []
+  syntax:
+    content: public Task<IResult<string>> CreateHostedPaymentMethodPageAsync(HostedPaymentMethodPageRequest request, CancellationToken cancellationToken = default)
+    parameters:
+    - id: request
+      type: NuvTools.Payment.DTOs.Requests.HostedPaymentMethodPageRequest
+      description: Whose method, where to return to, and the currency it will be charged in.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancels the call.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.String}}
+    content.vb: Public Function CreateHostedPaymentMethodPageAsync(request As HostedPaymentMethodPageRequest, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of String))
+  overload: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.CreateHostedPaymentMethodPageAsync*
+  implements:
+  - NuvTools.Payment.Contracts.IPaymentCustomerClient.CreateHostedPaymentMethodPageAsync(NuvTools.Payment.DTOs.Requests.HostedPaymentMethodPageRequest,System.Threading.CancellationToken)
+- uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.GetDefaultPaymentMethodAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.GetDefaultPaymentMethodAsync(System.String,System.Threading.CancellationToken)
+  id: GetDefaultPaymentMethodAsync(System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient
+  langs:
+  - csharp
+  - vb
+  name: GetDefaultPaymentMethodAsync(string, CancellationToken)
+  nameWithType: StripeCustomerApiClient.GetDefaultPaymentMethodAsync(string, CancellationToken)
+  fullName: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.GetDefaultPaymentMethodAsync(string, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Stripe.ApiClient
+  namespace: NuvTools.Payment.Stripe.ApiClient.Services
+  summary: The customer's default payment method, or a failure when they have none.
+  example: []
+  syntax:
+    content: public Task<IResult<PaymentMethodDTO>> GetDefaultPaymentMethodAsync(string customerId, CancellationToken cancellationToken = default)
+    parameters:
+    - id: customerId
+      type: System.String
+      description: Whose payment method to read.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancels the call.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.DTOs.PaymentMethodDTO}}
+    content.vb: Public Function GetDefaultPaymentMethodAsync(customerId As String, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of PaymentMethodDTO))
+  overload: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.GetDefaultPaymentMethodAsync*
+  implements:
+  - NuvTools.Payment.Contracts.IPaymentCustomerClient.GetDefaultPaymentMethodAsync(System.String,System.Threading.CancellationToken)
+  nameWithType.vb: StripeCustomerApiClient.GetDefaultPaymentMethodAsync(String, CancellationToken)
+  fullName.vb: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.GetDefaultPaymentMethodAsync(String, System.Threading.CancellationToken)
+  name.vb: GetDefaultPaymentMethodAsync(String, CancellationToken)
+- uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.SetDefaultPaymentMethodAsync(System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.SetDefaultPaymentMethodAsync(System.String,System.String,System.Threading.CancellationToken)
+  id: SetDefaultPaymentMethodAsync(System.String,System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient
+  langs:
+  - csharp
+  - vb
+  name: SetDefaultPaymentMethodAsync(string, string, CancellationToken)
+  nameWithType: StripeCustomerApiClient.SetDefaultPaymentMethodAsync(string, string, CancellationToken)
+  fullName: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.SetDefaultPaymentMethodAsync(string, string, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Stripe.ApiClient
+  namespace: NuvTools.Payment.Stripe.ApiClient.Services
+  summary: Makes a payment method the one later charges are taken from.
+  example: []
+  syntax:
+    content: public Task<IResult<PaymentMethodDTO>> SetDefaultPaymentMethodAsync(string customerId, string paymentMethodId, CancellationToken cancellationToken = default)
+    parameters:
+    - id: customerId
+      type: System.String
+      description: Whose default is being set.
+    - id: paymentMethodId
+      type: System.String
+      description: The method to charge from now on.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancels the call.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.DTOs.PaymentMethodDTO}}
+    content.vb: Public Function SetDefaultPaymentMethodAsync(customerId As String, paymentMethodId As String, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of PaymentMethodDTO))
+  overload: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.SetDefaultPaymentMethodAsync*
+  implements:
+  - NuvTools.Payment.Contracts.IPaymentCustomerClient.SetDefaultPaymentMethodAsync(System.String,System.String,System.Threading.CancellationToken)
+  nameWithType.vb: StripeCustomerApiClient.SetDefaultPaymentMethodAsync(String, String, CancellationToken)
+  fullName.vb: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.SetDefaultPaymentMethodAsync(String, String, System.Threading.CancellationToken)
+  name.vb: SetDefaultPaymentMethodAsync(String, String, CancellationToken)
+references:
+- uid: NuvTools.Payment.Stripe.ApiClient.Services
+  commentId: N:NuvTools.Payment.Stripe.ApiClient.Services
+  name: NuvTools.Payment.Stripe.ApiClient.Services
+  nameWithType: NuvTools.Payment.Stripe.ApiClient.Services
+  fullName: NuvTools.Payment.Stripe.ApiClient.Services
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Stripe
+    name: Stripe
+  - name: .
+  - uid: NuvTools.Payment.Stripe.ApiClient
+    name: ApiClient
+  - name: .
+  - uid: NuvTools.Payment.Stripe.ApiClient.Services
+    name: Services
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Stripe
+    name: Stripe
+  - name: .
+  - uid: NuvTools.Payment.Stripe.ApiClient
+    name: ApiClient
+  - name: .
+  - uid: NuvTools.Payment.Stripe.ApiClient.Services
+    name: Services
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: NuvTools.Payment.Contracts.IPaymentCustomerClient
+  commentId: T:NuvTools.Payment.Contracts.IPaymentCustomerClient
+  parent: NuvTools.Payment.Contracts
+  href: NuvTools.Payment.Contracts.IPaymentCustomerClient.html
+  name: IPaymentCustomerClient
+  nameWithType: IPaymentCustomerClient
+  fullName: NuvTools.Payment.Contracts.IPaymentCustomerClient
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NuvTools.Payment.Contracts
+  commentId: N:NuvTools.Payment.Contracts
+  name: NuvTools.Payment.Contracts
+  nameWithType: NuvTools.Payment.Contracts
+  fullName: NuvTools.Payment.Contracts
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Contracts
+    name: Contracts
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Contracts
+    name: Contracts
+- uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.#ctor*
+  commentId: Overload:NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.#ctor
+  href: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.html#NuvTools_Payment_Stripe_ApiClient_Services_StripeCustomerApiClient__ctor_Stripe_IStripeClient_Microsoft_Extensions_Options_IOptions_NuvTools_Payment_Stripe_ApiClient_Configuration_StripeApiClientConfig__Microsoft_Extensions_Logging_ILogger_NuvTools_Payment_Stripe_ApiClient_Services_StripeCustomerApiClient__
+  name: StripeCustomerApiClient
+  nameWithType: StripeCustomerApiClient.StripeCustomerApiClient
+  fullName: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.StripeCustomerApiClient
+  nameWithType.vb: StripeCustomerApiClient.New
+  fullName.vb: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.New
+  name.vb: New
+- uid: Stripe.IStripeClient
+  commentId: T:Stripe.IStripeClient
+  parent: Stripe
+  isExternal: true
+  name: IStripeClient
+  nameWithType: IStripeClient
+  fullName: Stripe.IStripeClient
+- uid: Microsoft.Extensions.Options.IOptions{NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig}
+  commentId: T:Microsoft.Extensions.Options.IOptions{NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig}
+  parent: Microsoft.Extensions.Options
+  definition: Microsoft.Extensions.Options.IOptions`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  name: IOptions<StripeApiClientConfig>
+  nameWithType: IOptions<StripeApiClientConfig>
+  fullName: Microsoft.Extensions.Options.IOptions<NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig>
+  nameWithType.vb: IOptions(Of StripeApiClientConfig)
+  fullName.vb: Microsoft.Extensions.Options.IOptions(Of NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig)
+  name.vb: IOptions(Of StripeApiClientConfig)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: <
+  - uid: NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig
+    name: StripeApiClientConfig
+    href: NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig
+    name: StripeApiClientConfig
+    href: NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig.html
+  - name: )
+- uid: Microsoft.Extensions.Logging.ILogger{NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient}
+  commentId: T:Microsoft.Extensions.Logging.ILogger{NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient}
+  parent: Microsoft.Extensions.Logging
+  definition: Microsoft.Extensions.Logging.ILogger`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  name: ILogger<StripeCustomerApiClient>
+  nameWithType: ILogger<StripeCustomerApiClient>
+  fullName: Microsoft.Extensions.Logging.ILogger<NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient>
+  nameWithType.vb: ILogger(Of StripeCustomerApiClient)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient)
+  name.vb: ILogger(Of StripeCustomerApiClient)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: <
+  - uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient
+    name: StripeCustomerApiClient
+    href: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient
+    name: StripeCustomerApiClient
+    href: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.html
+  - name: )
+- uid: Stripe
+  commentId: N:Stripe
+  isExternal: true
+  name: Stripe
+  nameWithType: Stripe
+  fullName: Stripe
+- uid: Microsoft.Extensions.Options.IOptions`1
+  commentId: T:Microsoft.Extensions.Options.IOptions`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  name: IOptions<TOptions>
+  nameWithType: IOptions<TOptions>
+  fullName: Microsoft.Extensions.Options.IOptions<TOptions>
+  nameWithType.vb: IOptions(Of TOptions)
+  fullName.vb: Microsoft.Extensions.Options.IOptions(Of TOptions)
+  name.vb: IOptions(Of TOptions)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: <
+  - name: TOptions
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TOptions
+  - name: )
+- uid: Microsoft.Extensions.Options
+  commentId: N:Microsoft.Extensions.Options
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Options
+  nameWithType: Microsoft.Extensions.Options
+  fullName: Microsoft.Extensions.Options
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Options
+    name: Options
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Options
+    name: Options
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options
+- uid: Microsoft.Extensions.Logging.ILogger`1
+  commentId: T:Microsoft.Extensions.Logging.ILogger`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  name: ILogger<TCategoryName>
+  nameWithType: ILogger<TCategoryName>
+  fullName: Microsoft.Extensions.Logging.ILogger<TCategoryName>
+  nameWithType.vb: ILogger(Of TCategoryName)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of TCategoryName)
+  name.vb: ILogger(Of TCategoryName)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: <
+  - name: TCategoryName
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TCategoryName
+  - name: )
+- uid: Microsoft.Extensions.Logging
+  commentId: N:Microsoft.Extensions.Logging
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Logging
+  nameWithType: Microsoft.Extensions.Logging
+  fullName: Microsoft.Extensions.Logging
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Logging
+    name: Logging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Logging
+    name: Logging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+- uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.CreateCustomerAsync*
+  commentId: Overload:NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.CreateCustomerAsync
+  href: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.html#NuvTools_Payment_Stripe_ApiClient_Services_StripeCustomerApiClient_CreateCustomerAsync_System_String_System_String_System_Collections_Generic_IDictionary_System_String_System_String__System_Threading_CancellationToken_
+  name: CreateCustomerAsync
+  nameWithType: StripeCustomerApiClient.CreateCustomerAsync
+  fullName: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.CreateCustomerAsync
+- uid: NuvTools.Payment.Contracts.IPaymentCustomerClient.CreateCustomerAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Contracts.IPaymentCustomerClient.CreateCustomerAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Contracts.IPaymentCustomerClient
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: CreateCustomerAsync(string, string, IDictionary<string, string>, CancellationToken)
+  nameWithType: IPaymentCustomerClient.CreateCustomerAsync(string, string, IDictionary<string, string>, CancellationToken)
+  fullName: NuvTools.Payment.Contracts.IPaymentCustomerClient.CreateCustomerAsync(string, string, System.Collections.Generic.IDictionary<string, string>, System.Threading.CancellationToken)
+  nameWithType.vb: IPaymentCustomerClient.CreateCustomerAsync(String, String, IDictionary(Of String, String), CancellationToken)
+  fullName.vb: NuvTools.Payment.Contracts.IPaymentCustomerClient.CreateCustomerAsync(String, String, System.Collections.Generic.IDictionary(Of String, String), System.Threading.CancellationToken)
+  name.vb: CreateCustomerAsync(String, String, IDictionary(Of String, String), CancellationToken)
+  spec.csharp:
+  - uid: NuvTools.Payment.Contracts.IPaymentCustomerClient.CreateCustomerAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)
+    name: CreateCustomerAsync
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Payment.Contracts.IPaymentCustomerClient.CreateCustomerAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)
+    name: CreateCustomerAsync
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Collections.Generic.IDictionary{System.String,System.String}
+  commentId: T:System.Collections.Generic.IDictionary{System.String,System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<string, string>
+  nameWithType: IDictionary<string, string>
+  fullName: System.Collections.Generic.IDictionary<string, string>
+  nameWithType.vb: IDictionary(Of String, String)
+  fullName.vb: System.Collections.Generic.IDictionary(Of String, String)
+  name.vb: IDictionary(Of String, String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.String}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.String}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<string>>
+  nameWithType: Task<IResult<string>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<string>>
+  nameWithType.vb: Task(Of IResult(Of String))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of String))
+  name.vb: Task(Of IResult(Of String))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.IDictionary`2
+  commentId: T:System.Collections.Generic.IDictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<TKey, TValue>
+  nameWithType: IDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>
+  nameWithType.vb: IDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue)
+  name.vb: IDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NuvTools.Payment.Contracts.IPaymentCustomerClient.CreateHostedPaymentMethodPageAsync(NuvTools.Payment.DTOs.Requests.HostedPaymentMethodPageRequest,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Contracts.IPaymentCustomerClient.CreateHostedPaymentMethodPageAsync(NuvTools.Payment.DTOs.Requests.HostedPaymentMethodPageRequest,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Contracts.IPaymentCustomerClient
+  isExternal: true
+  href: NuvTools.Payment.Contracts.IPaymentCustomerClient.html#NuvTools_Payment_Contracts_IPaymentCustomerClient_CreateHostedPaymentMethodPageAsync_NuvTools_Payment_DTOs_Requests_HostedPaymentMethodPageRequest_System_Threading_CancellationToken_
+  name: CreateHostedPaymentMethodPageAsync(HostedPaymentMethodPageRequest, CancellationToken)
+  nameWithType: IPaymentCustomerClient.CreateHostedPaymentMethodPageAsync(HostedPaymentMethodPageRequest, CancellationToken)
+  fullName: NuvTools.Payment.Contracts.IPaymentCustomerClient.CreateHostedPaymentMethodPageAsync(NuvTools.Payment.DTOs.Requests.HostedPaymentMethodPageRequest, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: NuvTools.Payment.Contracts.IPaymentCustomerClient.CreateHostedPaymentMethodPageAsync(NuvTools.Payment.DTOs.Requests.HostedPaymentMethodPageRequest,System.Threading.CancellationToken)
+    name: CreateHostedPaymentMethodPageAsync
+    href: NuvTools.Payment.Contracts.IPaymentCustomerClient.html#NuvTools_Payment_Contracts_IPaymentCustomerClient_CreateHostedPaymentMethodPageAsync_NuvTools_Payment_DTOs_Requests_HostedPaymentMethodPageRequest_System_Threading_CancellationToken_
+  - name: (
+  - uid: NuvTools.Payment.DTOs.Requests.HostedPaymentMethodPageRequest
+    name: HostedPaymentMethodPageRequest
+    href: NuvTools.Payment.DTOs.Requests.HostedPaymentMethodPageRequest.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Payment.Contracts.IPaymentCustomerClient.CreateHostedPaymentMethodPageAsync(NuvTools.Payment.DTOs.Requests.HostedPaymentMethodPageRequest,System.Threading.CancellationToken)
+    name: CreateHostedPaymentMethodPageAsync
+    href: NuvTools.Payment.Contracts.IPaymentCustomerClient.html#NuvTools_Payment_Contracts_IPaymentCustomerClient_CreateHostedPaymentMethodPageAsync_NuvTools_Payment_DTOs_Requests_HostedPaymentMethodPageRequest_System_Threading_CancellationToken_
+  - name: (
+  - uid: NuvTools.Payment.DTOs.Requests.HostedPaymentMethodPageRequest
+    name: HostedPaymentMethodPageRequest
+    href: NuvTools.Payment.DTOs.Requests.HostedPaymentMethodPageRequest.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.CreatePaymentMethodIntentAsync*
+  commentId: Overload:NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.CreatePaymentMethodIntentAsync
+  href: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.html#NuvTools_Payment_Stripe_ApiClient_Services_StripeCustomerApiClient_CreatePaymentMethodIntentAsync_System_String_System_Threading_CancellationToken_
+  name: CreatePaymentMethodIntentAsync
+  nameWithType: StripeCustomerApiClient.CreatePaymentMethodIntentAsync
+  fullName: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.CreatePaymentMethodIntentAsync
+- uid: NuvTools.Payment.Contracts.IPaymentCustomerClient.CreatePaymentMethodIntentAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Contracts.IPaymentCustomerClient.CreatePaymentMethodIntentAsync(System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Contracts.IPaymentCustomerClient
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: CreatePaymentMethodIntentAsync(string, CancellationToken)
+  nameWithType: IPaymentCustomerClient.CreatePaymentMethodIntentAsync(string, CancellationToken)
+  fullName: NuvTools.Payment.Contracts.IPaymentCustomerClient.CreatePaymentMethodIntentAsync(string, System.Threading.CancellationToken)
+  nameWithType.vb: IPaymentCustomerClient.CreatePaymentMethodIntentAsync(String, CancellationToken)
+  fullName.vb: NuvTools.Payment.Contracts.IPaymentCustomerClient.CreatePaymentMethodIntentAsync(String, System.Threading.CancellationToken)
+  name.vb: CreatePaymentMethodIntentAsync(String, CancellationToken)
+  spec.csharp:
+  - uid: NuvTools.Payment.Contracts.IPaymentCustomerClient.CreatePaymentMethodIntentAsync(System.String,System.Threading.CancellationToken)
+    name: CreatePaymentMethodIntentAsync
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Payment.Contracts.IPaymentCustomerClient.CreatePaymentMethodIntentAsync(System.String,System.Threading.CancellationToken)
+    name: CreatePaymentMethodIntentAsync
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.DTOs.PaymentMethodIntentDTO}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.DTOs.PaymentMethodIntentDTO}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<PaymentMethodIntentDTO>>
+  nameWithType: Task<IResult<PaymentMethodIntentDTO>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<NuvTools.Payment.DTOs.PaymentMethodIntentDTO>>
+  nameWithType.vb: Task(Of IResult(Of PaymentMethodIntentDTO))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of NuvTools.Payment.DTOs.PaymentMethodIntentDTO))
+  name.vb: Task(Of IResult(Of PaymentMethodIntentDTO))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - uid: NuvTools.Payment.DTOs.PaymentMethodIntentDTO
+    name: PaymentMethodIntentDTO
+    href: NuvTools.Payment.DTOs.PaymentMethodIntentDTO.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.DTOs.PaymentMethodIntentDTO
+    name: PaymentMethodIntentDTO
+    href: NuvTools.Payment.DTOs.PaymentMethodIntentDTO.html
+  - name: )
+  - name: )
+- uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.CreateHostedPaymentMethodPageAsync*
+  commentId: Overload:NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.CreateHostedPaymentMethodPageAsync
+  href: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.html#NuvTools_Payment_Stripe_ApiClient_Services_StripeCustomerApiClient_CreateHostedPaymentMethodPageAsync_NuvTools_Payment_DTOs_Requests_HostedPaymentMethodPageRequest_System_Threading_CancellationToken_
+  name: CreateHostedPaymentMethodPageAsync
+  nameWithType: StripeCustomerApiClient.CreateHostedPaymentMethodPageAsync
+  fullName: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.CreateHostedPaymentMethodPageAsync
+- uid: NuvTools.Payment.DTOs.Requests.HostedPaymentMethodPageRequest
+  commentId: T:NuvTools.Payment.DTOs.Requests.HostedPaymentMethodPageRequest
+  parent: NuvTools.Payment.DTOs.Requests
+  href: NuvTools.Payment.DTOs.Requests.HostedPaymentMethodPageRequest.html
+  name: HostedPaymentMethodPageRequest
+  nameWithType: HostedPaymentMethodPageRequest
+  fullName: NuvTools.Payment.DTOs.Requests.HostedPaymentMethodPageRequest
+- uid: NuvTools.Payment.DTOs.Requests
+  commentId: N:NuvTools.Payment.DTOs.Requests
+  name: NuvTools.Payment.DTOs.Requests
+  nameWithType: NuvTools.Payment.DTOs.Requests
+  fullName: NuvTools.Payment.DTOs.Requests
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.DTOs
+    name: DTOs
+  - name: .
+  - uid: NuvTools.Payment.DTOs.Requests
+    name: Requests
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.DTOs
+    name: DTOs
+  - name: .
+  - uid: NuvTools.Payment.DTOs.Requests
+    name: Requests
+- uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.GetDefaultPaymentMethodAsync*
+  commentId: Overload:NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.GetDefaultPaymentMethodAsync
+  href: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.html#NuvTools_Payment_Stripe_ApiClient_Services_StripeCustomerApiClient_GetDefaultPaymentMethodAsync_System_String_System_Threading_CancellationToken_
+  name: GetDefaultPaymentMethodAsync
+  nameWithType: StripeCustomerApiClient.GetDefaultPaymentMethodAsync
+  fullName: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.GetDefaultPaymentMethodAsync
+- uid: NuvTools.Payment.Contracts.IPaymentCustomerClient.GetDefaultPaymentMethodAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Contracts.IPaymentCustomerClient.GetDefaultPaymentMethodAsync(System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Contracts.IPaymentCustomerClient
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: GetDefaultPaymentMethodAsync(string, CancellationToken)
+  nameWithType: IPaymentCustomerClient.GetDefaultPaymentMethodAsync(string, CancellationToken)
+  fullName: NuvTools.Payment.Contracts.IPaymentCustomerClient.GetDefaultPaymentMethodAsync(string, System.Threading.CancellationToken)
+  nameWithType.vb: IPaymentCustomerClient.GetDefaultPaymentMethodAsync(String, CancellationToken)
+  fullName.vb: NuvTools.Payment.Contracts.IPaymentCustomerClient.GetDefaultPaymentMethodAsync(String, System.Threading.CancellationToken)
+  name.vb: GetDefaultPaymentMethodAsync(String, CancellationToken)
+  spec.csharp:
+  - uid: NuvTools.Payment.Contracts.IPaymentCustomerClient.GetDefaultPaymentMethodAsync(System.String,System.Threading.CancellationToken)
+    name: GetDefaultPaymentMethodAsync
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Payment.Contracts.IPaymentCustomerClient.GetDefaultPaymentMethodAsync(System.String,System.Threading.CancellationToken)
+    name: GetDefaultPaymentMethodAsync
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.DTOs.PaymentMethodDTO}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.DTOs.PaymentMethodDTO}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<PaymentMethodDTO>>
+  nameWithType: Task<IResult<PaymentMethodDTO>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<NuvTools.Payment.DTOs.PaymentMethodDTO>>
+  nameWithType.vb: Task(Of IResult(Of PaymentMethodDTO))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of NuvTools.Payment.DTOs.PaymentMethodDTO))
+  name.vb: Task(Of IResult(Of PaymentMethodDTO))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - uid: NuvTools.Payment.DTOs.PaymentMethodDTO
+    name: PaymentMethodDTO
+    href: NuvTools.Payment.DTOs.PaymentMethodDTO.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.DTOs.PaymentMethodDTO
+    name: PaymentMethodDTO
+    href: NuvTools.Payment.DTOs.PaymentMethodDTO.html
+  - name: )
+  - name: )
+- uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.SetDefaultPaymentMethodAsync*
+  commentId: Overload:NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.SetDefaultPaymentMethodAsync
+  href: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.html#NuvTools_Payment_Stripe_ApiClient_Services_StripeCustomerApiClient_SetDefaultPaymentMethodAsync_System_String_System_String_System_Threading_CancellationToken_
+  name: SetDefaultPaymentMethodAsync
+  nameWithType: StripeCustomerApiClient.SetDefaultPaymentMethodAsync
+  fullName: NuvTools.Payment.Stripe.ApiClient.Services.StripeCustomerApiClient.SetDefaultPaymentMethodAsync
+- uid: NuvTools.Payment.Contracts.IPaymentCustomerClient.SetDefaultPaymentMethodAsync(System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Contracts.IPaymentCustomerClient.SetDefaultPaymentMethodAsync(System.String,System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Contracts.IPaymentCustomerClient
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: SetDefaultPaymentMethodAsync(string, string, CancellationToken)
+  nameWithType: IPaymentCustomerClient.SetDefaultPaymentMethodAsync(string, string, CancellationToken)
+  fullName: NuvTools.Payment.Contracts.IPaymentCustomerClient.SetDefaultPaymentMethodAsync(string, string, System.Threading.CancellationToken)
+  nameWithType.vb: IPaymentCustomerClient.SetDefaultPaymentMethodAsync(String, String, CancellationToken)
+  fullName.vb: NuvTools.Payment.Contracts.IPaymentCustomerClient.SetDefaultPaymentMethodAsync(String, String, System.Threading.CancellationToken)
+  name.vb: SetDefaultPaymentMethodAsync(String, String, CancellationToken)
+  spec.csharp:
+  - uid: NuvTools.Payment.Contracts.IPaymentCustomerClient.SetDefaultPaymentMethodAsync(System.String,System.String,System.Threading.CancellationToken)
+    name: SetDefaultPaymentMethodAsync
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Payment.Contracts.IPaymentCustomerClient.SetDefaultPaymentMethodAsync(System.String,System.String,System.Threading.CancellationToken)
+    name: SetDefaultPaymentMethodAsync
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )

@@ -1,0 +1,686 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail
+  commentId: T:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail
+  id: OmieServiceDetail
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  children:
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.#ctor(System.Int64,System.String,System.String,System.Decimal,System.String,System.String,System.String)
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.Code
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.Description
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.Lc116Code
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.MunicipalServiceCode
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.ServiceCode
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.TaxClassification
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.UnitPrice
+  langs:
+  - csharp
+  - vb
+  name: OmieServiceDetail
+  nameWithType: OmieServiceDetail
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail
+  type: Class
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: >-
+    The full registration of a service (<code>ConsultarCadastroServico</code>). The listing does not carry these fields and
+
+    including a service order requires them on every item: LC 116 service code, municipal service code and tax
+
+    classification. None of them can be invented — when they are missing from the Omie registration, the caller
+
+    should stop and say which service to fix.
+  example: []
+  syntax:
+    content: 'public record OmieServiceDetail : IEquatable<OmieServiceDetail>'
+    content.vb: Public Class OmieServiceDetail Implements IEquatable(Of OmieServiceDetail)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.#ctor(System.Int64,System.String,System.String,System.Decimal,System.String,System.String,System.String)
+  commentId: M:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.#ctor(System.Int64,System.String,System.String,System.Decimal,System.String,System.String,System.String)
+  id: '#ctor(System.Int64,System.String,System.String,System.Decimal,System.String,System.String,System.String)'
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail
+  langs:
+  - csharp
+  - vb
+  name: OmieServiceDetail(long, string?, string?, decimal, string?, string?, string?)
+  nameWithType: OmieServiceDetail.OmieServiceDetail(long, string?, string?, decimal, string?, string?, string?)
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.OmieServiceDetail(long, string?, string?, decimal, string?, string?, string?)
+  type: Constructor
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: >-
+    The full registration of a service (<code>ConsultarCadastroServico</code>). The listing does not carry these fields and
+
+    including a service order requires them on every item: LC 116 service code, municipal service code and tax
+
+    classification. None of them can be invented — when they are missing from the Omie registration, the caller
+
+    should stop and say which service to fix.
+  example: []
+  syntax:
+    content: public OmieServiceDetail(long ServiceCode, string? Code, string? Description, decimal UnitPrice, string? Lc116Code, string? MunicipalServiceCode, string? TaxClassification)
+    parameters:
+    - id: ServiceCode
+      type: System.Int64
+      description: Omie's internal service identifier (<code>nCodServico</code>).
+    - id: Code
+      type: System.String
+      description: Business code (<code>cCodigo</code>).
+    - id: Description
+      type: System.String
+      description: Service description.
+    - id: UnitPrice
+      type: System.Decimal
+      description: Registered unit price.
+    - id: Lc116Code
+      type: System.String
+      description: LC 116 service code.
+    - id: MunicipalServiceCode
+      type: System.String
+      description: Service code within the municipality.
+    - id: TaxClassification
+      type: System.String
+      description: Tax classification of the service.
+    content.vb: Public Sub New(ServiceCode As Long, Code As String, Description As String, UnitPrice As Decimal, Lc116Code As String, MunicipalServiceCode As String, TaxClassification As String)
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.#ctor*
+  nameWithType.vb: OmieServiceDetail.New(Long, String, String, Decimal, String, String, String)
+  fullName.vb: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.New(Long, String, String, Decimal, String, String, String)
+  name.vb: New(Long, String, String, Decimal, String, String, String)
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.ServiceCode
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.ServiceCode
+  id: ServiceCode
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail
+  langs:
+  - csharp
+  - vb
+  name: ServiceCode
+  nameWithType: OmieServiceDetail.ServiceCode
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.ServiceCode
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: Omie's internal service identifier (<code>nCodServico</code>).
+  example: []
+  syntax:
+    content: public long ServiceCode { get; init; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public Property ServiceCode As Long
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.ServiceCode*
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.Code
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.Code
+  id: Code
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail
+  langs:
+  - csharp
+  - vb
+  name: Code
+  nameWithType: OmieServiceDetail.Code
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.Code
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: Business code (<code>cCodigo</code>).
+  example: []
+  syntax:
+    content: public string? Code { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Code As String
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.Code*
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.Description
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.Description
+  id: Description
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail
+  langs:
+  - csharp
+  - vb
+  name: Description
+  nameWithType: OmieServiceDetail.Description
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.Description
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: Service description.
+  example: []
+  syntax:
+    content: public string? Description { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Description As String
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.Description*
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.UnitPrice
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.UnitPrice
+  id: UnitPrice
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail
+  langs:
+  - csharp
+  - vb
+  name: UnitPrice
+  nameWithType: OmieServiceDetail.UnitPrice
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.UnitPrice
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: Registered unit price.
+  example: []
+  syntax:
+    content: public decimal UnitPrice { get; init; }
+    parameters: []
+    return:
+      type: System.Decimal
+    content.vb: Public Property UnitPrice As Decimal
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.UnitPrice*
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.Lc116Code
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.Lc116Code
+  id: Lc116Code
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail
+  langs:
+  - csharp
+  - vb
+  name: Lc116Code
+  nameWithType: OmieServiceDetail.Lc116Code
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.Lc116Code
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: LC 116 service code.
+  example: []
+  syntax:
+    content: public string? Lc116Code { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Lc116Code As String
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.Lc116Code*
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.MunicipalServiceCode
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.MunicipalServiceCode
+  id: MunicipalServiceCode
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail
+  langs:
+  - csharp
+  - vb
+  name: MunicipalServiceCode
+  nameWithType: OmieServiceDetail.MunicipalServiceCode
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.MunicipalServiceCode
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: Service code within the municipality.
+  example: []
+  syntax:
+    content: public string? MunicipalServiceCode { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property MunicipalServiceCode As String
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.MunicipalServiceCode*
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.TaxClassification
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.TaxClassification
+  id: TaxClassification
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail
+  langs:
+  - csharp
+  - vb
+  name: TaxClassification
+  nameWithType: OmieServiceDetail.TaxClassification
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.TaxClassification
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: Tax classification of the service.
+  example: []
+  syntax:
+    content: public string? TaxClassification { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property TaxClassification As String
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.TaxClassification*
+references:
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  commentId: N:NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  name: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  nameWithType: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Omie
+    name: Omie
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient
+    name: ApiClient
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs
+    name: DTOs
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+    name: Responses
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Omie
+    name: Omie
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient
+    name: ApiClient
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs
+    name: DTOs
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+    name: Responses
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail}
+  commentId: T:System.IEquatable{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<OmieServiceDetail>
+  nameWithType: IEquatable<OmieServiceDetail>
+  fullName: System.IEquatable<NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail>
+  nameWithType.vb: IEquatable(Of OmieServiceDetail)
+  fullName.vb: System.IEquatable(Of NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail)
+  name.vb: IEquatable(Of OmieServiceDetail)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail
+    name: OmieServiceDetail
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail
+    name: OmieServiceDetail
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.#ctor*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.#ctor
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceDetail__ctor_System_Int64_System_String_System_String_System_Decimal_System_String_System_String_System_String_
+  name: OmieServiceDetail
+  nameWithType: OmieServiceDetail.OmieServiceDetail
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.OmieServiceDetail
+  nameWithType.vb: OmieServiceDetail.New
+  fullName.vb: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.New
+  name.vb: New
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long
+  nameWithType: long
+  fullName: long
+  nameWithType.vb: Long
+  fullName.vb: Long
+  name.vb: Long
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Decimal
+  commentId: T:System.Decimal
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.decimal
+  name: decimal
+  nameWithType: decimal
+  fullName: decimal
+  nameWithType.vb: Decimal
+  fullName.vb: Decimal
+  name.vb: Decimal
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.ServiceCode*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.ServiceCode
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceDetail_ServiceCode
+  name: ServiceCode
+  nameWithType: OmieServiceDetail.ServiceCode
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.ServiceCode
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.Code*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.Code
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceDetail_Code
+  name: Code
+  nameWithType: OmieServiceDetail.Code
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.Code
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.Description*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.Description
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceDetail_Description
+  name: Description
+  nameWithType: OmieServiceDetail.Description
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.Description
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.UnitPrice*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.UnitPrice
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceDetail_UnitPrice
+  name: UnitPrice
+  nameWithType: OmieServiceDetail.UnitPrice
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.UnitPrice
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.Lc116Code*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.Lc116Code
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceDetail_Lc116Code
+  name: Lc116Code
+  nameWithType: OmieServiceDetail.Lc116Code
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.Lc116Code
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.MunicipalServiceCode*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.MunicipalServiceCode
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceDetail_MunicipalServiceCode
+  name: MunicipalServiceCode
+  nameWithType: OmieServiceDetail.MunicipalServiceCode
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.MunicipalServiceCode
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.TaxClassification*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.TaxClassification
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceDetail_TaxClassification
+  name: TaxClassification
+  nameWithType: OmieServiceDetail.TaxClassification
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.TaxClassification

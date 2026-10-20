@@ -1,0 +1,2302 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3
+  commentId: T:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3
+  id: MudTablePageBase`3
+  parent: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  children:
+  - NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.CreateDefaultFilter
+  - NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.CurrentPage
+  - NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.FetchDataAsync(`1,System.Threading.CancellationToken)
+  - NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.GetSortDirection
+  - NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.GetSortLabel
+  - NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.HasNextPage
+  - NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.IsFirstPage
+  - NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.LoadingService
+  - NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.MapSortLabelToOrdering(System.String)
+  - NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.ModelFilter
+  - NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.NextPageAsync
+  - NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnDataLoadedAsync(NuvTools.Data.Paging.PagingWithEnumerableList{`0})
+  - NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnFetchDataFailed(NuvTools.Common.ResultWrapper.IResult)
+  - NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnInitializedAsync
+  - NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnInitializedFilterAsync
+  - NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnInitializingAsync
+  - NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.PagedData
+  - NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.PreviousPageAsync
+  - NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.ReloadTableAsync
+  - NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.SaveFilterAsync
+  - NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.ServerReload(MudBlazor.TableState,System.Threading.CancellationToken)
+  - NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.SessionStorage
+  - NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.SessionStorageKey
+  - NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.Table
+  langs:
+  - csharp
+  - vb
+  name: MudTablePageBase<TItem, TFilter, TOrdering>
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>
+  type: Class
+  assemblies:
+  - NuvTools.AspNetCore.Blazor.MudBlazor
+  namespace: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  summary: Abstract base class for pages with server-side paged lists using MudBlazor MudTable.
+  remarks: >-
+    <p>This base class provides:</p>
+
+    <ul><li>Session storage persistence for filter state</li><li>Integration with <xref href="NuvTools.AspNetCore.Blazor.Services.ILoadingService" data-throw-if-not-resolved="false"></xref> for loading indicators</li><li>MudTable server-side data binding</li><li>Sort direction mapping between NuvTools and MudBlazor</li><li>Support for <xref href="NuvTools.Data.Paging.Enumerations.PagingCountMode.SkipCount" data-throw-if-not-resolved="false"></xref> to avoid expensive COUNT queries on large datasets</li></ul>
+  example:
+  - >-
+    <pre><code class="lang-csharp">public class UserListPage : MudTablePageBase&lt;UserDto, UserFilter, UserSortColumn&gt;
+
+    {
+        [Inject] private IUserService UserService { get; set; } = default!;
+
+        protected override string SessionStorageKey =&gt; "user-list-filter";
+
+        protected override UserFilter CreateDefaultFilter() =&gt; new()
+        {
+            SortColumn = UserSortColumn.Name,
+            PageSize = 25
+        };
+
+        protected override async Task&lt;IResult&lt;PagingWithEnumerableList&lt;UserDto&gt;&gt;&gt; FetchDataAsync(
+            UserFilter filter, CancellationToken cancellationToken)
+        {
+            return await UserService.GetUsersAsync(filter, cancellationToken);
+        }
+
+        protected override UserSortColumn MapSortLabelToOrdering(string sortLabel)
+        {
+            return Enum.Parse&lt;UserSortColumn&gt;(sortLabel);
+        }
+    }</code></pre>
+  syntax:
+    content: 'public abstract class MudTablePageBase<TItem, TFilter, TOrdering> : ComponentBase, IComponent, IHandleEvent, IHandleAfterRender where TFilter : PagingFilter<TOrdering> where TOrdering : struct, Enum'
+    typeParameters:
+    - id: TItem
+      description: The type of DTO displayed in the table.
+    - id: TFilter
+      description: The filter type that inherits from <xref href="NuvTools.Data.Paging.PagingFilter%601" data-throw-if-not-resolved="false"></xref>.
+    - id: TOrdering
+      description: The enum type for sorting options.
+    content.vb: Public MustInherit Class MudTablePageBase(Of TItem, TFilter As PagingFilter(Of TOrdering), TOrdering As {Structure, [Enum]}) Inherits ComponentBase Implements IComponent, IHandleEvent, IHandleAfterRender
+  inheritance:
+  - System.Object
+  - Microsoft.AspNetCore.Components.ComponentBase
+  implements:
+  - Microsoft.AspNetCore.Components.IComponent
+  - Microsoft.AspNetCore.Components.IHandleEvent
+  - Microsoft.AspNetCore.Components.IHandleAfterRender
+  inheritedMembers:
+  - Microsoft.AspNetCore.Components.ComponentBase.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
+  - Microsoft.AspNetCore.Components.ComponentBase.OnInitialized
+  - Microsoft.AspNetCore.Components.ComponentBase.OnParametersSet
+  - Microsoft.AspNetCore.Components.ComponentBase.OnParametersSetAsync
+  - Microsoft.AspNetCore.Components.ComponentBase.StateHasChanged
+  - Microsoft.AspNetCore.Components.ComponentBase.ShouldRender
+  - Microsoft.AspNetCore.Components.ComponentBase.OnAfterRender(System.Boolean)
+  - Microsoft.AspNetCore.Components.ComponentBase.OnAfterRenderAsync(System.Boolean)
+  - Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Action)
+  - Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Func{System.Threading.Tasks.Task})
+  - Microsoft.AspNetCore.Components.ComponentBase.DispatchExceptionAsync(System.Exception)
+  - Microsoft.AspNetCore.Components.ComponentBase.SetParametersAsync(Microsoft.AspNetCore.Components.ParameterView)
+  - Microsoft.AspNetCore.Components.ComponentBase.RendererInfo
+  - Microsoft.AspNetCore.Components.ComponentBase.Assets
+  - Microsoft.AspNetCore.Components.ComponentBase.AssignedRenderMode
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering)
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering)
+  name.vb: MudTablePageBase(Of TItem, TFilter, TOrdering)
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.SessionStorage
+  commentId: P:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.SessionStorage
+  id: SessionStorage
+  parent: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3
+  langs:
+  - csharp
+  - vb
+  name: SessionStorage
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.SessionStorage
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.SessionStorage
+  type: Property
+  assemblies:
+  - NuvTools.AspNetCore.Blazor.MudBlazor
+  namespace: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  summary: Gets or sets the session storage service for persisting filter state.
+  example: []
+  syntax:
+    content: >-
+      [Inject]
+
+      protected ISessionStorageService SessionStorage { get; set; }
+    parameters: []
+    return:
+      type: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService
+    content.vb: >-
+      <Inject>
+
+      Protected Property SessionStorage As ISessionStorageService
+  overload: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.SessionStorage*
+  attributes:
+  - type: Microsoft.AspNetCore.Components.InjectAttribute
+    ctor: Microsoft.AspNetCore.Components.InjectAttribute.#ctor
+    arguments: []
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).SessionStorage
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).SessionStorage
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.LoadingService
+  commentId: P:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.LoadingService
+  id: LoadingService
+  parent: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3
+  langs:
+  - csharp
+  - vb
+  name: LoadingService
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.LoadingService
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.LoadingService
+  type: Property
+  assemblies:
+  - NuvTools.AspNetCore.Blazor.MudBlazor
+  namespace: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  summary: >-
+    Gets or sets the loading service for managing loading indicator state.
+
+    This service is optional and null-safe.
+  example: []
+  syntax:
+    content: >-
+      [Inject]
+
+      protected ILoadingService? LoadingService { get; set; }
+    parameters: []
+    return:
+      type: NuvTools.AspNetCore.Blazor.Services.ILoadingService
+    content.vb: >-
+      <Inject>
+
+      Protected Property LoadingService As ILoadingService
+  overload: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.LoadingService*
+  attributes:
+  - type: Microsoft.AspNetCore.Components.InjectAttribute
+    ctor: Microsoft.AspNetCore.Components.InjectAttribute.#ctor
+    arguments: []
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).LoadingService
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).LoadingService
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.SessionStorageKey
+  commentId: P:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.SessionStorageKey
+  id: SessionStorageKey
+  parent: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3
+  langs:
+  - csharp
+  - vb
+  name: SessionStorageKey
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.SessionStorageKey
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.SessionStorageKey
+  type: Property
+  assemblies:
+  - NuvTools.AspNetCore.Blazor.MudBlazor
+  namespace: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  summary: Gets the session storage key for persisting the filter state.
+  example: []
+  syntax:
+    content: protected abstract string SessionStorageKey { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Protected MustOverride ReadOnly Property SessionStorageKey As String
+  overload: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.SessionStorageKey*
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).SessionStorageKey
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).SessionStorageKey
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.ModelFilter
+  commentId: P:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.ModelFilter
+  id: ModelFilter
+  parent: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3
+  langs:
+  - csharp
+  - vb
+  name: ModelFilter
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.ModelFilter
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.ModelFilter
+  type: Property
+  assemblies:
+  - NuvTools.AspNetCore.Blazor.MudBlazor
+  namespace: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  summary: Gets or sets the current filter model.
+  example: []
+  syntax:
+    content: public TFilter ModelFilter { get; set; }
+    parameters: []
+    return:
+      type: '{TFilter}'
+    content.vb: Public Property ModelFilter As TFilter
+  overload: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.ModelFilter*
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).ModelFilter
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).ModelFilter
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.PagedData
+  commentId: P:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.PagedData
+  id: PagedData
+  parent: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3
+  langs:
+  - csharp
+  - vb
+  name: PagedData
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.PagedData
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.PagedData
+  type: Property
+  assemblies:
+  - NuvTools.AspNetCore.Blazor.MudBlazor
+  namespace: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  summary: Gets or sets the paged data returned from the API.
+  example: []
+  syntax:
+    content: public PagingWithEnumerableList<TItem>? PagedData { get; set; }
+    parameters: []
+    return:
+      type: NuvTools.Data.Paging.PagingWithEnumerableList{{TItem}}
+    content.vb: Public Property PagedData As PagingWithEnumerableList(Of TItem)
+  overload: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.PagedData*
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).PagedData
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).PagedData
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.Table
+  commentId: P:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.Table
+  id: Table
+  parent: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3
+  langs:
+  - csharp
+  - vb
+  name: Table
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.Table
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.Table
+  type: Property
+  assemblies:
+  - NuvTools.AspNetCore.Blazor.MudBlazor
+  namespace: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  summary: Gets or sets the reference to the MudTable component.
+  example: []
+  syntax:
+    content: public MudTable<TItem> Table { get; set; }
+    parameters: []
+    return:
+      type: MudBlazor.MudTable{{TItem}}
+    content.vb: Public Property Table As MudTable(Of TItem)
+  overload: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.Table*
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).Table
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).Table
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.HasNextPage
+  commentId: P:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.HasNextPage
+  id: HasNextPage
+  parent: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3
+  langs:
+  - csharp
+  - vb
+  name: HasNextPage
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.HasNextPage
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.HasNextPage
+  type: Property
+  assemblies:
+  - NuvTools.AspNetCore.Blazor.MudBlazor
+  namespace: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  summary: >-
+    Gets whether the current paged data has more items beyond the current page.
+
+    Useful for infinite scroll or forward-only navigation scenarios with <xref href="NuvTools.Data.Paging.Enumerations.PagingCountMode.SkipCount" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public bool HasNextPage { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property HasNextPage As Boolean
+  overload: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.HasNextPage*
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).HasNextPage
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).HasNextPage
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.IsFirstPage
+  commentId: P:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.IsFirstPage
+  id: IsFirstPage
+  parent: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3
+  langs:
+  - csharp
+  - vb
+  name: IsFirstPage
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.IsFirstPage
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.IsFirstPage
+  type: Property
+  assemblies:
+  - NuvTools.AspNetCore.Blazor.MudBlazor
+  namespace: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  summary: Gets whether the current page is the first page (page index is 0).
+  example: []
+  syntax:
+    content: public bool IsFirstPage { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsFirstPage As Boolean
+  overload: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.IsFirstPage*
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).IsFirstPage
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).IsFirstPage
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.CurrentPage
+  commentId: P:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.CurrentPage
+  id: CurrentPage
+  parent: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3
+  langs:
+  - csharp
+  - vb
+  name: CurrentPage
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.CurrentPage
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.CurrentPage
+  type: Property
+  assemblies:
+  - NuvTools.AspNetCore.Blazor.MudBlazor
+  namespace: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  summary: Gets or sets the current page index (0-based, same as MudBlazor and NuvTools.Data).
+  example: []
+  syntax:
+    content: public int CurrentPage { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property CurrentPage As Integer
+  overload: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.CurrentPage*
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).CurrentPage
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).CurrentPage
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.CreateDefaultFilter
+  commentId: M:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.CreateDefaultFilter
+  id: CreateDefaultFilter
+  parent: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3
+  langs:
+  - csharp
+  - vb
+  name: CreateDefaultFilter()
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.CreateDefaultFilter()
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.CreateDefaultFilter()
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor.MudBlazor
+  namespace: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  summary: Creates the default filter when no stored filter exists.
+  example: []
+  syntax:
+    content: protected abstract TFilter CreateDefaultFilter()
+    return:
+      type: '{TFilter}'
+      description: A new instance of the filter with default values.
+    content.vb: Protected MustOverride Function CreateDefaultFilter() As TFilter
+  overload: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.CreateDefaultFilter*
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).CreateDefaultFilter()
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).CreateDefaultFilter()
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.FetchDataAsync(`1,System.Threading.CancellationToken)
+  commentId: M:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.FetchDataAsync(`1,System.Threading.CancellationToken)
+  id: FetchDataAsync(`1,System.Threading.CancellationToken)
+  parent: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3
+  langs:
+  - csharp
+  - vb
+  name: FetchDataAsync(TFilter, CancellationToken)
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.FetchDataAsync(TFilter, CancellationToken)
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.FetchDataAsync(TFilter, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor.MudBlazor
+  namespace: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  summary: Fetches data from the API service.
+  example: []
+  syntax:
+    content: protected abstract Task<IResult<PagingWithEnumerableList<TItem>>> FetchDataAsync(TFilter filter, CancellationToken cancellationToken)
+    parameters:
+    - id: filter
+      type: '{TFilter}'
+      description: The filter to apply.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: The cancellation token.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Data.Paging.PagingWithEnumerableList{{TItem}}}}
+      description: The paged result containing the data.
+    content.vb: Protected MustOverride Function FetchDataAsync(filter As TFilter, cancellationToken As CancellationToken) As Task(Of IResult(Of PagingWithEnumerableList(Of TItem)))
+  overload: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.FetchDataAsync*
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).FetchDataAsync(TFilter, CancellationToken)
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).FetchDataAsync(TFilter, System.Threading.CancellationToken)
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.MapSortLabelToOrdering(System.String)
+  commentId: M:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.MapSortLabelToOrdering(System.String)
+  id: MapSortLabelToOrdering(System.String)
+  parent: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3
+  langs:
+  - csharp
+  - vb
+  name: MapSortLabelToOrdering(string)
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.MapSortLabelToOrdering(string)
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.MapSortLabelToOrdering(string)
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor.MudBlazor
+  namespace: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  summary: Maps a MudBlazor sort label string to the ordering enum value.
+  example: []
+  syntax:
+    content: protected abstract TOrdering MapSortLabelToOrdering(string sortLabel)
+    parameters:
+    - id: sortLabel
+      type: System.String
+      description: The sort label from MudBlazor.
+    return:
+      type: '{TOrdering}'
+      description: The corresponding enum value.
+    content.vb: Protected MustOverride Function MapSortLabelToOrdering(sortLabel As String) As TOrdering
+  overload: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.MapSortLabelToOrdering*
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).MapSortLabelToOrdering(String)
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).MapSortLabelToOrdering(String)
+  name.vb: MapSortLabelToOrdering(String)
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.GetSortLabel
+  commentId: M:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.GetSortLabel
+  id: GetSortLabel
+  parent: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3
+  langs:
+  - csharp
+  - vb
+  name: GetSortLabel()
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.GetSortLabel()
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.GetSortLabel()
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor.MudBlazor
+  namespace: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  summary: >-
+    Converts the current ordering enum value to a sort label string.
+
+    Default implementation uses <xref href="System.Enum.ToString" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public virtual string GetSortLabel()
+    return:
+      type: System.String
+      description: The sort label string.
+    content.vb: Public Overridable Function GetSortLabel() As String
+  overload: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.GetSortLabel*
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).GetSortLabel()
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).GetSortLabel()
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.GetSortDirection
+  commentId: M:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.GetSortDirection
+  id: GetSortDirection
+  parent: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3
+  langs:
+  - csharp
+  - vb
+  name: GetSortDirection()
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.GetSortDirection()
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.GetSortDirection()
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor.MudBlazor
+  namespace: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  summary: Converts NuvTools SortDirection to MudBlazor SortDirection.
+  example: []
+  syntax:
+    content: public SortDirection GetSortDirection()
+    return:
+      type: MudBlazor.SortDirection
+      description: The MudBlazor sort direction.
+    content.vb: Public Function GetSortDirection() As SortDirection
+  overload: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.GetSortDirection*
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).GetSortDirection()
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).GetSortDirection()
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnInitializingAsync
+  commentId: M:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnInitializingAsync
+  id: OnInitializingAsync
+  parent: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3
+  langs:
+  - csharp
+  - vb
+  name: OnInitializingAsync()
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.OnInitializingAsync()
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.OnInitializingAsync()
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor.MudBlazor
+  namespace: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  summary: >-
+    Called during <xref href="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase%603.OnInitializedAsync" data-throw-if-not-resolved="false"></xref> before filter initialization.
+
+    Override to perform additional setup.
+  example: []
+  syntax:
+    content: protected virtual Task OnInitializingAsync()
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task representing the asynchronous operation.
+    content.vb: Protected Overridable Function OnInitializingAsync() As Task
+  overload: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnInitializingAsync*
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).OnInitializingAsync()
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).OnInitializingAsync()
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnInitializedFilterAsync
+  commentId: M:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnInitializedFilterAsync
+  id: OnInitializedFilterAsync
+  parent: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3
+  langs:
+  - csharp
+  - vb
+  name: OnInitializedFilterAsync()
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.OnInitializedFilterAsync()
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.OnInitializedFilterAsync()
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor.MudBlazor
+  namespace: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  summary: >-
+    Called during <xref href="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase%603.OnInitializedAsync" data-throw-if-not-resolved="false"></xref> after filter initialization.
+
+    Override to load lookup data, breadcrumbs, etc.
+  example: []
+  syntax:
+    content: protected virtual Task OnInitializedFilterAsync()
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task representing the asynchronous operation.
+    content.vb: Protected Overridable Function OnInitializedFilterAsync() As Task
+  overload: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnInitializedFilterAsync*
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).OnInitializedFilterAsync()
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).OnInitializedFilterAsync()
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnInitializedAsync
+  commentId: M:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnInitializedAsync
+  id: OnInitializedAsync
+  parent: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3
+  langs:
+  - csharp
+  - vb
+  name: OnInitializedAsync()
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.OnInitializedAsync()
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.OnInitializedAsync()
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor.MudBlazor
+  namespace: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  summary: >-
+    Method invoked when the component is ready to start, having received its
+
+    initial parameters from its parent in the render tree.
+
+
+    Override this method if you will perform an asynchronous operation and
+
+    want the component to refresh when that operation is completed.
+  example: []
+  syntax:
+    content: protected override Task OnInitializedAsync()
+    return:
+      type: System.Threading.Tasks.Task
+      description: A <xref href="System.Threading.Tasks.Task" data-throw-if-not-resolved="false"></xref> representing any asynchronous operation.
+    content.vb: Protected Overrides Function OnInitializedAsync() As Task
+  overridden: Microsoft.AspNetCore.Components.ComponentBase.OnInitializedAsync
+  overload: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnInitializedAsync*
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).OnInitializedAsync()
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).OnInitializedAsync()
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnDataLoadedAsync(NuvTools.Data.Paging.PagingWithEnumerableList{`0})
+  commentId: M:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnDataLoadedAsync(NuvTools.Data.Paging.PagingWithEnumerableList{`0})
+  id: OnDataLoadedAsync(NuvTools.Data.Paging.PagingWithEnumerableList{`0})
+  parent: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3
+  langs:
+  - csharp
+  - vb
+  name: OnDataLoadedAsync(PagingWithEnumerableList<TItem>)
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.OnDataLoadedAsync(PagingWithEnumerableList<TItem>)
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.OnDataLoadedAsync(NuvTools.Data.Paging.PagingWithEnumerableList<TItem>)
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor.MudBlazor
+  namespace: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  summary: >-
+    Called after data is successfully loaded.
+
+    Override to perform post-load operations.
+  example: []
+  syntax:
+    content: protected virtual Task OnDataLoadedAsync(PagingWithEnumerableList<TItem> data)
+    parameters:
+    - id: data
+      type: NuvTools.Data.Paging.PagingWithEnumerableList{{TItem}}
+      description: The loaded paged data.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task representing the asynchronous operation.
+    content.vb: Protected Overridable Function OnDataLoadedAsync(data As PagingWithEnumerableList(Of TItem)) As Task
+  overload: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnDataLoadedAsync*
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).OnDataLoadedAsync(PagingWithEnumerableList(Of TItem))
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).OnDataLoadedAsync(NuvTools.Data.Paging.PagingWithEnumerableList(Of TItem))
+  name.vb: OnDataLoadedAsync(PagingWithEnumerableList(Of TItem))
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnFetchDataFailed(NuvTools.Common.ResultWrapper.IResult)
+  commentId: M:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnFetchDataFailed(NuvTools.Common.ResultWrapper.IResult)
+  id: OnFetchDataFailed(NuvTools.Common.ResultWrapper.IResult)
+  parent: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3
+  langs:
+  - csharp
+  - vb
+  name: OnFetchDataFailed(IResult)
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.OnFetchDataFailed(IResult)
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.OnFetchDataFailed(NuvTools.Common.ResultWrapper.IResult)
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor.MudBlazor
+  namespace: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  summary: Called when data fetch fails. Override to customize error handling.
+  example: []
+  syntax:
+    content: protected virtual void OnFetchDataFailed(IResult result)
+    parameters:
+    - id: result
+      type: NuvTools.Common.ResultWrapper.IResult
+      description: The failed result containing error details.
+    content.vb: Protected Overridable Sub OnFetchDataFailed(result As IResult)
+  overload: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnFetchDataFailed*
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).OnFetchDataFailed(IResult)
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).OnFetchDataFailed(NuvTools.Common.ResultWrapper.IResult)
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.SaveFilterAsync
+  commentId: M:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.SaveFilterAsync
+  id: SaveFilterAsync
+  parent: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3
+  langs:
+  - csharp
+  - vb
+  name: SaveFilterAsync()
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.SaveFilterAsync()
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.SaveFilterAsync()
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor.MudBlazor
+  namespace: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  summary: >-
+    Called to save the filter to session storage.
+
+    Override to customize save behavior (e.g., exclude transient properties from filter).
+  example: []
+  syntax:
+    content: protected virtual Task SaveFilterAsync()
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task representing the asynchronous operation.
+    content.vb: Protected Overridable Function SaveFilterAsync() As Task
+  overload: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.SaveFilterAsync*
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).SaveFilterAsync()
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).SaveFilterAsync()
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.ServerReload(MudBlazor.TableState,System.Threading.CancellationToken)
+  commentId: M:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.ServerReload(MudBlazor.TableState,System.Threading.CancellationToken)
+  id: ServerReload(MudBlazor.TableState,System.Threading.CancellationToken)
+  parent: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3
+  langs:
+  - csharp
+  - vb
+  name: ServerReload(TableState, CancellationToken)
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.ServerReload(TableState, CancellationToken)
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.ServerReload(MudBlazor.TableState, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor.MudBlazor
+  namespace: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  summary: Server reload method for MudTable binding.
+  example: []
+  syntax:
+    content: public Task<TableData<TItem>> ServerReload(TableState state, CancellationToken cancellationToken)
+    parameters:
+    - id: state
+      type: MudBlazor.TableState
+      description: The table state from MudBlazor.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: The cancellation token.
+    return:
+      type: System.Threading.Tasks.Task{MudBlazor.TableData{{TItem}}}
+      description: The table data for MudBlazor.
+    content.vb: Public Function ServerReload(state As TableState, cancellationToken As CancellationToken) As Task(Of TableData(Of TItem))
+  overload: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.ServerReload*
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).ServerReload(TableState, CancellationToken)
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).ServerReload(MudBlazor.TableState, System.Threading.CancellationToken)
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.NextPageAsync
+  commentId: M:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.NextPageAsync
+  id: NextPageAsync
+  parent: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3
+  langs:
+  - csharp
+  - vb
+  name: NextPageAsync()
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.NextPageAsync()
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.NextPageAsync()
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor.MudBlazor
+  namespace: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  summary: Navigates to the next page. Useful for custom navigation with <xref href="NuvTools.Data.Paging.Enumerations.PagingCountMode.SkipCount" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: protected Task NextPageAsync()
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task representing the asynchronous operation.
+    content.vb: Protected Function NextPageAsync() As Task
+  overload: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.NextPageAsync*
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).NextPageAsync()
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).NextPageAsync()
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.PreviousPageAsync
+  commentId: M:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.PreviousPageAsync
+  id: PreviousPageAsync
+  parent: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3
+  langs:
+  - csharp
+  - vb
+  name: PreviousPageAsync()
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.PreviousPageAsync()
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.PreviousPageAsync()
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor.MudBlazor
+  namespace: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  summary: Navigates to the previous page. Useful for custom navigation with <xref href="NuvTools.Data.Paging.Enumerations.PagingCountMode.SkipCount" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: protected Task PreviousPageAsync()
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task representing the asynchronous operation.
+    content.vb: Protected Function PreviousPageAsync() As Task
+  overload: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.PreviousPageAsync*
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).PreviousPageAsync()
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).PreviousPageAsync()
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.ReloadTableAsync
+  commentId: M:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.ReloadTableAsync
+  id: ReloadTableAsync
+  parent: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3
+  langs:
+  - csharp
+  - vb
+  name: ReloadTableAsync()
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.ReloadTableAsync()
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.ReloadTableAsync()
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor.MudBlazor
+  namespace: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  summary: Helper method to reload the table data.
+  example: []
+  syntax:
+    content: protected Task ReloadTableAsync()
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task representing the asynchronous operation.
+    content.vb: Protected Function ReloadTableAsync() As Task
+  overload: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.ReloadTableAsync*
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).ReloadTableAsync()
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).ReloadTableAsync()
+references:
+- uid: NuvTools.Data.Paging.PagingFilter`1
+  commentId: T:NuvTools.Data.Paging.PagingFilter`1
+  isExternal: true
+  name: PagingFilter<T>
+  nameWithType: PagingFilter<T>
+  fullName: NuvTools.Data.Paging.PagingFilter<T>
+  nameWithType.vb: PagingFilter(Of T)
+  fullName.vb: NuvTools.Data.Paging.PagingFilter(Of T)
+  name.vb: PagingFilter(Of T)
+  spec.csharp:
+  - uid: NuvTools.Data.Paging.PagingFilter`1
+    name: PagingFilter
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: NuvTools.Data.Paging.PagingFilter`1
+    name: PagingFilter
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NuvTools.AspNetCore.Blazor.Services.ILoadingService
+  commentId: T:NuvTools.AspNetCore.Blazor.Services.ILoadingService
+  parent: NuvTools.AspNetCore.Blazor.Services
+  href: NuvTools.AspNetCore.Blazor.Services.ILoadingService.html
+  name: ILoadingService
+  nameWithType: ILoadingService
+  fullName: NuvTools.AspNetCore.Blazor.Services.ILoadingService
+- uid: NuvTools.Data.Paging.Enumerations.PagingCountMode.SkipCount
+  commentId: F:NuvTools.Data.Paging.Enumerations.PagingCountMode.SkipCount
+  isExternal: true
+  name: SkipCount
+  nameWithType: PagingCountMode.SkipCount
+  fullName: NuvTools.Data.Paging.Enumerations.PagingCountMode.SkipCount
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  commentId: N:NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  name: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  nameWithType: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.AspNetCore
+    name: AspNetCore
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor
+    name: Blazor
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor.MudBlazor
+    name: MudBlazor
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+    name: Components
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.AspNetCore
+    name: AspNetCore
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor
+    name: Blazor
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor.MudBlazor
+    name: MudBlazor
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components
+    name: Components
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Microsoft.AspNetCore.Components.ComponentBase
+  commentId: T:Microsoft.AspNetCore.Components.ComponentBase
+  parent: Microsoft.AspNetCore.Components
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase
+  name: ComponentBase
+  nameWithType: ComponentBase
+  fullName: Microsoft.AspNetCore.Components.ComponentBase
+- uid: Microsoft.AspNetCore.Components.IComponent
+  commentId: T:Microsoft.AspNetCore.Components.IComponent
+  parent: Microsoft.AspNetCore.Components
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.icomponent
+  name: IComponent
+  nameWithType: IComponent
+  fullName: Microsoft.AspNetCore.Components.IComponent
+- uid: Microsoft.AspNetCore.Components.IHandleEvent
+  commentId: T:Microsoft.AspNetCore.Components.IHandleEvent
+  parent: Microsoft.AspNetCore.Components
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.ihandleevent
+  name: IHandleEvent
+  nameWithType: IHandleEvent
+  fullName: Microsoft.AspNetCore.Components.IHandleEvent
+- uid: Microsoft.AspNetCore.Components.IHandleAfterRender
+  commentId: T:Microsoft.AspNetCore.Components.IHandleAfterRender
+  parent: Microsoft.AspNetCore.Components
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.ihandleafterrender
+  name: IHandleAfterRender
+  nameWithType: IHandleAfterRender
+  fullName: Microsoft.AspNetCore.Components.IHandleAfterRender
+- uid: Microsoft.AspNetCore.Components.ComponentBase.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
+  commentId: M:Microsoft.AspNetCore.Components.ComponentBase.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.buildrendertree
+  name: BuildRenderTree(RenderTreeBuilder)
+  nameWithType: ComponentBase.BuildRenderTree(RenderTreeBuilder)
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
+    name: BuildRenderTree
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.buildrendertree
+  - name: (
+  - uid: Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder
+    name: RenderTreeBuilder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.rendering.rendertreebuilder
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
+    name: BuildRenderTree
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.buildrendertree
+  - name: (
+  - uid: Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder
+    name: RenderTreeBuilder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.rendering.rendertreebuilder
+  - name: )
+- uid: Microsoft.AspNetCore.Components.ComponentBase.OnInitialized
+  commentId: M:Microsoft.AspNetCore.Components.ComponentBase.OnInitialized
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.oninitialized
+  name: OnInitialized()
+  nameWithType: ComponentBase.OnInitialized()
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.OnInitialized()
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.OnInitialized
+    name: OnInitialized
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.oninitialized
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.OnInitialized
+    name: OnInitialized
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.oninitialized
+  - name: (
+  - name: )
+- uid: Microsoft.AspNetCore.Components.ComponentBase.OnParametersSet
+  commentId: M:Microsoft.AspNetCore.Components.ComponentBase.OnParametersSet
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onparametersset
+  name: OnParametersSet()
+  nameWithType: ComponentBase.OnParametersSet()
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.OnParametersSet()
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.OnParametersSet
+    name: OnParametersSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onparametersset
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.OnParametersSet
+    name: OnParametersSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onparametersset
+  - name: (
+  - name: )
+- uid: Microsoft.AspNetCore.Components.ComponentBase.OnParametersSetAsync
+  commentId: M:Microsoft.AspNetCore.Components.ComponentBase.OnParametersSetAsync
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onparameterssetasync
+  name: OnParametersSetAsync()
+  nameWithType: ComponentBase.OnParametersSetAsync()
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.OnParametersSetAsync()
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.OnParametersSetAsync
+    name: OnParametersSetAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onparameterssetasync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.OnParametersSetAsync
+    name: OnParametersSetAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onparameterssetasync
+  - name: (
+  - name: )
+- uid: Microsoft.AspNetCore.Components.ComponentBase.StateHasChanged
+  commentId: M:Microsoft.AspNetCore.Components.ComponentBase.StateHasChanged
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.statehaschanged
+  name: StateHasChanged()
+  nameWithType: ComponentBase.StateHasChanged()
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.StateHasChanged()
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.StateHasChanged
+    name: StateHasChanged
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.statehaschanged
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.StateHasChanged
+    name: StateHasChanged
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.statehaschanged
+  - name: (
+  - name: )
+- uid: Microsoft.AspNetCore.Components.ComponentBase.ShouldRender
+  commentId: M:Microsoft.AspNetCore.Components.ComponentBase.ShouldRender
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.shouldrender
+  name: ShouldRender()
+  nameWithType: ComponentBase.ShouldRender()
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.ShouldRender()
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.ShouldRender
+    name: ShouldRender
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.shouldrender
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.ShouldRender
+    name: ShouldRender
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.shouldrender
+  - name: (
+  - name: )
+- uid: Microsoft.AspNetCore.Components.ComponentBase.OnAfterRender(System.Boolean)
+  commentId: M:Microsoft.AspNetCore.Components.ComponentBase.OnAfterRender(System.Boolean)
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onafterrender
+  name: OnAfterRender(bool)
+  nameWithType: ComponentBase.OnAfterRender(bool)
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.OnAfterRender(bool)
+  nameWithType.vb: ComponentBase.OnAfterRender(Boolean)
+  fullName.vb: Microsoft.AspNetCore.Components.ComponentBase.OnAfterRender(Boolean)
+  name.vb: OnAfterRender(Boolean)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.OnAfterRender(System.Boolean)
+    name: OnAfterRender
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onafterrender
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.OnAfterRender(System.Boolean)
+    name: OnAfterRender
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onafterrender
+  - name: (
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: Microsoft.AspNetCore.Components.ComponentBase.OnAfterRenderAsync(System.Boolean)
+  commentId: M:Microsoft.AspNetCore.Components.ComponentBase.OnAfterRenderAsync(System.Boolean)
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onafterrenderasync
+  name: OnAfterRenderAsync(bool)
+  nameWithType: ComponentBase.OnAfterRenderAsync(bool)
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.OnAfterRenderAsync(bool)
+  nameWithType.vb: ComponentBase.OnAfterRenderAsync(Boolean)
+  fullName.vb: Microsoft.AspNetCore.Components.ComponentBase.OnAfterRenderAsync(Boolean)
+  name.vb: OnAfterRenderAsync(Boolean)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.OnAfterRenderAsync(System.Boolean)
+    name: OnAfterRenderAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onafterrenderasync
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.OnAfterRenderAsync(System.Boolean)
+    name: OnAfterRenderAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onafterrenderasync
+  - name: (
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Action)
+  commentId: M:Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Action)
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.invokeasync#microsoft-aspnetcore-components-componentbase-invokeasync(system-action)
+  name: InvokeAsync(Action)
+  nameWithType: ComponentBase.InvokeAsync(Action)
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Action)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Action)
+    name: InvokeAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.invokeasync#microsoft-aspnetcore-components-componentbase-invokeasync(system-action)
+  - name: (
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Action)
+    name: InvokeAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.invokeasync#microsoft-aspnetcore-components-componentbase-invokeasync(system-action)
+  - name: (
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+- uid: Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Func{System.Threading.Tasks.Task})
+  commentId: M:Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Func{System.Threading.Tasks.Task})
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.invokeasync#microsoft-aspnetcore-components-componentbase-invokeasync(system-func((system-threading-tasks-task)))
+  name: InvokeAsync(Func<Task>)
+  nameWithType: ComponentBase.InvokeAsync(Func<Task>)
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Func<System.Threading.Tasks.Task>)
+  nameWithType.vb: ComponentBase.InvokeAsync(Func(Of Task))
+  fullName.vb: Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Func(Of System.Threading.Tasks.Task))
+  name.vb: InvokeAsync(Func(Of Task))
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Func{System.Threading.Tasks.Task})
+    name: InvokeAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.invokeasync#microsoft-aspnetcore-components-componentbase-invokeasync(system-func((system-threading-tasks-task)))
+  - name: (
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Func{System.Threading.Tasks.Task})
+    name: InvokeAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.invokeasync#microsoft-aspnetcore-components-componentbase-invokeasync(system-func((system-threading-tasks-task)))
+  - name: (
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: )
+  - name: )
+- uid: Microsoft.AspNetCore.Components.ComponentBase.DispatchExceptionAsync(System.Exception)
+  commentId: M:Microsoft.AspNetCore.Components.ComponentBase.DispatchExceptionAsync(System.Exception)
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.dispatchexceptionasync
+  name: DispatchExceptionAsync(Exception)
+  nameWithType: ComponentBase.DispatchExceptionAsync(Exception)
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.DispatchExceptionAsync(System.Exception)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.DispatchExceptionAsync(System.Exception)
+    name: DispatchExceptionAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.dispatchexceptionasync
+  - name: (
+  - uid: System.Exception
+    name: Exception
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.DispatchExceptionAsync(System.Exception)
+    name: DispatchExceptionAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.dispatchexceptionasync
+  - name: (
+  - uid: System.Exception
+    name: Exception
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception
+  - name: )
+- uid: Microsoft.AspNetCore.Components.ComponentBase.SetParametersAsync(Microsoft.AspNetCore.Components.ParameterView)
+  commentId: M:Microsoft.AspNetCore.Components.ComponentBase.SetParametersAsync(Microsoft.AspNetCore.Components.ParameterView)
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.setparametersasync
+  name: SetParametersAsync(ParameterView)
+  nameWithType: ComponentBase.SetParametersAsync(ParameterView)
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.SetParametersAsync(Microsoft.AspNetCore.Components.ParameterView)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.SetParametersAsync(Microsoft.AspNetCore.Components.ParameterView)
+    name: SetParametersAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.setparametersasync
+  - name: (
+  - uid: Microsoft.AspNetCore.Components.ParameterView
+    name: ParameterView
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.parameterview
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.SetParametersAsync(Microsoft.AspNetCore.Components.ParameterView)
+    name: SetParametersAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.setparametersasync
+  - name: (
+  - uid: Microsoft.AspNetCore.Components.ParameterView
+    name: ParameterView
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.parameterview
+  - name: )
+- uid: Microsoft.AspNetCore.Components.ComponentBase.RendererInfo
+  commentId: P:Microsoft.AspNetCore.Components.ComponentBase.RendererInfo
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.rendererinfo
+  name: RendererInfo
+  nameWithType: ComponentBase.RendererInfo
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.RendererInfo
+- uid: Microsoft.AspNetCore.Components.ComponentBase.Assets
+  commentId: P:Microsoft.AspNetCore.Components.ComponentBase.Assets
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.assets
+  name: Assets
+  nameWithType: ComponentBase.Assets
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.Assets
+- uid: Microsoft.AspNetCore.Components.ComponentBase.AssignedRenderMode
+  commentId: P:Microsoft.AspNetCore.Components.ComponentBase.AssignedRenderMode
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.assignedrendermode
+  name: AssignedRenderMode
+  nameWithType: ComponentBase.AssignedRenderMode
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.AssignedRenderMode
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: NuvTools.AspNetCore.Blazor.Services
+  commentId: N:NuvTools.AspNetCore.Blazor.Services
+  name: NuvTools.AspNetCore.Blazor.Services
+  nameWithType: NuvTools.AspNetCore.Blazor.Services
+  fullName: NuvTools.AspNetCore.Blazor.Services
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.AspNetCore
+    name: AspNetCore
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor
+    name: Blazor
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor.Services
+    name: Services
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.AspNetCore
+    name: AspNetCore
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor
+    name: Blazor
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor.Services
+    name: Services
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.AspNetCore.Components
+  commentId: N:Microsoft.AspNetCore.Components
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.AspNetCore.Components
+  nameWithType: Microsoft.AspNetCore.Components
+  fullName: Microsoft.AspNetCore.Components
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Components
+    name: Components
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Components
+    name: Components
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.SessionStorage*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.SessionStorage
+  href: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase-3.html#NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_SessionStorage
+  name: SessionStorage
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.SessionStorage
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.SessionStorage
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).SessionStorage
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).SessionStorage
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService
+  commentId: T:NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService
+  parent: NuvTools.AspNetCore.Blazor.JSInterop
+  href: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.html
+  name: ISessionStorageService
+  nameWithType: ISessionStorageService
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService
+- uid: NuvTools.AspNetCore.Blazor.JSInterop
+  commentId: N:NuvTools.AspNetCore.Blazor.JSInterop
+  name: NuvTools.AspNetCore.Blazor.JSInterop
+  nameWithType: NuvTools.AspNetCore.Blazor.JSInterop
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.AspNetCore
+    name: AspNetCore
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor
+    name: Blazor
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor.JSInterop
+    name: JSInterop
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.AspNetCore
+    name: AspNetCore
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor
+    name: Blazor
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor.JSInterop
+    name: JSInterop
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.LoadingService*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.LoadingService
+  href: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase-3.html#NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_LoadingService
+  name: LoadingService
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.LoadingService
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.LoadingService
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).LoadingService
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).LoadingService
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.SessionStorageKey*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.SessionStorageKey
+  href: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase-3.html#NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_SessionStorageKey
+  name: SessionStorageKey
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.SessionStorageKey
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.SessionStorageKey
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).SessionStorageKey
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).SessionStorageKey
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.ModelFilter*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.ModelFilter
+  href: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase-3.html#NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_ModelFilter
+  name: ModelFilter
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.ModelFilter
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.ModelFilter
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).ModelFilter
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).ModelFilter
+- uid: '{TFilter}'
+  commentId: '!:TFilter'
+  definition: TFilter
+  name: TFilter
+  nameWithType: TFilter
+  fullName: TFilter
+- uid: TFilter
+  name: TFilter
+  nameWithType: TFilter
+  fullName: TFilter
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.PagedData*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.PagedData
+  href: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase-3.html#NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_PagedData
+  name: PagedData
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.PagedData
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.PagedData
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).PagedData
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).PagedData
+- uid: NuvTools.Data.Paging.PagingWithEnumerableList{{TItem}}
+  commentId: T:NuvTools.Data.Paging.PagingWithEnumerableList{`0}
+  parent: NuvTools.Data.Paging
+  definition: NuvTools.Data.Paging.PagingWithEnumerableList`1
+  name: PagingWithEnumerableList<TItem>
+  nameWithType: PagingWithEnumerableList<TItem>
+  fullName: NuvTools.Data.Paging.PagingWithEnumerableList<TItem>
+  nameWithType.vb: PagingWithEnumerableList(Of TItem)
+  fullName.vb: NuvTools.Data.Paging.PagingWithEnumerableList(Of TItem)
+  name.vb: PagingWithEnumerableList(Of TItem)
+  spec.csharp:
+  - uid: NuvTools.Data.Paging.PagingWithEnumerableList`1
+    name: PagingWithEnumerableList
+    isExternal: true
+  - name: <
+  - name: TItem
+  - name: '>'
+  spec.vb:
+  - uid: NuvTools.Data.Paging.PagingWithEnumerableList`1
+    name: PagingWithEnumerableList
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TItem
+  - name: )
+- uid: NuvTools.Data.Paging.PagingWithEnumerableList`1
+  commentId: T:NuvTools.Data.Paging.PagingWithEnumerableList`1
+  isExternal: true
+  name: PagingWithEnumerableList<T>
+  nameWithType: PagingWithEnumerableList<T>
+  fullName: NuvTools.Data.Paging.PagingWithEnumerableList<T>
+  nameWithType.vb: PagingWithEnumerableList(Of T)
+  fullName.vb: NuvTools.Data.Paging.PagingWithEnumerableList(Of T)
+  name.vb: PagingWithEnumerableList(Of T)
+  spec.csharp:
+  - uid: NuvTools.Data.Paging.PagingWithEnumerableList`1
+    name: PagingWithEnumerableList
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: NuvTools.Data.Paging.PagingWithEnumerableList`1
+    name: PagingWithEnumerableList
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NuvTools.Data.Paging
+  commentId: N:NuvTools.Data.Paging
+  isExternal: true
+  name: NuvTools.Data.Paging
+  nameWithType: NuvTools.Data.Paging
+  fullName: NuvTools.Data.Paging
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+  - name: .
+  - uid: NuvTools.Data
+    name: Data
+    isExternal: true
+  - name: .
+  - uid: NuvTools.Data.Paging
+    name: Paging
+    isExternal: true
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+  - name: .
+  - uid: NuvTools.Data
+    name: Data
+    isExternal: true
+  - name: .
+  - uid: NuvTools.Data.Paging
+    name: Paging
+    isExternal: true
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.Table*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.Table
+  href: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase-3.html#NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_Table
+  name: Table
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.Table
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.Table
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).Table
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).Table
+- uid: MudBlazor.MudTable{{TItem}}
+  commentId: T:MudBlazor.MudTable{`0}
+  parent: MudBlazor
+  definition: MudBlazor.MudTable`1
+  name: MudTable<TItem>
+  nameWithType: MudTable<TItem>
+  fullName: MudBlazor.MudTable<TItem>
+  nameWithType.vb: MudTable(Of TItem)
+  fullName.vb: MudBlazor.MudTable(Of TItem)
+  name.vb: MudTable(Of TItem)
+  spec.csharp:
+  - uid: MudBlazor.MudTable`1
+    name: MudTable
+    isExternal: true
+  - name: <
+  - name: TItem
+  - name: '>'
+  spec.vb:
+  - uid: MudBlazor.MudTable`1
+    name: MudTable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TItem
+  - name: )
+- uid: MudBlazor.MudTable`1
+  commentId: T:MudBlazor.MudTable`1
+  isExternal: true
+  name: MudTable<T>
+  nameWithType: MudTable<T>
+  fullName: MudBlazor.MudTable<T>
+  nameWithType.vb: MudTable(Of T)
+  fullName.vb: MudBlazor.MudTable(Of T)
+  name.vb: MudTable(Of T)
+  spec.csharp:
+  - uid: MudBlazor.MudTable`1
+    name: MudTable
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: MudBlazor.MudTable`1
+    name: MudTable
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: MudBlazor
+  commentId: N:MudBlazor
+  isExternal: true
+  name: MudBlazor
+  nameWithType: MudBlazor
+  fullName: MudBlazor
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.HasNextPage*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.HasNextPage
+  href: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase-3.html#NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_HasNextPage
+  name: HasNextPage
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.HasNextPage
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.HasNextPage
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).HasNextPage
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).HasNextPage
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.IsFirstPage*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.IsFirstPage
+  href: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase-3.html#NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_IsFirstPage
+  name: IsFirstPage
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.IsFirstPage
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.IsFirstPage
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).IsFirstPage
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).IsFirstPage
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.CurrentPage*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.CurrentPage
+  href: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase-3.html#NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_CurrentPage
+  name: CurrentPage
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.CurrentPage
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.CurrentPage
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).CurrentPage
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).CurrentPage
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.CreateDefaultFilter*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.CreateDefaultFilter
+  href: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase-3.html#NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_CreateDefaultFilter
+  name: CreateDefaultFilter
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.CreateDefaultFilter
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.CreateDefaultFilter
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).CreateDefaultFilter
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).CreateDefaultFilter
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.FetchDataAsync*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.FetchDataAsync
+  href: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase-3.html#NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_FetchDataAsync__1_System_Threading_CancellationToken_
+  name: FetchDataAsync
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.FetchDataAsync
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.FetchDataAsync
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).FetchDataAsync
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).FetchDataAsync
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Data.Paging.PagingWithEnumerableList{{TItem}}}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Data.Paging.PagingWithEnumerableList{`0}}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<PagingWithEnumerableList<TItem>>>
+  nameWithType: Task<IResult<PagingWithEnumerableList<TItem>>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<NuvTools.Data.Paging.PagingWithEnumerableList<TItem>>>
+  nameWithType.vb: Task(Of IResult(Of PagingWithEnumerableList(Of TItem)))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of NuvTools.Data.Paging.PagingWithEnumerableList(Of TItem)))
+  name.vb: Task(Of IResult(Of PagingWithEnumerableList(Of TItem)))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - uid: NuvTools.Data.Paging.PagingWithEnumerableList`1
+    name: PagingWithEnumerableList
+    isExternal: true
+  - name: <
+  - name: TItem
+  - name: '>'
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Data.Paging.PagingWithEnumerableList`1
+    name: PagingWithEnumerableList
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TItem
+  - name: )
+  - name: )
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.MapSortLabelToOrdering*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.MapSortLabelToOrdering
+  href: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase-3.html#NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_MapSortLabelToOrdering_System_String_
+  name: MapSortLabelToOrdering
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.MapSortLabelToOrdering
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.MapSortLabelToOrdering
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).MapSortLabelToOrdering
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).MapSortLabelToOrdering
+- uid: '{TOrdering}'
+  commentId: '!:TOrdering'
+  definition: TOrdering
+  name: TOrdering
+  nameWithType: TOrdering
+  fullName: TOrdering
+- uid: TOrdering
+  commentId: '!:TOrdering'
+  name: TOrdering
+  nameWithType: TOrdering
+  fullName: TOrdering
+- uid: System.Enum.ToString
+  commentId: M:System.Enum.ToString
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.enum.tostring#system-enum-tostring
+  name: ToString()
+  nameWithType: Enum.ToString()
+  fullName: System.Enum.ToString()
+  spec.csharp:
+  - uid: System.Enum.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.enum.tostring#system-enum-tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Enum.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.enum.tostring#system-enum-tostring
+  - name: (
+  - name: )
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.GetSortLabel*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.GetSortLabel
+  href: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase-3.html#NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_GetSortLabel
+  name: GetSortLabel
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.GetSortLabel
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.GetSortLabel
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).GetSortLabel
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).GetSortLabel
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.GetSortDirection*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.GetSortDirection
+  href: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase-3.html#NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_GetSortDirection
+  name: GetSortDirection
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.GetSortDirection
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.GetSortDirection
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).GetSortDirection
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).GetSortDirection
+- uid: MudBlazor.SortDirection
+  commentId: T:MudBlazor.SortDirection
+  parent: MudBlazor
+  isExternal: true
+  name: SortDirection
+  nameWithType: SortDirection
+  fullName: MudBlazor.SortDirection
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnInitializedAsync
+  commentId: M:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnInitializedAsync
+  href: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase-3.html#NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_OnInitializedAsync
+  name: OnInitializedAsync()
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.OnInitializedAsync()
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.OnInitializedAsync()
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).OnInitializedAsync()
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).OnInitializedAsync()
+  spec.csharp:
+  - uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnInitializedAsync
+    name: OnInitializedAsync
+    href: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase-3.html#NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_OnInitializedAsync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnInitializedAsync
+    name: OnInitializedAsync
+    href: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase-3.html#NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_OnInitializedAsync
+  - name: (
+  - name: )
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnInitializingAsync*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnInitializingAsync
+  href: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase-3.html#NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_OnInitializingAsync
+  name: OnInitializingAsync
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.OnInitializingAsync
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.OnInitializingAsync
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).OnInitializingAsync
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).OnInitializingAsync
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnInitializedFilterAsync*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnInitializedFilterAsync
+  href: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase-3.html#NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_OnInitializedFilterAsync
+  name: OnInitializedFilterAsync
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.OnInitializedFilterAsync
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.OnInitializedFilterAsync
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).OnInitializedFilterAsync
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).OnInitializedFilterAsync
+- uid: Microsoft.AspNetCore.Components.ComponentBase.OnInitializedAsync
+  commentId: M:Microsoft.AspNetCore.Components.ComponentBase.OnInitializedAsync
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.oninitializedasync
+  name: OnInitializedAsync()
+  nameWithType: ComponentBase.OnInitializedAsync()
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.OnInitializedAsync()
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.OnInitializedAsync
+    name: OnInitializedAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.oninitializedasync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.OnInitializedAsync
+    name: OnInitializedAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.oninitializedasync
+  - name: (
+  - name: )
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnInitializedAsync*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnInitializedAsync
+  href: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase-3.html#NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_OnInitializedAsync
+  name: OnInitializedAsync
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.OnInitializedAsync
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.OnInitializedAsync
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).OnInitializedAsync
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).OnInitializedAsync
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnDataLoadedAsync*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnDataLoadedAsync
+  href: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase-3.html#NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_OnDataLoadedAsync_NuvTools_Data_Paging_PagingWithEnumerableList__0__
+  name: OnDataLoadedAsync
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.OnDataLoadedAsync
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.OnDataLoadedAsync
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).OnDataLoadedAsync
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).OnDataLoadedAsync
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnFetchDataFailed*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnFetchDataFailed
+  href: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase-3.html#NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_OnFetchDataFailed_NuvTools_Common_ResultWrapper_IResult_
+  name: OnFetchDataFailed
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.OnFetchDataFailed
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.OnFetchDataFailed
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).OnFetchDataFailed
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).OnFetchDataFailed
+- uid: NuvTools.Common.ResultWrapper.IResult
+  commentId: T:NuvTools.Common.ResultWrapper.IResult
+  parent: NuvTools.Common.ResultWrapper
+  isExternal: true
+  name: IResult
+  nameWithType: IResult
+  fullName: NuvTools.Common.ResultWrapper.IResult
+- uid: NuvTools.Common.ResultWrapper
+  commentId: N:NuvTools.Common.ResultWrapper
+  isExternal: true
+  name: NuvTools.Common.ResultWrapper
+  nameWithType: NuvTools.Common.ResultWrapper
+  fullName: NuvTools.Common.ResultWrapper
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+  - name: .
+  - uid: NuvTools.Common
+    name: Common
+    isExternal: true
+  - name: .
+  - uid: NuvTools.Common.ResultWrapper
+    name: ResultWrapper
+    isExternal: true
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+  - name: .
+  - uid: NuvTools.Common
+    name: Common
+    isExternal: true
+  - name: .
+  - uid: NuvTools.Common.ResultWrapper
+    name: ResultWrapper
+    isExternal: true
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.SaveFilterAsync*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.SaveFilterAsync
+  href: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase-3.html#NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_SaveFilterAsync
+  name: SaveFilterAsync
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.SaveFilterAsync
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.SaveFilterAsync
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).SaveFilterAsync
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).SaveFilterAsync
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.ServerReload*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.ServerReload
+  href: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase-3.html#NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_ServerReload_MudBlazor_TableState_System_Threading_CancellationToken_
+  name: ServerReload
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.ServerReload
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.ServerReload
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).ServerReload
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).ServerReload
+- uid: MudBlazor.TableState
+  commentId: T:MudBlazor.TableState
+  parent: MudBlazor
+  isExternal: true
+  name: TableState
+  nameWithType: TableState
+  fullName: MudBlazor.TableState
+- uid: System.Threading.Tasks.Task{MudBlazor.TableData{{TItem}}}
+  commentId: T:System.Threading.Tasks.Task{MudBlazor.TableData{`0}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TableData<TItem>>
+  nameWithType: Task<TableData<TItem>>
+  fullName: System.Threading.Tasks.Task<MudBlazor.TableData<TItem>>
+  nameWithType.vb: Task(Of TableData(Of TItem))
+  fullName.vb: System.Threading.Tasks.Task(Of MudBlazor.TableData(Of TItem))
+  name.vb: Task(Of TableData(Of TItem))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: MudBlazor.TableData`1
+    name: TableData
+    isExternal: true
+  - name: <
+  - name: TItem
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: MudBlazor.TableData`1
+    name: TableData
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TItem
+  - name: )
+  - name: )
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.NextPageAsync*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.NextPageAsync
+  href: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase-3.html#NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_NextPageAsync
+  name: NextPageAsync
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.NextPageAsync
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.NextPageAsync
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).NextPageAsync
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).NextPageAsync
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.PreviousPageAsync*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.PreviousPageAsync
+  href: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase-3.html#NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_PreviousPageAsync
+  name: PreviousPageAsync
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.PreviousPageAsync
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.PreviousPageAsync
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).PreviousPageAsync
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).PreviousPageAsync
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.ReloadTableAsync*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.ReloadTableAsync
+  href: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase-3.html#NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_ReloadTableAsync
+  name: ReloadTableAsync
+  nameWithType: MudTablePageBase<TItem, TFilter, TOrdering>.ReloadTableAsync
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase<TItem, TFilter, TOrdering>.ReloadTableAsync
+  nameWithType.vb: MudTablePageBase(Of TItem, TFilter, TOrdering).ReloadTableAsync
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase(Of TItem, TFilter, TOrdering).ReloadTableAsync

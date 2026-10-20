@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Security and identity | Nuv Tools Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Security and identity | Nuv Tools Framework ">
+      
+      
+      <link rel="icon" href="../../images/icon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/nuvtools-brand.svg" alt="Framework">
+            Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="guide-security">
+<h1 id="security-and-identity">Security and identity</h1>
+
+<p>Tokens, cryptography, SSRF protection and CAPTCHA, permission-based authorization on ASP.NET Identity, and contracts for signing keys, certificates and facial verification with their providers.</p>
+<h2 id="how-the-packages-fit">How the packages fit</h2>
+<p>Each arrow points at the package it builds on. Rounded, dashed boxes are Nuv Tools packages from another area.</p>
+<pre><code class="lang-mermaid">flowchart LR
+  NuvTools_Security[&quot;Security&quot;]
+  NuvTools_Security_AspNetCore[&quot;Security.AspNetCore&quot;]
+  NuvTools_Security_AspNetCore_Blazor[&quot;Security.AspNetCore.Blazor&quot;]
+  NuvTools_Security_Biometrics_Serpro[&quot;Security.Biometrics.Serpro&quot;]
+  NuvTools_Security_Certificate_Lacuna[&quot;Security.Certificate.Lacuna&quot;]
+  NuvTools_Security_Signing_Azure[&quot;Security.Signing.Azure&quot;]
+  NuvTools_Security_Identity[&quot;Security.Identity&quot;]
+  NuvTools_Security_Identity_AspNetCore[&quot;Security.Identity.AspNetCore&quot;]
+  NuvTools_Security_Identity_EntityFrameworkCore[&quot;Security.Identity.EntityFrameworkCore&quot;]
+  NuvTools_Security_Identity_Models[&quot;Security.Identity.Models&quot;]
+  NuvTools_AspNetCore_Blazor([&quot;AspNetCore.Blazor&quot;]):::outside
+  NuvTools_Common([&quot;Common&quot;]):::outside
+  NuvTools_Data_EntityFrameworkCore([&quot;Data.EntityFrameworkCore&quot;]):::outside
+  NuvTools_Resources([&quot;Resources&quot;]):::outside
+  NuvTools_Validation([&quot;Validation&quot;]):::outside
+  NuvTools_Security_AspNetCore --&gt; NuvTools_Common
+  NuvTools_Security_AspNetCore --&gt; NuvTools_Security
+  NuvTools_Security_AspNetCore_Blazor --&gt; NuvTools_AspNetCore_Blazor
+  NuvTools_Security_AspNetCore_Blazor --&gt; NuvTools_Common
+  NuvTools_Security_AspNetCore_Blazor --&gt; NuvTools_Security
+  NuvTools_Security_Biometrics_Serpro --&gt; NuvTools_Common
+  NuvTools_Security_Biometrics_Serpro --&gt; NuvTools_Security
+  NuvTools_Security_Biometrics_Serpro --&gt; NuvTools_Validation
+  NuvTools_Security_Certificate_Lacuna --&gt; NuvTools_Common
+  NuvTools_Security_Certificate_Lacuna --&gt; NuvTools_Security
+  NuvTools_Security_Signing_Azure --&gt; NuvTools_Security
+  NuvTools_Security_Identity --&gt; NuvTools_Security
+  NuvTools_Security_Identity_AspNetCore --&gt; NuvTools_Common
+  NuvTools_Security_Identity_AspNetCore --&gt; NuvTools_Security
+  NuvTools_Security_Identity_AspNetCore --&gt; NuvTools_Security_Identity_Models
+  NuvTools_Security_Identity_EntityFrameworkCore --&gt; NuvTools_Data_EntityFrameworkCore
+  NuvTools_Security_Identity_Models --&gt; NuvTools_Resources
+  NuvTools_Security_Identity_Models --&gt; NuvTools_Validation
+  classDef outside fill:#f2f6f8,stroke:#9fb3bd,stroke-dasharray: 4 3,color:#536772
+</code></pre>
+<h2 id="packages">Packages</h2>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>What it does</th>
+<th>Builds on</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.nuget.org/packages/NuvTools.Security">Security</a></td>
+<td>Core security library providing JWT token handling, cryptography utilities, ClaimsPrincipal extensions, the shared CAPTCHA contract, the certificate authentication and facial verification contracts, and SSRF protection for outbound HTTP.</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://www.nuget.org/packages/NuvTools.Security.AspNetCore">Security.AspNetCore</a></td>
+<td>Security configuration, authenticated user services and adaptive CAPTCHA verification for ASP.NET Core applications.</td>
+<td><code>Common</code>, <code>Security</code></td>
+</tr>
+<tr>
+<td><a href="https://www.nuget.org/packages/NuvTools.Security.AspNetCore.Blazor">Security.AspNetCore.Blazor</a></td>
+<td>Authentication state providers for Blazor applications with JWT and OIDC support, plus an adaptive CAPTCHA component.</td>
+<td><code>AspNetCore.Blazor</code>, <code>Common</code>, <code>Security</code></td>
+</tr>
+<tr>
+<td><a href="https://www.nuget.org/packages/NuvTools.Security.Biometrics.Serpro">Security.Biometrics.Serpro</a></td>
+<td>SERPRO Datavalid implementation of the NuvTools.Security facial verification contract: a capture is matched against the face on government record for a CPF.</td>
+<td><code>Common</code>, <code>Security</code>, <code>Validation</code></td>
+</tr>
+<tr>
+<td><a href="https://www.nuget.org/packages/NuvTools.Security.Certificate.Lacuna">Security.Certificate.Lacuna</a></td>
+<td>Lacuna REST PKI implementation of the NuvTools.Security certificate authentication contract: possession of the private key and the ICP-Brasil chain are validated on the service.</td>
+<td><code>Common</code>, <code>Security</code></td>
+</tr>
+<tr>
+<td><a href="https://www.nuget.org/packages/NuvTools.Security.Signing.Azure">Security.Signing.Azure</a></td>
+<td>Azure Key Vault implementation of the NuvTools.Security signing key contract: tokens are signed by a key that never leaves the vault, and a rotated key is picked up without a restart.</td>
+<td><code>Security</code></td>
+</tr>
+<tr>
+<td><a href="https://www.nuget.org/packages/NuvTools.Security.Identity">Security.Identity</a></td>
+<td>Permission-based authorization with dynamic policy provider and claim-based permission handler for ASP.NET Identity.</td>
+<td><code>Security</code></td>
+</tr>
+<tr>
+<td><a href="https://www.nuget.org/packages/NuvTools.Security.Identity.AspNetCore">Security.Identity.AspNetCore</a></td>
+<td>ASP.NET Core user management service with email confirmation, password management, and role administration for ASP.NET Identity.</td>
+<td><code>Common</code>, <code>Security</code>, <code>Security.Identity.Models</code></td>
+</tr>
+<tr>
+<td><a href="https://www.nuget.org/packages/NuvTools.Security.Identity.EntityFrameworkCore">Security.Identity.EntityFrameworkCore</a></td>
+<td>Entity Framework Core identity persistence with transaction management and batch operations for ASP.NET Identity.</td>
+<td><code>Data.EntityFrameworkCore</code></td>
+</tr>
+<tr>
+<td><a href="https://www.nuget.org/packages/NuvTools.Security.Identity.Models">Security.Identity.Models</a></td>
+<td>ASP.NET Identity base models, form DTOs, and API models with localized validation for user and role management.</td>
+<td><code>Resources</code>, <code>Validation</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="guides">Guides</h2>
+<ul>
+<li><a href="security/README.html">NuvTools.Security</a> — installation, configuration and examples; source on <a href="https://github.com/nuvtools/nuvtools-security">GitHub</a>.</li>
+<li><a href="security-identity/README.html">NuvTools.Security.Identity</a> — installation, configuration and examples; source on <a href="https://github.com/nuvtools/nuvtools-security-identity">GitHub</a>.</li>
+</ul>
+<p>Every type and member is in the <a class="xref" href="../../api/security/NuvTools.Security.Biometrics.html">API reference</a>.</p>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>© Nuv Tools · <a href="https://nuvtools.com/framework/">nuvtools.com</a> · MIT licence · Built with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

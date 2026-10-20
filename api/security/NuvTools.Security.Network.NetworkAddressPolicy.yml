@@ -1,0 +1,847 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Security.Network.NetworkAddressPolicy
+  commentId: T:NuvTools.Security.Network.NetworkAddressPolicy
+  id: NetworkAddressPolicy
+  parent: NuvTools.Security.Network
+  children:
+  - NuvTools.Security.Network.NetworkAddressPolicy.#ctor(System.Collections.Generic.IEnumerable{System.Net.IPNetwork},System.Collections.Generic.IEnumerable{System.Net.IPNetwork},System.Collections.Generic.IEnumerable{System.String})
+  - NuvTools.Security.Network.NetworkAddressPolicy.IsAllowed(System.Net.IPAddress)
+  - NuvTools.Security.Network.NetworkAddressPolicy.IsHostAllowed(System.String)
+  - NuvTools.Security.Network.NetworkAddressPolicy.PublicOnly
+  - NuvTools.Security.Network.NetworkAddressPolicy.ResolveAllowedAsync(System.String,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: NetworkAddressPolicy
+  nameWithType: NetworkAddressPolicy
+  fullName: NuvTools.Security.Network.NetworkAddressPolicy
+  type: Class
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Network
+  summary: >-
+    Decides whether an outbound connection may reach an address: the building block against
+
+    server-side request forgery (SSRF) when an application fetches a URL somebody else supplied.
+  remarks: >-
+    <p>
+
+    The decision is taken on the <b>IP address</b>, never on the text of the URL. A host name proves
+
+    nothing about where it resolves — a public domain can carry an <code>A</code> record of <code>10.0.0.5</code>, and
+
+    can change it between a check and the connection (DNS rebinding). Pair this policy with
+
+    <xref href="NuvTools.Security.Network.PublicNetworkConnector" data-throw-if-not-resolved="false"></xref>, which applies it to the address a socket actually connects to.
+
+    </p>
+
+    <p>
+
+    By default only publicly routable unicast addresses are allowed. Denied: loopback, private (RFC 1918
+
+    and IPv6 unique-local), link-local (which includes the cloud instance metadata endpoint
+
+    <code>169.254.169.254</code>), carrier-grade NAT, documentation and benchmarking ranges, multicast,
+
+    reserved space, the IPv6 transition prefixes that embed an IPv4 address, and Azure's platform
+
+    address <code>168.63.129.16</code>, which is public in form and internal in fact.
+
+    </p>
+  example: []
+  syntax:
+    content: public sealed class NetworkAddressPolicy
+    content.vb: Public NotInheritable Class NetworkAddressPolicy
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NuvTools.Security.Network.NetworkAddressPolicy.PublicOnly
+  commentId: P:NuvTools.Security.Network.NetworkAddressPolicy.PublicOnly
+  id: PublicOnly
+  parent: NuvTools.Security.Network.NetworkAddressPolicy
+  langs:
+  - csharp
+  - vb
+  name: PublicOnly
+  nameWithType: NetworkAddressPolicy.PublicOnly
+  fullName: NuvTools.Security.Network.NetworkAddressPolicy.PublicOnly
+  type: Property
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Network
+  summary: A policy allowing publicly routable addresses only.
+  example: []
+  syntax:
+    content: public static NetworkAddressPolicy PublicOnly { get; }
+    parameters: []
+    return:
+      type: NuvTools.Security.Network.NetworkAddressPolicy
+    content.vb: Public Shared ReadOnly Property PublicOnly As NetworkAddressPolicy
+  overload: NuvTools.Security.Network.NetworkAddressPolicy.PublicOnly*
+- uid: NuvTools.Security.Network.NetworkAddressPolicy.#ctor(System.Collections.Generic.IEnumerable{System.Net.IPNetwork},System.Collections.Generic.IEnumerable{System.Net.IPNetwork},System.Collections.Generic.IEnumerable{System.String})
+  commentId: M:NuvTools.Security.Network.NetworkAddressPolicy.#ctor(System.Collections.Generic.IEnumerable{System.Net.IPNetwork},System.Collections.Generic.IEnumerable{System.Net.IPNetwork},System.Collections.Generic.IEnumerable{System.String})
+  id: '#ctor(System.Collections.Generic.IEnumerable{System.Net.IPNetwork},System.Collections.Generic.IEnumerable{System.Net.IPNetwork},System.Collections.Generic.IEnumerable{System.String})'
+  parent: NuvTools.Security.Network.NetworkAddressPolicy
+  langs:
+  - csharp
+  - vb
+  name: NetworkAddressPolicy(IEnumerable<IPNetwork>?, IEnumerable<IPNetwork>?, IEnumerable<string>?)
+  nameWithType: NetworkAddressPolicy.NetworkAddressPolicy(IEnumerable<IPNetwork>?, IEnumerable<IPNetwork>?, IEnumerable<string>?)
+  fullName: NuvTools.Security.Network.NetworkAddressPolicy.NetworkAddressPolicy(System.Collections.Generic.IEnumerable<System.Net.IPNetwork>?, System.Collections.Generic.IEnumerable<System.Net.IPNetwork>?, System.Collections.Generic.IEnumerable<string>?)
+  type: Constructor
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Network
+  summary: Creates a policy.
+  example: []
+  syntax:
+    content: public NetworkAddressPolicy(IEnumerable<IPNetwork>? allowedNetworks = null, IEnumerable<IPNetwork>? additionalDeniedNetworks = null, IEnumerable<string>? additionalDeniedHostSuffixes = null)
+    parameters:
+    - id: allowedNetworks
+      type: System.Collections.Generic.IEnumerable{System.Net.IPNetwork}
+      description: >-
+        Networks allowed even though the defaults deny them — an internal backend a deployment trusts.
+
+        Checked before the denied list, so keep it as narrow as the need.
+    - id: additionalDeniedNetworks
+      type: System.Collections.Generic.IEnumerable{System.Net.IPNetwork}
+      description: Networks denied on top of the defaults.
+    - id: additionalDeniedHostSuffixes
+      type: System.Collections.Generic.IEnumerable{System.String}
+      description: Host name suffixes denied on top of the defaults.
+    content.vb: Public Sub New(allowedNetworks As IEnumerable(Of IPNetwork) = Nothing, additionalDeniedNetworks As IEnumerable(Of IPNetwork) = Nothing, additionalDeniedHostSuffixes As IEnumerable(Of String) = Nothing)
+  overload: NuvTools.Security.Network.NetworkAddressPolicy.#ctor*
+  nameWithType.vb: NetworkAddressPolicy.New(IEnumerable(Of IPNetwork), IEnumerable(Of IPNetwork), IEnumerable(Of String))
+  fullName.vb: NuvTools.Security.Network.NetworkAddressPolicy.New(System.Collections.Generic.IEnumerable(Of System.Net.IPNetwork), System.Collections.Generic.IEnumerable(Of System.Net.IPNetwork), System.Collections.Generic.IEnumerable(Of String))
+  name.vb: New(IEnumerable(Of IPNetwork), IEnumerable(Of IPNetwork), IEnumerable(Of String))
+- uid: NuvTools.Security.Network.NetworkAddressPolicy.IsAllowed(System.Net.IPAddress)
+  commentId: M:NuvTools.Security.Network.NetworkAddressPolicy.IsAllowed(System.Net.IPAddress)
+  id: IsAllowed(System.Net.IPAddress)
+  parent: NuvTools.Security.Network.NetworkAddressPolicy
+  langs:
+  - csharp
+  - vb
+  name: IsAllowed(IPAddress)
+  nameWithType: NetworkAddressPolicy.IsAllowed(IPAddress)
+  fullName: NuvTools.Security.Network.NetworkAddressPolicy.IsAllowed(System.Net.IPAddress)
+  type: Method
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Network
+  summary: Whether a connection to this address is allowed.
+  remarks: >-
+    An IPv4-mapped IPv6 address (<code>::ffff:127.0.0.1</code>) is judged as the IPv4 address it carries,
+
+    which is where the socket ends up.
+  example: []
+  syntax:
+    content: public bool IsAllowed(IPAddress address)
+    parameters:
+    - id: address
+      type: System.Net.IPAddress
+    return:
+      type: System.Boolean
+    content.vb: Public Function IsAllowed(address As IPAddress) As Boolean
+  overload: NuvTools.Security.Network.NetworkAddressPolicy.IsAllowed*
+- uid: NuvTools.Security.Network.NetworkAddressPolicy.IsHostAllowed(System.String)
+  commentId: M:NuvTools.Security.Network.NetworkAddressPolicy.IsHostAllowed(System.String)
+  id: IsHostAllowed(System.String)
+  parent: NuvTools.Security.Network.NetworkAddressPolicy
+  langs:
+  - csharp
+  - vb
+  name: IsHostAllowed(string)
+  nameWithType: NetworkAddressPolicy.IsHostAllowed(string)
+  fullName: NuvTools.Security.Network.NetworkAddressPolicy.IsHostAllowed(string)
+  type: Method
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Network
+  summary: >-
+    Whether a host name may be looked up at all. Names that can only mean "inside" — <code>localhost</code>
+
+    and the internal suffixes — are refused without asking DNS.
+  example: []
+  syntax:
+    content: public bool IsHostAllowed(string host)
+    parameters:
+    - id: host
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function IsHostAllowed(host As String) As Boolean
+  overload: NuvTools.Security.Network.NetworkAddressPolicy.IsHostAllowed*
+  nameWithType.vb: NetworkAddressPolicy.IsHostAllowed(String)
+  fullName.vb: NuvTools.Security.Network.NetworkAddressPolicy.IsHostAllowed(String)
+  name.vb: IsHostAllowed(String)
+- uid: NuvTools.Security.Network.NetworkAddressPolicy.ResolveAllowedAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Security.Network.NetworkAddressPolicy.ResolveAllowedAsync(System.String,System.Threading.CancellationToken)
+  id: ResolveAllowedAsync(System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Security.Network.NetworkAddressPolicy
+  langs:
+  - csharp
+  - vb
+  name: ResolveAllowedAsync(string, CancellationToken)
+  nameWithType: NetworkAddressPolicy.ResolveAllowedAsync(string, CancellationToken)
+  fullName: NuvTools.Security.Network.NetworkAddressPolicy.ResolveAllowedAsync(string, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Network
+  summary: >-
+    Resolves a host and returns its addresses, throwing when the name or any address it resolves to is
+
+    not allowed.
+  remarks: >-
+    <b>Any</b> denied address refuses the whole name, not just that address. A name answering with one
+
+    public and one private address is either misconfigured or an attempt to win a race, and neither is
+
+    worth connecting to.
+  example: []
+  syntax:
+    content: public Task<IPAddress[]> ResolveAllowedAsync(string host, CancellationToken cancellationToken = default)
+    parameters:
+    - id: host
+      type: System.String
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{System.Net.IPAddress[]}
+    content.vb: Public Function ResolveAllowedAsync(host As String, cancellationToken As CancellationToken = Nothing) As Task(Of IPAddress())
+  overload: NuvTools.Security.Network.NetworkAddressPolicy.ResolveAllowedAsync*
+  exceptions:
+  - type: NuvTools.Security.Network.NetworkAddressNotAllowedException
+    commentId: T:NuvTools.Security.Network.NetworkAddressNotAllowedException
+    description: The host or one of its addresses is denied.
+  nameWithType.vb: NetworkAddressPolicy.ResolveAllowedAsync(String, CancellationToken)
+  fullName.vb: NuvTools.Security.Network.NetworkAddressPolicy.ResolveAllowedAsync(String, System.Threading.CancellationToken)
+  name.vb: ResolveAllowedAsync(String, CancellationToken)
+references:
+- uid: NuvTools.Security.Network.PublicNetworkConnector
+  commentId: T:NuvTools.Security.Network.PublicNetworkConnector
+  href: NuvTools.Security.Network.PublicNetworkConnector.html
+  name: PublicNetworkConnector
+  nameWithType: PublicNetworkConnector
+  fullName: NuvTools.Security.Network.PublicNetworkConnector
+- uid: NuvTools.Security.Network
+  commentId: N:NuvTools.Security.Network
+  name: NuvTools.Security.Network
+  nameWithType: NuvTools.Security.Network
+  fullName: NuvTools.Security.Network
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.Network
+    name: Network
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.Network
+    name: Network
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NuvTools.Security.Network.NetworkAddressPolicy.PublicOnly*
+  commentId: Overload:NuvTools.Security.Network.NetworkAddressPolicy.PublicOnly
+  href: NuvTools.Security.Network.NetworkAddressPolicy.html#NuvTools_Security_Network_NetworkAddressPolicy_PublicOnly
+  name: PublicOnly
+  nameWithType: NetworkAddressPolicy.PublicOnly
+  fullName: NuvTools.Security.Network.NetworkAddressPolicy.PublicOnly
+- uid: NuvTools.Security.Network.NetworkAddressPolicy
+  commentId: T:NuvTools.Security.Network.NetworkAddressPolicy
+  parent: NuvTools.Security.Network
+  href: NuvTools.Security.Network.NetworkAddressPolicy.html
+  name: NetworkAddressPolicy
+  nameWithType: NetworkAddressPolicy
+  fullName: NuvTools.Security.Network.NetworkAddressPolicy
+- uid: NuvTools.Security.Network.NetworkAddressPolicy.#ctor*
+  commentId: Overload:NuvTools.Security.Network.NetworkAddressPolicy.#ctor
+  href: NuvTools.Security.Network.NetworkAddressPolicy.html#NuvTools_Security_Network_NetworkAddressPolicy__ctor_System_Collections_Generic_IEnumerable_System_Net_IPNetwork__System_Collections_Generic_IEnumerable_System_Net_IPNetwork__System_Collections_Generic_IEnumerable_System_String__
+  name: NetworkAddressPolicy
+  nameWithType: NetworkAddressPolicy.NetworkAddressPolicy
+  fullName: NuvTools.Security.Network.NetworkAddressPolicy.NetworkAddressPolicy
+  nameWithType.vb: NetworkAddressPolicy.New
+  fullName.vb: NuvTools.Security.Network.NetworkAddressPolicy.New
+  name.vb: New
+- uid: System.Collections.Generic.IEnumerable{System.Net.IPNetwork}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Net.IPNetwork}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<IPNetwork>
+  nameWithType: IEnumerable<IPNetwork>
+  fullName: System.Collections.Generic.IEnumerable<System.Net.IPNetwork>
+  nameWithType.vb: IEnumerable(Of IPNetwork)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Net.IPNetwork)
+  name.vb: IEnumerable(Of IPNetwork)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: System.Net.IPNetwork
+    name: IPNetwork
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.ipnetwork
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Net.IPNetwork
+    name: IPNetwork
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.ipnetwork
+  - name: )
+- uid: System.Collections.Generic.IEnumerable{System.String}
+  commentId: T:System.Collections.Generic.IEnumerable{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<string>
+  nameWithType: IEnumerable<string>
+  fullName: System.Collections.Generic.IEnumerable<string>
+  nameWithType.vb: IEnumerable(Of String)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of String)
+  name.vb: IEnumerable(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: NuvTools.Security.Network.NetworkAddressPolicy.IsAllowed*
+  commentId: Overload:NuvTools.Security.Network.NetworkAddressPolicy.IsAllowed
+  href: NuvTools.Security.Network.NetworkAddressPolicy.html#NuvTools_Security_Network_NetworkAddressPolicy_IsAllowed_System_Net_IPAddress_
+  name: IsAllowed
+  nameWithType: NetworkAddressPolicy.IsAllowed
+  fullName: NuvTools.Security.Network.NetworkAddressPolicy.IsAllowed
+- uid: System.Net.IPAddress
+  commentId: T:System.Net.IPAddress
+  parent: System.Net
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.net.ipaddress
+  name: IPAddress
+  nameWithType: IPAddress
+  fullName: System.Net.IPAddress
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Net
+  commentId: N:System.Net
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Net
+  nameWithType: System.Net
+  fullName: System.Net
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Net
+    name: Net
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Net
+    name: Net
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net
+- uid: NuvTools.Security.Network.NetworkAddressPolicy.IsHostAllowed*
+  commentId: Overload:NuvTools.Security.Network.NetworkAddressPolicy.IsHostAllowed
+  href: NuvTools.Security.Network.NetworkAddressPolicy.html#NuvTools_Security_Network_NetworkAddressPolicy_IsHostAllowed_System_String_
+  name: IsHostAllowed
+  nameWithType: NetworkAddressPolicy.IsHostAllowed
+  fullName: NuvTools.Security.Network.NetworkAddressPolicy.IsHostAllowed
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: NuvTools.Security.Network.NetworkAddressNotAllowedException
+  commentId: T:NuvTools.Security.Network.NetworkAddressNotAllowedException
+  href: NuvTools.Security.Network.NetworkAddressNotAllowedException.html
+  name: NetworkAddressNotAllowedException
+  nameWithType: NetworkAddressNotAllowedException
+  fullName: NuvTools.Security.Network.NetworkAddressNotAllowedException
+- uid: NuvTools.Security.Network.NetworkAddressPolicy.ResolveAllowedAsync*
+  commentId: Overload:NuvTools.Security.Network.NetworkAddressPolicy.ResolveAllowedAsync
+  href: NuvTools.Security.Network.NetworkAddressPolicy.html#NuvTools_Security_Network_NetworkAddressPolicy_ResolveAllowedAsync_System_String_System_Threading_CancellationToken_
+  name: ResolveAllowedAsync
+  nameWithType: NetworkAddressPolicy.ResolveAllowedAsync
+  fullName: NuvTools.Security.Network.NetworkAddressPolicy.ResolveAllowedAsync
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.Net.IPAddress[]}
+  commentId: T:System.Threading.Tasks.Task{System.Net.IPAddress[]}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IPAddress[]>
+  nameWithType: Task<IPAddress[]>
+  fullName: System.Threading.Tasks.Task<System.Net.IPAddress[]>
+  nameWithType.vb: Task(Of IPAddress())
+  fullName.vb: System.Threading.Tasks.Task(Of System.Net.IPAddress())
+  name.vb: Task(Of IPAddress())
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Net.IPAddress
+    name: IPAddress
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.ipaddress
+  - name: '['
+  - name: ']'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Net.IPAddress
+    name: IPAddress
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.ipaddress
+  - name: (
+  - name: )
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

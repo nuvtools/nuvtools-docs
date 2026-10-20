@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Architecture | Nuv Tools Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Architecture | Nuv Tools Framework ">
+      
+      
+      <link rel="icon" href="../images/icon.png">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/nuvtools-brand.svg" alt="Framework">
+            Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="architecture">
+<h1 id="architecture">Architecture</h1>
+
+<p>The framework is organized in eight areas. Packages in one area may build on the foundation and on other areas, never the other way round, so referencing a package never drags in an unrelated stack.</p>
+<h2 id="areas-and-how-they-depend-on-each-other">Areas and how they depend on each other</h2>
+<pre><code class="lang-mermaid">flowchart BT
+  subgraph Foundation
+    Common[&quot;Common&quot;]
+    Resources[&quot;Resources&quot;]
+    Validation[&quot;Validation&quot;]
+  end
+  Data[&quot;Data&lt;br/&gt;+ EF Core, SQL Server, PostgreSQL&quot;]
+  Web[&quot;ASP.NET Core and Blazor&quot;]
+  Security[&quot;Security and identity&quot;]
+  Notification[&quot;Notifications&quot;]
+  Report[&quot;Reports&quot;]
+  Storage[&quot;Storage and ledger&quot;]
+  Payment[&quot;Payments&quot;]
+
+  Data --&gt; Common
+  Web --&gt; Data
+  Web --&gt; Common
+  Security --&gt; Common
+  Security --&gt; Resources
+  Security --&gt; Validation
+  Security --&gt; Data
+  Security --&gt; Web
+  Payment --&gt; Common
+
+  classDef standalone fill:#fff3ea,stroke:#e96b20,color:#04425b
+  class Notification,Report,Storage standalone
+</code></pre>
+<p>Notifications, reports and storage (in orange) depend on no other Nuv Tools package: they can be used in any .NET application on their own.</p>
+<h2 id="contracts-and-providers">Contracts and providers</h2>
+<p>Every area that talks to an outside service splits in two kinds of package:</p>
+<ul>
+<li><strong>The contract</strong> — interfaces and models, no vendor SDK. Application code references only this.</li>
+<li><strong>One package per provider</strong> — the implementation and its <code>Add…</code> registration. Only the host project references it.</li>
+</ul>
+<pre><code class="lang-mermaid">flowchart TB
+  subgraph Contracts
+    Mail[&quot;Notification.Mail&quot;]
+    Messaging[&quot;Notification.Messaging&quot;]
+    Realtime[&quot;Notification.Realtime&quot;]
+    Storage[&quot;Storage&quot;]
+    Ledger[&quot;Blockchain&quot;]
+    Payment[&quot;Payment&quot;]
+    Sec[&quot;Security&lt;br/&gt;&lt;i&gt;signing, certificate, biometrics&lt;/i&gt;&quot;]
+  end
+  subgraph Providers
+    Smtp[&quot;Mail.Smtp&quot;] --&gt; Mail
+    Twilio[&quot;Mail.Twilio&quot;] --&gt; Mail
+    SB[&quot;Messaging.Azure.ServiceBus&quot;] --&gt; Messaging
+    SR[&quot;Realtime.Azure.SignalR&quot;] --&gt; Realtime
+    Blob[&quot;Storage.Azure&quot;] --&gt; Storage
+    ACL[&quot;Blockchain.Azure&quot;] --&gt; Ledger
+    Stripe[&quot;Payment.Stripe.ApiClient&quot;] --&gt; Payment
+    KV[&quot;Security.Signing.Azure&quot;] --&gt; Sec
+    Lacuna[&quot;Security.Certificate.Lacuna&quot;] --&gt; Sec
+    Serpro[&quot;Security.Biometrics.Serpro&quot;] --&gt; Sec
+  end
+  classDef provider fill:#fff3ea,stroke:#e96b20,color:#04425b
+  class Smtp,Twilio,SB,SR,Blob,ACL,Stripe,KV,Lacuna,Serpro provider
+</code></pre>
+<p>The vendor SDK (MailKit, Azure SDKs, Stripe.net, Lacuna REST PKI) is referenced only by its provider package, so a contract never pulls a vendor into your domain or application layer.</p>
+<h2 id="inside-a-request">Inside a request</h2>
+<p>A typical ASP.NET Core API built on the framework, from the request to the database and back:</p>
+<pre><code class="lang-mermaid">sequenceDiagram
+  autonumber
+  participant Client
+  participant API as ASP.NET Core endpoint
+  participant Auth as Security.Identity + Security.AspNetCore
+  participant Service as Service (AspNetCore.EntityFrameworkCore)
+  participant Db as DbContextBase (Data.EntityFrameworkCore)
+  Client-&gt;&gt;API: HTTP request + JWT
+  API-&gt;&gt;Auth: check permission policies
+  Auth--&gt;&gt;API: current user
+  API-&gt;&gt;Service: call with a form or filter
+  Service-&gt;&gt;Db: query with paging, sorting, filters
+  Db--&gt;&gt;Service: IResult&lt;T&gt; with data
+  Service--&gt;&gt;API: IResult&lt;T&gt;
+  API--&gt;&gt;Client: response with data and messages
+</code></pre>
+<h2 id="where-each-package-lives">Where each package lives</h2>
+<p>Each area is a separate repository under <a href="https://github.com/nuvtools">github.com/nuvtools</a>, released with its own pipeline. The <a href="../guides/foundation/index.html">guides</a> link to each repository, and the API reference is generated from the same sources.</p>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>© Nuv Tools · <a href="https://nuvtools.com/framework/">nuvtools.com</a> · MIT licence · Built with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

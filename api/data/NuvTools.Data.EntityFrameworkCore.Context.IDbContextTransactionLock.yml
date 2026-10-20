@@ -1,0 +1,303 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock
+  commentId: T:NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock
+  id: IDbContextTransactionLock
+  parent: NuvTools.Data.EntityFrameworkCore.Context
+  children:
+  - NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock.AcquireAsync(Microsoft.EntityFrameworkCore.DbContext,System.String,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: IDbContextTransactionLock
+  nameWithType: IDbContextTransactionLock
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock
+  type: Interface
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: >-
+    Provider-specific implementation of the transaction-scoped lock behind
+
+    <xref href="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AcquireTransactionLockAsync(System.String%2cSystem.Threading.CancellationToken)" data-throw-if-not-resolved="false"></xref>.
+  remarks: >-
+    Every relational database offers this, under a different name and keyed differently —
+
+    <code>pg_advisory_xact_lock</code> on PostgreSQL, <code>sp_getapplock</code> on SQL Server — so the statement lives in
+
+    the provider package, not here. The implementation is registered by that package's
+
+    <code>AddDatabase</code>/<code>AddDatabaseByConnectionName</code> helpers, and <xref href="NuvTools.Data.EntityFrameworkCore.Context.DbContextBase" data-throw-if-not-resolved="false"></xref> resolves it
+
+    from the application service provider.
+  example: []
+  syntax:
+    content: public interface IDbContextTransactionLock
+    content.vb: Public Interface IDbContextTransactionLock
+  derivedClasses:
+  - NuvTools.Data.EntityFrameworkCore.PostgreSQL.Context.PostgreSqlTransactionLock
+  - NuvTools.Data.EntityFrameworkCore.SqlServer.Context.SqlServerTransactionLock
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock.AcquireAsync(Microsoft.EntityFrameworkCore.DbContext,System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock.AcquireAsync(Microsoft.EntityFrameworkCore.DbContext,System.String,System.Threading.CancellationToken)
+  id: AcquireAsync(Microsoft.EntityFrameworkCore.DbContext,System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock
+  langs:
+  - csharp
+  - vb
+  name: AcquireAsync(DbContext, string, CancellationToken)
+  nameWithType: IDbContextTransactionLock.AcquireAsync(DbContext, string, CancellationToken)
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock.AcquireAsync(Microsoft.EntityFrameworkCore.DbContext, string, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore
+  namespace: NuvTools.Data.EntityFrameworkCore.Context
+  summary: >-
+    Acquires the exclusive lock named <code class="paramref">name</code>, blocking until it is granted, and holds it
+
+    until the current transaction of <code class="paramref">context</code> ends.
+  example: []
+  syntax:
+    content: Task AcquireAsync(DbContext context, string name, CancellationToken cancellationToken = default)
+    parameters:
+    - id: context
+      type: Microsoft.EntityFrameworkCore.DbContext
+      description: The context whose transaction and connection the lock belongs to.
+    - id: name
+      type: System.String
+      description: Lock name, as given by the caller.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: A cancellation token to observe while waiting for the task to complete.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task that completes once the lock is held.
+    content.vb: Function AcquireAsync(context As DbContext, name As String, cancellationToken As CancellationToken = Nothing) As Task
+  overload: NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock.AcquireAsync*
+  nameWithType.vb: IDbContextTransactionLock.AcquireAsync(DbContext, String, CancellationToken)
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock.AcquireAsync(Microsoft.EntityFrameworkCore.DbContext, String, System.Threading.CancellationToken)
+  name.vb: AcquireAsync(DbContext, String, CancellationToken)
+references:
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AcquireTransactionLockAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AcquireTransactionLockAsync(System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.html#NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_AcquireTransactionLockAsync_System_String_System_Threading_CancellationToken_
+  name: AcquireTransactionLockAsync(string, CancellationToken)
+  nameWithType: IDbContextCommands.AcquireTransactionLockAsync(string, CancellationToken)
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AcquireTransactionLockAsync(string, System.Threading.CancellationToken)
+  nameWithType.vb: IDbContextCommands.AcquireTransactionLockAsync(String, CancellationToken)
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AcquireTransactionLockAsync(String, System.Threading.CancellationToken)
+  name.vb: AcquireTransactionLockAsync(String, CancellationToken)
+  spec.csharp:
+  - uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AcquireTransactionLockAsync(System.String,System.Threading.CancellationToken)
+    name: AcquireTransactionLockAsync
+    href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.html#NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_AcquireTransactionLockAsync_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AcquireTransactionLockAsync(System.String,System.Threading.CancellationToken)
+    name: AcquireTransactionLockAsync
+    href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.html#NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_AcquireTransactionLockAsync_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase
+  commentId: T:NuvTools.Data.EntityFrameworkCore.Context.DbContextBase
+  href: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase.html
+  name: DbContextBase
+  nameWithType: DbContextBase
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.DbContextBase
+- uid: NuvTools.Data.EntityFrameworkCore.Context
+  commentId: N:NuvTools.Data.EntityFrameworkCore.Context
+  name: NuvTools.Data.EntityFrameworkCore.Context
+  nameWithType: NuvTools.Data.EntityFrameworkCore.Context
+  fullName: NuvTools.Data.EntityFrameworkCore.Context
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Data
+    name: Data
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore
+    name: EntityFrameworkCore
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore.Context
+    name: Context
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Data
+    name: Data
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore
+    name: EntityFrameworkCore
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore.Context
+    name: Context
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
+  commentId: T:NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
+  parent: NuvTools.Data.EntityFrameworkCore.Context
+  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.html
+  name: IDbContextCommands
+  nameWithType: IDbContextCommands
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock.AcquireAsync*
+  commentId: Overload:NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock.AcquireAsync
+  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock.html#NuvTools_Data_EntityFrameworkCore_Context_IDbContextTransactionLock_AcquireAsync_Microsoft_EntityFrameworkCore_DbContext_System_String_System_Threading_CancellationToken_
+  name: AcquireAsync
+  nameWithType: IDbContextTransactionLock.AcquireAsync
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock.AcquireAsync
+- uid: Microsoft.EntityFrameworkCore.DbContext
+  commentId: T:Microsoft.EntityFrameworkCore.DbContext
+  parent: Microsoft.EntityFrameworkCore
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext
+  name: DbContext
+  nameWithType: DbContext
+  fullName: Microsoft.EntityFrameworkCore.DbContext
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: Microsoft.EntityFrameworkCore
+  commentId: N:Microsoft.EntityFrameworkCore
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.EntityFrameworkCore
+  nameWithType: Microsoft.EntityFrameworkCore
+  fullName: Microsoft.EntityFrameworkCore
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

@@ -1,0 +1,802 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient
+  commentId: T:NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient
+  id: StripeRefundApiClient
+  parent: NuvTools.Payment.Stripe.ApiClient.Services
+  children:
+  - NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient.#ctor(Stripe.IStripeClient,Microsoft.Extensions.Logging.ILogger{NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient})
+  - NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient.RefundAsync(NuvTools.Payment.DTOs.Requests.PaymentRefundRequest,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: StripeRefundApiClient
+  nameWithType: StripeRefundApiClient
+  fullName: NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient
+  type: Class
+  assemblies:
+  - NuvTools.Payment.Stripe.ApiClient
+  namespace: NuvTools.Payment.Stripe.ApiClient.Services
+  summary: 'Giving money back: refunding part or all of a payment the customer already made.'
+  remarks: >-
+    <p>
+
+    <b>Separate from <xref href="NuvTools.Payment.Contracts.IPaymentChargeClient" data-throw-if-not-resolved="false"></xref>, for the reason charges and transfers are
+
+    separate.</b> Refunding is not the inverse of charging: it names a payment rather than a
+
+    customer, it can be partial and repeated until the payment is exhausted, and a caller that can
+
+    charge is not automatically a caller that may give money back. Keeping it its own contract lets a
+
+    provider that cannot refund simply not implement it, and lets a composition root grant the two
+
+    capabilities separately.
+
+    </p>
+
+    <p>
+
+    <b>What it does not do is claw back a payee.</b> Money already transferred to a payee is the
+
+    caller's problem to reconcile — by netting it off what the payee is owed next, which is a
+
+    decision only the caller can make. A provider API that reverses a transfer exists, but using it
+
+    would take money out of an account the payee may have already spent from.
+
+    </p>
+  example: []
+  syntax:
+    content: 'public class StripeRefundApiClient : IPaymentRefundClient'
+    content.vb: Public Class StripeRefundApiClient Implements IPaymentRefundClient
+  inheritance:
+  - System.Object
+  implements:
+  - NuvTools.Payment.Contracts.IPaymentRefundClient
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient.#ctor(Stripe.IStripeClient,Microsoft.Extensions.Logging.ILogger{NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient})
+  commentId: M:NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient.#ctor(Stripe.IStripeClient,Microsoft.Extensions.Logging.ILogger{NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient})
+  id: '#ctor(Stripe.IStripeClient,Microsoft.Extensions.Logging.ILogger{NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient})'
+  parent: NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient
+  langs:
+  - csharp
+  - vb
+  name: StripeRefundApiClient(IStripeClient, ILogger<StripeRefundApiClient>)
+  nameWithType: StripeRefundApiClient.StripeRefundApiClient(IStripeClient, ILogger<StripeRefundApiClient>)
+  fullName: NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient.StripeRefundApiClient(Stripe.IStripeClient, Microsoft.Extensions.Logging.ILogger<NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient>)
+  type: Constructor
+  assemblies:
+  - NuvTools.Payment.Stripe.ApiClient
+  namespace: NuvTools.Payment.Stripe.ApiClient.Services
+  summary: 'Giving money back: refunding part or all of a payment the customer already made.'
+  remarks: >-
+    <p>
+
+    <b>Separate from <xref href="NuvTools.Payment.Contracts.IPaymentChargeClient" data-throw-if-not-resolved="false"></xref>, for the reason charges and transfers are
+
+    separate.</b> Refunding is not the inverse of charging: it names a payment rather than a
+
+    customer, it can be partial and repeated until the payment is exhausted, and a caller that can
+
+    charge is not automatically a caller that may give money back. Keeping it its own contract lets a
+
+    provider that cannot refund simply not implement it, and lets a composition root grant the two
+
+    capabilities separately.
+
+    </p>
+
+    <p>
+
+    <b>What it does not do is claw back a payee.</b> Money already transferred to a payee is the
+
+    caller's problem to reconcile — by netting it off what the payee is owed next, which is a
+
+    decision only the caller can make. A provider API that reverses a transfer exists, but using it
+
+    would take money out of an account the payee may have already spent from.
+
+    </p>
+  example: []
+  syntax:
+    content: public StripeRefundApiClient(IStripeClient client, ILogger<StripeRefundApiClient> logger)
+    parameters:
+    - id: client
+      type: Stripe.IStripeClient
+    - id: logger
+      type: Microsoft.Extensions.Logging.ILogger{NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient}
+    content.vb: Public Sub New(client As IStripeClient, logger As ILogger(Of StripeRefundApiClient))
+  overload: NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient.#ctor*
+  nameWithType.vb: StripeRefundApiClient.New(IStripeClient, ILogger(Of StripeRefundApiClient))
+  fullName.vb: NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient.New(Stripe.IStripeClient, Microsoft.Extensions.Logging.ILogger(Of NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient))
+  name.vb: New(IStripeClient, ILogger(Of StripeRefundApiClient))
+- uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient.RefundAsync(NuvTools.Payment.DTOs.Requests.PaymentRefundRequest,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient.RefundAsync(NuvTools.Payment.DTOs.Requests.PaymentRefundRequest,System.Threading.CancellationToken)
+  id: RefundAsync(NuvTools.Payment.DTOs.Requests.PaymentRefundRequest,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient
+  langs:
+  - csharp
+  - vb
+  name: RefundAsync(PaymentRefundRequest, CancellationToken)
+  nameWithType: StripeRefundApiClient.RefundAsync(PaymentRefundRequest, CancellationToken)
+  fullName: NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient.RefundAsync(NuvTools.Payment.DTOs.Requests.PaymentRefundRequest, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Stripe.ApiClient
+  namespace: NuvTools.Payment.Stripe.ApiClient.Services
+  summary: Refunds a payment, in whole or in part.
+  example: []
+  syntax:
+    content: public Task<IResult<PaymentRefundDTO>> RefundAsync(PaymentRefundRequest request, CancellationToken cancellationToken = default)
+    parameters:
+    - id: request
+      type: NuvTools.Payment.DTOs.Requests.PaymentRefundRequest
+      description: Which payment, how much, and the key that makes a retry safe.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancels the call.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.DTOs.PaymentRefundDTO}}
+    content.vb: Public Function RefundAsync(request As PaymentRefundRequest, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of PaymentRefundDTO))
+  overload: NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient.RefundAsync*
+  implements:
+  - NuvTools.Payment.Contracts.IPaymentRefundClient.RefundAsync(NuvTools.Payment.DTOs.Requests.PaymentRefundRequest,System.Threading.CancellationToken)
+references:
+- uid: NuvTools.Payment.Contracts.IPaymentChargeClient
+  commentId: T:NuvTools.Payment.Contracts.IPaymentChargeClient
+  parent: NuvTools.Payment.Contracts
+  href: NuvTools.Payment.Contracts.IPaymentChargeClient.html
+  name: IPaymentChargeClient
+  nameWithType: IPaymentChargeClient
+  fullName: NuvTools.Payment.Contracts.IPaymentChargeClient
+- uid: NuvTools.Payment.Stripe.ApiClient.Services
+  commentId: N:NuvTools.Payment.Stripe.ApiClient.Services
+  name: NuvTools.Payment.Stripe.ApiClient.Services
+  nameWithType: NuvTools.Payment.Stripe.ApiClient.Services
+  fullName: NuvTools.Payment.Stripe.ApiClient.Services
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Stripe
+    name: Stripe
+  - name: .
+  - uid: NuvTools.Payment.Stripe.ApiClient
+    name: ApiClient
+  - name: .
+  - uid: NuvTools.Payment.Stripe.ApiClient.Services
+    name: Services
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Stripe
+    name: Stripe
+  - name: .
+  - uid: NuvTools.Payment.Stripe.ApiClient
+    name: ApiClient
+  - name: .
+  - uid: NuvTools.Payment.Stripe.ApiClient.Services
+    name: Services
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: NuvTools.Payment.Contracts.IPaymentRefundClient
+  commentId: T:NuvTools.Payment.Contracts.IPaymentRefundClient
+  parent: NuvTools.Payment.Contracts
+  href: NuvTools.Payment.Contracts.IPaymentRefundClient.html
+  name: IPaymentRefundClient
+  nameWithType: IPaymentRefundClient
+  fullName: NuvTools.Payment.Contracts.IPaymentRefundClient
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: NuvTools.Payment.Contracts
+  commentId: N:NuvTools.Payment.Contracts
+  name: NuvTools.Payment.Contracts
+  nameWithType: NuvTools.Payment.Contracts
+  fullName: NuvTools.Payment.Contracts
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Contracts
+    name: Contracts
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Contracts
+    name: Contracts
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient.#ctor*
+  commentId: Overload:NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient.#ctor
+  href: NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient.html#NuvTools_Payment_Stripe_ApiClient_Services_StripeRefundApiClient__ctor_Stripe_IStripeClient_Microsoft_Extensions_Logging_ILogger_NuvTools_Payment_Stripe_ApiClient_Services_StripeRefundApiClient__
+  name: StripeRefundApiClient
+  nameWithType: StripeRefundApiClient.StripeRefundApiClient
+  fullName: NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient.StripeRefundApiClient
+  nameWithType.vb: StripeRefundApiClient.New
+  fullName.vb: NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient.New
+  name.vb: New
+- uid: Stripe.IStripeClient
+  commentId: T:Stripe.IStripeClient
+  parent: Stripe
+  isExternal: true
+  name: IStripeClient
+  nameWithType: IStripeClient
+  fullName: Stripe.IStripeClient
+- uid: Microsoft.Extensions.Logging.ILogger{NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient}
+  commentId: T:Microsoft.Extensions.Logging.ILogger{NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient}
+  parent: Microsoft.Extensions.Logging
+  definition: Microsoft.Extensions.Logging.ILogger`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  name: ILogger<StripeRefundApiClient>
+  nameWithType: ILogger<StripeRefundApiClient>
+  fullName: Microsoft.Extensions.Logging.ILogger<NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient>
+  nameWithType.vb: ILogger(Of StripeRefundApiClient)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient)
+  name.vb: ILogger(Of StripeRefundApiClient)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: <
+  - uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient
+    name: StripeRefundApiClient
+    href: NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient
+    name: StripeRefundApiClient
+    href: NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient.html
+  - name: )
+- uid: Stripe
+  commentId: N:Stripe
+  isExternal: true
+  name: Stripe
+  nameWithType: Stripe
+  fullName: Stripe
+- uid: Microsoft.Extensions.Logging.ILogger`1
+  commentId: T:Microsoft.Extensions.Logging.ILogger`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  name: ILogger<TCategoryName>
+  nameWithType: ILogger<TCategoryName>
+  fullName: Microsoft.Extensions.Logging.ILogger<TCategoryName>
+  nameWithType.vb: ILogger(Of TCategoryName)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of TCategoryName)
+  name.vb: ILogger(Of TCategoryName)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: <
+  - name: TCategoryName
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TCategoryName
+  - name: )
+- uid: Microsoft.Extensions.Logging
+  commentId: N:Microsoft.Extensions.Logging
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Logging
+  nameWithType: Microsoft.Extensions.Logging
+  fullName: Microsoft.Extensions.Logging
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Logging
+    name: Logging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Logging
+    name: Logging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+- uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient.RefundAsync*
+  commentId: Overload:NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient.RefundAsync
+  href: NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient.html#NuvTools_Payment_Stripe_ApiClient_Services_StripeRefundApiClient_RefundAsync_NuvTools_Payment_DTOs_Requests_PaymentRefundRequest_System_Threading_CancellationToken_
+  name: RefundAsync
+  nameWithType: StripeRefundApiClient.RefundAsync
+  fullName: NuvTools.Payment.Stripe.ApiClient.Services.StripeRefundApiClient.RefundAsync
+- uid: NuvTools.Payment.Contracts.IPaymentRefundClient.RefundAsync(NuvTools.Payment.DTOs.Requests.PaymentRefundRequest,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Contracts.IPaymentRefundClient.RefundAsync(NuvTools.Payment.DTOs.Requests.PaymentRefundRequest,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Contracts.IPaymentRefundClient
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: RefundAsync(PaymentRefundRequest, CancellationToken)
+  nameWithType: IPaymentRefundClient.RefundAsync(PaymentRefundRequest, CancellationToken)
+  fullName: NuvTools.Payment.Contracts.IPaymentRefundClient.RefundAsync(NuvTools.Payment.DTOs.Requests.PaymentRefundRequest, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: NuvTools.Payment.Contracts.IPaymentRefundClient.RefundAsync(NuvTools.Payment.DTOs.Requests.PaymentRefundRequest,System.Threading.CancellationToken)
+    name: RefundAsync
+  - name: (
+  - uid: NuvTools.Payment.DTOs.Requests.PaymentRefundRequest
+    name: PaymentRefundRequest
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Payment.Contracts.IPaymentRefundClient.RefundAsync(NuvTools.Payment.DTOs.Requests.PaymentRefundRequest,System.Threading.CancellationToken)
+    name: RefundAsync
+  - name: (
+  - uid: NuvTools.Payment.DTOs.Requests.PaymentRefundRequest
+    name: PaymentRefundRequest
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: NuvTools.Payment.DTOs.Requests.PaymentRefundRequest
+  commentId: T:NuvTools.Payment.DTOs.Requests.PaymentRefundRequest
+  parent: NuvTools.Payment.DTOs.Requests
+  href: NuvTools.Payment.DTOs.Requests.PaymentRefundRequest.html
+  name: PaymentRefundRequest
+  nameWithType: PaymentRefundRequest
+  fullName: NuvTools.Payment.DTOs.Requests.PaymentRefundRequest
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.DTOs.PaymentRefundDTO}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.DTOs.PaymentRefundDTO}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<PaymentRefundDTO>>
+  nameWithType: Task<IResult<PaymentRefundDTO>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<NuvTools.Payment.DTOs.PaymentRefundDTO>>
+  nameWithType.vb: Task(Of IResult(Of PaymentRefundDTO))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of NuvTools.Payment.DTOs.PaymentRefundDTO))
+  name.vb: Task(Of IResult(Of PaymentRefundDTO))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - uid: NuvTools.Payment.DTOs.PaymentRefundDTO
+    name: PaymentRefundDTO
+    href: NuvTools.Payment.DTOs.PaymentRefundDTO.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.DTOs.PaymentRefundDTO
+    name: PaymentRefundDTO
+    href: NuvTools.Payment.DTOs.PaymentRefundDTO.html
+  - name: )
+  - name: )
+- uid: NuvTools.Payment.DTOs.Requests
+  commentId: N:NuvTools.Payment.DTOs.Requests
+  name: NuvTools.Payment.DTOs.Requests
+  nameWithType: NuvTools.Payment.DTOs.Requests
+  fullName: NuvTools.Payment.DTOs.Requests
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.DTOs
+    name: DTOs
+  - name: .
+  - uid: NuvTools.Payment.DTOs.Requests
+    name: Requests
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.DTOs
+    name: DTOs
+  - name: .
+  - uid: NuvTools.Payment.DTOs.Requests
+    name: Requests
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

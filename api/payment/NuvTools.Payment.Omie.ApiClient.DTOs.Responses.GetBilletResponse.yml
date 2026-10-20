@@ -1,0 +1,1098 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse
+  commentId: T:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse
+  id: GetBilletResponse
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  children:
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BankNumber
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.Barcode
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletDueDate
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletIssueDate
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletLink
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletNumber
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountDate1
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountDate2
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountDate3
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountValue1
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountValue2
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountValue3
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.FinePercentage
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.InterestPercentage
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.StatusCode
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.StatusDescription
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.TitleCode
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.TitleIntegrationCode
+  langs:
+  - csharp
+  - vb
+  name: GetBilletResponse
+  nameWithType: GetBilletResponse
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse
+  type: Class
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: >-
+    Response of ObterBoleto — fetches the billet link, identifiers and bank-side
+
+    details after GerarBoleto. Note Omie uses "cDesStatus" (without the second "c")
+
+    in the billet endpoints.
+  example: []
+  syntax:
+    content: 'public class GetBilletResponse : IOmieBusinessStatus'
+    content.vb: Public Class GetBilletResponse Implements IOmieBusinessStatus
+  inheritance:
+  - System.Object
+  implements:
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.TitleCode
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.TitleCode
+  id: TitleCode
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse
+  langs:
+  - csharp
+  - vb
+  name: TitleCode
+  nameWithType: GetBilletResponse.TitleCode
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.TitleCode
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  syntax:
+    content: >-
+      [JsonPropertyName("nCodTitulo")]
+
+      public long TitleCode { get; set; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: >-
+      <JsonPropertyName("nCodTitulo")>
+
+      Public Property TitleCode As Long
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.TitleCode*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: nCodTitulo
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.TitleIntegrationCode
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.TitleIntegrationCode
+  id: TitleIntegrationCode
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse
+  langs:
+  - csharp
+  - vb
+  name: TitleIntegrationCode
+  nameWithType: GetBilletResponse.TitleIntegrationCode
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.TitleIntegrationCode
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  syntax:
+    content: >-
+      [JsonPropertyName("cCodIntTitulo")]
+
+      public string? TitleIntegrationCode { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonPropertyName("cCodIntTitulo")>
+
+      Public Property TitleIntegrationCode As String
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.TitleIntegrationCode*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: cCodIntTitulo
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.StatusCode
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.StatusCode
+  id: StatusCode
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse
+  langs:
+  - csharp
+  - vb
+  name: StatusCode
+  nameWithType: GetBilletResponse.StatusCode
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.StatusCode
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  example: []
+  syntax:
+    content: >-
+      [JsonPropertyName("cCodStatus")]
+
+      public string? StatusCode { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonPropertyName("cCodStatus")>
+
+      Public Property StatusCode As String
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.StatusCode*
+  implements:
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus.StatusCode
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: cCodStatus
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.StatusDescription
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.StatusDescription
+  id: StatusDescription
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse
+  langs:
+  - csharp
+  - vb
+  name: StatusDescription
+  nameWithType: GetBilletResponse.StatusDescription
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.StatusDescription
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  example: []
+  syntax:
+    content: >-
+      [JsonPropertyName("cDesStatus")]
+
+      public string? StatusDescription { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonPropertyName("cDesStatus")>
+
+      Public Property StatusDescription As String
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.StatusDescription*
+  implements:
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus.StatusDescription
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: cDesStatus
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletLink
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletLink
+  id: BilletLink
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse
+  langs:
+  - csharp
+  - vb
+  name: BilletLink
+  nameWithType: GetBilletResponse.BilletLink
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletLink
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  syntax:
+    content: >-
+      [JsonPropertyName("cLinkBoleto")]
+
+      public string? BilletLink { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonPropertyName("cLinkBoleto")>
+
+      Public Property BilletLink As String
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletLink*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: cLinkBoleto
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletNumber
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletNumber
+  id: BilletNumber
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse
+  langs:
+  - csharp
+  - vb
+  name: BilletNumber
+  nameWithType: GetBilletResponse.BilletNumber
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletNumber
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  syntax:
+    content: >-
+      [JsonPropertyName("cNumBoleto")]
+
+      public string? BilletNumber { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonPropertyName("cNumBoleto")>
+
+      Public Property BilletNumber As String
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletNumber*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: cNumBoleto
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.Barcode
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.Barcode
+  id: Barcode
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse
+  langs:
+  - csharp
+  - vb
+  name: Barcode
+  nameWithType: GetBilletResponse.Barcode
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.Barcode
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  syntax:
+    content: >-
+      [JsonPropertyName("cCodBarras")]
+
+      public string? Barcode { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonPropertyName("cCodBarras")>
+
+      Public Property Barcode As String
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.Barcode*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: cCodBarras
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BankNumber
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BankNumber
+  id: BankNumber
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse
+  langs:
+  - csharp
+  - vb
+  name: BankNumber
+  nameWithType: GetBilletResponse.BankNumber
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BankNumber
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  syntax:
+    content: >-
+      [JsonPropertyName("cNumBancario")]
+
+      public string? BankNumber { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonPropertyName("cNumBancario")>
+
+      Public Property BankNumber As String
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BankNumber*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: cNumBancario
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletIssueDate
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletIssueDate
+  id: BilletIssueDate
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse
+  langs:
+  - csharp
+  - vb
+  name: BilletIssueDate
+  nameWithType: GetBilletResponse.BilletIssueDate
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletIssueDate
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  syntax:
+    content: >-
+      [JsonPropertyName("dDtEmBol")]
+
+      public string? BilletIssueDate { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonPropertyName("dDtEmBol")>
+
+      Public Property BilletIssueDate As String
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletIssueDate*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: dDtEmBol
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletDueDate
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletDueDate
+  id: BilletDueDate
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse
+  langs:
+  - csharp
+  - vb
+  name: BilletDueDate
+  nameWithType: GetBilletResponse.BilletDueDate
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletDueDate
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  syntax:
+    content: >-
+      [JsonPropertyName("dDtVencBol")]
+
+      public string? BilletDueDate { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonPropertyName("dDtVencBol")>
+
+      Public Property BilletDueDate As String
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletDueDate*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: dDtVencBol
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.InterestPercentage
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.InterestPercentage
+  id: InterestPercentage
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse
+  langs:
+  - csharp
+  - vb
+  name: InterestPercentage
+  nameWithType: GetBilletResponse.InterestPercentage
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.InterestPercentage
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  syntax:
+    content: >-
+      [JsonPropertyName("nPerJuros")]
+
+      public decimal InterestPercentage { get; set; }
+    parameters: []
+    return:
+      type: System.Decimal
+    content.vb: >-
+      <JsonPropertyName("nPerJuros")>
+
+      Public Property InterestPercentage As Decimal
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.InterestPercentage*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: nPerJuros
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.FinePercentage
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.FinePercentage
+  id: FinePercentage
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse
+  langs:
+  - csharp
+  - vb
+  name: FinePercentage
+  nameWithType: GetBilletResponse.FinePercentage
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.FinePercentage
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  syntax:
+    content: >-
+      [JsonPropertyName("nPerMulta")]
+
+      public decimal FinePercentage { get; set; }
+    parameters: []
+    return:
+      type: System.Decimal
+    content.vb: >-
+      <JsonPropertyName("nPerMulta")>
+
+      Public Property FinePercentage As Decimal
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.FinePercentage*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: nPerMulta
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountDate1
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountDate1
+  id: DiscountDate1
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse
+  langs:
+  - csharp
+  - vb
+  name: DiscountDate1
+  nameWithType: GetBilletResponse.DiscountDate1
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountDate1
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  syntax:
+    content: >-
+      [JsonPropertyName("dDescontoCond1")]
+
+      public string? DiscountDate1 { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonPropertyName("dDescontoCond1")>
+
+      Public Property DiscountDate1 As String
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountDate1*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: dDescontoCond1
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountValue1
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountValue1
+  id: DiscountValue1
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse
+  langs:
+  - csharp
+  - vb
+  name: DiscountValue1
+  nameWithType: GetBilletResponse.DiscountValue1
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountValue1
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  syntax:
+    content: >-
+      [JsonPropertyName("vDescontoCond1")]
+
+      public decimal DiscountValue1 { get; set; }
+    parameters: []
+    return:
+      type: System.Decimal
+    content.vb: >-
+      <JsonPropertyName("vDescontoCond1")>
+
+      Public Property DiscountValue1 As Decimal
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountValue1*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: vDescontoCond1
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountDate2
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountDate2
+  id: DiscountDate2
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse
+  langs:
+  - csharp
+  - vb
+  name: DiscountDate2
+  nameWithType: GetBilletResponse.DiscountDate2
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountDate2
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  syntax:
+    content: >-
+      [JsonPropertyName("dDescontoCond2")]
+
+      public string? DiscountDate2 { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonPropertyName("dDescontoCond2")>
+
+      Public Property DiscountDate2 As String
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountDate2*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: dDescontoCond2
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountValue2
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountValue2
+  id: DiscountValue2
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse
+  langs:
+  - csharp
+  - vb
+  name: DiscountValue2
+  nameWithType: GetBilletResponse.DiscountValue2
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountValue2
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  syntax:
+    content: >-
+      [JsonPropertyName("vDescontoCond2")]
+
+      public decimal DiscountValue2 { get; set; }
+    parameters: []
+    return:
+      type: System.Decimal
+    content.vb: >-
+      <JsonPropertyName("vDescontoCond2")>
+
+      Public Property DiscountValue2 As Decimal
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountValue2*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: vDescontoCond2
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountDate3
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountDate3
+  id: DiscountDate3
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse
+  langs:
+  - csharp
+  - vb
+  name: DiscountDate3
+  nameWithType: GetBilletResponse.DiscountDate3
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountDate3
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  syntax:
+    content: >-
+      [JsonPropertyName("dDescontoCond3")]
+
+      public string? DiscountDate3 { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonPropertyName("dDescontoCond3")>
+
+      Public Property DiscountDate3 As String
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountDate3*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: dDescontoCond3
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountValue3
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountValue3
+  id: DiscountValue3
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse
+  langs:
+  - csharp
+  - vb
+  name: DiscountValue3
+  nameWithType: GetBilletResponse.DiscountValue3
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountValue3
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  syntax:
+    content: >-
+      [JsonPropertyName("vDescontoCond3")]
+
+      public decimal DiscountValue3 { get; set; }
+    parameters: []
+    return:
+      type: System.Decimal
+    content.vb: >-
+      <JsonPropertyName("vDescontoCond3")>
+
+      Public Property DiscountValue3 As Decimal
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountValue3*
+  attributes:
+  - type: System.Text.Json.Serialization.JsonPropertyNameAttribute
+    ctor: System.Text.Json.Serialization.JsonPropertyNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: vDescontoCond3
+references:
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  commentId: N:NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  name: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  nameWithType: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Omie
+    name: Omie
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient
+    name: ApiClient
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs
+    name: DTOs
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+    name: Responses
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Omie
+    name: Omie
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient
+    name: ApiClient
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs
+    name: DTOs
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+    name: Responses
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus
+  commentId: T:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus.html
+  name: IOmieBusinessStatus
+  nameWithType: IOmieBusinessStatus
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.TitleCode*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.TitleCode
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_GetBilletResponse_TitleCode
+  name: TitleCode
+  nameWithType: GetBilletResponse.TitleCode
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.TitleCode
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long
+  nameWithType: long
+  fullName: long
+  nameWithType.vb: Long
+  fullName.vb: Long
+  name.vb: Long
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.TitleIntegrationCode*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.TitleIntegrationCode
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_GetBilletResponse_TitleIntegrationCode
+  name: TitleIntegrationCode
+  nameWithType: GetBilletResponse.TitleIntegrationCode
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.TitleIntegrationCode
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.StatusCode*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.StatusCode
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_GetBilletResponse_StatusCode
+  name: StatusCode
+  nameWithType: GetBilletResponse.StatusCode
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.StatusCode
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus.StatusCode
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus.StatusCode
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_IOmieBusinessStatus_StatusCode
+  name: StatusCode
+  nameWithType: IOmieBusinessStatus.StatusCode
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus.StatusCode
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.StatusDescription*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.StatusDescription
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_GetBilletResponse_StatusDescription
+  name: StatusDescription
+  nameWithType: GetBilletResponse.StatusDescription
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.StatusDescription
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus.StatusDescription
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus.StatusDescription
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_IOmieBusinessStatus_StatusDescription
+  name: StatusDescription
+  nameWithType: IOmieBusinessStatus.StatusDescription
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IOmieBusinessStatus.StatusDescription
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletLink*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletLink
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_GetBilletResponse_BilletLink
+  name: BilletLink
+  nameWithType: GetBilletResponse.BilletLink
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletLink
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletNumber*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletNumber
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_GetBilletResponse_BilletNumber
+  name: BilletNumber
+  nameWithType: GetBilletResponse.BilletNumber
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletNumber
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.Barcode*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.Barcode
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_GetBilletResponse_Barcode
+  name: Barcode
+  nameWithType: GetBilletResponse.Barcode
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.Barcode
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BankNumber*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BankNumber
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_GetBilletResponse_BankNumber
+  name: BankNumber
+  nameWithType: GetBilletResponse.BankNumber
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BankNumber
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletIssueDate*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletIssueDate
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_GetBilletResponse_BilletIssueDate
+  name: BilletIssueDate
+  nameWithType: GetBilletResponse.BilletIssueDate
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletIssueDate
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletDueDate*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletDueDate
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_GetBilletResponse_BilletDueDate
+  name: BilletDueDate
+  nameWithType: GetBilletResponse.BilletDueDate
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.BilletDueDate
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.InterestPercentage*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.InterestPercentage
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_GetBilletResponse_InterestPercentage
+  name: InterestPercentage
+  nameWithType: GetBilletResponse.InterestPercentage
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.InterestPercentage
+- uid: System.Decimal
+  commentId: T:System.Decimal
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.decimal
+  name: decimal
+  nameWithType: decimal
+  fullName: decimal
+  nameWithType.vb: Decimal
+  fullName.vb: Decimal
+  name.vb: Decimal
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.FinePercentage*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.FinePercentage
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_GetBilletResponse_FinePercentage
+  name: FinePercentage
+  nameWithType: GetBilletResponse.FinePercentage
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.FinePercentage
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountDate1*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountDate1
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_GetBilletResponse_DiscountDate1
+  name: DiscountDate1
+  nameWithType: GetBilletResponse.DiscountDate1
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountDate1
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountValue1*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountValue1
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_GetBilletResponse_DiscountValue1
+  name: DiscountValue1
+  nameWithType: GetBilletResponse.DiscountValue1
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountValue1
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountDate2*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountDate2
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_GetBilletResponse_DiscountDate2
+  name: DiscountDate2
+  nameWithType: GetBilletResponse.DiscountDate2
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountDate2
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountValue2*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountValue2
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_GetBilletResponse_DiscountValue2
+  name: DiscountValue2
+  nameWithType: GetBilletResponse.DiscountValue2
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountValue2
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountDate3*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountDate3
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_GetBilletResponse_DiscountDate3
+  name: DiscountDate3
+  nameWithType: GetBilletResponse.DiscountDate3
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountDate3
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountValue3*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountValue3
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_GetBilletResponse_DiscountValue3
+  name: DiscountValue3
+  nameWithType: GetBilletResponse.DiscountValue3
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.DiscountValue3

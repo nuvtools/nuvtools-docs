@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>NuvTools ASP.NET Core Libraries | Nuv Tools Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="NuvTools ASP.NET Core Libraries | Nuv Tools Framework ">
+      
+      
+      <link rel="icon" href="../../../images/icon.png">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/nuvtools-brand.svg" alt="Framework">
+            Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="nuvtools-aspnet-core-libraries">NuvTools ASP.NET Core Libraries</h1>
+
+<p><a href="https://www.nuget.org/packages/NuvTools.AspNetCore/"><img src="https://img.shields.io/nuget/v/NuvTools.AspNetCore.svg" alt="NuGet"></a>
+<a href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a></p>
+<p>A suite of helper libraries designed to simplify and enhance ASP.NET Core application development. These libraries target modern .NET platforms, including .NET 8, .NET 9, and .NET 10.</p>
+<h2 id="libraries">Libraries</h2>
+<h3 id="nuvtoolsaspnetcore">NuvTools.AspNetCore</h3>
+<p>ASP.NET Core helpers including composite localization.</p>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li><strong>Composite Localization</strong>: Multi-source localization with prefix-based routing and fallback resolution</li>
+<li>Fully documented with XML comments for IntelliSense support</li>
+</ul>
+<h3 id="nuvtoolsaspnetcoreentityframeworkcore">NuvTools.AspNetCore.EntityFrameworkCore</h3>
+<p>Entity Framework Core helpers for ASP.NET Core.</p>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li><strong>Database Migration Extensions</strong>: Automatic migration application with configurable timeouts</li>
+</ul>
+<h3 id="nuvtoolsaspnetcoreblazor">NuvTools.AspNetCore.Blazor</h3>
+<p>Blazor services for browser APIs and common functionality.</p>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li><strong>Clipboard Service</strong>: Read/write clipboard operations</li>
+<li><strong>Local Storage Service</strong>: Browser localStorage with JSON serialization</li>
+<li><strong>Session Storage Service</strong>: Browser sessionStorage with JSON serialization</li>
+<li><strong>Loading Service</strong>: Counter-based loading indicator with nested call support and <code>RunAsync</code> helper</li>
+<li><strong>Download File Service</strong>: Trigger browser file downloads from byte arrays, streams, or text with chunked transfer for large files</li>
+<li><strong>Confirm Exit Service</strong>: Ask the browser to confirm before closing or reloading the tab when there are unsaved changes</li>
+<li><strong>Camera Component</strong>: Live camera preview and frame capture, with configurable resolution, camera, mirroring and image format</li>
+</ul>
+<h3 id="nuvtoolsaspnetcoreblazormudblazor">NuvTools.AspNetCore.Blazor.MudBlazor</h3>
+<p>MudBlazor components and utilities for Blazor applications.</p>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li><strong>Pattern Converters</strong>: Flexible input masking for MudTextField (phone, documents, etc.)</li>
+<li><strong>Country-Specific Converters</strong>: Pre-configured formatters for Brazil and United States</li>
+<li><strong>MudTable Base Class</strong>: Server-side paging with session storage persistence and <code>SkipCount</code> mode support for large datasets</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p>Install via NuGet Package Manager:</p>
+<pre><code class="lang-bash"># For general ASP.NET Core helpers
+dotnet add package NuvTools.AspNetCore
+
+# For Entity Framework Core helpers (includes NuvTools.AspNetCore)
+dotnet add package NuvTools.AspNetCore.EntityFrameworkCore
+
+# For Blazor JavaScript interop services
+dotnet add package NuvTools.AspNetCore.Blazor
+
+# For MudBlazor components and utilities
+dotnet add package NuvTools.AspNetCore.Blazor.MudBlazor
+</code></pre>
+<p>Or via Package Manager Console:</p>
+<pre><code class="lang-powershell">Install-Package NuvTools.AspNetCore
+Install-Package NuvTools.AspNetCore.EntityFrameworkCore
+Install-Package NuvTools.AspNetCore.Blazor
+Install-Package NuvTools.AspNetCore.Blazor.MudBlazor
+</code></pre>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="composite-localization">Composite Localization</h3>
+<p>Set up multiple localization sources with prefix-based routing:</p>
+<pre><code class="lang-csharp">// In Program.cs or Startup.cs
+services.AddCompositeLocalizer(
+    namedResourceTypes: new Dictionary&lt;string, Type&gt;
+    {
+        [&quot;Errors&quot;] = typeof(ErrorResources),
+        [&quot;Messages&quot;] = typeof(MessageResources)
+    },
+    unnamedResourceTypes: new[] { typeof(SharedResources) }
+);
+
+// In your code
+public class MyService
+{
+    private readonly CompositeLocalizer _localizer;
+
+    public MyService(CompositeLocalizer localizer)
+    {
+        _localizer = localizer;
+    }
+
+    public string GetMessage()
+    {
+        // Use prefix to target specific localizer
+        var error = _localizer[&quot;Errors:ValidationFailed&quot;];
+
+        // Or let it search all localizers
+        var message = _localizer[&quot;WelcomeMessage&quot;];
+
+        return message;
+    }
+}
+</code></pre>
+<h3 id="database-migrations">Database Migrations</h3>
+<p>Apply migrations automatically on startup:</p>
+<pre><code class="lang-csharp">// In Program.cs
+var app = builder.Build();
+
+// Apply migrations with default timeout
+app.DatabaseMigrate&lt;MyDbContext&gt;();
+
+// Or with custom timeout
+app.DatabaseMigrate&lt;MyDbContext&gt;(TimeSpan.FromMinutes(5));
+
+app.Run();
+</code></pre>
+<h3 id="loading-service-blazor">Loading Service (Blazor)</h3>
+<p>Manage loading indicators with nested call support:</p>
+<pre><code class="lang-csharp">// Register in Program.cs (or use services.AddBlazorServices() to register all)
+services.AddLoadingService();
+
+// In your component
+@inject ILoadingService LoadingService
+@implements IDisposable
+
+&lt;MudOverlay Visible=&quot;LoadingService.IsLoading&quot; DarkBackground=&quot;true&quot;&gt;
+    &lt;MudProgressCircular Color=&quot;Color.Primary&quot; Indeterminate=&quot;true&quot; /&gt;
+&lt;/MudOverlay&gt;
+
+@code {
+    protected override void OnInitialized()
+    {
+        LoadingService.OnChange += StateHasChanged;
+    }
+
+    private async Task LoadData()
+    {
+        // Option 1: Manual Show/Hide (supports nesting)
+        LoadingService.Show();
+        try { await FetchData(); }
+        finally { LoadingService.Hide(); }
+
+        // Option 2: RunAsync helper (recommended)
+        await LoadingService.RunAsync(async () =&gt; await FetchData());
+    }
+
+    public void Dispose() =&gt; LoadingService.OnChange -= StateHasChanged;
+}
+</code></pre>
+<h3 id="download-file-service-blazor">Download File Service (Blazor)</h3>
+<p>Trigger browser file downloads from byte arrays, streams, or text:</p>
+<pre><code class="lang-csharp">// Register in Program.cs (or use services.AddBlazorServices() to register all)
+services.AddDownloadFileService();
+
+// In your component
+@inject IDownloadFileService DownloadFileService
+
+@code {
+    // Download from a byte array
+    private async Task DownloadPdf()
+    {
+        byte[] pdfBytes = await GenerateReport();
+        await DownloadFileService.DownloadFileAsync(&quot;report.pdf&quot;, pdfBytes, &quot;application/pdf&quot;);
+    }
+
+    // Download from a stream (automatically chunked for large files)
+    private async Task DownloadLargeFile()
+    {
+        using var stream = File.OpenRead(&quot;largefile.zip&quot;);
+        await DownloadFileService.DownloadFileAsync(&quot;largefile.zip&quot;, stream, &quot;application/zip&quot;);
+    }
+
+    // Download from text
+    private async Task DownloadCsv()
+    {
+        var csv = &quot;Name,Age\nAlice,30\nBob,25&quot;;
+        await DownloadFileService.DownloadFileFromTextAsync(
+            &quot;data.csv&quot;, csv, Encoding.UTF8, &quot;text/csv&quot;);
+    }
+}
+</code></pre>
+<h3 id="confirm-exit-service-blazor">Confirm Exit Service (Blazor)</h3>
+<p>Ask the browser to confirm before the user closes or reloads the tab. Enable it only while there are
+unsaved changes — both methods are idempotent, so they can be called on every render without extra
+interop calls:</p>
+<pre><code class="lang-csharp">// Register in Program.cs (or use services.AddBlazorServices() to register all)
+services.AddConfirmExitService();
+
+// In your component
+@inject IConfirmExitService ConfirmExit
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (HasUnsavedChanges())
+            await ConfirmExit.EnableAsync();
+        else
+            await ConfirmExit.DisableAsync();
+    }
+
+    // The service is scoped, so turn the confirmation off when leaving the page.
+    public async ValueTask DisposeAsync() =&gt; await ConfirmExit.DisableAsync();
+}
+</code></pre>
+<p>The warning text comes from the browser and cannot be customized. It covers closing/reloading the tab
+and leaving the application, but not in-app (SPA) navigation.</p>
+<h3 id="camera-component-blazor">Camera Component (Blazor)</h3>
+<p>Live camera preview and frame capture. The component owns its own <code>&lt;video&gt;</code>, capture <code>&lt;canvas&gt;</code> and
+media stream — several instances can run side by side — and renders no layout of its own, so the page
+keeps full control of the look:</p>
+<pre><code class="lang-razor">@using NuvTools.AspNetCore.Blazor.Components
+
+&lt;div class=&quot;camera-frame&quot;&gt;
+    &lt;NuvCamera @ref=&quot;_camera&quot;
+               FacingMode=&quot;CameraFacingMode.Environment&quot;
+               Mirrored=&quot;false&quot;
+               Width=&quot;1280&quot; Height=&quot;720&quot;
+               Format=&quot;CameraImageFormat.Jpeg&quot; Quality=&quot;0.9&quot;
+               Style=&quot;width:100%;height:100%;object-fit:cover&quot;
+               OnError=&quot;HandleCameraError&quot;&gt;
+        &lt;Overlay&gt;
+            &lt;div class=&quot;scan-guide&quot;&gt;&lt;/div&gt;
+        &lt;/Overlay&gt;
+    &lt;/NuvCamera&gt;
+&lt;/div&gt;
+
+&lt;button @onclick=&quot;ScanAsync&quot;&gt;Scan&lt;/button&gt;
+
+@code {
+    private NuvCamera _camera = default!;
+
+    private async Task ScanAsync()
+    {
+        var capture = await _camera.CaptureAsync();
+        if (capture is null) return;
+
+        // Base64 already comes without the &quot;data:image/jpeg;base64,&quot; prefix.
+        await Reader.ReadAsync(capture.Base64);   // or capture.Bytes / capture.DataUrl
+    }
+
+    // NotAllowedError (denied), NotFoundError (no camera), NotReadableError (camera in use).
+    private void HandleCameraError(CameraError error) =&gt; Message = Localizer[error.Name];
+}
+</code></pre>
+<p>The camera starts on first render (<code>AutoStart</code>) and is released on dispose — every track is stopped, so
+the camera light goes off. Use <code>StartAsync</code>/<code>StopAsync</code> to drive it manually, <code>GetDevicesAsync</code> to list
+the available cameras and <code>SwitchDeviceAsync</code> to change camera. <code>Mirrored</code> applies to both the preview
+and the captured frame, so what the user sees is what gets saved; capture defaults to the stream's
+native resolution unless <code>CaptureWidth</code>/<code>CaptureHeight</code> are set.</p>
+<h3 id="pattern-converters-mudblazor">Pattern Converters (MudBlazor)</h3>
+<p>Apply input masks to MudTextField components:</p>
+<pre><code class="lang-csharp">@using NuvTools.AspNetCore.Blazor.MudBlazor.Converters
+
+// Custom pattern: A=alphanumeric, N=numeric, L=letter
+&lt;MudTextField @bind-Value=&quot;LicensePlate&quot;
+              Converter=&quot;@(new PatternStringConverter(&quot;LLL-NANN&quot;))&quot; /&gt;
+</code></pre>
+<h3 id="country-specific-converters">Country-Specific Converters</h3>
+<p><strong>United States:</strong></p>
+<pre><code class="lang-csharp">@using NuvTools.AspNetCore.Blazor.MudBlazor.UnitedStates.Converters
+
+&lt;MudTextField @bind-Value=&quot;Phone&quot; Label=&quot;Phone&quot;
+              Converter=&quot;USDocumentConverters.Phone&quot; /&gt;
+// Output: (555) 123-4567
+
+&lt;MudTextField @bind-Value=&quot;Ssn&quot; Label=&quot;SSN&quot;
+              Converter=&quot;USDocumentConverters.Ssn&quot; /&gt;
+// Output: 123-45-6789
+
+&lt;MudTextField @bind-Value=&quot;ZipCode&quot; Label=&quot;ZIP Code&quot;
+              Converter=&quot;USDocumentConverters.ZipCode&quot; /&gt;
+// Output: 90210
+
+// Format directly in code
+var formatted = USDocumentConverters.FormatPhone(&quot;5551234567&quot;);
+</code></pre>
+<p><strong>Brazil:</strong></p>
+<pre><code class="lang-csharp">@using NuvTools.AspNetCore.Blazor.MudBlazor.Brazil.Converters
+
+&lt;MudTextField @bind-Value=&quot;MobilePhone&quot; Label=&quot;Mobile&quot;
+              Converter=&quot;BrazilianDocumentConverters.MobilePhone&quot; /&gt;
+// Output: (11) 99999-9999
+
+&lt;MudTextField @bind-Value=&quot;Cpf&quot; Label=&quot;CPF&quot;
+              Converter=&quot;BrazilianDocumentConverters.Cpf&quot; /&gt;
+// Output: 123.456.789-00
+
+// Auto-detect mobile vs landline
+var formatted = BrazilianDocumentConverters.FormatPhone(&quot;11999999999&quot;);
+</code></pre>
+<h3 id="server-side-paging-with-mudtable">Server-Side Paging with MudTable</h3>
+<p><code>MudTablePageBase</code> provides a base class for server-side paging with MudTable. It handles filter persistence, sort mapping, and loading indicators:</p>
+<pre><code class="lang-csharp">public class UserListPage : MudTablePageBase&lt;UserDto, UserFilter, UserSortColumn&gt;
+{
+    [Inject] private IUserService UserService { get; set; } = default!;
+
+    protected override string SessionStorageKey =&gt; &quot;user-list-filter&quot;;
+
+    protected override UserFilter CreateDefaultFilter() =&gt; new()
+    {
+        SortColumn = UserSortColumn.Name,
+        PageSize = 25
+    };
+
+    protected override async Task&lt;IResult&lt;PagingWithEnumerableList&lt;UserDto&gt;&gt;&gt; FetchDataAsync(
+        UserFilter filter, CancellationToken cancellationToken)
+    {
+        return await UserService.GetUsersAsync(filter, cancellationToken);
+    }
+
+    protected override UserSortColumn MapSortLabelToOrdering(string sortLabel)
+        =&gt; Enum.Parse&lt;UserSortColumn&gt;(sortLabel);
+}
+</code></pre>
+<p><strong>SkipCount mode for large datasets</strong>: Set <code>CountMode = PagingCountMode.SkipCount</code> in your filter to skip the expensive <code>COUNT(*)</code> query. The base class automatically synthesizes <code>TotalItems</code> for MudTablePager so Next/Previous navigation works correctly:</p>
+<pre><code class="lang-csharp">protected override UserFilter CreateDefaultFilter() =&gt; new()
+{
+    SortColumn = UserSortColumn.Name,
+    PageSize = 25,
+    CountMode = PagingCountMode.SkipCount // No COUNT(*) query
+};
+</code></pre>
+<p>When using <code>SkipCount</code>, customize <code>MudTablePager</code> to hide the unknown total:</p>
+<pre><code class="lang-razor">&lt;MudTable ServerData=&quot;@(new Func&lt;TableState, CancellationToken, Task&lt;TableData&lt;UserDto&gt;&gt;&gt;(ServerReload))&quot;
+          @ref=&quot;Table&quot; CurrentPage=&quot;CurrentPage&quot;&gt;
+    @* columns *@
+    &lt;PagerContent&gt;
+        &lt;MudTablePager PageSizeOptions=&quot;@(new int[] { 25, 50, 100 })&quot;
+                       InfoFormat=@(&quot;{first_item}-{last_item}&quot;)
+                       HidePageNumber=&quot;true&quot; /&gt;
+    &lt;/PagerContent&gt;
+&lt;/MudTable&gt;
+</code></pre>
+<p>The base class also exposes <code>HasNextPage</code> and <code>IsFirstPage</code> properties, along with <code>NextPageAsync()</code> / <code>PreviousPageAsync()</code> methods for building custom navigation UI.</p>
+<h3 id="clipboard-service-blazor">Clipboard Service (Blazor)</h3>
+<p>Use JavaScript interop for clipboard operations:</p>
+<pre><code class="lang-csharp">@inject ClipboardService ClipboardService
+
+&lt;button @onclick=&quot;CopyToClipboard&quot;&gt;Copy&lt;/button&gt;
+&lt;button @onclick=&quot;PasteFromClipboard&quot;&gt;Paste&lt;/button&gt;
+
+@code {
+    private async Task CopyToClipboard()
+    {
+        await ClipboardService.WriteTextAsync(&quot;Hello, World!&quot;);
+    }
+
+    private async Task PasteFromClipboard()
+    {
+        var text = await ClipboardService.ReadTextAsync();
+        Console.WriteLine(text);
+    }
+}
+</code></pre>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>Multi-targeting</strong>: Compatible with .NET 8, .NET 9, and .NET 10</li>
+<li><strong>Comprehensive documentation</strong>: Full XML documentation for IntelliSense</li>
+<li><strong>Modular design</strong>: Use only what you need</li>
+<li><strong>Best practices</strong>: Promotes clean architecture patterns</li>
+<li><strong>Modern C# features</strong>: Uses nullable reference types, implicit usings, and primary constructors</li>
+</ul>
+<h2 id="building-from-source">Building from Source</h2>
+<p>This project uses the modern <code>.slnx</code> solution format (Visual Studio 2022 v17.11+).</p>
+<pre><code class="lang-bash"># Clone the repository
+git clone https://github.com/nuvtools/nuvtools-aspnetcore.git
+cd nuvtools-aspnetcore
+
+# Build the solution
+dotnet build NuvTools.AspNetCore.slnx
+
+# Run tests
+dotnet test NuvTools.AspNetCore.slnx
+
+# Create release packages
+dotnet build NuvTools.AspNetCore.slnx --configuration Release
+</code></pre>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>.NET 8.0 SDK or higher</li>
+<li>Visual Studio 2022 (v17.11+) or Visual Studio Code with C# extension</li>
+<li>MudBlazor 8.0.0+ (for NuvTools.AspNetCore.Blazor.MudBlazor)</li>
+</ul>
+<h2 id="contributing">Contributing</h2>
+<p>Contributions are welcome! Please feel free to submit a Pull Request.</p>
+<h2 id="releasing">Releasing</h2>
+<p>Publishing to nuget.org is irreversible per version, so the workflow makes it the last and smallest
+step.</p>
+<p><strong>One workflow per library.</strong> Each package has its own, so a run and an approval each concern
+exactly one package. The steps themselves are shared, in the reusable <code>package-publish.yml</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Workflow</th>
+<th>Release tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NuvTools.AspNetCore</code></td>
+<td><code>aspnetcore-publish.yml</code></td>
+<td><code>aspnetcore-vX.Y.Z</code></td>
+</tr>
+<tr>
+<td><code>NuvTools.AspNetCore.Blazor</code></td>
+<td><code>blazor-publish.yml</code></td>
+<td><code>blazor-vX.Y.Z</code></td>
+</tr>
+<tr>
+<td><code>NuvTools.AspNetCore.Blazor.MudBlazor</code></td>
+<td><code>mudblazor-publish.yml</code></td>
+<td><code>mudblazor-vX.Y.Z</code></td>
+</tr>
+<tr>
+<td><code>NuvTools.AspNetCore.EntityFrameworkCore</code></td>
+<td><code>entityframeworkcore-publish.yml</code></td>
+<td><code>entityframeworkcore-vX.Y.Z</code></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Set the package's <code>&lt;Version&gt;</code> in its <code>.csproj</code> and merge it. That is the version that gets
+published; the workflow reads it and never computes one.</li>
+<li>Run the library's workflow by hand (<em>Actions → AspNetCore Publish → Run workflow</em>) with <em>push</em>
+checked.</li>
+<li>The workflow builds the solution with <code>-warnaserror</code>, runs the tests, takes <strong>that package only</strong>
+from the build output, verifies it carries its README, licence, icon, symbols and every target
+framework, and then waits for approval on the <code>nuget</code> GitHub Environment before pushing.</li>
+<li><strong>After the push succeeds, the workflow tags the commit</strong> with the tag in the table above. The tag is a
+record of what is on nuget.org, never what starts a release, so it cannot exist for a version
+that did not get there. A run whose tag already exists stops before building: the version has
+been released and <code>&lt;Version&gt;</code> needs a bump.</li>
+</ol>
+<p><strong>A referenced package goes first.</strong> A package that references another of this repository as a
+project depends on whatever <code>&lt;Version&gt;</code> that one has in the commit. The workflow checks that
+version is on nuget.org and refuses to push a package whose dependency is not there yet. So:</p>
+<ul>
+<li><code>NuvTools.AspNetCore</code> before <code>NuvTools.AspNetCore.EntityFrameworkCore</code>.</li>
+<li><code>NuvTools.AspNetCore.Blazor</code> before <code>NuvTools.AspNetCore.Blazor.MudBlazor</code>.</li>
+</ul>
+<p>That check knows a version exists, not what is in it: when a referenced package changes its public
+API, bump and publish it first, then bump and publish the packages built on it.</p>
+<p><strong>Versions published by hand are refused.</strong> Releases made before these workflows exist on nuget.org
+with no tag. Pushing one again would skip the duplicate and then tag the current commit as a
+release it is not, so a version that is already on nuget.org stops the run. The exception is a
+re-run of the same run, which is how a push that succeeded and a tag that failed gets finished.</p>
+<p><strong>No API key is stored.</strong> The push uses nuget.org's trusted publishing: the job presents a GitHub
+OIDC token, nuget.org checks it against the policy registered for this repository and answers with a
+key that lives for one hour. The repository needs one secret, <code>NUGET_USER</code> — the nuget.org profile
+name the policy belongs to — and the policy itself, registered under <em>Trusted Publishing</em> on
+nuget.org with the owner <code>nuvtools</code>, the repository <code>nuvtools-aspnetcore</code>, the workflow file and the
+environment <code>nuget</code>.</p>
+<p>Run a library's workflow by hand with <em>push</em> unchecked for a dry run that stops after the
+verification.</p>
+<h2 id="license">License</h2>
+<p>This project is licensed under the MIT License - see the <a href="https://github.com/nuvtools/nuvtools-aspnetcore/blob/main/LICENSE">LICENSE</a> file for details.</p>
+<h2 id="links">Links</h2>
+<ul>
+<li><a href="https://github.com/nuvtools/nuvtools-aspnetcore">GitHub Repository</a></li>
+<li><a href="https://www.nuget.org/packages/NuvTools.AspNetCore/">NuGet Package - NuvTools.AspNetCore</a></li>
+<li><a href="https://www.nuget.org/packages/NuvTools.AspNetCore.EntityFrameworkCore/">NuGet Package - NuvTools.AspNetCore.EntityFrameworkCore</a></li>
+<li><a href="https://www.nuget.org/packages/NuvTools.AspNetCore.Blazor/">NuGet Package - NuvTools.AspNetCore.Blazor</a></li>
+<li><a href="https://www.nuget.org/packages/NuvTools.AspNetCore.Blazor.MudBlazor/">NuGet Package - NuvTools.AspNetCore.Blazor.MudBlazor</a></li>
+<li><a href="https://nuvtools.com">Official Website</a></li>
+</ul>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>© Nuv Tools · <a href="https://nuvtools.com/framework/">nuvtools.com</a> · MIT licence · Built with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

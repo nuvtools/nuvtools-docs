@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Notifications | Nuv Tools Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Notifications | Nuv Tools Framework ">
+      
+      
+      <link rel="icon" href="../../images/icon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/nuvtools-brand.svg" alt="Framework">
+            Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="guide-notification">
+<h1 id="notifications">Notifications</h1>
+
+<p>Three transport-neutral contracts, e-mail, messaging and real time, each with its providers: SMTP and Twilio, Azure Service Bus, and Azure SignalR.</p>
+<h2 id="how-the-packages-fit">How the packages fit</h2>
+<p>Each arrow points at the package it builds on. Rounded, dashed boxes are Nuv Tools packages from another area.</p>
+<pre><code class="lang-mermaid">flowchart LR
+  NuvTools_Notification_Mail[&quot;Notification.Mail&quot;]
+  NuvTools_Notification_Mail_Smtp[&quot;Notification.Mail.Smtp&quot;]
+  NuvTools_Notification_Mail_Twilio[&quot;Notification.Mail.Twilio&quot;]
+  NuvTools_Notification_Messaging[&quot;Notification.Messaging&quot;]
+  NuvTools_Notification_Messaging_Azure_ServiceBus[&quot;Notification.Messaging.Azure.ServiceBus&quot;]
+  NuvTools_Notification_Realtime[&quot;Notification.Realtime&quot;]
+  NuvTools_Notification_Realtime_Azure_SignalR[&quot;Notification.Realtime.Azure.SignalR&quot;]
+  NuvTools_Notification_Realtime_Azure_SignalR_Client[&quot;Notification.Realtime.Azure.SignalR.Client&quot;]
+  NuvTools_Notification_Mail_Smtp --&gt; NuvTools_Notification_Mail
+  NuvTools_Notification_Mail_Twilio --&gt; NuvTools_Notification_Mail
+  NuvTools_Notification_Messaging_Azure_ServiceBus --&gt; NuvTools_Notification_Messaging
+  NuvTools_Notification_Realtime_Azure_SignalR --&gt; NuvTools_Notification_Realtime
+  classDef outside fill:#f2f6f8,stroke:#9fb3bd,stroke-dasharray: 4 3,color:#536772
+</code></pre>
+<h2 id="packages">Packages</h2>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>What it does</th>
+<th>Builds on</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.nuget.org/packages/NuvTools.Notification.Mail">Notification.Mail</a></td>
+<td>Abstraction library for email notifications in .NET applications.</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://www.nuget.org/packages/NuvTools.Notification.Mail.Smtp">Notification.Mail.Smtp</a></td>
+<td>SMTP implementation for NuvTools.Notification.Mail using MailKit and MimeKit.</td>
+<td><code>Notification.Mail</code></td>
+</tr>
+<tr>
+<td><a href="https://www.nuget.org/packages/NuvTools.Notification.Mail.Twilio">Notification.Mail.Twilio</a></td>
+<td>Twilio Email API implementation for NuvTools.Notification.Mail.</td>
+<td><code>Notification.Mail</code></td>
+</tr>
+<tr>
+<td><a href="https://www.nuget.org/packages/NuvTools.Notification.Messaging">Notification.Messaging</a></td>
+<td>Abstraction library for building messaging solutions in .NET applications.</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://www.nuget.org/packages/NuvTools.Notification.Messaging.Azure.ServiceBus">Notification.Messaging.Azure.ServiceBus</a></td>
+<td>Azure Service Bus implementation for NuvTools.Notification.Messaging.</td>
+<td><code>Notification.Messaging</code></td>
+</tr>
+<tr>
+<td><a href="https://www.nuget.org/packages/NuvTools.Notification.Realtime">Notification.Realtime</a></td>
+<td>Abstraction library for real-time notifications in .NET applications.</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="https://www.nuget.org/packages/NuvTools.Notification.Realtime.Azure.SignalR">Notification.Realtime.Azure.SignalR</a></td>
+<td>Azure SignalR server-side implementation for NuvTools.Notification.Realtime.</td>
+<td><code>Notification.Realtime</code></td>
+</tr>
+<tr>
+<td><a href="https://www.nuget.org/packages/NuvTools.Notification.Realtime.Azure.SignalR.Client">Notification.Realtime.Azure.SignalR.Client</a></td>
+<td>Azure SignalR client-side implementation for receiving real-time notifications.</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="guides">Guides</h2>
+<ul>
+<li><a href="notification/README.html">NuvTools.Notification</a> — installation, configuration and examples; source on <a href="https://github.com/nuvtools/nuvtools-notification">GitHub</a>.</li>
+</ul>
+<p>Every type and member is in the <a class="xref" href="../../api/notification/NuvTools.Notification.Mail.html">API reference</a>.</p>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>© Nuv Tools · <a href="https://nuvtools.com/framework/">nuvtools.com</a> · MIT licence · Built with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

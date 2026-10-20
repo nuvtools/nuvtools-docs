@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>NuvTools.Storage | Nuv Tools Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="NuvTools.Storage | Nuv Tools Framework ">
+      
+      
+      <link rel="icon" href="../../../images/icon.png">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/nuvtools-brand.svg" alt="Framework">
+            Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="nuvtoolsstorage">NuvTools.Storage</h1>
+
+<p>A suite of .NET libraries for abstracting and simplifying storage operations, with comprehensive support for Microsoft Azure Blob Storage.</p>
+<p><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
+<a href="https://dotnet.microsoft.com/"><img src="https://img.shields.io/badge/.NET-8%20%7C%209%20%7C%2010-512BD4" alt=".NET"></a></p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#quick-start">Quick Start</a></li>
+<li><a href="#usage-examples">Usage Examples</a></li>
+<li><a href="#target-frameworks">Target Frameworks</a></li>
+<li><a href="#building-from-source">Building from Source</a></li>
+<li><a href="#documentation">Documentation</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+<h2 id="overview">Overview</h2>
+<p>NuvTools.Storage provides a clean, intuitive abstraction layer for file storage operations. The library follows a provider pattern, allowing you to implement custom storage solutions while maintaining a consistent API.</p>
+<h3 id="libraries">Libraries</h3>
+<h4 id="nuvtoolsstorage-core">NuvTools.Storage (Core)</h4>
+<p>The core library defines the foundational abstractions:</p>
+<ul>
+<li><strong><code>IFileManager</code></strong> - Interface for managing file storage operations (add, get, remove, list, SAS URI generation)</li>
+<li><strong><code>IFile</code></strong> - Represents a file with metadata and content in multiple formats (URI, Stream, Base64)</li>
+<li><strong><code>File</code></strong> - Concrete implementation supporting three initialization modes</li>
+<li><strong><code>AccessPermissions</code></strong> - Enum for fine-grained access control (Read, Write, Delete, List, etc.)</li>
+<li><strong>Extension methods</strong> for seamless conversion between Stream and Base64 formats</li>
+</ul>
+<h4 id="nuvtoolsstorageazure">NuvTools.Storage.Azure</h4>
+<p>Azure Blob Storage implementation:</p>
+<ul>
+<li><strong><code>AzureFileManager</code></strong> - Full <code>IFileManager</code> implementation for Azure Blob Storage</li>
+<li><strong><code>Security</code></strong> - Helper class for generating signed tokens for Azure Storage</li>
+<li>Automatic conversion between Azure SDK types and NuvTools abstractions</li>
+<li>Support for paginated file listing</li>
+<li>Parallel batch file uploads</li>
+<li>Direct stream uploads to specific blob paths</li>
+<li>File-level signed URI generation with custom expiration</li>
+<li>Built on Azure.Storage.Blobs SDK</li>
+</ul>
+<h2 id="features">Features</h2>
+<p>✅ <strong>Provider Pattern</strong> - Easy to implement custom storage providers
+✅ <strong>Async/Await</strong> - Fully asynchronous API with <code>CancellationToken</code> support
+✅ <strong>Multiple Content Formats</strong> - Work with files as URIs, Streams, or Base64 strings
+✅ <strong>Azure Integration</strong> - Production-ready Azure Blob Storage implementation
+✅ <strong>Signed URI Generation</strong> - Container-level and file-level signed URIs with custom expiration
+✅ <strong>Batch Operations</strong> - Upload multiple files in parallel with <code>Task.WhenAll</code>
+✅ <strong>Direct Stream Uploads</strong> - Upload streams directly to specific blob paths
+✅ <strong>Comprehensive Documentation</strong> - Full XML documentation for IntelliSense
+✅ <strong>Multi-Targeting</strong> - Supports .NET 8, 9, and 10</p>
+<h2 id="installation">Installation</h2>
+<p>Install via NuGet Package Manager:</p>
+<pre><code class="lang-bash"># Core library
+dotnet add package NuvTools.Storage
+
+# Azure Blob Storage implementation
+dotnet add package NuvTools.Storage.Azure
+</code></pre>
+<p>Or via Package Manager Console:</p>
+<pre><code class="lang-powershell">Install-Package NuvTools.Storage
+Install-Package NuvTools.Storage.Azure
+</code></pre>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="azure-blob-storage-example">Azure Blob Storage Example</h3>
+<pre><code class="lang-csharp">using NuvTools.Storage;
+using NuvTools.Storage.Azure;
+
+// Initialize the Azure file manager
+var fileManager = new AzureFileManager(
+    connectionString: &quot;your-azure-storage-connection-string&quot;,
+    repositoryName: &quot;my-container&quot;
+);
+
+// Upload a file from a stream
+using var stream = File.OpenRead(&quot;document.pdf&quot;);
+var file = new File(&quot;document.pdf&quot;, &quot;application/pdf&quot;, stream);
+var uploadedFile = await fileManager.AddFileAsync(file);
+
+Console.WriteLine($&quot;File uploaded: {uploadedFile.Uri}&quot;);
+</code></pre>
+<h2 id="usage-examples">Usage Examples</h2>
+<h3 id="working-with-files">Working with Files</h3>
+<pre><code class="lang-csharp">// Create a file from Base64 string
+var file = new File(&quot;image.jpg&quot;, &quot;image/jpeg&quot;, base64String);
+
+// Create a file from stream
+using var stream = new MemoryStream(bytes);
+var file = new File(&quot;data.bin&quot;, &quot;application/octet-stream&quot;, stream);
+
+// Create a file reference with URI only (no content)
+var file = new File(&quot;remote.txt&quot;, &quot;text/plain&quot;, new Uri(&quot;https://...&quot;));
+</code></pre>
+<h3 id="uploading-files">Uploading Files</h3>
+<pre><code class="lang-csharp">// Upload a single file to a specific directory
+var uploadedFile = await fileManager.AddFileAsync(file, rootDir: &quot;documents&quot;);
+
+// Upload directly from a stream with explicit path
+await using var stream = File.OpenRead(&quot;report.pdf&quot;);
+var uploadedFile = await fileManager.AddFileAsync(
+    stream,
+    filePath: &quot;reports/2026/report.pdf&quot;,
+    contentType: &quot;application/pdf&quot;
+);
+
+// Batch upload multiple files in parallel
+var files = new[] { file1, file2, file3 };
+var uploadedFiles = await fileManager.AddFilesAsync(files);
+</code></pre>
+<h3 id="retrieving-files">Retrieving Files</h3>
+<pre><code class="lang-csharp">// Get file metadata only (no download)
+var file = await fileManager.GetFileAsync(&quot;document.pdf&quot;, download: false);
+Console.WriteLine($&quot;File URI: {file.Uri}&quot;);
+
+// Download file content
+var file = await fileManager.GetFileAsync(&quot;document.pdf&quot;, download: true);
+await using var stream = file.Content;
+// Process the stream...
+
+// List all files with pagination
+var files = await fileManager.GetFilesAsync(pageSize: 100);
+foreach (var file in files)
+{
+    Console.WriteLine($&quot;{file.Name} - {file.Type}&quot;);
+}
+</code></pre>
+<h3 id="managing-files">Managing Files</h3>
+<pre><code class="lang-csharp">// Check if a file exists
+bool exists = await fileManager.FileExistsAsync(&quot;document.pdf&quot;);
+
+// Remove a file
+await fileManager.RemoveFileAsync(&quot;document.pdf&quot;);
+</code></pre>
+<h3 id="working-with-paths-and-folders">Working with Paths and Folders</h3>
+<p>A repository has no real folders: a folder is the prefix its files share. The operations below work on a path or on a prefix, and stay inside the repository.</p>
+<pre><code class="lang-csharp">// List what is under a prefix, without downloading anything
+await foreach (FileDescriptor file in fileManager.ListFilesAsync(&quot;invoices/2026/&quot;))
+    Console.WriteLine($&quot;{file.Path} ({file.Size} bytes, {file.ContentType}, {file.LastModified})&quot;);
+
+// Write a file straight into a stream — a response body, a zip entry — instead of holding it in memory
+bool found = await fileManager.DownloadFileAsync(&quot;invoices/2026/january.pdf&quot;, destination);
+
+// Copy, and move — which is also how a file is renamed
+await fileManager.CopyFileAsync(&quot;invoices/2026/january.pdf&quot;, &quot;archive/january.pdf&quot;);
+await fileManager.MoveFileAsync(&quot;invoices/2026/january.pdf&quot;, &quot;invoices/2026/01.pdf&quot;);
+
+// Rename a folder: every file under the prefix moves, keeping the rest of its path
+int moved = await fileManager.MoveFilesAsync(&quot;drafts/&quot;, &quot;final/&quot;);
+
+// Remove a folder
+int removed = await fileManager.RemoveFilesAsync(&quot;drafts/&quot;);
+</code></pre>
+<p>Moving is copying and then removing the original, one file at a time. If a move stops midway the file exists at both paths, never at none, and running <code>MoveFilesAsync</code> again finishes the job. <code>CopyFileAsync</code> and <code>MoveFileAsync</code> replace what is at the target and throw <code>FileNotFoundException</code> when the source does not exist. <code>RemoveFilesAsync</code> refuses an empty prefix, so a repository is never emptied by accident.</p>
+<h3 id="generating-signed-uris">Generating Signed URIs</h3>
+<pre><code class="lang-csharp">// Generate a read-only signed URI for the entire container (valid for 24 hours)
+var containerSignedUri = fileManager.GetRepositorySignedUri(AccessPermissions.Read);
+
+// Generate a signed URI for a specific file with custom expiration
+var fileSignedUri = fileManager.GetFileSignedUri(
+    filePath: &quot;documents/report.pdf&quot;,
+    validFor: TimeSpan.FromHours(1),
+    permissions: AccessPermissions.Read
+);
+
+// Generate signed token with custom permissions
+var signedToken = Security.GetAccountSignedToken(
+    accountName: &quot;myaccount&quot;,
+    accountKey: &quot;key&quot;,
+    permissions: AccessPermissions.Read | AccessPermissions.List
+);
+</code></pre>
+<h2 id="target-frameworks">Target Frameworks</h2>
+<ul>
+<li>.NET 8.0</li>
+<li>.NET 9.0</li>
+<li>.NET 10.0</li>
+</ul>
+<p>All libraries use C# 12 features and enable nullable reference types for improved null safety.</p>
+<h2 id="building-from-source">Building from Source</h2>
+<p>This solution uses the modern <code>.slnx</code> (XML-based) solution format.</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>.NET 10 SDK or later</li>
+<li>Visual Studio 2022 17.0+ or Visual Studio Code with C# extension</li>
+</ul>
+<h3 id="build-commands">Build Commands</h3>
+<pre><code class="lang-bash"># Clone the repository
+git clone https://github.com/nuvtools/nuvtools-storage.git
+cd nuvtools-storage
+
+# Build the solution
+dotnet build NuvTools.Storage.slnx
+
+# Run tests
+dotnet test NuvTools.Storage.slnx
+
+# Create NuGet packages
+dotnet pack NuvTools.Storage.slnx -c Release
+</code></pre>
+<p>The solution structure:</p>
+<pre><code>nuvtools-storage/
+├── src/
+│   ├── NuvTools.Storage/           # Core library
+│   └── NuvTools.Storage.Azure/     # Azure implementation
+├── tests/
+│   └── NuvTools.Storage.Azure.Test/ # NUnit tests
+└── NuvTools.Storage.slnx           # Solution file
+</code></pre>
+<h2 id="releasing">Releasing</h2>
+<p>Publishing to nuget.org is irreversible per version, so the workflow makes it the last and smallest
+step.</p>
+<p><strong>One workflow per library.</strong> Each package has its own, so a run and an approval each concern
+exactly one package. The steps themselves are shared, in the reusable <code>package-publish.yml</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Workflow</th>
+<th>Release tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NuvTools.Storage</code></td>
+<td><code>storage-publish.yml</code></td>
+<td><code>storage-vX.Y.Z</code></td>
+</tr>
+<tr>
+<td><code>NuvTools.Storage.Azure</code></td>
+<td><code>azure-publish.yml</code></td>
+<td><code>azure-vX.Y.Z</code></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Set the package's <code>&lt;Version&gt;</code> in its <code>.csproj</code> and merge it. That is the version that gets
+published; the workflow reads it and never computes one.</li>
+<li>Run the library's workflow by hand (<em>Actions → Storage Publish → Run workflow</em>) with <em>push</em>
+checked.</li>
+<li>The workflow builds the solution with <code>-warnaserror</code>, runs the tests, takes <strong>that package only</strong>
+from the build output, verifies it carries its README, licence, icon, symbols and every target
+framework, and then waits for approval on the <code>nuget</code> GitHub Environment before pushing.</li>
+<li><strong>After the push succeeds, the workflow tags the commit</strong> with the tag in the table above. The tag is a
+record of what is on nuget.org, never what starts a release, so it cannot exist for a version
+that did not get there. A run whose tag already exists stops before building: the version has
+been released and <code>&lt;Version&gt;</code> needs a bump.</li>
+</ol>
+<p><strong><code>NuvTools.Storage</code> goes first.</strong> <code>NuvTools.Storage.Azure</code> references it as a project, so its package
+depends on whatever <code>&lt;Version&gt;</code> <code>NuvTools.Storage</code> has in that commit. The workflow checks that
+version is on nuget.org and refuses to push a package whose dependency is not there yet.</p>
+<p>That check knows a version exists, not what is in it. <strong>When <code>IFileManager</code> gains a member, bump
+<code>NuvTools.Storage</code> and publish it, then bump and publish <code>NuvTools.Storage.Azure</code></strong> — an Azure package
+published against an older <code>NuvTools.Storage</code> would be paired, by whoever installs both, with a
+contract it does not implement.</p>
+<p><strong>Versions published by hand are refused.</strong> Releases made before these workflows exist on nuget.org
+with no tag. Pushing one again would skip the duplicate and then tag the current commit as a
+release it is not, so a version that is already on nuget.org stops the run. The exception is a
+re-run of the same run, which is how a push that succeeded and a tag that failed gets finished.</p>
+<p><strong>No API key is stored.</strong> The push uses nuget.org's trusted publishing: the job presents a GitHub
+OIDC token, nuget.org checks it against the policy registered for this repository and answers with a
+key that lives for one hour. The repository needs one secret, <code>NUGET_USER</code> — the nuget.org profile
+name the policy belongs to — and the policy itself, registered under <em>Trusted Publishing</em> on
+nuget.org with the owner <code>nuvtools</code>, the repository <code>nuvtools-storage</code>, the workflow file and the
+environment <code>nuget</code>.</p>
+<p>Run a library's workflow by hand with <em>push</em> unchecked for a dry run that stops after the
+verification.</p>
+<h2 id="documentation">Documentation</h2>
+<p>All public APIs include comprehensive XML documentation comments. IntelliSense in Visual Studio, Visual Studio Code, and Rider will display:</p>
+<ul>
+<li>Detailed descriptions of all types, methods, and properties</li>
+<li>Parameter information with expected values</li>
+<li>Return value descriptions</li>
+<li>Exception documentation</li>
+<li>Usage examples and best practices</li>
+</ul>
+<p>XML documentation files are included in the NuGet packages for seamless integration.</p>
+<h2 id="license">License</h2>
+<p>Licensed under the <a href="https://github.com/nuvtools/nuvtools-storage/blob/main/LICENSE">MIT License</a>.</p>
+<p>Copyright © 2026 Nuv Tools</p>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>© Nuv Tools · <a href="https://nuvtools.com/framework/">nuvtools.com</a> · MIT licence · Built with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

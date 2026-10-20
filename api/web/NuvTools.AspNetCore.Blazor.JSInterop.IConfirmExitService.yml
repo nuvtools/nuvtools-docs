@@ -1,0 +1,301 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService
+  commentId: T:NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService
+  id: IConfirmExitService
+  parent: NuvTools.AspNetCore.Blazor.JSInterop
+  children:
+  - NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService.DisableAsync(System.Threading.CancellationToken)
+  - NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService.EnableAsync(System.Threading.CancellationToken)
+  - NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService.IsEnabled
+  langs:
+  - csharp
+  - vb
+  name: IConfirmExitService
+  nameWithType: IConfirmExitService
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService
+  type: Interface
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.JSInterop
+  summary: Asks the browser to confirm before the user closes or reloads the tab, or navigates away from the application.
+  remarks: >-
+    The confirmation is raised by the browser through the <code>beforeunload</code> event, so the warning text is
+
+    defined by the browser and cannot be customized. It does not cover in-app (SPA) navigation.
+  example:
+  - >-
+    <pre><code class="lang-csharp">[Inject] IConfirmExitService ConfirmExit { get; set; } = default!;
+
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+
+    {
+        if (HasUnsavedChanges())
+            await ConfirmExit.EnableAsync();
+        else
+            await ConfirmExit.DisableAsync();
+    }
+
+
+    public async ValueTask DisposeAsync() =&gt; await ConfirmExit.DisableAsync();</code></pre>
+  syntax:
+    content: 'public interface IConfirmExitService : IAsyncDisposable'
+    content.vb: Public Interface IConfirmExitService Inherits IAsyncDisposable
+  derivedClasses:
+  - NuvTools.AspNetCore.Blazor.JSInterop.ConfirmExitService
+  inheritedMembers:
+  - System.IAsyncDisposable.DisposeAsync
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService.IsEnabled
+  commentId: P:NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService.IsEnabled
+  id: IsEnabled
+  parent: NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService
+  langs:
+  - csharp
+  - vb
+  name: IsEnabled
+  nameWithType: IConfirmExitService.IsEnabled
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService.IsEnabled
+  type: Property
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.JSInterop
+  summary: Gets a value indicating whether the exit confirmation is currently active.
+  example: []
+  syntax:
+    content: bool IsEnabled { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: ReadOnly Property IsEnabled As Boolean
+  overload: NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService.IsEnabled*
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService.EnableAsync(System.Threading.CancellationToken)
+  commentId: M:NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService.EnableAsync(System.Threading.CancellationToken)
+  id: EnableAsync(System.Threading.CancellationToken)
+  parent: NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService
+  langs:
+  - csharp
+  - vb
+  name: EnableAsync(CancellationToken)
+  nameWithType: IConfirmExitService.EnableAsync(CancellationToken)
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService.EnableAsync(System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.JSInterop
+  summary: Activates the exit confirmation. Calling it while already active does nothing.
+  example: []
+  syntax:
+    content: ValueTask EnableAsync(CancellationToken cancellationToken = default)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: A cancellation token to observe.
+    return:
+      type: System.Threading.Tasks.ValueTask
+      description: A <xref href="System.Threading.Tasks.ValueTask" data-throw-if-not-resolved="false"></xref> representing the asynchronous operation.
+    content.vb: Function EnableAsync(cancellationToken As CancellationToken = Nothing) As ValueTask
+  overload: NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService.EnableAsync*
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService.DisableAsync(System.Threading.CancellationToken)
+  commentId: M:NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService.DisableAsync(System.Threading.CancellationToken)
+  id: DisableAsync(System.Threading.CancellationToken)
+  parent: NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService
+  langs:
+  - csharp
+  - vb
+  name: DisableAsync(CancellationToken)
+  nameWithType: IConfirmExitService.DisableAsync(CancellationToken)
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService.DisableAsync(System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.JSInterop
+  summary: Deactivates the exit confirmation. Calling it while already inactive does nothing.
+  example: []
+  syntax:
+    content: ValueTask DisableAsync(CancellationToken cancellationToken = default)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: A cancellation token to observe.
+    return:
+      type: System.Threading.Tasks.ValueTask
+      description: A <xref href="System.Threading.Tasks.ValueTask" data-throw-if-not-resolved="false"></xref> representing the asynchronous operation.
+    content.vb: Function DisableAsync(cancellationToken As CancellationToken = Nothing) As ValueTask
+  overload: NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService.DisableAsync*
+references:
+- uid: NuvTools.AspNetCore.Blazor.JSInterop
+  commentId: N:NuvTools.AspNetCore.Blazor.JSInterop
+  name: NuvTools.AspNetCore.Blazor.JSInterop
+  nameWithType: NuvTools.AspNetCore.Blazor.JSInterop
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.AspNetCore
+    name: AspNetCore
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor
+    name: Blazor
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor.JSInterop
+    name: JSInterop
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.AspNetCore
+    name: AspNetCore
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor
+    name: Blazor
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor.JSInterop
+    name: JSInterop
+- uid: System.IAsyncDisposable.DisposeAsync
+  commentId: M:System.IAsyncDisposable.DisposeAsync
+  parent: System.IAsyncDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable.disposeasync
+  name: DisposeAsync()
+  nameWithType: IAsyncDisposable.DisposeAsync()
+  fullName: System.IAsyncDisposable.DisposeAsync()
+  spec.csharp:
+  - uid: System.IAsyncDisposable.DisposeAsync
+    name: DisposeAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable.disposeasync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IAsyncDisposable.DisposeAsync
+    name: DisposeAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable.disposeasync
+  - name: (
+  - name: )
+- uid: System.IAsyncDisposable
+  commentId: T:System.IAsyncDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable
+  name: IAsyncDisposable
+  nameWithType: IAsyncDisposable
+  fullName: System.IAsyncDisposable
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService.IsEnabled*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService.IsEnabled
+  href: NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService.html#NuvTools_AspNetCore_Blazor_JSInterop_IConfirmExitService_IsEnabled
+  name: IsEnabled
+  nameWithType: IConfirmExitService.IsEnabled
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService.IsEnabled
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Threading.Tasks.ValueTask
+  commentId: T:System.Threading.Tasks.ValueTask
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask
+  name: ValueTask
+  nameWithType: ValueTask
+  fullName: System.Threading.Tasks.ValueTask
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService.EnableAsync*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService.EnableAsync
+  href: NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService.html#NuvTools_AspNetCore_Blazor_JSInterop_IConfirmExitService_EnableAsync_System_Threading_CancellationToken_
+  name: EnableAsync
+  nameWithType: IConfirmExitService.EnableAsync
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService.EnableAsync
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService.DisableAsync*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService.DisableAsync
+  href: NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService.html#NuvTools_AspNetCore_Blazor_JSInterop_IConfirmExitService_DisableAsync_System_Threading_CancellationToken_
+  name: DisableAsync
+  nameWithType: IConfirmExitService.DisableAsync
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.IConfirmExitService.DisableAsync

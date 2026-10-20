@@ -1,0 +1,796 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider
+  commentId: T:NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider
+  id: DatavalidAccessTokenProvider
+  parent: NuvTools.Security.Biometrics.Serpro
+  children:
+  - NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.#ctor(System.Net.Http.IHttpClientFactory,Microsoft.Extensions.Options.IOptions{NuvTools.Security.Biometrics.Serpro.DatavalidOptions},System.TimeProvider)
+  - NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.Dispose
+  - NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.GetAsync(System.Threading.CancellationToken)
+  - NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.HttpClientName
+  - NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.Invalidate
+  langs:
+  - csharp
+  - vb
+  name: DatavalidAccessTokenProvider
+  nameWithType: DatavalidAccessTokenProvider
+  fullName: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider
+  type: Class
+  assemblies:
+  - NuvTools.Security.Biometrics.Serpro
+  namespace: NuvTools.Security.Biometrics.Serpro
+  summary: >-
+    Issues and caches the access token for the SERPRO API gateway (client credentials), so a
+
+    verification does not pay for a token request each time.
+  example: []
+  syntax:
+    content: 'public sealed class DatavalidAccessTokenProvider : IDisposable'
+    content.vb: Public NotInheritable Class DatavalidAccessTokenProvider Implements IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.#ctor(System.Net.Http.IHttpClientFactory,Microsoft.Extensions.Options.IOptions{NuvTools.Security.Biometrics.Serpro.DatavalidOptions},System.TimeProvider)
+  commentId: M:NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.#ctor(System.Net.Http.IHttpClientFactory,Microsoft.Extensions.Options.IOptions{NuvTools.Security.Biometrics.Serpro.DatavalidOptions},System.TimeProvider)
+  id: '#ctor(System.Net.Http.IHttpClientFactory,Microsoft.Extensions.Options.IOptions{NuvTools.Security.Biometrics.Serpro.DatavalidOptions},System.TimeProvider)'
+  parent: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider
+  langs:
+  - csharp
+  - vb
+  name: DatavalidAccessTokenProvider(IHttpClientFactory, IOptions<DatavalidOptions>, TimeProvider)
+  nameWithType: DatavalidAccessTokenProvider.DatavalidAccessTokenProvider(IHttpClientFactory, IOptions<DatavalidOptions>, TimeProvider)
+  fullName: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.DatavalidAccessTokenProvider(System.Net.Http.IHttpClientFactory, Microsoft.Extensions.Options.IOptions<NuvTools.Security.Biometrics.Serpro.DatavalidOptions>, System.TimeProvider)
+  type: Constructor
+  assemblies:
+  - NuvTools.Security.Biometrics.Serpro
+  namespace: NuvTools.Security.Biometrics.Serpro
+  summary: >-
+    Issues and caches the access token for the SERPRO API gateway (client credentials), so a
+
+    verification does not pay for a token request each time.
+  example: []
+  syntax:
+    content: public DatavalidAccessTokenProvider(IHttpClientFactory httpClientFactory, IOptions<DatavalidOptions> options, TimeProvider timeProvider)
+    parameters:
+    - id: httpClientFactory
+      type: System.Net.Http.IHttpClientFactory
+      description: Factory for the client used to call the token endpoint.
+    - id: options
+      type: Microsoft.Extensions.Options.IOptions{NuvTools.Security.Biometrics.Serpro.DatavalidOptions}
+      description: Datavalid configuration.
+    - id: timeProvider
+      type: System.TimeProvider
+      description: Clock the token's lifetime is measured with.
+    content.vb: Public Sub New(httpClientFactory As IHttpClientFactory, options As IOptions(Of DatavalidOptions), timeProvider As TimeProvider)
+  overload: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.#ctor*
+  nameWithType.vb: DatavalidAccessTokenProvider.New(IHttpClientFactory, IOptions(Of DatavalidOptions), TimeProvider)
+  fullName.vb: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.New(System.Net.Http.IHttpClientFactory, Microsoft.Extensions.Options.IOptions(Of NuvTools.Security.Biometrics.Serpro.DatavalidOptions), System.TimeProvider)
+  name.vb: New(IHttpClientFactory, IOptions(Of DatavalidOptions), TimeProvider)
+- uid: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.HttpClientName
+  commentId: F:NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.HttpClientName
+  id: HttpClientName
+  parent: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider
+  langs:
+  - csharp
+  - vb
+  name: HttpClientName
+  nameWithType: DatavalidAccessTokenProvider.HttpClientName
+  fullName: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.HttpClientName
+  type: Field
+  assemblies:
+  - NuvTools.Security.Biometrics.Serpro
+  namespace: NuvTools.Security.Biometrics.Serpro
+  summary: Name of the <xref href="System.Net.Http.HttpClient" data-throw-if-not-resolved="false"></xref> used to call the token endpoint.
+  example: []
+  syntax:
+    content: public const string HttpClientName = "DatavalidToken"
+    return:
+      type: System.String
+    content.vb: Public Const HttpClientName As String = "DatavalidToken"
+- uid: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.GetAsync(System.Threading.CancellationToken)
+  commentId: M:NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.GetAsync(System.Threading.CancellationToken)
+  id: GetAsync(System.Threading.CancellationToken)
+  parent: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider
+  langs:
+  - csharp
+  - vb
+  name: GetAsync(CancellationToken)
+  nameWithType: DatavalidAccessTokenProvider.GetAsync(CancellationToken)
+  fullName: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.GetAsync(System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Security.Biometrics.Serpro
+  namespace: NuvTools.Security.Biometrics.Serpro
+  summary: Returns the cached token, requesting a new one when there is none or it is about to expire.
+  example: []
+  syntax:
+    content: public Task<string> GetAsync(CancellationToken cancellationToken = default)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Token to cancel the operation.
+    return:
+      type: System.Threading.Tasks.Task{System.String}
+      description: The access token.
+    content.vb: Public Function GetAsync(cancellationToken As CancellationToken = Nothing) As Task(Of String)
+  overload: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.GetAsync*
+  exceptions:
+  - type: System.Net.Http.HttpRequestException
+    commentId: T:System.Net.Http.HttpRequestException
+    description: The gateway refused the credentials or could not be reached.
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: The gateway answered without a token.
+- uid: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.Invalidate
+  commentId: M:NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.Invalidate
+  id: Invalidate
+  parent: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider
+  langs:
+  - csharp
+  - vb
+  name: Invalidate()
+  nameWithType: DatavalidAccessTokenProvider.Invalidate()
+  fullName: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.Invalidate()
+  type: Method
+  assemblies:
+  - NuvTools.Security.Biometrics.Serpro
+  namespace: NuvTools.Security.Biometrics.Serpro
+  summary: >-
+    Discards the cached token, so the next call requests a new one. Called when the gateway
+
+    refuses a token it issued.
+  example: []
+  syntax:
+    content: public void Invalidate()
+    content.vb: Public Sub Invalidate()
+  overload: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.Invalidate*
+- uid: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.Dispose
+  commentId: M:NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.Dispose
+  id: Dispose
+  parent: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: DatavalidAccessTokenProvider.Dispose()
+  fullName: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.Dispose()
+  type: Method
+  assemblies:
+  - NuvTools.Security.Biometrics.Serpro
+  namespace: NuvTools.Security.Biometrics.Serpro
+  summary: Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose()
+  overload: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+references:
+- uid: NuvTools.Security.Biometrics.Serpro
+  commentId: N:NuvTools.Security.Biometrics.Serpro
+  name: NuvTools.Security.Biometrics.Serpro
+  nameWithType: NuvTools.Security.Biometrics.Serpro
+  fullName: NuvTools.Security.Biometrics.Serpro
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.Biometrics
+    name: Biometrics
+  - name: .
+  - uid: NuvTools.Security.Biometrics.Serpro
+    name: Serpro
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.Biometrics
+    name: Biometrics
+  - name: .
+  - uid: NuvTools.Security.Biometrics.Serpro
+    name: Serpro
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.#ctor*
+  commentId: Overload:NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.#ctor
+  href: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.html#NuvTools_Security_Biometrics_Serpro_DatavalidAccessTokenProvider__ctor_System_Net_Http_IHttpClientFactory_Microsoft_Extensions_Options_IOptions_NuvTools_Security_Biometrics_Serpro_DatavalidOptions__System_TimeProvider_
+  name: DatavalidAccessTokenProvider
+  nameWithType: DatavalidAccessTokenProvider.DatavalidAccessTokenProvider
+  fullName: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.DatavalidAccessTokenProvider
+  nameWithType.vb: DatavalidAccessTokenProvider.New
+  fullName.vb: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.New
+  name.vb: New
+- uid: System.Net.Http.IHttpClientFactory
+  commentId: T:System.Net.Http.IHttpClientFactory
+  parent: System.Net.Http
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.net.http.ihttpclientfactory
+  name: IHttpClientFactory
+  nameWithType: IHttpClientFactory
+  fullName: System.Net.Http.IHttpClientFactory
+- uid: Microsoft.Extensions.Options.IOptions{NuvTools.Security.Biometrics.Serpro.DatavalidOptions}
+  commentId: T:Microsoft.Extensions.Options.IOptions{NuvTools.Security.Biometrics.Serpro.DatavalidOptions}
+  parent: Microsoft.Extensions.Options
+  definition: Microsoft.Extensions.Options.IOptions`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  name: IOptions<DatavalidOptions>
+  nameWithType: IOptions<DatavalidOptions>
+  fullName: Microsoft.Extensions.Options.IOptions<NuvTools.Security.Biometrics.Serpro.DatavalidOptions>
+  nameWithType.vb: IOptions(Of DatavalidOptions)
+  fullName.vb: Microsoft.Extensions.Options.IOptions(Of NuvTools.Security.Biometrics.Serpro.DatavalidOptions)
+  name.vb: IOptions(Of DatavalidOptions)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: <
+  - uid: NuvTools.Security.Biometrics.Serpro.DatavalidOptions
+    name: DatavalidOptions
+    href: NuvTools.Security.Biometrics.Serpro.DatavalidOptions.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Security.Biometrics.Serpro.DatavalidOptions
+    name: DatavalidOptions
+    href: NuvTools.Security.Biometrics.Serpro.DatavalidOptions.html
+  - name: )
+- uid: System.TimeProvider
+  commentId: T:System.TimeProvider
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.timeprovider
+  name: TimeProvider
+  nameWithType: TimeProvider
+  fullName: System.TimeProvider
+- uid: System.Net.Http
+  commentId: N:System.Net.Http
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Net.Http
+  nameWithType: System.Net.Http
+  fullName: System.Net.Http
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Net
+    name: Net
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net
+  - name: .
+  - uid: System.Net.Http
+    name: Http
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Net
+    name: Net
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net
+  - name: .
+  - uid: System.Net.Http
+    name: Http
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http
+- uid: Microsoft.Extensions.Options.IOptions`1
+  commentId: T:Microsoft.Extensions.Options.IOptions`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  name: IOptions<TOptions>
+  nameWithType: IOptions<TOptions>
+  fullName: Microsoft.Extensions.Options.IOptions<TOptions>
+  nameWithType.vb: IOptions(Of TOptions)
+  fullName.vb: Microsoft.Extensions.Options.IOptions(Of TOptions)
+  name.vb: IOptions(Of TOptions)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: <
+  - name: TOptions
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TOptions
+  - name: )
+- uid: Microsoft.Extensions.Options
+  commentId: N:Microsoft.Extensions.Options
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Options
+  nameWithType: Microsoft.Extensions.Options
+  fullName: Microsoft.Extensions.Options
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Options
+    name: Options
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Options
+    name: Options
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options
+- uid: System.Net.Http.HttpClient
+  commentId: T:System.Net.Http.HttpClient
+  parent: System.Net.Http
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.net.http.httpclient
+  name: HttpClient
+  nameWithType: HttpClient
+  fullName: System.Net.Http.HttpClient
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Net.Http.HttpRequestException
+  commentId: T:System.Net.Http.HttpRequestException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.net.http.httprequestexception
+  name: HttpRequestException
+  nameWithType: HttpRequestException
+  fullName: System.Net.Http.HttpRequestException
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.invalidoperationexception
+  name: InvalidOperationException
+  nameWithType: InvalidOperationException
+  fullName: System.InvalidOperationException
+- uid: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.GetAsync*
+  commentId: Overload:NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.GetAsync
+  href: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.html#NuvTools_Security_Biometrics_Serpro_DatavalidAccessTokenProvider_GetAsync_System_Threading_CancellationToken_
+  name: GetAsync
+  nameWithType: DatavalidAccessTokenProvider.GetAsync
+  fullName: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.GetAsync
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.String}
+  commentId: T:System.Threading.Tasks.Task{System.String}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<string>
+  nameWithType: Task<string>
+  fullName: System.Threading.Tasks.Task<string>
+  nameWithType.vb: Task(Of String)
+  fullName.vb: System.Threading.Tasks.Task(Of String)
+  name.vb: Task(Of String)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.Invalidate*
+  commentId: Overload:NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.Invalidate
+  href: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.html#NuvTools_Security_Biometrics_Serpro_DatavalidAccessTokenProvider_Invalidate
+  name: Invalidate
+  nameWithType: DatavalidAccessTokenProvider.Invalidate
+  fullName: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.Invalidate
+- uid: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.Dispose*
+  commentId: Overload:NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.Dispose
+  href: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.html#NuvTools_Security_Biometrics_Serpro_DatavalidAccessTokenProvider_Dispose
+  name: Dispose
+  nameWithType: DatavalidAccessTokenProvider.Dispose
+  fullName: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )

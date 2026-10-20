@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Messages - Resource Dictionary | Nuv Tools Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Messages - Resource Dictionary | Nuv Tools Framework ">
+      
+      
+      <link rel="icon" href="../../../../images/icon.png">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/nuvtools-brand.svg" alt="Framework">
+            Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="messages---resource-dictionary">Messages - Resource Dictionary</h1>
+
+<p>User-facing messages, notifications, and validation templates.</p>
+<p><strong>Total Resources:</strong> 117</p>
+<p><strong>Usage:</strong></p>
+<pre><code class="lang-csharp">using NuvTools.Resources;
+
+// Direct messages
+var successMsg = Messages.OperationPerformedSuccessfully;
+var errorMsg = Messages.TheOperationCouldNotBePerformed;
+
+// Parameterized templates
+var notFoundMsg = string.Format(Messages.XNotFound, &quot;User&quot;);      // &quot;User not found.&quot;
+var invalidMsg = string.Format(Messages.XInvalid, &quot;E-mail&quot;);      // &quot;E-mail is invalid.&quot;
+var confirmMsg = string.Format(Messages.ConfirmX, &quot;deletion&quot;);    // &quot;Confirm deletion?&quot;
+</code></pre>
+<hr>
+<h2 id="template-messages">Template Messages</h2>
+<p>These parameterized messages replace multiple specific messages. Use <code>string.Format()</code> or string interpolation.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>English</th>
+<th>Portuguese (pt-BR)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AddXClickingY</td>
+<td>Add new {0} by clicking {1}.</td>
+<td>Inclua novos(as) {0} clicando em {1}.</td>
+</tr>
+<tr>
+<td>AndXMore</td>
+<td>and {0} more</td>
+<td>e mais {0}</td>
+</tr>
+<tr>
+<td>AtLeastOneOfTheseParametersShouldBeFilledX</td>
+<td>At least one of these parameters should be filled: {0}.</td>
+<td>Pelo menos um desses parâmetros deve ser informado: {0}.</td>
+</tr>
+<tr>
+<td>AtLeastOneTheseParametersShoudBeFilledX</td>
+<td>At least one of these parameters should be filled: {0}.</td>
+<td>Pelo menos um desses parâmetros deve ser informado: {0}.</td>
+</tr>
+<tr>
+<td>ConfirmX</td>
+<td>Confirm {0}?</td>
+<td>Confirmar {0}?</td>
+</tr>
+<tr>
+<td>CouldNotCommunicateWithX</td>
+<td>Could not communicate with {0}.</td>
+<td>Não foi possível se comunicar com {0}.</td>
+</tr>
+<tr>
+<td>CouldNotDeleteXExistYAssociated</td>
+<td>Could not delete {0}. There are {1} associated.</td>
+<td>Não foi possível excluir {0}. Existem {1} associados(as).</td>
+</tr>
+<tr>
+<td>CouldNotDeleteXVerifyAssociatedData</td>
+<td>Could not delete {0}. Verify if there is associated data.</td>
+<td>Não foi possível excluir {0}. Verifique se existem dados associados.</td>
+</tr>
+<tr>
+<td>CreatedOnXByY</td>
+<td>Created on {0} by {1}.</td>
+<td>Criado(a) em {0} por {1}.</td>
+</tr>
+<tr>
+<td>DateXMustBeAfterDateY</td>
+<td>Date {0} must be after date {1}.</td>
+<td>A data {0} deve ser posterior à data {1}.</td>
+</tr>
+<tr>
+<td>DateXMustBeOnOrAfterDateY</td>
+<td>Date {0} must be on or after date {1}.</td>
+<td>A data {0} deve ser igual ou posterior à data {1}.</td>
+</tr>
+<tr>
+<td>DeleteXQuestion</td>
+<td>Delete {0}?</td>
+<td>Excluir {0}?</td>
+</tr>
+<tr>
+<td>DuplicateValuesX</td>
+<td>Duplicate values: {0}.</td>
+<td>Valores repetidos: {0}.</td>
+</tr>
+<tr>
+<td>EmailConfirmationContentWithLinkX</td>
+<td>Please confirm your account by &lt;a href='{0}'&gt;clicking here&lt;/a&gt;.</td>
+<td>Confirme sua conta &lt;a href='{0}'&gt;clicando aqui&lt;/a&gt;.</td>
+</tr>
+<tr>
+<td>EmailXAlreadyTaken</td>
+<td>E-mail {0} is already taken.</td>
+<td>E-mail {0} já em uso.</td>
+</tr>
+<tr>
+<td>EnterAllXDigitsOfTheCode</td>
+<td>Enter all {0} digits of the code.</td>
+<td>Preencha todos os {0} dígitos do código.</td>
+</tr>
+<tr>
+<td>FailedToCreateX</td>
+<td>Failed to create {0}.</td>
+<td>Falha ao cadastrar {0}.</td>
+</tr>
+<tr>
+<td>FailedToDeleteX</td>
+<td>Failed to delete {0}.</td>
+<td>Falha ao excluir {0}.</td>
+</tr>
+<tr>
+<td>FailedToDownloadX</td>
+<td>Failed to download {0}.</td>
+<td>Falha ao baixar {0}.</td>
+</tr>
+<tr>
+<td>FailedToGenerateX</td>
+<td>Failed to generate {0}.</td>
+<td>Falha ao gerar {0}.</td>
+</tr>
+<tr>
+<td>FailedToUpdateX</td>
+<td>Failed to update {0}.</td>
+<td>Falha ao atualizar {0}.</td>
+</tr>
+<tr>
+<td>FileExceedsMaximumSizeOfX</td>
+<td>The file exceeds the maximum size of {0}.</td>
+<td>O arquivo excede o tamanho máximo de {0}.</td>
+</tr>
+<tr>
+<td>FileXExceedsMaximumSizeOfY</td>
+<td>The file {0} exceeds the maximum size of {1}.</td>
+<td>O arquivo {0} excede o tamanho máximo de {1}.</td>
+</tr>
+<tr>
+<td>InvalidFileNameX</td>
+<td>Invalid file name: {0}.</td>
+<td>Nome de arquivo inválido: {0}.</td>
+</tr>
+<tr>
+<td>InvalidFileTypeAcceptedFormatX</td>
+<td>Invalid file type. Accepted format: {0}.</td>
+<td>Tipo de arquivo inválido. Formato aceito: {0}.</td>
+</tr>
+<tr>
+<td>LastModifiedOnX</td>
+<td>Last modified on {0}.</td>
+<td>Última alteração em {0}.</td>
+</tr>
+<tr>
+<td>MaximumOfXFilesAtOnce</td>
+<td>Send at most {0} file(s) at a time.</td>
+<td>Envie no máximo {0} arquivo(s) por vez.</td>
+</tr>
+<tr>
+<td>NoPermissionToDeleteX</td>
+<td>No permission to delete {0}.</td>
+<td>Sem permissão para excluir {0}.</td>
+</tr>
+<tr>
+<td>NoXFound</td>
+<td>No {0} found.</td>
+<td>Nenhum(a) {0} encontrado(a).</td>
+</tr>
+<tr>
+<td>PageXOfY</td>
+<td>Page {0} of {1}</td>
+<td>Página {0} de {1}</td>
+</tr>
+<tr>
+<td>PasswordResetEmailContentWithLinkX</td>
+<td>Please reset your password by &lt;a href='{0}'&gt;clicking here&lt;/a&gt;.</td>
+<td>Por favor, redefina sua senha &lt;a href='{0}'&gt;clicando aqui&lt;/a&gt;.</td>
+</tr>
+<tr>
+<td>ProvideAtLeastOneX</td>
+<td>Provide at least one {0}.</td>
+<td>Informe pelo menos um(a) {0}.</td>
+</tr>
+<tr>
+<td>ResendCodeInXSeconds</td>
+<td>Resend code in {0}s</td>
+<td>Reenviar código em {0}s</td>
+</tr>
+<tr>
+<td>ThereIsNoXRegisteredSoFar</td>
+<td>There is no {0} registered so far.</td>
+<td>Nenhum(a) {0} cadastrado(a) até o momento.</td>
+</tr>
+<tr>
+<td>VerificationCodeSentToX</td>
+<td>A verification code was sent to {0}.</td>
+<td>Um código de verificação foi enviado para {0}.</td>
+</tr>
+<tr>
+<td>ViewX</td>
+<td>View {0}</td>
+<td>Ver {0}</td>
+</tr>
+<tr>
+<td>WelcomeX</td>
+<td>Welcome {0}.</td>
+<td>Seja bem-vindo(a) {0}.</td>
+</tr>
+<tr>
+<td>XActivatedSuccessfully</td>
+<td>{0} activated successfully.</td>
+<td>{0} ativado(a) com sucesso.</td>
+</tr>
+<tr>
+<td>XAlreadyExists</td>
+<td>{0} already exists.</td>
+<td>{0} já existe.</td>
+</tr>
+<tr>
+<td>XAlreadyInList</td>
+<td>{0} is already in the list.</td>
+<td>{0} já consta na lista.</td>
+</tr>
+<tr>
+<td>XCanceledSuccessfully</td>
+<td>{0} canceled successfully.</td>
+<td>{0} cancelado(a) com sucesso.</td>
+</tr>
+<tr>
+<td>XDeactivatedSuccessfully</td>
+<td>{0} deactivated successfully.</td>
+<td>{0} desativado(a) com sucesso.</td>
+</tr>
+<tr>
+<td>XDeletedSuccessfully</td>
+<td>{0} deleted successfully.</td>
+<td>{0} excluído(a) com sucesso.</td>
+</tr>
+<tr>
+<td>XDidNotRespondInTime</td>
+<td>{0} did not respond in time.</td>
+<td>{0} não respondeu a tempo.</td>
+</tr>
+<tr>
+<td>XGeneratedSuccessfully</td>
+<td>{0} generated successfully.</td>
+<td>{0} gerado(a) com sucesso.</td>
+</tr>
+<tr>
+<td>XIncomplete</td>
+<td>{0} incomplete.</td>
+<td>{0} incompleto(a).</td>
+</tr>
+<tr>
+<td>XInvalid</td>
+<td>{0} is invalid.</td>
+<td>{0} inválido(a).</td>
+</tr>
+<tr>
+<td>XMustBeBetweenYandZ</td>
+<td>{0} must be between {1} and {2}.</td>
+<td>{0} deve estar entre {1} e {2}.</td>
+</tr>
+<tr>
+<td>XMustBeEqualY</td>
+<td>The {0} must be equal to {1}.</td>
+<td>O(A) {0} deve ser igual ao(à) {1}.</td>
+</tr>
+<tr>
+<td>XMustBeGreaterThanOrEqualToY</td>
+<td>{0} must be greater than or equal to {1}.</td>
+<td>{0} deve ser maior ou igual a {1}.</td>
+</tr>
+<tr>
+<td>XMustBeGreaterThanY</td>
+<td>{0} must be greater than {1}.</td>
+<td>{0} deve ser maior do que {1}.</td>
+</tr>
+<tr>
+<td>XMustBeLessThanOrEqualToY</td>
+<td>{0} must be less than or equal to {1}.</td>
+<td>{0} deve ser menor ou igual a {1}.</td>
+</tr>
+<tr>
+<td>XMustBeLessThanY</td>
+<td>{0} must be less than {1}.</td>
+<td>{0} deve ser menor do que {1}.</td>
+</tr>
+<tr>
+<td>XMustContainAtLeastYCapitalLetters</td>
+<td>The {0} must contain at least {1} capital letter(s).</td>
+<td>O(A) {0} deve conter pelo menos {1} letra(s) maiúscula(s).</td>
+</tr>
+<tr>
+<td>XMustContainAtLeastYDigits</td>
+<td>The {0} must contain at least {1} digit(s).</td>
+<td>O(A) {0} deve conter pelo menos {1} dígito(s).</td>
+</tr>
+<tr>
+<td>XMustContainAtLeastYLowerCaseLetters</td>
+<td>The {0} must contain at least {1} lower case letter(s).</td>
+<td>O(A) {0} deve conter pelo menos {1} letra(s) minúscula(s).</td>
+</tr>
+<tr>
+<td>XMustContainAtLeastYSpecialCharacters</td>
+<td>The {0} must contain at least {1} special character(s).</td>
+<td>O(A) {0} deve conter pelo menos {1} caractere(s) especial(is).</td>
+</tr>
+<tr>
+<td>XMustContainBetweenYandZCharacters</td>
+<td>The {0} must contain between {1} and {2} character(s).</td>
+<td>O(A) {0} deve conter entre {1} e {2} caracteres.</td>
+</tr>
+<tr>
+<td>XMustContainOnlyDigits</td>
+<td>{0} must contain only digits.</td>
+<td>{0} deve conter apenas dígitos.</td>
+</tr>
+<tr>
+<td>XMustContainYCharacters</td>
+<td>The {0} must contain {1} character(s).</td>
+<td>O(A) {0} deve conter {1} caractere(s).</td>
+</tr>
+<tr>
+<td>XMustHaveAtLeastYCharacters</td>
+<td>The {0} must have at least {1} character(s).</td>
+<td>O(A) {0} deve ter pelo menos {1} caractere(s).</td>
+</tr>
+<tr>
+<td>XMustHaveUpToYCharacters</td>
+<td>The {0} must have up to {1} character(s).</td>
+<td>O(A) {0} deve ter até {1} caractere(s).</td>
+</tr>
+<tr>
+<td>XNamedYAlreadyExists</td>
+<td>A {0} named {1} already exists.</td>
+<td>Já existe um(a) {0} com o nome {1}.</td>
+</tr>
+<tr>
+<td>XNotFound</td>
+<td>{0} not found.</td>
+<td>{0} não encontrado(a).</td>
+</tr>
+<tr>
+<td>XNotProvided</td>
+<td>{0} not provided.</td>
+<td>{0} não informado(a).</td>
+</tr>
+<tr>
+<td>XRecordsImported</td>
+<td>{0} record(s) imported.</td>
+<td>{0} registro(s) importado(s).</td>
+</tr>
+<tr>
+<td>XRegisteredSuccessfully</td>
+<td>{0} registered successfully.</td>
+<td>{0} cadastrado(a) com sucesso.</td>
+</tr>
+<tr>
+<td>XRequired</td>
+<td>{0} is required.</td>
+<td>{0} é obrigatório(a).</td>
+</tr>
+<tr>
+<td>XSentSuccessfully</td>
+<td>{0} sent successfully.</td>
+<td>{0} enviado(a) com sucesso.</td>
+</tr>
+<tr>
+<td>XUnavailableTryAgainLater</td>
+<td>{0} is unavailable right now. Try again in a few moments.</td>
+<td>{0} está indisponível no momento. Tente novamente em alguns instantes.</td>
+</tr>
+<tr>
+<td>XUpdatedSuccessfully</td>
+<td>{0} updated successfully.</td>
+<td>{0} atualizado(a) com sucesso.</td>
+</tr>
+<tr>
+<td>XYSuccess</td>
+<td>{0} {1} successfully.</td>
+<td>{0} {1} com sucesso.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="generic-messages">Generic Messages</h2>
+<p>Direct messages without parameters.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>English</th>
+<th>Portuguese (pt-BR)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AccessDenied</td>
+<td>Access denied.</td>
+<td>Acesso negado.</td>
+</tr>
+<tr>
+<td>CancelDeletion</td>
+<td>Cancel deletion</td>
+<td>Cancelar exclusão</td>
+</tr>
+<tr>
+<td>CodeExpired</td>
+<td>Code expired.</td>
+<td>Código expirado.</td>
+</tr>
+<tr>
+<td>ConfirmYouAreNotARobot</td>
+<td>Confirm you are not a robot before continuing.</td>
+<td>Confirme que você não é um robô antes de continuar.</td>
+</tr>
+<tr>
+<td>CouldNotCopy</td>
+<td>Could not copy automatically. Select the text and copy it manually.</td>
+<td>Não foi possível copiar automaticamente. Selecione o texto e copie manualmente.</td>
+</tr>
+<tr>
+<td>DoYouReallyLogout</td>
+<td>Do you really want to logout?</td>
+<td>Deseja realmente sair?</td>
+</tr>
+<tr>
+<td>EmailConfirmed</td>
+<td>E-mail confirmed.</td>
+<td>E-mail confirmado.</td>
+</tr>
+<tr>
+<td>EmailMustBeConfirmed</td>
+<td>E-mail must be confirmed.</td>
+<td>E-mail precisa estar confirmado.</td>
+</tr>
+<tr>
+<td>EndDateMustBeGreaterThanStartDate</td>
+<td>End date must be greater than start date.</td>
+<td>A data de término deve ser maior que a data de início.</td>
+</tr>
+<tr>
+<td>ErrorInProvidedParameters</td>
+<td>Error in provided parameters.</td>
+<td>Erro nos parâmetros informados.</td>
+</tr>
+<tr>
+<td>IdObjectNotMatchUrl</td>
+<td>The ID in the object does not match the ID in the URL.</td>
+<td>O ID no objeto não corresponde ao ID no URL.</td>
+</tr>
+<tr>
+<td>InactiveUser</td>
+<td>Inactive user.</td>
+<td>Usuário inativo.</td>
+</tr>
+<tr>
+<td>InvalidCredentials</td>
+<td>Invalid credentials.</td>
+<td>Credenciais inválidas.</td>
+</tr>
+<tr>
+<td>InvalidExpiredToken</td>
+<td>Invalid or expired token.</td>
+<td>Token inválido ou expirado.</td>
+</tr>
+<tr>
+<td>InvalidFileContent</td>
+<td>The file content is invalid.</td>
+<td>O conteúdo do arquivo é inválido.</td>
+</tr>
+<tr>
+<td>LoginSuccessful</td>
+<td>Login successful.</td>
+<td>Login bem-sucedido.</td>
+</tr>
+<tr>
+<td>LogoutConfirmation</td>
+<td>Logout confirmation</td>
+<td>Confirmação de saída</td>
+</tr>
+<tr>
+<td>NoFileProvided</td>
+<td>No file was provided.</td>
+<td>Nenhum arquivo informado.</td>
+</tr>
+<tr>
+<td>NoneParameterInformed</td>
+<td>No parameter was provided.</td>
+<td>Nenhum parâmetro informado.</td>
+</tr>
+<tr>
+<td>NoPermissionToAccessResource</td>
+<td>You do not have permission to access this resource. Ask an administrator if you need access.</td>
+<td>Você não tem permissão para acessar este recurso. Se necessário, solicite acesso ao administrador.</td>
+</tr>
+<tr>
+<td>NotAllowed</td>
+<td>Not allowed.</td>
+<td>Não permitido.</td>
+</tr>
+<tr>
+<td>OperationPerformedSuccessfully</td>
+<td>Operation performed successfully.</td>
+<td>Operação realizada com sucesso.</td>
+</tr>
+<tr>
+<td>PageNotFound</td>
+<td>Page not found.</td>
+<td>Página não encontrada.</td>
+</tr>
+<tr>
+<td>PasswordResetFailed</td>
+<td>Password reset failed.</td>
+<td>Falha ao redefinir senha.</td>
+</tr>
+<tr>
+<td>PasswordResetLinkSentIfRegistered</td>
+<td>If that address is registered, a link to reset the password has been sent. Check your inbox and your spam folder.</td>
+<td>Se o endereço estiver cadastrado, um link para redefinir a senha foi enviado. Verifique sua caixa de entrada e a pasta de spam.</td>
+</tr>
+<tr>
+<td>PasswordResetMailWasSent</td>
+<td>Password reset e-mail sent.</td>
+<td>E-mail para redefinição de senha enviado.</td>
+</tr>
+<tr>
+<td>PasswordResetSuccessful</td>
+<td>Password reset successfully.</td>
+<td>Senha redefinida com sucesso.</td>
+</tr>
+<tr>
+<td>ProcessingCompleted</td>
+<td>Processing completed.</td>
+<td>Processamento concluído.</td>
+</tr>
+<tr>
+<td>ProvideAtLeastOneParameter</td>
+<td>Provide at least one parameter.</td>
+<td>Informe pelo menos um parâmetro.</td>
+</tr>
+<tr>
+<td>ReceivedWillBeProcessedShortly</td>
+<td>Received. It will be processed shortly.</td>
+<td>Recebido. O processamento ocorrerá em breve.</td>
+</tr>
+<tr>
+<td>SearchNoResultsRedefineFilters</td>
+<td>No results. Try widening the filters.</td>
+<td>Pesquisa sem resultado. Redefina os filtros.</td>
+</tr>
+<tr>
+<td>SelectAnOption</td>
+<td>Select an option.</td>
+<td>Selecione uma opção.</td>
+</tr>
+<tr>
+<td>TextCopied</td>
+<td>Text copied.</td>
+<td>Texto copiado.</td>
+</tr>
+<tr>
+<td>TheOperationCouldNotBePerformed</td>
+<td>The operation could not be performed.</td>
+<td>Não foi possível realizar a operação.</td>
+</tr>
+<tr>
+<td>ThisActionCannotBeUndone</td>
+<td>This action cannot be undone.</td>
+<td>Esta ação não pode ser desfeita.</td>
+</tr>
+<tr>
+<td>ToConfirmDeletion</td>
+<td>To confirm deletion</td>
+<td>Para confirmar a exclusão</td>
+</tr>
+<tr>
+<td>TooManyRequestsTryAgainLater</td>
+<td>Too many requests. Try again in a few minutes.</td>
+<td>Muitas requisições. Tente novamente em alguns minutos.</td>
+</tr>
+<tr>
+<td>UnexpectedError</td>
+<td>Something went wrong. Try again in a few moments.</td>
+<td>Ocorreu um erro inesperado. Tente novamente em alguns instantes.</td>
+</tr>
+<tr>
+<td>UnsavedChangesWillBeLost</td>
+<td>There are unsaved changes. If you leave now, they will be lost. Do you really want to leave?</td>
+<td>Há alterações não salvas. Se você sair agora, elas serão perdidas. Deseja realmente sair?</td>
+</tr>
+<tr>
+<td>UploadedFileIsEmpty</td>
+<td>The uploaded file is empty.</td>
+<td>O arquivo enviado está vazio.</td>
+</tr>
+<tr>
+<td>ValidationProblemsFound</td>
+<td>Validation problems were found.</td>
+<td>Problemas de validação encontrados.</td>
+</tr>
+<tr>
+<td>ValidVerificationCode</td>
+<td>Valid verification code.</td>
+<td>Código de verificação válido.</td>
+</tr>
+<tr>
+<td>ValueOutsideRange</td>
+<td>Value outside range.</td>
+<td>Valor fora da faixa.</td>
+</tr>
+<tr>
+<td>ValueShownOnlyOnce</td>
+<td>This value is shown only once. Copy it and store it somewhere safe before closing.</td>
+<td>Este valor será exibido apenas uma vez. Copie e guarde em local seguro antes de fechar.</td>
+</tr>
+<tr>
+<td>YouCannotChangeYourOwnPermissions</td>
+<td>You cannot change your own permissions. Ask another administrator.</td>
+<td>Você não pode alterar as próprias permissões. Solicite a outro administrador.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="migration-guide">Migration Guide</h2>
+<p>If you were using any of the removed specific messages, replace them with the parameterized templates:</p>
+<table>
+<thead>
+<tr>
+<th>Old (Removed)</th>
+<th>New (Template)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Messages.InvalidEmail</code></td>
+<td><code>string.Format(Messages.XInvalid, &quot;E-mail&quot;)</code></td>
+</tr>
+<tr>
+<td><code>Messages.UserNotFound</code></td>
+<td><code>string.Format(Messages.XNotFound, &quot;User&quot;)</code></td>
+</tr>
+<tr>
+<td><code>Messages.TokenNotFound</code></td>
+<td><code>string.Format(Messages.XNotFound, &quot;Token&quot;)</code></td>
+</tr>
+<tr>
+<td><code>Messages.RecordNotFound</code></td>
+<td><code>string.Format(Messages.XNotFound, &quot;Record&quot;)</code></td>
+</tr>
+<tr>
+<td><code>Messages.RoleAlreadyExists</code></td>
+<td><code>string.Format(Messages.XAlreadyExists, &quot;Role&quot;)</code></td>
+</tr>
+<tr>
+<td><code>Messages.EmailAlreadyRegistered</code></td>
+<td><code>string.Format(Messages.XAlreadyExists, &quot;E-mail&quot;)</code></td>
+</tr>
+<tr>
+<td><code>Messages.UserCreatedSuccessfully</code></td>
+<td><code>string.Format(Messages.XRegisteredSuccessfully, &quot;User&quot;)</code></td>
+</tr>
+<tr>
+<td><code>Messages.ConfirmDeletion</code></td>
+<td><code>string.Format(Messages.ConfirmX, &quot;deletion&quot;)</code></td>
+</tr>
+<tr>
+<td><code>Messages.ConfirmActivation</code></td>
+<td><code>string.Format(Messages.ConfirmX, &quot;activation&quot;)</code></td>
+</tr>
+<tr>
+<td><code>Messages.AtLeastOneTheseParametersShoudBeFilledX</code> (misspelled; still present, to be removed in the next major version)</td>
+<td><code>Messages.AtLeastOneOfTheseParametersShouldBeFilledX</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="related-dictionaries">Related Dictionaries</h2>
+<ul>
+<li><a href="ACTIONS.html">Actions Dictionary</a> - Action labels and commands</li>
+<li><a href="FIELDS.html">Fields Dictionary</a> - Form field labels and UI elements</li>
+<li><a href="../README.html">Back to README</a></li>
+</ul>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>© Nuv Tools · <a href="https://nuvtools.com/framework/">nuvtools.com</a> · MIT licence · Built with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

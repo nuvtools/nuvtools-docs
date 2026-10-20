@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Class OmieServiceOrderBillingProvider | Nuv Tools Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class OmieServiceOrderBillingProvider | Nuv Tools Framework ">
+      
+      <meta name="description" content="Invoicing of a single service order in Omie — the documented path to issue the NFS-e of one OS, which  does not cover and therefore goes through the direct client: StatusOS (servicos/os/): fiscal state of the order — stage, whether it was cancelled, whether it was already invoiced and the NFS-e that came out of it. It is the query that says whether there is anything to do, and the one that confirms the result afterwards.ValidarOS (servicos/osp/): Omie&#39;s validation before invoicing. It is what points out, in the API&#39;s own words, which required data is missing on the order or on the client registration — instead of finding out through the city hall&#39;s rejection, after the invoice was already requested.FaturarOS (servicos/osp/): invoices that order. The equivalent of &quot;Faturar Selecionada&quot; in the Omie UI — not to be confused with FaturarLoteOS (servicos/oslote/), which invoices every order of a stage and, triggered for one client, would take the others along.  None of them invents data: the invoice content is the order&#39;s. What is decided here is only when to ask for the invoice.">
+      <link rel="icon" href="../../images/icon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/nuvtools-brand.svg" alt="Framework">
+            Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="NuvTools.Payment.Omie.ApiClient.Services.OmieServiceOrderBillingProvider">
+
+
+
+  <h1 id="NuvTools_Payment_Omie_ApiClient_Services_OmieServiceOrderBillingProvider" data-uid="NuvTools.Payment.Omie.ApiClient.Services.OmieServiceOrderBillingProvider" class="text-break">
+Class OmieServiceOrderBillingProvider  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><span class="xref">NuvTools</span>.<a class="xref" href="NuvTools.Payment.html">Payment</a>.<span class="xref">Omie</span>.<a class="xref" href="NuvTools.Payment.Omie.ApiClient.html">ApiClient</a>.<a class="xref" href="NuvTools.Payment.Omie.ApiClient.Services.html">Services</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NuvTools.Payment.Omie.ApiClient.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Invoicing of a single service order in Omie — the documented path to issue the NFS-e of one OS, which
+<a class="xref" href="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.html">IOmieApiClient</a> does not cover and therefore goes through the direct client:</p>
+<ol><li><code>StatusOS</code> (<code>servicos/os/</code>): fiscal state of the order — stage, whether it was cancelled,
+whether it was already invoiced and the NFS-e that came out of it. It is the query that says whether there is
+anything to do, and the one that confirms the result afterwards.</li><li><code>ValidarOS</code> (<code>servicos/osp/</code>): Omie's validation before invoicing. It is what points out, in the
+API's own words, which required data is missing on the order or on the client registration — instead of finding
+out through the city hall's rejection, after the invoice was already requested.</li><li><code>FaturarOS</code> (<code>servicos/osp/</code>): invoices that order. The equivalent of "Faturar Selecionada" in
+the Omie UI — not to be confused with <code>FaturarLoteOS</code> (<code>servicos/oslote/</code>), which invoices <b>every</b>
+order of a stage and, triggered for one client, would take the others along.</li></ol>
+<p>
+None of them invents data: the invoice content is the order's. What is decided here is only <i>when</i> to ask
+for the invoice.
+</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class OmieServiceOrderBillingProvider</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">OmieServiceOrderBillingProvider</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="NuvTools_Payment_Omie_ApiClient_Services_OmieServiceOrderBillingProvider__ctor_" data-uid="NuvTools.Payment.Omie.ApiClient.Services.OmieServiceOrderBillingProvider.#ctor*"></a>
+
+  <h3 id="NuvTools_Payment_Omie_ApiClient_Services_OmieServiceOrderBillingProvider__ctor_NuvTools_Payment_Omie_ApiClient_Services_OmieDirectApiClient_Microsoft_Extensions_Logging_ILogger_NuvTools_Payment_Omie_ApiClient_Services_OmieServiceOrderBillingProvider__" data-uid="NuvTools.Payment.Omie.ApiClient.Services.OmieServiceOrderBillingProvider.#ctor(NuvTools.Payment.Omie.ApiClient.Services.OmieDirectApiClient,Microsoft.Extensions.Logging.ILogger{NuvTools.Payment.Omie.ApiClient.Services.OmieServiceOrderBillingProvider})">
+  OmieServiceOrderBillingProvider(OmieDirectApiClient, ILogger&lt;OmieServiceOrderBillingProvider&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Invoicing of a single service order in Omie — the documented path to issue the NFS-e of one OS, which
+<a class="xref" href="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.html">IOmieApiClient</a> does not cover and therefore goes through the direct client:</p>
+<ol><li><code>StatusOS</code> (<code>servicos/os/</code>): fiscal state of the order — stage, whether it was cancelled,
+whether it was already invoiced and the NFS-e that came out of it. It is the query that says whether there is
+anything to do, and the one that confirms the result afterwards.</li><li><code>ValidarOS</code> (<code>servicos/osp/</code>): Omie's validation before invoicing. It is what points out, in the
+API's own words, which required data is missing on the order or on the client registration — instead of finding
+out through the city hall's rejection, after the invoice was already requested.</li><li><code>FaturarOS</code> (<code>servicos/osp/</code>): invoices that order. The equivalent of "Faturar Selecionada" in
+the Omie UI — not to be confused with <code>FaturarLoteOS</code> (<code>servicos/oslote/</code>), which invoices <b>every</b>
+order of a stage and, triggered for one client, would take the others along.</li></ol>
+<p>
+None of them invents data: the invoice content is the order's. What is decided here is only <i>when</i> to ask
+for the invoice.
+</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public OmieServiceOrderBillingProvider(OmieDirectApiClient omie, ILogger&lt;OmieServiceOrderBillingProvider&gt; logger)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>omie</code> <a class="xref" href="NuvTools.Payment.Omie.ApiClient.Services.OmieDirectApiClient.html">OmieDirectApiClient</a></dt>
+    <dd></dd>
+    <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;<a class="xref" href="NuvTools.Payment.Omie.ApiClient.Services.OmieServiceOrderBillingProvider.html">OmieServiceOrderBillingProvider</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="NuvTools_Payment_Omie_ApiClient_Services_OmieServiceOrderBillingProvider_GetStatusAsync_" data-uid="NuvTools.Payment.Omie.ApiClient.Services.OmieServiceOrderBillingProvider.GetStatusAsync*"></a>
+
+  <h3 id="NuvTools_Payment_Omie_ApiClient_Services_OmieServiceOrderBillingProvider_GetStatusAsync_System_String_System_Threading_CancellationToken_" data-uid="NuvTools.Payment.Omie.ApiClient.Services.OmieServiceOrderBillingProvider.GetStatusAsync(System.String,System.Threading.CancellationToken)">
+  GetStatusAsync(string, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Fiscal state of the order by integration code. Returns <code>null</code> in <code>Data</code> when the order does not
+exist in Omie — absence is not a failure: it is the case of whoever has not created the order yet.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IResult&lt;OmieServiceOrderStatus?&gt;&gt; GetStatusAsync(string integrationCode, CancellationToken cancellationToken)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>integrationCode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../foundation/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;<a class="xref" href="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceOrderStatus.html">OmieServiceOrderStatus</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Payment_Omie_ApiClient_Services_OmieServiceOrderBillingProvider_InvoiceAsync_" data-uid="NuvTools.Payment.Omie.ApiClient.Services.OmieServiceOrderBillingProvider.InvoiceAsync*"></a>
+
+  <h3 id="NuvTools_Payment_Omie_ApiClient_Services_OmieServiceOrderBillingProvider_InvoiceAsync_System_Int64_System_String_System_Threading_CancellationToken_" data-uid="NuvTools.Payment.Omie.ApiClient.Services.OmieServiceOrderBillingProvider.InvoiceAsync(System.Int64,System.String,System.Threading.CancellationToken)">
+  InvoiceAsync(long, string, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Invoices the order (<code>FaturarOS</code>) — this request is what makes Omie issue that order's NFS-e.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IResult&gt; InvoiceAsync(long osCode, string integrationCode, CancellationToken cancellationToken)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>osCode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>integrationCode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../foundation/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Payment_Omie_ApiClient_Services_OmieServiceOrderBillingProvider_ValidateAsync_" data-uid="NuvTools.Payment.Omie.ApiClient.Services.OmieServiceOrderBillingProvider.ValidateAsync*"></a>
+
+  <h3 id="NuvTools_Payment_Omie_ApiClient_Services_OmieServiceOrderBillingProvider_ValidateAsync_System_Int64_System_String_System_Threading_CancellationToken_" data-uid="NuvTools.Payment.Omie.ApiClient.Services.OmieServiceOrderBillingProvider.ValidateAsync(System.Int64,System.String,System.Threading.CancellationToken)">
+  ValidateAsync(long, string, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Validates the order for invoicing (<code>ValidarOS</code>). A failure carries Omie's own text, which is what knows
+the missing required data — passing it through raw is more useful than translating it by approximation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IResult&gt; ValidateAsync(long osCode, string integrationCode, CancellationToken cancellationToken)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>osCode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>integrationCode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../foundation/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>© Nuv Tools · <a href="https://nuvtools.com/framework/">nuvtools.com</a> · MIT licence · Built with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

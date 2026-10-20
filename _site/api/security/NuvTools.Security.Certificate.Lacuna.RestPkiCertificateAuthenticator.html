@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Class RestPkiCertificateAuthenticator | Nuv Tools Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class RestPkiCertificateAuthenticator | Nuv Tools Framework ">
+      
+      <meta name="description" content="Authenticates a certificate through Lacuna REST PKI. The client signs the challenge in the browser with Web PKI (signWithRestPki); the service validates possession of the private key and the trust chain, and the subject is read from the certificate it validated.">
+      <link rel="icon" href="../../images/icon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/nuvtools-brand.svg" alt="Framework">
+            Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="NuvTools.Security.Certificate.Lacuna.RestPkiCertificateAuthenticator">
+
+
+
+  <h1 id="NuvTools_Security_Certificate_Lacuna_RestPkiCertificateAuthenticator" data-uid="NuvTools.Security.Certificate.Lacuna.RestPkiCertificateAuthenticator" class="text-break">
+Class RestPkiCertificateAuthenticator  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><span class="xref">NuvTools</span>.<span class="xref">Security</span>.<a class="xref" href="NuvTools.Security.Certificate.html">Certificate</a>.<a class="xref" href="NuvTools.Security.Certificate.Lacuna.html">Lacuna</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NuvTools.Security.Certificate.Lacuna.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Authenticates a certificate through Lacuna REST PKI. The client signs the challenge in the browser
+with Web PKI (<code>signWithRestPki</code>); the service validates possession of the private key and the
+trust chain, and the subject is read from the certificate it validated.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class RestPkiCertificateAuthenticator : ICertificateAuthenticator</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">RestPkiCertificateAuthenticator</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="NuvTools.Security.Certificate.ICertificateAuthenticator.html">ICertificateAuthenticator</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="NuvTools_Security_Certificate_Lacuna_RestPkiCertificateAuthenticator__ctor_" data-uid="NuvTools.Security.Certificate.Lacuna.RestPkiCertificateAuthenticator.#ctor*"></a>
+
+  <h3 id="NuvTools_Security_Certificate_Lacuna_RestPkiCertificateAuthenticator__ctor_Microsoft_Extensions_Options_IOptions_NuvTools_Security_Certificate_Lacuna_RestPkiOptions__Microsoft_Extensions_Logging_ILogger_NuvTools_Security_Certificate_Lacuna_RestPkiCertificateAuthenticator__" data-uid="NuvTools.Security.Certificate.Lacuna.RestPkiCertificateAuthenticator.#ctor(Microsoft.Extensions.Options.IOptions{NuvTools.Security.Certificate.Lacuna.RestPkiOptions},Microsoft.Extensions.Logging.ILogger{NuvTools.Security.Certificate.Lacuna.RestPkiCertificateAuthenticator})">
+  RestPkiCertificateAuthenticator(IOptions&lt;RestPkiOptions&gt;, ILogger&lt;RestPkiCertificateAuthenticator&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Authenticates a certificate through Lacuna REST PKI. The client signs the challenge in the browser
+with Web PKI (<code>signWithRestPki</code>); the service validates possession of the private key and the
+trust chain, and the subject is read from the certificate it validated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RestPkiCertificateAuthenticator(IOptions&lt;RestPkiOptions&gt; options, ILogger&lt;RestPkiCertificateAuthenticator&gt; logger)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>options</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1">IOptions</a>&lt;<a class="xref" href="NuvTools.Security.Certificate.Lacuna.RestPkiOptions.html">RestPkiOptions</a>&gt;</dt>
+    <dd><p>REST PKI configuration.</p>
+</dd>
+    <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;<a class="xref" href="NuvTools.Security.Certificate.Lacuna.RestPkiCertificateAuthenticator.html">RestPkiCertificateAuthenticator</a>&gt;</dt>
+    <dd><p>Logger for diagnostics.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="NuvTools_Security_Certificate_Lacuna_RestPkiCertificateAuthenticator_CompleteAsync_" data-uid="NuvTools.Security.Certificate.Lacuna.RestPkiCertificateAuthenticator.CompleteAsync*"></a>
+
+  <h3 id="NuvTools_Security_Certificate_Lacuna_RestPkiCertificateAuthenticator_CompleteAsync_System_String_System_Threading_CancellationToken_" data-uid="NuvTools.Security.Certificate.Lacuna.RestPkiCertificateAuthenticator.CompleteAsync(System.String,System.Threading.CancellationToken)">
+  CompleteAsync(string?, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Validates the signed challenge and reads the certificate's subject.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;CertificateAuthentication&gt; CompleteAsync(string? token, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>token</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The token of the challenge the client signed.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>Token to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="NuvTools.Security.Certificate.CertificateAuthentication.html">CertificateAuthentication</a>&gt;</dt>
+    <dd><p>The authentication result. An empty token, a failed validation or a communication failure
+yields <a class="xref" href="NuvTools.Security.Certificate.CertificateAuthentication.html#NuvTools_Security_Certificate_CertificateAuthentication_Valid">Valid</a> = <code>false</code> (fail-closed).</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Security_Certificate_Lacuna_RestPkiCertificateAuthenticator_StartAsync_" data-uid="NuvTools.Security.Certificate.Lacuna.RestPkiCertificateAuthenticator.StartAsync*"></a>
+
+  <h3 id="NuvTools_Security_Certificate_Lacuna_RestPkiCertificateAuthenticator_StartAsync_System_Threading_CancellationToken_" data-uid="NuvTools.Security.Certificate.Lacuna.RestPkiCertificateAuthenticator.StartAsync(System.Threading.CancellationToken)">
+  StartAsync(CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Opens an authentication on the provider.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;CertificateChallenge&gt; StartAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>Token to cancel the operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="NuvTools.Security.Certificate.CertificateChallenge.html">CertificateChallenge</a>&gt;</dt>
+    <dd><p>The challenge the client signs and sends back.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception">Exception</a></dt>
+    <dd><p>The provider could not be reached or refused the request.</p>
+</dd>
+  </dl>
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>© Nuv Tools · <a href="https://nuvtools.com/framework/">nuvtools.com</a> · MIT licence · Built with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

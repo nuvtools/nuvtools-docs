@@ -1,0 +1,404 @@
+# Nuv Tools Data Libraries
+
+[![NuGet](https://img.shields.io/nuget/v/NuvTools.Data.svg)](https://www.nuget.org/packages/NuvTools.Data/)
+[![License](https://img.shields.io/github/license/nuvtools/nuvtools-data)](https://github.com/nuvtools/nuvtools-data/blob/main/LICENSE)
+
+Nuv Tools Data Libraries are a set of .NET libraries designed to simplify and standardize data access and manipulation. They provide abstractions and helpers for common data operations, as well as seamless integration with Entity Framework Core for SQL Server and PostgreSQL.
+
+## Key Features
+
+- **Multi-Framework Support**: .NET 8, .NET 9, and .NET 10
+- **ORM-Agnostic Core**: Base paging and sorting utilities work with any data source
+- **EF Core Integration**: First-class support for Entity Framework Core 10.0
+- **Result Pattern**: All database operations return `IResult` or `IResult<T>` for consistent error handling
+- **Async-First**: All EF Core operations are async with `CancellationToken` support
+- **Bulk Operations**: Efficient bulk add, update, and remove operations
+- **Well-Documented**: Comprehensive XML documentation for IntelliSense support
+
+## Libraries Overview
+
+### NuvTools.Data
+
+[![NuGet](https://img.shields.io/nuget/v/NuvTools.Data.svg)](https://www.nuget.org/packages/NuvTools.Data/)
+
+Core library with generic helpers for data manipulation:
+- **Paging**: Abstracts paging logic for both `IQueryable` and `IEnumerable` collections
+- **Sorting**: Extension methods for sorting with ascending/descending direction
+- **Filtering**: Paging filters with optional sorting capabilities
+- **No dependencies**: Works with any data source or ORM
+
+```bash
+dotnet add package NuvTools.Data
+```
+
+### NuvTools.Data.EntityFrameworkCore
+
+[![NuGet](https://img.shields.io/nuget/v/NuvTools.Data.EntityFrameworkCore.svg)](https://www.nuget.org/packages/NuvTools.Data.EntityFrameworkCore/)
+
+Extensions for Entity Framework Core:
+- **DbContextBase**: Base class with CRUD operations using Result pattern
+- **Transaction Management**: Built-in transaction support with rollback/commit
+- **Transaction Locks**: `AcquireTransactionLockAsync(name)` serializes competing writers across processes
+  (`pg_advisory_xact_lock` on PostgreSQL, `sp_getapplock` on SQL Server), released with the transaction
+- **Execution Strategies**: Connection resiliency with automatic retry
+- **Bulk Operations**: `SyncFromListAsync`, `AddOrUpdateFromListAsync`, `AddOrRemoveFromListAsync`
+- **Async Paging**: `PagingWrapAsync` for efficient database paging
+
+```bash
+dotnet add package NuvTools.Data.EntityFrameworkCore
+```
+
+### NuvTools.Data.EntityFrameworkCore.SqlServer
+
+[![NuGet](https://img.shields.io/nuget/v/NuvTools.Data.EntityFrameworkCore.SqlServer.svg)](https://www.nuget.org/packages/NuvTools.Data.EntityFrameworkCore.SqlServer/)
+
+Specialized helpers for SQL Server with EF Core:
+- **Simple Registration**: `AddDatabase` and `AddDatabaseByConnectionName` extension methods
+- **Configuration Integration**: Load connection strings from `appsettings.json`
+- **SQL Server Options**: Configure SQL Server-specific options via `SqlServerDbContextOptionsBuilder`
+
+```bash
+dotnet add package NuvTools.Data.EntityFrameworkCore.SqlServer
+```
+
+### NuvTools.Data.EntityFrameworkCore.PostgreSQL
+
+[![NuGet](https://img.shields.io/nuget/v/NuvTools.Data.EntityFrameworkCore.PostgreSQL.svg)](https://www.nuget.org/packages/NuvTools.Data.EntityFrameworkCore.PostgreSQL/)
+
+Specialized helpers for PostgreSQL with EF Core:
+- **Simple Registration**: `AddDatabase` and `AddDatabaseByConnectionName` extension methods
+- **Snake Case Convention**: `UseSnakeCaseNamingConvention` for PostgreSQL naming standards
+- **Npgsql Options**: Configure PostgreSQL-specific options via `NpgsqlDbContextOptionsBuilder`
+
+```bash
+dotnet add package NuvTools.Data.EntityFrameworkCore.PostgreSQL
+```
+
+## Quick Start
+
+### Basic Paging (NuvTools.Data)
+
+```csharp
+using NuvTools.Data.Paging;
+
+// In-memory paging (0-indexed)
+var items = new List<Product> { /* ... */ };
+var pagedResult = items.PagingWrap(pageIndex: 0, pageSize: 20);
+
+Console.WriteLine($"Page {pagedResult.PageIndex + 1} of {Math.Ceiling(pagedResult.Total / 20.0)}");
+foreach (var item in pagedResult.List)
+{
+    Console.WriteLine(item.Name);
+}
+```
+
+### Sorting (NuvTools.Data)
+
+```csharp
+using NuvTools.Data.Sorting;
+using NuvTools.Data.Sorting.Enumerations;
+
+var sortedProducts = products
+    .Sort(p => p.Category, SortDirection.ASC)
+    .ThenSort(p => p.Price, SortDirection.DESC);
+```
+
+### SQL Server Registration (NuvTools.Data.EntityFrameworkCore.SqlServer)
+
+```csharp
+using NuvTools.Data.EntityFrameworkCore.SqlServer.Extensions;
+
+// In Program.cs or Startup.cs
+builder.Services.AddDatabaseByConnectionName<MyDbContext>("DefaultConnection");
+
+// Or with connection string directly
+builder.Services.AddDatabase<MyDbContext>(connectionString);
+
+// With SQL Server-specific options
+builder.Services.AddDatabaseByConnectionName<MyDbContext>(
+    "DefaultConnection",
+    sqlServerOptions => sqlServerOptions.EnableRetryOnFailure()
+);
+```
+
+### PostgreSQL with Snake Case (NuvTools.Data.EntityFrameworkCore.PostgreSQL)
+
+```csharp
+using NuvTools.Data.EntityFrameworkCore.PostgreSQL.Extensions;
+
+// Register DbContext
+builder.Services.AddDatabaseByConnectionName<MyDbContext>("PostgresConnection");
+
+// In your DbContext
+public class MyDbContext : DbContextBase
+{
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        // Apply snake_case naming convention for PostgreSQL
+        modelBuilder.UseSnakeCaseNamingConvention();
+        base.OnModelCreating(modelBuilder);
+    }
+}
+```
+
+### Using DbContextBase
+
+```csharp
+using NuvTools.Data.EntityFrameworkCore.Context;
+
+public class MyDbContext : DbContextBase
+{
+    public MyDbContext(DbContextOptions<MyDbContext> options) : base(options) { }
+
+    public DbSet<Product> Products { get; set; }
+}
+
+// In your service
+public class ProductService
+{
+    private readonly MyDbContext _context;
+
+    public async Task<IResult<int>> CreateProductAsync(Product product)
+    {
+        // AddAndSaveAsync returns IResult<TKey>
+        return await _context.AddAndSaveAsync<Product, int>(product);
+    }
+
+    public async Task<IResult> UpdateProductAsync(Product product, int id)
+    {
+        // UpdateAndSaveAsync returns IResult
+        return await _context.UpdateAndSaveAsync(product, id);
+    }
+
+    public async Task<IResult> DeleteProductAsync(int id)
+    {
+        // RemoveAndSaveAsync returns IResult
+        return await _context.RemoveAndSaveAsync<Product>(id);
+    }
+}
+```
+
+### Serializing a read-then-write (DbContextBase)
+
+Allocating the next value of a per-tenant sequence is a read followed by a write, so every concurrent
+writer reads the same maximum and they collide on the unique index. An exclusive lock, held until the
+transaction ends, makes the pair atomic without changing the schema:
+
+```csharp
+using var transaction = await context.BeginTransactionAsync(cancellationToken);
+
+// Blocks only writers asking for this same name; other tenants keep running in parallel.
+await context.AcquireTransactionLockAsync($"invoice-number:{tenantId}", cancellationToken);
+
+invoice.Number = await context.Invoice
+    .Where(i => i.TenantId == tenantId)
+    .Select(i => i.Number)
+    .DefaultIfEmpty()
+    .MaxAsync(cancellationToken) + 1;
+
+context.Invoice.Add(invoice);
+await context.SaveChangesAsync(cancellationToken);
+await transaction.CommitAsync(cancellationToken);   // releases the lock
+```
+
+A abstração (`IDbContextTransactionLock`) fica em `NuvTools.Data.EntityFrameworkCore` e cada pacote de
+provider traz a sua implementação — `pg_advisory_xact_lock` em `...PostgreSQL`, `sp_getapplock` em
+`...SqlServer` —, registrada automaticamente pelos helpers `AddDatabase`/`AddDatabaseByConnectionName`.
+Sem nenhum provider registrado (contexto em memória montado à mão, nos testes) a chamada é inócua.
+
+### Async Paging with EF Core
+
+```csharp
+using NuvTools.Data.EntityFrameworkCore.Paging;
+
+public async Task<PagingWithEnumerableList<Product>> GetProductsAsync(int pageIndex, int pageSize)
+{
+    var query = _context.Products.Where(p => p.IsActive);
+
+    // PagingWrapAsync materializes the data (0-indexed)
+    var pagedResult = await query.PagingWrapWithEnumerableListAsync(pageIndex, pageSize);
+
+    return pagedResult;
+}
+```
+
+### SkipCount Mode for Large Datasets
+
+For large datasets where `COUNT(*)` is too slow, use `PagingCountMode.SkipCount` to skip the count query. Instead of counting all rows, it fetches one extra item to determine if a next page exists:
+
+```csharp
+using NuvTools.Data.EntityFrameworkCore.Paging;
+using NuvTools.Data.Paging.Enumerations;
+
+public async Task<PagingWithEnumerableList<Product>> GetProductsAsync(int pageIndex, int pageSize)
+{
+    var query = _context.Products.Where(p => p.IsActive).OrderBy(p => p.Id);
+
+    // SkipCount: no COUNT(*) query, uses N+1 trick to detect next page
+    var pagedResult = await query.PagingWrapWithEnumerableListAsync(
+        pageIndex, pageSize, PagingCountMode.SkipCount);
+
+    // pagedResult.HasNextPage  => true if more items exist
+    // pagedResult.Total        => -1 (unknown)
+    return pagedResult;
+}
+```
+
+The `PagingFilter` class also supports `CountMode`, making it easy to pass from the UI:
+
+```csharp
+var filter = new PagingFilter<ProductSortColumn>
+{
+    PageIndex = 0,
+    PageSize = 25,
+    SortColumn = ProductSortColumn.Name,
+    CountMode = PagingCountMode.SkipCount  // Skip expensive COUNT(*)
+};
+```
+
+### Bulk Operations
+
+```csharp
+// Sync from list: Add new, update existing, remove missing
+var result = await _context.SyncFromListAsync(
+    updatedProducts,
+    p => p.Id,
+    p => p.IsActive // Optional filter
+);
+
+// Add or update only (no removal)
+await _context.AddOrUpdateFromListAsync(products, p => p.Id);
+
+// Add or remove only (no updates)
+await _context.AddOrRemoveFromListAsync(products, p => p.Id);
+```
+
+## 📋 Requirements
+
+- **.NET SDK**: 8.0, 9.0, or 10.0
+- **Entity Framework Core**: 10.1.0 (for EF Core libraries)
+- **Database Providers**:
+  - SQL Server: Microsoft.EntityFrameworkCore.SqlServer 10.1.0
+  - PostgreSQL: Npgsql.EntityFrameworkCore.PostgreSQL 10.0.0
+
+## 🔧 Development
+
+### Building the Solution
+
+```bash
+dotnet build NuvTools.Data.slnx
+```
+
+### Running Tests
+
+```bash
+# Run all tests
+dotnet test
+
+# Run specific test project
+dotnet test tests/NuvTools.Data.Test/NuvTools.Data.Test.csproj
+```
+
+### Creating NuGet Packages
+
+```bash
+dotnet build NuvTools.Data.slnx -c Release
+```
+
+Packages are automatically generated in `bin/Release` folders when building in Release configuration.
+
+## 📝 Version History
+
+### Version 10.1.4
+- **New Feature**: `PagingCountMode.SkipCount` to skip expensive `COUNT(*)` queries on large datasets
+- **New Feature**: `HasNextPage` property on all paging results for infinite scroll / forward-only navigation
+- **New**: `PagingCountMode` enum (`Normal`, `SkipCount`) in `NuvTools.Data.Paging.Enumerations`
+- **New**: `CountMode` property on `PagingFilter` (defaults to `Normal`)
+- **New**: `PagingHelper.CalculateHasNextPage()` helper method
+- **Breaking Change**: `PagingHelper.GetSkip()` changed from `internal` to `public`
+- **Breaking Change**: `PagingWrapAsync` and `PagingWrapWithEnumerableListAsync` have a new `countMode` parameter before `cancellationToken`. Callers passing `CancellationToken` positionally must switch to named parameter: `cancellationToken: token`
+
+### Version 10.1.0
+- **Breaking Change**: Paging system migrated from 1-based `PageNumber` to 0-based `PageIndex`
+- Property `PageNumber` renamed to `PageIndex` in `PagingBase`, `PagingFilter`, and paging results
+- Method `GetPageNumber()` renamed to `GetPageIndex()` in `PagingHelper`
+- Default page parameter changed from `1` to `0`
+
+### Version 10.0.2
+- Updated to Entity Framework Core 10.0.2
+- Updated all Microsoft packages to version 10.0.2
+- Improved package descriptions and tags
+- Copyright updated to 2026
+
+### Version 10.0.0
+- Added .NET 10 support
+- Updated to Entity Framework Core 10.0.0
+- Updated all Microsoft packages to version 10.0.0
+- Comprehensive XML documentation added to all public APIs
+- Migrated solution to .slnx format
+
+## Releasing
+
+Publishing to nuget.org is irreversible per version, so the workflow makes it the last and smallest
+step.
+
+**One workflow per library.** Each package has its own, so a run and an approval each concern
+exactly one package. The steps themselves are shared, in the reusable `package-publish.yml`.
+
+| Package | Workflow | Release tag |
+|---|---|---|
+| `NuvTools.Data` | `data-publish.yml` | `data-vX.Y.Z` |
+| `NuvTools.Data.EntityFrameworkCore` | `entityframeworkcore-publish.yml` | `entityframeworkcore-vX.Y.Z` |
+| `NuvTools.Data.EntityFrameworkCore.PostgreSQL` | `postgresql-publish.yml` | `postgresql-vX.Y.Z` |
+| `NuvTools.Data.EntityFrameworkCore.SqlServer` | `sqlserver-publish.yml` | `sqlserver-vX.Y.Z` |
+
+1. Set the package's `<Version>` in its `.csproj` and merge it. That is the version that gets
+   published; the workflow reads it and never computes one.
+2. Run the library's workflow by hand (*Actions → Data Publish → Run workflow*) with *push*
+   checked.
+3. The workflow builds the solution with `-warnaserror`, runs the tests, takes **that package only**
+   from the build output, verifies it carries its README, licence, icon, symbols and every target
+   framework, and then waits for approval on the `nuget` GitHub Environment before pushing.
+4. **After the push succeeds, the workflow tags the commit** with the tag in the table above. The tag is a
+   record of what is on nuget.org, never what starts a release, so it cannot exist for a version
+   that did not get there. A run whose tag already exists stops before building: the version has
+   been released and `<Version>` needs a bump.
+
+**A referenced package goes first.** A package that references another of this repository as a
+project depends on whatever `<Version>` that one has in the commit. The workflow checks that
+version is on nuget.org and refuses to push a package whose dependency is not there yet. So:
+
+- `NuvTools.Data` before `NuvTools.Data.EntityFrameworkCore`.
+- `NuvTools.Data.EntityFrameworkCore` before `NuvTools.Data.EntityFrameworkCore.PostgreSQL` and `NuvTools.Data.EntityFrameworkCore.SqlServer`.
+
+That check knows a version exists, not what is in it: when a referenced package changes its public
+API, bump and publish it first, then bump and publish the packages built on it.
+
+**Versions published by hand are refused.** Releases made before these workflows exist on nuget.org
+with no tag. Pushing one again would skip the duplicate and then tag the current commit as a
+release it is not, so a version that is already on nuget.org stops the run. The exception is a
+re-run of the same run, which is how a push that succeeded and a tag that failed gets finished.
+
+**No API key is stored.** The push uses nuget.org's trusted publishing: the job presents a GitHub
+OIDC token, nuget.org checks it against the policy registered for this repository and answers with a
+key that lives for one hour. The repository needs one secret, `NUGET_USER` — the nuget.org profile
+name the policy belongs to — and the policy itself, registered under *Trusted Publishing* on
+nuget.org with the owner `nuvtools`, the repository `nuvtools-data`, the workflow file and the
+environment `nuget`.
+
+Run a library's workflow by hand with *push* unchecked for a dry run that stops after the
+verification.
+
+## 📄 License
+
+This project is licensed under the terms specified in the [LICENSE](https://github.com/nuvtools/nuvtools-data/blob/main/LICENSE) file.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 🔗 Links
+
+- [GitHub Repository](https://github.com/nuvtools/nuvtools-data)
+- [NuGet Packages](https://www.nuget.org/profiles/nuvtools)
+- [Official Website](https://nuvtools.com)

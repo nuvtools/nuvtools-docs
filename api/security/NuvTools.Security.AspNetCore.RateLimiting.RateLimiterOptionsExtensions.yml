@@ -1,0 +1,517 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Security.AspNetCore.RateLimiting.RateLimiterOptionsExtensions
+  commentId: T:NuvTools.Security.AspNetCore.RateLimiting.RateLimiterOptionsExtensions
+  id: RateLimiterOptionsExtensions
+  parent: NuvTools.Security.AspNetCore.RateLimiting
+  children:
+  - NuvTools.Security.AspNetCore.RateLimiting.RateLimiterOptionsExtensions.AddFixedWindowPerClientAddress(Microsoft.AspNetCore.RateLimiting.RateLimiterOptions,System.String,System.Int32,System.TimeSpan)
+  - NuvTools.Security.AspNetCore.RateLimiting.RateLimiterOptionsExtensions.SetTooManyRequests(Microsoft.AspNetCore.RateLimiting.OnRejectedContext)
+  langs:
+  - csharp
+  - vb
+  name: RateLimiterOptionsExtensions
+  nameWithType: RateLimiterOptionsExtensions
+  fullName: NuvTools.Security.AspNetCore.RateLimiting.RateLimiterOptionsExtensions
+  type: Class
+  assemblies:
+  - NuvTools.Security.AspNetCore
+  namespace: NuvTools.Security.AspNetCore.RateLimiting
+  summary: >-
+    Extension methods for limiting anonymous endpoints, such as sign-in, sign-up and password
+
+    recovery, by the address a request comes from.
+  example: []
+  syntax:
+    content: public static class RateLimiterOptionsExtensions
+    content.vb: Public Module RateLimiterOptionsExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NuvTools.Security.AspNetCore.RateLimiting.RateLimiterOptionsExtensions.AddFixedWindowPerClientAddress(Microsoft.AspNetCore.RateLimiting.RateLimiterOptions,System.String,System.Int32,System.TimeSpan)
+  commentId: M:NuvTools.Security.AspNetCore.RateLimiting.RateLimiterOptionsExtensions.AddFixedWindowPerClientAddress(Microsoft.AspNetCore.RateLimiting.RateLimiterOptions,System.String,System.Int32,System.TimeSpan)
+  id: AddFixedWindowPerClientAddress(Microsoft.AspNetCore.RateLimiting.RateLimiterOptions,System.String,System.Int32,System.TimeSpan)
+  isExtensionMethod: true
+  parent: NuvTools.Security.AspNetCore.RateLimiting.RateLimiterOptionsExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddFixedWindowPerClientAddress(RateLimiterOptions, string, int, TimeSpan)
+  nameWithType: RateLimiterOptionsExtensions.AddFixedWindowPerClientAddress(RateLimiterOptions, string, int, TimeSpan)
+  fullName: NuvTools.Security.AspNetCore.RateLimiting.RateLimiterOptionsExtensions.AddFixedWindowPerClientAddress(Microsoft.AspNetCore.RateLimiting.RateLimiterOptions, string, int, System.TimeSpan)
+  type: Method
+  assemblies:
+  - NuvTools.Security.AspNetCore
+  namespace: NuvTools.Security.AspNetCore.RateLimiting
+  summary: >-
+    Adds a policy that lets each client address make <code class="paramref">permitLimit</code> requests per
+
+    <code class="paramref">window</code>, and rejects the rest at once.
+  remarks: >-
+    <p>
+
+    The partition key is the policy name followed by the address. Each policy therefore counts on
+
+    its own: using up the allowance for asking for a reset link does not use up the allowance for
+
+    spending one.
+
+    </p>
+
+    <p>
+
+    There is no queue. A caller past the limit gets the rejection straight away instead of having
+
+    its connection held open.
+
+    </p>
+
+    <p>
+
+    The address is <xref href="Microsoft.AspNetCore.Http.ConnectionInfo.RemoteIpAddress" data-throw-if-not-resolved="false"></xref>. Behind a proxy, call
+
+    <code>UseForwardedHeaders</code> before <code>UseRateLimiter</code>, or every caller shares the proxy's
+
+    address. A request with no address falls into one shared bucket rather than going unlimited.
+
+    An address is something a caller can vary, so this bounds noise and unsophisticated scripts;
+
+    it does not replace account lockout or a uniform answer that hides whether an account exists.
+
+    </p>
+  example: []
+  syntax:
+    content: public static RateLimiterOptions AddFixedWindowPerClientAddress(this RateLimiterOptions options, string policyName, int permitLimit, TimeSpan window)
+    parameters:
+    - id: options
+      type: Microsoft.AspNetCore.RateLimiting.RateLimiterOptions
+      description: The rate limiter options to add the policy to.
+    - id: policyName
+      type: System.String
+      description: The name an endpoint uses to apply the policy.
+    - id: permitLimit
+      type: System.Int32
+      description: Requests allowed per address in each window.
+    - id: window
+      type: System.TimeSpan
+      description: Length of the window.
+    return:
+      type: Microsoft.AspNetCore.RateLimiting.RateLimiterOptions
+      description: The options for chaining.
+    content.vb: Public Shared Function AddFixedWindowPerClientAddress(options As RateLimiterOptions, policyName As String, permitLimit As Integer, window As TimeSpan) As RateLimiterOptions
+  overload: NuvTools.Security.AspNetCore.RateLimiting.RateLimiterOptionsExtensions.AddFixedWindowPerClientAddress*
+  nameWithType.vb: RateLimiterOptionsExtensions.AddFixedWindowPerClientAddress(RateLimiterOptions, String, Integer, TimeSpan)
+  fullName.vb: NuvTools.Security.AspNetCore.RateLimiting.RateLimiterOptionsExtensions.AddFixedWindowPerClientAddress(Microsoft.AspNetCore.RateLimiting.RateLimiterOptions, String, Integer, System.TimeSpan)
+  name.vb: AddFixedWindowPerClientAddress(RateLimiterOptions, String, Integer, TimeSpan)
+- uid: NuvTools.Security.AspNetCore.RateLimiting.RateLimiterOptionsExtensions.SetTooManyRequests(Microsoft.AspNetCore.RateLimiting.OnRejectedContext)
+  commentId: M:NuvTools.Security.AspNetCore.RateLimiting.RateLimiterOptionsExtensions.SetTooManyRequests(Microsoft.AspNetCore.RateLimiting.OnRejectedContext)
+  id: SetTooManyRequests(Microsoft.AspNetCore.RateLimiting.OnRejectedContext)
+  isExtensionMethod: true
+  parent: NuvTools.Security.AspNetCore.RateLimiting.RateLimiterOptionsExtensions
+  langs:
+  - csharp
+  - vb
+  name: SetTooManyRequests(OnRejectedContext)
+  nameWithType: RateLimiterOptionsExtensions.SetTooManyRequests(OnRejectedContext)
+  fullName: NuvTools.Security.AspNetCore.RateLimiting.RateLimiterOptionsExtensions.SetTooManyRequests(Microsoft.AspNetCore.RateLimiting.OnRejectedContext)
+  type: Method
+  assemblies:
+  - NuvTools.Security.AspNetCore
+  namespace: NuvTools.Security.AspNetCore.RateLimiting
+  summary: >-
+    Sets the response status to 429 and, when the limiter knows it, the <code>Retry-After</code> header
+
+    in seconds.
+  remarks: Writes no body, so an API can add its own error envelope and a page can render its own message.
+  example: []
+  syntax:
+    content: public static void SetTooManyRequests(this OnRejectedContext context)
+    parameters:
+    - id: context
+      type: Microsoft.AspNetCore.RateLimiting.OnRejectedContext
+      description: The context passed to <xref href="Microsoft.AspNetCore.RateLimiting.RateLimiterOptions.OnRejected" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Shared Sub SetTooManyRequests(context As OnRejectedContext)
+  overload: NuvTools.Security.AspNetCore.RateLimiting.RateLimiterOptionsExtensions.SetTooManyRequests*
+references:
+- uid: NuvTools.Security.AspNetCore.RateLimiting
+  commentId: N:NuvTools.Security.AspNetCore.RateLimiting
+  name: NuvTools.Security.AspNetCore.RateLimiting
+  nameWithType: NuvTools.Security.AspNetCore.RateLimiting
+  fullName: NuvTools.Security.AspNetCore.RateLimiting
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.AspNetCore
+    name: AspNetCore
+  - name: .
+  - uid: NuvTools.Security.AspNetCore.RateLimiting
+    name: RateLimiting
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.AspNetCore
+    name: AspNetCore
+  - name: .
+  - uid: NuvTools.Security.AspNetCore.RateLimiting
+    name: RateLimiting
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.AspNetCore.Http.ConnectionInfo.RemoteIpAddress
+  commentId: P:Microsoft.AspNetCore.Http.ConnectionInfo.RemoteIpAddress
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.http.connectioninfo.remoteipaddress
+  name: RemoteIpAddress
+  nameWithType: ConnectionInfo.RemoteIpAddress
+  fullName: Microsoft.AspNetCore.Http.ConnectionInfo.RemoteIpAddress
+- uid: NuvTools.Security.AspNetCore.RateLimiting.RateLimiterOptionsExtensions.AddFixedWindowPerClientAddress*
+  commentId: Overload:NuvTools.Security.AspNetCore.RateLimiting.RateLimiterOptionsExtensions.AddFixedWindowPerClientAddress
+  href: NuvTools.Security.AspNetCore.RateLimiting.RateLimiterOptionsExtensions.html#NuvTools_Security_AspNetCore_RateLimiting_RateLimiterOptionsExtensions_AddFixedWindowPerClientAddress_Microsoft_AspNetCore_RateLimiting_RateLimiterOptions_System_String_System_Int32_System_TimeSpan_
+  name: AddFixedWindowPerClientAddress
+  nameWithType: RateLimiterOptionsExtensions.AddFixedWindowPerClientAddress
+  fullName: NuvTools.Security.AspNetCore.RateLimiting.RateLimiterOptionsExtensions.AddFixedWindowPerClientAddress
+- uid: Microsoft.AspNetCore.RateLimiting.RateLimiterOptions
+  commentId: T:Microsoft.AspNetCore.RateLimiting.RateLimiterOptions
+  parent: Microsoft.AspNetCore.RateLimiting
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.ratelimiting.ratelimiteroptions
+  name: RateLimiterOptions
+  nameWithType: RateLimiterOptions
+  fullName: Microsoft.AspNetCore.RateLimiting.RateLimiterOptions
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.timespan
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: Microsoft.AspNetCore.RateLimiting
+  commentId: N:Microsoft.AspNetCore.RateLimiting
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.AspNetCore.RateLimiting
+  nameWithType: Microsoft.AspNetCore.RateLimiting
+  fullName: Microsoft.AspNetCore.RateLimiting
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.RateLimiting
+    name: RateLimiting
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.ratelimiting
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.RateLimiting
+    name: RateLimiting
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.ratelimiting
+- uid: Microsoft.AspNetCore.RateLimiting.RateLimiterOptions.OnRejected
+  commentId: P:Microsoft.AspNetCore.RateLimiting.RateLimiterOptions.OnRejected
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.ratelimiting.ratelimiteroptions.onrejected
+  name: OnRejected
+  nameWithType: RateLimiterOptions.OnRejected
+  fullName: Microsoft.AspNetCore.RateLimiting.RateLimiterOptions.OnRejected
+- uid: NuvTools.Security.AspNetCore.RateLimiting.RateLimiterOptionsExtensions.SetTooManyRequests*
+  commentId: Overload:NuvTools.Security.AspNetCore.RateLimiting.RateLimiterOptionsExtensions.SetTooManyRequests
+  href: NuvTools.Security.AspNetCore.RateLimiting.RateLimiterOptionsExtensions.html#NuvTools_Security_AspNetCore_RateLimiting_RateLimiterOptionsExtensions_SetTooManyRequests_Microsoft_AspNetCore_RateLimiting_OnRejectedContext_
+  name: SetTooManyRequests
+  nameWithType: RateLimiterOptionsExtensions.SetTooManyRequests
+  fullName: NuvTools.Security.AspNetCore.RateLimiting.RateLimiterOptionsExtensions.SetTooManyRequests
+- uid: Microsoft.AspNetCore.RateLimiting.OnRejectedContext
+  commentId: T:Microsoft.AspNetCore.RateLimiting.OnRejectedContext
+  parent: Microsoft.AspNetCore.RateLimiting
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.ratelimiting.onrejectedcontext
+  name: OnRejectedContext
+  nameWithType: OnRejectedContext
+  fullName: Microsoft.AspNetCore.RateLimiting.OnRejectedContext

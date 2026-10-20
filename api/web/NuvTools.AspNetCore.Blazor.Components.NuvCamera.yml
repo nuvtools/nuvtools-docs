@@ -1,0 +1,2551 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera
+  commentId: T:NuvTools.AspNetCore.Blazor.Components.NuvCamera
+  id: NuvCamera
+  parent: NuvTools.AspNetCore.Blazor.Components
+  children:
+  - NuvTools.AspNetCore.Blazor.Components.NuvCamera.AdditionalAttributes
+  - NuvTools.AspNetCore.Blazor.Components.NuvCamera.AutoStart
+  - NuvTools.AspNetCore.Blazor.Components.NuvCamera.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
+  - NuvTools.AspNetCore.Blazor.Components.NuvCamera.CaptureAsync(System.Threading.CancellationToken)
+  - NuvTools.AspNetCore.Blazor.Components.NuvCamera.CaptureHeight
+  - NuvTools.AspNetCore.Blazor.Components.NuvCamera.CaptureWidth
+  - NuvTools.AspNetCore.Blazor.Components.NuvCamera.Class
+  - NuvTools.AspNetCore.Blazor.Components.NuvCamera.DeviceId
+  - NuvTools.AspNetCore.Blazor.Components.NuvCamera.DisposeAsync
+  - NuvTools.AspNetCore.Blazor.Components.NuvCamera.FacingMode
+  - NuvTools.AspNetCore.Blazor.Components.NuvCamera.Format
+  - NuvTools.AspNetCore.Blazor.Components.NuvCamera.GetDevicesAsync(System.Threading.CancellationToken)
+  - NuvTools.AspNetCore.Blazor.Components.NuvCamera.Height
+  - NuvTools.AspNetCore.Blazor.Components.NuvCamera.IsRunning
+  - NuvTools.AspNetCore.Blazor.Components.NuvCamera.Mirrored
+  - NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnAfterRenderAsync(System.Boolean)
+  - NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnCaptured
+  - NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnError
+  - NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnStarted
+  - NuvTools.AspNetCore.Blazor.Components.NuvCamera.Overlay
+  - NuvTools.AspNetCore.Blazor.Components.NuvCamera.Quality
+  - NuvTools.AspNetCore.Blazor.Components.NuvCamera.StartAsync(System.Threading.CancellationToken)
+  - NuvTools.AspNetCore.Blazor.Components.NuvCamera.StopAsync(System.Threading.CancellationToken)
+  - NuvTools.AspNetCore.Blazor.Components.NuvCamera.Style
+  - NuvTools.AspNetCore.Blazor.Components.NuvCamera.SwitchDeviceAsync(System.String,System.Threading.CancellationToken)
+  - NuvTools.AspNetCore.Blazor.Components.NuvCamera.Width
+  langs:
+  - csharp
+  - vb
+  name: NuvCamera
+  nameWithType: NuvCamera
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera
+  type: Class
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Components
+  summary: Renders a live camera preview and captures frames from it.
+  remarks: >-
+    The component owns the <code>&lt;video&gt;</code> and the capture <code>&lt;canvas&gt;</code>, and keeps its own
+
+    media stream — several instances can run side by side. It renders no layout and no styling of its
+
+    own: size it through <xref href="NuvTools.AspNetCore.Blazor.Components.NuvCamera.Class" data-throw-if-not-resolved="false"></xref>/<xref href="NuvTools.AspNetCore.Blazor.Components.NuvCamera.Style" data-throw-if-not-resolved="false"></xref> and draw guides through
+
+    <xref href="NuvTools.AspNetCore.Blazor.Components.NuvCamera.Overlay" data-throw-if-not-resolved="false"></xref>. Capture the component with <code>@ref</code> to drive it.
+  example:
+  - >-
+    <pre><code class="lang-csharp">&lt;NuvCamera @ref="_camera" FacingMode="CameraFacingMode.Environment"
+               Style="width:400px;height:300px" OnError="ShowCameraError" /&gt;
+
+    @code {
+        private NuvCamera _camera = default!;
+
+        private async Task ScanAsync()
+        {
+            var capture = await _camera.CaptureAsync();
+            if (capture is not null) await ReadAsync(capture.Base64);
+        }
+    }</code></pre>
+  syntax:
+    content: 'public class NuvCamera : ComponentBase, IComponent, IHandleEvent, IHandleAfterRender, IAsyncDisposable'
+    content.vb: Public Class NuvCamera Inherits ComponentBase Implements IComponent, IHandleEvent, IHandleAfterRender, IAsyncDisposable
+  inheritance:
+  - System.Object
+  - Microsoft.AspNetCore.Components.ComponentBase
+  implements:
+  - Microsoft.AspNetCore.Components.IComponent
+  - Microsoft.AspNetCore.Components.IHandleEvent
+  - Microsoft.AspNetCore.Components.IHandleAfterRender
+  - System.IAsyncDisposable
+  inheritedMembers:
+  - Microsoft.AspNetCore.Components.ComponentBase.OnInitialized
+  - Microsoft.AspNetCore.Components.ComponentBase.OnInitializedAsync
+  - Microsoft.AspNetCore.Components.ComponentBase.OnParametersSet
+  - Microsoft.AspNetCore.Components.ComponentBase.OnParametersSetAsync
+  - Microsoft.AspNetCore.Components.ComponentBase.StateHasChanged
+  - Microsoft.AspNetCore.Components.ComponentBase.ShouldRender
+  - Microsoft.AspNetCore.Components.ComponentBase.OnAfterRender(System.Boolean)
+  - Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Action)
+  - Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Func{System.Threading.Tasks.Task})
+  - Microsoft.AspNetCore.Components.ComponentBase.DispatchExceptionAsync(System.Exception)
+  - Microsoft.AspNetCore.Components.ComponentBase.SetParametersAsync(Microsoft.AspNetCore.Components.ParameterView)
+  - Microsoft.AspNetCore.Components.ComponentBase.RendererInfo
+  - Microsoft.AspNetCore.Components.ComponentBase.Assets
+  - Microsoft.AspNetCore.Components.ComponentBase.AssignedRenderMode
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Width
+  commentId: P:NuvTools.AspNetCore.Blazor.Components.NuvCamera.Width
+  id: Width
+  parent: NuvTools.AspNetCore.Blazor.Components.NuvCamera
+  langs:
+  - csharp
+  - vb
+  name: Width
+  nameWithType: NuvCamera.Width
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Width
+  type: Property
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Components
+  summary: Requested capture width, in pixels. Treated as ideal — the browser may pick another size.
+  example: []
+  syntax:
+    content: >-
+      [Parameter]
+
+      public int? Width { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: >-
+      <Parameter>
+
+      Public Property Width As Integer?
+  overload: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Width*
+  attributes:
+  - type: Microsoft.AspNetCore.Components.ParameterAttribute
+    ctor: Microsoft.AspNetCore.Components.ParameterAttribute.#ctor
+    arguments: []
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Height
+  commentId: P:NuvTools.AspNetCore.Blazor.Components.NuvCamera.Height
+  id: Height
+  parent: NuvTools.AspNetCore.Blazor.Components.NuvCamera
+  langs:
+  - csharp
+  - vb
+  name: Height
+  nameWithType: NuvCamera.Height
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Height
+  type: Property
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Components
+  summary: Requested capture height, in pixels. Treated as ideal — the browser may pick another size.
+  example: []
+  syntax:
+    content: >-
+      [Parameter]
+
+      public int? Height { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: >-
+      <Parameter>
+
+      Public Property Height As Integer?
+  overload: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Height*
+  attributes:
+  - type: Microsoft.AspNetCore.Components.ParameterAttribute
+    ctor: Microsoft.AspNetCore.Components.ParameterAttribute.#ctor
+    arguments: []
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.FacingMode
+  commentId: P:NuvTools.AspNetCore.Blazor.Components.NuvCamera.FacingMode
+  id: FacingMode
+  parent: NuvTools.AspNetCore.Blazor.Components.NuvCamera
+  langs:
+  - csharp
+  - vb
+  name: FacingMode
+  nameWithType: NuvCamera.FacingMode
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.FacingMode
+  type: Property
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Components
+  summary: Which camera to request. Ignored when <xref href="NuvTools.AspNetCore.Blazor.Components.NuvCamera.DeviceId" data-throw-if-not-resolved="false"></xref> is set.
+  example: []
+  syntax:
+    content: >-
+      [Parameter]
+
+      public CameraFacingMode FacingMode { get; set; }
+    parameters: []
+    return:
+      type: NuvTools.AspNetCore.Blazor.Components.CameraFacingMode
+    content.vb: >-
+      <Parameter>
+
+      Public Property FacingMode As CameraFacingMode
+  overload: NuvTools.AspNetCore.Blazor.Components.NuvCamera.FacingMode*
+  attributes:
+  - type: Microsoft.AspNetCore.Components.ParameterAttribute
+    ctor: Microsoft.AspNetCore.Components.ParameterAttribute.#ctor
+    arguments: []
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.DeviceId
+  commentId: P:NuvTools.AspNetCore.Blazor.Components.NuvCamera.DeviceId
+  id: DeviceId
+  parent: NuvTools.AspNetCore.Blazor.Components.NuvCamera
+  langs:
+  - csharp
+  - vb
+  name: DeviceId
+  nameWithType: NuvCamera.DeviceId
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.DeviceId
+  type: Property
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Components
+  summary: Identifier of a specific camera, as returned by <xref href="NuvTools.AspNetCore.Blazor.Components.NuvCamera.GetDevicesAsync(System.Threading.CancellationToken)" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: >-
+      [Parameter]
+
+      public string? DeviceId { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Parameter>
+
+      Public Property DeviceId As String
+  overload: NuvTools.AspNetCore.Blazor.Components.NuvCamera.DeviceId*
+  attributes:
+  - type: Microsoft.AspNetCore.Components.ParameterAttribute
+    ctor: Microsoft.AspNetCore.Components.ParameterAttribute.#ctor
+    arguments: []
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Mirrored
+  commentId: P:NuvTools.AspNetCore.Blazor.Components.NuvCamera.Mirrored
+  id: Mirrored
+  parent: NuvTools.AspNetCore.Blazor.Components.NuvCamera
+  langs:
+  - csharp
+  - vb
+  name: Mirrored
+  nameWithType: NuvCamera.Mirrored
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Mirrored
+  type: Property
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Components
+  summary: >-
+    Whether to mirror the image. Applies to both the preview and the captured frame, so what the
+
+    user sees is what gets saved. Expected for a selfie camera; leave it off for a rear camera.
+  example: []
+  syntax:
+    content: >-
+      [Parameter]
+
+      public bool Mirrored { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <Parameter>
+
+      Public Property Mirrored As Boolean
+  overload: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Mirrored*
+  attributes:
+  - type: Microsoft.AspNetCore.Components.ParameterAttribute
+    ctor: Microsoft.AspNetCore.Components.ParameterAttribute.#ctor
+    arguments: []
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Format
+  commentId: P:NuvTools.AspNetCore.Blazor.Components.NuvCamera.Format
+  id: Format
+  parent: NuvTools.AspNetCore.Blazor.Components.NuvCamera
+  langs:
+  - csharp
+  - vb
+  name: Format
+  nameWithType: NuvCamera.Format
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Format
+  type: Property
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Components
+  summary: Format of the captured image.
+  example: []
+  syntax:
+    content: >-
+      [Parameter]
+
+      public CameraImageFormat Format { get; set; }
+    parameters: []
+    return:
+      type: NuvTools.AspNetCore.Blazor.Components.CameraImageFormat
+    content.vb: >-
+      <Parameter>
+
+      Public Property Format As CameraImageFormat
+  overload: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Format*
+  attributes:
+  - type: Microsoft.AspNetCore.Components.ParameterAttribute
+    ctor: Microsoft.AspNetCore.Components.ParameterAttribute.#ctor
+    arguments: []
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Quality
+  commentId: P:NuvTools.AspNetCore.Blazor.Components.NuvCamera.Quality
+  id: Quality
+  parent: NuvTools.AspNetCore.Blazor.Components.NuvCamera
+  langs:
+  - csharp
+  - vb
+  name: Quality
+  nameWithType: NuvCamera.Quality
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Quality
+  type: Property
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Components
+  summary: Compression quality, from 0 to 1. Only used by <xref href="NuvTools.AspNetCore.Blazor.Components.CameraImageFormat.Jpeg" data-throw-if-not-resolved="false"></xref> and <xref href="NuvTools.AspNetCore.Blazor.Components.CameraImageFormat.Webp" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: >-
+      [Parameter]
+
+      public double Quality { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: >-
+      <Parameter>
+
+      Public Property Quality As Double
+  overload: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Quality*
+  attributes:
+  - type: Microsoft.AspNetCore.Components.ParameterAttribute
+    ctor: Microsoft.AspNetCore.Components.ParameterAttribute.#ctor
+    arguments: []
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.CaptureWidth
+  commentId: P:NuvTools.AspNetCore.Blazor.Components.NuvCamera.CaptureWidth
+  id: CaptureWidth
+  parent: NuvTools.AspNetCore.Blazor.Components.NuvCamera
+  langs:
+  - csharp
+  - vb
+  name: CaptureWidth
+  nameWithType: NuvCamera.CaptureWidth
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.CaptureWidth
+  type: Property
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Components
+  summary: Width of the captured frame, in pixels. Defaults to the stream's native width.
+  example: []
+  syntax:
+    content: >-
+      [Parameter]
+
+      public int? CaptureWidth { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: >-
+      <Parameter>
+
+      Public Property CaptureWidth As Integer?
+  overload: NuvTools.AspNetCore.Blazor.Components.NuvCamera.CaptureWidth*
+  attributes:
+  - type: Microsoft.AspNetCore.Components.ParameterAttribute
+    ctor: Microsoft.AspNetCore.Components.ParameterAttribute.#ctor
+    arguments: []
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.CaptureHeight
+  commentId: P:NuvTools.AspNetCore.Blazor.Components.NuvCamera.CaptureHeight
+  id: CaptureHeight
+  parent: NuvTools.AspNetCore.Blazor.Components.NuvCamera
+  langs:
+  - csharp
+  - vb
+  name: CaptureHeight
+  nameWithType: NuvCamera.CaptureHeight
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.CaptureHeight
+  type: Property
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Components
+  summary: Height of the captured frame, in pixels. Defaults to the stream's native height.
+  example: []
+  syntax:
+    content: >-
+      [Parameter]
+
+      public int? CaptureHeight { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: >-
+      <Parameter>
+
+      Public Property CaptureHeight As Integer?
+  overload: NuvTools.AspNetCore.Blazor.Components.NuvCamera.CaptureHeight*
+  attributes:
+  - type: Microsoft.AspNetCore.Components.ParameterAttribute
+    ctor: Microsoft.AspNetCore.Components.ParameterAttribute.#ctor
+    arguments: []
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.AutoStart
+  commentId: P:NuvTools.AspNetCore.Blazor.Components.NuvCamera.AutoStart
+  id: AutoStart
+  parent: NuvTools.AspNetCore.Blazor.Components.NuvCamera
+  langs:
+  - csharp
+  - vb
+  name: AutoStart
+  nameWithType: NuvCamera.AutoStart
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.AutoStart
+  type: Property
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Components
+  summary: Whether to start the camera as soon as the component renders.
+  example: []
+  syntax:
+    content: >-
+      [Parameter]
+
+      public bool AutoStart { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: >-
+      <Parameter>
+
+      Public Property AutoStart As Boolean
+  overload: NuvTools.AspNetCore.Blazor.Components.NuvCamera.AutoStart*
+  attributes:
+  - type: Microsoft.AspNetCore.Components.ParameterAttribute
+    ctor: Microsoft.AspNetCore.Components.ParameterAttribute.#ctor
+    arguments: []
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Class
+  commentId: P:NuvTools.AspNetCore.Blazor.Components.NuvCamera.Class
+  id: Class
+  parent: NuvTools.AspNetCore.Blazor.Components.NuvCamera
+  langs:
+  - csharp
+  - vb
+  name: Class
+  nameWithType: NuvCamera.Class
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Class
+  type: Property
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Components
+  summary: CSS class applied to the video element.
+  example: []
+  syntax:
+    content: >-
+      [Parameter]
+
+      public string? Class { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Parameter>
+
+      Public Property [Class] As String
+  overload: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Class*
+  attributes:
+  - type: Microsoft.AspNetCore.Components.ParameterAttribute
+    ctor: Microsoft.AspNetCore.Components.ParameterAttribute.#ctor
+    arguments: []
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Style
+  commentId: P:NuvTools.AspNetCore.Blazor.Components.NuvCamera.Style
+  id: Style
+  parent: NuvTools.AspNetCore.Blazor.Components.NuvCamera
+  langs:
+  - csharp
+  - vb
+  name: Style
+  nameWithType: NuvCamera.Style
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Style
+  type: Property
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Components
+  summary: Inline style applied to the video element.
+  example: []
+  syntax:
+    content: >-
+      [Parameter]
+
+      public string? Style { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <Parameter>
+
+      Public Property Style As String
+  overload: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Style*
+  attributes:
+  - type: Microsoft.AspNetCore.Components.ParameterAttribute
+    ctor: Microsoft.AspNetCore.Components.ParameterAttribute.#ctor
+    arguments: []
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Overlay
+  commentId: P:NuvTools.AspNetCore.Blazor.Components.NuvCamera.Overlay
+  id: Overlay
+  parent: NuvTools.AspNetCore.Blazor.Components.NuvCamera
+  langs:
+  - csharp
+  - vb
+  name: Overlay
+  nameWithType: NuvCamera.Overlay
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Overlay
+  type: Property
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Components
+  summary: Content rendered right after the video, for guides, frames or hints.
+  example: []
+  syntax:
+    content: >-
+      [Parameter]
+
+      public RenderFragment? Overlay { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.AspNetCore.Components.RenderFragment
+    content.vb: >-
+      <Parameter>
+
+      Public Property Overlay As RenderFragment
+  overload: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Overlay*
+  attributes:
+  - type: Microsoft.AspNetCore.Components.ParameterAttribute
+    ctor: Microsoft.AspNetCore.Components.ParameterAttribute.#ctor
+    arguments: []
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnStarted
+  commentId: P:NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnStarted
+  id: OnStarted
+  parent: NuvTools.AspNetCore.Blazor.Components.NuvCamera
+  langs:
+  - csharp
+  - vb
+  name: OnStarted
+  nameWithType: NuvCamera.OnStarted
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnStarted
+  type: Property
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Components
+  summary: Raised once the stream is live.
+  example: []
+  syntax:
+    content: >-
+      [Parameter]
+
+      public EventCallback OnStarted { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.AspNetCore.Components.EventCallback
+    content.vb: >-
+      <Parameter>
+
+      Public Property OnStarted As EventCallback
+  overload: NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnStarted*
+  attributes:
+  - type: Microsoft.AspNetCore.Components.ParameterAttribute
+    ctor: Microsoft.AspNetCore.Components.ParameterAttribute.#ctor
+    arguments: []
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnError
+  commentId: P:NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnError
+  id: OnError
+  parent: NuvTools.AspNetCore.Blazor.Components.NuvCamera
+  langs:
+  - csharp
+  - vb
+  name: OnError
+  nameWithType: NuvCamera.OnError
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnError
+  type: Property
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Components
+  summary: Raised when the camera cannot be started — permission denied, no camera, and so on.
+  example: []
+  syntax:
+    content: >-
+      [Parameter]
+
+      public EventCallback<CameraError> OnError { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.AspNetCore.Components.EventCallback{NuvTools.AspNetCore.Blazor.Components.CameraError}
+    content.vb: >-
+      <Parameter>
+
+      Public Property OnError As EventCallback(Of CameraError)
+  overload: NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnError*
+  attributes:
+  - type: Microsoft.AspNetCore.Components.ParameterAttribute
+    ctor: Microsoft.AspNetCore.Components.ParameterAttribute.#ctor
+    arguments: []
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnCaptured
+  commentId: P:NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnCaptured
+  id: OnCaptured
+  parent: NuvTools.AspNetCore.Blazor.Components.NuvCamera
+  langs:
+  - csharp
+  - vb
+  name: OnCaptured
+  nameWithType: NuvCamera.OnCaptured
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnCaptured
+  type: Property
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Components
+  summary: Raised for every captured frame.
+  example: []
+  syntax:
+    content: >-
+      [Parameter]
+
+      public EventCallback<CameraCapture> OnCaptured { get; set; }
+    parameters: []
+    return:
+      type: Microsoft.AspNetCore.Components.EventCallback{NuvTools.AspNetCore.Blazor.Components.CameraCapture}
+    content.vb: >-
+      <Parameter>
+
+      Public Property OnCaptured As EventCallback(Of CameraCapture)
+  overload: NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnCaptured*
+  attributes:
+  - type: Microsoft.AspNetCore.Components.ParameterAttribute
+    ctor: Microsoft.AspNetCore.Components.ParameterAttribute.#ctor
+    arguments: []
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.AdditionalAttributes
+  commentId: P:NuvTools.AspNetCore.Blazor.Components.NuvCamera.AdditionalAttributes
+  id: AdditionalAttributes
+  parent: NuvTools.AspNetCore.Blazor.Components.NuvCamera
+  langs:
+  - csharp
+  - vb
+  name: AdditionalAttributes
+  nameWithType: NuvCamera.AdditionalAttributes
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.AdditionalAttributes
+  type: Property
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Components
+  summary: Any other attribute is applied to the video element.
+  example: []
+  syntax:
+    content: >-
+      [Parameter(CaptureUnmatchedValues = true)]
+
+      public IReadOnlyDictionary<string, object>? AdditionalAttributes { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object}
+    content.vb: >-
+      <Parameter(CaptureUnmatchedValues:=True)>
+
+      Public Property AdditionalAttributes As IReadOnlyDictionary(Of String, Object)
+  overload: NuvTools.AspNetCore.Blazor.Components.NuvCamera.AdditionalAttributes*
+  attributes:
+  - type: Microsoft.AspNetCore.Components.ParameterAttribute
+    ctor: Microsoft.AspNetCore.Components.ParameterAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: CaptureUnmatchedValues
+      type: System.Boolean
+      value: true
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.IsRunning
+  commentId: P:NuvTools.AspNetCore.Blazor.Components.NuvCamera.IsRunning
+  id: IsRunning
+  parent: NuvTools.AspNetCore.Blazor.Components.NuvCamera
+  langs:
+  - csharp
+  - vb
+  name: IsRunning
+  nameWithType: NuvCamera.IsRunning
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.IsRunning
+  type: Property
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Components
+  summary: Whether the stream is currently live.
+  example: []
+  syntax:
+    content: public bool IsRunning { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsRunning As Boolean
+  overload: NuvTools.AspNetCore.Blazor.Components.NuvCamera.IsRunning*
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnAfterRenderAsync(System.Boolean)
+  commentId: M:NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnAfterRenderAsync(System.Boolean)
+  id: OnAfterRenderAsync(System.Boolean)
+  parent: NuvTools.AspNetCore.Blazor.Components.NuvCamera
+  langs:
+  - csharp
+  - vb
+  name: OnAfterRenderAsync(bool)
+  nameWithType: NuvCamera.OnAfterRenderAsync(bool)
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnAfterRenderAsync(bool)
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Components
+  summary: >-
+    Method invoked after each time the component has been rendered interactively and the UI has finished
+
+    updating (for example, after elements have been added to the browser DOM). Any <xref href="Microsoft.AspNetCore.Components.ElementReference" data-throw-if-not-resolved="false"></xref>
+
+    fields will be populated by the time this runs.
+
+
+    This method is not invoked during prerendering or server-side rendering, because those processes
+
+    are not attached to any live browser DOM and are already complete before the DOM is updated.
+
+
+    Note that the component does not automatically re-render after the completion of any returned <xref href="System.Threading.Tasks.Task" data-throw-if-not-resolved="false"></xref>,
+
+    because that would cause an infinite render loop.
+  remarks: >-
+    The <xref href="Microsoft.AspNetCore.Components.ComponentBase.OnAfterRender(System.Boolean)" data-throw-if-not-resolved="false"></xref> and <xref href="Microsoft.AspNetCore.Components.ComponentBase.OnAfterRenderAsync(System.Boolean)" data-throw-if-not-resolved="false"></xref> lifecycle methods
+
+    are useful for performing interop, or interacting with values received from <code>@ref</code>.
+
+    Use the <code class="paramref">firstRender</code> parameter to ensure that initialization work is only performed
+
+    once.
+  example: []
+  syntax:
+    content: protected override Task OnAfterRenderAsync(bool firstRender)
+    parameters:
+    - id: firstRender
+      type: System.Boolean
+      description: >-
+        Set to <code>true</code> if this is the first time <xref href="Microsoft.AspNetCore.Components.ComponentBase.OnAfterRender(System.Boolean)" data-throw-if-not-resolved="false"></xref> has been invoked
+
+        on this component instance; otherwise <code>false</code>.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A <xref href="System.Threading.Tasks.Task" data-throw-if-not-resolved="false"></xref> representing any asynchronous operation.
+    content.vb: Protected Overrides Function OnAfterRenderAsync(firstRender As Boolean) As Task
+  overridden: Microsoft.AspNetCore.Components.ComponentBase.OnAfterRenderAsync(System.Boolean)
+  overload: NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnAfterRenderAsync*
+  nameWithType.vb: NuvCamera.OnAfterRenderAsync(Boolean)
+  fullName.vb: NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnAfterRenderAsync(Boolean)
+  name.vb: OnAfterRenderAsync(Boolean)
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.StartAsync(System.Threading.CancellationToken)
+  commentId: M:NuvTools.AspNetCore.Blazor.Components.NuvCamera.StartAsync(System.Threading.CancellationToken)
+  id: StartAsync(System.Threading.CancellationToken)
+  parent: NuvTools.AspNetCore.Blazor.Components.NuvCamera
+  langs:
+  - csharp
+  - vb
+  name: StartAsync(CancellationToken)
+  nameWithType: NuvCamera.StartAsync(CancellationToken)
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.StartAsync(System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Components
+  summary: Starts the camera. Raises <xref href="NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnStarted" data-throw-if-not-resolved="false"></xref> on success and <xref href="NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnError" data-throw-if-not-resolved="false"></xref> on failure.
+  example: []
+  syntax:
+    content: public Task<bool> StartAsync(CancellationToken cancellationToken = default)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: A cancellation token to observe.
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+      description: <code>true</code> when the stream is live.
+    content.vb: Public Function StartAsync(cancellationToken As CancellationToken = Nothing) As Task(Of Boolean)
+  overload: NuvTools.AspNetCore.Blazor.Components.NuvCamera.StartAsync*
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.SwitchDeviceAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.AspNetCore.Blazor.Components.NuvCamera.SwitchDeviceAsync(System.String,System.Threading.CancellationToken)
+  id: SwitchDeviceAsync(System.String,System.Threading.CancellationToken)
+  parent: NuvTools.AspNetCore.Blazor.Components.NuvCamera
+  langs:
+  - csharp
+  - vb
+  name: SwitchDeviceAsync(string, CancellationToken)
+  nameWithType: NuvCamera.SwitchDeviceAsync(string, CancellationToken)
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.SwitchDeviceAsync(string, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Components
+  summary: Starts the camera on a specific device, without changing <xref href="NuvTools.AspNetCore.Blazor.Components.NuvCamera.DeviceId" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public Task<bool> SwitchDeviceAsync(string deviceId, CancellationToken cancellationToken = default)
+    parameters:
+    - id: deviceId
+      type: System.String
+      description: The device to use, as returned by <xref href="NuvTools.AspNetCore.Blazor.Components.NuvCamera.GetDevicesAsync(System.Threading.CancellationToken)" data-throw-if-not-resolved="false"></xref>.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: A cancellation token to observe.
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+      description: <code>true</code> when the stream is live.
+    content.vb: Public Function SwitchDeviceAsync(deviceId As String, cancellationToken As CancellationToken = Nothing) As Task(Of Boolean)
+  overload: NuvTools.AspNetCore.Blazor.Components.NuvCamera.SwitchDeviceAsync*
+  nameWithType.vb: NuvCamera.SwitchDeviceAsync(String, CancellationToken)
+  fullName.vb: NuvTools.AspNetCore.Blazor.Components.NuvCamera.SwitchDeviceAsync(String, System.Threading.CancellationToken)
+  name.vb: SwitchDeviceAsync(String, CancellationToken)
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.StopAsync(System.Threading.CancellationToken)
+  commentId: M:NuvTools.AspNetCore.Blazor.Components.NuvCamera.StopAsync(System.Threading.CancellationToken)
+  id: StopAsync(System.Threading.CancellationToken)
+  parent: NuvTools.AspNetCore.Blazor.Components.NuvCamera
+  langs:
+  - csharp
+  - vb
+  name: StopAsync(CancellationToken)
+  nameWithType: NuvCamera.StopAsync(CancellationToken)
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.StopAsync(System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Components
+  summary: Stops the camera and releases the device — every track is stopped, so the camera light goes off.
+  example: []
+  syntax:
+    content: public Task StopAsync(CancellationToken cancellationToken = default)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: A cancellation token to observe.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A <xref href="System.Threading.Tasks.Task" data-throw-if-not-resolved="false"></xref> representing the asynchronous operation.
+    content.vb: Public Function StopAsync(cancellationToken As CancellationToken = Nothing) As Task
+  overload: NuvTools.AspNetCore.Blazor.Components.NuvCamera.StopAsync*
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.CaptureAsync(System.Threading.CancellationToken)
+  commentId: M:NuvTools.AspNetCore.Blazor.Components.NuvCamera.CaptureAsync(System.Threading.CancellationToken)
+  id: CaptureAsync(System.Threading.CancellationToken)
+  parent: NuvTools.AspNetCore.Blazor.Components.NuvCamera
+  langs:
+  - csharp
+  - vb
+  name: CaptureAsync(CancellationToken)
+  nameWithType: NuvCamera.CaptureAsync(CancellationToken)
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.CaptureAsync(System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Components
+  summary: Captures the current frame. Raises <xref href="NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnCaptured" data-throw-if-not-resolved="false"></xref> when a frame is produced.
+  example: []
+  syntax:
+    content: public Task<CameraCapture?> CaptureAsync(CancellationToken cancellationToken = default)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: A cancellation token to observe.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.AspNetCore.Blazor.Components.CameraCapture}
+      description: The captured frame, or <code>null</code> when the stream has no image yet.
+    content.vb: Public Function CaptureAsync(cancellationToken As CancellationToken = Nothing) As Task(Of CameraCapture)
+  overload: NuvTools.AspNetCore.Blazor.Components.NuvCamera.CaptureAsync*
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.GetDevicesAsync(System.Threading.CancellationToken)
+  commentId: M:NuvTools.AspNetCore.Blazor.Components.NuvCamera.GetDevicesAsync(System.Threading.CancellationToken)
+  id: GetDevicesAsync(System.Threading.CancellationToken)
+  parent: NuvTools.AspNetCore.Blazor.Components.NuvCamera
+  langs:
+  - csharp
+  - vb
+  name: GetDevicesAsync(CancellationToken)
+  nameWithType: NuvCamera.GetDevicesAsync(CancellationToken)
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.GetDevicesAsync(System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Components
+  summary: Lists the video input devices available to the browser.
+  example: []
+  syntax:
+    content: public Task<IReadOnlyList<CameraDevice>> GetDevicesAsync(CancellationToken cancellationToken = default)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: A cancellation token to observe.
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{NuvTools.AspNetCore.Blazor.Components.CameraDevice}}
+      description: The available cameras.
+    content.vb: Public Function GetDevicesAsync(cancellationToken As CancellationToken = Nothing) As Task(Of IReadOnlyList(Of CameraDevice))
+  overload: NuvTools.AspNetCore.Blazor.Components.NuvCamera.GetDevicesAsync*
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.DisposeAsync
+  commentId: M:NuvTools.AspNetCore.Blazor.Components.NuvCamera.DisposeAsync
+  id: DisposeAsync
+  parent: NuvTools.AspNetCore.Blazor.Components.NuvCamera
+  langs:
+  - csharp
+  - vb
+  name: DisposeAsync()
+  nameWithType: NuvCamera.DisposeAsync()
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.DisposeAsync()
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Components
+  summary: >-
+    Performs application-defined tasks associated with freeing, releasing, or
+
+    resetting unmanaged resources asynchronously.
+  example: []
+  syntax:
+    content: public ValueTask DisposeAsync()
+    return:
+      type: System.Threading.Tasks.ValueTask
+      description: A task that represents the asynchronous dispose operation.
+    content.vb: Public Function DisposeAsync() As ValueTask
+  overload: NuvTools.AspNetCore.Blazor.Components.NuvCamera.DisposeAsync*
+  implements:
+  - System.IAsyncDisposable.DisposeAsync
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
+  commentId: M:NuvTools.AspNetCore.Blazor.Components.NuvCamera.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
+  id: BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
+  parent: NuvTools.AspNetCore.Blazor.Components.NuvCamera
+  langs:
+  - csharp
+  - vb
+  name: BuildRenderTree(RenderTreeBuilder)
+  nameWithType: NuvCamera.BuildRenderTree(RenderTreeBuilder)
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Components
+  summary: Renders the component to the supplied <xref href="Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: protected override void BuildRenderTree(RenderTreeBuilder __builder)
+    parameters:
+    - id: __builder
+      type: Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder
+    content.vb: Protected Overrides Sub BuildRenderTree(__builder As RenderTreeBuilder)
+  overridden: Microsoft.AspNetCore.Components.ComponentBase.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
+  overload: NuvTools.AspNetCore.Blazor.Components.NuvCamera.BuildRenderTree*
+references:
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Class
+  commentId: P:NuvTools.AspNetCore.Blazor.Components.NuvCamera.Class
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_Class
+  name: Class
+  nameWithType: NuvCamera.Class
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Class
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Style
+  commentId: P:NuvTools.AspNetCore.Blazor.Components.NuvCamera.Style
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_Style
+  name: Style
+  nameWithType: NuvCamera.Style
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Style
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Overlay
+  commentId: P:NuvTools.AspNetCore.Blazor.Components.NuvCamera.Overlay
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_Overlay
+  name: Overlay
+  nameWithType: NuvCamera.Overlay
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Overlay
+- uid: NuvTools.AspNetCore.Blazor.Components
+  commentId: N:NuvTools.AspNetCore.Blazor.Components
+  name: NuvTools.AspNetCore.Blazor.Components
+  nameWithType: NuvTools.AspNetCore.Blazor.Components
+  fullName: NuvTools.AspNetCore.Blazor.Components
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.AspNetCore
+    name: AspNetCore
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor
+    name: Blazor
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor.Components
+    name: Components
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.AspNetCore
+    name: AspNetCore
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor
+    name: Blazor
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor.Components
+    name: Components
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Microsoft.AspNetCore.Components.ComponentBase
+  commentId: T:Microsoft.AspNetCore.Components.ComponentBase
+  parent: Microsoft.AspNetCore.Components
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase
+  name: ComponentBase
+  nameWithType: ComponentBase
+  fullName: Microsoft.AspNetCore.Components.ComponentBase
+- uid: Microsoft.AspNetCore.Components.IComponent
+  commentId: T:Microsoft.AspNetCore.Components.IComponent
+  parent: Microsoft.AspNetCore.Components
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.icomponent
+  name: IComponent
+  nameWithType: IComponent
+  fullName: Microsoft.AspNetCore.Components.IComponent
+- uid: Microsoft.AspNetCore.Components.IHandleEvent
+  commentId: T:Microsoft.AspNetCore.Components.IHandleEvent
+  parent: Microsoft.AspNetCore.Components
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.ihandleevent
+  name: IHandleEvent
+  nameWithType: IHandleEvent
+  fullName: Microsoft.AspNetCore.Components.IHandleEvent
+- uid: Microsoft.AspNetCore.Components.IHandleAfterRender
+  commentId: T:Microsoft.AspNetCore.Components.IHandleAfterRender
+  parent: Microsoft.AspNetCore.Components
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.ihandleafterrender
+  name: IHandleAfterRender
+  nameWithType: IHandleAfterRender
+  fullName: Microsoft.AspNetCore.Components.IHandleAfterRender
+- uid: System.IAsyncDisposable
+  commentId: T:System.IAsyncDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable
+  name: IAsyncDisposable
+  nameWithType: IAsyncDisposable
+  fullName: System.IAsyncDisposable
+- uid: Microsoft.AspNetCore.Components.ComponentBase.OnInitialized
+  commentId: M:Microsoft.AspNetCore.Components.ComponentBase.OnInitialized
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.oninitialized
+  name: OnInitialized()
+  nameWithType: ComponentBase.OnInitialized()
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.OnInitialized()
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.OnInitialized
+    name: OnInitialized
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.oninitialized
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.OnInitialized
+    name: OnInitialized
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.oninitialized
+  - name: (
+  - name: )
+- uid: Microsoft.AspNetCore.Components.ComponentBase.OnInitializedAsync
+  commentId: M:Microsoft.AspNetCore.Components.ComponentBase.OnInitializedAsync
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.oninitializedasync
+  name: OnInitializedAsync()
+  nameWithType: ComponentBase.OnInitializedAsync()
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.OnInitializedAsync()
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.OnInitializedAsync
+    name: OnInitializedAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.oninitializedasync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.OnInitializedAsync
+    name: OnInitializedAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.oninitializedasync
+  - name: (
+  - name: )
+- uid: Microsoft.AspNetCore.Components.ComponentBase.OnParametersSet
+  commentId: M:Microsoft.AspNetCore.Components.ComponentBase.OnParametersSet
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onparametersset
+  name: OnParametersSet()
+  nameWithType: ComponentBase.OnParametersSet()
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.OnParametersSet()
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.OnParametersSet
+    name: OnParametersSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onparametersset
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.OnParametersSet
+    name: OnParametersSet
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onparametersset
+  - name: (
+  - name: )
+- uid: Microsoft.AspNetCore.Components.ComponentBase.OnParametersSetAsync
+  commentId: M:Microsoft.AspNetCore.Components.ComponentBase.OnParametersSetAsync
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onparameterssetasync
+  name: OnParametersSetAsync()
+  nameWithType: ComponentBase.OnParametersSetAsync()
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.OnParametersSetAsync()
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.OnParametersSetAsync
+    name: OnParametersSetAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onparameterssetasync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.OnParametersSetAsync
+    name: OnParametersSetAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onparameterssetasync
+  - name: (
+  - name: )
+- uid: Microsoft.AspNetCore.Components.ComponentBase.StateHasChanged
+  commentId: M:Microsoft.AspNetCore.Components.ComponentBase.StateHasChanged
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.statehaschanged
+  name: StateHasChanged()
+  nameWithType: ComponentBase.StateHasChanged()
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.StateHasChanged()
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.StateHasChanged
+    name: StateHasChanged
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.statehaschanged
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.StateHasChanged
+    name: StateHasChanged
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.statehaschanged
+  - name: (
+  - name: )
+- uid: Microsoft.AspNetCore.Components.ComponentBase.ShouldRender
+  commentId: M:Microsoft.AspNetCore.Components.ComponentBase.ShouldRender
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.shouldrender
+  name: ShouldRender()
+  nameWithType: ComponentBase.ShouldRender()
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.ShouldRender()
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.ShouldRender
+    name: ShouldRender
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.shouldrender
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.ShouldRender
+    name: ShouldRender
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.shouldrender
+  - name: (
+  - name: )
+- uid: Microsoft.AspNetCore.Components.ComponentBase.OnAfterRender(System.Boolean)
+  commentId: M:Microsoft.AspNetCore.Components.ComponentBase.OnAfterRender(System.Boolean)
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onafterrender
+  name: OnAfterRender(bool)
+  nameWithType: ComponentBase.OnAfterRender(bool)
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.OnAfterRender(bool)
+  nameWithType.vb: ComponentBase.OnAfterRender(Boolean)
+  fullName.vb: Microsoft.AspNetCore.Components.ComponentBase.OnAfterRender(Boolean)
+  name.vb: OnAfterRender(Boolean)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.OnAfterRender(System.Boolean)
+    name: OnAfterRender
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onafterrender
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.OnAfterRender(System.Boolean)
+    name: OnAfterRender
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onafterrender
+  - name: (
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Action)
+  commentId: M:Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Action)
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.invokeasync#microsoft-aspnetcore-components-componentbase-invokeasync(system-action)
+  name: InvokeAsync(Action)
+  nameWithType: ComponentBase.InvokeAsync(Action)
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Action)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Action)
+    name: InvokeAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.invokeasync#microsoft-aspnetcore-components-componentbase-invokeasync(system-action)
+  - name: (
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Action)
+    name: InvokeAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.invokeasync#microsoft-aspnetcore-components-componentbase-invokeasync(system-action)
+  - name: (
+  - uid: System.Action
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action
+  - name: )
+- uid: Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Func{System.Threading.Tasks.Task})
+  commentId: M:Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Func{System.Threading.Tasks.Task})
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.invokeasync#microsoft-aspnetcore-components-componentbase-invokeasync(system-func((system-threading-tasks-task)))
+  name: InvokeAsync(Func<Task>)
+  nameWithType: ComponentBase.InvokeAsync(Func<Task>)
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Func<System.Threading.Tasks.Task>)
+  nameWithType.vb: ComponentBase.InvokeAsync(Func(Of Task))
+  fullName.vb: Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Func(Of System.Threading.Tasks.Task))
+  name.vb: InvokeAsync(Func(Of Task))
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Func{System.Threading.Tasks.Task})
+    name: InvokeAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.invokeasync#microsoft-aspnetcore-components-componentbase-invokeasync(system-func((system-threading-tasks-task)))
+  - name: (
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.InvokeAsync(System.Func{System.Threading.Tasks.Task})
+    name: InvokeAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.invokeasync#microsoft-aspnetcore-components-componentbase-invokeasync(system-func((system-threading-tasks-task)))
+  - name: (
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: )
+  - name: )
+- uid: Microsoft.AspNetCore.Components.ComponentBase.DispatchExceptionAsync(System.Exception)
+  commentId: M:Microsoft.AspNetCore.Components.ComponentBase.DispatchExceptionAsync(System.Exception)
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.dispatchexceptionasync
+  name: DispatchExceptionAsync(Exception)
+  nameWithType: ComponentBase.DispatchExceptionAsync(Exception)
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.DispatchExceptionAsync(System.Exception)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.DispatchExceptionAsync(System.Exception)
+    name: DispatchExceptionAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.dispatchexceptionasync
+  - name: (
+  - uid: System.Exception
+    name: Exception
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.DispatchExceptionAsync(System.Exception)
+    name: DispatchExceptionAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.dispatchexceptionasync
+  - name: (
+  - uid: System.Exception
+    name: Exception
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception
+  - name: )
+- uid: Microsoft.AspNetCore.Components.ComponentBase.SetParametersAsync(Microsoft.AspNetCore.Components.ParameterView)
+  commentId: M:Microsoft.AspNetCore.Components.ComponentBase.SetParametersAsync(Microsoft.AspNetCore.Components.ParameterView)
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.setparametersasync
+  name: SetParametersAsync(ParameterView)
+  nameWithType: ComponentBase.SetParametersAsync(ParameterView)
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.SetParametersAsync(Microsoft.AspNetCore.Components.ParameterView)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.SetParametersAsync(Microsoft.AspNetCore.Components.ParameterView)
+    name: SetParametersAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.setparametersasync
+  - name: (
+  - uid: Microsoft.AspNetCore.Components.ParameterView
+    name: ParameterView
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.parameterview
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.SetParametersAsync(Microsoft.AspNetCore.Components.ParameterView)
+    name: SetParametersAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.setparametersasync
+  - name: (
+  - uid: Microsoft.AspNetCore.Components.ParameterView
+    name: ParameterView
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.parameterview
+  - name: )
+- uid: Microsoft.AspNetCore.Components.ComponentBase.RendererInfo
+  commentId: P:Microsoft.AspNetCore.Components.ComponentBase.RendererInfo
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.rendererinfo
+  name: RendererInfo
+  nameWithType: ComponentBase.RendererInfo
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.RendererInfo
+- uid: Microsoft.AspNetCore.Components.ComponentBase.Assets
+  commentId: P:Microsoft.AspNetCore.Components.ComponentBase.Assets
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.assets
+  name: Assets
+  nameWithType: ComponentBase.Assets
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.Assets
+- uid: Microsoft.AspNetCore.Components.ComponentBase.AssignedRenderMode
+  commentId: P:Microsoft.AspNetCore.Components.ComponentBase.AssignedRenderMode
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.assignedrendermode
+  name: AssignedRenderMode
+  nameWithType: ComponentBase.AssignedRenderMode
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.AssignedRenderMode
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.AspNetCore.Components
+  commentId: N:Microsoft.AspNetCore.Components
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.AspNetCore.Components
+  nameWithType: Microsoft.AspNetCore.Components
+  fullName: Microsoft.AspNetCore.Components
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Components
+    name: Components
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Components
+    name: Components
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Width*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.Components.NuvCamera.Width
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_Width
+  name: Width
+  nameWithType: NuvCamera.Width
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Width
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Height*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.Components.NuvCamera.Height
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_Height
+  name: Height
+  nameWithType: NuvCamera.Height
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Height
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.DeviceId
+  commentId: P:NuvTools.AspNetCore.Blazor.Components.NuvCamera.DeviceId
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_DeviceId
+  name: DeviceId
+  nameWithType: NuvCamera.DeviceId
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.DeviceId
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.FacingMode*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.Components.NuvCamera.FacingMode
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_FacingMode
+  name: FacingMode
+  nameWithType: NuvCamera.FacingMode
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.FacingMode
+- uid: NuvTools.AspNetCore.Blazor.Components.CameraFacingMode
+  commentId: T:NuvTools.AspNetCore.Blazor.Components.CameraFacingMode
+  parent: NuvTools.AspNetCore.Blazor.Components
+  href: NuvTools.AspNetCore.Blazor.Components.CameraFacingMode.html
+  name: CameraFacingMode
+  nameWithType: CameraFacingMode
+  fullName: NuvTools.AspNetCore.Blazor.Components.CameraFacingMode
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.GetDevicesAsync(System.Threading.CancellationToken)
+  commentId: M:NuvTools.AspNetCore.Blazor.Components.NuvCamera.GetDevicesAsync(System.Threading.CancellationToken)
+  isExternal: true
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_GetDevicesAsync_System_Threading_CancellationToken_
+  name: GetDevicesAsync(CancellationToken)
+  nameWithType: NuvCamera.GetDevicesAsync(CancellationToken)
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.GetDevicesAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.GetDevicesAsync(System.Threading.CancellationToken)
+    name: GetDevicesAsync
+    href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_GetDevicesAsync_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.GetDevicesAsync(System.Threading.CancellationToken)
+    name: GetDevicesAsync
+    href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_GetDevicesAsync_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.DeviceId*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.Components.NuvCamera.DeviceId
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_DeviceId
+  name: DeviceId
+  nameWithType: NuvCamera.DeviceId
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.DeviceId
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Mirrored*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.Components.NuvCamera.Mirrored
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_Mirrored
+  name: Mirrored
+  nameWithType: NuvCamera.Mirrored
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Mirrored
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Format*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.Components.NuvCamera.Format
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_Format
+  name: Format
+  nameWithType: NuvCamera.Format
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Format
+- uid: NuvTools.AspNetCore.Blazor.Components.CameraImageFormat
+  commentId: T:NuvTools.AspNetCore.Blazor.Components.CameraImageFormat
+  parent: NuvTools.AspNetCore.Blazor.Components
+  href: NuvTools.AspNetCore.Blazor.Components.CameraImageFormat.html
+  name: CameraImageFormat
+  nameWithType: CameraImageFormat
+  fullName: NuvTools.AspNetCore.Blazor.Components.CameraImageFormat
+- uid: NuvTools.AspNetCore.Blazor.Components.CameraImageFormat.Jpeg
+  commentId: F:NuvTools.AspNetCore.Blazor.Components.CameraImageFormat.Jpeg
+  href: NuvTools.AspNetCore.Blazor.Components.CameraImageFormat.html#NuvTools_AspNetCore_Blazor_Components_CameraImageFormat_Jpeg
+  name: Jpeg
+  nameWithType: CameraImageFormat.Jpeg
+  fullName: NuvTools.AspNetCore.Blazor.Components.CameraImageFormat.Jpeg
+- uid: NuvTools.AspNetCore.Blazor.Components.CameraImageFormat.Webp
+  commentId: F:NuvTools.AspNetCore.Blazor.Components.CameraImageFormat.Webp
+  href: NuvTools.AspNetCore.Blazor.Components.CameraImageFormat.html#NuvTools_AspNetCore_Blazor_Components_CameraImageFormat_Webp
+  name: Webp
+  nameWithType: CameraImageFormat.Webp
+  fullName: NuvTools.AspNetCore.Blazor.Components.CameraImageFormat.Webp
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Quality*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.Components.NuvCamera.Quality
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_Quality
+  name: Quality
+  nameWithType: NuvCamera.Quality
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Quality
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.CaptureWidth*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.Components.NuvCamera.CaptureWidth
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_CaptureWidth
+  name: CaptureWidth
+  nameWithType: NuvCamera.CaptureWidth
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.CaptureWidth
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.CaptureHeight*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.Components.NuvCamera.CaptureHeight
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_CaptureHeight
+  name: CaptureHeight
+  nameWithType: NuvCamera.CaptureHeight
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.CaptureHeight
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.AutoStart*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.Components.NuvCamera.AutoStart
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_AutoStart
+  name: AutoStart
+  nameWithType: NuvCamera.AutoStart
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.AutoStart
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Class*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.Components.NuvCamera.Class
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_Class
+  name: Class
+  nameWithType: NuvCamera.Class
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Class
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Style*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.Components.NuvCamera.Style
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_Style
+  name: Style
+  nameWithType: NuvCamera.Style
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Style
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Overlay*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.Components.NuvCamera.Overlay
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_Overlay
+  name: Overlay
+  nameWithType: NuvCamera.Overlay
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.Overlay
+- uid: Microsoft.AspNetCore.Components.RenderFragment
+  commentId: T:Microsoft.AspNetCore.Components.RenderFragment
+  parent: Microsoft.AspNetCore.Components
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.renderfragment
+  name: RenderFragment
+  nameWithType: RenderFragment
+  fullName: Microsoft.AspNetCore.Components.RenderFragment
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnStarted*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnStarted
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_OnStarted
+  name: OnStarted
+  nameWithType: NuvCamera.OnStarted
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnStarted
+- uid: Microsoft.AspNetCore.Components.EventCallback
+  commentId: T:Microsoft.AspNetCore.Components.EventCallback
+  parent: Microsoft.AspNetCore.Components
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.eventcallback
+  name: EventCallback
+  nameWithType: EventCallback
+  fullName: Microsoft.AspNetCore.Components.EventCallback
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnError*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnError
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_OnError
+  name: OnError
+  nameWithType: NuvCamera.OnError
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnError
+- uid: Microsoft.AspNetCore.Components.EventCallback{NuvTools.AspNetCore.Blazor.Components.CameraError}
+  commentId: T:Microsoft.AspNetCore.Components.EventCallback{NuvTools.AspNetCore.Blazor.Components.CameraError}
+  parent: Microsoft.AspNetCore.Components
+  definition: Microsoft.AspNetCore.Components.EventCallback`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.eventcallback-1
+  name: EventCallback<CameraError>
+  nameWithType: EventCallback<CameraError>
+  fullName: Microsoft.AspNetCore.Components.EventCallback<NuvTools.AspNetCore.Blazor.Components.CameraError>
+  nameWithType.vb: EventCallback(Of CameraError)
+  fullName.vb: Microsoft.AspNetCore.Components.EventCallback(Of NuvTools.AspNetCore.Blazor.Components.CameraError)
+  name.vb: EventCallback(Of CameraError)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Components.EventCallback`1
+    name: EventCallback
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.eventcallback-1
+  - name: <
+  - uid: NuvTools.AspNetCore.Blazor.Components.CameraError
+    name: CameraError
+    href: NuvTools.AspNetCore.Blazor.Components.CameraError.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Components.EventCallback`1
+    name: EventCallback
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.eventcallback-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.AspNetCore.Blazor.Components.CameraError
+    name: CameraError
+    href: NuvTools.AspNetCore.Blazor.Components.CameraError.html
+  - name: )
+- uid: Microsoft.AspNetCore.Components.EventCallback`1
+  commentId: T:Microsoft.AspNetCore.Components.EventCallback`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.eventcallback-1
+  name: EventCallback<TValue>
+  nameWithType: EventCallback<TValue>
+  fullName: Microsoft.AspNetCore.Components.EventCallback<TValue>
+  nameWithType.vb: EventCallback(Of TValue)
+  fullName.vb: Microsoft.AspNetCore.Components.EventCallback(Of TValue)
+  name.vb: EventCallback(Of TValue)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Components.EventCallback`1
+    name: EventCallback
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.eventcallback-1
+  - name: <
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Components.EventCallback`1
+    name: EventCallback
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.eventcallback-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnCaptured*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnCaptured
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_OnCaptured
+  name: OnCaptured
+  nameWithType: NuvCamera.OnCaptured
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnCaptured
+- uid: Microsoft.AspNetCore.Components.EventCallback{NuvTools.AspNetCore.Blazor.Components.CameraCapture}
+  commentId: T:Microsoft.AspNetCore.Components.EventCallback{NuvTools.AspNetCore.Blazor.Components.CameraCapture}
+  parent: Microsoft.AspNetCore.Components
+  definition: Microsoft.AspNetCore.Components.EventCallback`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.eventcallback-1
+  name: EventCallback<CameraCapture>
+  nameWithType: EventCallback<CameraCapture>
+  fullName: Microsoft.AspNetCore.Components.EventCallback<NuvTools.AspNetCore.Blazor.Components.CameraCapture>
+  nameWithType.vb: EventCallback(Of CameraCapture)
+  fullName.vb: Microsoft.AspNetCore.Components.EventCallback(Of NuvTools.AspNetCore.Blazor.Components.CameraCapture)
+  name.vb: EventCallback(Of CameraCapture)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Components.EventCallback`1
+    name: EventCallback
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.eventcallback-1
+  - name: <
+  - uid: NuvTools.AspNetCore.Blazor.Components.CameraCapture
+    name: CameraCapture
+    href: NuvTools.AspNetCore.Blazor.Components.CameraCapture.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Components.EventCallback`1
+    name: EventCallback
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.eventcallback-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.AspNetCore.Blazor.Components.CameraCapture
+    name: CameraCapture
+    href: NuvTools.AspNetCore.Blazor.Components.CameraCapture.html
+  - name: )
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.AdditionalAttributes*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.Components.NuvCamera.AdditionalAttributes
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_AdditionalAttributes
+  name: AdditionalAttributes
+  nameWithType: NuvCamera.AdditionalAttributes
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.AdditionalAttributes
+- uid: System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object}
+  commentId: T:System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  name: IReadOnlyDictionary<string, object>
+  nameWithType: IReadOnlyDictionary<string, object>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string, object>
+  nameWithType.vb: IReadOnlyDictionary(Of String, Object)
+  fullName.vb: System.Collections.Generic.IReadOnlyDictionary(Of String, Object)
+  name.vb: IReadOnlyDictionary(Of String, Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyDictionary`2
+  commentId: T:System.Collections.Generic.IReadOnlyDictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  name: IReadOnlyDictionary<TKey, TValue>
+  nameWithType: IReadOnlyDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<TKey, TValue>
+  nameWithType.vb: IReadOnlyDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IReadOnlyDictionary(Of TKey, TValue)
+  name.vb: IReadOnlyDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.IsRunning*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.Components.NuvCamera.IsRunning
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_IsRunning
+  name: IsRunning
+  nameWithType: NuvCamera.IsRunning
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.IsRunning
+- uid: Microsoft.AspNetCore.Components.ElementReference
+  commentId: T:Microsoft.AspNetCore.Components.ElementReference
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.elementreference
+  name: ElementReference
+  nameWithType: ElementReference
+  fullName: Microsoft.AspNetCore.Components.ElementReference
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: Microsoft.AspNetCore.Components.ComponentBase.OnAfterRenderAsync(System.Boolean)
+  commentId: M:Microsoft.AspNetCore.Components.ComponentBase.OnAfterRenderAsync(System.Boolean)
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onafterrenderasync
+  name: OnAfterRenderAsync(bool)
+  nameWithType: ComponentBase.OnAfterRenderAsync(bool)
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.OnAfterRenderAsync(bool)
+  nameWithType.vb: ComponentBase.OnAfterRenderAsync(Boolean)
+  fullName.vb: Microsoft.AspNetCore.Components.ComponentBase.OnAfterRenderAsync(Boolean)
+  name.vb: OnAfterRenderAsync(Boolean)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.OnAfterRenderAsync(System.Boolean)
+    name: OnAfterRenderAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onafterrenderasync
+  - name: (
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.OnAfterRenderAsync(System.Boolean)
+    name: OnAfterRenderAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onafterrenderasync
+  - name: (
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnAfterRenderAsync*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnAfterRenderAsync
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_OnAfterRenderAsync_System_Boolean_
+  name: OnAfterRenderAsync
+  nameWithType: NuvCamera.OnAfterRenderAsync
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnAfterRenderAsync
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnStarted
+  commentId: P:NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnStarted
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_OnStarted
+  name: OnStarted
+  nameWithType: NuvCamera.OnStarted
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnStarted
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnError
+  commentId: P:NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnError
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_OnError
+  name: OnError
+  nameWithType: NuvCamera.OnError
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnError
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.StartAsync*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.Components.NuvCamera.StartAsync
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_StartAsync_System_Threading_CancellationToken_
+  name: StartAsync
+  nameWithType: NuvCamera.StartAsync
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.StartAsync
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.Boolean}
+  commentId: T:System.Threading.Tasks.Task{System.Boolean}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<bool>
+  nameWithType: Task<bool>
+  fullName: System.Threading.Tasks.Task<bool>
+  nameWithType.vb: Task(Of Boolean)
+  fullName.vb: System.Threading.Tasks.Task(Of Boolean)
+  name.vb: Task(Of Boolean)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.SwitchDeviceAsync*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.Components.NuvCamera.SwitchDeviceAsync
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_SwitchDeviceAsync_System_String_System_Threading_CancellationToken_
+  name: SwitchDeviceAsync
+  nameWithType: NuvCamera.SwitchDeviceAsync
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.SwitchDeviceAsync
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.StopAsync*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.Components.NuvCamera.StopAsync
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_StopAsync_System_Threading_CancellationToken_
+  name: StopAsync
+  nameWithType: NuvCamera.StopAsync
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.StopAsync
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnCaptured
+  commentId: P:NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnCaptured
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_OnCaptured
+  name: OnCaptured
+  nameWithType: NuvCamera.OnCaptured
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnCaptured
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.CaptureAsync*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.Components.NuvCamera.CaptureAsync
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_CaptureAsync_System_Threading_CancellationToken_
+  name: CaptureAsync
+  nameWithType: NuvCamera.CaptureAsync
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.CaptureAsync
+- uid: System.Threading.Tasks.Task{NuvTools.AspNetCore.Blazor.Components.CameraCapture}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.AspNetCore.Blazor.Components.CameraCapture}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<CameraCapture>
+  nameWithType: Task<CameraCapture>
+  fullName: System.Threading.Tasks.Task<NuvTools.AspNetCore.Blazor.Components.CameraCapture>
+  nameWithType.vb: Task(Of CameraCapture)
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.AspNetCore.Blazor.Components.CameraCapture)
+  name.vb: Task(Of CameraCapture)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.AspNetCore.Blazor.Components.CameraCapture
+    name: CameraCapture
+    href: NuvTools.AspNetCore.Blazor.Components.CameraCapture.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.AspNetCore.Blazor.Components.CameraCapture
+    name: CameraCapture
+    href: NuvTools.AspNetCore.Blazor.Components.CameraCapture.html
+  - name: )
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.GetDevicesAsync*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.Components.NuvCamera.GetDevicesAsync
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_GetDevicesAsync_System_Threading_CancellationToken_
+  name: GetDevicesAsync
+  nameWithType: NuvCamera.GetDevicesAsync
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.GetDevicesAsync
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{NuvTools.AspNetCore.Blazor.Components.CameraDevice}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{NuvTools.AspNetCore.Blazor.Components.CameraDevice}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IReadOnlyList<CameraDevice>>
+  nameWithType: Task<IReadOnlyList<CameraDevice>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<NuvTools.AspNetCore.Blazor.Components.CameraDevice>>
+  nameWithType.vb: Task(Of IReadOnlyList(Of CameraDevice))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IReadOnlyList(Of NuvTools.AspNetCore.Blazor.Components.CameraDevice))
+  name.vb: Task(Of IReadOnlyList(Of CameraDevice))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: NuvTools.AspNetCore.Blazor.Components.CameraDevice
+    name: CameraDevice
+    href: NuvTools.AspNetCore.Blazor.Components.CameraDevice.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.AspNetCore.Blazor.Components.CameraDevice
+    name: CameraDevice
+    href: NuvTools.AspNetCore.Blazor.Components.CameraDevice.html
+  - name: )
+  - name: )
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.DisposeAsync*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.Components.NuvCamera.DisposeAsync
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_DisposeAsync
+  name: DisposeAsync
+  nameWithType: NuvCamera.DisposeAsync
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.DisposeAsync
+- uid: System.IAsyncDisposable.DisposeAsync
+  commentId: M:System.IAsyncDisposable.DisposeAsync
+  parent: System.IAsyncDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable.disposeasync
+  name: DisposeAsync()
+  nameWithType: IAsyncDisposable.DisposeAsync()
+  fullName: System.IAsyncDisposable.DisposeAsync()
+  spec.csharp:
+  - uid: System.IAsyncDisposable.DisposeAsync
+    name: DisposeAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable.disposeasync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IAsyncDisposable.DisposeAsync
+    name: DisposeAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable.disposeasync
+  - name: (
+  - name: )
+- uid: System.Threading.Tasks.ValueTask
+  commentId: T:System.Threading.Tasks.ValueTask
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask
+  name: ValueTask
+  nameWithType: ValueTask
+  fullName: System.Threading.Tasks.ValueTask
+- uid: Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder
+  commentId: T:Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder
+  parent: Microsoft.AspNetCore.Components.Rendering
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.rendering.rendertreebuilder
+  name: RenderTreeBuilder
+  nameWithType: RenderTreeBuilder
+  fullName: Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder
+- uid: Microsoft.AspNetCore.Components.ComponentBase.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
+  commentId: M:Microsoft.AspNetCore.Components.ComponentBase.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
+  parent: Microsoft.AspNetCore.Components.ComponentBase
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.buildrendertree
+  name: BuildRenderTree(RenderTreeBuilder)
+  nameWithType: ComponentBase.BuildRenderTree(RenderTreeBuilder)
+  fullName: Microsoft.AspNetCore.Components.ComponentBase.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
+    name: BuildRenderTree
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.buildrendertree
+  - name: (
+  - uid: Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder
+    name: RenderTreeBuilder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.rendering.rendertreebuilder
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Components.ComponentBase.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)
+    name: BuildRenderTree
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.buildrendertree
+  - name: (
+  - uid: Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder
+    name: RenderTreeBuilder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.rendering.rendertreebuilder
+  - name: )
+- uid: NuvTools.AspNetCore.Blazor.Components.NuvCamera.BuildRenderTree*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.Components.NuvCamera.BuildRenderTree
+  href: NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_BuildRenderTree_Microsoft_AspNetCore_Components_Rendering_RenderTreeBuilder_
+  name: BuildRenderTree
+  nameWithType: NuvCamera.BuildRenderTree
+  fullName: NuvTools.AspNetCore.Blazor.Components.NuvCamera.BuildRenderTree
+- uid: Microsoft.AspNetCore.Components.Rendering
+  commentId: N:Microsoft.AspNetCore.Components.Rendering
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.AspNetCore.Components.Rendering
+  nameWithType: Microsoft.AspNetCore.Components.Rendering
+  fullName: Microsoft.AspNetCore.Components.Rendering
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Components
+    name: Components
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components
+  - name: .
+  - uid: Microsoft.AspNetCore.Components.Rendering
+    name: Rendering
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.rendering
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Components
+    name: Components
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components
+  - name: .
+  - uid: Microsoft.AspNetCore.Components.Rendering
+    name: Rendering
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.rendering

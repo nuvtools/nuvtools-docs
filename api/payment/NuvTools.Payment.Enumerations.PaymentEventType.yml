@@ -1,0 +1,201 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Payment.Enumerations.PaymentEventType
+  commentId: T:NuvTools.Payment.Enumerations.PaymentEventType
+  id: PaymentEventType
+  parent: NuvTools.Payment.Enumerations
+  children:
+  - NuvTools.Payment.Enumerations.PaymentEventType.PayeeAccountUpdated
+  - NuvTools.Payment.Enumerations.PaymentEventType.PaymentFailed
+  - NuvTools.Payment.Enumerations.PaymentEventType.PaymentMethodSaved
+  - NuvTools.Payment.Enumerations.PaymentEventType.PaymentRefunded
+  - NuvTools.Payment.Enumerations.PaymentEventType.PaymentSucceeded
+  - NuvTools.Payment.Enumerations.PaymentEventType.Unknown
+  langs:
+  - csharp
+  - vb
+  name: PaymentEventType
+  nameWithType: PaymentEventType
+  fullName: NuvTools.Payment.Enumerations.PaymentEventType
+  type: Enum
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.Enumerations
+  summary: The kinds of webhook a payment provider sends that a caller is expected to act on.
+  remarks: >-
+    A provider client maps its own event names onto these. Anything it does not recognise arrives as
+
+    <xref href="NuvTools.Payment.Enumerations.PaymentEventType.Unknown" data-throw-if-not-resolved="false"></xref> rather than being dropped, because a caller still has to record that a
+
+    delivery happened — an endpoint that fails on an event it has no use for makes the provider retry
+
+    it for days.
+  example: []
+  syntax:
+    content: public enum PaymentEventType
+    content.vb: Public Enum PaymentEventType
+- uid: NuvTools.Payment.Enumerations.PaymentEventType.Unknown
+  commentId: F:NuvTools.Payment.Enumerations.PaymentEventType.Unknown
+  id: Unknown
+  parent: NuvTools.Payment.Enumerations.PaymentEventType
+  langs:
+  - csharp
+  - vb
+  name: Unknown
+  nameWithType: PaymentEventType.Unknown
+  fullName: NuvTools.Payment.Enumerations.PaymentEventType.Unknown
+  type: Field
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.Enumerations
+  summary: Not one of the events below. Record it and ignore it.
+  example: []
+  syntax:
+    content: Unknown = 0
+    return:
+      type: NuvTools.Payment.Enumerations.PaymentEventType
+- uid: NuvTools.Payment.Enumerations.PaymentEventType.PayeeAccountUpdated
+  commentId: F:NuvTools.Payment.Enumerations.PaymentEventType.PayeeAccountUpdated
+  id: PayeeAccountUpdated
+  parent: NuvTools.Payment.Enumerations.PaymentEventType
+  langs:
+  - csharp
+  - vb
+  name: PayeeAccountUpdated
+  nameWithType: PaymentEventType.PayeeAccountUpdated
+  fullName: NuvTools.Payment.Enumerations.PaymentEventType.PayeeAccountUpdated
+  type: Field
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.Enumerations
+  summary: What the provider allows a payee to do has changed — being paid out, most of all.
+  example: []
+  syntax:
+    content: PayeeAccountUpdated = 1
+    return:
+      type: NuvTools.Payment.Enumerations.PaymentEventType
+- uid: NuvTools.Payment.Enumerations.PaymentEventType.PaymentMethodSaved
+  commentId: F:NuvTools.Payment.Enumerations.PaymentEventType.PaymentMethodSaved
+  id: PaymentMethodSaved
+  parent: NuvTools.Payment.Enumerations.PaymentEventType
+  langs:
+  - csharp
+  - vb
+  name: PaymentMethodSaved
+  nameWithType: PaymentEventType.PaymentMethodSaved
+  fullName: NuvTools.Payment.Enumerations.PaymentEventType.PaymentMethodSaved
+  type: Field
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.Enumerations
+  summary: A customer saved a payment method, and it can now be charged off-session.
+  example: []
+  syntax:
+    content: PaymentMethodSaved = 2
+    return:
+      type: NuvTools.Payment.Enumerations.PaymentEventType
+- uid: NuvTools.Payment.Enumerations.PaymentEventType.PaymentSucceeded
+  commentId: F:NuvTools.Payment.Enumerations.PaymentEventType.PaymentSucceeded
+  id: PaymentSucceeded
+  parent: NuvTools.Payment.Enumerations.PaymentEventType
+  langs:
+  - csharp
+  - vb
+  name: PaymentSucceeded
+  nameWithType: PaymentEventType.PaymentSucceeded
+  fullName: NuvTools.Payment.Enumerations.PaymentEventType.PaymentSucceeded
+  type: Field
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.Enumerations
+  summary: A payment settled.
+  example: []
+  syntax:
+    content: PaymentSucceeded = 3
+    return:
+      type: NuvTools.Payment.Enumerations.PaymentEventType
+- uid: NuvTools.Payment.Enumerations.PaymentEventType.PaymentFailed
+  commentId: F:NuvTools.Payment.Enumerations.PaymentEventType.PaymentFailed
+  id: PaymentFailed
+  parent: NuvTools.Payment.Enumerations.PaymentEventType
+  langs:
+  - csharp
+  - vb
+  name: PaymentFailed
+  nameWithType: PaymentEventType.PaymentFailed
+  fullName: NuvTools.Payment.Enumerations.PaymentEventType.PaymentFailed
+  type: Field
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.Enumerations
+  summary: A payment was refused.
+  example: []
+  syntax:
+    content: PaymentFailed = 4
+    return:
+      type: NuvTools.Payment.Enumerations.PaymentEventType
+- uid: NuvTools.Payment.Enumerations.PaymentEventType.PaymentRefunded
+  commentId: F:NuvTools.Payment.Enumerations.PaymentEventType.PaymentRefunded
+  id: PaymentRefunded
+  parent: NuvTools.Payment.Enumerations.PaymentEventType
+  langs:
+  - csharp
+  - vb
+  name: PaymentRefunded
+  nameWithType: PaymentEventType.PaymentRefunded
+  fullName: NuvTools.Payment.Enumerations.PaymentEventType.PaymentRefunded
+  type: Field
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.Enumerations
+  summary: A payment was refunded, in whole or in part.
+  remarks: >-
+    Sent for a refund the caller asked for <i>and</i> for one raised at the provider — a dispute
+
+    resolved in the customer's favour, or somebody acting in the provider's dashboard. That is
+
+    why it is worth acting on rather than inferring from the caller's own refund call: the
+
+    caller's records are otherwise the last to know.
+  example: []
+  syntax:
+    content: PaymentRefunded = 5
+    return:
+      type: NuvTools.Payment.Enumerations.PaymentEventType
+references:
+- uid: NuvTools.Payment.Enumerations.PaymentEventType.Unknown
+  commentId: F:NuvTools.Payment.Enumerations.PaymentEventType.Unknown
+  href: NuvTools.Payment.Enumerations.PaymentEventType.html#NuvTools_Payment_Enumerations_PaymentEventType_Unknown
+  name: Unknown
+  nameWithType: PaymentEventType.Unknown
+  fullName: NuvTools.Payment.Enumerations.PaymentEventType.Unknown
+- uid: NuvTools.Payment.Enumerations
+  commentId: N:NuvTools.Payment.Enumerations
+  name: NuvTools.Payment.Enumerations
+  nameWithType: NuvTools.Payment.Enumerations
+  fullName: NuvTools.Payment.Enumerations
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Enumerations
+    name: Enumerations
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Enumerations
+    name: Enumerations
+- uid: NuvTools.Payment.Enumerations.PaymentEventType
+  commentId: T:NuvTools.Payment.Enumerations.PaymentEventType
+  parent: NuvTools.Payment.Enumerations
+  href: NuvTools.Payment.Enumerations.PaymentEventType.html
+  name: PaymentEventType
+  nameWithType: PaymentEventType
+  fullName: NuvTools.Payment.Enumerations.PaymentEventType

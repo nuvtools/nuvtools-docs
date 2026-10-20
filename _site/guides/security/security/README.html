@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>NuvTools Security Libraries | Nuv Tools Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="NuvTools Security Libraries | Nuv Tools Framework ">
+      
+      
+      <link rel="icon" href="../../../images/icon.png">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/nuvtools-brand.svg" alt="Framework">
+            Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="nuvtools-security-libraries">NuvTools Security Libraries</h1>
+
+<p><a href="https://www.nuget.org/packages/NuvTools.Security/"><img src="https://img.shields.io/nuget/v/NuvTools.Security.svg" alt="NuGet"></a>
+<a href="https://github.com/nuvtools/nuvtools-security/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a></p>
+<p>A suite of .NET libraries for implementing security features in ASP.NET Core and Blazor applications, including JWT authentication, cryptography, claims-based authorization, and authentication state management. These libraries target modern .NET platforms, including .NET 8, .NET 9, and .NET 10.</p>
+<h2 id="libraries">Libraries</h2>
+<h3 id="nuvtoolssecurity">NuvTools.Security</h3>
+<p>Core security library providing JWT token handling, cryptography utilities, claims extensions, and authorization policy builders.</p>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li><strong>JWT Helper</strong>: Generate, parse, validate JWT tokens and refresh tokens</li>
+<li><strong>Cryptography Helper</strong>: SHA256 and SHA512 hashing utilities</li>
+<li><strong>ClaimsPrincipal Extensions</strong>: Easy extraction of user information from claims with multiple fallback sources</li>
+<li><strong>Claim Extensions</strong>: Build claims collections with permission support</li>
+<li><strong>Authorization Extensions</strong>: Fluent API for building permission-based policies</li>
+<li><strong>CAPTCHA Contract</strong>: Options, header constants and the <code>ICaptchaVerifier</code> abstraction shared by client and server</li>
+<li><strong>Certificate and Biometrics Contracts</strong>: <code>ICertificateAuthenticator</code>, <code>IDocumentSigner</code> and <code>IFaceVerifier</code>, provider-neutral, with their result and failure types</li>
+<li><strong>SSRF protection</strong>: <code>NetworkAddressPolicy</code> and <code>PublicNetworkConnector</code> restrict outbound HTTP connections to publicly routable addresses, judged on the address the socket actually connects to</li>
+</ul>
+<blockquote>
+<p>Carries no ASP.NET Core framework reference, so it is safe to consume from Blazor WebAssembly.</p>
+</blockquote>
+<h3 id="nuvtoolssecurityaspnetcore">NuvTools.Security.AspNetCore</h3>
+<p>Security configuration, authenticated user services and adaptive CAPTCHA verification for ASP.NET Core applications.</p>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li><strong>Security Configuration</strong>: JWT configuration model (Issuer, Audience, SecretKey) with IOptions pattern</li>
+<li><strong>Current User Service</strong>: Access current authenticated user and connection details via dependency injection</li>
+<li><strong>Adaptive CAPTCHA Filter</strong>: <code>[ValidateCaptcha]</code> gates public endpoints — invisible score check by default, escalating to a checkbox challenge when the risk is high</li>
+<li><strong>reCAPTCHA Enterprise Verifier</strong>: creates the assessment on Google Cloud; the API key never leaves the server</li>
+<li><strong>Rate Limiting per Client Address</strong>: <code>AddFixedWindowPerClientAddress</code> gives each anonymous endpoint (sign-in, sign-up, password recovery) its own fixed-window allowance per address</li>
+</ul>
+<blockquote>
+<p>Requires the ASP.NET Core shared framework. Do <strong>not</strong> reference it from a WebAssembly project — use <code>NuvTools.Security</code> for the shared contract instead.</p>
+</blockquote>
+<h3 id="nuvtoolssecurityaspnetcoreblazor">NuvTools.Security.AspNetCore.Blazor</h3>
+<p>Authentication state providers for Blazor applications with JWT and OIDC support, plus the client half of the adaptive CAPTCHA.</p>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li><strong>Manual Authentication State Provider</strong>: JWT-based auth with local storage and automatic token expiration handling</li>
+<li><strong>OIDC Authentication State Provider</strong>: OpenID Connect authentication integration</li>
+<li><strong>NuvCaptcha Component</strong>: Invisible by default, rendering the &quot;I'm not a robot&quot; checkbox only on step-up</li>
+</ul>
+<h3 id="nuvtoolssecuritycertificatelacuna">NuvTools.Security.Certificate.Lacuna</h3>
+<p>Lacuna REST PKI behind the <code>ICertificateAuthenticator</code> and <code>IDocumentSigner</code> contracts that <code>NuvTools.Security</code> defines.</p>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li><strong>Validated on the service</strong>: possession of the private key and the ICP-Brasil chain are checked by REST PKI — no key or licence is kept locally</li>
+<li><strong>Fail-closed</strong>: a missing token, a refused certificate or an unreachable provider never yields an identity</li>
+<li><strong>PDF signing (PAdES)</strong>: prepares the document, places the visible stamp and completes the signature, with the key kept by the person</li>
+</ul>
+<h3 id="nuvtoolssecuritybiometricsserpro">NuvTools.Security.Biometrics.Serpro</h3>
+<p>SERPRO Datavalid behind the <code>IFaceVerifier</code> contract that <code>NuvTools.Security</code> defines.</p>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li><strong>Government record</strong>: the capture is matched against the face on record for a CPF, with a cached gateway token</li>
+<li><strong>The application decides</strong>: minimum similarity and accepted liveness values are configuration, not code</li>
+</ul>
+<blockquote>
+<p>The contracts live in <code>NuvTools.Security</code>; each provider is a package of its own. An application depends on <code>ICertificateAuthenticator</code> and <code>IFaceVerifier</code>, names the provider once at registration, and changes provider by changing that one call.</p>
+</blockquote>
+<h3 id="nuvtoolssecuritysigningazure">NuvTools.Security.Signing.Azure</h3>
+<p>Azure Key Vault behind the <code>ISigningKeyProvider</code> contract of <code>NuvTools.Security</code>: a token issuer
+signs with an RSA key that never leaves the vault.</p>
+<ul>
+<li><strong><code>KeyVaultSigningKeyProvider</code></strong> - Holds the public half of each enabled key version and asks the vault for every signature (<code>RS256</code>)</li>
+<li><strong>Rotation without a restart</strong> - A new version is published at the next refresh and starts signing after an activation delay; older versions stay published so their tokens keep validating</li>
+<li><strong><code>AddKeyVaultSigningKeys</code></strong> - Binds <code>KeyVaultSigningOptions</code> (<code>VaultUri</code>, <code>KeyName</code>, <code>ActivationDelay</code>, <code>RefreshInterval</code>) from the <code>KeyVaultSigning</code> section</li>
+</ul>
+<p>The neutral half lives in <code>NuvTools.Security</code>: <code>ISigningKeyProvider</code>, and <code>RemoteRsaSecurityKey</code>, an
+<code>RsaSecurityKey</code> whose signatures are created by a delegate. The identity reaching the vault needs
+the <code>Key Vault Crypto User</code> role.</p>
+<pre><code class="lang-csharp">using NuvTools.Security.Signing;
+using NuvTools.Security.Signing.Azure.Extensions;  // the key store, named here and nowhere else
+
+builder.Services.AddKeyVaultSigningKeys(builder.Configuration);
+
+// wherever tokens are issued
+var credentials = await signingKeys.GetSigningCredentialsAsync();
+var signWith = credentials[0];      // the rest are published alongside it
+</code></pre>
+<h2 id="installation">Installation</h2>
+<p>Install via NuGet Package Manager:</p>
+<pre><code class="lang-bash"># For core security features (JWT, cryptography, claims)
+dotnet add package NuvTools.Security
+
+# For ASP.NET Core integration (includes NuvTools.Security)
+dotnet add package NuvTools.Security.AspNetCore
+
+# For Blazor authentication state providers
+dotnet add package NuvTools.Security.AspNetCore.Blazor
+
+# For sign-in with a digital certificate, through Lacuna REST PKI (includes NuvTools.Security)
+dotnet add package NuvTools.Security.Certificate.Lacuna
+
+# For facial verification, through SERPRO Datavalid (includes NuvTools.Security)
+dotnet add package NuvTools.Security.Biometrics.Serpro
+dotnet add package NuvTools.Security.Signing.Azure
+</code></pre>
+<p>Or via Package Manager Console:</p>
+<pre><code class="lang-powershell">Install-Package NuvTools.Security
+Install-Package NuvTools.Security.AspNetCore
+Install-Package NuvTools.Security.AspNetCore.Blazor
+</code></pre>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="jwt-token-generation-and-validation">JWT Token Generation and Validation</h3>
+<pre><code class="lang-csharp">using NuvTools.Security.Helpers;
+using System.Security.Claims;
+
+// Generate a JWT token
+var claims = new List&lt;Claim&gt;
+{
+    new Claim(ClaimTypes.NameIdentifier, &quot;user123&quot;),
+    new Claim(ClaimTypes.Email, &quot;user@example.com&quot;),
+    new Claim(ClaimTypes.Role, &quot;Admin&quot;)
+};
+
+string token = JwtHelper.Generate(
+    key: &quot;your-secret-key-at-least-32-characters&quot;,
+    issuer: &quot;your-app&quot;,
+    audience: &quot;your-app-users&quot;,
+    claims: claims,
+    expires: DateTime.UtcNow.AddHours(1)
+);
+
+// Parse claims from JWT (client-side, no validation)
+var parsedClaims = JwtHelper.ParseClaimsFromJwt(token);
+
+// Check if token is expired
+bool isExpired = JwtHelper.IsTokenExpired(token);
+
+// Generate a refresh token
+string refreshToken = JwtHelper.GenerateRefreshToken();
+
+// Extract principal from expired token (for refresh flow)
+var principal = JwtHelper.GetPrincipalFromExpiredToken(token, &quot;your-secret-key&quot;);
+</code></pre>
+<h3 id="cryptography-and-hashing">Cryptography and Hashing</h3>
+<pre><code class="lang-csharp">using NuvTools.Security.Helpers;
+
+// Compute SHA256 hash
+string hash256 = HashHelper.ComputeSHA256Hash(&quot;sensitive-data&quot;);
+
+// Compute SHA512 hash
+string hash512 = HashHelper.ComputeSHA512Hash(&quot;sensitive-data&quot;);
+
+// Generic method with algorithm selection
+string hash = HashHelper.ComputeHash(
+    &quot;data&quot;,
+    HashHelper.HashAlgorithmType.SHA512
+);
+</code></pre>
+<h3 id="aes-symmetric-encryption">AES Symmetric Encryption</h3>
+<pre><code class="lang-csharp">using NuvTools.Security.Helpers;
+
+// Encrypt to a Base64 string (format: IV (16 bytes) + ciphertext, SHA-256-derived key)
+string cipher = AesEncryptionHelper.EncryptToString(&quot;sensitive-data&quot;, &quot;your-secret-key&quot;);
+
+// Decrypt back to plain text (non-Base64 input is returned as-is for legacy data)
+string plain = AesEncryptionHelper.DecryptToString(cipher, &quot;your-secret-key&quot;);
+
+// Choose the AES key size explicitly
+string cipher128 = AesEncryptionHelper.EncryptToString(
+    &quot;data&quot;,
+    &quot;your-secret-key&quot;,
+    AesEncryptionHelper.SymmetricAlgorithmType.AES128
+);
+</code></pre>
+<h3 id="claims-principal-extensions">Claims Principal Extensions</h3>
+<pre><code class="lang-csharp">using NuvTools.Security.Extensions;
+
+// In a controller or service
+public class UserController : ControllerBase
+{
+    public IActionResult GetProfile()
+    {
+        // Extract user information with automatic fallback
+        var userId = User.GetId();           // NameIdentifier or Sub
+        var email = User.GetEmail();         // Email, upn, preferred_username, etc.
+        var name = User.GetName();
+        var givenName = User.GetGivenName();
+        var familyName = User.GetFamilyName();
+
+        // Get custom extension attributes (Azure AD B2C)
+        var roles = User.GetCustomAttributeValues&lt;string&gt;(&quot;roles&quot;);
+        var permissions = User.GetCustomAttributeValues&lt;int&gt;(&quot;permissionIds&quot;);
+
+        // Check for specific custom attribute value
+        bool hasPermission = User.HasValue(&quot;permissions&quot;, &quot;users.write&quot;);
+
+        return Ok(new { userId, email, name });
+    }
+}
+</code></pre>
+<h3 id="building-claims-collections">Building Claims Collections</h3>
+<pre><code class="lang-csharp">using NuvTools.Security.Extensions;
+
+// Add individual permissions
+var claims = new List&lt;Claim&gt;();
+claims.AddPermission(&quot;users.read&quot;);
+claims.AddPermission(&quot;users.write&quot;);
+
+// Add all permissions from a static class
+public static class UserPermissions
+{
+    public const string Read = &quot;users.read&quot;;
+    public const string Write = &quot;users.write&quot;;
+    public const string Delete = &quot;users.delete&quot;;
+}
+
+claims.AddPermissionByClass(typeof(UserPermissions));
+
+// Add claims from a class with custom claim type
+claims.AddByClass(&quot;custom-claim-type&quot;, typeof(MyClaimsClass));
+</code></pre>
+<h3 id="authorization-policies-with-permissions">Authorization Policies with Permissions</h3>
+<pre><code class="lang-csharp">using NuvTools.Security.Extensions;
+
+builder.Services.AddAuthorization(options =&gt;
+{
+    // Add policy requiring specific permission claim
+    options.AddPolicyWithRequiredPermissionClaim(
+        &quot;CanManageUsers&quot;,
+        &quot;users.write&quot;, &quot;users.delete&quot;);
+
+    // Add policy with custom claim type and values
+    options.AddPolicyWithRequiredClaim(
+        &quot;AdminOnly&quot;,
+        &quot;role&quot;,
+        &quot;Admin&quot;, &quot;SuperAdmin&quot;);
+
+    // Add policy with multiple different claims
+    options.AddPolicyWithRequiredClaim(
+        &quot;ComplexPolicy&quot;,
+        new Claim(NuvTools.Security.Models.ClaimTypes.Permission, &quot;reports.read&quot;),
+        new Claim(&quot;department&quot;, &quot;IT&quot;)
+    );
+});
+
+// In controller
+[Authorize(Policy = &quot;CanManageUsers&quot;)]
+public class UserManagementController : ControllerBase
+{
+    [HttpPost]
+    public IActionResult CreateUser() { /* ... */ }
+}
+</code></pre>
+<h3 id="aspnet-core-configuration">ASP.NET Core Configuration</h3>
+<p><strong>appsettings.json:</strong></p>
+<pre><code class="lang-json">{
+  &quot;NuvTools.Security&quot;: {
+    &quot;Issuer&quot;: &quot;your-application&quot;,
+    &quot;Audience&quot;: &quot;your-application-users&quot;,
+    &quot;SecretKey&quot;: &quot;your-secret-key-min-32-chars-long&quot;
+  }
+}
+</code></pre>
+<p><strong>Program.cs:</strong></p>
+<pre><code class="lang-csharp">using NuvTools.Security.AspNetCore.Configurations;
+using NuvTools.Security.AspNetCore.Services;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Register security configuration
+builder.Services.AddSecurityConfiguration(builder.Configuration);
+
+// Register CurrentUserService
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped&lt;CurrentUserService&gt;();
+
+var app = builder.Build();
+</code></pre>
+<p><strong>Using CurrentUserService:</strong></p>
+<pre><code class="lang-csharp">public class MyService(CurrentUserService currentUser)
+{
+    public void DoSomething()
+    {
+        var userId = currentUser.NameIdentifier;
+        var ipAddress = currentUser.RemoteIpAddress;
+        var fullAddress = currentUser.FullRemoteAddress;
+        var claims = currentUser.Claims;
+    }
+}
+</code></pre>
+<h3 id="blazor-manual-authentication">Blazor Manual Authentication</h3>
+<p><strong>Program.cs:</strong></p>
+<pre><code class="lang-csharp">using NuvTools.Security.AspNetCore.Blazor;
+using NuvTools.AspNetCore.Blazor.Extensions;
+using Microsoft.AspNetCore.Components.Authorization;
+
+var builder = WebAssemblyHostBuilder.CreateDefault(args);
+
+// Register local storage service (required by ManualAuthenticationStateProvider)
+builder.Services.AddLocalStorageService();
+
+// Register authentication
+builder.Services.AddScoped&lt;AuthenticationStateProvider, ManualAuthenticationStateProvider&gt;();
+builder.Services.AddAuthorizationCore();
+
+await builder.Build().RunAsync();
+</code></pre>
+<p><strong>Login Component:</strong></p>
+<pre><code class="lang-csharp">@inject AuthenticationStateProvider AuthStateProvider
+
+private async Task LoginAsync(string token)
+{
+    var authProvider = (ManualAuthenticationStateProvider)AuthStateProvider;
+    await authProvider.SignInAsync(token);
+
+    // Navigate to protected page
+    Navigation.NavigateTo(&quot;/dashboard&quot;);
+}
+
+private async Task LogoutAsync()
+{
+    var authProvider = (ManualAuthenticationStateProvider)AuthStateProvider;
+    await authProvider.SignOutAsync();
+
+    Navigation.NavigateTo(&quot;/&quot;);
+}
+</code></pre>
+<h3 id="oidc-authentication-in-blazor">OIDC Authentication in Blazor</h3>
+<p><strong>Program.cs:</strong></p>
+<pre><code class="lang-csharp">using NuvTools.Security.AspNetCore.Blazor;
+using Microsoft.AspNetCore.Components.Authorization;
+
+builder.Services.AddOidcAuthentication(options =&gt;
+{
+    builder.Configuration.Bind(&quot;AzureAd&quot;, options.ProviderOptions);
+});
+
+// Use custom OIDC provider
+builder.Services.AddScoped&lt;AuthenticationStateProvider, OidcAuthenticationStateProvider&gt;();
+</code></pre>
+<h3 id="rate-limiting-per-client-address">Rate Limiting per Client Address</h3>
+<p>Each policy counts per address and on its own, so asking for reset links cannot use up the allowance for spending one. There is no queue: a caller past the limit is answered 429 at once.</p>
+<pre><code class="lang-csharp">builder.Services.AddRateLimiter(options =&gt;
+{
+    options.AddFixedWindowPerClientAddress(&quot;SignIn&quot;, permitLimit: 10, TimeSpan.FromMinutes(5));
+    options.AddFixedWindowPerClientAddress(&quot;PasswordReset&quot;, permitLimit: 3, TimeSpan.FromMinutes(15));
+
+    // Status 429 and Retry-After; the body is yours to write.
+    options.OnRejected = (context, _) =&gt;
+    {
+        context.SetTooManyRequests();
+        return ValueTask.CompletedTask;
+    };
+});
+
+app.UseForwardedHeaders(); // behind a proxy, or every caller shares the proxy's address
+app.UseRateLimiter();
+
+[EnableRateLimiting(&quot;SignIn&quot;)]
+public IActionResult OnPost() { ... }
+</code></pre>
+<p>An address is something a caller can vary. This bounds noise and simple scripts; account lockout and a single answer for every failure are still what stop guessing and enumeration.</p>
+<h3 id="adaptive-captcha">Adaptive CAPTCHA</h3>
+<p>Protects public endpoints (login, password reset, public queries) from automated abuse. A <strong>score</strong> key runs invisibly on every submission; when the risk is high the client escalates to a <strong>checkbox</strong> challenge.</p>
+<p><strong>Server</strong> — <code>NuvTools.Security.AspNetCore</code>:</p>
+<pre><code class="lang-csharp">// Program.cs
+services.AddCaptcha(builder.Configuration);
+
+// Controller
+[HttpPost(&quot;forgotpassword&quot;)]
+[ValidateCaptcha]
+public async Task&lt;IActionResult&gt; ForgotPassword(ForgotPasswordModel model) { ... }
+</code></pre>
+<pre><code class="lang-json">{
+  &quot;Captcha&quot;: {
+    &quot;Enabled&quot;: true,
+    &quot;ProjectId&quot;: &quot;my-gcp-project&quot;,
+    &quot;ApiKey&quot;: &quot;&lt;from-key-vault&gt;&quot;,
+    &quot;ScoreSiteKey&quot;: &quot;&lt;score-key&gt;&quot;,
+    &quot;SiteKey&quot;: &quot;&lt;checkbox-key&gt;&quot;,
+    &quot;MinScore&quot;: 0.5,
+    &quot;FailureMessage&quot;: &quot;Security verification failed. Reload the page and try again.&quot;
+  }
+}
+</code></pre>
+<p><strong>Client</strong> — <code>NuvTools.Security.AspNetCore.Blazor</code>:</p>
+<pre><code class="lang-csharp">// Program.cs — only the site keys are read here, never the API key
+services.AddCaptcha(builder.Configuration);
+</code></pre>
+<pre><code class="lang-razor">@using NuvTools.Security.AspNetCore.Blazor.Captcha
+
+&lt;NuvCaptcha @ref=&quot;_captcha&quot; /&gt;
+
+@code {
+    private NuvCaptcha _captcha = default!;
+
+    private async Task SubmitAsync()
+    {
+        var (token, mode) = await _captcha.GetTokenAsync();
+
+        // The checkbox is on screen but unsolved — stop and let the user solve it.
+        if (mode == CaptchaDefaults.ModeCheckbox &amp;&amp; string.IsNullOrEmpty(token))
+            return;
+
+        var request = new HttpRequestMessage(HttpMethod.Post, &quot;v1/security/account/forgotpassword&quot;);
+        request.AddCaptchaToken(token, mode);
+
+        var result = await Send(request);
+
+        // Low score: the server asked for the step-up, so render the checkbox and let the user retry.
+        if (await _captcha.HandleStepUpAsync(result))
+            return;
+
+        if (!result.Succeeded)
+            await _captcha.ResetAsync(); // the token is single-use
+    }
+}
+</code></pre>
+<p>Set <code>Captcha:Enabled</code> to <code>false</code> in development so no token is required. When the provider script cannot load, the client sends an empty token and the server rejects it — the user sees a message instead of a stuck button.</p>
+<h3 id="fetching-urls-somebody-else-supplied-ssrf">Fetching URLs Somebody Else Supplied (SSRF)</h3>
+<p>When an application fetches a URL a user typed — a webhook, a health probe, a document to import — it can be pointed at its own network: <code>http://169.254.169.254/</code> (cloud metadata), <code>http://10.0.0.5/admin</code>, or a public domain whose DNS answers a private address. Checking the URL first does not help, because DNS can answer differently to the check and to the connection.</p>
+<p><code>PublicNetworkConnector</code> checks the address inside <code>SocketsHttpHandler.ConnectCallback</code> — the address that is checked is the address the socket connects to. Every hop goes through it, so a redirect to a private address is refused too, and the proxy is switched off so the callback never only sees a proxy.</p>
+<pre><code class="lang-csharp">using NuvTools.Security.Network;
+
+// Publicly routable addresses only
+using var client = new HttpClient(PublicNetworkConnector.CreateHandler());
+
+try
+{
+    var body = await client.GetStringAsync(userSuppliedUrl);
+}
+catch (HttpRequestException ex) when (ex.InnerException is NetworkAddressNotAllowedException refused)
+{
+    // refused.Host is safe to log; refused.Address is the address that was denied
+}
+
+// With IHttpClientFactory
+services.AddHttpClient(&quot;untrusted&quot;)
+    .ConfigurePrimaryHttpMessageHandler(() =&gt; PublicNetworkConnector.CreateHandler());
+
+// A handler created elsewhere (a reverse proxy's forwarder, for example)
+PublicNetworkConnector.Apply(socketsHttpHandler, new NetworkAddressPolicy(
+    allowedNetworks: [IPNetwork.Parse(&quot;10.20.0.0/16&quot;)],          // an internal range you trust
+    additionalDeniedHostSuffixes: [&quot;azurecontainerapps.io&quot;]));   // names refused before any lookup
+</code></pre>
+<p>Denied by default: loopback, private (RFC 1918, IPv6 unique-local), link-local including <code>169.254.169.254</code>, carrier-grade NAT, documentation and benchmarking ranges, multicast, reserved space, IPv6 prefixes that embed an IPv4 address (NAT64, 6to4, Teredo), Azure's platform address <code>168.63.129.16</code>, and the host names <code>localhost</code>, <code>*.localhost</code>, <code>*.local</code> and <code>*.internal</code>. An IPv4-mapped IPv6 address is judged as the IPv4 address it carries. A name resolving to <em>any</em> denied address is refused as a whole.</p>
+<p><code>NetworkAddressPolicy.ResolveAllowedAsync(host)</code> applies the same rule without making a request — useful for validating a host a user registers.</p>
+<h3 id="sign-in-with-a-digital-certificate">Sign-in with a Digital Certificate</h3>
+<p>The server opens a challenge, the browser signs it with the certificate the person picks, and the server validates the answer. The identity comes from the certificate the provider validated — never from a value the client sends.</p>
+<pre><code class="lang-json">{
+  &quot;RestPki&quot;: {
+    &quot;AccessToken&quot;: &quot;&lt;from the REST PKI console&gt;&quot;,
+    &quot;SecurityContext&quot;: &quot;PkiBrazil&quot;
+  }
+}
+</code></pre>
+<pre><code class="lang-csharp">using NuvTools.Security.Certificate;                    // the contract, from NuvTools.Security
+using NuvTools.Security.Certificate.Lacuna.Extensions;  // the provider — named here and nowhere else
+
+builder.Services.AddLacunaCertificateAuthentication(builder.Configuration);
+
+// 1. Hand the challenge to the client, which signs it with Web PKI (signWithRestPki)
+var challenge = await authenticator.StartAsync(cancellationToken);
+
+// 2. Inside the sign-in operation itself, validate what came back
+var result = await authenticator.CompleteAsync(signedToken, cancellationToken);
+
+if (!result.Valid)
+    return Unauthorized();   // result.Failure says whether it was refused or the provider was out of reach
+
+var user = await users.FindByCpfAsync(result.Subject!.Cpf);
+</code></pre>
+<p><code>SecurityContext</code> chooses the roots a certificate must chain to: <code>PkiBrazil</code> (the default), <code>LacunaTest</code>, or the id of a security context from the REST PKI console. <code>LacunaTest</code> accepts certificates anyone can issue, so keep it to development; an unknown value stops the application instead of falling back.</p>
+<p><code>CertificateSubject</code> carries the name, e-mail, CPF, CNPJ and company name found in the certificate. Which of them a sign-in requires is the application's decision.</p>
+<h3 id="signing-a-pdf-with-a-digital-certificate">Signing a PDF with a Digital Certificate</h3>
+<p>The same two steps as the sign-in, applied to a document: the server prepares the PDF and opens a challenge, the browser signs it with the certificate the person picks, and the server completes the signature. The private key never leaves the person's device.</p>
+<pre><code class="lang-csharp">using NuvTools.Security.Certificate.Signing;            // the contract, from NuvTools.Security
+using NuvTools.Security.Certificate.Lacuna.Extensions;  // the provider — named here and nowhere else
+
+builder.Services.AddLacunaDocumentSigning(builder.Configuration);
+
+// Who is about to sign, read from the certificate itself
+var certificate = await signer.ReadCertificateAsync(certificateDer, cancellationToken);
+
+// Who signed already, to refuse the same person twice
+var previous = await signer.GetSignersAsync(pdf, cancellationToken);
+
+// 1. Prepare the document; the client signs challenge.Token with Web PKI (signWithRestPki)
+var stamp = new SignatureStamp(stampImage, &quot;image/png&quot;,
+    new SignatureStampPlacement(PageNumber: -1, new SignatureStampArea(1.4, 4.9, 1.4, 2.2), Width: 8, Height: 2.2, RowSpacing: 0.3));
+
+var challenge = await signer.StartAsync(new DocumentSignatureRequest(pdf, stamp), cancellationToken);
+
+// 2. Complete it, and check the certificate that was actually used
+var signed = await signer.CompleteAsync(signedToken, cancellationToken);
+
+if (signed.Signer.Subject.Cpf != certificate.Subject.Cpf)
+    return Forbid();   // the client chooses the certificate at signing time
+</code></pre>
+<p>The stamp is optional and its image is the application's: the provider only places it. Stamps are stacked inside an area of a page, so a co-signature lands after the ones already there. Measures are in centimeters; a negative page number counts from the end.</p>
+<p><code>ReadCertificateAsync</code> and <code>GetSignersAsync</code> read without validating — they answer what a certificate says, not whether it is trusted. The chain is validated when the signature is completed, against the <code>SecurityContext</code> configured for REST PKI.</p>
+<p>Unlike the sign-in, a provider failure here propagates as an exception: signing is not an access decision, so there is no safe result to fall back to.</p>
+<p>The PDF is signed under the basic PAdES policy unless <code>RestPki:PadesSignaturePolicy</code> holds the id of another one.</p>
+<h3 id="facial-verification">Facial Verification</h3>
+<p>The capture is compared with the face on record for the person, and the application decides what counts as a match.</p>
+<pre><code class="lang-json">{
+  &quot;Datavalid&quot;: {
+    &quot;ConsumerKey&quot;: &quot;&lt;from the SERPRO contract&gt;&quot;,
+    &quot;ConsumerSecret&quot;: &quot;&lt;from the SERPRO contract&gt;&quot;,
+    &quot;MinSimilarity&quot;: 0.9,
+    &quot;AcceptedLiveness&quot;: []
+  }
+}
+</code></pre>
+<pre><code class="lang-csharp">using NuvTools.Security.Biometrics;                    // the contract, from NuvTools.Security
+using NuvTools.Security.Biometrics.Serpro.Extensions;  // the provider — named here and nowhere else
+
+builder.Services.AddSerproFaceVerification(builder.Configuration);
+
+// Inside the sign-in operation itself, with the CPF of the account being signed in to
+var result = await verifier.VerifyAsync(new FaceVerificationRequest(user.Cpf, imageBytes), cancellationToken);
+
+if (!result.Matched)
+    return Unauthorized(MessageFor(result.Failure));
+</code></pre>
+<p>Verify and sign in within the same server operation. An endpoint that only verifies, followed by a sign-in that accepts &quot;the face was verified&quot; from the caller, verifies nothing.</p>
+<p><code>FaceVerificationFailureType</code> tells which message helps: capturing again fixes <code>FaceNotDetected</code>, <code>LowImageQuality</code> and <code>MultipleFaces</code>, but never <code>FaceNotOnRecord</code>. An invalid CPF and an empty image are refused before SERPRO is called, since each call is billed.</p>
+<p><code>AcceptedLiveness</code> is empty by default, which leaves the liveness decision to SERPRO and only reports the value in <code>FaceVerification.Liveness</code>. Once it lists the values the contracted API version documents, a capture whose liveness is missing or not listed is refused whatever its similarity.</p>
+<p>Neither the image nor the CPF is stored or logged.</p>
+<h3 id="changing-provider">Changing Provider</h3>
+<p>Everything above the registration depends on <code>ICertificateAuthenticator</code> or <code>IFaceVerifier</code> from <code>NuvTools.Security</code>. Another provider is a class implementing the contract — in a package of its own, so its dependencies reach only those who choose it — and one line changed at startup:</p>
+<pre><code class="lang-csharp">// builder.Services.AddSerproFaceVerification(builder.Configuration);
+builder.Services.AddOtherProviderFaceVerification(builder.Configuration);
+</code></pre>
+<p>Options stay with each provider (<code>RestPkiOptions</code>, <code>DatavalidOptions</code>), since credentials and thresholds are the provider's vocabulary; results and failure reasons are the contract's.</p>
+<p>Both registrations take an optional section name, for an application whose settings already live under another one:</p>
+<pre><code class="lang-csharp">builder.Services.AddSerproFaceVerification(builder.Configuration, sectionName: &quot;SerproBiometria&quot;);
+</code></pre>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>Multi-targeting</strong>: Compatible with .NET 8, .NET 9, and .NET 10</li>
+<li><strong>Comprehensive documentation</strong>: Full XML documentation for IntelliSense</li>
+<li><strong>Modular design</strong>: Use only what you need</li>
+<li><strong>Modern C# features</strong>: Uses nullable reference types, implicit usings, and primary constructors</li>
+</ul>
+<h2 id="building-from-source">Building from Source</h2>
+<p>This project uses the modern <code>.slnx</code> solution format (Visual Studio 2022 v17.11+).</p>
+<pre><code class="lang-bash"># Clone the repository
+git clone https://github.com/nuvtools/nuvtools-security.git
+cd nuvtools-security
+
+# Build the solution
+dotnet build NuvTools.Security.slnx
+
+# Run tests
+dotnet test NuvTools.Security.slnx
+
+# Create release packages
+dotnet build NuvTools.Security.slnx --configuration Release
+</code></pre>
+<h2 id="releasing">Releasing</h2>
+<p>Publishing to nuget.org is irreversible per version, so the workflow makes it the last and smallest
+step.</p>
+<p><strong>One workflow per library.</strong> Each package has its own, so a run and an approval each concern
+exactly one package. The steps themselves are shared, in the reusable <code>package-publish.yml</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Workflow</th>
+<th>Release tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NuvTools.Security</code></td>
+<td><code>security-publish.yml</code></td>
+<td><code>security-vX.Y.Z</code></td>
+</tr>
+<tr>
+<td><code>NuvTools.Security.AspNetCore</code></td>
+<td><code>aspnetcore-publish.yml</code></td>
+<td><code>aspnetcore-vX.Y.Z</code></td>
+</tr>
+<tr>
+<td><code>NuvTools.Security.AspNetCore.Blazor</code></td>
+<td><code>blazor-publish.yml</code></td>
+<td><code>blazor-vX.Y.Z</code></td>
+</tr>
+<tr>
+<td><code>NuvTools.Security.Certificate.Lacuna</code></td>
+<td><code>certificate-lacuna-publish.yml</code></td>
+<td><code>certificate-lacuna-vX.Y.Z</code></td>
+</tr>
+<tr>
+<td><code>NuvTools.Security.Biometrics.Serpro</code></td>
+<td><code>biometrics-serpro-publish.yml</code></td>
+<td><code>biometrics-serpro-vX.Y.Z</code></td>
+</tr>
+<tr>
+<td><code>NuvTools.Security.Signing.Azure</code></td>
+<td><code>signing-azure-publish.yml</code></td>
+<td><code>signing-azure-vX.Y.Z</code></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Set the package's <code>&lt;Version&gt;</code> in its <code>.csproj</code> and merge it. That is the version that gets
+published; the workflow reads it and never computes one.</li>
+<li>Run the library's workflow by hand (<em>Actions → Security Publish → Run workflow</em>) with <em>push</em>
+checked.</li>
+<li>The workflow builds the solution with <code>-warnaserror</code>, runs the tests, takes <strong>that package only</strong>
+from the build output, verifies it carries its README, licence, icon, symbols and every target
+framework, and then waits for approval on the <code>nuget</code> GitHub Environment before pushing.</li>
+<li><strong>After the push succeeds, the workflow tags the commit</strong> with the tag in the table above. The tag is a
+record of what is on nuget.org, never what starts a release, so it cannot exist for a version
+that did not get there. A run whose tag already exists stops before building: the version has
+been released and <code>&lt;Version&gt;</code> needs a bump.</li>
+</ol>
+<p><strong><code>NuvTools.Security</code> goes first.</strong> Every other package references it as a project, so each of them
+depends on whatever <code>&lt;Version&gt;</code> <code>NuvTools.Security</code> has in that commit. The workflow checks that
+version is on nuget.org and refuses to push a package whose dependency is not there yet.</p>
+<p>That check knows a version exists, not what is in it. <strong>When <code>NuvTools.Security</code> gains a type
+another package uses, bump its <code>&lt;Version&gt;</code> and publish it before the package that uses the type</strong> —
+otherwise that package is published against an older <code>NuvTools.Security</code> that does not have it, and
+fails for whoever installs it.</p>
+<p><strong>Versions published by hand are refused.</strong> Releases made before these workflows exist on nuget.org
+with no tag. Pushing one again would skip the duplicate and then tag the current commit as a
+release it is not, so a version that is already on nuget.org stops the run. The exception is a
+re-run of the same run, which is how a push that succeeded and a tag that failed gets finished.</p>
+<p><strong>No API key is stored.</strong> The push uses nuget.org's trusted publishing: the job presents a GitHub
+OIDC token, nuget.org checks it against the policy registered for this repository and answers with a
+key that lives for one hour. The repository needs one secret, <code>NUGET_USER</code> — the nuget.org profile
+name the policy belongs to — and the policy itself, registered under <em>Trusted Publishing</em> on
+nuget.org with the owner <code>nuvtools</code>, the repository <code>nuvtools-security</code>, the workflow file and the
+environment <code>nuget</code>.</p>
+<p>Run a library's workflow by hand with <em>push</em> unchecked for a dry run that stops after the
+verification.</p>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>.NET 8.0 SDK or higher</li>
+<li>Visual Studio 2022 (v17.11+) or Visual Studio Code with C# extension</li>
+<li>NuvTools.AspNetCore.Blazor (for NuvTools.Security.AspNetCore.Blazor)</li>
+</ul>
+<h2 id="contributing">Contributing</h2>
+<p>Contributions are welcome! Please feel free to submit a Pull Request.</p>
+<h2 id="license">License</h2>
+<p>This project is licensed under the MIT License - see the <a href="https://github.com/nuvtools/nuvtools-security/blob/main/LICENSE">LICENSE</a> file for details.</p>
+<h2 id="links">Links</h2>
+<ul>
+<li><a href="https://github.com/nuvtools/nuvtools-security">GitHub Repository</a></li>
+<li><a href="https://www.nuget.org/packages/NuvTools.Security/">NuGet Package - NuvTools.Security</a></li>
+<li><a href="https://www.nuget.org/packages/NuvTools.Security.AspNetCore/">NuGet Package - NuvTools.Security.AspNetCore</a></li>
+<li><a href="https://www.nuget.org/packages/NuvTools.Security.AspNetCore.Blazor/">NuGet Package - NuvTools.Security.AspNetCore.Blazor</a></li>
+<li><a href="https://nuvtools.com">Official Website</a></li>
+</ul>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>© Nuv Tools · <a href="https://nuvtools.com/framework/">nuvtools.com</a> · MIT licence · Built with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,698 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions
+  commentId: T:NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions
+  id: HttpResponseMessageExtensions
+  parent: NuvTools.Common.ResultWrapper
+  children:
+  - NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
+  - NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync``1(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
+  - NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync``2(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: HttpResponseMessageExtensions
+  nameWithType: HttpResponseMessageExtensions
+  fullName: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions
+  type: Class
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.ResultWrapper
+  summary: >-
+    Extension methods to convert <xref href="System.Net.Http.HttpResponseMessage" data-throw-if-not-resolved="false"></xref> into <xref href="NuvTools.Common.ResultWrapper.IResult" data-throw-if-not-resolved="false"></xref> or <xref href="NuvTools.Common.ResultWrapper.IResult%601" data-throw-if-not-resolved="false"></xref>.
+
+    Handles both success and error responses that may contain a serialized <xref href="NuvTools.Common.ResultWrapper.Result" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static class HttpResponseMessageExtensions
+    content.vb: Public Module HttpResponseMessageExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
+  id: ToResultAsync(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
+  isExtensionMethod: true
+  parent: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToResultAsync(HttpResponseMessage, CancellationToken)
+  nameWithType: HttpResponseMessageExtensions.ToResultAsync(HttpResponseMessage, CancellationToken)
+  fullName: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync(System.Net.Http.HttpResponseMessage, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.ResultWrapper
+  syntax:
+    content: public static Task<IResult> ToResultAsync(this HttpResponseMessage response, CancellationToken cancellationToken = default)
+    parameters:
+    - id: response
+      type: System.Net.Http.HttpResponseMessage
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+    content.vb: Public Shared Function ToResultAsync(response As HttpResponseMessage, cancellationToken As CancellationToken = Nothing) As Task(Of IResult)
+  overload: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync*
+- uid: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync``1(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync``1(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
+  id: ToResultAsync``1(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
+  isExtensionMethod: true
+  parent: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToResultAsync<T>(HttpResponseMessage, CancellationToken)
+  nameWithType: HttpResponseMessageExtensions.ToResultAsync<T>(HttpResponseMessage, CancellationToken)
+  fullName: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync<T>(System.Net.Http.HttpResponseMessage, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.ResultWrapper
+  syntax:
+    content: public static Task<IResult<T>> ToResultAsync<T>(this HttpResponseMessage response, CancellationToken cancellationToken = default)
+    parameters:
+    - id: response
+      type: System.Net.Http.HttpResponseMessage
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    typeParameters:
+    - id: T
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{{T}}}
+    content.vb: Public Shared Function ToResultAsync(Of T)(response As HttpResponseMessage, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of T))
+  overload: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync*
+  nameWithType.vb: HttpResponseMessageExtensions.ToResultAsync(Of T)(HttpResponseMessage, CancellationToken)
+  fullName.vb: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync(Of T)(System.Net.Http.HttpResponseMessage, System.Threading.CancellationToken)
+  name.vb: ToResultAsync(Of T)(HttpResponseMessage, CancellationToken)
+- uid: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync``2(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync``2(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
+  id: ToResultAsync``2(System.Net.Http.HttpResponseMessage,System.Threading.CancellationToken)
+  isExtensionMethod: true
+  parent: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToResultAsync<T, E>(HttpResponseMessage, CancellationToken)
+  nameWithType: HttpResponseMessageExtensions.ToResultAsync<T, E>(HttpResponseMessage, CancellationToken)
+  fullName: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync<T, E>(System.Net.Http.HttpResponseMessage, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Common
+  namespace: NuvTools.Common.ResultWrapper
+  syntax:
+    content: public static Task<IResult<T, E>> ToResultAsync<T, E>(this HttpResponseMessage response, CancellationToken cancellationToken = default)
+    parameters:
+    - id: response
+      type: System.Net.Http.HttpResponseMessage
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    typeParameters:
+    - id: T
+    - id: E
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{{T},{E}}}
+    content.vb: Public Shared Function ToResultAsync(Of T, E)(response As HttpResponseMessage, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of T, E))
+  overload: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync*
+  nameWithType.vb: HttpResponseMessageExtensions.ToResultAsync(Of T, E)(HttpResponseMessage, CancellationToken)
+  fullName.vb: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync(Of T, E)(System.Net.Http.HttpResponseMessage, System.Threading.CancellationToken)
+  name.vb: ToResultAsync(Of T, E)(HttpResponseMessage, CancellationToken)
+references:
+- uid: System.Net.Http.HttpResponseMessage
+  commentId: T:System.Net.Http.HttpResponseMessage
+  parent: System.Net.Http
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.net.http.httpresponsemessage
+  name: HttpResponseMessage
+  nameWithType: HttpResponseMessage
+  fullName: System.Net.Http.HttpResponseMessage
+- uid: NuvTools.Common.ResultWrapper.IResult
+  commentId: T:NuvTools.Common.ResultWrapper.IResult
+  parent: NuvTools.Common.ResultWrapper
+  href: NuvTools.Common.ResultWrapper.IResult.html
+  name: IResult
+  nameWithType: IResult
+  fullName: NuvTools.Common.ResultWrapper.IResult
+- uid: NuvTools.Common.ResultWrapper.IResult`1
+  commentId: T:NuvTools.Common.ResultWrapper.IResult`1
+  href: NuvTools.Common.ResultWrapper.IResult-1.html
+  name: IResult<T>
+  nameWithType: IResult<T>
+  fullName: NuvTools.Common.ResultWrapper.IResult<T>
+  nameWithType.vb: IResult(Of T)
+  fullName.vb: NuvTools.Common.ResultWrapper.IResult(Of T)
+  name.vb: IResult(Of T)
+  spec.csharp:
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    href: NuvTools.Common.ResultWrapper.IResult-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    href: NuvTools.Common.ResultWrapper.IResult-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NuvTools.Common.ResultWrapper.Result
+  commentId: T:NuvTools.Common.ResultWrapper.Result
+  href: NuvTools.Common.ResultWrapper.Result.html
+  name: Result
+  nameWithType: Result
+  fullName: NuvTools.Common.ResultWrapper.Result
+- uid: NuvTools.Common.ResultWrapper
+  commentId: N:NuvTools.Common.ResultWrapper
+  name: NuvTools.Common.ResultWrapper
+  nameWithType: NuvTools.Common.ResultWrapper
+  fullName: NuvTools.Common.ResultWrapper
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Common
+    name: Common
+  - name: .
+  - uid: NuvTools.Common.ResultWrapper
+    name: ResultWrapper
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Common
+    name: Common
+  - name: .
+  - uid: NuvTools.Common.ResultWrapper
+    name: ResultWrapper
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Net.Http
+  commentId: N:System.Net.Http
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Net.Http
+  nameWithType: System.Net.Http
+  fullName: System.Net.Http
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Net
+    name: Net
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net
+  - name: .
+  - uid: System.Net.Http
+    name: Http
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Net
+    name: Net
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net
+  - name: .
+  - uid: System.Net.Http
+    name: Http
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync*
+  commentId: Overload:NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync
+  href: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.html#NuvTools_Common_ResultWrapper_HttpResponseMessageExtensions_ToResultAsync_System_Net_Http_HttpResponseMessage_System_Threading_CancellationToken_
+  name: ToResultAsync
+  nameWithType: HttpResponseMessageExtensions.ToResultAsync
+  fullName: NuvTools.Common.ResultWrapper.HttpResponseMessageExtensions.ToResultAsync
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult>
+  nameWithType: Task<IResult>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult>
+  nameWithType.vb: Task(Of IResult)
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult)
+  name.vb: Task(Of IResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult
+    name: IResult
+    href: NuvTools.Common.ResultWrapper.IResult.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult
+    name: IResult
+    href: NuvTools.Common.ResultWrapper.IResult.html
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{{T}}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{``0}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<T>>
+  nameWithType: Task<IResult<T>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<T>>
+  nameWithType.vb: Task(Of IResult(Of T))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of T))
+  name.vb: Task(Of IResult(Of T))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    href: NuvTools.Common.ResultWrapper.IResult-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    href: NuvTools.Common.ResultWrapper.IResult-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{{T},{E}}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{``0,``1}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<T, E>>
+  nameWithType: Task<IResult<T, E>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<T, E>>
+  nameWithType.vb: Task(Of IResult(Of T, E))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of T, E))
+  name.vb: Task(Of IResult(Of T, E))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`2
+    name: IResult
+    href: NuvTools.Common.ResultWrapper.IResult-2.html
+  - name: <
+  - name: T
+  - name: ','
+  - name: " "
+  - name: E
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`2
+    name: IResult
+    href: NuvTools.Common.ResultWrapper.IResult-2.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: ','
+  - name: " "
+  - name: E
+  - name: )
+  - name: )

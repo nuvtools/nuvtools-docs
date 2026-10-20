@@ -1,0 +1,240 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Security.Biometrics.IFaceVerifier
+  commentId: T:NuvTools.Security.Biometrics.IFaceVerifier
+  id: IFaceVerifier
+  parent: NuvTools.Security.Biometrics
+  children:
+  - NuvTools.Security.Biometrics.IFaceVerifier.VerifyAsync(NuvTools.Security.Biometrics.FaceVerificationRequest,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: IFaceVerifier
+  nameWithType: IFaceVerifier
+  fullName: NuvTools.Security.Biometrics.IFaceVerifier
+  type: Interface
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Biometrics
+  summary: Verifies that a captured face belongs to the holder of a document, against the provider's record.
+  remarks: >-
+    Call it inside the sign-in operation itself, with the image the client just captured, and decide
+
+    on its result. A client must never be able to state that a verification already happened: an
+
+    endpoint that only verifies, followed by a sign-in that trusts the caller, verifies nothing.
+  example: []
+  syntax:
+    content: public interface IFaceVerifier
+    content.vb: Public Interface IFaceVerifier
+  derivedClasses:
+  - NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier
+- uid: NuvTools.Security.Biometrics.IFaceVerifier.VerifyAsync(NuvTools.Security.Biometrics.FaceVerificationRequest,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Security.Biometrics.IFaceVerifier.VerifyAsync(NuvTools.Security.Biometrics.FaceVerificationRequest,System.Threading.CancellationToken)
+  id: VerifyAsync(NuvTools.Security.Biometrics.FaceVerificationRequest,System.Threading.CancellationToken)
+  parent: NuvTools.Security.Biometrics.IFaceVerifier
+  langs:
+  - csharp
+  - vb
+  name: VerifyAsync(FaceVerificationRequest, CancellationToken)
+  nameWithType: IFaceVerifier.VerifyAsync(FaceVerificationRequest, CancellationToken)
+  fullName: NuvTools.Security.Biometrics.IFaceVerifier.VerifyAsync(NuvTools.Security.Biometrics.FaceVerificationRequest, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Biometrics
+  summary: Compares the captured face with the one on record.
+  example: []
+  syntax:
+    content: Task<FaceVerification> VerifyAsync(FaceVerificationRequest request, CancellationToken cancellationToken = default)
+    parameters:
+    - id: request
+      type: NuvTools.Security.Biometrics.FaceVerificationRequest
+      description: Whose face it should be, and the capture.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Token to cancel the operation.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Security.Biometrics.FaceVerification}
+      description: >-
+        The verification result. An invalid document, an unusable image or a communication failure
+
+        yields <xref href="NuvTools.Security.Biometrics.FaceVerification.Matched" data-throw-if-not-resolved="false"></xref> = <code>false</code> (fail-closed).
+    content.vb: Function VerifyAsync(request As FaceVerificationRequest, cancellationToken As CancellationToken = Nothing) As Task(Of FaceVerification)
+  overload: NuvTools.Security.Biometrics.IFaceVerifier.VerifyAsync*
+references:
+- uid: NuvTools.Security.Biometrics
+  commentId: N:NuvTools.Security.Biometrics
+  name: NuvTools.Security.Biometrics
+  nameWithType: NuvTools.Security.Biometrics
+  fullName: NuvTools.Security.Biometrics
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.Biometrics
+    name: Biometrics
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.Biometrics
+    name: Biometrics
+- uid: NuvTools.Security.Biometrics.FaceVerification.Matched
+  commentId: P:NuvTools.Security.Biometrics.FaceVerification.Matched
+  href: NuvTools.Security.Biometrics.FaceVerification.html#NuvTools_Security_Biometrics_FaceVerification_Matched
+  name: Matched
+  nameWithType: FaceVerification.Matched
+  fullName: NuvTools.Security.Biometrics.FaceVerification.Matched
+- uid: NuvTools.Security.Biometrics.IFaceVerifier.VerifyAsync*
+  commentId: Overload:NuvTools.Security.Biometrics.IFaceVerifier.VerifyAsync
+  href: NuvTools.Security.Biometrics.IFaceVerifier.html#NuvTools_Security_Biometrics_IFaceVerifier_VerifyAsync_NuvTools_Security_Biometrics_FaceVerificationRequest_System_Threading_CancellationToken_
+  name: VerifyAsync
+  nameWithType: IFaceVerifier.VerifyAsync
+  fullName: NuvTools.Security.Biometrics.IFaceVerifier.VerifyAsync
+- uid: NuvTools.Security.Biometrics.FaceVerificationRequest
+  commentId: T:NuvTools.Security.Biometrics.FaceVerificationRequest
+  parent: NuvTools.Security.Biometrics
+  href: NuvTools.Security.Biometrics.FaceVerificationRequest.html
+  name: FaceVerificationRequest
+  nameWithType: FaceVerificationRequest
+  fullName: NuvTools.Security.Biometrics.FaceVerificationRequest
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{NuvTools.Security.Biometrics.FaceVerification}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Security.Biometrics.FaceVerification}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<FaceVerification>
+  nameWithType: Task<FaceVerification>
+  fullName: System.Threading.Tasks.Task<NuvTools.Security.Biometrics.FaceVerification>
+  nameWithType.vb: Task(Of FaceVerification)
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Security.Biometrics.FaceVerification)
+  name.vb: Task(Of FaceVerification)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Security.Biometrics.FaceVerification
+    name: FaceVerification
+    href: NuvTools.Security.Biometrics.FaceVerification.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Security.Biometrics.FaceVerification
+    name: FaceVerification
+    href: NuvTools.Security.Biometrics.FaceVerification.html
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

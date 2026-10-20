@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Interface IOmieApiClient | Nuv Tools Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Interface IOmieApiClient | Nuv Tools Framework ">
+      
+      <meta name="description" content="Interface for communication with the Omie ERP API.">
+      <link rel="icon" href="../../images/icon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/nuvtools-brand.svg" alt="Framework">
+            Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient">
+
+
+
+  <h1 id="NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient" data-uid="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient" class="text-break">
+Interface IOmieApiClient  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><span class="xref">NuvTools</span>.<a class="xref" href="NuvTools.Payment.html">Payment</a>.<span class="xref">Omie</span>.<a class="xref" href="NuvTools.Payment.Omie.ApiClient.html">ApiClient</a>.<a class="xref" href="NuvTools.Payment.Omie.ApiClient.Contracts.html">Contracts</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NuvTools.Payment.Omie.ApiClient.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Interface for communication with the Omie ERP API.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IOmieApiClient</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_ChangeOSAsync_" data-uid="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ChangeOSAsync*"></a>
+
+  <h3 id="NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_ChangeOSAsync_NuvTools_Payment_Omie_ApiClient_DTOs_Requests_IncludeOSParam_System_Threading_CancellationToken_" data-uid="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ChangeOSAsync(NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeOSParam,System.Threading.CancellationToken)">
+  ChangeOSAsync(IncludeOSParam, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Updates an existing Service Order (AlterarOS). Send the full item list — Omie replaces the OS items.
+The header must carry <a class="xref" href="NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeOSHeader.html#NuvTools_Payment_Omie_ApiClient_DTOs_Requests_IncludeOSHeader_OsCode">OsCode</a> (nCodOS) or cCodIntOS.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IResult&lt;IncludeOSResponse&gt;&gt; ChangeOSAsync(IncludeOSParam param, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>param</code> <a class="xref" href="NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeOSParam.html">IncludeOSParam</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../foundation/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;<a class="xref" href="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IncludeOSResponse.html">IncludeOSResponse</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_ChangeOSStageAsync_" data-uid="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ChangeOSStageAsync*"></a>
+
+  <h3 id="NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_ChangeOSStageAsync_NuvTools_Payment_Omie_ApiClient_DTOs_Requests_ChangeOSStageParam_System_Threading_CancellationToken_" data-uid="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ChangeOSStageAsync(NuvTools.Payment.Omie.ApiClient.DTOs.Requests.ChangeOSStageParam,System.Threading.CancellationToken)">
+  ChangeOSStageAsync(ChangeOSStageParam, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Moves a Service Order to another Kanban stage (TrocarEtapaOS). Feature-flag the &quot;billing&quot; stage.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IResult&lt;ChangeOSStageResponse&gt;&gt; ChangeOSStageAsync(ChangeOSStageParam param, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>param</code> <a class="xref" href="NuvTools.Payment.Omie.ApiClient.DTOs.Requests.ChangeOSStageParam.html">ChangeOSStageParam</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../foundation/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;<a class="xref" href="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ChangeOSStageResponse.html">ChangeOSStageResponse</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_ConsultClientAsync_" data-uid="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultClientAsync*"></a>
+
+  <h3 id="NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_ConsultClientAsync_System_Int64_System_Threading_CancellationToken_" data-uid="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultClientAsync(System.Int64,System.Threading.CancellationToken)">
+  ConsultClientAsync(long, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Checks whether a client exists in Omie by its code.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IResult&lt;bool&gt;&gt; ConsultClientAsync(long omieClientCode, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>omieClientCode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../foundation/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_ConsultContractAsync_" data-uid="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultContractAsync*"></a>
+
+  <h3 id="NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_ConsultContractAsync_System_Int64_System_Threading_CancellationToken_" data-uid="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultContractAsync(System.Int64,System.Threading.CancellationToken)">
+  ConsultContractAsync(long, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reads a Service Contract (ConsultarContrato) to obtain the negotiated unit price per service item.
+The contract is a price registry only — it must never be billed through.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IResult&lt;ConsultContractResponse&gt;&gt; ConsultContractAsync(long omieContractCode, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>omieContractCode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../foundation/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;<a class="xref" href="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ConsultContractResponse.html">ConsultContractResponse</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_ConsultOSAsync_" data-uid="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultOSAsync*"></a>
+
+  <h3 id="NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_ConsultOSAsync_System_Nullable_System_Int64__System_String_System_Threading_CancellationToken_" data-uid="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultOSAsync(System.Nullable{System.Int64},System.String,System.Threading.CancellationToken)">
+  ConsultOSAsync(long?, string?, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reads the current state/stage of a Service Order (ConsultarOS). Provide exactly one identifier.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IResult&lt;ConsultOSResponse&gt;&gt; ConsultOSAsync(long? nCodOS = null, string? cCodIntOS = null, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>nCodOS</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a>?</dt>
+    <dd></dd>
+    <dt><code>cCodIntOS</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../foundation/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;<a class="xref" href="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ConsultOSResponse.html">ConsultOSResponse</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_ConsultServiceRegistrationAsync_" data-uid="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultServiceRegistrationAsync*"></a>
+
+  <h3 id="NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_ConsultServiceRegistrationAsync_System_Int64_System_Threading_CancellationToken_" data-uid="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultServiceRegistrationAsync(System.Int64,System.Threading.CancellationToken)">
+  ConsultServiceRegistrationAsync(long, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Retrieves the registration data of a service in Omie.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IResult&lt;ConsultServiceRegistrationResponse&gt;&gt; ConsultServiceRegistrationAsync(long omieServiceCode, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>omieServiceCode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../foundation/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;<a class="xref" href="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ConsultServiceRegistrationResponse.html">ConsultServiceRegistrationResponse</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_GenerateBilletAsync_" data-uid="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.GenerateBilletAsync*"></a>
+
+  <h3 id="NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_GenerateBilletAsync_System_Nullable_System_Int64__System_String_System_Threading_CancellationToken_" data-uid="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.GenerateBilletAsync(System.Nullable{System.Int64},System.String,System.Threading.CancellationToken)">
+  GenerateBilletAsync(long?, string?, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Generates the billet of an existing Accounts Receivable entry in Omie.
+At least one of the two identifiers must be provided.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IResult&lt;GenerateBilletResponse&gt;&gt; GenerateBilletAsync(long? nCodTitulo = null, string? cCodIntTitulo = null, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>nCodTitulo</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a>?</dt>
+    <dd></dd>
+    <dt><code>cCodIntTitulo</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../foundation/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;<a class="xref" href="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GenerateBilletResponse.html">GenerateBilletResponse</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_GetBilletAsync_" data-uid="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.GetBilletAsync*"></a>
+
+  <h3 id="NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_GetBilletAsync_System_Nullable_System_Int64__System_String_System_Threading_CancellationToken_" data-uid="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.GetBilletAsync(System.Nullable{System.Int64},System.String,System.Threading.CancellationToken)">
+  GetBilletAsync(long?, string?, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Retrieves the billet link/details for an existing Accounts Receivable entry in Omie.
+Use after GenerateBillet to fetch the actual download URL, barcode, etc.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IResult&lt;GetBilletResponse&gt;&gt; GetBilletAsync(long? nCodTitulo = null, string? cCodIntTitulo = null, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>nCodTitulo</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a>?</dt>
+    <dd></dd>
+    <dt><code>cCodIntTitulo</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../foundation/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;<a class="xref" href="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.html">GetBilletResponse</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_IncludeOSAsync_" data-uid="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.IncludeOSAsync*"></a>
+
+  <h3 id="NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_IncludeOSAsync_NuvTools_Payment_Omie_ApiClient_DTOs_Requests_IncludeOSParam_System_Threading_CancellationToken_" data-uid="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.IncludeOSAsync(NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeOSParam,System.Threading.CancellationToken)">
+  IncludeOSAsync(IncludeOSParam, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Includes a Service Order (OS) in Omie.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IResult&lt;IncludeOSResponse&gt;&gt; IncludeOSAsync(IncludeOSParam param, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>param</code> <a class="xref" href="NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeOSParam.html">IncludeOSParam</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../foundation/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;<a class="xref" href="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IncludeOSResponse.html">IncludeOSResponse</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_IncludeReceivableAsync_" data-uid="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.IncludeReceivableAsync*"></a>
+
+  <h3 id="NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_IncludeReceivableAsync_NuvTools_Payment_Omie_ApiClient_DTOs_Requests_IncludeReceivableParam_System_Threading_CancellationToken_" data-uid="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.IncludeReceivableAsync(NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeReceivableParam,System.Threading.CancellationToken)">
+  IncludeReceivableAsync(IncludeReceivableParam, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Includes an Accounts Receivable entry in Omie.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IResult&lt;IncludeReceivableResponse&gt;&gt; IncludeReceivableAsync(IncludeReceivableParam param, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>param</code> <a class="xref" href="NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeReceivableParam.html">IncludeReceivableParam</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../foundation/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;<a class="xref" href="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IncludeReceivableResponse.html">IncludeReceivableResponse</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_ListBillingStagesAsync_" data-uid="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListBillingStagesAsync*"></a>
+
+  <h3 id="NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_ListBillingStagesAsync_System_Threading_CancellationToken_" data-uid="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListBillingStagesAsync(System.Threading.CancellationToken)">
+  ListBillingStagesAsync(CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Lists the OS Kanban stage catalog (ListarEtapasFaturamento) to discover stage codes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IResult&lt;ListBillingStagesResponse&gt;&gt; ListBillingStagesAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../foundation/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;<a class="xref" href="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListBillingStagesResponse.html">ListBillingStagesResponse</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_ListCategoryRegistrationAsync_" data-uid="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListCategoryRegistrationAsync*"></a>
+
+  <h3 id="NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_ListCategoryRegistrationAsync_System_Int32_System_Int32_System_String_System_Threading_CancellationToken_" data-uid="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListCategoryRegistrationAsync(System.Int32,System.Int32,System.String,System.Threading.CancellationToken)">
+  ListCategoryRegistrationAsync(int, int, string, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Lists registered categories (ListarCategorias) to resolve a service's cCodCateg to its category name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IResult&lt;ListCategoryRegistrationResponse&gt;&gt; ListCategoryRegistrationAsync(int page = 1, int recordsPerPage = 1000, string description = &quot;&quot;, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>page</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>recordsPerPage</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>description</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../foundation/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;<a class="xref" href="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListCategoryRegistrationResponse.html">ListCategoryRegistrationResponse</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_ListContractsAsync_" data-uid="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListContractsAsync*"></a>
+
+  <h3 id="NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_ListContractsAsync_System_Int32_System_Int32_System_Threading_CancellationToken_" data-uid="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListContractsAsync(System.Int32,System.Int32,System.Threading.CancellationToken)">
+  ListContractsAsync(int, int, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Lists Service Contracts (ListarContratos) so a contract can be resolved by the number the user knows
+(cNumCtr) — Omie offers no search by contract number. List once and index in memory: consulting contract by
+contract is what trips Omie's &quot;Consumo redundante&quot; gate.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IResult&lt;ListContractsResponse&gt;&gt; ListContractsAsync(int page = 1, int recordsPerPage = 100, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>page</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>recordsPerPage</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../foundation/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;<a class="xref" href="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.html">ListContractsResponse</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_ListServiceRegistrationAsync_" data-uid="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListServiceRegistrationAsync*"></a>
+
+  <h3 id="NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_ListServiceRegistrationAsync_System_Int32_System_Int32_System_Threading_CancellationToken_" data-uid="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListServiceRegistrationAsync(System.Int32,System.Int32,System.Threading.CancellationToken)">
+  ListServiceRegistrationAsync(int, int, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Lists registered services (ListarCadastroServico) to resolve/validate a nCodServico.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IResult&lt;ListServiceRegistrationResponse&gt;&gt; ListServiceRegistrationAsync(int page = 1, int recordsPerPage = 50, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>page</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>recordsPerPage</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../foundation/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;<a class="xref" href="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListServiceRegistrationResponse.html">ListServiceRegistrationResponse</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>© Nuv Tools · <a href="https://nuvtools.com/framework/">nuvtools.com</a> · MIT licence · Built with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

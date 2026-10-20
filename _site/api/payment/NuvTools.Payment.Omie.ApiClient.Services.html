@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Namespace NuvTools.Payment.Omie.ApiClient.Services | Nuv Tools Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Namespace NuvTools.Payment.Omie.ApiClient.Services | Nuv Tools Framework ">
+      
+      
+      <link rel="icon" href="../../images/icon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/nuvtools-brand.svg" alt="Framework">
+            Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="NuvTools.Payment.Omie.ApiClient.Services">
+
+  <h1 id="NuvTools_Payment_Omie_ApiClient_Services" data-uid="NuvTools.Payment.Omie.ApiClient.Services" class="text-break">Namespace NuvTools.Payment.Omie.ApiClient.Services</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+
+    <h3 id="classes">
+Classes
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="NuvTools.Payment.Omie.ApiClient.Services.OmieApiClient.html">OmieApiClient</a></dt>
+      <dd><p>Default implementation of the Omie ERP API client.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="NuvTools.Payment.Omie.ApiClient.Services.OmieCategoryProvider.html">OmieCategoryProvider</a></dt>
+      <dd><p>Resolves the category (<code>cCodCateg</code>) a service order carries in Omie. Omie requires the category on
+inclusion and every account has its own chart of accounts — which is why it is discovered in the registration
+instead of hardcoded: the categories are listed and the first of the configured preferences is picked by name.</p>
+<p>
+Only accounts that can take a <b>revenue</b> entry are considered: <code>conta_receita = "S"</code>, active, not a
+totalizer (totalizers are just groupings of the chart of accounts) and not a transfer account. Filtering by name
+alone could land on an expense account with a similar name.
+</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="NuvTools.Payment.Omie.ApiClient.Services.OmieCheckingAccountProvider.html">OmieCheckingAccountProvider</a></dt>
+      <dd><p>Omie checking accounts (<code>geral/contacorrente/</code>) — the list an application offers so the user can pick where
+the receivable of a service order lands (<code>nCodCC</code>, required on inclusion).</p>
+<p>
+Blocked accounts are left out: Omie lists them but does not accept entries on them.
+</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="NuvTools.Payment.Omie.ApiClient.Services.OmieClientDirectoryProvider.html">OmieClientDirectoryProvider</a></dt>
+      <dd><p>Omie client registration indexed by document (CNPJ/CPF) — the way to discover the client code
+(<code>codigo_cliente_omie</code>), and the only one: Omie does not look a client up by document, and the typed client
+(<code>IOmieApiClient</code>) only consults by the very code one is trying to discover. The whole registration is
+listed (<code>ListarClientes</code>, paginated) and searched by document.</p>
+<p>
+The document is compared by digits only: in Omie it usually comes formatted ("12.345.678/0001-99") while
+applications tend to store it clean — comparing as text would find nobody.
+</p>
+<p>
+The listing is expensive, so it is cached for <span class="xref">NuvTools.Payment.Omie.ApiClient.Services.OmieClientDirectoryProvider.CacheDuration</span>. A client just registered in Omie may,
+for that long, still not be found.
+</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="NuvTools.Payment.Omie.ApiClient.Services.OmieContractProvider.html">OmieContractProvider</a></dt>
+      <dd><p>Omie Service Contracts, read whole (<code>ListarContratos</code>, paginated) and indexed by the contract number
+(<code>cNumCtr</code>) — the number a caller's own configuration stores, because it is what the user reads in Omie.
+A contract is a price registry: it carries the negotiated value and the validity period of one client, and is
+never billed through.</p>
+<p>
+Listed whole and cached for <span class="xref">NuvTools.Payment.Omie.ApiClient.Services.OmieContractProvider.CacheDuration</span>, never consulted one by one. A screen that shows contracts
+in a grid would otherwise ask Omie once per row, and Omie answers a burst of repeated calls with
+"Consumo redundante detectado" — which blocks the app_key for every other integration, not just the grid.
+</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="NuvTools.Payment.Omie.ApiClient.Services.OmieDirectApiClient.html">OmieDirectApiClient</a></dt>
+      <dd><p>Raw call to the Omie API, for the registrations <a class="xref" href="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.html">IOmieApiClient</a> does not cover or covers
+without the fields a caller needs. It concentrates three details that any new call would otherwise repeat:</p>
+<ol><li>the <code>Content-Type</code> goes <b>without</b> the <code>charset</code> parameter — with it, the Omie gateway
+answers a SOAP "Bad Request" envelope (and that is exactly what <code>PostAsJsonAsync</code>/<code>JsonContent</code> would
+send);</li><li>business errors come in the body (<code>faultstring</code>) alongside an HTTP 5xx — without reading it, the
+failure turns into an "InternalServerError" that says nothing;</li><li>consumption refusals (<code>REDUNDANT</code>, <code>MISUSE_API_PROCESS</code>) are not request errors and get their own
+treatment (see <a class="xref" href="NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.html#NuvTools_Payment_Omie_ApiClient_OmieFaultClassifier_IsThrottled_System_String_">IsThrottled(string?)</a>).</li></ol>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.html">OmieServiceCatalogProvider</a></dt>
+      <dd><p>Omie service catalog, read whole (<code>ListarCadastroServico</code>, paginated) and indexed by the business code
+(<code>cCodigo</code>) — the code applications store in their own configuration. This is how the <code>nCodServico</code>,
+the description and the unit price of a service are discovered: Omie exposes no search by <code>cCodigo</code>, so the
+catalog is listed and searched in memory.</p>
+<p>
+The result is cached for <span class="xref">NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.CacheDuration</span> because Omie refuses repeated <code>ListarCadastroServico</code>
+calls in a short window ("Consumo redundante detectado") — without the cache, opening a screen and generating a
+service order right after would drop the second call.
+</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="NuvTools.Payment.Omie.ApiClient.Services.OmieServiceOrderBillingProvider.html">OmieServiceOrderBillingProvider</a></dt>
+      <dd><p>Invoicing of a single service order in Omie — the documented path to issue the NFS-e of one OS, which
+<a class="xref" href="NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.html">IOmieApiClient</a> does not cover and therefore goes through the direct client:</p>
+<ol><li><code>StatusOS</code> (<code>servicos/os/</code>): fiscal state of the order — stage, whether it was cancelled,
+whether it was already invoiced and the NFS-e that came out of it. It is the query that says whether there is
+anything to do, and the one that confirms the result afterwards.</li><li><code>ValidarOS</code> (<code>servicos/osp/</code>): Omie's validation before invoicing. It is what points out, in the
+API's own words, which required data is missing on the order or on the client registration — instead of finding
+out through the city hall's rejection, after the invoice was already requested.</li><li><code>FaturarOS</code> (<code>servicos/osp/</code>): invoices that order. The equivalent of "Faturar Selecionada" in
+the Omie UI — not to be confused with <code>FaturarLoteOS</code> (<code>servicos/oslote/</code>), which invoices <b>every</b>
+order of a stage and, triggered for one client, would take the others along.</li></ol>
+<p>
+None of them invents data: the invoice content is the order's. What is decided here is only <i>when</i> to ask
+for the invoice.
+</p>
+</dd>
+    </dl>
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>© Nuv Tools · <a href="https://nuvtools.com/framework/">nuvtools.com</a> · MIT licence · Built with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

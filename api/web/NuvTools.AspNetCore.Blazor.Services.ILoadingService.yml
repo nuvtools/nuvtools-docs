@@ -1,0 +1,368 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.AspNetCore.Blazor.Services.ILoadingService
+  commentId: T:NuvTools.AspNetCore.Blazor.Services.ILoadingService
+  id: ILoadingService
+  parent: NuvTools.AspNetCore.Blazor.Services
+  children:
+  - NuvTools.AspNetCore.Blazor.Services.ILoadingService.Hide
+  - NuvTools.AspNetCore.Blazor.Services.ILoadingService.IsLoading
+  - NuvTools.AspNetCore.Blazor.Services.ILoadingService.OnChange
+  - NuvTools.AspNetCore.Blazor.Services.ILoadingService.RunAsync(System.Func{System.Threading.Tasks.Task})
+  - NuvTools.AspNetCore.Blazor.Services.ILoadingService.Show
+  langs:
+  - csharp
+  - vb
+  name: ILoadingService
+  nameWithType: ILoadingService
+  fullName: NuvTools.AspNetCore.Blazor.Services.ILoadingService
+  type: Interface
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Services
+  summary: Provides a service for managing loading indicator state.
+  remarks: >-
+    <p>
+
+    Use this service to coordinate loading overlays across components.
+
+    Register as scoped in DI and inject where needed.
+
+    </p>
+
+    <example>
+
+
+    <pre><code class="lang-csharp">@inject ILoadingService LoadingService
+
+
+    &lt;div class="loading-overlay" style="display: @(LoadingService.IsLoading ? "block" : "none")"&gt;
+        Loading...
+    &lt;/div&gt;
+
+
+    @code {
+        protected override void OnInitialized()
+        {
+            LoadingService.OnChange += StateHasChanged;
+        }
+
+        public void Dispose()
+        {
+            LoadingService.OnChange -= StateHasChanged;
+        }
+    }</code></pre>
+
+
+    </example>
+  example: []
+  syntax:
+    content: public interface ILoadingService
+    content.vb: Public Interface ILoadingService
+  derivedClasses:
+  - NuvTools.AspNetCore.Blazor.Services.LoadingService
+- uid: NuvTools.AspNetCore.Blazor.Services.ILoadingService.IsLoading
+  commentId: P:NuvTools.AspNetCore.Blazor.Services.ILoadingService.IsLoading
+  id: IsLoading
+  parent: NuvTools.AspNetCore.Blazor.Services.ILoadingService
+  langs:
+  - csharp
+  - vb
+  name: IsLoading
+  nameWithType: ILoadingService.IsLoading
+  fullName: NuvTools.AspNetCore.Blazor.Services.ILoadingService.IsLoading
+  type: Property
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Services
+  summary: Gets a value indicating whether the loading indicator should be shown.
+  example: []
+  syntax:
+    content: bool IsLoading { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: ReadOnly Property IsLoading As Boolean
+  overload: NuvTools.AspNetCore.Blazor.Services.ILoadingService.IsLoading*
+- uid: NuvTools.AspNetCore.Blazor.Services.ILoadingService.Show
+  commentId: M:NuvTools.AspNetCore.Blazor.Services.ILoadingService.Show
+  id: Show
+  parent: NuvTools.AspNetCore.Blazor.Services.ILoadingService
+  langs:
+  - csharp
+  - vb
+  name: Show()
+  nameWithType: ILoadingService.Show()
+  fullName: NuvTools.AspNetCore.Blazor.Services.ILoadingService.Show()
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Services
+  summary: Shows the loading indicator.
+  example: []
+  syntax:
+    content: void Show()
+    content.vb: Sub Show()
+  overload: NuvTools.AspNetCore.Blazor.Services.ILoadingService.Show*
+- uid: NuvTools.AspNetCore.Blazor.Services.ILoadingService.Hide
+  commentId: M:NuvTools.AspNetCore.Blazor.Services.ILoadingService.Hide
+  id: Hide
+  parent: NuvTools.AspNetCore.Blazor.Services.ILoadingService
+  langs:
+  - csharp
+  - vb
+  name: Hide()
+  nameWithType: ILoadingService.Hide()
+  fullName: NuvTools.AspNetCore.Blazor.Services.ILoadingService.Hide()
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Services
+  summary: Hides the loading indicator.
+  example: []
+  syntax:
+    content: void Hide()
+    content.vb: Sub Hide()
+  overload: NuvTools.AspNetCore.Blazor.Services.ILoadingService.Hide*
+- uid: NuvTools.AspNetCore.Blazor.Services.ILoadingService.RunAsync(System.Func{System.Threading.Tasks.Task})
+  commentId: M:NuvTools.AspNetCore.Blazor.Services.ILoadingService.RunAsync(System.Func{System.Threading.Tasks.Task})
+  id: RunAsync(System.Func{System.Threading.Tasks.Task})
+  parent: NuvTools.AspNetCore.Blazor.Services.ILoadingService
+  langs:
+  - csharp
+  - vb
+  name: RunAsync(Func<Task>)
+  nameWithType: ILoadingService.RunAsync(Func<Task>)
+  fullName: NuvTools.AspNetCore.Blazor.Services.ILoadingService.RunAsync(System.Func<System.Threading.Tasks.Task>)
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Services
+  summary: >-
+    Executes an async operation while showing the loading indicator.
+
+    Automatically hides the indicator when complete, even if an exception occurs.
+  example: []
+  syntax:
+    content: Task RunAsync(Func<Task> work)
+    parameters:
+    - id: work
+      type: System.Func{System.Threading.Tasks.Task}
+      description: The async operation to execute.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task representing the async operation.
+    content.vb: Function RunAsync(work As Func(Of Task)) As Task
+  overload: NuvTools.AspNetCore.Blazor.Services.ILoadingService.RunAsync*
+  nameWithType.vb: ILoadingService.RunAsync(Func(Of Task))
+  fullName.vb: NuvTools.AspNetCore.Blazor.Services.ILoadingService.RunAsync(System.Func(Of System.Threading.Tasks.Task))
+  name.vb: RunAsync(Func(Of Task))
+- uid: NuvTools.AspNetCore.Blazor.Services.ILoadingService.OnChange
+  commentId: E:NuvTools.AspNetCore.Blazor.Services.ILoadingService.OnChange
+  id: OnChange
+  parent: NuvTools.AspNetCore.Blazor.Services.ILoadingService
+  langs:
+  - csharp
+  - vb
+  name: OnChange
+  nameWithType: ILoadingService.OnChange
+  fullName: NuvTools.AspNetCore.Blazor.Services.ILoadingService.OnChange
+  type: Event
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.Services
+  summary: Occurs when the loading state changes.
+  example: []
+  syntax:
+    content: event Action? OnChange
+    return:
+      type: System.Action
+    content.vb: Event OnChange As Action
+references:
+- uid: NuvTools.AspNetCore.Blazor.Services
+  commentId: N:NuvTools.AspNetCore.Blazor.Services
+  name: NuvTools.AspNetCore.Blazor.Services
+  nameWithType: NuvTools.AspNetCore.Blazor.Services
+  fullName: NuvTools.AspNetCore.Blazor.Services
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.AspNetCore
+    name: AspNetCore
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor
+    name: Blazor
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor.Services
+    name: Services
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.AspNetCore
+    name: AspNetCore
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor
+    name: Blazor
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor.Services
+    name: Services
+- uid: NuvTools.AspNetCore.Blazor.Services.ILoadingService.IsLoading*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.Services.ILoadingService.IsLoading
+  href: NuvTools.AspNetCore.Blazor.Services.ILoadingService.html#NuvTools_AspNetCore_Blazor_Services_ILoadingService_IsLoading
+  name: IsLoading
+  nameWithType: ILoadingService.IsLoading
+  fullName: NuvTools.AspNetCore.Blazor.Services.ILoadingService.IsLoading
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NuvTools.AspNetCore.Blazor.Services.ILoadingService.Show*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.Services.ILoadingService.Show
+  href: NuvTools.AspNetCore.Blazor.Services.ILoadingService.html#NuvTools_AspNetCore_Blazor_Services_ILoadingService_Show
+  name: Show
+  nameWithType: ILoadingService.Show
+  fullName: NuvTools.AspNetCore.Blazor.Services.ILoadingService.Show
+- uid: NuvTools.AspNetCore.Blazor.Services.ILoadingService.Hide*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.Services.ILoadingService.Hide
+  href: NuvTools.AspNetCore.Blazor.Services.ILoadingService.html#NuvTools_AspNetCore_Blazor_Services_ILoadingService_Hide
+  name: Hide
+  nameWithType: ILoadingService.Hide
+  fullName: NuvTools.AspNetCore.Blazor.Services.ILoadingService.Hide
+- uid: NuvTools.AspNetCore.Blazor.Services.ILoadingService.RunAsync*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.Services.ILoadingService.RunAsync
+  href: NuvTools.AspNetCore.Blazor.Services.ILoadingService.html#NuvTools_AspNetCore_Blazor_Services_ILoadingService_RunAsync_System_Func_System_Threading_Tasks_Task__
+  name: RunAsync
+  nameWithType: ILoadingService.RunAsync
+  fullName: NuvTools.AspNetCore.Blazor.Services.ILoadingService.RunAsync
+- uid: System.Func{System.Threading.Tasks.Task}
+  commentId: T:System.Func{System.Threading.Tasks.Task}
+  parent: System
+  definition: System.Func`1
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<Task>
+  nameWithType: Func<Task>
+  fullName: System.Func<System.Threading.Tasks.Task>
+  nameWithType.vb: Func(Of Task)
+  fullName.vb: System.Func(Of System.Threading.Tasks.Task)
+  name.vb: Func(Of Task)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  - name: )
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Func`1
+  commentId: T:System.Func`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action
+  name: Action
+  nameWithType: Action
+  fullName: System.Action

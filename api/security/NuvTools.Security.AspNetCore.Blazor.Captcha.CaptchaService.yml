@@ -1,0 +1,1056 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService
+  commentId: T:NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService
+  id: CaptchaService
+  parent: NuvTools.Security.AspNetCore.Blazor.Captcha
+  children:
+  - NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.#ctor(Microsoft.JSInterop.IJSRuntime)
+  - NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.DisposeAsync
+  - NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.DisposeCheckboxAsync(System.String,System.Threading.CancellationToken)
+  - NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.ExecuteAsync(System.String,System.String,System.Threading.CancellationToken)
+  - NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.GetCheckboxResponseAsync(System.String,System.Threading.CancellationToken)
+  - NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.RenderCheckboxAsync(System.String,System.String,System.String,System.Threading.CancellationToken)
+  - NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.ResetCheckboxAsync(System.String,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: CaptchaService
+  nameWithType: CaptchaService
+  fullName: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService
+  type: Class
+  assemblies:
+  - NuvTools.Security.AspNetCore.Blazor
+  namespace: NuvTools.Security.AspNetCore.Blazor.Captcha
+  summary: Provides JavaScript interop for the adaptive CAPTCHA (Google reCAPTCHA Enterprise).
+  remarks: Initializes a new instance of the <xref href="NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService" data-throw-if-not-resolved="false"></xref> class.
+  example: []
+  syntax:
+    content: 'public sealed class CaptchaService : ICaptchaService, IAsyncDisposable'
+    content.vb: Public NotInheritable Class CaptchaService Implements ICaptchaService, IAsyncDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService
+  - System.IAsyncDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.#ctor(Microsoft.JSInterop.IJSRuntime)
+  commentId: M:NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.#ctor(Microsoft.JSInterop.IJSRuntime)
+  id: '#ctor(Microsoft.JSInterop.IJSRuntime)'
+  parent: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService
+  langs:
+  - csharp
+  - vb
+  name: CaptchaService(IJSRuntime)
+  nameWithType: CaptchaService.CaptchaService(IJSRuntime)
+  fullName: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.CaptchaService(Microsoft.JSInterop.IJSRuntime)
+  type: Constructor
+  assemblies:
+  - NuvTools.Security.AspNetCore.Blazor
+  namespace: NuvTools.Security.AspNetCore.Blazor.Captcha
+  summary: Provides JavaScript interop for the adaptive CAPTCHA (Google reCAPTCHA Enterprise).
+  remarks: Initializes a new instance of the <xref href="NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService" data-throw-if-not-resolved="false"></xref> class.
+  example: []
+  syntax:
+    content: public CaptchaService(IJSRuntime jsRuntime)
+    parameters:
+    - id: jsRuntime
+      type: Microsoft.JSInterop.IJSRuntime
+      description: The JavaScript runtime for interop operations.
+    content.vb: Public Sub New(jsRuntime As IJSRuntime)
+  overload: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.#ctor*
+  nameWithType.vb: CaptchaService.New(IJSRuntime)
+  fullName.vb: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.New(Microsoft.JSInterop.IJSRuntime)
+  name.vb: New(IJSRuntime)
+- uid: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.ExecuteAsync(System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.ExecuteAsync(System.String,System.String,System.Threading.CancellationToken)
+  id: ExecuteAsync(System.String,System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService
+  langs:
+  - csharp
+  - vb
+  name: ExecuteAsync(string, string, CancellationToken)
+  nameWithType: CaptchaService.ExecuteAsync(string, string, CancellationToken)
+  fullName: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.ExecuteAsync(string, string, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Security.AspNetCore.Blazor
+  namespace: NuvTools.Security.AspNetCore.Blazor.Captcha
+  summary: Produces an invisible (score) token. Nothing is shown to the user.
+  example: []
+  syntax:
+    content: public ValueTask<string?> ExecuteAsync(string scoreKey, string action = "submit", CancellationToken cancellationToken = default)
+    parameters:
+    - id: scoreKey
+      type: System.String
+      description: Site key of the score type.
+    - id: action
+      type: System.String
+      description: Action name recorded on the assessment. Defaults to <code>submit</code>.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Token to cancel the operation.
+    return:
+      type: System.Threading.Tasks.ValueTask{System.String}
+      description: The token, or an empty string when the provider is unavailable.
+    content.vb: Public Function ExecuteAsync(scoreKey As String, action As String = "submit", cancellationToken As CancellationToken = Nothing) As ValueTask(Of String)
+  overload: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.ExecuteAsync*
+  implements:
+  - NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.ExecuteAsync(System.String,System.String,System.Threading.CancellationToken)
+  nameWithType.vb: CaptchaService.ExecuteAsync(String, String, CancellationToken)
+  fullName.vb: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.ExecuteAsync(String, String, System.Threading.CancellationToken)
+  name.vb: ExecuteAsync(String, String, CancellationToken)
+- uid: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.RenderCheckboxAsync(System.String,System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.RenderCheckboxAsync(System.String,System.String,System.String,System.Threading.CancellationToken)
+  id: RenderCheckboxAsync(System.String,System.String,System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService
+  langs:
+  - csharp
+  - vb
+  name: RenderCheckboxAsync(string, string, string, CancellationToken)
+  nameWithType: CaptchaService.RenderCheckboxAsync(string, string, string, CancellationToken)
+  fullName: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.RenderCheckboxAsync(string, string, string, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Security.AspNetCore.Blazor
+  namespace: NuvTools.Security.AspNetCore.Blazor.Captcha
+  summary: Renders the "I'm not a robot" checkbox into the given element, as the step-up challenge.
+  example: []
+  syntax:
+    content: public ValueTask RenderCheckboxAsync(string elementId, string checkboxKey, string scoreKey, CancellationToken cancellationToken = default)
+    parameters:
+    - id: elementId
+      type: System.String
+      description: Id of the element that hosts the widget.
+    - id: checkboxKey
+      type: System.String
+      description: Site key of the checkbox type.
+    - id: scoreKey
+      type: System.String
+      description: Site key of the score type, used to load the provider script.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Token to cancel the operation.
+    return:
+      type: System.Threading.Tasks.ValueTask
+    content.vb: Public Function RenderCheckboxAsync(elementId As String, checkboxKey As String, scoreKey As String, cancellationToken As CancellationToken = Nothing) As ValueTask
+  overload: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.RenderCheckboxAsync*
+  implements:
+  - NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.RenderCheckboxAsync(System.String,System.String,System.String,System.Threading.CancellationToken)
+  nameWithType.vb: CaptchaService.RenderCheckboxAsync(String, String, String, CancellationToken)
+  fullName.vb: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.RenderCheckboxAsync(String, String, String, System.Threading.CancellationToken)
+  name.vb: RenderCheckboxAsync(String, String, String, CancellationToken)
+- uid: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.GetCheckboxResponseAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.GetCheckboxResponseAsync(System.String,System.Threading.CancellationToken)
+  id: GetCheckboxResponseAsync(System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService
+  langs:
+  - csharp
+  - vb
+  name: GetCheckboxResponseAsync(string, CancellationToken)
+  nameWithType: CaptchaService.GetCheckboxResponseAsync(string, CancellationToken)
+  fullName: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.GetCheckboxResponseAsync(string, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Security.AspNetCore.Blazor
+  namespace: NuvTools.Security.AspNetCore.Blazor.Captcha
+  summary: Reads the token produced by the checkbox widget.
+  example: []
+  syntax:
+    content: public ValueTask<string?> GetCheckboxResponseAsync(string elementId, CancellationToken cancellationToken = default)
+    parameters:
+    - id: elementId
+      type: System.String
+      description: Id of the element hosting the widget.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Token to cancel the operation.
+    return:
+      type: System.Threading.Tasks.ValueTask{System.String}
+      description: The token, or an empty string when the challenge was not solved.
+    content.vb: Public Function GetCheckboxResponseAsync(elementId As String, cancellationToken As CancellationToken = Nothing) As ValueTask(Of String)
+  overload: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.GetCheckboxResponseAsync*
+  implements:
+  - NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.GetCheckboxResponseAsync(System.String,System.Threading.CancellationToken)
+  nameWithType.vb: CaptchaService.GetCheckboxResponseAsync(String, CancellationToken)
+  fullName.vb: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.GetCheckboxResponseAsync(String, System.Threading.CancellationToken)
+  name.vb: GetCheckboxResponseAsync(String, CancellationToken)
+- uid: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.ResetCheckboxAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.ResetCheckboxAsync(System.String,System.Threading.CancellationToken)
+  id: ResetCheckboxAsync(System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService
+  langs:
+  - csharp
+  - vb
+  name: ResetCheckboxAsync(string, CancellationToken)
+  nameWithType: CaptchaService.ResetCheckboxAsync(string, CancellationToken)
+  fullName: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.ResetCheckboxAsync(string, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Security.AspNetCore.Blazor
+  namespace: NuvTools.Security.AspNetCore.Blazor.Captcha
+  summary: Clears the checkbox challenge so the user can try again — the token is single-use.
+  example: []
+  syntax:
+    content: public ValueTask ResetCheckboxAsync(string elementId, CancellationToken cancellationToken = default)
+    parameters:
+    - id: elementId
+      type: System.String
+      description: Id of the element hosting the widget.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Token to cancel the operation.
+    return:
+      type: System.Threading.Tasks.ValueTask
+    content.vb: Public Function ResetCheckboxAsync(elementId As String, cancellationToken As CancellationToken = Nothing) As ValueTask
+  overload: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.ResetCheckboxAsync*
+  implements:
+  - NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.ResetCheckboxAsync(System.String,System.Threading.CancellationToken)
+  nameWithType.vb: CaptchaService.ResetCheckboxAsync(String, CancellationToken)
+  fullName.vb: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.ResetCheckboxAsync(String, System.Threading.CancellationToken)
+  name.vb: ResetCheckboxAsync(String, CancellationToken)
+- uid: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.DisposeCheckboxAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.DisposeCheckboxAsync(System.String,System.Threading.CancellationToken)
+  id: DisposeCheckboxAsync(System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService
+  langs:
+  - csharp
+  - vb
+  name: DisposeCheckboxAsync(string, CancellationToken)
+  nameWithType: CaptchaService.DisposeCheckboxAsync(string, CancellationToken)
+  fullName: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.DisposeCheckboxAsync(string, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Security.AspNetCore.Blazor
+  namespace: NuvTools.Security.AspNetCore.Blazor.Captcha
+  summary: Releases the widget bookkeeping for the element. Call it when the host component is disposed.
+  example: []
+  syntax:
+    content: public ValueTask DisposeCheckboxAsync(string elementId, CancellationToken cancellationToken = default)
+    parameters:
+    - id: elementId
+      type: System.String
+      description: Id of the element hosting the widget.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Token to cancel the operation.
+    return:
+      type: System.Threading.Tasks.ValueTask
+    content.vb: Public Function DisposeCheckboxAsync(elementId As String, cancellationToken As CancellationToken = Nothing) As ValueTask
+  overload: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.DisposeCheckboxAsync*
+  implements:
+  - NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.DisposeCheckboxAsync(System.String,System.Threading.CancellationToken)
+  nameWithType.vb: CaptchaService.DisposeCheckboxAsync(String, CancellationToken)
+  fullName.vb: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.DisposeCheckboxAsync(String, System.Threading.CancellationToken)
+  name.vb: DisposeCheckboxAsync(String, CancellationToken)
+- uid: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.DisposeAsync
+  commentId: M:NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.DisposeAsync
+  id: DisposeAsync
+  parent: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService
+  langs:
+  - csharp
+  - vb
+  name: DisposeAsync()
+  nameWithType: CaptchaService.DisposeAsync()
+  fullName: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.DisposeAsync()
+  type: Method
+  assemblies:
+  - NuvTools.Security.AspNetCore.Blazor
+  namespace: NuvTools.Security.AspNetCore.Blazor.Captcha
+  summary: >-
+    Performs application-defined tasks associated with freeing, releasing, or
+
+    resetting unmanaged resources asynchronously.
+  example: []
+  syntax:
+    content: public ValueTask DisposeAsync()
+    return:
+      type: System.Threading.Tasks.ValueTask
+      description: A task that represents the asynchronous dispose operation.
+    content.vb: Public Function DisposeAsync() As ValueTask
+  overload: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.DisposeAsync*
+  implements:
+  - System.IAsyncDisposable.DisposeAsync
+references:
+- uid: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService
+  commentId: T:NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService
+  href: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.html
+  name: CaptchaService
+  nameWithType: CaptchaService
+  fullName: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService
+- uid: NuvTools.Security.AspNetCore.Blazor.Captcha
+  commentId: N:NuvTools.Security.AspNetCore.Blazor.Captcha
+  name: NuvTools.Security.AspNetCore.Blazor.Captcha
+  nameWithType: NuvTools.Security.AspNetCore.Blazor.Captcha
+  fullName: NuvTools.Security.AspNetCore.Blazor.Captcha
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.AspNetCore
+    name: AspNetCore
+  - name: .
+  - uid: NuvTools.Security.AspNetCore.Blazor
+    name: Blazor
+  - name: .
+  - uid: NuvTools.Security.AspNetCore.Blazor.Captcha
+    name: Captcha
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.AspNetCore
+    name: AspNetCore
+  - name: .
+  - uid: NuvTools.Security.AspNetCore.Blazor
+    name: Blazor
+  - name: .
+  - uid: NuvTools.Security.AspNetCore.Blazor.Captcha
+    name: Captcha
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService
+  commentId: T:NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService
+  parent: NuvTools.Security.AspNetCore.Blazor.Captcha
+  href: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.html
+  name: ICaptchaService
+  nameWithType: ICaptchaService
+  fullName: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService
+- uid: System.IAsyncDisposable
+  commentId: T:System.IAsyncDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable
+  name: IAsyncDisposable
+  nameWithType: IAsyncDisposable
+  fullName: System.IAsyncDisposable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.#ctor*
+  commentId: Overload:NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.#ctor
+  href: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.html#NuvTools_Security_AspNetCore_Blazor_Captcha_CaptchaService__ctor_Microsoft_JSInterop_IJSRuntime_
+  name: CaptchaService
+  nameWithType: CaptchaService.CaptchaService
+  fullName: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.CaptchaService
+  nameWithType.vb: CaptchaService.New
+  fullName.vb: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.New
+  name.vb: New
+- uid: Microsoft.JSInterop.IJSRuntime
+  commentId: T:Microsoft.JSInterop.IJSRuntime
+  parent: Microsoft.JSInterop
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.jsinterop.ijsruntime
+  name: IJSRuntime
+  nameWithType: IJSRuntime
+  fullName: Microsoft.JSInterop.IJSRuntime
+- uid: Microsoft.JSInterop
+  commentId: N:Microsoft.JSInterop
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.JSInterop
+  nameWithType: Microsoft.JSInterop
+  fullName: Microsoft.JSInterop
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.JSInterop
+    name: JSInterop
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.jsinterop
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.JSInterop
+    name: JSInterop
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.jsinterop
+- uid: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.ExecuteAsync*
+  commentId: Overload:NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.ExecuteAsync
+  href: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.html#NuvTools_Security_AspNetCore_Blazor_Captcha_CaptchaService_ExecuteAsync_System_String_System_String_System_Threading_CancellationToken_
+  name: ExecuteAsync
+  nameWithType: CaptchaService.ExecuteAsync
+  fullName: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.ExecuteAsync
+- uid: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.ExecuteAsync(System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.ExecuteAsync(System.String,System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService
+  isExternal: true
+  href: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.html#NuvTools_Security_AspNetCore_Blazor_Captcha_ICaptchaService_ExecuteAsync_System_String_System_String_System_Threading_CancellationToken_
+  name: ExecuteAsync(string, string, CancellationToken)
+  nameWithType: ICaptchaService.ExecuteAsync(string, string, CancellationToken)
+  fullName: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.ExecuteAsync(string, string, System.Threading.CancellationToken)
+  nameWithType.vb: ICaptchaService.ExecuteAsync(String, String, CancellationToken)
+  fullName.vb: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.ExecuteAsync(String, String, System.Threading.CancellationToken)
+  name.vb: ExecuteAsync(String, String, CancellationToken)
+  spec.csharp:
+  - uid: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.ExecuteAsync(System.String,System.String,System.Threading.CancellationToken)
+    name: ExecuteAsync
+    href: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.html#NuvTools_Security_AspNetCore_Blazor_Captcha_ICaptchaService_ExecuteAsync_System_String_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.ExecuteAsync(System.String,System.String,System.Threading.CancellationToken)
+    name: ExecuteAsync
+    href: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.html#NuvTools_Security_AspNetCore_Blazor_Captcha_ICaptchaService_ExecuteAsync_System_String_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.ValueTask{System.String}
+  commentId: T:System.Threading.Tasks.ValueTask{System.String}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.ValueTask`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  name: ValueTask<string>
+  nameWithType: ValueTask<string>
+  fullName: System.Threading.Tasks.ValueTask<string>
+  nameWithType.vb: ValueTask(Of String)
+  fullName.vb: System.Threading.Tasks.ValueTask(Of String)
+  name.vb: ValueTask(Of String)
+  spec.csharp:
+  - uid: System.Threading.Tasks.ValueTask`1
+    name: ValueTask
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.ValueTask`1
+    name: ValueTask
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.ValueTask`1
+  commentId: T:System.Threading.Tasks.ValueTask`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  name: ValueTask<TResult>
+  nameWithType: ValueTask<TResult>
+  fullName: System.Threading.Tasks.ValueTask<TResult>
+  nameWithType.vb: ValueTask(Of TResult)
+  fullName.vb: System.Threading.Tasks.ValueTask(Of TResult)
+  name.vb: ValueTask(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.ValueTask`1
+    name: ValueTask
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.ValueTask`1
+    name: ValueTask
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.RenderCheckboxAsync*
+  commentId: Overload:NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.RenderCheckboxAsync
+  href: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.html#NuvTools_Security_AspNetCore_Blazor_Captcha_CaptchaService_RenderCheckboxAsync_System_String_System_String_System_String_System_Threading_CancellationToken_
+  name: RenderCheckboxAsync
+  nameWithType: CaptchaService.RenderCheckboxAsync
+  fullName: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.RenderCheckboxAsync
+- uid: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.RenderCheckboxAsync(System.String,System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.RenderCheckboxAsync(System.String,System.String,System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService
+  isExternal: true
+  href: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.html#NuvTools_Security_AspNetCore_Blazor_Captcha_ICaptchaService_RenderCheckboxAsync_System_String_System_String_System_String_System_Threading_CancellationToken_
+  name: RenderCheckboxAsync(string, string, string, CancellationToken)
+  nameWithType: ICaptchaService.RenderCheckboxAsync(string, string, string, CancellationToken)
+  fullName: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.RenderCheckboxAsync(string, string, string, System.Threading.CancellationToken)
+  nameWithType.vb: ICaptchaService.RenderCheckboxAsync(String, String, String, CancellationToken)
+  fullName.vb: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.RenderCheckboxAsync(String, String, String, System.Threading.CancellationToken)
+  name.vb: RenderCheckboxAsync(String, String, String, CancellationToken)
+  spec.csharp:
+  - uid: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.RenderCheckboxAsync(System.String,System.String,System.String,System.Threading.CancellationToken)
+    name: RenderCheckboxAsync
+    href: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.html#NuvTools_Security_AspNetCore_Blazor_Captcha_ICaptchaService_RenderCheckboxAsync_System_String_System_String_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.RenderCheckboxAsync(System.String,System.String,System.String,System.Threading.CancellationToken)
+    name: RenderCheckboxAsync
+    href: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.html#NuvTools_Security_AspNetCore_Blazor_Captcha_ICaptchaService_RenderCheckboxAsync_System_String_System_String_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Threading.Tasks.ValueTask
+  commentId: T:System.Threading.Tasks.ValueTask
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask
+  name: ValueTask
+  nameWithType: ValueTask
+  fullName: System.Threading.Tasks.ValueTask
+- uid: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.GetCheckboxResponseAsync*
+  commentId: Overload:NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.GetCheckboxResponseAsync
+  href: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.html#NuvTools_Security_AspNetCore_Blazor_Captcha_CaptchaService_GetCheckboxResponseAsync_System_String_System_Threading_CancellationToken_
+  name: GetCheckboxResponseAsync
+  nameWithType: CaptchaService.GetCheckboxResponseAsync
+  fullName: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.GetCheckboxResponseAsync
+- uid: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.GetCheckboxResponseAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.GetCheckboxResponseAsync(System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService
+  isExternal: true
+  href: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.html#NuvTools_Security_AspNetCore_Blazor_Captcha_ICaptchaService_GetCheckboxResponseAsync_System_String_System_Threading_CancellationToken_
+  name: GetCheckboxResponseAsync(string, CancellationToken)
+  nameWithType: ICaptchaService.GetCheckboxResponseAsync(string, CancellationToken)
+  fullName: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.GetCheckboxResponseAsync(string, System.Threading.CancellationToken)
+  nameWithType.vb: ICaptchaService.GetCheckboxResponseAsync(String, CancellationToken)
+  fullName.vb: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.GetCheckboxResponseAsync(String, System.Threading.CancellationToken)
+  name.vb: GetCheckboxResponseAsync(String, CancellationToken)
+  spec.csharp:
+  - uid: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.GetCheckboxResponseAsync(System.String,System.Threading.CancellationToken)
+    name: GetCheckboxResponseAsync
+    href: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.html#NuvTools_Security_AspNetCore_Blazor_Captcha_ICaptchaService_GetCheckboxResponseAsync_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.GetCheckboxResponseAsync(System.String,System.Threading.CancellationToken)
+    name: GetCheckboxResponseAsync
+    href: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.html#NuvTools_Security_AspNetCore_Blazor_Captcha_ICaptchaService_GetCheckboxResponseAsync_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.ResetCheckboxAsync*
+  commentId: Overload:NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.ResetCheckboxAsync
+  href: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.html#NuvTools_Security_AspNetCore_Blazor_Captcha_CaptchaService_ResetCheckboxAsync_System_String_System_Threading_CancellationToken_
+  name: ResetCheckboxAsync
+  nameWithType: CaptchaService.ResetCheckboxAsync
+  fullName: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.ResetCheckboxAsync
+- uid: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.ResetCheckboxAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.ResetCheckboxAsync(System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService
+  isExternal: true
+  href: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.html#NuvTools_Security_AspNetCore_Blazor_Captcha_ICaptchaService_ResetCheckboxAsync_System_String_System_Threading_CancellationToken_
+  name: ResetCheckboxAsync(string, CancellationToken)
+  nameWithType: ICaptchaService.ResetCheckboxAsync(string, CancellationToken)
+  fullName: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.ResetCheckboxAsync(string, System.Threading.CancellationToken)
+  nameWithType.vb: ICaptchaService.ResetCheckboxAsync(String, CancellationToken)
+  fullName.vb: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.ResetCheckboxAsync(String, System.Threading.CancellationToken)
+  name.vb: ResetCheckboxAsync(String, CancellationToken)
+  spec.csharp:
+  - uid: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.ResetCheckboxAsync(System.String,System.Threading.CancellationToken)
+    name: ResetCheckboxAsync
+    href: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.html#NuvTools_Security_AspNetCore_Blazor_Captcha_ICaptchaService_ResetCheckboxAsync_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.ResetCheckboxAsync(System.String,System.Threading.CancellationToken)
+    name: ResetCheckboxAsync
+    href: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.html#NuvTools_Security_AspNetCore_Blazor_Captcha_ICaptchaService_ResetCheckboxAsync_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.DisposeCheckboxAsync*
+  commentId: Overload:NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.DisposeCheckboxAsync
+  href: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.html#NuvTools_Security_AspNetCore_Blazor_Captcha_CaptchaService_DisposeCheckboxAsync_System_String_System_Threading_CancellationToken_
+  name: DisposeCheckboxAsync
+  nameWithType: CaptchaService.DisposeCheckboxAsync
+  fullName: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.DisposeCheckboxAsync
+- uid: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.DisposeCheckboxAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.DisposeCheckboxAsync(System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService
+  isExternal: true
+  href: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.html#NuvTools_Security_AspNetCore_Blazor_Captcha_ICaptchaService_DisposeCheckboxAsync_System_String_System_Threading_CancellationToken_
+  name: DisposeCheckboxAsync(string, CancellationToken)
+  nameWithType: ICaptchaService.DisposeCheckboxAsync(string, CancellationToken)
+  fullName: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.DisposeCheckboxAsync(string, System.Threading.CancellationToken)
+  nameWithType.vb: ICaptchaService.DisposeCheckboxAsync(String, CancellationToken)
+  fullName.vb: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.DisposeCheckboxAsync(String, System.Threading.CancellationToken)
+  name.vb: DisposeCheckboxAsync(String, CancellationToken)
+  spec.csharp:
+  - uid: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.DisposeCheckboxAsync(System.String,System.Threading.CancellationToken)
+    name: DisposeCheckboxAsync
+    href: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.html#NuvTools_Security_AspNetCore_Blazor_Captcha_ICaptchaService_DisposeCheckboxAsync_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.DisposeCheckboxAsync(System.String,System.Threading.CancellationToken)
+    name: DisposeCheckboxAsync
+    href: NuvTools.Security.AspNetCore.Blazor.Captcha.ICaptchaService.html#NuvTools_Security_AspNetCore_Blazor_Captcha_ICaptchaService_DisposeCheckboxAsync_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.DisposeAsync*
+  commentId: Overload:NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.DisposeAsync
+  href: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.html#NuvTools_Security_AspNetCore_Blazor_Captcha_CaptchaService_DisposeAsync
+  name: DisposeAsync
+  nameWithType: CaptchaService.DisposeAsync
+  fullName: NuvTools.Security.AspNetCore.Blazor.Captcha.CaptchaService.DisposeAsync
+- uid: System.IAsyncDisposable.DisposeAsync
+  commentId: M:System.IAsyncDisposable.DisposeAsync
+  parent: System.IAsyncDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable.disposeasync
+  name: DisposeAsync()
+  nameWithType: IAsyncDisposable.DisposeAsync()
+  fullName: System.IAsyncDisposable.DisposeAsync()
+  spec.csharp:
+  - uid: System.IAsyncDisposable.DisposeAsync
+    name: DisposeAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable.disposeasync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IAsyncDisposable.DisposeAsync
+    name: DisposeAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable.disposeasync
+  - name: (
+  - name: )

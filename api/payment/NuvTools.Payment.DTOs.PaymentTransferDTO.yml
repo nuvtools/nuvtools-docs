@@ -1,0 +1,511 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Payment.DTOs.PaymentTransferDTO
+  commentId: T:NuvTools.Payment.DTOs.PaymentTransferDTO
+  id: PaymentTransferDTO
+  parent: NuvTools.Payment.DTOs
+  children:
+  - NuvTools.Payment.DTOs.PaymentTransferDTO.#ctor(System.String,System.Int64,System.String)
+  - NuvTools.Payment.DTOs.PaymentTransferDTO.AmountMinor
+  - NuvTools.Payment.DTOs.PaymentTransferDTO.CurrencyCode
+  - NuvTools.Payment.DTOs.PaymentTransferDTO.TransferId
+  langs:
+  - csharp
+  - vb
+  name: PaymentTransferDTO
+  nameWithType: PaymentTransferDTO
+  fullName: NuvTools.Payment.DTOs.PaymentTransferDTO
+  type: Class
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.DTOs
+  summary: Money sent to a payee's account.
+  example: []
+  syntax:
+    content: 'public record PaymentTransferDTO : IEquatable<PaymentTransferDTO>'
+    content.vb: Public Class PaymentTransferDTO Implements IEquatable(Of PaymentTransferDTO)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{NuvTools.Payment.DTOs.PaymentTransferDTO}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NuvTools.Payment.DTOs.PaymentTransferDTO.#ctor(System.String,System.Int64,System.String)
+  commentId: M:NuvTools.Payment.DTOs.PaymentTransferDTO.#ctor(System.String,System.Int64,System.String)
+  id: '#ctor(System.String,System.Int64,System.String)'
+  parent: NuvTools.Payment.DTOs.PaymentTransferDTO
+  langs:
+  - csharp
+  - vb
+  name: PaymentTransferDTO(string, long, string)
+  nameWithType: PaymentTransferDTO.PaymentTransferDTO(string, long, string)
+  fullName: NuvTools.Payment.DTOs.PaymentTransferDTO.PaymentTransferDTO(string, long, string)
+  type: Constructor
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.DTOs
+  summary: Money sent to a payee's account.
+  example: []
+  syntax:
+    content: public PaymentTransferDTO(string TransferId, long AmountMinor, string CurrencyCode)
+    parameters:
+    - id: TransferId
+      type: System.String
+      description: The provider's identifier for the transfer.
+    - id: AmountMinor
+      type: System.Int64
+      description: How much was sent, in the currency's minor units.
+    - id: CurrencyCode
+      type: System.String
+      description: ISO 4217, upper case.
+    content.vb: Public Sub New(TransferId As String, AmountMinor As Long, CurrencyCode As String)
+  overload: NuvTools.Payment.DTOs.PaymentTransferDTO.#ctor*
+  nameWithType.vb: PaymentTransferDTO.New(String, Long, String)
+  fullName.vb: NuvTools.Payment.DTOs.PaymentTransferDTO.New(String, Long, String)
+  name.vb: New(String, Long, String)
+- uid: NuvTools.Payment.DTOs.PaymentTransferDTO.TransferId
+  commentId: P:NuvTools.Payment.DTOs.PaymentTransferDTO.TransferId
+  id: TransferId
+  parent: NuvTools.Payment.DTOs.PaymentTransferDTO
+  langs:
+  - csharp
+  - vb
+  name: TransferId
+  nameWithType: PaymentTransferDTO.TransferId
+  fullName: NuvTools.Payment.DTOs.PaymentTransferDTO.TransferId
+  type: Property
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.DTOs
+  summary: The provider's identifier for the transfer.
+  example: []
+  syntax:
+    content: public string TransferId { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property TransferId As String
+  overload: NuvTools.Payment.DTOs.PaymentTransferDTO.TransferId*
+- uid: NuvTools.Payment.DTOs.PaymentTransferDTO.AmountMinor
+  commentId: P:NuvTools.Payment.DTOs.PaymentTransferDTO.AmountMinor
+  id: AmountMinor
+  parent: NuvTools.Payment.DTOs.PaymentTransferDTO
+  langs:
+  - csharp
+  - vb
+  name: AmountMinor
+  nameWithType: PaymentTransferDTO.AmountMinor
+  fullName: NuvTools.Payment.DTOs.PaymentTransferDTO.AmountMinor
+  type: Property
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.DTOs
+  summary: How much was sent, in the currency's minor units.
+  example: []
+  syntax:
+    content: public long AmountMinor { get; init; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public Property AmountMinor As Long
+  overload: NuvTools.Payment.DTOs.PaymentTransferDTO.AmountMinor*
+- uid: NuvTools.Payment.DTOs.PaymentTransferDTO.CurrencyCode
+  commentId: P:NuvTools.Payment.DTOs.PaymentTransferDTO.CurrencyCode
+  id: CurrencyCode
+  parent: NuvTools.Payment.DTOs.PaymentTransferDTO
+  langs:
+  - csharp
+  - vb
+  name: CurrencyCode
+  nameWithType: PaymentTransferDTO.CurrencyCode
+  fullName: NuvTools.Payment.DTOs.PaymentTransferDTO.CurrencyCode
+  type: Property
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.DTOs
+  summary: ISO 4217, upper case.
+  example: []
+  syntax:
+    content: public string CurrencyCode { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property CurrencyCode As String
+  overload: NuvTools.Payment.DTOs.PaymentTransferDTO.CurrencyCode*
+references:
+- uid: NuvTools.Payment.DTOs
+  commentId: N:NuvTools.Payment.DTOs
+  name: NuvTools.Payment.DTOs
+  nameWithType: NuvTools.Payment.DTOs
+  fullName: NuvTools.Payment.DTOs
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.DTOs
+    name: DTOs
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.DTOs
+    name: DTOs
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{NuvTools.Payment.DTOs.PaymentTransferDTO}
+  commentId: T:System.IEquatable{NuvTools.Payment.DTOs.PaymentTransferDTO}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<PaymentTransferDTO>
+  nameWithType: IEquatable<PaymentTransferDTO>
+  fullName: System.IEquatable<NuvTools.Payment.DTOs.PaymentTransferDTO>
+  nameWithType.vb: IEquatable(Of PaymentTransferDTO)
+  fullName.vb: System.IEquatable(Of NuvTools.Payment.DTOs.PaymentTransferDTO)
+  name.vb: IEquatable(Of PaymentTransferDTO)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: NuvTools.Payment.DTOs.PaymentTransferDTO
+    name: PaymentTransferDTO
+    href: NuvTools.Payment.DTOs.PaymentTransferDTO.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.DTOs.PaymentTransferDTO
+    name: PaymentTransferDTO
+    href: NuvTools.Payment.DTOs.PaymentTransferDTO.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NuvTools.Payment.DTOs.PaymentTransferDTO.#ctor*
+  commentId: Overload:NuvTools.Payment.DTOs.PaymentTransferDTO.#ctor
+  href: NuvTools.Payment.DTOs.PaymentTransferDTO.html#NuvTools_Payment_DTOs_PaymentTransferDTO__ctor_System_String_System_Int64_System_String_
+  name: PaymentTransferDTO
+  nameWithType: PaymentTransferDTO.PaymentTransferDTO
+  fullName: NuvTools.Payment.DTOs.PaymentTransferDTO.PaymentTransferDTO
+  nameWithType.vb: PaymentTransferDTO.New
+  fullName.vb: NuvTools.Payment.DTOs.PaymentTransferDTO.New
+  name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long
+  nameWithType: long
+  fullName: long
+  nameWithType.vb: Long
+  fullName.vb: Long
+  name.vb: Long
+- uid: NuvTools.Payment.DTOs.PaymentTransferDTO.TransferId*
+  commentId: Overload:NuvTools.Payment.DTOs.PaymentTransferDTO.TransferId
+  href: NuvTools.Payment.DTOs.PaymentTransferDTO.html#NuvTools_Payment_DTOs_PaymentTransferDTO_TransferId
+  name: TransferId
+  nameWithType: PaymentTransferDTO.TransferId
+  fullName: NuvTools.Payment.DTOs.PaymentTransferDTO.TransferId
+- uid: NuvTools.Payment.DTOs.PaymentTransferDTO.AmountMinor*
+  commentId: Overload:NuvTools.Payment.DTOs.PaymentTransferDTO.AmountMinor
+  href: NuvTools.Payment.DTOs.PaymentTransferDTO.html#NuvTools_Payment_DTOs_PaymentTransferDTO_AmountMinor
+  name: AmountMinor
+  nameWithType: PaymentTransferDTO.AmountMinor
+  fullName: NuvTools.Payment.DTOs.PaymentTransferDTO.AmountMinor
+- uid: NuvTools.Payment.DTOs.PaymentTransferDTO.CurrencyCode*
+  commentId: Overload:NuvTools.Payment.DTOs.PaymentTransferDTO.CurrencyCode
+  href: NuvTools.Payment.DTOs.PaymentTransferDTO.html#NuvTools_Payment_DTOs_PaymentTransferDTO_CurrencyCode
+  name: CurrencyCode
+  nameWithType: PaymentTransferDTO.CurrencyCode
+  fullName: NuvTools.Payment.DTOs.PaymentTransferDTO.CurrencyCode

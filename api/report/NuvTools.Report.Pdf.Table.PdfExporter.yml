@@ -1,0 +1,590 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Report.Pdf.Table.PdfExporter
+  commentId: T:NuvTools.Report.Pdf.Table.PdfExporter
+  id: PdfExporter
+  parent: NuvTools.Report.Pdf.Table
+  children:
+  - NuvTools.Report.Pdf.Table.PdfExporter.ExportFirstSheetToPdf(NuvTools.Report.Table.Models.Document)
+  - NuvTools.Report.Pdf.Table.PdfExporter.ExportSheetToPdf(NuvTools.Report.Table.Models.Document)
+  langs:
+  - csharp
+  - vb
+  name: PdfExporter
+  nameWithType: PdfExporter
+  fullName: NuvTools.Report.Pdf.Table.PdfExporter
+  type: Class
+  assemblies:
+  - NuvTools.Report.Pdf
+  namespace: NuvTools.Report.Pdf.Table
+  summary: Exports documents to PDF format using QuestPDF.
+  example: []
+  syntax:
+    content: 'public class PdfExporter : IPdfExporter'
+    content.vb: Public Class PdfExporter Implements IPdfExporter
+  inheritance:
+  - System.Object
+  implements:
+  - NuvTools.Report.Pdf.IPdfExporter
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NuvTools.Report.Pdf.Table.PdfExporter.ExportSheetToPdf(NuvTools.Report.Table.Models.Document)
+  commentId: M:NuvTools.Report.Pdf.Table.PdfExporter.ExportSheetToPdf(NuvTools.Report.Table.Models.Document)
+  id: ExportSheetToPdf(NuvTools.Report.Table.Models.Document)
+  parent: NuvTools.Report.Pdf.Table.PdfExporter
+  langs:
+  - csharp
+  - vb
+  name: ExportSheetToPdf(Document)
+  nameWithType: PdfExporter.ExportSheetToPdf(Document)
+  fullName: NuvTools.Report.Pdf.Table.PdfExporter.ExportSheetToPdf(NuvTools.Report.Table.Models.Document)
+  type: Method
+  assemblies:
+  - NuvTools.Report.Pdf
+  namespace: NuvTools.Report.Pdf.Table
+  summary: Exports all tables in a document to separate PDF files encoded as base64 strings.
+  example: []
+  syntax:
+    content: public List<string> ExportSheetToPdf(Document document)
+    parameters:
+    - id: document
+      type: NuvTools.Report.Table.Models.Document
+      description: The document containing tables to export.
+    return:
+      type: System.Collections.Generic.List{System.String}
+      description: A list of base64-encoded PDF strings, one for each table in the document.
+    content.vb: Public Function ExportSheetToPdf(document As Document) As List(Of String)
+  overload: NuvTools.Report.Pdf.Table.PdfExporter.ExportSheetToPdf*
+  implements:
+  - NuvTools.Report.Pdf.IPdfExporter.ExportSheetToPdf(NuvTools.Report.Table.Models.Document)
+- uid: NuvTools.Report.Pdf.Table.PdfExporter.ExportFirstSheetToPdf(NuvTools.Report.Table.Models.Document)
+  commentId: M:NuvTools.Report.Pdf.Table.PdfExporter.ExportFirstSheetToPdf(NuvTools.Report.Table.Models.Document)
+  id: ExportFirstSheetToPdf(NuvTools.Report.Table.Models.Document)
+  parent: NuvTools.Report.Pdf.Table.PdfExporter
+  langs:
+  - csharp
+  - vb
+  name: ExportFirstSheetToPdf(Document)
+  nameWithType: PdfExporter.ExportFirstSheetToPdf(Document)
+  fullName: NuvTools.Report.Pdf.Table.PdfExporter.ExportFirstSheetToPdf(NuvTools.Report.Table.Models.Document)
+  type: Method
+  assemblies:
+  - NuvTools.Report.Pdf
+  namespace: NuvTools.Report.Pdf.Table
+  summary: Exports the first table in a document to a PDF file encoded as a base64 string.
+  example: []
+  syntax:
+    content: public string ExportFirstSheetToPdf(Document document)
+    parameters:
+    - id: document
+      type: NuvTools.Report.Table.Models.Document
+      description: The document containing the table to export.
+    return:
+      type: System.String
+      description: A base64-encoded PDF string of the first table.
+    content.vb: Public Function ExportFirstSheetToPdf(document As Document) As String
+  overload: NuvTools.Report.Pdf.Table.PdfExporter.ExportFirstSheetToPdf*
+  implements:
+  - NuvTools.Report.Pdf.IPdfExporter.ExportFirstSheetToPdf(NuvTools.Report.Table.Models.Document)
+references:
+- uid: NuvTools.Report.Pdf.Table
+  commentId: N:NuvTools.Report.Pdf.Table
+  name: NuvTools.Report.Pdf.Table
+  nameWithType: NuvTools.Report.Pdf.Table
+  fullName: NuvTools.Report.Pdf.Table
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Report
+    name: Report
+  - name: .
+  - uid: NuvTools.Report.Pdf
+    name: Pdf
+  - name: .
+  - uid: NuvTools.Report.Pdf.Table
+    name: Table
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Report
+    name: Report
+  - name: .
+  - uid: NuvTools.Report.Pdf
+    name: Pdf
+  - name: .
+  - uid: NuvTools.Report.Pdf.Table
+    name: Table
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: NuvTools.Report.Pdf.IPdfExporter
+  commentId: T:NuvTools.Report.Pdf.IPdfExporter
+  parent: NuvTools.Report.Pdf
+  href: NuvTools.Report.Pdf.IPdfExporter.html
+  name: IPdfExporter
+  nameWithType: IPdfExporter
+  fullName: NuvTools.Report.Pdf.IPdfExporter
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NuvTools.Report.Pdf
+  commentId: N:NuvTools.Report.Pdf
+  name: NuvTools.Report.Pdf
+  nameWithType: NuvTools.Report.Pdf
+  fullName: NuvTools.Report.Pdf
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Report
+    name: Report
+  - name: .
+  - uid: NuvTools.Report.Pdf
+    name: Pdf
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Report
+    name: Report
+  - name: .
+  - uid: NuvTools.Report.Pdf
+    name: Pdf
+- uid: NuvTools.Report.Pdf.Table.PdfExporter.ExportSheetToPdf*
+  commentId: Overload:NuvTools.Report.Pdf.Table.PdfExporter.ExportSheetToPdf
+  href: NuvTools.Report.Pdf.Table.PdfExporter.html#NuvTools_Report_Pdf_Table_PdfExporter_ExportSheetToPdf_NuvTools_Report_Table_Models_Document_
+  name: ExportSheetToPdf
+  nameWithType: PdfExporter.ExportSheetToPdf
+  fullName: NuvTools.Report.Pdf.Table.PdfExporter.ExportSheetToPdf
+- uid: NuvTools.Report.Pdf.IPdfExporter.ExportSheetToPdf(NuvTools.Report.Table.Models.Document)
+  commentId: M:NuvTools.Report.Pdf.IPdfExporter.ExportSheetToPdf(NuvTools.Report.Table.Models.Document)
+  parent: NuvTools.Report.Pdf.IPdfExporter
+  name: ExportSheetToPdf(Document)
+  nameWithType: IPdfExporter.ExportSheetToPdf(Document)
+  fullName: NuvTools.Report.Pdf.IPdfExporter.ExportSheetToPdf(NuvTools.Report.Table.Models.Document)
+  spec.csharp:
+  - uid: NuvTools.Report.Pdf.IPdfExporter.ExportSheetToPdf(NuvTools.Report.Table.Models.Document)
+    name: ExportSheetToPdf
+  - name: (
+  - uid: NuvTools.Report.Table.Models.Document
+    name: Document
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Report.Pdf.IPdfExporter.ExportSheetToPdf(NuvTools.Report.Table.Models.Document)
+    name: ExportSheetToPdf
+  - name: (
+  - uid: NuvTools.Report.Table.Models.Document
+    name: Document
+  - name: )
+- uid: NuvTools.Report.Table.Models.Document
+  commentId: T:NuvTools.Report.Table.Models.Document
+  parent: NuvTools.Report.Table.Models
+  href: NuvTools.Report.Table.Models.Document.html
+  name: Document
+  nameWithType: Document
+  fullName: NuvTools.Report.Table.Models.Document
+- uid: System.Collections.Generic.List{System.String}
+  commentId: T:System.Collections.Generic.List{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<string>
+  nameWithType: List<string>
+  fullName: System.Collections.Generic.List<string>
+  nameWithType.vb: List(Of String)
+  fullName.vb: System.Collections.Generic.List(Of String)
+  name.vb: List(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: NuvTools.Report.Table.Models
+  commentId: N:NuvTools.Report.Table.Models
+  name: NuvTools.Report.Table.Models
+  nameWithType: NuvTools.Report.Table.Models
+  fullName: NuvTools.Report.Table.Models
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Report
+    name: Report
+  - name: .
+  - uid: NuvTools.Report.Table
+    name: Table
+  - name: .
+  - uid: NuvTools.Report.Table.Models
+    name: Models
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Report
+    name: Report
+  - name: .
+  - uid: NuvTools.Report.Table
+    name: Table
+  - name: .
+  - uid: NuvTools.Report.Table.Models
+    name: Models
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: NuvTools.Report.Pdf.Table.PdfExporter.ExportFirstSheetToPdf*
+  commentId: Overload:NuvTools.Report.Pdf.Table.PdfExporter.ExportFirstSheetToPdf
+  href: NuvTools.Report.Pdf.Table.PdfExporter.html#NuvTools_Report_Pdf_Table_PdfExporter_ExportFirstSheetToPdf_NuvTools_Report_Table_Models_Document_
+  name: ExportFirstSheetToPdf
+  nameWithType: PdfExporter.ExportFirstSheetToPdf
+  fullName: NuvTools.Report.Pdf.Table.PdfExporter.ExportFirstSheetToPdf
+- uid: NuvTools.Report.Pdf.IPdfExporter.ExportFirstSheetToPdf(NuvTools.Report.Table.Models.Document)
+  commentId: M:NuvTools.Report.Pdf.IPdfExporter.ExportFirstSheetToPdf(NuvTools.Report.Table.Models.Document)
+  parent: NuvTools.Report.Pdf.IPdfExporter
+  name: ExportFirstSheetToPdf(Document)
+  nameWithType: IPdfExporter.ExportFirstSheetToPdf(Document)
+  fullName: NuvTools.Report.Pdf.IPdfExporter.ExportFirstSheetToPdf(NuvTools.Report.Table.Models.Document)
+  spec.csharp:
+  - uid: NuvTools.Report.Pdf.IPdfExporter.ExportFirstSheetToPdf(NuvTools.Report.Table.Models.Document)
+    name: ExportFirstSheetToPdf
+  - name: (
+  - uid: NuvTools.Report.Table.Models.Document
+    name: Document
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Report.Pdf.IPdfExporter.ExportFirstSheetToPdf(NuvTools.Report.Table.Models.Document)
+    name: ExportFirstSheetToPdf
+  - name: (
+  - uid: NuvTools.Report.Table.Models.Document
+    name: Document
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

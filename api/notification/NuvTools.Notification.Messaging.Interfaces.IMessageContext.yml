@@ -1,0 +1,264 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Notification.Messaging.Interfaces.IMessageContext
+  commentId: T:NuvTools.Notification.Messaging.Interfaces.IMessageContext
+  id: IMessageContext
+  parent: NuvTools.Notification.Messaging.Interfaces
+  children:
+  - NuvTools.Notification.Messaging.Interfaces.IMessageContext.AbandonAsync(System.Threading.CancellationToken)
+  - NuvTools.Notification.Messaging.Interfaces.IMessageContext.CompleteAsync(System.Threading.CancellationToken)
+  - NuvTools.Notification.Messaging.Interfaces.IMessageContext.DeadLetterAsync(System.String,System.String,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: IMessageContext
+  nameWithType: IMessageContext
+  fullName: NuvTools.Notification.Messaging.Interfaces.IMessageContext
+  type: Interface
+  assemblies:
+  - NuvTools.Notification.Messaging
+  namespace: NuvTools.Notification.Messaging.Interfaces
+  summary: >-
+    Provides operational methods for managing the lifecycle of a received message
+
+    (e.g., completing, abandoning, dead-lettering).
+  example: []
+  syntax:
+    content: public interface IMessageContext
+    content.vb: Public Interface IMessageContext
+- uid: NuvTools.Notification.Messaging.Interfaces.IMessageContext.CompleteAsync(System.Threading.CancellationToken)
+  commentId: M:NuvTools.Notification.Messaging.Interfaces.IMessageContext.CompleteAsync(System.Threading.CancellationToken)
+  id: CompleteAsync(System.Threading.CancellationToken)
+  parent: NuvTools.Notification.Messaging.Interfaces.IMessageContext
+  langs:
+  - csharp
+  - vb
+  name: CompleteAsync(CancellationToken)
+  nameWithType: IMessageContext.CompleteAsync(CancellationToken)
+  fullName: NuvTools.Notification.Messaging.Interfaces.IMessageContext.CompleteAsync(System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Notification.Messaging
+  namespace: NuvTools.Notification.Messaging.Interfaces
+  summary: Marks the message as successfully processed and removes it from the queue.
+  example: []
+  syntax:
+    content: Task CompleteAsync(CancellationToken cancellationToken = default)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: A token to observe while waiting for the operation to complete.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task representing the asynchronous complete operation.
+    content.vb: Function CompleteAsync(cancellationToken As CancellationToken = Nothing) As Task
+  overload: NuvTools.Notification.Messaging.Interfaces.IMessageContext.CompleteAsync*
+- uid: NuvTools.Notification.Messaging.Interfaces.IMessageContext.AbandonAsync(System.Threading.CancellationToken)
+  commentId: M:NuvTools.Notification.Messaging.Interfaces.IMessageContext.AbandonAsync(System.Threading.CancellationToken)
+  id: AbandonAsync(System.Threading.CancellationToken)
+  parent: NuvTools.Notification.Messaging.Interfaces.IMessageContext
+  langs:
+  - csharp
+  - vb
+  name: AbandonAsync(CancellationToken)
+  nameWithType: IMessageContext.AbandonAsync(CancellationToken)
+  fullName: NuvTools.Notification.Messaging.Interfaces.IMessageContext.AbandonAsync(System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Notification.Messaging
+  namespace: NuvTools.Notification.Messaging.Interfaces
+  summary: Abandons the message, making it available for reprocessing by returning it to the queue.
+  example: []
+  syntax:
+    content: Task AbandonAsync(CancellationToken cancellationToken = default)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: A token to observe while waiting for the operation to complete.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task representing the asynchronous abandon operation.
+    content.vb: Function AbandonAsync(cancellationToken As CancellationToken = Nothing) As Task
+  overload: NuvTools.Notification.Messaging.Interfaces.IMessageContext.AbandonAsync*
+- uid: NuvTools.Notification.Messaging.Interfaces.IMessageContext.DeadLetterAsync(System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Notification.Messaging.Interfaces.IMessageContext.DeadLetterAsync(System.String,System.String,System.Threading.CancellationToken)
+  id: DeadLetterAsync(System.String,System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Notification.Messaging.Interfaces.IMessageContext
+  langs:
+  - csharp
+  - vb
+  name: DeadLetterAsync(string, string?, CancellationToken)
+  nameWithType: IMessageContext.DeadLetterAsync(string, string?, CancellationToken)
+  fullName: NuvTools.Notification.Messaging.Interfaces.IMessageContext.DeadLetterAsync(string, string?, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Notification.Messaging
+  namespace: NuvTools.Notification.Messaging.Interfaces
+  summary: Moves the message to the dead-letter queue with a specified reason and optional error description.
+  example: []
+  syntax:
+    content: Task DeadLetterAsync(string reason, string? errorDescription = null, CancellationToken cancellationToken = default)
+    parameters:
+    - id: reason
+      type: System.String
+      description: The reason why the message is being dead-lettered.
+    - id: errorDescription
+      type: System.String
+      description: Optional detailed description of the error that caused the message to be dead-lettered.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: A token to observe while waiting for the operation to complete.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task representing the asynchronous dead-letter operation.
+    content.vb: Function DeadLetterAsync(reason As String, errorDescription As String = Nothing, cancellationToken As CancellationToken = Nothing) As Task
+  overload: NuvTools.Notification.Messaging.Interfaces.IMessageContext.DeadLetterAsync*
+  nameWithType.vb: IMessageContext.DeadLetterAsync(String, String, CancellationToken)
+  fullName.vb: NuvTools.Notification.Messaging.Interfaces.IMessageContext.DeadLetterAsync(String, String, System.Threading.CancellationToken)
+  name.vb: DeadLetterAsync(String, String, CancellationToken)
+references:
+- uid: NuvTools.Notification.Messaging.Interfaces
+  commentId: N:NuvTools.Notification.Messaging.Interfaces
+  name: NuvTools.Notification.Messaging.Interfaces
+  nameWithType: NuvTools.Notification.Messaging.Interfaces
+  fullName: NuvTools.Notification.Messaging.Interfaces
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Messaging
+    name: Messaging
+  - name: .
+  - uid: NuvTools.Notification.Messaging.Interfaces
+    name: Interfaces
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Messaging
+    name: Messaging
+  - name: .
+  - uid: NuvTools.Notification.Messaging.Interfaces
+    name: Interfaces
+- uid: NuvTools.Notification.Messaging.Interfaces.IMessageContext.CompleteAsync*
+  commentId: Overload:NuvTools.Notification.Messaging.Interfaces.IMessageContext.CompleteAsync
+  href: NuvTools.Notification.Messaging.Interfaces.IMessageContext.html#NuvTools_Notification_Messaging_Interfaces_IMessageContext_CompleteAsync_System_Threading_CancellationToken_
+  name: CompleteAsync
+  nameWithType: IMessageContext.CompleteAsync
+  fullName: NuvTools.Notification.Messaging.Interfaces.IMessageContext.CompleteAsync
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NuvTools.Notification.Messaging.Interfaces.IMessageContext.AbandonAsync*
+  commentId: Overload:NuvTools.Notification.Messaging.Interfaces.IMessageContext.AbandonAsync
+  href: NuvTools.Notification.Messaging.Interfaces.IMessageContext.html#NuvTools_Notification_Messaging_Interfaces_IMessageContext_AbandonAsync_System_Threading_CancellationToken_
+  name: AbandonAsync
+  nameWithType: IMessageContext.AbandonAsync
+  fullName: NuvTools.Notification.Messaging.Interfaces.IMessageContext.AbandonAsync
+- uid: NuvTools.Notification.Messaging.Interfaces.IMessageContext.DeadLetterAsync*
+  commentId: Overload:NuvTools.Notification.Messaging.Interfaces.IMessageContext.DeadLetterAsync
+  href: NuvTools.Notification.Messaging.Interfaces.IMessageContext.html#NuvTools_Notification_Messaging_Interfaces_IMessageContext_DeadLetterAsync_System_String_System_String_System_Threading_CancellationToken_
+  name: DeadLetterAsync
+  nameWithType: IMessageContext.DeadLetterAsync
+  fullName: NuvTools.Notification.Messaging.Interfaces.IMessageContext.DeadLetterAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

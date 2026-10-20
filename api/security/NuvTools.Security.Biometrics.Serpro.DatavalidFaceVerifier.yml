@@ -1,0 +1,832 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier
+  commentId: T:NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier
+  id: DatavalidFaceVerifier
+  parent: NuvTools.Security.Biometrics.Serpro
+  children:
+  - NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier.#ctor(System.Net.Http.HttpClient,NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider,Microsoft.Extensions.Options.IOptions{NuvTools.Security.Biometrics.Serpro.DatavalidOptions},Microsoft.Extensions.Logging.ILogger{NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier})
+  - NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier.VerifyAsync(NuvTools.Security.Biometrics.FaceVerificationRequest,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: DatavalidFaceVerifier
+  nameWithType: DatavalidFaceVerifier
+  fullName: NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier
+  type: Class
+  assemblies:
+  - NuvTools.Security.Biometrics.Serpro
+  namespace: NuvTools.Security.Biometrics.Serpro
+  summary: >-
+    Verifies a captured face through SERPRO Datavalid, which compares it with the face on government
+
+    record for the CPF. The credentials and the token never leave the server.
+  example: []
+  syntax:
+    content: 'public sealed class DatavalidFaceVerifier : IFaceVerifier'
+    content.vb: Public NotInheritable Class DatavalidFaceVerifier Implements IFaceVerifier
+  inheritance:
+  - System.Object
+  implements:
+  - NuvTools.Security.Biometrics.IFaceVerifier
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier.#ctor(System.Net.Http.HttpClient,NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider,Microsoft.Extensions.Options.IOptions{NuvTools.Security.Biometrics.Serpro.DatavalidOptions},Microsoft.Extensions.Logging.ILogger{NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier})
+  commentId: M:NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier.#ctor(System.Net.Http.HttpClient,NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider,Microsoft.Extensions.Options.IOptions{NuvTools.Security.Biometrics.Serpro.DatavalidOptions},Microsoft.Extensions.Logging.ILogger{NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier})
+  id: '#ctor(System.Net.Http.HttpClient,NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider,Microsoft.Extensions.Options.IOptions{NuvTools.Security.Biometrics.Serpro.DatavalidOptions},Microsoft.Extensions.Logging.ILogger{NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier})'
+  parent: NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier
+  langs:
+  - csharp
+  - vb
+  name: DatavalidFaceVerifier(HttpClient, DatavalidAccessTokenProvider, IOptions<DatavalidOptions>, ILogger<DatavalidFaceVerifier>)
+  nameWithType: DatavalidFaceVerifier.DatavalidFaceVerifier(HttpClient, DatavalidAccessTokenProvider, IOptions<DatavalidOptions>, ILogger<DatavalidFaceVerifier>)
+  fullName: NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier.DatavalidFaceVerifier(System.Net.Http.HttpClient, NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider, Microsoft.Extensions.Options.IOptions<NuvTools.Security.Biometrics.Serpro.DatavalidOptions>, Microsoft.Extensions.Logging.ILogger<NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier>)
+  type: Constructor
+  assemblies:
+  - NuvTools.Security.Biometrics.Serpro
+  namespace: NuvTools.Security.Biometrics.Serpro
+  summary: >-
+    Verifies a captured face through SERPRO Datavalid, which compares it with the face on government
+
+    record for the CPF. The credentials and the token never leave the server.
+  example: []
+  syntax:
+    content: public DatavalidFaceVerifier(HttpClient httpClient, DatavalidAccessTokenProvider tokenProvider, IOptions<DatavalidOptions> options, ILogger<DatavalidFaceVerifier> logger)
+    parameters:
+    - id: httpClient
+      type: System.Net.Http.HttpClient
+      description: Client used to call the validation endpoint.
+    - id: tokenProvider
+      type: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider
+      description: Source of the gateway's access token.
+    - id: options
+      type: Microsoft.Extensions.Options.IOptions{NuvTools.Security.Biometrics.Serpro.DatavalidOptions}
+      description: Datavalid configuration.
+    - id: logger
+      type: Microsoft.Extensions.Logging.ILogger{NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier}
+      description: Logger for diagnostics.
+    content.vb: Public Sub New(httpClient As HttpClient, tokenProvider As DatavalidAccessTokenProvider, options As IOptions(Of DatavalidOptions), logger As ILogger(Of DatavalidFaceVerifier))
+  overload: NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier.#ctor*
+  nameWithType.vb: DatavalidFaceVerifier.New(HttpClient, DatavalidAccessTokenProvider, IOptions(Of DatavalidOptions), ILogger(Of DatavalidFaceVerifier))
+  fullName.vb: NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier.New(System.Net.Http.HttpClient, NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider, Microsoft.Extensions.Options.IOptions(Of NuvTools.Security.Biometrics.Serpro.DatavalidOptions), Microsoft.Extensions.Logging.ILogger(Of NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier))
+  name.vb: New(HttpClient, DatavalidAccessTokenProvider, IOptions(Of DatavalidOptions), ILogger(Of DatavalidFaceVerifier))
+- uid: NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier.VerifyAsync(NuvTools.Security.Biometrics.FaceVerificationRequest,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier.VerifyAsync(NuvTools.Security.Biometrics.FaceVerificationRequest,System.Threading.CancellationToken)
+  id: VerifyAsync(NuvTools.Security.Biometrics.FaceVerificationRequest,System.Threading.CancellationToken)
+  parent: NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier
+  langs:
+  - csharp
+  - vb
+  name: VerifyAsync(FaceVerificationRequest, CancellationToken)
+  nameWithType: DatavalidFaceVerifier.VerifyAsync(FaceVerificationRequest, CancellationToken)
+  fullName: NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier.VerifyAsync(NuvTools.Security.Biometrics.FaceVerificationRequest, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Security.Biometrics.Serpro
+  namespace: NuvTools.Security.Biometrics.Serpro
+  summary: Compares the captured face with the one on record.
+  example: []
+  syntax:
+    content: public Task<FaceVerification> VerifyAsync(FaceVerificationRequest request, CancellationToken cancellationToken = default)
+    parameters:
+    - id: request
+      type: NuvTools.Security.Biometrics.FaceVerificationRequest
+      description: Whose face it should be, and the capture.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Token to cancel the operation.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Security.Biometrics.FaceVerification}
+      description: >-
+        The verification result. An invalid document, an unusable image or a communication failure
+
+        yields <xref href="NuvTools.Security.Biometrics.FaceVerification.Matched" data-throw-if-not-resolved="false"></xref> = <code>false</code> (fail-closed).
+    content.vb: Public Function VerifyAsync(request As FaceVerificationRequest, cancellationToken As CancellationToken = Nothing) As Task(Of FaceVerification)
+  overload: NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier.VerifyAsync*
+  implements:
+  - NuvTools.Security.Biometrics.IFaceVerifier.VerifyAsync(NuvTools.Security.Biometrics.FaceVerificationRequest,System.Threading.CancellationToken)
+references:
+- uid: NuvTools.Security.Biometrics.Serpro
+  commentId: N:NuvTools.Security.Biometrics.Serpro
+  name: NuvTools.Security.Biometrics.Serpro
+  nameWithType: NuvTools.Security.Biometrics.Serpro
+  fullName: NuvTools.Security.Biometrics.Serpro
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.Biometrics
+    name: Biometrics
+  - name: .
+  - uid: NuvTools.Security.Biometrics.Serpro
+    name: Serpro
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.Biometrics
+    name: Biometrics
+  - name: .
+  - uid: NuvTools.Security.Biometrics.Serpro
+    name: Serpro
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: NuvTools.Security.Biometrics.IFaceVerifier
+  commentId: T:NuvTools.Security.Biometrics.IFaceVerifier
+  parent: NuvTools.Security.Biometrics
+  href: NuvTools.Security.Biometrics.IFaceVerifier.html
+  name: IFaceVerifier
+  nameWithType: IFaceVerifier
+  fullName: NuvTools.Security.Biometrics.IFaceVerifier
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NuvTools.Security.Biometrics
+  commentId: N:NuvTools.Security.Biometrics
+  name: NuvTools.Security.Biometrics
+  nameWithType: NuvTools.Security.Biometrics
+  fullName: NuvTools.Security.Biometrics
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.Biometrics
+    name: Biometrics
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.Biometrics
+    name: Biometrics
+- uid: NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier.#ctor*
+  commentId: Overload:NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier.#ctor
+  href: NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier.html#NuvTools_Security_Biometrics_Serpro_DatavalidFaceVerifier__ctor_System_Net_Http_HttpClient_NuvTools_Security_Biometrics_Serpro_DatavalidAccessTokenProvider_Microsoft_Extensions_Options_IOptions_NuvTools_Security_Biometrics_Serpro_DatavalidOptions__Microsoft_Extensions_Logging_ILogger_NuvTools_Security_Biometrics_Serpro_DatavalidFaceVerifier__
+  name: DatavalidFaceVerifier
+  nameWithType: DatavalidFaceVerifier.DatavalidFaceVerifier
+  fullName: NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier.DatavalidFaceVerifier
+  nameWithType.vb: DatavalidFaceVerifier.New
+  fullName.vb: NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier.New
+  name.vb: New
+- uid: System.Net.Http.HttpClient
+  commentId: T:System.Net.Http.HttpClient
+  parent: System.Net.Http
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.net.http.httpclient
+  name: HttpClient
+  nameWithType: HttpClient
+  fullName: System.Net.Http.HttpClient
+- uid: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider
+  commentId: T:NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider
+  parent: NuvTools.Security.Biometrics.Serpro
+  href: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider.html
+  name: DatavalidAccessTokenProvider
+  nameWithType: DatavalidAccessTokenProvider
+  fullName: NuvTools.Security.Biometrics.Serpro.DatavalidAccessTokenProvider
+- uid: Microsoft.Extensions.Options.IOptions{NuvTools.Security.Biometrics.Serpro.DatavalidOptions}
+  commentId: T:Microsoft.Extensions.Options.IOptions{NuvTools.Security.Biometrics.Serpro.DatavalidOptions}
+  parent: Microsoft.Extensions.Options
+  definition: Microsoft.Extensions.Options.IOptions`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  name: IOptions<DatavalidOptions>
+  nameWithType: IOptions<DatavalidOptions>
+  fullName: Microsoft.Extensions.Options.IOptions<NuvTools.Security.Biometrics.Serpro.DatavalidOptions>
+  nameWithType.vb: IOptions(Of DatavalidOptions)
+  fullName.vb: Microsoft.Extensions.Options.IOptions(Of NuvTools.Security.Biometrics.Serpro.DatavalidOptions)
+  name.vb: IOptions(Of DatavalidOptions)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: <
+  - uid: NuvTools.Security.Biometrics.Serpro.DatavalidOptions
+    name: DatavalidOptions
+    href: NuvTools.Security.Biometrics.Serpro.DatavalidOptions.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Security.Biometrics.Serpro.DatavalidOptions
+    name: DatavalidOptions
+    href: NuvTools.Security.Biometrics.Serpro.DatavalidOptions.html
+  - name: )
+- uid: Microsoft.Extensions.Logging.ILogger{NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier}
+  commentId: T:Microsoft.Extensions.Logging.ILogger{NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier}
+  parent: Microsoft.Extensions.Logging
+  definition: Microsoft.Extensions.Logging.ILogger`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  name: ILogger<DatavalidFaceVerifier>
+  nameWithType: ILogger<DatavalidFaceVerifier>
+  fullName: Microsoft.Extensions.Logging.ILogger<NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier>
+  nameWithType.vb: ILogger(Of DatavalidFaceVerifier)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier)
+  name.vb: ILogger(Of DatavalidFaceVerifier)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: <
+  - uid: NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier
+    name: DatavalidFaceVerifier
+    href: NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier
+    name: DatavalidFaceVerifier
+    href: NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier.html
+  - name: )
+- uid: System.Net.Http
+  commentId: N:System.Net.Http
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Net.Http
+  nameWithType: System.Net.Http
+  fullName: System.Net.Http
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Net
+    name: Net
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net
+  - name: .
+  - uid: System.Net.Http
+    name: Http
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Net
+    name: Net
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net
+  - name: .
+  - uid: System.Net.Http
+    name: Http
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http
+- uid: Microsoft.Extensions.Options.IOptions`1
+  commentId: T:Microsoft.Extensions.Options.IOptions`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  name: IOptions<TOptions>
+  nameWithType: IOptions<TOptions>
+  fullName: Microsoft.Extensions.Options.IOptions<TOptions>
+  nameWithType.vb: IOptions(Of TOptions)
+  fullName.vb: Microsoft.Extensions.Options.IOptions(Of TOptions)
+  name.vb: IOptions(Of TOptions)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: <
+  - name: TOptions
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TOptions
+  - name: )
+- uid: Microsoft.Extensions.Options
+  commentId: N:Microsoft.Extensions.Options
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Options
+  nameWithType: Microsoft.Extensions.Options
+  fullName: Microsoft.Extensions.Options
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Options
+    name: Options
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Options
+    name: Options
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options
+- uid: Microsoft.Extensions.Logging.ILogger`1
+  commentId: T:Microsoft.Extensions.Logging.ILogger`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  name: ILogger<TCategoryName>
+  nameWithType: ILogger<TCategoryName>
+  fullName: Microsoft.Extensions.Logging.ILogger<TCategoryName>
+  nameWithType.vb: ILogger(Of TCategoryName)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of TCategoryName)
+  name.vb: ILogger(Of TCategoryName)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: <
+  - name: TCategoryName
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TCategoryName
+  - name: )
+- uid: Microsoft.Extensions.Logging
+  commentId: N:Microsoft.Extensions.Logging
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Logging
+  nameWithType: Microsoft.Extensions.Logging
+  fullName: Microsoft.Extensions.Logging
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Logging
+    name: Logging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Logging
+    name: Logging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+- uid: NuvTools.Security.Biometrics.FaceVerification.Matched
+  commentId: P:NuvTools.Security.Biometrics.FaceVerification.Matched
+  href: NuvTools.Security.Biometrics.FaceVerification.html#NuvTools_Security_Biometrics_FaceVerification_Matched
+  name: Matched
+  nameWithType: FaceVerification.Matched
+  fullName: NuvTools.Security.Biometrics.FaceVerification.Matched
+- uid: NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier.VerifyAsync*
+  commentId: Overload:NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier.VerifyAsync
+  href: NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier.html#NuvTools_Security_Biometrics_Serpro_DatavalidFaceVerifier_VerifyAsync_NuvTools_Security_Biometrics_FaceVerificationRequest_System_Threading_CancellationToken_
+  name: VerifyAsync
+  nameWithType: DatavalidFaceVerifier.VerifyAsync
+  fullName: NuvTools.Security.Biometrics.Serpro.DatavalidFaceVerifier.VerifyAsync
+- uid: NuvTools.Security.Biometrics.IFaceVerifier.VerifyAsync(NuvTools.Security.Biometrics.FaceVerificationRequest,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Security.Biometrics.IFaceVerifier.VerifyAsync(NuvTools.Security.Biometrics.FaceVerificationRequest,System.Threading.CancellationToken)
+  parent: NuvTools.Security.Biometrics.IFaceVerifier
+  isExternal: true
+  href: NuvTools.Security.Biometrics.IFaceVerifier.html#NuvTools_Security_Biometrics_IFaceVerifier_VerifyAsync_NuvTools_Security_Biometrics_FaceVerificationRequest_System_Threading_CancellationToken_
+  name: VerifyAsync(FaceVerificationRequest, CancellationToken)
+  nameWithType: IFaceVerifier.VerifyAsync(FaceVerificationRequest, CancellationToken)
+  fullName: NuvTools.Security.Biometrics.IFaceVerifier.VerifyAsync(NuvTools.Security.Biometrics.FaceVerificationRequest, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: NuvTools.Security.Biometrics.IFaceVerifier.VerifyAsync(NuvTools.Security.Biometrics.FaceVerificationRequest,System.Threading.CancellationToken)
+    name: VerifyAsync
+    href: NuvTools.Security.Biometrics.IFaceVerifier.html#NuvTools_Security_Biometrics_IFaceVerifier_VerifyAsync_NuvTools_Security_Biometrics_FaceVerificationRequest_System_Threading_CancellationToken_
+  - name: (
+  - uid: NuvTools.Security.Biometrics.FaceVerificationRequest
+    name: FaceVerificationRequest
+    href: NuvTools.Security.Biometrics.FaceVerificationRequest.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Security.Biometrics.IFaceVerifier.VerifyAsync(NuvTools.Security.Biometrics.FaceVerificationRequest,System.Threading.CancellationToken)
+    name: VerifyAsync
+    href: NuvTools.Security.Biometrics.IFaceVerifier.html#NuvTools_Security_Biometrics_IFaceVerifier_VerifyAsync_NuvTools_Security_Biometrics_FaceVerificationRequest_System_Threading_CancellationToken_
+  - name: (
+  - uid: NuvTools.Security.Biometrics.FaceVerificationRequest
+    name: FaceVerificationRequest
+    href: NuvTools.Security.Biometrics.FaceVerificationRequest.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: NuvTools.Security.Biometrics.FaceVerificationRequest
+  commentId: T:NuvTools.Security.Biometrics.FaceVerificationRequest
+  parent: NuvTools.Security.Biometrics
+  href: NuvTools.Security.Biometrics.FaceVerificationRequest.html
+  name: FaceVerificationRequest
+  nameWithType: FaceVerificationRequest
+  fullName: NuvTools.Security.Biometrics.FaceVerificationRequest
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{NuvTools.Security.Biometrics.FaceVerification}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Security.Biometrics.FaceVerification}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<FaceVerification>
+  nameWithType: Task<FaceVerification>
+  fullName: System.Threading.Tasks.Task<NuvTools.Security.Biometrics.FaceVerification>
+  nameWithType.vb: Task(Of FaceVerification)
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Security.Biometrics.FaceVerification)
+  name.vb: Task(Of FaceVerification)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Security.Biometrics.FaceVerification
+    name: FaceVerification
+    href: NuvTools.Security.Biometrics.FaceVerification.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Security.Biometrics.FaceVerification
+    name: FaceVerification
+    href: NuvTools.Security.Biometrics.FaceVerification.html
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

@@ -1,0 +1,281 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Notification.Messaging.Interfaces.IMessageSender`1
+  commentId: T:NuvTools.Notification.Messaging.Interfaces.IMessageSender`1
+  id: IMessageSender`1
+  parent: NuvTools.Notification.Messaging.Interfaces
+  children:
+  - NuvTools.Notification.Messaging.Interfaces.IMessageSender`1.SendAsync(NuvTools.Notification.Messaging.Message{`0},System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: IMessageSender<TBody>
+  nameWithType: IMessageSender<TBody>
+  fullName: NuvTools.Notification.Messaging.Interfaces.IMessageSender<TBody>
+  type: Interface
+  assemblies:
+  - NuvTools.Notification.Messaging
+  namespace: NuvTools.Notification.Messaging.Interfaces
+  summary: >-
+    Represents an asynchronous sender capable of delivering messages whose bodies are of type <code class="typeparamref">TBody</code>.
+
+    Implementations perform the transport-specific work to transmit a <xref href="NuvTools.Notification.Messaging.Message%601" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: 'public interface IMessageSender<TBody> where TBody : class'
+    typeParameters:
+    - id: TBody
+      description: The message body type. Must be a reference type.
+    content.vb: Public Interface IMessageSender(Of TBody As Class)
+  derivedClasses:
+  - NuvTools.Notification.Messaging.Azure.ServiceBus.AzureServiceBusSender`1
+  nameWithType.vb: IMessageSender(Of TBody)
+  fullName.vb: NuvTools.Notification.Messaging.Interfaces.IMessageSender(Of TBody)
+  name.vb: IMessageSender(Of TBody)
+- uid: NuvTools.Notification.Messaging.Interfaces.IMessageSender`1.SendAsync(NuvTools.Notification.Messaging.Message{`0},System.Threading.CancellationToken)
+  commentId: M:NuvTools.Notification.Messaging.Interfaces.IMessageSender`1.SendAsync(NuvTools.Notification.Messaging.Message{`0},System.Threading.CancellationToken)
+  id: SendAsync(NuvTools.Notification.Messaging.Message{`0},System.Threading.CancellationToken)
+  parent: NuvTools.Notification.Messaging.Interfaces.IMessageSender`1
+  langs:
+  - csharp
+  - vb
+  name: SendAsync(Message<TBody>, CancellationToken)
+  nameWithType: IMessageSender<TBody>.SendAsync(Message<TBody>, CancellationToken)
+  fullName: NuvTools.Notification.Messaging.Interfaces.IMessageSender<TBody>.SendAsync(NuvTools.Notification.Messaging.Message<TBody>, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Notification.Messaging
+  namespace: NuvTools.Notification.Messaging.Interfaces
+  summary: Sends the specified <code class="paramref">message</code> asynchronously.
+  example: []
+  syntax:
+    content: Task SendAsync(Message<TBody> message, CancellationToken cancellationToken)
+    parameters:
+    - id: message
+      type: NuvTools.Notification.Messaging.Message{{TBody}}
+      description: The message to send. Implementations SHOULD validate that <code class="paramref">message</code> is not <code>null</code>.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: A token to observe while waiting for the operation to complete.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A <xref href="System.Threading.Tasks.Task" data-throw-if-not-resolved="false"></xref> that represents the asynchronous send operation.
+    content.vb: Function SendAsync(message As Message(Of TBody), cancellationToken As CancellationToken) As Task
+  overload: NuvTools.Notification.Messaging.Interfaces.IMessageSender`1.SendAsync*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: May be thrown by implementations if <code class="paramref">message</code> is <code>null</code>.
+  - type: System.OperationCanceledException
+    commentId: T:System.OperationCanceledException
+    description: May be thrown if the <code class="paramref">cancellationToken</code> is canceled before the operation completes.
+  nameWithType.vb: IMessageSender(Of TBody).SendAsync(Message(Of TBody), CancellationToken)
+  fullName.vb: NuvTools.Notification.Messaging.Interfaces.IMessageSender(Of TBody).SendAsync(NuvTools.Notification.Messaging.Message(Of TBody), System.Threading.CancellationToken)
+  name.vb: SendAsync(Message(Of TBody), CancellationToken)
+references:
+- uid: NuvTools.Notification.Messaging.Message`1
+  commentId: T:NuvTools.Notification.Messaging.Message`1
+  href: NuvTools.Notification.Messaging.Message-1.html
+  name: Message<T>
+  nameWithType: Message<T>
+  fullName: NuvTools.Notification.Messaging.Message<T>
+  nameWithType.vb: Message(Of T)
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of T)
+  name.vb: Message(Of T)
+  spec.csharp:
+  - uid: NuvTools.Notification.Messaging.Message`1
+    name: Message
+    href: NuvTools.Notification.Messaging.Message-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: NuvTools.Notification.Messaging.Message`1
+    name: Message
+    href: NuvTools.Notification.Messaging.Message-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NuvTools.Notification.Messaging.Interfaces
+  commentId: N:NuvTools.Notification.Messaging.Interfaces
+  name: NuvTools.Notification.Messaging.Interfaces
+  nameWithType: NuvTools.Notification.Messaging.Interfaces
+  fullName: NuvTools.Notification.Messaging.Interfaces
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Messaging
+    name: Messaging
+  - name: .
+  - uid: NuvTools.Notification.Messaging.Interfaces
+    name: Interfaces
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Messaging
+    name: Messaging
+  - name: .
+  - uid: NuvTools.Notification.Messaging.Interfaces
+    name: Interfaces
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
+- uid: System.OperationCanceledException
+  commentId: T:System.OperationCanceledException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.operationcanceledexception
+  name: OperationCanceledException
+  nameWithType: OperationCanceledException
+  fullName: System.OperationCanceledException
+- uid: NuvTools.Notification.Messaging.Interfaces.IMessageSender`1.SendAsync*
+  commentId: Overload:NuvTools.Notification.Messaging.Interfaces.IMessageSender`1.SendAsync
+  href: NuvTools.Notification.Messaging.Interfaces.IMessageSender-1.html#NuvTools_Notification_Messaging_Interfaces_IMessageSender_1_SendAsync_NuvTools_Notification_Messaging_Message__0__System_Threading_CancellationToken_
+  name: SendAsync
+  nameWithType: IMessageSender<TBody>.SendAsync
+  fullName: NuvTools.Notification.Messaging.Interfaces.IMessageSender<TBody>.SendAsync
+  nameWithType.vb: IMessageSender(Of TBody).SendAsync
+  fullName.vb: NuvTools.Notification.Messaging.Interfaces.IMessageSender(Of TBody).SendAsync
+- uid: NuvTools.Notification.Messaging.Message{{TBody}}
+  commentId: T:NuvTools.Notification.Messaging.Message{`0}
+  parent: NuvTools.Notification.Messaging
+  definition: NuvTools.Notification.Messaging.Message`1
+  href: NuvTools.Notification.Messaging.Message-1.html
+  name: Message<TBody>
+  nameWithType: Message<TBody>
+  fullName: NuvTools.Notification.Messaging.Message<TBody>
+  nameWithType.vb: Message(Of TBody)
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of TBody)
+  name.vb: Message(Of TBody)
+  spec.csharp:
+  - uid: NuvTools.Notification.Messaging.Message`1
+    name: Message
+    href: NuvTools.Notification.Messaging.Message-1.html
+  - name: <
+  - name: TBody
+  - name: '>'
+  spec.vb:
+  - uid: NuvTools.Notification.Messaging.Message`1
+    name: Message
+    href: NuvTools.Notification.Messaging.Message-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TBody
+  - name: )
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NuvTools.Notification.Messaging
+  commentId: N:NuvTools.Notification.Messaging
+  name: NuvTools.Notification.Messaging
+  nameWithType: NuvTools.Notification.Messaging
+  fullName: NuvTools.Notification.Messaging
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Messaging
+    name: Messaging
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Messaging
+    name: Messaging
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading

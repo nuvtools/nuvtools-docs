@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Messaging | Nuv Tools Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Messaging | Nuv Tools Framework ">
+      
+      
+      <link rel="icon" href="../../../../images/icon.png">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/nuvtools-brand.svg" alt="Framework">
+            Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="messaging">Messaging</h1>
+
+<p>Cloud-based messaging libraries with Azure Service Bus support, including session-enabled queues and scheduled delivery.</p>
+<h2 id="libraries">Libraries</h2>
+<table>
+<thead>
+<tr>
+<th>Library</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NuvTools.Notification.Messaging</strong></td>
+<td>Abstraction</td>
+<td>Core messaging interfaces and models: <code>IMessageSender&lt;TBody&gt;</code>, <code>IMessageConsumer&lt;TBody&gt;</code>, <code>IMessageContext</code>. Provides <code>Message&lt;T&gt;</code> envelope with metadata (MessageId, CorrelationId, Subject, SessionId, TimeToLive, ScheduledEnqueueTime) and a flexible <code>Properties</code> dictionary for custom headers.</td>
+</tr>
+<tr>
+<td><strong>NuvTools.Notification.Messaging.Azure.ServiceBus</strong></td>
+<td>Implementation</td>
+<td>Azure Service Bus provider with <code>AzureServiceBusSender&lt;TBody&gt;</code> (abstract sender for queues/topics), <code>AzureServiceBusReceiver&lt;TBody, TConsumer&gt;</code> (standard parallel processing), <code>AzureServiceBusSessionReceiver&lt;TBody, TConsumer&gt;</code> (session-enabled sequential per-SessionId). Includes automatic JSON deserialization, dead-lettering, exponential backoff retry, scheduled delivery, and message TTL support.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="installation">Installation</h2>
+<pre><code class="lang-bash">dotnet add package NuvTools.Notification.Messaging
+dotnet add package NuvTools.Notification.Messaging.Azure.ServiceBus
+</code></pre>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="sending-messages">Sending Messages</h3>
+<pre><code class="lang-csharp">// Define your sender
+public class OrderSender(IOptions&lt;MessagingSection&gt; options)
+    : AzureServiceBusSender&lt;Order&gt;(options.Value);
+
+// Send a message
+var message = new Message&lt;Order&gt;(order)
+{
+    Subject = &quot;order.created&quot;,
+    CorrelationId = correlationId
+};
+await orderSender.SendAsync(message, cancellationToken);
+</code></pre>
+<h3 id="sending-scheduled-messages">Sending Scheduled Messages</h3>
+<pre><code class="lang-csharp">// Schedule a message for future delivery
+var message = new Message&lt;Reminder&gt;(reminder)
+{
+    Subject = &quot;reminder.scheduled&quot;,
+    ScheduledEnqueueTime = DateTimeOffset.UtcNow.AddHours(1),
+    TimeToLive = TimeSpan.FromDays(1)
+};
+await reminderSender.SendAsync(message, cancellationToken);
+</code></pre>
+<h3 id="receiving-messages">Receiving Messages</h3>
+<pre><code class="lang-csharp">// Define your consumer
+public class OrderConsumer : IMessageConsumer&lt;Order&gt;
+{
+    public async Task ConsumeAsync(Message&lt;Order&gt; message, IMessageContext context,
+        CancellationToken cancellationToken)
+    {
+        await ProcessOrder(message.Body);
+        await context.CompleteAsync(cancellationToken);
+    }
+}
+
+// Define your background receiver
+public class OrderReceiver(
+    ILogger&lt;OrderReceiver&gt; logger,
+    IServiceProvider serviceProvider,
+    IOptions&lt;MessagingSection&gt; options)
+    : AzureServiceBusReceiver&lt;Order, OrderConsumer&gt;(logger, serviceProvider, options.Value);
+</code></pre>
+<h3 id="session-enabled-receiver">Session-Enabled Receiver</h3>
+<p>For ordered processing where messages with the same <code>SessionId</code> must be processed sequentially:</p>
+<pre><code class="lang-csharp">// Send messages with a session ID
+var message = new Message&lt;OrderEvent&gt;(orderEvent)
+{
+    SessionId = orderId.ToString(),
+    Subject = &quot;order.updated&quot;
+};
+await sender.SendAsync(message, cancellationToken);
+
+// Define a session-aware receiver
+public class OrderEventReceiver(
+    ILogger&lt;OrderEventReceiver&gt; logger,
+    IServiceProvider serviceProvider,
+    IOptions&lt;MessagingSection&gt; options)
+    : AzureServiceBusSessionReceiver&lt;OrderEvent, OrderEventConsumer&gt;(
+        logger, serviceProvider, options.Value);
+</code></pre>
+<h2 id="usage-examples">Usage Examples</h2>
+<h3 id="complete-azure-service-bus-setup">Complete Azure Service Bus Setup</h3>
+<pre><code class="lang-json">// appsettings.json
+{
+  &quot;Messaging&quot;: {
+    &quot;Name&quot;: &quot;orders-queue&quot;,
+    &quot;ConnectionString&quot;: &quot;Endpoint=sb://...&quot;,
+    &quot;MaxConcurrentCalls&quot;: 10,
+    &quot;MaxAutoLockRenewalDuration&quot;: &quot;00:30:00&quot;,
+    &quot;AutoCompleteMessages&quot;: false,
+    &quot;RequiresSession&quot;: false
+  }
+}
+</code></pre>
+<pre><code class="lang-csharp">// Program.cs
+services.AddMessagingQueueConfiguration&lt;MessagingSection&gt;(configuration);
+services.AddSingleton&lt;OrderSender&gt;();
+services.AddScoped&lt;OrderConsumer&gt;();
+services.AddHostedService&lt;OrderReceiver&gt;();
+</code></pre>
+<p>The section name carries no dots so every setting can be overridden by an environment variable on Linux and
+Azure App Service, where a dot is not valid in a variable name:</p>
+<pre><code class="lang-bash">Messaging__ConnectionString=...
+</code></pre>
+<h3 id="passwordless-setup-entra-id">Passwordless Setup (Entra ID)</h3>
+<p>Drop <code>ConnectionString</code> and name the namespace instead. No key is stored, so nothing expires:</p>
+<pre><code class="lang-json">{
+  &quot;Messaging&quot;: {
+    &quot;Name&quot;: &quot;orders-queue&quot;,
+    &quot;FullyQualifiedNamespace&quot;: &quot;contoso.servicebus.windows.net&quot;,
+    &quot;ManagedIdentityClientId&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
+  }
+}
+</code></pre>
+<p>The identity needs the <em>Azure Service Bus Data Sender</em> role to publish and <em>Azure Service Bus Data Receiver</em>
+to consume, granted on the namespace or the individual entity. Omit <code>ManagedIdentityClientId</code> to use the
+identity named by the <code>AZURE_CLIENT_ID</code> environment variable, or the system-assigned identity when that is
+unset; locally the same configuration falls back to the developer credential (<code>az login</code>),
+so no separate development branch is needed.</p>
+<p>When both <code>ConnectionString</code> and <code>FullyQualifiedNamespace</code> are present the connection string wins, which makes
+the migration reversible one entity at a time.</p>
+<p>Senders and receivers also accept an explicit <code>TokenCredential</code> as a final constructor argument when the
+default chain is not what you want:</p>
+<pre><code class="lang-csharp">public class OrderReceiver(ILogger&lt;OrderReceiver&gt; logger, IServiceProvider provider, IOptions&lt;MessagingSection&gt; options)
+    : AzureServiceBusReceiver&lt;Order, OrderConsumer&gt;(
+        logger, provider, options.Value, new WorkloadIdentityCredential());
+</code></pre>
+<h3 id="session-enabled-queue-setup">Session-Enabled Queue Setup</h3>
+<pre><code class="lang-json">{
+  &quot;Messaging&quot;: {
+    &quot;Name&quot;: &quot;order-events-queue&quot;,
+    &quot;ConnectionString&quot;: &quot;Endpoint=sb://...&quot;,
+    &quot;MaxConcurrentCalls&quot;: 5,
+    &quot;RequiresSession&quot;: true
+  }
+}
+</code></pre>
+<pre><code class="lang-csharp">services.AddHostedService&lt;OrderEventReceiver&gt;();  // Uses AzureServiceBusSessionReceiver
+</code></pre>
+<p>When <code>RequiresSession</code> is <code>true</code>, use <code>AzureServiceBusSessionReceiver</code> which enforces <code>MaxConcurrentCallsPerSession = 1</code> to guarantee sequential processing per session, while processing up to <code>MaxConcurrentCalls</code> sessions in parallel.</p>
+<h3 id="message-error-handling">Message Error Handling</h3>
+<pre><code class="lang-csharp">public class ResilientOrderConsumer : IMessageConsumer&lt;Order&gt;
+{
+    public async Task ConsumeAsync(Message&lt;Order&gt; message, IMessageContext context,
+        CancellationToken cancellationToken)
+    {
+        try
+        {
+            await ProcessOrder(message.Body);
+            await context.CompleteAsync(cancellationToken);
+        }
+        catch (ValidationException ex)
+        {
+            // Invalid message - send to dead-letter queue
+            await context.DeadLetterAsync(&quot;ValidationFailed&quot;, ex.Message, cancellationToken);
+        }
+        catch (Exception)
+        {
+            // Transient error - abandon for retry
+            await context.AbandonAsync(cancellationToken);
+        }
+    }
+}
+</code></pre>
+<h3 id="using-custom-message-properties">Using Custom Message Properties</h3>
+<pre><code class="lang-csharp">var message = new Message&lt;Order&gt;(order)
+{
+    Subject = &quot;order.created&quot;,
+    Properties =
+    {
+        [&quot;priority&quot;] = &quot;high&quot;,
+        [&quot;source&quot;] = &quot;web-api&quot;,
+        [&quot;tenant-id&quot;] = tenantId
+    }
+};
+await sender.SendAsync(message, cancellationToken);
+</code></pre>
+<p>Properties are mapped to <code>ApplicationProperties</code> on Azure Service Bus messages and are available in the consumer via <code>message.Properties</code>.</p>
+<h2 id="configuration">Configuration</h2>
+<h3 id="appsettingsjson">appsettings.json</h3>
+<pre><code class="lang-json">{
+  &quot;Messaging&quot;: {
+    &quot;Name&quot;: &quot;my-queue&quot;,
+    &quot;SubscriptionName&quot;: null,
+    &quot;ConnectionString&quot;: &quot;Endpoint=sb://namespace.servicebus.windows.net/;SharedAccessKeyName=...&quot;,
+    &quot;MaxAutoLockRenewalDuration&quot;: &quot;00:30:00&quot;,
+    &quot;MaxConcurrentCalls&quot;: 10,
+    &quot;AutoCompleteMessages&quot;: false,
+    &quot;RequiresSession&quot;: false
+  }
+}
+</code></pre>
+<h3 id="configuration-properties">Configuration Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Name</code></td>
+<td><em>(required)</em></td>
+<td>Queue or topic name</td>
+</tr>
+<tr>
+<td><code>SubscriptionName</code></td>
+<td><code>null</code></td>
+<td>Subscription name (for topic/subscription scenarios)</td>
+</tr>
+<tr>
+<td><code>ConnectionString</code></td>
+<td><code>null</code></td>
+<td>Azure Service Bus connection string (shared access key). Required unless <code>FullyQualifiedNamespace</code> is set</td>
+</tr>
+<tr>
+<td><code>FullyQualifiedNamespace</code></td>
+<td><code>null</code></td>
+<td>Namespace host such as <code>contoso.servicebus.windows.net</code>, used to authenticate with Entra ID instead of a key</td>
+</tr>
+<tr>
+<td><code>ManagedIdentityClientId</code></td>
+<td><code>null</code></td>
+<td>Client ID of the user-assigned managed identity to authenticate as when <code>FullyQualifiedNamespace</code> is used</td>
+</tr>
+<tr>
+<td><code>MaxAutoLockRenewalDuration</code></td>
+<td><code>00:30:00</code></td>
+<td>How long to automatically renew the message lock</td>
+</tr>
+<tr>
+<td><code>MaxConcurrentCalls</code></td>
+<td><code>10</code></td>
+<td>Max parallel message handlers (or max concurrent sessions)</td>
+</tr>
+<tr>
+<td><code>AutoCompleteMessages</code></td>
+<td><code>false</code></td>
+<td>Auto-complete messages after handler returns</td>
+</tr>
+<tr>
+<td><code>RequiresSession</code></td>
+<td><code>false</code></td>
+<td>Enable session support for ordered processing</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dependency-injection-setup">Dependency Injection Setup</h3>
+<pre><code class="lang-csharp">services.AddMessagingQueueConfiguration&lt;MessagingSection&gt;(configuration);
+</code></pre>
+<h2 id="architecture">Architecture</h2>
+<h3 id="receiver-hierarchy">Receiver Hierarchy</h3>
+<pre><code>BackgroundService
+  +-- AzureServiceBusReceiverBase&lt;TBody, TConsumer&gt;    (shared processing, error handling, retry)
+       |-- AzureServiceBusReceiver&lt;TBody, TConsumer&gt;    (standard parallel processing)
+       +-- AzureServiceBusSessionReceiver&lt;TBody, TConsumer&gt; (sequential per-SessionId)
+</code></pre>
+<p>Both <code>AzureServiceBusReceiver</code> and <code>AzureServiceBusSessionReceiver</code> inherit from a shared <code>AzureServiceBusReceiverBase</code> which provides:</p>
+<ul>
+<li><strong>Message processing</strong>: JSON deserialization, consumer dispatch via scoped DI, and lifecycle management</li>
+<li><strong>Error handling</strong>: Dead-lettering for deserialization failures, abandon for transient errors, warning on message lock loss</li>
+<li><strong>Resilience</strong>: Automatic processor restart with exponential backoff (3 retries at 5s, 10s, 20s intervals)</li>
+<li><strong>Graceful shutdown</strong>: Proper stop and dispose of processor and client resources</li>
+</ul>
+<p>Consumers are resolved from a new DI scope per message, enabling transactional processing and proper resource cleanup.</p>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>© Nuv Tools · <a href="https://nuvtools.com/framework/">nuvtools.com</a> · MIT licence · Built with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

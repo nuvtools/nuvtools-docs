@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>NuvTools.Blockchain | Nuv Tools Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="NuvTools.Blockchain | Nuv Tools Framework ">
+      
+      
+      <link rel="icon" href="../../../images/icon.png">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/nuvtools-brand.svg" alt="Framework">
+            Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="nuvtoolsblockchain">NuvTools.Blockchain</h1>
+
+<p>A suite of .NET libraries for abstracting tamper-evident, append-only blockchain ledger operations, with comprehensive support for Microsoft Azure Confidential Ledger.</p>
+<p><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
+<a href="https://dotnet.microsoft.com/"><img src="https://img.shields.io/badge/.NET-8%20%7C%209%20%7C%2010-512BD4" alt=".NET"></a></p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#quick-start">Quick Start</a></li>
+<li><a href="#usage-examples">Usage Examples</a></li>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#target-frameworks">Target Frameworks</a></li>
+<li><a href="#building-from-source">Building from Source</a></li>
+<li><a href="#documentation">Documentation</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+<h2 id="overview">Overview</h2>
+<p>NuvTools.Blockchain provides a clean, intuitive abstraction layer for writing and reading typed records to a blockchain ledger. The library follows a provider pattern, allowing you to implement custom ledger backends while maintaining a consistent API.</p>
+<h3 id="libraries">Libraries</h3>
+<h4 id="nuvtoolsblockchain-core">NuvTools.Blockchain (Core)</h4>
+<p>The core library defines the foundational abstractions:</p>
+<ul>
+<li><strong><code>ILedgerService</code></strong> - Interface for writing entries to and reading entries from a ledger</li>
+<li><strong><code>LedgerEntry&lt;T&gt;</code></strong> - Typed entry returned from the ledger, including <code>TransactionId</code> and optional <code>CollectionId</code></li>
+<li><strong><code>LedgerEntryBase&lt;T&gt;</code></strong> - Base wrapper carrying the original <code>Content</code> and <code>CommitTimeUtc</code></li>
+</ul>
+<h4 id="nuvtoolsblockchainazure">NuvTools.Blockchain.Azure</h4>
+<p>Azure Confidential Ledger implementation:</p>
+<ul>
+<li><strong><code>AzureConfidentialLedgerService</code></strong> - Full <code>ILedgerService</code> implementation backed by <code>Azure.Security.ConfidentialLedger</code></li>
+<li><strong><code>BlockchainSection</code></strong> - Strongly-typed configuration POCO bound to the <code>NuvTools.Blockchain</code> configuration section</li>
+<li><strong><code>BlockchainExtensions.AddBlockchain()</code></strong> - Dependency injection registration extension</li>
+<li>Authentication via <code>DefaultAzureCredential</code> (managed identity, environment, Visual Studio, Azure CLI, etc.)</li>
+<li>Built-in retry with linear backoff while entries are in the <code>Loading</code> state (eventual consistency)</li>
+<li>Automatic JSON serialization of payloads</li>
+<li>Lazy client initialization</li>
+</ul>
+<h2 id="features">Features</h2>
+<p>✅ <strong>Provider Pattern</strong> - Easy to implement custom ledger backends
+✅ <strong>Async/Await</strong> - Fully asynchronous API with <code>CancellationToken</code> support
+✅ <strong>Generic Type Support</strong> - Write and read any serializable type
+✅ <strong>Azure Integration</strong> - Production-ready Azure Confidential Ledger implementation
+✅ <strong>Collection / Sub-Ledger Support</strong> - Organize entries by <code>collectionId</code>
+✅ <strong>Eventual-Consistency Retry</strong> - Configurable retry while the ledger commits the entry
+✅ <strong>Automatic Serialization</strong> - Records are serialized to JSON transparently
+✅ <strong>Comprehensive Documentation</strong> - Full XML documentation for IntelliSense
+✅ <strong>Multi-Targeting</strong> - Supports .NET 8, 9, and 10</p>
+<h2 id="installation">Installation</h2>
+<p>Install via NuGet Package Manager:</p>
+<pre><code class="lang-bash"># Core library
+dotnet add package NuvTools.Blockchain
+
+# Azure Confidential Ledger implementation
+dotnet add package NuvTools.Blockchain.Azure
+</code></pre>
+<p>Or via Package Manager Console:</p>
+<pre><code class="lang-powershell">Install-Package NuvTools.Blockchain
+Install-Package NuvTools.Blockchain.Azure
+</code></pre>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="azure-confidential-ledger-example">Azure Confidential Ledger Example</h3>
+<p><strong>1. Configure <code>appsettings.json</code>:</strong></p>
+<pre><code class="lang-json">{
+  &quot;NuvTools.Blockchain&quot;: {
+    &quot;LedgerEndpoint&quot;: &quot;https://your-ledger-name.confidential-ledger.azure.com&quot;
+  }
+}
+</code></pre>
+<p><strong>2. Register services in <code>Program.cs</code>:</strong></p>
+<pre><code class="lang-csharp">using NuvTools.Blockchain.Azure;
+
+builder.Services.AddBlockchain(builder.Configuration);
+</code></pre>
+<p><strong>3. Inject <code>ILedgerService</code> and use it:</strong></p>
+<pre><code class="lang-csharp">using NuvTools.Blockchain;
+
+public class AuditService(ILedgerService ledgerService)
+{
+    public async Task RecordAsync(AuditRecord record, CancellationToken ct)
+    {
+        var transactionId = await ledgerService.WriteAsync(record, cancellationToken: ct);
+
+        var entry = await ledgerService.ReadAsync&lt;AuditRecord&gt;(transactionId, cancellationToken: ct);
+
+        Console.WriteLine($&quot;Committed at: {entry?.CommitTimeUtc}&quot;);
+    }
+}
+</code></pre>
+<h2 id="usage-examples">Usage Examples</h2>
+<h3 id="writing-an-entry">Writing an Entry</h3>
+<pre><code class="lang-csharp">public record AuditRecord(string UserId, string Action, DateTime Timestamp);
+
+var record = new AuditRecord(&quot;user-42&quot;, &quot;DocumentSigned&quot;, DateTime.UtcNow);
+
+// Write to the default ledger
+var transactionId = await ledgerService.WriteAsync(record);
+</code></pre>
+<h3 id="reading-an-entry">Reading an Entry</h3>
+<pre><code class="lang-csharp">// Read with default retry settings (10 attempts, 500ms base delay)
+var entry = await ledgerService.ReadAsync&lt;AuditRecord&gt;(transactionId);
+
+if (entry is not null)
+{
+    Console.WriteLine($&quot;Transaction:  {entry.TransactionId}&quot;);
+    Console.WriteLine($&quot;Committed at: {entry.CommitTimeUtc}&quot;);
+    Console.WriteLine($&quot;User:         {entry.Content.UserId}&quot;);
+    Console.WriteLine($&quot;Action:       {entry.Content.Action}&quot;);
+}
+</code></pre>
+<h3 id="working-with-collections-sub-ledgers">Working with Collections (Sub-Ledgers)</h3>
+<pre><code class="lang-csharp">const string CollectionId = &quot;audit-2026&quot;;
+
+// Write to a specific collection
+var transactionId = await ledgerService.WriteAsync(record, CollectionId);
+
+// Read from the same collection
+var entry = await ledgerService.ReadAsync&lt;AuditRecord&gt;(
+    transactionId,
+    collectionId: CollectionId);
+</code></pre>
+<h3 id="tuning-retry-behavior">Tuning Retry Behavior</h3>
+<p>Entries can briefly be in a <code>Loading</code> state while the ledger commits and seals them. The reader retries with linear backoff (<code>delayMilliseconds * attempt</code>) until the entry is available or <code>maxRetries</code> is exceeded.</p>
+<pre><code class="lang-csharp">var entry = await ledgerService.ReadAsync&lt;AuditRecord&gt;(
+    transactionId,
+    collectionId: null,
+    maxRetries: 20,
+    delayMilliseconds: 250,
+    cancellationToken: ct);
+</code></pre>
+<p>If the ledger does not finish loading within the retry budget, a <code>TimeoutException</code> is thrown.</p>
+<h3 id="custom-configuration-section">Custom Configuration Section</h3>
+<pre><code class="lang-csharp">// Bind to a non-default section name
+builder.Services.AddBlockchain(builder.Configuration, &quot;MyApp:Ledger&quot;);
+</code></pre>
+<pre><code class="lang-json">{
+  &quot;MyApp&quot;: {
+    &quot;Ledger&quot;: {
+      &quot;LedgerEndpoint&quot;: &quot;https://my-ledger.confidential-ledger.azure.com&quot;
+    }
+  }
+}
+</code></pre>
+<h2 id="configuration">Configuration</h2>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LedgerEndpoint</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The Azure Confidential Ledger endpoint URL.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="authentication">Authentication</h3>
+<p><code>AzureConfidentialLedgerService</code> uses <code>DefaultAzureCredential</code>, which transparently tries the following credential sources in order:</p>
+<ol>
+<li>Environment variables</li>
+<li>Workload identity (Kubernetes)</li>
+<li>Managed identity</li>
+<li>Visual Studio / Visual Studio Code</li>
+<li>Azure CLI / Azure PowerShell / Azure Developer CLI</li>
+<li>Interactive browser (where enabled)</li>
+</ol>
+<p>Ensure the identity running the application has the appropriate role on the ledger resource (typically <strong>Confidential Ledger Contributor</strong>).</p>
+<h2 id="target-frameworks">Target Frameworks</h2>
+<ul>
+<li>.NET 8.0</li>
+<li>.NET 9.0</li>
+<li>.NET 10.0</li>
+</ul>
+<p>All libraries enable nullable reference types and implicit usings.</p>
+<h2 id="building-from-source">Building from Source</h2>
+<p>This solution uses the modern <code>.slnx</code> (XML-based) solution format.</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>.NET 10 SDK or later</li>
+<li>Visual Studio 2022 17.0+ or Visual Studio Code with C# extension</li>
+</ul>
+<h3 id="build-commands">Build Commands</h3>
+<pre><code class="lang-bash"># Clone the repository
+git clone https://github.com/nuvtools/nuvtools-blockchain.git
+cd nuvtools-blockchain
+
+# Build the solution
+dotnet build NuvTools.Blockchain.slnx
+
+# Run tests
+dotnet test NuvTools.Blockchain.slnx
+
+# Create NuGet packages
+dotnet pack NuvTools.Blockchain.slnx -c Release
+</code></pre>
+<p>The solution structure:</p>
+<pre><code>nuvtools-blockchain/
+├── src/
+│   ├── NuvTools.Blockchain/             # Core abstractions
+│   └── NuvTools.Blockchain.Azure/       # Azure Confidential Ledger implementation
+├── tests/
+│   └── NuvTools.Blockchain.Azure.Test/  # NUnit tests
+└── NuvTools.Blockchain.slnx             # Solution file
+</code></pre>
+<h2 id="documentation">Documentation</h2>
+<p>All public APIs include comprehensive XML documentation comments. IntelliSense in Visual Studio, Visual Studio Code, and Rider will display:</p>
+<ul>
+<li>Detailed descriptions of all types, methods, and properties</li>
+<li>Parameter information with expected values</li>
+<li>Return value descriptions</li>
+<li>Exception documentation</li>
+<li>Usage examples and best practices</li>
+</ul>
+<p>XML documentation files are included in the NuGet packages for seamless integration.</p>
+<h2 id="releasing">Releasing</h2>
+<p>Publishing to nuget.org is irreversible per version, so the workflow makes it the last and smallest
+step.</p>
+<p><strong>One workflow per library.</strong> Each package has its own, so a run and an approval each concern
+exactly one package. The steps themselves are shared, in the reusable <code>package-publish.yml</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Workflow</th>
+<th>Release tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NuvTools.Blockchain</code></td>
+<td><code>blockchain-publish.yml</code></td>
+<td><code>blockchain-vX.Y.Z</code></td>
+</tr>
+<tr>
+<td><code>NuvTools.Blockchain.Azure</code></td>
+<td><code>azure-publish.yml</code></td>
+<td><code>azure-vX.Y.Z</code></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Set the package's <code>&lt;Version&gt;</code> in its <code>.csproj</code> and merge it. That is the version that gets
+published; the workflow reads it and never computes one.</li>
+<li>Run the library's workflow by hand (<em>Actions → Blockchain Publish → Run workflow</em>) with <em>push</em>
+checked.</li>
+<li>The workflow builds the solution with <code>-warnaserror</code>, runs the tests, takes <strong>that package only</strong>
+from the build output, verifies it carries its README, licence, icon, symbols and every target
+framework, and then waits for approval on the <code>nuget</code> GitHub Environment before pushing.</li>
+<li><strong>After the push succeeds, the workflow tags the commit</strong> with the tag in the table above. The tag is a
+record of what is on nuget.org, never what starts a release, so it cannot exist for a version
+that did not get there. A run whose tag already exists stops before building: the version has
+been released and <code>&lt;Version&gt;</code> needs a bump.</li>
+</ol>
+<p><strong>A referenced package goes first.</strong> A package that references another of this repository as a
+project depends on whatever <code>&lt;Version&gt;</code> that one has in the commit. The workflow checks that
+version is on nuget.org and refuses to push a package whose dependency is not there yet. So:</p>
+<ul>
+<li><code>u</code> before <code>a</code>.</li>
+<li><code>v</code> before <code>N</code>.</li>
+</ul>
+<p>That check knows a version exists, not what is in it: when a referenced package changes its public
+API, bump and publish it first, then bump and publish the packages built on it.</p>
+<p><strong>Versions published by hand are refused.</strong> Releases made before these workflows exist on nuget.org
+with no tag. Pushing one again would skip the duplicate and then tag the current commit as a
+release it is not, so a version that is already on nuget.org stops the run. The exception is a
+re-run of the same run, which is how a push that succeeded and a tag that failed gets finished.</p>
+<p><strong>No API key is stored.</strong> The push uses nuget.org's trusted publishing: the job presents a GitHub
+OIDC token, nuget.org checks it against the policy registered for this repository and answers with a
+key that lives for one hour. The repository needs one secret, <code>NUGET_USER</code> — the nuget.org profile
+name the policy belongs to — and the policy itself, registered under <em>Trusted Publishing</em> on
+nuget.org with the owner <code>nuvtools</code>, the repository <code>nuvtools-blockchain</code>, the workflow file and the
+environment <code>nuget</code>.</p>
+<p>Run a library's workflow by hand with <em>push</em> unchecked for a dry run that stops after the
+verification.</p>
+<h2 id="license">License</h2>
+<p>Licensed under the <a href="https://github.com/nuvtools/nuvtools-blockchain/blob/main/LICENSE">MIT License</a>.</p>
+<p>Copyright © 2026 Nuv Tools</p>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>© Nuv Tools · <a href="https://nuvtools.com/framework/">nuvtools.com</a> · MIT licence · Built with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

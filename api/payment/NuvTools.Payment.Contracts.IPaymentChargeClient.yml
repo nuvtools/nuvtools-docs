@@ -1,0 +1,362 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Payment.Contracts.IPaymentChargeClient
+  commentId: T:NuvTools.Payment.Contracts.IPaymentChargeClient
+  id: IPaymentChargeClient
+  parent: NuvTools.Payment.Contracts
+  children:
+  - NuvTools.Payment.Contracts.IPaymentChargeClient.ChargeAsync(NuvTools.Payment.DTOs.Requests.PaymentChargeRequest,System.Threading.CancellationToken)
+  - NuvTools.Payment.Contracts.IPaymentChargeClient.TransferAsync(NuvTools.Payment.DTOs.Requests.PaymentTransferRequest,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: IPaymentChargeClient
+  nameWithType: IPaymentChargeClient
+  fullName: NuvTools.Payment.Contracts.IPaymentChargeClient
+  type: Interface
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.Contracts
+  summary: 'Moving money: charging a customer, and paying a payee.'
+  remarks: >-
+    The two are separate calls on purpose. One charge can pay several payees, and a payee is paid for
+
+    what was billed rather than for what each customer happened to pay — a customer who has not paid
+
+    is a debt the platform carries, while a payee paid twice is a mistake nobody can take back.
+  example: []
+  syntax:
+    content: public interface IPaymentChargeClient
+    content.vb: Public Interface IPaymentChargeClient
+  derivedClasses:
+  - NuvTools.Payment.Stripe.ApiClient.Services.StripeChargeApiClient
+- uid: NuvTools.Payment.Contracts.IPaymentChargeClient.ChargeAsync(NuvTools.Payment.DTOs.Requests.PaymentChargeRequest,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Contracts.IPaymentChargeClient.ChargeAsync(NuvTools.Payment.DTOs.Requests.PaymentChargeRequest,System.Threading.CancellationToken)
+  id: ChargeAsync(NuvTools.Payment.DTOs.Requests.PaymentChargeRequest,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Contracts.IPaymentChargeClient
+  langs:
+  - csharp
+  - vb
+  name: ChargeAsync(PaymentChargeRequest, CancellationToken)
+  nameWithType: IPaymentChargeClient.ChargeAsync(PaymentChargeRequest, CancellationToken)
+  fullName: NuvTools.Payment.Contracts.IPaymentChargeClient.ChargeAsync(NuvTools.Payment.DTOs.Requests.PaymentChargeRequest, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.Contracts
+  summary: >-
+    Charges a saved payment method off-session — nobody is at a keyboard when a month is billed —
+
+    and returns what the provider made of it.
+  example: []
+  syntax:
+    content: Task<IResult<PaymentDTO>> ChargeAsync(PaymentChargeRequest request, CancellationToken cancellationToken = default)
+    parameters:
+    - id: request
+      type: NuvTools.Payment.DTOs.Requests.PaymentChargeRequest
+      description: Who is charged, how much, and the key that makes a retry safe.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancels the call.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.DTOs.PaymentDTO}}
+    content.vb: Function ChargeAsync(request As PaymentChargeRequest, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of PaymentDTO))
+  overload: NuvTools.Payment.Contracts.IPaymentChargeClient.ChargeAsync*
+- uid: NuvTools.Payment.Contracts.IPaymentChargeClient.TransferAsync(NuvTools.Payment.DTOs.Requests.PaymentTransferRequest,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Contracts.IPaymentChargeClient.TransferAsync(NuvTools.Payment.DTOs.Requests.PaymentTransferRequest,System.Threading.CancellationToken)
+  id: TransferAsync(NuvTools.Payment.DTOs.Requests.PaymentTransferRequest,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Contracts.IPaymentChargeClient
+  langs:
+  - csharp
+  - vb
+  name: TransferAsync(PaymentTransferRequest, CancellationToken)
+  nameWithType: IPaymentChargeClient.TransferAsync(PaymentTransferRequest, CancellationToken)
+  fullName: NuvTools.Payment.Contracts.IPaymentChargeClient.TransferAsync(NuvTools.Payment.DTOs.Requests.PaymentTransferRequest, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.Contracts
+  summary: Sends part of what was charged to a payee's account.
+  example: []
+  syntax:
+    content: Task<IResult<PaymentTransferDTO>> TransferAsync(PaymentTransferRequest request, CancellationToken cancellationToken = default)
+    parameters:
+    - id: request
+      type: NuvTools.Payment.DTOs.Requests.PaymentTransferRequest
+      description: Who is paid, how much, and the key that makes a retry safe.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancels the call.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.DTOs.PaymentTransferDTO}}
+    content.vb: Function TransferAsync(request As PaymentTransferRequest, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of PaymentTransferDTO))
+  overload: NuvTools.Payment.Contracts.IPaymentChargeClient.TransferAsync*
+references:
+- uid: NuvTools.Payment.Contracts
+  commentId: N:NuvTools.Payment.Contracts
+  name: NuvTools.Payment.Contracts
+  nameWithType: NuvTools.Payment.Contracts
+  fullName: NuvTools.Payment.Contracts
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Contracts
+    name: Contracts
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Contracts
+    name: Contracts
+- uid: NuvTools.Payment.Contracts.IPaymentChargeClient.ChargeAsync*
+  commentId: Overload:NuvTools.Payment.Contracts.IPaymentChargeClient.ChargeAsync
+  href: NuvTools.Payment.Contracts.IPaymentChargeClient.html#NuvTools_Payment_Contracts_IPaymentChargeClient_ChargeAsync_NuvTools_Payment_DTOs_Requests_PaymentChargeRequest_System_Threading_CancellationToken_
+  name: ChargeAsync
+  nameWithType: IPaymentChargeClient.ChargeAsync
+  fullName: NuvTools.Payment.Contracts.IPaymentChargeClient.ChargeAsync
+- uid: NuvTools.Payment.DTOs.Requests.PaymentChargeRequest
+  commentId: T:NuvTools.Payment.DTOs.Requests.PaymentChargeRequest
+  parent: NuvTools.Payment.DTOs.Requests
+  href: NuvTools.Payment.DTOs.Requests.PaymentChargeRequest.html
+  name: PaymentChargeRequest
+  nameWithType: PaymentChargeRequest
+  fullName: NuvTools.Payment.DTOs.Requests.PaymentChargeRequest
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.DTOs.PaymentDTO}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.DTOs.PaymentDTO}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<PaymentDTO>>
+  nameWithType: Task<IResult<PaymentDTO>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<NuvTools.Payment.DTOs.PaymentDTO>>
+  nameWithType.vb: Task(Of IResult(Of PaymentDTO))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of NuvTools.Payment.DTOs.PaymentDTO))
+  name.vb: Task(Of IResult(Of PaymentDTO))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - uid: NuvTools.Payment.DTOs.PaymentDTO
+    name: PaymentDTO
+    href: NuvTools.Payment.DTOs.PaymentDTO.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.DTOs.PaymentDTO
+    name: PaymentDTO
+    href: NuvTools.Payment.DTOs.PaymentDTO.html
+  - name: )
+  - name: )
+- uid: NuvTools.Payment.DTOs.Requests
+  commentId: N:NuvTools.Payment.DTOs.Requests
+  name: NuvTools.Payment.DTOs.Requests
+  nameWithType: NuvTools.Payment.DTOs.Requests
+  fullName: NuvTools.Payment.DTOs.Requests
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.DTOs
+    name: DTOs
+  - name: .
+  - uid: NuvTools.Payment.DTOs.Requests
+    name: Requests
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.DTOs
+    name: DTOs
+  - name: .
+  - uid: NuvTools.Payment.DTOs.Requests
+    name: Requests
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NuvTools.Payment.Contracts.IPaymentChargeClient.TransferAsync*
+  commentId: Overload:NuvTools.Payment.Contracts.IPaymentChargeClient.TransferAsync
+  href: NuvTools.Payment.Contracts.IPaymentChargeClient.html#NuvTools_Payment_Contracts_IPaymentChargeClient_TransferAsync_NuvTools_Payment_DTOs_Requests_PaymentTransferRequest_System_Threading_CancellationToken_
+  name: TransferAsync
+  nameWithType: IPaymentChargeClient.TransferAsync
+  fullName: NuvTools.Payment.Contracts.IPaymentChargeClient.TransferAsync
+- uid: NuvTools.Payment.DTOs.Requests.PaymentTransferRequest
+  commentId: T:NuvTools.Payment.DTOs.Requests.PaymentTransferRequest
+  parent: NuvTools.Payment.DTOs.Requests
+  href: NuvTools.Payment.DTOs.Requests.PaymentTransferRequest.html
+  name: PaymentTransferRequest
+  nameWithType: PaymentTransferRequest
+  fullName: NuvTools.Payment.DTOs.Requests.PaymentTransferRequest
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.DTOs.PaymentTransferDTO}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.DTOs.PaymentTransferDTO}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<PaymentTransferDTO>>
+  nameWithType: Task<IResult<PaymentTransferDTO>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<NuvTools.Payment.DTOs.PaymentTransferDTO>>
+  nameWithType.vb: Task(Of IResult(Of PaymentTransferDTO))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of NuvTools.Payment.DTOs.PaymentTransferDTO))
+  name.vb: Task(Of IResult(Of PaymentTransferDTO))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - uid: NuvTools.Payment.DTOs.PaymentTransferDTO
+    name: PaymentTransferDTO
+    href: NuvTools.Payment.DTOs.PaymentTransferDTO.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.DTOs.PaymentTransferDTO
+    name: PaymentTransferDTO
+    href: NuvTools.Payment.DTOs.PaymentTransferDTO.html
+  - name: )
+  - name: )

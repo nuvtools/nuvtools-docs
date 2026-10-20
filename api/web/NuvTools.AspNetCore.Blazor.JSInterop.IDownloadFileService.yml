@@ -1,0 +1,412 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService
+  commentId: T:NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService
+  id: IDownloadFileService
+  parent: NuvTools.AspNetCore.Blazor.JSInterop
+  children:
+  - NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService.DownloadFileAsync(System.String,System.Byte[],System.String,System.Threading.CancellationToken)
+  - NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService.DownloadFileAsync(System.String,System.IO.Stream,System.String,System.Threading.CancellationToken)
+  - NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService.DownloadFileFromTextAsync(System.String,System.String,System.Text.Encoding,System.String,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: IDownloadFileService
+  nameWithType: IDownloadFileService
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService
+  type: Interface
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.JSInterop
+  summary: Provides functionality for downloading files in Blazor applications via JavaScript interop.
+  example: []
+  syntax:
+    content: 'public interface IDownloadFileService : IAsyncDisposable'
+    content.vb: Public Interface IDownloadFileService Inherits IAsyncDisposable
+  derivedClasses:
+  - NuvTools.AspNetCore.Blazor.JSInterop.DownloadFileService
+  inheritedMembers:
+  - System.IAsyncDisposable.DisposeAsync
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService.DownloadFileAsync(System.String,System.Byte[],System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService.DownloadFileAsync(System.String,System.Byte[],System.String,System.Threading.CancellationToken)
+  id: DownloadFileAsync(System.String,System.Byte[],System.String,System.Threading.CancellationToken)
+  parent: NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService
+  langs:
+  - csharp
+  - vb
+  name: DownloadFileAsync(string, byte[], string, CancellationToken)
+  nameWithType: IDownloadFileService.DownloadFileAsync(string, byte[], string, CancellationToken)
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService.DownloadFileAsync(string, byte[], string, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.JSInterop
+  summary: Downloads a file from a byte array.
+  example: []
+  syntax:
+    content: ValueTask DownloadFileAsync(string fileName, byte[] bytes, string contentType = "application/octet-stream", CancellationToken cancellationToken = default)
+    parameters:
+    - id: fileName
+      type: System.String
+      description: The name of the file to download.
+    - id: bytes
+      type: System.Byte[]
+      description: The file content as a byte array.
+    - id: contentType
+      type: System.String
+      description: The MIME content type of the file.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: A cancellation token to observe.
+    return:
+      type: System.Threading.Tasks.ValueTask
+      description: A <xref href="System.Threading.Tasks.ValueTask" data-throw-if-not-resolved="false"></xref> representing the asynchronous operation.
+    content.vb: Function DownloadFileAsync(fileName As String, bytes As Byte(), contentType As String = "application/octet-stream", cancellationToken As CancellationToken = Nothing) As ValueTask
+  overload: NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService.DownloadFileAsync*
+  nameWithType.vb: IDownloadFileService.DownloadFileAsync(String, Byte(), String, CancellationToken)
+  fullName.vb: NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService.DownloadFileAsync(String, Byte(), String, System.Threading.CancellationToken)
+  name.vb: DownloadFileAsync(String, Byte(), String, CancellationToken)
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService.DownloadFileAsync(System.String,System.IO.Stream,System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService.DownloadFileAsync(System.String,System.IO.Stream,System.String,System.Threading.CancellationToken)
+  id: DownloadFileAsync(System.String,System.IO.Stream,System.String,System.Threading.CancellationToken)
+  parent: NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService
+  langs:
+  - csharp
+  - vb
+  name: DownloadFileAsync(string, Stream, string, CancellationToken)
+  nameWithType: IDownloadFileService.DownloadFileAsync(string, Stream, string, CancellationToken)
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService.DownloadFileAsync(string, System.IO.Stream, string, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.JSInterop
+  summary: Downloads a file from a stream. Large streams are sent in chunks to stay within SignalR message size limits.
+  example: []
+  syntax:
+    content: ValueTask DownloadFileAsync(string fileName, Stream stream, string contentType = "application/octet-stream", CancellationToken cancellationToken = default)
+    parameters:
+    - id: fileName
+      type: System.String
+      description: The name of the file to download.
+    - id: stream
+      type: System.IO.Stream
+      description: The stream containing the file content.
+    - id: contentType
+      type: System.String
+      description: The MIME content type of the file.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: A cancellation token to observe.
+    return:
+      type: System.Threading.Tasks.ValueTask
+      description: A <xref href="System.Threading.Tasks.ValueTask" data-throw-if-not-resolved="false"></xref> representing the asynchronous operation.
+    content.vb: Function DownloadFileAsync(fileName As String, stream As Stream, contentType As String = "application/octet-stream", cancellationToken As CancellationToken = Nothing) As ValueTask
+  overload: NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService.DownloadFileAsync*
+  nameWithType.vb: IDownloadFileService.DownloadFileAsync(String, Stream, String, CancellationToken)
+  fullName.vb: NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService.DownloadFileAsync(String, System.IO.Stream, String, System.Threading.CancellationToken)
+  name.vb: DownloadFileAsync(String, Stream, String, CancellationToken)
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService.DownloadFileFromTextAsync(System.String,System.String,System.Text.Encoding,System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService.DownloadFileFromTextAsync(System.String,System.String,System.Text.Encoding,System.String,System.Threading.CancellationToken)
+  id: DownloadFileFromTextAsync(System.String,System.String,System.Text.Encoding,System.String,System.Threading.CancellationToken)
+  parent: NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService
+  langs:
+  - csharp
+  - vb
+  name: DownloadFileFromTextAsync(string, string, Encoding, string, CancellationToken)
+  nameWithType: IDownloadFileService.DownloadFileFromTextAsync(string, string, Encoding, string, CancellationToken)
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService.DownloadFileFromTextAsync(string, string, System.Text.Encoding, string, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.JSInterop
+  summary: Downloads a file from a text string using the specified encoding.
+  example: []
+  syntax:
+    content: ValueTask DownloadFileFromTextAsync(string fileName, string text, Encoding encoding, string contentType = "text/plain", CancellationToken cancellationToken = default)
+    parameters:
+    - id: fileName
+      type: System.String
+      description: The name of the file to download.
+    - id: text
+      type: System.String
+      description: The text content of the file.
+    - id: encoding
+      type: System.Text.Encoding
+      description: The encoding to use when converting the text to bytes.
+    - id: contentType
+      type: System.String
+      description: The MIME content type of the file.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: A cancellation token to observe.
+    return:
+      type: System.Threading.Tasks.ValueTask
+      description: A <xref href="System.Threading.Tasks.ValueTask" data-throw-if-not-resolved="false"></xref> representing the asynchronous operation.
+    content.vb: Function DownloadFileFromTextAsync(fileName As String, text As String, encoding As Encoding, contentType As String = "text/plain", cancellationToken As CancellationToken = Nothing) As ValueTask
+  overload: NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService.DownloadFileFromTextAsync*
+  nameWithType.vb: IDownloadFileService.DownloadFileFromTextAsync(String, String, Encoding, String, CancellationToken)
+  fullName.vb: NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService.DownloadFileFromTextAsync(String, String, System.Text.Encoding, String, System.Threading.CancellationToken)
+  name.vb: DownloadFileFromTextAsync(String, String, Encoding, String, CancellationToken)
+references:
+- uid: NuvTools.AspNetCore.Blazor.JSInterop
+  commentId: N:NuvTools.AspNetCore.Blazor.JSInterop
+  name: NuvTools.AspNetCore.Blazor.JSInterop
+  nameWithType: NuvTools.AspNetCore.Blazor.JSInterop
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.AspNetCore
+    name: AspNetCore
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor
+    name: Blazor
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor.JSInterop
+    name: JSInterop
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.AspNetCore
+    name: AspNetCore
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor
+    name: Blazor
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor.JSInterop
+    name: JSInterop
+- uid: System.IAsyncDisposable.DisposeAsync
+  commentId: M:System.IAsyncDisposable.DisposeAsync
+  parent: System.IAsyncDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable.disposeasync
+  name: DisposeAsync()
+  nameWithType: IAsyncDisposable.DisposeAsync()
+  fullName: System.IAsyncDisposable.DisposeAsync()
+  spec.csharp:
+  - uid: System.IAsyncDisposable.DisposeAsync
+    name: DisposeAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable.disposeasync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IAsyncDisposable.DisposeAsync
+    name: DisposeAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable.disposeasync
+  - name: (
+  - name: )
+- uid: System.IAsyncDisposable
+  commentId: T:System.IAsyncDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable
+  name: IAsyncDisposable
+  nameWithType: IAsyncDisposable
+  fullName: System.IAsyncDisposable
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading.Tasks.ValueTask
+  commentId: T:System.Threading.Tasks.ValueTask
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask
+  name: ValueTask
+  nameWithType: ValueTask
+  fullName: System.Threading.Tasks.ValueTask
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService.DownloadFileAsync*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService.DownloadFileAsync
+  href: NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService.html#NuvTools_AspNetCore_Blazor_JSInterop_IDownloadFileService_DownloadFileAsync_System_String_System_Byte___System_String_System_Threading_CancellationToken_
+  name: DownloadFileAsync
+  nameWithType: IDownloadFileService.DownloadFileAsync
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService.DownloadFileAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Byte[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.byte
+  name: byte[]
+  nameWithType: byte[]
+  fullName: byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: (
+  - name: )
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.IO.Stream
+  commentId: T:System.IO.Stream
+  parent: System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  name: Stream
+  nameWithType: Stream
+  fullName: System.IO.Stream
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService.DownloadFileFromTextAsync*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService.DownloadFileFromTextAsync
+  href: NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService.html#NuvTools_AspNetCore_Blazor_JSInterop_IDownloadFileService_DownloadFileFromTextAsync_System_String_System_String_System_Text_Encoding_System_String_System_Threading_CancellationToken_
+  name: DownloadFileFromTextAsync
+  nameWithType: IDownloadFileService.DownloadFileFromTextAsync
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.IDownloadFileService.DownloadFileFromTextAsync
+- uid: System.Text.Encoding
+  commentId: T:System.Text.Encoding
+  parent: System.Text
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.text.encoding
+  name: Encoding
+  nameWithType: Encoding
+  fullName: System.Text.Encoding
+- uid: System.Text
+  commentId: N:System.Text
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Text
+  nameWithType: System.Text
+  fullName: System.Text
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Text
+    name: Text
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Text
+    name: Text
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text

@@ -1,0 +1,1438 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient
+  commentId: T:NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient
+  id: IOmieApiClient
+  parent: NuvTools.Payment.Omie.ApiClient.Contracts
+  children:
+  - NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ChangeOSAsync(NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeOSParam,System.Threading.CancellationToken)
+  - NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ChangeOSStageAsync(NuvTools.Payment.Omie.ApiClient.DTOs.Requests.ChangeOSStageParam,System.Threading.CancellationToken)
+  - NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultClientAsync(System.Int64,System.Threading.CancellationToken)
+  - NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultContractAsync(System.Int64,System.Threading.CancellationToken)
+  - NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultOSAsync(System.Nullable{System.Int64},System.String,System.Threading.CancellationToken)
+  - NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultServiceRegistrationAsync(System.Int64,System.Threading.CancellationToken)
+  - NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.GenerateBilletAsync(System.Nullable{System.Int64},System.String,System.Threading.CancellationToken)
+  - NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.GetBilletAsync(System.Nullable{System.Int64},System.String,System.Threading.CancellationToken)
+  - NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.IncludeOSAsync(NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeOSParam,System.Threading.CancellationToken)
+  - NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.IncludeReceivableAsync(NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeReceivableParam,System.Threading.CancellationToken)
+  - NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListBillingStagesAsync(System.Threading.CancellationToken)
+  - NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListCategoryRegistrationAsync(System.Int32,System.Int32,System.String,System.Threading.CancellationToken)
+  - NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListContractsAsync(System.Int32,System.Int32,System.Threading.CancellationToken)
+  - NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListServiceRegistrationAsync(System.Int32,System.Int32,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: IOmieApiClient
+  nameWithType: IOmieApiClient
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient
+  type: Interface
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.Contracts
+  summary: Interface for communication with the Omie ERP API.
+  example: []
+  syntax:
+    content: public interface IOmieApiClient
+    content.vb: Public Interface IOmieApiClient
+  derivedClasses:
+  - NuvTools.Payment.Omie.ApiClient.Services.OmieApiClient
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultClientAsync(System.Int64,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultClientAsync(System.Int64,System.Threading.CancellationToken)
+  id: ConsultClientAsync(System.Int64,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient
+  langs:
+  - csharp
+  - vb
+  name: ConsultClientAsync(long, CancellationToken)
+  nameWithType: IOmieApiClient.ConsultClientAsync(long, CancellationToken)
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultClientAsync(long, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.Contracts
+  summary: Checks whether a client exists in Omie by its code.
+  example: []
+  syntax:
+    content: Task<IResult<bool>> ConsultClientAsync(long omieClientCode, CancellationToken cancellationToken = default)
+    parameters:
+    - id: omieClientCode
+      type: System.Int64
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.Boolean}}
+    content.vb: Function ConsultClientAsync(omieClientCode As Long, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of Boolean))
+  overload: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultClientAsync*
+  nameWithType.vb: IOmieApiClient.ConsultClientAsync(Long, CancellationToken)
+  fullName.vb: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultClientAsync(Long, System.Threading.CancellationToken)
+  name.vb: ConsultClientAsync(Long, CancellationToken)
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultServiceRegistrationAsync(System.Int64,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultServiceRegistrationAsync(System.Int64,System.Threading.CancellationToken)
+  id: ConsultServiceRegistrationAsync(System.Int64,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient
+  langs:
+  - csharp
+  - vb
+  name: ConsultServiceRegistrationAsync(long, CancellationToken)
+  nameWithType: IOmieApiClient.ConsultServiceRegistrationAsync(long, CancellationToken)
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultServiceRegistrationAsync(long, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.Contracts
+  summary: Retrieves the registration data of a service in Omie.
+  example: []
+  syntax:
+    content: Task<IResult<ConsultServiceRegistrationResponse>> ConsultServiceRegistrationAsync(long omieServiceCode, CancellationToken cancellationToken = default)
+    parameters:
+    - id: omieServiceCode
+      type: System.Int64
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ConsultServiceRegistrationResponse}}
+    content.vb: Function ConsultServiceRegistrationAsync(omieServiceCode As Long, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of ConsultServiceRegistrationResponse))
+  overload: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultServiceRegistrationAsync*
+  nameWithType.vb: IOmieApiClient.ConsultServiceRegistrationAsync(Long, CancellationToken)
+  fullName.vb: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultServiceRegistrationAsync(Long, System.Threading.CancellationToken)
+  name.vb: ConsultServiceRegistrationAsync(Long, CancellationToken)
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.IncludeOSAsync(NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeOSParam,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.IncludeOSAsync(NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeOSParam,System.Threading.CancellationToken)
+  id: IncludeOSAsync(NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeOSParam,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient
+  langs:
+  - csharp
+  - vb
+  name: IncludeOSAsync(IncludeOSParam, CancellationToken)
+  nameWithType: IOmieApiClient.IncludeOSAsync(IncludeOSParam, CancellationToken)
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.IncludeOSAsync(NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeOSParam, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.Contracts
+  summary: Includes a Service Order (OS) in Omie.
+  example: []
+  syntax:
+    content: Task<IResult<IncludeOSResponse>> IncludeOSAsync(IncludeOSParam param, CancellationToken cancellationToken = default)
+    parameters:
+    - id: param
+      type: NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeOSParam
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IncludeOSResponse}}
+    content.vb: Function IncludeOSAsync(param As IncludeOSParam, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of IncludeOSResponse))
+  overload: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.IncludeOSAsync*
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.IncludeReceivableAsync(NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeReceivableParam,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.IncludeReceivableAsync(NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeReceivableParam,System.Threading.CancellationToken)
+  id: IncludeReceivableAsync(NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeReceivableParam,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient
+  langs:
+  - csharp
+  - vb
+  name: IncludeReceivableAsync(IncludeReceivableParam, CancellationToken)
+  nameWithType: IOmieApiClient.IncludeReceivableAsync(IncludeReceivableParam, CancellationToken)
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.IncludeReceivableAsync(NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeReceivableParam, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.Contracts
+  summary: Includes an Accounts Receivable entry in Omie.
+  example: []
+  syntax:
+    content: Task<IResult<IncludeReceivableResponse>> IncludeReceivableAsync(IncludeReceivableParam param, CancellationToken cancellationToken = default)
+    parameters:
+    - id: param
+      type: NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeReceivableParam
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IncludeReceivableResponse}}
+    content.vb: Function IncludeReceivableAsync(param As IncludeReceivableParam, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of IncludeReceivableResponse))
+  overload: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.IncludeReceivableAsync*
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.GenerateBilletAsync(System.Nullable{System.Int64},System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.GenerateBilletAsync(System.Nullable{System.Int64},System.String,System.Threading.CancellationToken)
+  id: GenerateBilletAsync(System.Nullable{System.Int64},System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient
+  langs:
+  - csharp
+  - vb
+  name: GenerateBilletAsync(long?, string?, CancellationToken)
+  nameWithType: IOmieApiClient.GenerateBilletAsync(long?, string?, CancellationToken)
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.GenerateBilletAsync(long?, string?, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.Contracts
+  summary: >-
+    Generates the billet of an existing Accounts Receivable entry in Omie.
+
+    At least one of the two identifiers must be provided.
+  example: []
+  syntax:
+    content: Task<IResult<GenerateBilletResponse>> GenerateBilletAsync(long? nCodTitulo = null, string? cCodIntTitulo = null, CancellationToken cancellationToken = default)
+    parameters:
+    - id: nCodTitulo
+      type: System.Nullable{System.Int64}
+    - id: cCodIntTitulo
+      type: System.String
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GenerateBilletResponse}}
+    content.vb: Function GenerateBilletAsync(nCodTitulo As Long? = Nothing, cCodIntTitulo As String = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of GenerateBilletResponse))
+  overload: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.GenerateBilletAsync*
+  nameWithType.vb: IOmieApiClient.GenerateBilletAsync(Long?, String, CancellationToken)
+  fullName.vb: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.GenerateBilletAsync(Long?, String, System.Threading.CancellationToken)
+  name.vb: GenerateBilletAsync(Long?, String, CancellationToken)
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.GetBilletAsync(System.Nullable{System.Int64},System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.GetBilletAsync(System.Nullable{System.Int64},System.String,System.Threading.CancellationToken)
+  id: GetBilletAsync(System.Nullable{System.Int64},System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient
+  langs:
+  - csharp
+  - vb
+  name: GetBilletAsync(long?, string?, CancellationToken)
+  nameWithType: IOmieApiClient.GetBilletAsync(long?, string?, CancellationToken)
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.GetBilletAsync(long?, string?, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.Contracts
+  summary: >-
+    Retrieves the billet link/details for an existing Accounts Receivable entry in Omie.
+
+    Use after GenerateBillet to fetch the actual download URL, barcode, etc.
+  example: []
+  syntax:
+    content: Task<IResult<GetBilletResponse>> GetBilletAsync(long? nCodTitulo = null, string? cCodIntTitulo = null, CancellationToken cancellationToken = default)
+    parameters:
+    - id: nCodTitulo
+      type: System.Nullable{System.Int64}
+    - id: cCodIntTitulo
+      type: System.String
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse}}
+    content.vb: Function GetBilletAsync(nCodTitulo As Long? = Nothing, cCodIntTitulo As String = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of GetBilletResponse))
+  overload: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.GetBilletAsync*
+  nameWithType.vb: IOmieApiClient.GetBilletAsync(Long?, String, CancellationToken)
+  fullName.vb: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.GetBilletAsync(Long?, String, System.Threading.CancellationToken)
+  name.vb: GetBilletAsync(Long?, String, CancellationToken)
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultContractAsync(System.Int64,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultContractAsync(System.Int64,System.Threading.CancellationToken)
+  id: ConsultContractAsync(System.Int64,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient
+  langs:
+  - csharp
+  - vb
+  name: ConsultContractAsync(long, CancellationToken)
+  nameWithType: IOmieApiClient.ConsultContractAsync(long, CancellationToken)
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultContractAsync(long, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.Contracts
+  summary: >-
+    Reads a Service Contract (ConsultarContrato) to obtain the negotiated unit price per service item.
+
+    The contract is a price registry only — it must never be billed through.
+  example: []
+  syntax:
+    content: Task<IResult<ConsultContractResponse>> ConsultContractAsync(long omieContractCode, CancellationToken cancellationToken = default)
+    parameters:
+    - id: omieContractCode
+      type: System.Int64
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ConsultContractResponse}}
+    content.vb: Function ConsultContractAsync(omieContractCode As Long, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of ConsultContractResponse))
+  overload: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultContractAsync*
+  nameWithType.vb: IOmieApiClient.ConsultContractAsync(Long, CancellationToken)
+  fullName.vb: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultContractAsync(Long, System.Threading.CancellationToken)
+  name.vb: ConsultContractAsync(Long, CancellationToken)
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListContractsAsync(System.Int32,System.Int32,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListContractsAsync(System.Int32,System.Int32,System.Threading.CancellationToken)
+  id: ListContractsAsync(System.Int32,System.Int32,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient
+  langs:
+  - csharp
+  - vb
+  name: ListContractsAsync(int, int, CancellationToken)
+  nameWithType: IOmieApiClient.ListContractsAsync(int, int, CancellationToken)
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListContractsAsync(int, int, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.Contracts
+  summary: >-
+    Lists Service Contracts (ListarContratos) so a contract can be resolved by the number the user knows
+
+    (cNumCtr) — Omie offers no search by contract number. List once and index in memory: consulting contract by
+
+    contract is what trips Omie's "Consumo redundante" gate.
+  example: []
+  syntax:
+    content: Task<IResult<ListContractsResponse>> ListContractsAsync(int page = 1, int recordsPerPage = 100, CancellationToken cancellationToken = default)
+    parameters:
+    - id: page
+      type: System.Int32
+    - id: recordsPerPage
+      type: System.Int32
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse}}
+    content.vb: Function ListContractsAsync(page As Integer = 1, recordsPerPage As Integer = 100, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of ListContractsResponse))
+  overload: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListContractsAsync*
+  nameWithType.vb: IOmieApiClient.ListContractsAsync(Integer, Integer, CancellationToken)
+  fullName.vb: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListContractsAsync(Integer, Integer, System.Threading.CancellationToken)
+  name.vb: ListContractsAsync(Integer, Integer, CancellationToken)
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListServiceRegistrationAsync(System.Int32,System.Int32,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListServiceRegistrationAsync(System.Int32,System.Int32,System.Threading.CancellationToken)
+  id: ListServiceRegistrationAsync(System.Int32,System.Int32,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient
+  langs:
+  - csharp
+  - vb
+  name: ListServiceRegistrationAsync(int, int, CancellationToken)
+  nameWithType: IOmieApiClient.ListServiceRegistrationAsync(int, int, CancellationToken)
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListServiceRegistrationAsync(int, int, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.Contracts
+  summary: Lists registered services (ListarCadastroServico) to resolve/validate a nCodServico.
+  example: []
+  syntax:
+    content: Task<IResult<ListServiceRegistrationResponse>> ListServiceRegistrationAsync(int page = 1, int recordsPerPage = 50, CancellationToken cancellationToken = default)
+    parameters:
+    - id: page
+      type: System.Int32
+    - id: recordsPerPage
+      type: System.Int32
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListServiceRegistrationResponse}}
+    content.vb: Function ListServiceRegistrationAsync(page As Integer = 1, recordsPerPage As Integer = 50, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of ListServiceRegistrationResponse))
+  overload: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListServiceRegistrationAsync*
+  nameWithType.vb: IOmieApiClient.ListServiceRegistrationAsync(Integer, Integer, CancellationToken)
+  fullName.vb: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListServiceRegistrationAsync(Integer, Integer, System.Threading.CancellationToken)
+  name.vb: ListServiceRegistrationAsync(Integer, Integer, CancellationToken)
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListCategoryRegistrationAsync(System.Int32,System.Int32,System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListCategoryRegistrationAsync(System.Int32,System.Int32,System.String,System.Threading.CancellationToken)
+  id: ListCategoryRegistrationAsync(System.Int32,System.Int32,System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient
+  langs:
+  - csharp
+  - vb
+  name: ListCategoryRegistrationAsync(int, int, string, CancellationToken)
+  nameWithType: IOmieApiClient.ListCategoryRegistrationAsync(int, int, string, CancellationToken)
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListCategoryRegistrationAsync(int, int, string, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.Contracts
+  summary: Lists registered categories (ListarCategorias) to resolve a service's cCodCateg to its category name.
+  example: []
+  syntax:
+    content: Task<IResult<ListCategoryRegistrationResponse>> ListCategoryRegistrationAsync(int page = 1, int recordsPerPage = 1000, string description = "", CancellationToken cancellationToken = default)
+    parameters:
+    - id: page
+      type: System.Int32
+    - id: recordsPerPage
+      type: System.Int32
+    - id: description
+      type: System.String
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListCategoryRegistrationResponse}}
+    content.vb: Function ListCategoryRegistrationAsync(page As Integer = 1, recordsPerPage As Integer = 1000, description As String = "", cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of ListCategoryRegistrationResponse))
+  overload: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListCategoryRegistrationAsync*
+  nameWithType.vb: IOmieApiClient.ListCategoryRegistrationAsync(Integer, Integer, String, CancellationToken)
+  fullName.vb: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListCategoryRegistrationAsync(Integer, Integer, String, System.Threading.CancellationToken)
+  name.vb: ListCategoryRegistrationAsync(Integer, Integer, String, CancellationToken)
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ChangeOSAsync(NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeOSParam,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ChangeOSAsync(NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeOSParam,System.Threading.CancellationToken)
+  id: ChangeOSAsync(NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeOSParam,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient
+  langs:
+  - csharp
+  - vb
+  name: ChangeOSAsync(IncludeOSParam, CancellationToken)
+  nameWithType: IOmieApiClient.ChangeOSAsync(IncludeOSParam, CancellationToken)
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ChangeOSAsync(NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeOSParam, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.Contracts
+  summary: >-
+    Updates an existing Service Order (AlterarOS). Send the full item list — Omie replaces the OS items.
+
+    The header must carry <xref href="NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeOSHeader.OsCode" data-throw-if-not-resolved="false"></xref> (nCodOS) or cCodIntOS.
+  example: []
+  syntax:
+    content: Task<IResult<IncludeOSResponse>> ChangeOSAsync(IncludeOSParam param, CancellationToken cancellationToken = default)
+    parameters:
+    - id: param
+      type: NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeOSParam
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IncludeOSResponse}}
+    content.vb: Function ChangeOSAsync(param As IncludeOSParam, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of IncludeOSResponse))
+  overload: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ChangeOSAsync*
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultOSAsync(System.Nullable{System.Int64},System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultOSAsync(System.Nullable{System.Int64},System.String,System.Threading.CancellationToken)
+  id: ConsultOSAsync(System.Nullable{System.Int64},System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient
+  langs:
+  - csharp
+  - vb
+  name: ConsultOSAsync(long?, string?, CancellationToken)
+  nameWithType: IOmieApiClient.ConsultOSAsync(long?, string?, CancellationToken)
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultOSAsync(long?, string?, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.Contracts
+  summary: Reads the current state/stage of a Service Order (ConsultarOS). Provide exactly one identifier.
+  example: []
+  syntax:
+    content: Task<IResult<ConsultOSResponse>> ConsultOSAsync(long? nCodOS = null, string? cCodIntOS = null, CancellationToken cancellationToken = default)
+    parameters:
+    - id: nCodOS
+      type: System.Nullable{System.Int64}
+    - id: cCodIntOS
+      type: System.String
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ConsultOSResponse}}
+    content.vb: Function ConsultOSAsync(nCodOS As Long? = Nothing, cCodIntOS As String = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of ConsultOSResponse))
+  overload: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultOSAsync*
+  nameWithType.vb: IOmieApiClient.ConsultOSAsync(Long?, String, CancellationToken)
+  fullName.vb: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultOSAsync(Long?, String, System.Threading.CancellationToken)
+  name.vb: ConsultOSAsync(Long?, String, CancellationToken)
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ChangeOSStageAsync(NuvTools.Payment.Omie.ApiClient.DTOs.Requests.ChangeOSStageParam,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ChangeOSStageAsync(NuvTools.Payment.Omie.ApiClient.DTOs.Requests.ChangeOSStageParam,System.Threading.CancellationToken)
+  id: ChangeOSStageAsync(NuvTools.Payment.Omie.ApiClient.DTOs.Requests.ChangeOSStageParam,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient
+  langs:
+  - csharp
+  - vb
+  name: ChangeOSStageAsync(ChangeOSStageParam, CancellationToken)
+  nameWithType: IOmieApiClient.ChangeOSStageAsync(ChangeOSStageParam, CancellationToken)
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ChangeOSStageAsync(NuvTools.Payment.Omie.ApiClient.DTOs.Requests.ChangeOSStageParam, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.Contracts
+  summary: Moves a Service Order to another Kanban stage (TrocarEtapaOS). Feature-flag the "billing" stage.
+  example: []
+  syntax:
+    content: Task<IResult<ChangeOSStageResponse>> ChangeOSStageAsync(ChangeOSStageParam param, CancellationToken cancellationToken = default)
+    parameters:
+    - id: param
+      type: NuvTools.Payment.Omie.ApiClient.DTOs.Requests.ChangeOSStageParam
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ChangeOSStageResponse}}
+    content.vb: Function ChangeOSStageAsync(param As ChangeOSStageParam, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of ChangeOSStageResponse))
+  overload: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ChangeOSStageAsync*
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListBillingStagesAsync(System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListBillingStagesAsync(System.Threading.CancellationToken)
+  id: ListBillingStagesAsync(System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient
+  langs:
+  - csharp
+  - vb
+  name: ListBillingStagesAsync(CancellationToken)
+  nameWithType: IOmieApiClient.ListBillingStagesAsync(CancellationToken)
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListBillingStagesAsync(System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.Contracts
+  summary: Lists the OS Kanban stage catalog (ListarEtapasFaturamento) to discover stage codes.
+  example: []
+  syntax:
+    content: Task<IResult<ListBillingStagesResponse>> ListBillingStagesAsync(CancellationToken cancellationToken = default)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListBillingStagesResponse}}
+    content.vb: Function ListBillingStagesAsync(cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of ListBillingStagesResponse))
+  overload: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListBillingStagesAsync*
+references:
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts
+  commentId: N:NuvTools.Payment.Omie.ApiClient.Contracts
+  name: NuvTools.Payment.Omie.ApiClient.Contracts
+  nameWithType: NuvTools.Payment.Omie.ApiClient.Contracts
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Omie
+    name: Omie
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient
+    name: ApiClient
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient.Contracts
+    name: Contracts
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Omie
+    name: Omie
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient
+    name: ApiClient
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient.Contracts
+    name: Contracts
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultClientAsync*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultClientAsync
+  href: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.html#NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_ConsultClientAsync_System_Int64_System_Threading_CancellationToken_
+  name: ConsultClientAsync
+  nameWithType: IOmieApiClient.ConsultClientAsync
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultClientAsync
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long
+  nameWithType: long
+  fullName: long
+  nameWithType.vb: Long
+  fullName.vb: Long
+  name.vb: Long
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.Boolean}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.Boolean}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<bool>>
+  nameWithType: Task<IResult<bool>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<bool>>
+  nameWithType.vb: Task(Of IResult(Of Boolean))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of Boolean))
+  name.vb: Task(Of IResult(Of Boolean))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultServiceRegistrationAsync*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultServiceRegistrationAsync
+  href: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.html#NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_ConsultServiceRegistrationAsync_System_Int64_System_Threading_CancellationToken_
+  name: ConsultServiceRegistrationAsync
+  nameWithType: IOmieApiClient.ConsultServiceRegistrationAsync
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultServiceRegistrationAsync
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ConsultServiceRegistrationResponse}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ConsultServiceRegistrationResponse}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<ConsultServiceRegistrationResponse>>
+  nameWithType: Task<IResult<ConsultServiceRegistrationResponse>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ConsultServiceRegistrationResponse>>
+  nameWithType.vb: Task(Of IResult(Of ConsultServiceRegistrationResponse))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ConsultServiceRegistrationResponse))
+  name.vb: Task(Of IResult(Of ConsultServiceRegistrationResponse))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ConsultServiceRegistrationResponse
+    name: ConsultServiceRegistrationResponse
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ConsultServiceRegistrationResponse.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ConsultServiceRegistrationResponse
+    name: ConsultServiceRegistrationResponse
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ConsultServiceRegistrationResponse.html
+  - name: )
+  - name: )
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.IncludeOSAsync*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.IncludeOSAsync
+  href: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.html#NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_IncludeOSAsync_NuvTools_Payment_Omie_ApiClient_DTOs_Requests_IncludeOSParam_System_Threading_CancellationToken_
+  name: IncludeOSAsync
+  nameWithType: IOmieApiClient.IncludeOSAsync
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.IncludeOSAsync
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeOSParam
+  commentId: T:NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeOSParam
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Requests
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeOSParam.html
+  name: IncludeOSParam
+  nameWithType: IncludeOSParam
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeOSParam
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IncludeOSResponse}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IncludeOSResponse}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<IncludeOSResponse>>
+  nameWithType: Task<IResult<IncludeOSResponse>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IncludeOSResponse>>
+  nameWithType.vb: Task(Of IResult(Of IncludeOSResponse))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IncludeOSResponse))
+  name.vb: Task(Of IResult(Of IncludeOSResponse))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IncludeOSResponse
+    name: IncludeOSResponse
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IncludeOSResponse.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IncludeOSResponse
+    name: IncludeOSResponse
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IncludeOSResponse.html
+  - name: )
+  - name: )
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Requests
+  commentId: N:NuvTools.Payment.Omie.ApiClient.DTOs.Requests
+  name: NuvTools.Payment.Omie.ApiClient.DTOs.Requests
+  nameWithType: NuvTools.Payment.Omie.ApiClient.DTOs.Requests
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Requests
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Omie
+    name: Omie
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient
+    name: ApiClient
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs
+    name: DTOs
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Requests
+    name: Requests
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Omie
+    name: Omie
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient
+    name: ApiClient
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs
+    name: DTOs
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Requests
+    name: Requests
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.IncludeReceivableAsync*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.IncludeReceivableAsync
+  href: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.html#NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_IncludeReceivableAsync_NuvTools_Payment_Omie_ApiClient_DTOs_Requests_IncludeReceivableParam_System_Threading_CancellationToken_
+  name: IncludeReceivableAsync
+  nameWithType: IOmieApiClient.IncludeReceivableAsync
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.IncludeReceivableAsync
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeReceivableParam
+  commentId: T:NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeReceivableParam
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Requests
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeReceivableParam.html
+  name: IncludeReceivableParam
+  nameWithType: IncludeReceivableParam
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeReceivableParam
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IncludeReceivableResponse}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IncludeReceivableResponse}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<IncludeReceivableResponse>>
+  nameWithType: Task<IResult<IncludeReceivableResponse>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IncludeReceivableResponse>>
+  nameWithType.vb: Task(Of IResult(Of IncludeReceivableResponse))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IncludeReceivableResponse))
+  name.vb: Task(Of IResult(Of IncludeReceivableResponse))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IncludeReceivableResponse
+    name: IncludeReceivableResponse
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IncludeReceivableResponse.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IncludeReceivableResponse
+    name: IncludeReceivableResponse
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.IncludeReceivableResponse.html
+  - name: )
+  - name: )
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.GenerateBilletAsync*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.GenerateBilletAsync
+  href: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.html#NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_GenerateBilletAsync_System_Nullable_System_Int64__System_String_System_Threading_CancellationToken_
+  name: GenerateBilletAsync
+  nameWithType: IOmieApiClient.GenerateBilletAsync
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.GenerateBilletAsync
+- uid: System.Nullable{System.Int64}
+  commentId: T:System.Nullable{System.Int64}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long?
+  nameWithType: long?
+  fullName: long?
+  nameWithType.vb: Long?
+  fullName.vb: Long?
+  name.vb: Long?
+  spec.csharp:
+  - uid: System.Int64
+    name: long
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int64
+  - name: '?'
+  spec.vb:
+  - uid: System.Int64
+    name: Long
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int64
+  - name: '?'
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GenerateBilletResponse}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GenerateBilletResponse}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<GenerateBilletResponse>>
+  nameWithType: Task<IResult<GenerateBilletResponse>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GenerateBilletResponse>>
+  nameWithType.vb: Task(Of IResult(Of GenerateBilletResponse))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GenerateBilletResponse))
+  name.vb: Task(Of IResult(Of GenerateBilletResponse))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GenerateBilletResponse
+    name: GenerateBilletResponse
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GenerateBilletResponse.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GenerateBilletResponse
+    name: GenerateBilletResponse
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GenerateBilletResponse.html
+  - name: )
+  - name: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.GetBilletAsync*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.GetBilletAsync
+  href: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.html#NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_GetBilletAsync_System_Nullable_System_Int64__System_String_System_Threading_CancellationToken_
+  name: GetBilletAsync
+  nameWithType: IOmieApiClient.GetBilletAsync
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.GetBilletAsync
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<GetBilletResponse>>
+  nameWithType: Task<IResult<GetBilletResponse>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse>>
+  nameWithType.vb: Task(Of IResult(Of GetBilletResponse))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse))
+  name.vb: Task(Of IResult(Of GetBilletResponse))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse
+    name: GetBilletResponse
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse
+    name: GetBilletResponse
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.GetBilletResponse.html
+  - name: )
+  - name: )
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultContractAsync*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultContractAsync
+  href: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.html#NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_ConsultContractAsync_System_Int64_System_Threading_CancellationToken_
+  name: ConsultContractAsync
+  nameWithType: IOmieApiClient.ConsultContractAsync
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultContractAsync
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ConsultContractResponse}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ConsultContractResponse}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<ConsultContractResponse>>
+  nameWithType: Task<IResult<ConsultContractResponse>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ConsultContractResponse>>
+  nameWithType.vb: Task(Of IResult(Of ConsultContractResponse))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ConsultContractResponse))
+  name.vb: Task(Of IResult(Of ConsultContractResponse))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ConsultContractResponse
+    name: ConsultContractResponse
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ConsultContractResponse.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ConsultContractResponse
+    name: ConsultContractResponse
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ConsultContractResponse.html
+  - name: )
+  - name: )
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListContractsAsync*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListContractsAsync
+  href: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.html#NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_ListContractsAsync_System_Int32_System_Int32_System_Threading_CancellationToken_
+  name: ListContractsAsync
+  nameWithType: IOmieApiClient.ListContractsAsync
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListContractsAsync
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<ListContractsResponse>>
+  nameWithType: Task<IResult<ListContractsResponse>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse>>
+  nameWithType.vb: Task(Of IResult(Of ListContractsResponse))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse))
+  name.vb: Task(Of IResult(Of ListContractsResponse))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse
+    name: ListContractsResponse
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse
+    name: ListContractsResponse
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListContractsResponse.html
+  - name: )
+  - name: )
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListServiceRegistrationAsync*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListServiceRegistrationAsync
+  href: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.html#NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_ListServiceRegistrationAsync_System_Int32_System_Int32_System_Threading_CancellationToken_
+  name: ListServiceRegistrationAsync
+  nameWithType: IOmieApiClient.ListServiceRegistrationAsync
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListServiceRegistrationAsync
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListServiceRegistrationResponse}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListServiceRegistrationResponse}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<ListServiceRegistrationResponse>>
+  nameWithType: Task<IResult<ListServiceRegistrationResponse>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListServiceRegistrationResponse>>
+  nameWithType.vb: Task(Of IResult(Of ListServiceRegistrationResponse))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListServiceRegistrationResponse))
+  name.vb: Task(Of IResult(Of ListServiceRegistrationResponse))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListServiceRegistrationResponse
+    name: ListServiceRegistrationResponse
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListServiceRegistrationResponse.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListServiceRegistrationResponse
+    name: ListServiceRegistrationResponse
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListServiceRegistrationResponse.html
+  - name: )
+  - name: )
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListCategoryRegistrationAsync*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListCategoryRegistrationAsync
+  href: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.html#NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_ListCategoryRegistrationAsync_System_Int32_System_Int32_System_String_System_Threading_CancellationToken_
+  name: ListCategoryRegistrationAsync
+  nameWithType: IOmieApiClient.ListCategoryRegistrationAsync
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListCategoryRegistrationAsync
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListCategoryRegistrationResponse}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListCategoryRegistrationResponse}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<ListCategoryRegistrationResponse>>
+  nameWithType: Task<IResult<ListCategoryRegistrationResponse>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListCategoryRegistrationResponse>>
+  nameWithType.vb: Task(Of IResult(Of ListCategoryRegistrationResponse))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListCategoryRegistrationResponse))
+  name.vb: Task(Of IResult(Of ListCategoryRegistrationResponse))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListCategoryRegistrationResponse
+    name: ListCategoryRegistrationResponse
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListCategoryRegistrationResponse.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListCategoryRegistrationResponse
+    name: ListCategoryRegistrationResponse
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListCategoryRegistrationResponse.html
+  - name: )
+  - name: )
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeOSHeader.OsCode
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeOSHeader.OsCode
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeOSHeader.html#NuvTools_Payment_Omie_ApiClient_DTOs_Requests_IncludeOSHeader_OsCode
+  name: OsCode
+  nameWithType: IncludeOSHeader.OsCode
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Requests.IncludeOSHeader.OsCode
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ChangeOSAsync*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ChangeOSAsync
+  href: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.html#NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_ChangeOSAsync_NuvTools_Payment_Omie_ApiClient_DTOs_Requests_IncludeOSParam_System_Threading_CancellationToken_
+  name: ChangeOSAsync
+  nameWithType: IOmieApiClient.ChangeOSAsync
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ChangeOSAsync
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultOSAsync*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultOSAsync
+  href: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.html#NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_ConsultOSAsync_System_Nullable_System_Int64__System_String_System_Threading_CancellationToken_
+  name: ConsultOSAsync
+  nameWithType: IOmieApiClient.ConsultOSAsync
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ConsultOSAsync
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ConsultOSResponse}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ConsultOSResponse}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<ConsultOSResponse>>
+  nameWithType: Task<IResult<ConsultOSResponse>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ConsultOSResponse>>
+  nameWithType.vb: Task(Of IResult(Of ConsultOSResponse))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ConsultOSResponse))
+  name.vb: Task(Of IResult(Of ConsultOSResponse))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ConsultOSResponse
+    name: ConsultOSResponse
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ConsultOSResponse.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ConsultOSResponse
+    name: ConsultOSResponse
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ConsultOSResponse.html
+  - name: )
+  - name: )
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ChangeOSStageAsync*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ChangeOSStageAsync
+  href: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.html#NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_ChangeOSStageAsync_NuvTools_Payment_Omie_ApiClient_DTOs_Requests_ChangeOSStageParam_System_Threading_CancellationToken_
+  name: ChangeOSStageAsync
+  nameWithType: IOmieApiClient.ChangeOSStageAsync
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ChangeOSStageAsync
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Requests.ChangeOSStageParam
+  commentId: T:NuvTools.Payment.Omie.ApiClient.DTOs.Requests.ChangeOSStageParam
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Requests
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Requests.ChangeOSStageParam.html
+  name: ChangeOSStageParam
+  nameWithType: ChangeOSStageParam
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Requests.ChangeOSStageParam
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ChangeOSStageResponse}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ChangeOSStageResponse}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<ChangeOSStageResponse>>
+  nameWithType: Task<IResult<ChangeOSStageResponse>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ChangeOSStageResponse>>
+  nameWithType.vb: Task(Of IResult(Of ChangeOSStageResponse))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ChangeOSStageResponse))
+  name.vb: Task(Of IResult(Of ChangeOSStageResponse))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ChangeOSStageResponse
+    name: ChangeOSStageResponse
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ChangeOSStageResponse.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ChangeOSStageResponse
+    name: ChangeOSStageResponse
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ChangeOSStageResponse.html
+  - name: )
+  - name: )
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListBillingStagesAsync*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListBillingStagesAsync
+  href: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.html#NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_ListBillingStagesAsync_System_Threading_CancellationToken_
+  name: ListBillingStagesAsync
+  nameWithType: IOmieApiClient.ListBillingStagesAsync
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.ListBillingStagesAsync
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListBillingStagesResponse}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListBillingStagesResponse}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<ListBillingStagesResponse>>
+  nameWithType: Task<IResult<ListBillingStagesResponse>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListBillingStagesResponse>>
+  nameWithType.vb: Task(Of IResult(Of ListBillingStagesResponse))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListBillingStagesResponse))
+  name.vb: Task(Of IResult(Of ListBillingStagesResponse))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListBillingStagesResponse
+    name: ListBillingStagesResponse
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListBillingStagesResponse.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListBillingStagesResponse
+    name: ListBillingStagesResponse
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.ListBillingStagesResponse.html
+  - name: )
+  - name: )

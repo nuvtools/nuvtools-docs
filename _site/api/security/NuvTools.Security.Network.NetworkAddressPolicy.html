@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Class NetworkAddressPolicy | Nuv Tools Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class NetworkAddressPolicy | Nuv Tools Framework ">
+      
+      <meta name="description" content="Decides whether an outbound connection may reach an address: the building block against server-side request forgery (SSRF) when an application fetches a URL somebody else supplied.">
+      <link rel="icon" href="../../images/icon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/nuvtools-brand.svg" alt="Framework">
+            Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="NuvTools.Security.Network.NetworkAddressPolicy">
+
+
+
+  <h1 id="NuvTools_Security_Network_NetworkAddressPolicy" data-uid="NuvTools.Security.Network.NetworkAddressPolicy" class="text-break">
+Class NetworkAddressPolicy  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><span class="xref">NuvTools</span>.<span class="xref">Security</span>.<a class="xref" href="NuvTools.Security.Network.html">Network</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NuvTools.Security.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Decides whether an outbound connection may reach an address: the building block against
+server-side request forgery (SSRF) when an application fetches a URL somebody else supplied.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class NetworkAddressPolicy</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">NetworkAddressPolicy</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="NuvTools_Security_Network_NetworkAddressPolicy_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>
+The decision is taken on the <b>IP address</b>, never on the text of the URL. A host name proves
+nothing about where it resolves — a public domain can carry an <code>A</code> record of <code>10.0.0.5</code>, and
+can change it between a check and the connection (DNS rebinding). Pair this policy with
+<a class="xref" href="NuvTools.Security.Network.PublicNetworkConnector.html">PublicNetworkConnector</a>, which applies it to the address a socket actually connects to.
+</p>
+<p>
+By default only publicly routable unicast addresses are allowed. Denied: loopback, private (RFC 1918
+and IPv6 unique-local), link-local (which includes the cloud instance metadata endpoint
+<code>169.254.169.254</code>), carrier-grade NAT, documentation and benchmarking ranges, multicast,
+reserved space, the IPv6 transition prefixes that embed an IPv4 address, and Azure's platform
+address <code>168.63.129.16</code>, which is public in form and internal in fact.
+</p>
+</div>
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="NuvTools_Security_Network_NetworkAddressPolicy__ctor_" data-uid="NuvTools.Security.Network.NetworkAddressPolicy.#ctor*"></a>
+
+  <h3 id="NuvTools_Security_Network_NetworkAddressPolicy__ctor_System_Collections_Generic_IEnumerable_System_Net_IPNetwork__System_Collections_Generic_IEnumerable_System_Net_IPNetwork__System_Collections_Generic_IEnumerable_System_String__" data-uid="NuvTools.Security.Network.NetworkAddressPolicy.#ctor(System.Collections.Generic.IEnumerable{System.Net.IPNetwork},System.Collections.Generic.IEnumerable{System.Net.IPNetwork},System.Collections.Generic.IEnumerable{System.String})">
+  NetworkAddressPolicy(IEnumerable&lt;IPNetwork&gt;?, IEnumerable&lt;IPNetwork&gt;?, IEnumerable&lt;string&gt;?)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a policy.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NetworkAddressPolicy(IEnumerable&lt;IPNetwork&gt;? allowedNetworks = null, IEnumerable&lt;IPNetwork&gt;? additionalDeniedNetworks = null, IEnumerable&lt;string&gt;? additionalDeniedHostSuffixes = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>allowedNetworks</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.net.ipnetwork">IPNetwork</a>&gt;</dt>
+    <dd><p>Networks allowed even though the defaults deny them — an internal backend a deployment trusts.
+Checked before the denied list, so keep it as narrow as the need.</p>
+</dd>
+    <dt><code>additionalDeniedNetworks</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.net.ipnetwork">IPNetwork</a>&gt;</dt>
+    <dd><p>Networks denied on top of the defaults.</p>
+</dd>
+    <dt><code>additionalDeniedHostSuffixes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd><p>Host name suffixes denied on top of the defaults.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="NuvTools_Security_Network_NetworkAddressPolicy_PublicOnly_" data-uid="NuvTools.Security.Network.NetworkAddressPolicy.PublicOnly*"></a>
+
+  <h3 id="NuvTools_Security_Network_NetworkAddressPolicy_PublicOnly" data-uid="NuvTools.Security.Network.NetworkAddressPolicy.PublicOnly">
+  PublicOnly
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>A policy allowing publicly routable addresses only.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static NetworkAddressPolicy PublicOnly { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NuvTools.Security.Network.NetworkAddressPolicy.html">NetworkAddressPolicy</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="NuvTools_Security_Network_NetworkAddressPolicy_IsAllowed_" data-uid="NuvTools.Security.Network.NetworkAddressPolicy.IsAllowed*"></a>
+
+  <h3 id="NuvTools_Security_Network_NetworkAddressPolicy_IsAllowed_System_Net_IPAddress_" data-uid="NuvTools.Security.Network.NetworkAddressPolicy.IsAllowed(System.Net.IPAddress)">
+  IsAllowed(IPAddress)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether a connection to this address is allowed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsAllowed(IPAddress address)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.net.ipaddress">IPAddress</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="NuvTools_Security_Network_NetworkAddressPolicy_IsAllowed_System_Net_IPAddress__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>An IPv4-mapped IPv6 address (<code>::ffff:127.0.0.1</code>) is judged as the IPv4 address it carries,
+which is where the socket ends up.</p>
+</div>
+
+
+
+
+  <a id="NuvTools_Security_Network_NetworkAddressPolicy_IsHostAllowed_" data-uid="NuvTools.Security.Network.NetworkAddressPolicy.IsHostAllowed*"></a>
+
+  <h3 id="NuvTools_Security_Network_NetworkAddressPolicy_IsHostAllowed_System_String_" data-uid="NuvTools.Security.Network.NetworkAddressPolicy.IsHostAllowed(System.String)">
+  IsHostAllowed(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether a host name may be looked up at all. Names that can only mean &quot;inside&quot; — <code>localhost</code>
+and the internal suffixes — are refused without asking DNS.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsHostAllowed(string host)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>host</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Security_Network_NetworkAddressPolicy_ResolveAllowedAsync_" data-uid="NuvTools.Security.Network.NetworkAddressPolicy.ResolveAllowedAsync*"></a>
+
+  <h3 id="NuvTools_Security_Network_NetworkAddressPolicy_ResolveAllowedAsync_System_String_System_Threading_CancellationToken_" data-uid="NuvTools.Security.Network.NetworkAddressPolicy.ResolveAllowedAsync(System.String,System.Threading.CancellationToken)">
+  ResolveAllowedAsync(string, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Resolves a host and returns its addresses, throwing when the name or any address it resolves to is
+not allowed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IPAddress[]&gt; ResolveAllowedAsync(string host, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>host</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.net.ipaddress">IPAddress</a>[]&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="NuvTools_Security_Network_NetworkAddressPolicy_ResolveAllowedAsync_System_String_System_Threading_CancellationToken__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p><b>Any</b> denied address refuses the whole name, not just that address. A name answering with one
+public and one private address is either misconfigured or an attempt to win a race, and neither is
+worth connecting to.</p>
+</div>
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NuvTools.Security.Network.NetworkAddressNotAllowedException.html">NetworkAddressNotAllowedException</a></dt>
+    <dd><p>The host or one of its addresses is denied.</p>
+</dd>
+  </dl>
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>© Nuv Tools · <a href="https://nuvtools.com/framework/">nuvtools.com</a> · MIT licence · Built with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

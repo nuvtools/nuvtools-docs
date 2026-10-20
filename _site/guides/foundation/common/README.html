@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>NuvTools.Common | Nuv Tools Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="NuvTools.Common | Nuv Tools Framework ">
+      
+      
+      <link rel="icon" href="../../../images/icon.png">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/nuvtools-brand.svg" alt="Framework">
+            Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="nuvtoolscommon">NuvTools.Common</h1>
+
+<p><a href="https://www.nuget.org/packages/NuvTools.Common/"><img src="https://img.shields.io/nuget/v/NuvTools.Common.svg" alt="NuGet"></a>
+<a href="https://github.com/nuvtools/nuvtools-common/blob/main/LICENSE"><img src="https://img.shields.io/github/license/nuvtools/nuvtools-common.svg" alt="License"></a></p>
+<p>A cross-platform utility library for .NET 8, 9, and 10, designed to streamline development for Web, Desktop, and Mobile (MAUI) applications.</p>
+<h2 id="installation">Installation</h2>
+<p>Install via NuGet Package Manager:</p>
+<pre><code class="lang-bash">dotnet add package NuvTools.Common
+</code></pre>
+<p>Or via Package Manager Console:</p>
+<pre><code class="lang-powershell">Install-Package NuvTools.Common
+</code></pre>
+<h2 id="overview">Overview</h2>
+<p><strong>NuvTools.Common</strong> provides a rich set of reusable components, extension methods, and helpers that address frequent programming needs, focusing on consistency, safety, and productivity. The library follows modern .NET best practices with nullable reference types, async/await patterns, and minimal dependencies.</p>
+<h2 id="key-features">Key Features</h2>
+<h3 id="1-resultwrapper---railway-oriented-programming">1. ResultWrapper - Railway-Oriented Programming</h3>
+<p>Standardize operation outcomes with a fluent result pattern supporting success, error, and validation states.</p>
+<pre><code class="lang-csharp">using NuvTools.Common.ResultWrapper;
+
+public IResult&lt;User&gt; GetUser(int id)
+{
+    if (id &lt;= 0)
+        return Result&lt;User&gt;.ValidationFail(&quot;Invalid user ID&quot;);
+
+    var user = _repository.FindById(id);
+    if (user == null)
+        return Result&lt;User&gt;.FailNotFound(&quot;User not found&quot;);
+
+    return Result&lt;User&gt;.Success(user, new MessageDetail(&quot;User retrieved successfully&quot;));
+}
+
+// Usage
+var result = GetUser(123);
+if (result.Succeeded)
+{
+    Console.WriteLine($&quot;Found user: {result.Data.Name}&quot;);
+}
+else
+{
+    Console.WriteLine($&quot;Error: {result.Message}&quot;);
+}
+</code></pre>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Generic <code>Result&lt;T&gt;</code> and <code>Result&lt;T, E&gt;</code> for typed returns</li>
+<li>Factory methods: <code>Success()</code>, <code>Fail()</code>, <code>ValidationFail()</code>, <code>FailNotFound()</code></li>
+<li>Structured messages with <code>MessageDetail</code> (code, severity, title, detail)</li>
+<li>Built-in logging integration with <code>ILogger</code></li>
+<li>HTTP response conversion via <code>ToResultAsync()</code></li>
+</ul>
+<h3 id="2-timezone-aware-datetime-service">2. Timezone-Aware Date/Time Service</h3>
+<p>Cross-platform timezone handling with dependency injection support.</p>
+<pre><code class="lang-csharp">using NuvTools.Common.Dates;
+using NuvTools.Common.Dates.Enumerations;
+
+// Configure in DI container
+services.AddDateTimeService(TimeZoneRegion.Brasilia);
+
+// Use in your service
+public class OrderService
+{
+    private readonly IDateTimeService _dateTime;
+
+    public OrderService(IDateTimeService dateTime)
+    {
+        _dateTime = dateTime;
+    }
+
+    public void CreateOrder()
+    {
+        var orderTime = _dateTime.Now; // Local time in Brasilia
+        var utcTime = _dateTime.UtcNow; // Always UTC
+    }
+}
+
+// Extension methods for conversion
+var localTime = DateTime.UtcNow.ToTimeZone(TimeZoneRegion.Tokyo, UtcDirection.FromUtc);
+</code></pre>
+<p><strong>Features:</strong></p>
+<ul>
+<li>19 predefined timezone regions (Brasilia, UTC, Tokyo, NYC, London, etc.)</li>
+<li>Automatic Windows/IANA timezone ID mapping</li>
+<li><code>IDateTimeService</code> abstraction for testability</li>
+<li>Custom UTC offset support</li>
+</ul>
+<h3 id="3-enhanced-enum-support">3. Enhanced Enum Support</h3>
+<p>Extract rich metadata from enums using <code>DisplayAttribute</code> and <code>DescriptionAttribute</code>.</p>
+<pre><code class="lang-csharp">using NuvTools.Common.Enums;
+using System.ComponentModel.DataAnnotations;
+
+public enum Status
+{
+    [Display(Name = &quot;Active&quot;, ShortName = &quot;ACT&quot;, Description = &quot;Currently active&quot;)]
+    Active = 1,
+
+    [Display(Name = &quot;Inactive&quot;, ShortName = &quot;INA&quot;, Description = &quot;Not active&quot;)]
+    Inactive = 2
+}
+
+public enum Priority
+{
+    Low = 1,
+    Medium = 2,
+    High = 3
+}
+
+// Extract metadata
+var name = Status.Active.GetName();           // &quot;Active&quot;
+var shortName = Status.Active.GetShortName(); // &quot;ACT&quot;
+var description = Status.Active.GetDescription(); // &quot;Currently active&quot;
+
+// Convert to list for dropdowns
+var statusList = Enumeration.ToList&lt;Status&gt;();
+
+// Find enum by metadata
+var status = Enumeration.GetEnumByShortName&lt;Status&gt;(&quot;ACT&quot;); // Status.Active
+
+// Concatenate enum values into a composite integer
+int composite = Enumeration.ConcatEnumValues(Status.Active, Priority.High);
+// Result: 13 (concatenation of &quot;1&quot; + &quot;3&quot;)
+
+int multiValue = Enumeration.ConcatEnumValues(Status.Active, Status.Inactive, Priority.Medium);
+// Result: 122 (concatenation of &quot;1&quot; + &quot;2&quot; + &quot;2&quot;)
+</code></pre>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Extract <code>Name</code>, <code>ShortName</code>, <code>Description</code>, <code>GroupName</code> from <code>DisplayAttribute</code></li>
+<li>Fallback to <code>DescriptionAttribute</code> when <code>DisplayAttribute</code> is not present</li>
+<li>Convert enums to lists for UI dropdowns with sorting options</li>
+<li>Find enum values by metadata (name, short name, description)</li>
+<li>Concatenate multiple enum values into a single composite integer</li>
+<li>Support for different underlying types (int, byte, short, long)</li>
+</ul>
+<h3 id="4-string-extensions">4. String Extensions</h3>
+<p>Powerful string manipulation utilities.</p>
+<pre><code class="lang-csharp">using NuvTools.Common.Strings;
+
+// Extract substrings
+string text = &quot;Hello World&quot;;
+text.Left(5);  // &quot;Hello&quot;
+text.Right(5); // &quot;World&quot;
+
+// Remove diacritics
+&quot;Olá, Mundo!&quot;.RemoveDiacritics(); // &quot;Ola, Mundo!&quot;
+
+// Advanced formatting with named placeholders
+var template = &quot;Hello {name}, you have {count} messages&quot;;
+template.Format(new Dictionary&lt;string, object&gt;
+{
+    { &quot;name&quot;, &quot;John&quot; },
+    { &quot;count&quot;, 5 }
+}); // &quot;Hello John, you have 5 messages&quot;
+
+// Extract numbers
+&quot;ABC-123-XYZ-456&quot;.GetNumbersOnly(); // &quot;123456&quot;
+
+// Validate JSON
+string json = &quot;{\&quot;key\&quot;:\&quot;value\&quot;}&quot;;
+bool isValid = json.IsValidJson(); // true
+</code></pre>
+<h3 id="5-safe-number-parsing">5. Safe Number Parsing</h3>
+<p>Parse strings to numeric types with null or zero fallback.</p>
+<pre><code class="lang-csharp">using System.Globalization;
+using NuvTools.Common.Numbers;
+
+string value = &quot;123&quot;;
+long? number = value.ParseToLongOrNull(); // 123
+
+string invalid = &quot;abc&quot;;
+long? nullResult = invalid.ParseToLongOrNull(); // null
+long zeroResult = invalid.ParseToLongOrNull(returnZeroIsNull: true); // 0
+
+// Also available for int, short, decimal and double
+int? intValue = &quot;42&quot;.ParseToIntOrNull();
+
+// Without a provider the text is read in the current culture, which decides the decimal
+// separator: on a pt-BR machine &quot;3.14&quot; is 314. Text written by a machine — a file, a database
+// column, an API — has a fixed format, so pass the culture it was written in.
+decimal? area = &quot;1521.202&quot;.ParseToDecimalOrNull(CultureInfo.InvariantCulture); // 1521.202
+double? latitude = &quot;-23.56287&quot;.ParseToDoubleOrNull(CultureInfo.InvariantCulture); // -23.56287
+</code></pre>
+<h3 id="6-web-utilities">6. Web Utilities</h3>
+<p>Generate and parse query strings from objects.</p>
+<pre><code class="lang-csharp">using NuvTools.Common.Web;
+
+public class SearchRequest
+{
+    public string Query { get; set; }
+    public int Page { get; set; }
+    public DateTime? StartDate { get; set; }
+}
+
+var request = new SearchRequest
+{
+    Query = &quot;test&quot;,
+    Page = 1,
+    StartDate = DateTime.Now
+};
+
+// Convert to query string
+string url = request.GetQueryString(&quot;https://api.example.com/search&quot;);
+// Result: https://api.example.com/search?Query=test&amp;Page=1&amp;StartDate=2025-12-06T10:30:00
+
+// Parse query string back
+var dict = &quot;?Query=test&amp;Page=1&quot;.ParseQueryString();
+</code></pre>
+<h3 id="7-exception-utilities">7. Exception Utilities</h3>
+<p>Aggregate multi-level exception messages for better error reporting.</p>
+<pre><code class="lang-csharp">using NuvTools.Common.Exceptions;
+
+try
+{
+    // Code that throws nested exceptions
+}
+catch (Exception ex)
+{
+    // Get all inner exception messages
+    string fullMessage = ex.AggregateExceptionMessages(level: 3);
+    // Result: &quot;Level 0: Outer exception -&gt; Level 1: Inner exception -&gt; Level 2: Root cause&quot;
+}
+</code></pre>
+<h3 id="8-stream-extensions">8. Stream Extensions</h3>
+<p>Convert streams to byte arrays with sync and async support.</p>
+<pre><code class="lang-csharp">using NuvTools.Common.IO;
+
+// Async
+byte[] bytes = await stream.ToByteListAsync();
+
+// Sync
+byte[] bytes = stream.ToByteList();
+</code></pre>
+<h3 id="9-assembly-reflection">9. Assembly Reflection</h3>
+<p>Extract metadata from assemblies.</p>
+<pre><code class="lang-csharp">using NuvTools.Common.Reflection;
+
+var assembly = Assembly.GetExecutingAssembly();
+var info = assembly.ProgramInfo();
+
+Console.WriteLine($&quot;Name: {info.Name}&quot;);
+Console.WriteLine($&quot;Version: {info.Version}&quot;);
+Console.WriteLine($&quot;Description: {info.Description}&quot;);
+
+// List all referenced assemblies
+var components = assembly.ListComponent();
+</code></pre>
+<h3 id="10-json-serialization">10. JSON Serialization</h3>
+<p>Deep cloning and serialization utilities.</p>
+<pre><code class="lang-csharp">using NuvTools.Common.Serialization.Json;
+
+var original = new MyObject { Name = &quot;Test&quot; };
+var clone = original.Clone();
+
+string json = original.Serialize();
+var deserialized = json.Deserialize&lt;MyObject&gt;();
+</code></pre>
+<h2 id="why-nuvtoolscommon">Why NuvTools.Common?</h2>
+<p>✅ <strong>Type-Safe</strong> - Strong typing and generics throughout
+✅ <strong>Null-Safe</strong> - Nullable reference types enabled with defensive coding
+✅ <strong>Async-First</strong> - Modern async/await patterns with <code>ConfigureAwait(false)</code>
+✅ <strong>Minimal Dependencies</strong> - Only depends on <code>Microsoft.Extensions.Logging.Abstractions</code>
+✅ <strong>Cross-Platform</strong> - Works on Windows, Linux, and macOS
+✅ <strong>Well-Documented</strong> - Complete XML documentation for IntelliSense
+✅ <strong>Battle-Tested</strong> - Strong-named, production-ready code
+✅ <strong>Multi-Targeted</strong> - Supports .NET 8, 9, and 10</p>
+<h2 id="supported-frameworks">Supported Frameworks</h2>
+<ul>
+<li>.NET 8.0</li>
+<li>.NET 9.0</li>
+<li>.NET 10.0</li>
+</ul>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>No external dependencies (except <code>Microsoft.Extensions.Logging.Abstractions</code> for logging integration)</li>
+<li>Works with Web, Desktop, Console, and MAUI applications</li>
+</ul>
+<h2 id="documentation">Documentation</h2>
+<p>All public APIs include comprehensive XML documentation. IntelliSense will show detailed information about:</p>
+<ul>
+<li>Method purposes and usage</li>
+<li>Parameter descriptions</li>
+<li>Return values</li>
+<li>Exception scenarios</li>
+<li>Code examples</li>
+</ul>
+<h2 id="contributing">Contributing</h2>
+<p>Contributions are welcome! Please feel free to submit a Pull Request.</p>
+<h2 id="releasing">Releasing</h2>
+<p>Publishing to nuget.org is irreversible per version, so the workflow makes it the last and smallest
+step.</p>
+<p>The package has its own workflow, and the steps live in the reusable <code>package-publish.yml</code>, the
+same layout as the other NuvTools repositories.</p>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Workflow</th>
+<th>Release tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NuvTools.Common</code></td>
+<td><code>common-publish.yml</code></td>
+<td><code>common-vX.Y.Z</code></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Set the package's <code>&lt;Version&gt;</code> in its <code>.csproj</code> and merge it. That is the version that gets
+published; the workflow reads it and never computes one.</li>
+<li>Run the library's workflow by hand (<em>Actions → Common Publish → Run workflow</em>) with <em>push</em>
+checked.</li>
+<li>The workflow builds the solution with <code>-warnaserror</code>, runs the tests, takes <strong>that package only</strong>
+from the build output, verifies it carries its README, licence, icon, symbols and every target
+framework, and then waits for approval on the <code>nuget</code> GitHub Environment before pushing.</li>
+<li><strong>After the push succeeds, the workflow tags the commit</strong> with the tag in the table above. The tag is a
+record of what is on nuget.org, never what starts a release, so it cannot exist for a version
+that did not get there. A run whose tag already exists stops before building: the version has
+been released and <code>&lt;Version&gt;</code> needs a bump.</li>
+</ol>
+<p><strong>Versions published by hand are refused.</strong> Releases made before these workflows exist on nuget.org
+with no tag. Pushing one again would skip the duplicate and then tag the current commit as a
+release it is not, so a version that is already on nuget.org stops the run. The exception is a
+re-run of the same run, which is how a push that succeeded and a tag that failed gets finished.</p>
+<p><strong>No API key is stored.</strong> The push uses nuget.org's trusted publishing: the job presents a GitHub
+OIDC token, nuget.org checks it against the policy registered for this repository and answers with a
+key that lives for one hour. The repository needs one secret, <code>NUGET_USER</code> — the nuget.org profile
+name the policy belongs to — and the policy itself, registered under <em>Trusted Publishing</em> on
+nuget.org with the owner <code>nuvtools</code>, the repository <code>nuvtools-common</code>, the workflow file and the
+environment <code>nuget</code>.</p>
+<p>Run a library's workflow by hand with <em>push</em> unchecked for a dry run that stops after the
+verification.</p>
+<h2 id="license">License</h2>
+<p>This project is licensed under the terms specified in the <a href="https://github.com/nuvtools/nuvtools-common/blob/main/LICENSE">LICENSE</a> file.</p>
+<h2 id="repository">Repository</h2>
+<ul>
+<li><strong>GitHub</strong>: <a href="https://github.com/nuvtools/nuvtools-common">https://github.com/nuvtools/nuvtools-common</a></li>
+<li><strong>NuGet</strong>: <a href="https://www.nuget.org/packages/NuvTools.Common/">https://www.nuget.org/packages/NuvTools.Common/</a></li>
+<li><strong>Website</strong>: <a href="https://nuvtools.com">https://nuvtools.com</a></li>
+</ul>
+<hr>
+<p>Copyright © 2026 Nuv Tools</p>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>© Nuv Tools · <a href="https://nuvtools.com/framework/">nuvtools.com</a> · MIT licence · Built with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

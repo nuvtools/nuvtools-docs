@@ -1,0 +1,387 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Report.Sheet.Csv.ICsvReader
+  commentId: T:NuvTools.Report.Sheet.Csv.ICsvReader
+  id: ICsvReader
+  parent: NuvTools.Report.Sheet.Csv
+  children:
+  - NuvTools.Report.Sheet.Csv.ICsvReader.ReadBase64``1(System.String,NuvTools.Report.Sheet.Csv.CsvReaderOptions)
+  - NuvTools.Report.Sheet.Csv.ICsvReader.ReadBytes``1(System.Byte[],NuvTools.Report.Sheet.Csv.CsvReaderOptions)
+  - NuvTools.Report.Sheet.Csv.ICsvReader.ReadStream``1(System.IO.Stream,NuvTools.Report.Sheet.Csv.CsvReaderOptions)
+  - NuvTools.Report.Sheet.Csv.ICsvReader.ReadString``1(System.String,NuvTools.Report.Sheet.Csv.CsvReaderOptions)
+  langs:
+  - csharp
+  - vb
+  name: ICsvReader
+  nameWithType: ICsvReader
+  fullName: NuvTools.Report.Sheet.Csv.ICsvReader
+  type: Interface
+  assemblies:
+  - NuvTools.Report
+  namespace: NuvTools.Report.Sheet.Csv
+  summary: Reads CSV content and maps it to strongly-typed objects using attribute-based field mapping.
+  example: []
+  syntax:
+    content: public interface ICsvReader
+    content.vb: Public Interface ICsvReader
+  derivedClasses:
+  - NuvTools.Report.Sheet.Csv.CsvReader
+- uid: NuvTools.Report.Sheet.Csv.ICsvReader.ReadString``1(System.String,NuvTools.Report.Sheet.Csv.CsvReaderOptions)
+  commentId: M:NuvTools.Report.Sheet.Csv.ICsvReader.ReadString``1(System.String,NuvTools.Report.Sheet.Csv.CsvReaderOptions)
+  id: ReadString``1(System.String,NuvTools.Report.Sheet.Csv.CsvReaderOptions)
+  parent: NuvTools.Report.Sheet.Csv.ICsvReader
+  langs:
+  - csharp
+  - vb
+  name: ReadString<T>(string, CsvReaderOptions?)
+  nameWithType: ICsvReader.ReadString<T>(string, CsvReaderOptions?)
+  fullName: NuvTools.Report.Sheet.Csv.ICsvReader.ReadString<T>(string, NuvTools.Report.Sheet.Csv.CsvReaderOptions?)
+  type: Method
+  assemblies:
+  - NuvTools.Report
+  namespace: NuvTools.Report.Sheet.Csv
+  summary: Reads CSV from a string and returns a list of mapped objects.
+  example: []
+  syntax:
+    content: 'List<T> ReadString<T>(string content, CsvReaderOptions? options = null) where T : new()'
+    parameters:
+    - id: content
+      type: System.String
+    - id: options
+      type: NuvTools.Report.Sheet.Csv.CsvReaderOptions
+    typeParameters:
+    - id: T
+    return:
+      type: System.Collections.Generic.List{{T}}
+    content.vb: Function ReadString(Of T As New)(content As String, options As CsvReaderOptions = Nothing) As List(Of T)
+  overload: NuvTools.Report.Sheet.Csv.ICsvReader.ReadString*
+  nameWithType.vb: ICsvReader.ReadString(Of T)(String, CsvReaderOptions)
+  fullName.vb: NuvTools.Report.Sheet.Csv.ICsvReader.ReadString(Of T)(String, NuvTools.Report.Sheet.Csv.CsvReaderOptions)
+  name.vb: ReadString(Of T)(String, CsvReaderOptions)
+- uid: NuvTools.Report.Sheet.Csv.ICsvReader.ReadBase64``1(System.String,NuvTools.Report.Sheet.Csv.CsvReaderOptions)
+  commentId: M:NuvTools.Report.Sheet.Csv.ICsvReader.ReadBase64``1(System.String,NuvTools.Report.Sheet.Csv.CsvReaderOptions)
+  id: ReadBase64``1(System.String,NuvTools.Report.Sheet.Csv.CsvReaderOptions)
+  parent: NuvTools.Report.Sheet.Csv.ICsvReader
+  langs:
+  - csharp
+  - vb
+  name: ReadBase64<T>(string, CsvReaderOptions?)
+  nameWithType: ICsvReader.ReadBase64<T>(string, CsvReaderOptions?)
+  fullName: NuvTools.Report.Sheet.Csv.ICsvReader.ReadBase64<T>(string, NuvTools.Report.Sheet.Csv.CsvReaderOptions?)
+  type: Method
+  assemblies:
+  - NuvTools.Report
+  namespace: NuvTools.Report.Sheet.Csv
+  summary: Reads CSV from a base64-encoded string and returns a list of mapped objects.
+  example: []
+  syntax:
+    content: 'List<T> ReadBase64<T>(string base64Content, CsvReaderOptions? options = null) where T : new()'
+    parameters:
+    - id: base64Content
+      type: System.String
+    - id: options
+      type: NuvTools.Report.Sheet.Csv.CsvReaderOptions
+    typeParameters:
+    - id: T
+    return:
+      type: System.Collections.Generic.List{{T}}
+    content.vb: Function ReadBase64(Of T As New)(base64Content As String, options As CsvReaderOptions = Nothing) As List(Of T)
+  overload: NuvTools.Report.Sheet.Csv.ICsvReader.ReadBase64*
+  nameWithType.vb: ICsvReader.ReadBase64(Of T)(String, CsvReaderOptions)
+  fullName.vb: NuvTools.Report.Sheet.Csv.ICsvReader.ReadBase64(Of T)(String, NuvTools.Report.Sheet.Csv.CsvReaderOptions)
+  name.vb: ReadBase64(Of T)(String, CsvReaderOptions)
+- uid: NuvTools.Report.Sheet.Csv.ICsvReader.ReadBytes``1(System.Byte[],NuvTools.Report.Sheet.Csv.CsvReaderOptions)
+  commentId: M:NuvTools.Report.Sheet.Csv.ICsvReader.ReadBytes``1(System.Byte[],NuvTools.Report.Sheet.Csv.CsvReaderOptions)
+  id: ReadBytes``1(System.Byte[],NuvTools.Report.Sheet.Csv.CsvReaderOptions)
+  parent: NuvTools.Report.Sheet.Csv.ICsvReader
+  langs:
+  - csharp
+  - vb
+  name: ReadBytes<T>(byte[], CsvReaderOptions?)
+  nameWithType: ICsvReader.ReadBytes<T>(byte[], CsvReaderOptions?)
+  fullName: NuvTools.Report.Sheet.Csv.ICsvReader.ReadBytes<T>(byte[], NuvTools.Report.Sheet.Csv.CsvReaderOptions?)
+  type: Method
+  assemblies:
+  - NuvTools.Report
+  namespace: NuvTools.Report.Sheet.Csv
+  summary: Reads CSV from a byte array and returns a list of mapped objects.
+  example: []
+  syntax:
+    content: 'List<T> ReadBytes<T>(byte[] data, CsvReaderOptions? options = null) where T : new()'
+    parameters:
+    - id: data
+      type: System.Byte[]
+    - id: options
+      type: NuvTools.Report.Sheet.Csv.CsvReaderOptions
+    typeParameters:
+    - id: T
+    return:
+      type: System.Collections.Generic.List{{T}}
+    content.vb: Function ReadBytes(Of T As New)(data As Byte(), options As CsvReaderOptions = Nothing) As List(Of T)
+  overload: NuvTools.Report.Sheet.Csv.ICsvReader.ReadBytes*
+  nameWithType.vb: ICsvReader.ReadBytes(Of T)(Byte(), CsvReaderOptions)
+  fullName.vb: NuvTools.Report.Sheet.Csv.ICsvReader.ReadBytes(Of T)(Byte(), NuvTools.Report.Sheet.Csv.CsvReaderOptions)
+  name.vb: ReadBytes(Of T)(Byte(), CsvReaderOptions)
+- uid: NuvTools.Report.Sheet.Csv.ICsvReader.ReadStream``1(System.IO.Stream,NuvTools.Report.Sheet.Csv.CsvReaderOptions)
+  commentId: M:NuvTools.Report.Sheet.Csv.ICsvReader.ReadStream``1(System.IO.Stream,NuvTools.Report.Sheet.Csv.CsvReaderOptions)
+  id: ReadStream``1(System.IO.Stream,NuvTools.Report.Sheet.Csv.CsvReaderOptions)
+  parent: NuvTools.Report.Sheet.Csv.ICsvReader
+  langs:
+  - csharp
+  - vb
+  name: ReadStream<T>(Stream, CsvReaderOptions?)
+  nameWithType: ICsvReader.ReadStream<T>(Stream, CsvReaderOptions?)
+  fullName: NuvTools.Report.Sheet.Csv.ICsvReader.ReadStream<T>(System.IO.Stream, NuvTools.Report.Sheet.Csv.CsvReaderOptions?)
+  type: Method
+  assemblies:
+  - NuvTools.Report
+  namespace: NuvTools.Report.Sheet.Csv
+  summary: Reads CSV from a stream and returns a list of mapped objects.
+  example: []
+  syntax:
+    content: 'List<T> ReadStream<T>(Stream stream, CsvReaderOptions? options = null) where T : new()'
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+    - id: options
+      type: NuvTools.Report.Sheet.Csv.CsvReaderOptions
+    typeParameters:
+    - id: T
+    return:
+      type: System.Collections.Generic.List{{T}}
+    content.vb: Function ReadStream(Of T As New)(stream As Stream, options As CsvReaderOptions = Nothing) As List(Of T)
+  overload: NuvTools.Report.Sheet.Csv.ICsvReader.ReadStream*
+  nameWithType.vb: ICsvReader.ReadStream(Of T)(Stream, CsvReaderOptions)
+  fullName.vb: NuvTools.Report.Sheet.Csv.ICsvReader.ReadStream(Of T)(System.IO.Stream, NuvTools.Report.Sheet.Csv.CsvReaderOptions)
+  name.vb: ReadStream(Of T)(Stream, CsvReaderOptions)
+references:
+- uid: NuvTools.Report.Sheet.Csv
+  commentId: N:NuvTools.Report.Sheet.Csv
+  name: NuvTools.Report.Sheet.Csv
+  nameWithType: NuvTools.Report.Sheet.Csv
+  fullName: NuvTools.Report.Sheet.Csv
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Report
+    name: Report
+  - name: .
+  - uid: NuvTools.Report.Sheet
+    name: Sheet
+  - name: .
+  - uid: NuvTools.Report.Sheet.Csv
+    name: Csv
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Report
+    name: Report
+  - name: .
+  - uid: NuvTools.Report.Sheet
+    name: Sheet
+  - name: .
+  - uid: NuvTools.Report.Sheet.Csv
+    name: Csv
+- uid: NuvTools.Report.Sheet.Csv.ICsvReader.ReadString*
+  commentId: Overload:NuvTools.Report.Sheet.Csv.ICsvReader.ReadString
+  href: NuvTools.Report.Sheet.Csv.ICsvReader.html#NuvTools_Report_Sheet_Csv_ICsvReader_ReadString__1_System_String_NuvTools_Report_Sheet_Csv_CsvReaderOptions_
+  name: ReadString
+  nameWithType: ICsvReader.ReadString
+  fullName: NuvTools.Report.Sheet.Csv.ICsvReader.ReadString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: NuvTools.Report.Sheet.Csv.CsvReaderOptions
+  commentId: T:NuvTools.Report.Sheet.Csv.CsvReaderOptions
+  parent: NuvTools.Report.Sheet.Csv
+  href: NuvTools.Report.Sheet.Csv.CsvReaderOptions.html
+  name: CsvReaderOptions
+  nameWithType: CsvReaderOptions
+  fullName: NuvTools.Report.Sheet.Csv.CsvReaderOptions
+- uid: System.Collections.Generic.List{{T}}
+  commentId: T:System.Collections.Generic.List{``0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: NuvTools.Report.Sheet.Csv.ICsvReader.ReadBase64*
+  commentId: Overload:NuvTools.Report.Sheet.Csv.ICsvReader.ReadBase64
+  href: NuvTools.Report.Sheet.Csv.ICsvReader.html#NuvTools_Report_Sheet_Csv_ICsvReader_ReadBase64__1_System_String_NuvTools_Report_Sheet_Csv_CsvReaderOptions_
+  name: ReadBase64
+  nameWithType: ICsvReader.ReadBase64
+  fullName: NuvTools.Report.Sheet.Csv.ICsvReader.ReadBase64
+- uid: NuvTools.Report.Sheet.Csv.ICsvReader.ReadBytes*
+  commentId: Overload:NuvTools.Report.Sheet.Csv.ICsvReader.ReadBytes
+  href: NuvTools.Report.Sheet.Csv.ICsvReader.html#NuvTools_Report_Sheet_Csv_ICsvReader_ReadBytes__1_System_Byte___NuvTools_Report_Sheet_Csv_CsvReaderOptions_
+  name: ReadBytes
+  nameWithType: ICsvReader.ReadBytes
+  fullName: NuvTools.Report.Sheet.Csv.ICsvReader.ReadBytes
+- uid: System.Byte[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.byte
+  name: byte[]
+  nameWithType: byte[]
+  fullName: byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: (
+  - name: )
+- uid: NuvTools.Report.Sheet.Csv.ICsvReader.ReadStream*
+  commentId: Overload:NuvTools.Report.Sheet.Csv.ICsvReader.ReadStream
+  href: NuvTools.Report.Sheet.Csv.ICsvReader.html#NuvTools_Report_Sheet_Csv_ICsvReader_ReadStream__1_System_IO_Stream_NuvTools_Report_Sheet_Csv_CsvReaderOptions_
+  name: ReadStream
+  nameWithType: ICsvReader.ReadStream
+  fullName: NuvTools.Report.Sheet.Csv.ICsvReader.ReadStream
+- uid: System.IO.Stream
+  commentId: T:System.IO.Stream
+  parent: System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  name: Stream
+  nameWithType: Stream
+  fullName: System.IO.Stream
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io

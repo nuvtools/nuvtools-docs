@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>NuvTools.Security.Identity | Nuv Tools Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="NuvTools.Security.Identity | Nuv Tools Framework ">
+      
+      
+      <link rel="icon" href="../../../images/icon.png">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/nuvtools-brand.svg" alt="Framework">
+            Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="nuvtoolssecurityidentity">NuvTools.Security.Identity</h1>
+
+<p><a href="https://www.nuget.org/packages/NuvTools.Security.Identity"><img src="https://img.shields.io/nuget/v/NuvTools.Security.Identity.svg" alt="NuGet"></a>
+<a href="https://github.com/nuvtools/nuvtools-security-identity/blob/main/LICENSE"><img src="https://img.shields.io/github/license/nuvtools/nuvtools-security-identity.svg" alt="License"></a></p>
+<p>A modular library suite for ASP.NET Identity integration targeting .NET 8, .NET 9, and .NET 10. Provides identity models, permission-based authorization, user management services, and Entity Framework Core persistence.</p>
+<h2 id="libraries">Libraries</h2>
+<table>
+<thead>
+<tr>
+<th>Library</th>
+<th>Description</th>
+<th>NuGet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NuvTools.Security.Identity.Models</strong></td>
+<td>Base models, form DTOs, and API models with localized validation</td>
+<td><a href="https://www.nuget.org/packages/NuvTools.Security.Identity.Models"><img src="https://img.shields.io/nuget/v/NuvTools.Security.Identity.Models.svg" alt="NuGet"></a></td>
+</tr>
+<tr>
+<td><strong>NuvTools.Security.Identity</strong></td>
+<td>Permission-based authorization with dynamic policy provider</td>
+<td><a href="https://www.nuget.org/packages/NuvTools.Security.Identity"><img src="https://img.shields.io/nuget/v/NuvTools.Security.Identity.svg" alt="NuGet"></a></td>
+</tr>
+<tr>
+<td><strong>NuvTools.Security.Identity.AspNetCore</strong></td>
+<td>User management service with email/password workflows and role administration</td>
+<td><a href="https://www.nuget.org/packages/NuvTools.Security.Identity.AspNetCore"><img src="https://img.shields.io/nuget/v/NuvTools.Security.Identity.AspNetCore.svg" alt="NuGet"></a></td>
+</tr>
+<tr>
+<td><strong>NuvTools.Security.Identity.EntityFrameworkCore</strong></td>
+<td>Identity DbContext with transaction management and batch operations</td>
+<td><a href="https://www.nuget.org/packages/NuvTools.Security.Identity.EntityFrameworkCore"><img src="https://img.shields.io/nuget/v/NuvTools.Security.Identity.EntityFrameworkCore.svg" alt="NuGet"></a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="installation">Installation</h2>
+<pre><code class="lang-bash">dotnet add package NuvTools.Security.Identity.Models
+dotnet add package NuvTools.Security.Identity
+dotnet add package NuvTools.Security.Identity.AspNetCore
+dotnet add package NuvTools.Security.Identity.EntityFrameworkCore
+</code></pre>
+<h2 id="nuvtoolssecurityidentitymodels">NuvTools.Security.Identity.Models</h2>
+<p>Base models, form DTOs, and API response models for ASP.NET Identity.</p>
+<p><strong>Key Components:</strong></p>
+<ul>
+<li><code>UserBase&lt;TKey&gt;</code> -- Abstract user entity extending <code>IdentityUser&lt;TKey&gt;</code> with Email, Name, Surname, Status, and password validation (6-40 chars, min 1 uppercase, 1 lowercase, 1 digit)</li>
+<li><code>RoleBase&lt;TKey&gt;</code> -- Abstract role entity extending <code>IdentityRole&lt;TKey&gt;</code> with Name and Claims</li>
+<li>Form models: <code>LoginForm</code>, <code>UserForm</code>, <code>UserWithPasswordForm</code>, <code>ChangePasswordForm</code>, <code>ForgotPasswordForm</code>, <code>ResetPasswordForm</code>, <code>SetPasswordForm</code>, <code>UpdateProfileForm</code></li>
+<li>Two-factor form models: <code>LoginWithTwoFactorForm</code>, <code>LoginWithRecoveryCodeForm</code>, <code>EnableAuthenticatorForm</code></li>
+<li>API models: <code>TokenResponse</code>, <code>RefreshTokenRequest</code></li>
+<li><code>UserRoles</code> -- DTO for user-role associations</li>
+</ul>
+<p><strong>Usage:</strong></p>
+<pre><code class="lang-csharp">using NuvTools.Security.Identity.Models;
+
+public class ApplicationUser : UserBase&lt;Guid&gt;
+{
+    // Add custom properties if needed
+}
+
+public class RegistrationDto : UserWithPasswordForm
+{
+    // Inherits Email, Name, Surname, Password, ConfirmPassword
+    // with localized validation and password complexity requirements
+}
+</code></pre>
+<h2 id="nuvtoolssecurityidentity-1">NuvTools.Security.Identity</h2>
+<p>Permission-based authorization with dynamic policy provider and claim-based permission handler.</p>
+<p><strong>Key Components:</strong></p>
+<ul>
+<li><code>AuthorizationPermissionPolicyProvider</code> -- Dynamically generates policies for names starting with &quot;Permission.&quot;</li>
+<li><code>PermissionRequirement</code> -- Authorization requirement carrying a permission string</li>
+<li><code>PermissionAuthorizationHandler</code> -- Validates permission claims with issuer &quot;LOCAL AUTHORITY&quot;</li>
+</ul>
+<p><strong>Usage:</strong></p>
+<pre><code class="lang-csharp">using NuvTools.Security.Identity.Policy;
+
+// Configure in Program.cs
+builder.Services.AddSingleton&lt;IAuthorizationPolicyProvider, AuthorizationPermissionPolicyProvider&gt;();
+builder.Services.AddSingleton&lt;IAuthorizationHandler, PermissionAuthorizationHandler&gt;();
+
+// Protect endpoints with permissions
+[Authorize(Policy = &quot;Permission.Users.Create&quot;)]
+public IActionResult CreateUser() { }
+</code></pre>
+<h2 id="nuvtoolssecurityidentityaspnetcore">NuvTools.Security.Identity.AspNetCore</h2>
+<p>Server-side user management service and role administration. All methods return <code>IResult</code> / <code>IResult&lt;T&gt;</code> from the ResultWrapper pattern.</p>
+<p><strong>Key Components:</strong></p>
+<ul>
+<li><code>UserServiceBase&lt;TUser, TRole, TKey&gt;</code> -- Abstract service with user CRUD, email confirmation/change, password management, and role operations</li>
+<li><code>RoleManagerExtensions</code> -- Extension methods for adding claims and permission claims to roles</li>
+</ul>
+<p><strong>Available Operations:</strong></p>
+<ul>
+<li>User CRUD: <code>GetAllAsync</code>, <code>GetAsync</code>, <code>GetByEmailAsync</code>, <code>CreateAsync</code>, <code>UpdateAsync</code>, <code>DeleteAsync</code></li>
+<li>User with roles: <code>CreateWithRolesAsync</code>, <code>GetRolesAsync</code>, <code>UpdateRolesAsync</code></li>
+<li>Email: <code>GenerateEmailConfirmationTokenAsync</code>, <code>GenerateEmailConfirmationUriAsync</code>, <code>ConfirmEmailAsync</code>, <code>RequestChangeEmailUrlAsync</code>, <code>ChangeEmailAsync</code></li>
+<li>Password: <code>ChangePasswordAsync</code>, <code>RequestResetPasswordUrlAsync</code>, <code>ResetPasswordAsync</code></li>
+<li>Status: <code>ToggleUserStatusAsync</code></li>
+</ul>
+<p><strong>Usage:</strong></p>
+<pre><code class="lang-csharp">using NuvTools.Security.Identity.AspNetCore.Services;
+using NuvTools.Security.Identity.AspNetCore.Extensions;
+
+public class UserService : UserServiceBase&lt;ApplicationUser, ApplicationRole, Guid&gt;
+{
+    public UserService(UserManager&lt;ApplicationUser&gt; userManager)
+        : base(userManager) { }
+}
+
+// Add permission claims to roles
+await roleManager.AddPermissionClaims(adminRole,
+    &quot;Permission.Users.Create&quot;,
+    &quot;Permission.Users.Read&quot;,
+    &quot;Permission.Users.Update&quot;,
+    &quot;Permission.Users.Delete&quot;
+);
+</code></pre>
+<h2 id="nuvtoolssecurityidentityentityframeworkcore">NuvTools.Security.Identity.EntityFrameworkCore</h2>
+<p>Entity Framework Core persistence layer with transaction management and batch operations.</p>
+<p><strong>Key Components:</strong></p>
+<ul>
+<li><code>IdentityDbContextBase&lt;TUser, TRole, TIdentityKey&gt;</code> -- Abstract DbContext extending <code>IdentityDbContext</code>, implementing <code>IDbContextCommands</code> and <code>IDbContextWithListCommands</code></li>
+<li>Transaction management: <code>BeginTransactionAsync</code>, <code>CommitTransactionAsync</code>, <code>RollbackTransactionAsync</code></li>
+<li>Execution strategy: <code>ExecuteWithStrategyAsync</code></li>
+<li>CRUD: <code>AddAndSaveAsync</code>, <code>UpdateAndSaveAsync</code>, <code>RemoveAndSaveAsync</code></li>
+<li>Batch operations: <code>SyncFromListAsync</code>, <code>AddOrUpdateFromListAsync</code>, <code>AddOrRemoveFromListAsync</code></li>
+</ul>
+<p><strong>Usage:</strong></p>
+<pre><code class="lang-csharp">using NuvTools.Security.Identity.EntityFrameworkCore;
+
+public class ApplicationDbContext : IdentityDbContextBase&lt;ApplicationUser, ApplicationRole, Guid&gt;
+{
+    public ApplicationDbContext(DbContextOptions&lt;ApplicationDbContext&gt; options)
+        : base(options) { }
+
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        base.OnModelCreating(builder);
+        // Configure your entities
+    }
+}
+</code></pre>
+<h2 id="building">Building</h2>
+<p>This solution uses the <code>.slnx</code> (XML-based solution) format.</p>
+<pre><code class="lang-bash">dotnet build NuvTools.Security.Identity.slnx
+dotnet build NuvTools.Security.Identity.slnx -c Release
+</code></pre>
+<h2 id="releasing">Releasing</h2>
+<p>Publishing to nuget.org is irreversible per version, so the workflow makes it the last and smallest
+step.</p>
+<p><strong>One workflow per library.</strong> Each package has its own, so a run and an approval each concern
+exactly one package. The steps themselves are shared, in the reusable <code>package-publish.yml</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Workflow</th>
+<th>Release tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NuvTools.Security.Identity.Models</code></td>
+<td><code>models-publish.yml</code></td>
+<td><code>models-vX.Y.Z</code></td>
+</tr>
+<tr>
+<td><code>NuvTools.Security.Identity</code></td>
+<td><code>identity-publish.yml</code></td>
+<td><code>identity-vX.Y.Z</code></td>
+</tr>
+<tr>
+<td><code>NuvTools.Security.Identity.AspNetCore</code></td>
+<td><code>aspnetcore-publish.yml</code></td>
+<td><code>aspnetcore-vX.Y.Z</code></td>
+</tr>
+<tr>
+<td><code>NuvTools.Security.Identity.EntityFrameworkCore</code></td>
+<td><code>entityframeworkcore-publish.yml</code></td>
+<td><code>entityframeworkcore-vX.Y.Z</code></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Set the package's <code>&lt;Version&gt;</code> in its <code>.csproj</code> and merge it. That is the version that gets
+published; the workflow reads it and never computes one.</li>
+<li>Run the library's workflow by hand (<em>Actions → Models Publish → Run workflow</em>) with <em>push</em>
+checked.</li>
+<li>The workflow builds the solution with <code>-warnaserror</code>, runs the tests, takes <strong>that package only</strong>
+from the build output, verifies it carries its README, licence, icon, symbols and every target
+framework, and then waits for approval on the <code>nuget</code> GitHub Environment before pushing.</li>
+<li><strong>After the push succeeds, the workflow tags the commit</strong> with the tag in the table above. The tag is a
+record of what is on nuget.org, never what starts a release, so it cannot exist for a version
+that did not get there. A run whose tag already exists stops before building: the version has
+been released and <code>&lt;Version&gt;</code> needs a bump.</li>
+</ol>
+<p><strong><code>NuvTools.Security.Identity.Models</code> goes before <code>NuvTools.Security.Identity.AspNetCore</code>.</strong> The
+latter references it as a project, so it depends on whatever <code>&lt;Version&gt;</code> Models has in that commit.
+The workflow checks that version is on nuget.org and refuses to push a package whose dependency is
+not there yet.</p>
+<p>That check knows a version exists, not what is in it. <strong>When Models gains a type AspNetCore uses,
+bump its <code>&lt;Version&gt;</code> and publish it first</strong> — otherwise AspNetCore is published against an older
+Models that does not have it, and fails for whoever installs it.</p>
+<p><strong>Versions published by hand are refused.</strong> Releases made before these workflows exist on nuget.org
+with no tag. Pushing one again would skip the duplicate and then tag the current commit as a
+release it is not, so a version that is already on nuget.org stops the run. The exception is a
+re-run of the same run, which is how a push that succeeded and a tag that failed gets finished.</p>
+<p><strong>No API key is stored.</strong> The push uses nuget.org's trusted publishing: the job presents a GitHub
+OIDC token, nuget.org checks it against the policy registered for this repository and answers with a
+key that lives for one hour. The repository needs one secret, <code>NUGET_USER</code> — the nuget.org profile
+name the policy belongs to — and the policy itself, registered under <em>Trusted Publishing</em> on
+nuget.org with the owner <code>nuvtools</code>, the repository <code>nuvtools-security-identity</code>, the workflow file
+and the environment <code>nuget</code>.</p>
+<p>Run a library's workflow by hand with <em>push</em> unchecked for a dry run that stops after the
+verification.</p>
+<h2 id="project-structure">Project Structure</h2>
+<pre><code>nuvtools-security-identity/
+├── src/
+│   ├── NuvTools.Security.Identity.Models/
+│   ├── NuvTools.Security.Identity/
+│   ├── NuvTools.Security.Identity.AspNetCore/
+│   └── NuvTools.Security.Identity.EntityFrameworkCore/
+├── NuvTools.Security.Identity.slnx
+└── README.md
+</code></pre>
+<h2 id="license">License</h2>
+<p>This project is licensed under the terms specified in the <a href="https://github.com/nuvtools/nuvtools-security-identity/blob/main/LICENSE">LICENSE</a> file.</p>
+<h2 id="links">Links</h2>
+<ul>
+<li><a href="https://nuvtools.com">Website</a></li>
+<li><a href="https://github.com/nuvtools/nuvtools-security-identity">GitHub Repository</a></li>
+<li><a href="https://www.nuget.org/profiles/NuvTools">NuGet Packages</a></li>
+</ul>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>© Nuv Tools · <a href="https://nuvtools.com/framework/">nuvtools.com</a> · MIT licence · Built with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

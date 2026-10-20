@@ -1,0 +1,553 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Security.Certificate.CertificateSubject
+  commentId: T:NuvTools.Security.Certificate.CertificateSubject
+  id: CertificateSubject
+  parent: NuvTools.Security.Certificate
+  children:
+  - NuvTools.Security.Certificate.CertificateSubject.#ctor(System.String,System.String,System.String,System.String,System.String)
+  - NuvTools.Security.Certificate.CertificateSubject.Cnpj
+  - NuvTools.Security.Certificate.CertificateSubject.CompanyName
+  - NuvTools.Security.Certificate.CertificateSubject.Cpf
+  - NuvTools.Security.Certificate.CertificateSubject.Email
+  - NuvTools.Security.Certificate.CertificateSubject.Name
+  langs:
+  - csharp
+  - vb
+  name: CertificateSubject
+  nameWithType: CertificateSubject
+  fullName: NuvTools.Security.Certificate.CertificateSubject
+  type: Class
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Certificate
+  summary: Who a validated certificate was issued to.
+  remarks: >-
+    Every value comes from the certificate itself. Which of them an application requires is its own
+
+    decision: a certificate issued to a company carries a CNPJ and the CPF of the person responsible,
+
+    one issued to a person may carry no CNPJ, and one from outside ICP-Brasil carries neither.
+  example: []
+  syntax:
+    content: 'public sealed record CertificateSubject : IEquatable<CertificateSubject>'
+    content.vb: Public NotInheritable Class CertificateSubject Implements IEquatable(Of CertificateSubject)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{NuvTools.Security.Certificate.CertificateSubject}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NuvTools.Security.Certificate.CertificateSubject.#ctor(System.String,System.String,System.String,System.String,System.String)
+  commentId: M:NuvTools.Security.Certificate.CertificateSubject.#ctor(System.String,System.String,System.String,System.String,System.String)
+  id: '#ctor(System.String,System.String,System.String,System.String,System.String)'
+  parent: NuvTools.Security.Certificate.CertificateSubject
+  langs:
+  - csharp
+  - vb
+  name: CertificateSubject(string?, string?, string?, string?, string?)
+  nameWithType: CertificateSubject.CertificateSubject(string?, string?, string?, string?, string?)
+  fullName: NuvTools.Security.Certificate.CertificateSubject.CertificateSubject(string?, string?, string?, string?, string?)
+  type: Constructor
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Certificate
+  summary: Who a validated certificate was issued to.
+  remarks: >-
+    Every value comes from the certificate itself. Which of them an application requires is its own
+
+    decision: a certificate issued to a company carries a CNPJ and the CPF of the person responsible,
+
+    one issued to a person may carry no CNPJ, and one from outside ICP-Brasil carries neither.
+  example: []
+  syntax:
+    content: public CertificateSubject(string? Name, string? Email, string? Cpf, string? Cnpj, string? CompanyName)
+    parameters:
+    - id: Name
+      type: System.String
+      description: Common name of the subject.
+    - id: Email
+      type: System.String
+      description: E-mail address in the certificate, when present.
+    - id: Cpf
+      type: System.String
+      description: CPF of the holder, digits only, when the certificate is an ICP-Brasil one.
+    - id: Cnpj
+      type: System.String
+      description: CNPJ of the company, digits only, when the certificate was issued to one.
+    - id: CompanyName
+      type: System.String
+      description: Name of the company, when the certificate was issued to one.
+    content.vb: Public Sub New(Name As String, Email As String, Cpf As String, Cnpj As String, CompanyName As String)
+  overload: NuvTools.Security.Certificate.CertificateSubject.#ctor*
+  nameWithType.vb: CertificateSubject.New(String, String, String, String, String)
+  fullName.vb: NuvTools.Security.Certificate.CertificateSubject.New(String, String, String, String, String)
+  name.vb: New(String, String, String, String, String)
+- uid: NuvTools.Security.Certificate.CertificateSubject.Name
+  commentId: P:NuvTools.Security.Certificate.CertificateSubject.Name
+  id: Name
+  parent: NuvTools.Security.Certificate.CertificateSubject
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: CertificateSubject.Name
+  fullName: NuvTools.Security.Certificate.CertificateSubject.Name
+  type: Property
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Certificate
+  summary: Common name of the subject.
+  example: []
+  syntax:
+    content: public string? Name { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: NuvTools.Security.Certificate.CertificateSubject.Name*
+- uid: NuvTools.Security.Certificate.CertificateSubject.Email
+  commentId: P:NuvTools.Security.Certificate.CertificateSubject.Email
+  id: Email
+  parent: NuvTools.Security.Certificate.CertificateSubject
+  langs:
+  - csharp
+  - vb
+  name: Email
+  nameWithType: CertificateSubject.Email
+  fullName: NuvTools.Security.Certificate.CertificateSubject.Email
+  type: Property
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Certificate
+  summary: E-mail address in the certificate, when present.
+  example: []
+  syntax:
+    content: public string? Email { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Email As String
+  overload: NuvTools.Security.Certificate.CertificateSubject.Email*
+- uid: NuvTools.Security.Certificate.CertificateSubject.Cpf
+  commentId: P:NuvTools.Security.Certificate.CertificateSubject.Cpf
+  id: Cpf
+  parent: NuvTools.Security.Certificate.CertificateSubject
+  langs:
+  - csharp
+  - vb
+  name: Cpf
+  nameWithType: CertificateSubject.Cpf
+  fullName: NuvTools.Security.Certificate.CertificateSubject.Cpf
+  type: Property
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Certificate
+  summary: CPF of the holder, digits only, when the certificate is an ICP-Brasil one.
+  example: []
+  syntax:
+    content: public string? Cpf { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Cpf As String
+  overload: NuvTools.Security.Certificate.CertificateSubject.Cpf*
+- uid: NuvTools.Security.Certificate.CertificateSubject.Cnpj
+  commentId: P:NuvTools.Security.Certificate.CertificateSubject.Cnpj
+  id: Cnpj
+  parent: NuvTools.Security.Certificate.CertificateSubject
+  langs:
+  - csharp
+  - vb
+  name: Cnpj
+  nameWithType: CertificateSubject.Cnpj
+  fullName: NuvTools.Security.Certificate.CertificateSubject.Cnpj
+  type: Property
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Certificate
+  summary: CNPJ of the company, digits only, when the certificate was issued to one.
+  example: []
+  syntax:
+    content: public string? Cnpj { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Cnpj As String
+  overload: NuvTools.Security.Certificate.CertificateSubject.Cnpj*
+- uid: NuvTools.Security.Certificate.CertificateSubject.CompanyName
+  commentId: P:NuvTools.Security.Certificate.CertificateSubject.CompanyName
+  id: CompanyName
+  parent: NuvTools.Security.Certificate.CertificateSubject
+  langs:
+  - csharp
+  - vb
+  name: CompanyName
+  nameWithType: CertificateSubject.CompanyName
+  fullName: NuvTools.Security.Certificate.CertificateSubject.CompanyName
+  type: Property
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Certificate
+  summary: Name of the company, when the certificate was issued to one.
+  example: []
+  syntax:
+    content: public string? CompanyName { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property CompanyName As String
+  overload: NuvTools.Security.Certificate.CertificateSubject.CompanyName*
+references:
+- uid: NuvTools.Security.Certificate
+  commentId: N:NuvTools.Security.Certificate
+  name: NuvTools.Security.Certificate
+  nameWithType: NuvTools.Security.Certificate
+  fullName: NuvTools.Security.Certificate
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.Certificate
+    name: Certificate
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.Certificate
+    name: Certificate
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{NuvTools.Security.Certificate.CertificateSubject}
+  commentId: T:System.IEquatable{NuvTools.Security.Certificate.CertificateSubject}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<CertificateSubject>
+  nameWithType: IEquatable<CertificateSubject>
+  fullName: System.IEquatable<NuvTools.Security.Certificate.CertificateSubject>
+  nameWithType.vb: IEquatable(Of CertificateSubject)
+  fullName.vb: System.IEquatable(Of NuvTools.Security.Certificate.CertificateSubject)
+  name.vb: IEquatable(Of CertificateSubject)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: NuvTools.Security.Certificate.CertificateSubject
+    name: CertificateSubject
+    href: NuvTools.Security.Certificate.CertificateSubject.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Security.Certificate.CertificateSubject
+    name: CertificateSubject
+    href: NuvTools.Security.Certificate.CertificateSubject.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NuvTools.Security.Certificate.CertificateSubject.#ctor*
+  commentId: Overload:NuvTools.Security.Certificate.CertificateSubject.#ctor
+  href: NuvTools.Security.Certificate.CertificateSubject.html#NuvTools_Security_Certificate_CertificateSubject__ctor_System_String_System_String_System_String_System_String_System_String_
+  name: CertificateSubject
+  nameWithType: CertificateSubject.CertificateSubject
+  fullName: NuvTools.Security.Certificate.CertificateSubject.CertificateSubject
+  nameWithType.vb: CertificateSubject.New
+  fullName.vb: NuvTools.Security.Certificate.CertificateSubject.New
+  name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: NuvTools.Security.Certificate.CertificateSubject.Name*
+  commentId: Overload:NuvTools.Security.Certificate.CertificateSubject.Name
+  href: NuvTools.Security.Certificate.CertificateSubject.html#NuvTools_Security_Certificate_CertificateSubject_Name
+  name: Name
+  nameWithType: CertificateSubject.Name
+  fullName: NuvTools.Security.Certificate.CertificateSubject.Name
+- uid: NuvTools.Security.Certificate.CertificateSubject.Email*
+  commentId: Overload:NuvTools.Security.Certificate.CertificateSubject.Email
+  href: NuvTools.Security.Certificate.CertificateSubject.html#NuvTools_Security_Certificate_CertificateSubject_Email
+  name: Email
+  nameWithType: CertificateSubject.Email
+  fullName: NuvTools.Security.Certificate.CertificateSubject.Email
+- uid: NuvTools.Security.Certificate.CertificateSubject.Cpf*
+  commentId: Overload:NuvTools.Security.Certificate.CertificateSubject.Cpf
+  href: NuvTools.Security.Certificate.CertificateSubject.html#NuvTools_Security_Certificate_CertificateSubject_Cpf
+  name: Cpf
+  nameWithType: CertificateSubject.Cpf
+  fullName: NuvTools.Security.Certificate.CertificateSubject.Cpf
+- uid: NuvTools.Security.Certificate.CertificateSubject.Cnpj*
+  commentId: Overload:NuvTools.Security.Certificate.CertificateSubject.Cnpj
+  href: NuvTools.Security.Certificate.CertificateSubject.html#NuvTools_Security_Certificate_CertificateSubject_Cnpj
+  name: Cnpj
+  nameWithType: CertificateSubject.Cnpj
+  fullName: NuvTools.Security.Certificate.CertificateSubject.Cnpj
+- uid: NuvTools.Security.Certificate.CertificateSubject.CompanyName*
+  commentId: Overload:NuvTools.Security.Certificate.CertificateSubject.CompanyName
+  href: NuvTools.Security.Certificate.CertificateSubject.html#NuvTools_Security_Certificate_CertificateSubject_CompanyName
+  name: CompanyName
+  nameWithType: CertificateSubject.CompanyName
+  fullName: NuvTools.Security.Certificate.CertificateSubject.CompanyName

@@ -1,0 +1,780 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Notification.Mail.Smtp.SMTPMailService
+  commentId: T:NuvTools.Notification.Mail.Smtp.SMTPMailService
+  id: SMTPMailService
+  parent: NuvTools.Notification.Mail.Smtp
+  children:
+  - NuvTools.Notification.Mail.Smtp.SMTPMailService.#ctor(Microsoft.Extensions.Options.IOptions{NuvTools.Notification.Mail.Smtp.Configuration.SmtpMailConfigurationSection})
+  - NuvTools.Notification.Mail.Smtp.SMTPMailService.SendAsync(NuvTools.Notification.Mail.MailMessage,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: SMTPMailService
+  nameWithType: SMTPMailService
+  fullName: NuvTools.Notification.Mail.Smtp.SMTPMailService
+  type: Class
+  assemblies:
+  - NuvTools.Notification.Mail.Smtp
+  namespace: NuvTools.Notification.Mail.Smtp
+  summary: SMTP implementation of <xref href="NuvTools.Notification.Mail.IMailService" data-throw-if-not-resolved="false"></xref> using MailKit for sending email messages.
+  remarks: >-
+    This service uses the MailKit library to send emails via SMTP protocol.
+
+    It supports HTML and plain text body content, custom headers, multiple recipients, file attachments
+
+    and inline images.
+
+    The SMTP connection is configured using settings from <xref href="NuvTools.Notification.Mail.Smtp.Configuration.SmtpMailConfigurationSection" data-throw-if-not-resolved="false"></xref>, and the
+
+    server TLS certificate is validated unless <xref href="NuvTools.Notification.Mail.Smtp.Configuration.SmtpMailConfigurationSection.AllowInvalidCertificates" data-throw-if-not-resolved="false"></xref>
+
+    is explicitly enabled.
+  example: []
+  syntax:
+    content: 'public class SMTPMailService : IMailService'
+    content.vb: Public Class SMTPMailService Implements IMailService
+  inheritance:
+  - System.Object
+  implements:
+  - NuvTools.Notification.Mail.IMailService
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NuvTools.Notification.Mail.Smtp.SMTPMailService.#ctor(Microsoft.Extensions.Options.IOptions{NuvTools.Notification.Mail.Smtp.Configuration.SmtpMailConfigurationSection})
+  commentId: M:NuvTools.Notification.Mail.Smtp.SMTPMailService.#ctor(Microsoft.Extensions.Options.IOptions{NuvTools.Notification.Mail.Smtp.Configuration.SmtpMailConfigurationSection})
+  id: '#ctor(Microsoft.Extensions.Options.IOptions{NuvTools.Notification.Mail.Smtp.Configuration.SmtpMailConfigurationSection})'
+  parent: NuvTools.Notification.Mail.Smtp.SMTPMailService
+  langs:
+  - csharp
+  - vb
+  name: SMTPMailService(IOptions<SmtpMailConfigurationSection>)
+  nameWithType: SMTPMailService.SMTPMailService(IOptions<SmtpMailConfigurationSection>)
+  fullName: NuvTools.Notification.Mail.Smtp.SMTPMailService.SMTPMailService(Microsoft.Extensions.Options.IOptions<NuvTools.Notification.Mail.Smtp.Configuration.SmtpMailConfigurationSection>)
+  type: Constructor
+  assemblies:
+  - NuvTools.Notification.Mail.Smtp
+  namespace: NuvTools.Notification.Mail.Smtp
+  summary: SMTP implementation of <xref href="NuvTools.Notification.Mail.IMailService" data-throw-if-not-resolved="false"></xref> using MailKit for sending email messages.
+  remarks: >-
+    This service uses the MailKit library to send emails via SMTP protocol.
+
+    It supports HTML and plain text body content, custom headers, multiple recipients, file attachments
+
+    and inline images.
+
+    The SMTP connection is configured using settings from <xref href="NuvTools.Notification.Mail.Smtp.Configuration.SmtpMailConfigurationSection" data-throw-if-not-resolved="false"></xref>, and the
+
+    server TLS certificate is validated unless <xref href="NuvTools.Notification.Mail.Smtp.Configuration.SmtpMailConfigurationSection.AllowInvalidCertificates" data-throw-if-not-resolved="false"></xref>
+
+    is explicitly enabled.
+  example: []
+  syntax:
+    content: public SMTPMailService(IOptions<SmtpMailConfigurationSection> appMailConfiguration)
+    parameters:
+    - id: appMailConfiguration
+      type: Microsoft.Extensions.Options.IOptions{NuvTools.Notification.Mail.Smtp.Configuration.SmtpMailConfigurationSection}
+      description: The mail configuration options containing SMTP server settings.
+    content.vb: Public Sub New(appMailConfiguration As IOptions(Of SmtpMailConfigurationSection))
+  overload: NuvTools.Notification.Mail.Smtp.SMTPMailService.#ctor*
+  nameWithType.vb: SMTPMailService.New(IOptions(Of SmtpMailConfigurationSection))
+  fullName.vb: NuvTools.Notification.Mail.Smtp.SMTPMailService.New(Microsoft.Extensions.Options.IOptions(Of NuvTools.Notification.Mail.Smtp.Configuration.SmtpMailConfigurationSection))
+  name.vb: New(IOptions(Of SmtpMailConfigurationSection))
+- uid: NuvTools.Notification.Mail.Smtp.SMTPMailService.SendAsync(NuvTools.Notification.Mail.MailMessage,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Notification.Mail.Smtp.SMTPMailService.SendAsync(NuvTools.Notification.Mail.MailMessage,System.Threading.CancellationToken)
+  id: SendAsync(NuvTools.Notification.Mail.MailMessage,System.Threading.CancellationToken)
+  parent: NuvTools.Notification.Mail.Smtp.SMTPMailService
+  langs:
+  - csharp
+  - vb
+  name: SendAsync(MailMessage, CancellationToken)
+  nameWithType: SMTPMailService.SendAsync(MailMessage, CancellationToken)
+  fullName: NuvTools.Notification.Mail.Smtp.SMTPMailService.SendAsync(NuvTools.Notification.Mail.MailMessage, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Notification.Mail.Smtp
+  namespace: NuvTools.Notification.Mail.Smtp
+  summary: Sends an email message asynchronously using the configured SMTP server.
+  remarks: >-
+    This method constructs a MIME message from the provided <code class="paramref">request</code>, connects to the SMTP server,
+
+    authenticates using the configured credentials, sends the message, and disconnects.
+
+    If the message includes attachments via <xref href="NuvTools.Notification.Mail.MailMessage.Parts" data-throw-if-not-resolved="false"></xref>, they are added as MIME attachments
+
+    named after <xref href="NuvTools.Notification.Mail.MailPart.FileName" data-throw-if-not-resolved="false"></xref>, or embedded inline when <xref href="NuvTools.Notification.Mail.MailPart.ContentId" data-throw-if-not-resolved="false"></xref> is informed.
+
+    The sender address and display name can be overridden per message or fall back to configuration defaults.
+  example: []
+  syntax:
+    content: public Task<MailSendResult> SendAsync(MailMessage request, CancellationToken cancellationToken = default)
+    parameters:
+    - id: request
+      type: NuvTools.Notification.Mail.MailMessage
+      description: The mail message to send, including sender, recipients, subject, body, and optional attachments.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: The token to monitor for cancellation requests.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Notification.Mail.MailSendResult}
+      description: The Message-ID assigned to the delivered message.
+    content.vb: Public Function SendAsync(request As MailMessage, cancellationToken As CancellationToken = Nothing) As Task(Of MailSendResult)
+  overload: NuvTools.Notification.Mail.Smtp.SMTPMailService.SendAsync*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: >-
+      Thrown when the message requires provider features SMTP has no equivalent for, namely
+
+      <xref href="NuvTools.Notification.Mail.MailMessage.ScheduledFor" data-throw-if-not-resolved="false"></xref>, <xref href="NuvTools.Notification.Mail.MailMessage.Tags" data-throw-if-not-resolved="false"></xref> and <xref href="NuvTools.Notification.Mail.MailAddress.Variables" data-throw-if-not-resolved="false"></xref>.
+
+      Failing is preferred over delivering the message immediately, untagged or with unresolved placeholders.
+  implements:
+  - NuvTools.Notification.Mail.IMailService.SendAsync(NuvTools.Notification.Mail.MailMessage,System.Threading.CancellationToken)
+references:
+- uid: NuvTools.Notification.Mail.IMailService
+  commentId: T:NuvTools.Notification.Mail.IMailService
+  parent: NuvTools.Notification.Mail
+  href: NuvTools.Notification.Mail.IMailService.html
+  name: IMailService
+  nameWithType: IMailService
+  fullName: NuvTools.Notification.Mail.IMailService
+- uid: NuvTools.Notification.Mail.Smtp.Configuration.SmtpMailConfigurationSection
+  commentId: T:NuvTools.Notification.Mail.Smtp.Configuration.SmtpMailConfigurationSection
+  href: NuvTools.Notification.Mail.Smtp.Configuration.SmtpMailConfigurationSection.html
+  name: SmtpMailConfigurationSection
+  nameWithType: SmtpMailConfigurationSection
+  fullName: NuvTools.Notification.Mail.Smtp.Configuration.SmtpMailConfigurationSection
+- uid: NuvTools.Notification.Mail.Smtp.Configuration.SmtpMailConfigurationSection.AllowInvalidCertificates
+  commentId: P:NuvTools.Notification.Mail.Smtp.Configuration.SmtpMailConfigurationSection.AllowInvalidCertificates
+  href: NuvTools.Notification.Mail.Smtp.Configuration.SmtpMailConfigurationSection.html#NuvTools_Notification_Mail_Smtp_Configuration_SmtpMailConfigurationSection_AllowInvalidCertificates
+  name: AllowInvalidCertificates
+  nameWithType: SmtpMailConfigurationSection.AllowInvalidCertificates
+  fullName: NuvTools.Notification.Mail.Smtp.Configuration.SmtpMailConfigurationSection.AllowInvalidCertificates
+- uid: NuvTools.Notification.Mail.Smtp
+  commentId: N:NuvTools.Notification.Mail.Smtp
+  name: NuvTools.Notification.Mail.Smtp
+  nameWithType: NuvTools.Notification.Mail.Smtp
+  fullName: NuvTools.Notification.Mail.Smtp
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Mail
+    name: Mail
+  - name: .
+  - uid: NuvTools.Notification.Mail.Smtp
+    name: Smtp
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Mail
+    name: Mail
+  - name: .
+  - uid: NuvTools.Notification.Mail.Smtp
+    name: Smtp
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: NuvTools.Notification.Mail
+  commentId: N:NuvTools.Notification.Mail
+  name: NuvTools.Notification.Mail
+  nameWithType: NuvTools.Notification.Mail
+  fullName: NuvTools.Notification.Mail
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Mail
+    name: Mail
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Mail
+    name: Mail
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NuvTools.Notification.Mail.Smtp.SMTPMailService.#ctor*
+  commentId: Overload:NuvTools.Notification.Mail.Smtp.SMTPMailService.#ctor
+  href: NuvTools.Notification.Mail.Smtp.SMTPMailService.html#NuvTools_Notification_Mail_Smtp_SMTPMailService__ctor_Microsoft_Extensions_Options_IOptions_NuvTools_Notification_Mail_Smtp_Configuration_SmtpMailConfigurationSection__
+  name: SMTPMailService
+  nameWithType: SMTPMailService.SMTPMailService
+  fullName: NuvTools.Notification.Mail.Smtp.SMTPMailService.SMTPMailService
+  nameWithType.vb: SMTPMailService.New
+  fullName.vb: NuvTools.Notification.Mail.Smtp.SMTPMailService.New
+  name.vb: New
+- uid: Microsoft.Extensions.Options.IOptions{NuvTools.Notification.Mail.Smtp.Configuration.SmtpMailConfigurationSection}
+  commentId: T:Microsoft.Extensions.Options.IOptions{NuvTools.Notification.Mail.Smtp.Configuration.SmtpMailConfigurationSection}
+  parent: Microsoft.Extensions.Options
+  definition: Microsoft.Extensions.Options.IOptions`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  name: IOptions<SmtpMailConfigurationSection>
+  nameWithType: IOptions<SmtpMailConfigurationSection>
+  fullName: Microsoft.Extensions.Options.IOptions<NuvTools.Notification.Mail.Smtp.Configuration.SmtpMailConfigurationSection>
+  nameWithType.vb: IOptions(Of SmtpMailConfigurationSection)
+  fullName.vb: Microsoft.Extensions.Options.IOptions(Of NuvTools.Notification.Mail.Smtp.Configuration.SmtpMailConfigurationSection)
+  name.vb: IOptions(Of SmtpMailConfigurationSection)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: <
+  - uid: NuvTools.Notification.Mail.Smtp.Configuration.SmtpMailConfigurationSection
+    name: SmtpMailConfigurationSection
+    href: NuvTools.Notification.Mail.Smtp.Configuration.SmtpMailConfigurationSection.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Notification.Mail.Smtp.Configuration.SmtpMailConfigurationSection
+    name: SmtpMailConfigurationSection
+    href: NuvTools.Notification.Mail.Smtp.Configuration.SmtpMailConfigurationSection.html
+  - name: )
+- uid: Microsoft.Extensions.Options.IOptions`1
+  commentId: T:Microsoft.Extensions.Options.IOptions`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  name: IOptions<TOptions>
+  nameWithType: IOptions<TOptions>
+  fullName: Microsoft.Extensions.Options.IOptions<TOptions>
+  nameWithType.vb: IOptions(Of TOptions)
+  fullName.vb: Microsoft.Extensions.Options.IOptions(Of TOptions)
+  name.vb: IOptions(Of TOptions)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: <
+  - name: TOptions
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TOptions
+  - name: )
+- uid: Microsoft.Extensions.Options
+  commentId: N:Microsoft.Extensions.Options
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Options
+  nameWithType: Microsoft.Extensions.Options
+  fullName: Microsoft.Extensions.Options
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Options
+    name: Options
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Options
+    name: Options
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options
+- uid: NuvTools.Notification.Mail.MailMessage.Parts
+  commentId: P:NuvTools.Notification.Mail.MailMessage.Parts
+  href: NuvTools.Notification.Mail.MailMessage.html#NuvTools_Notification_Mail_MailMessage_Parts
+  name: Parts
+  nameWithType: MailMessage.Parts
+  fullName: NuvTools.Notification.Mail.MailMessage.Parts
+- uid: NuvTools.Notification.Mail.MailPart.FileName
+  commentId: P:NuvTools.Notification.Mail.MailPart.FileName
+  href: NuvTools.Notification.Mail.MailPart.html#NuvTools_Notification_Mail_MailPart_FileName
+  name: FileName
+  nameWithType: MailPart.FileName
+  fullName: NuvTools.Notification.Mail.MailPart.FileName
+- uid: NuvTools.Notification.Mail.MailPart.ContentId
+  commentId: P:NuvTools.Notification.Mail.MailPart.ContentId
+  name: ContentId
+  nameWithType: MailPart.ContentId
+  fullName: NuvTools.Notification.Mail.MailPart.ContentId
+- uid: NuvTools.Notification.Mail.MailMessage.ScheduledFor
+  commentId: P:NuvTools.Notification.Mail.MailMessage.ScheduledFor
+  href: NuvTools.Notification.Mail.MailMessage.html#NuvTools_Notification_Mail_MailMessage_ScheduledFor
+  name: ScheduledFor
+  nameWithType: MailMessage.ScheduledFor
+  fullName: NuvTools.Notification.Mail.MailMessage.ScheduledFor
+- uid: NuvTools.Notification.Mail.MailMessage.Tags
+  commentId: P:NuvTools.Notification.Mail.MailMessage.Tags
+  href: NuvTools.Notification.Mail.MailMessage.html#NuvTools_Notification_Mail_MailMessage_Tags
+  name: Tags
+  nameWithType: MailMessage.Tags
+  fullName: NuvTools.Notification.Mail.MailMessage.Tags
+- uid: NuvTools.Notification.Mail.MailAddress.Variables
+  commentId: P:NuvTools.Notification.Mail.MailAddress.Variables
+  href: NuvTools.Notification.Mail.MailAddress.html#NuvTools_Notification_Mail_MailAddress_Variables
+  name: Variables
+  nameWithType: MailAddress.Variables
+  fullName: NuvTools.Notification.Mail.MailAddress.Variables
+- uid: System.NotSupportedException
+  commentId: T:System.NotSupportedException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.notsupportedexception
+  name: NotSupportedException
+  nameWithType: NotSupportedException
+  fullName: System.NotSupportedException
+- uid: NuvTools.Notification.Mail.Smtp.SMTPMailService.SendAsync*
+  commentId: Overload:NuvTools.Notification.Mail.Smtp.SMTPMailService.SendAsync
+  href: NuvTools.Notification.Mail.Smtp.SMTPMailService.html#NuvTools_Notification_Mail_Smtp_SMTPMailService_SendAsync_NuvTools_Notification_Mail_MailMessage_System_Threading_CancellationToken_
+  name: SendAsync
+  nameWithType: SMTPMailService.SendAsync
+  fullName: NuvTools.Notification.Mail.Smtp.SMTPMailService.SendAsync
+- uid: NuvTools.Notification.Mail.IMailService.SendAsync(NuvTools.Notification.Mail.MailMessage,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Notification.Mail.IMailService.SendAsync(NuvTools.Notification.Mail.MailMessage,System.Threading.CancellationToken)
+  parent: NuvTools.Notification.Mail.IMailService
+  isExternal: true
+  href: NuvTools.Notification.Mail.IMailService.html#NuvTools_Notification_Mail_IMailService_SendAsync_NuvTools_Notification_Mail_MailMessage_System_Threading_CancellationToken_
+  name: SendAsync(MailMessage, CancellationToken)
+  nameWithType: IMailService.SendAsync(MailMessage, CancellationToken)
+  fullName: NuvTools.Notification.Mail.IMailService.SendAsync(NuvTools.Notification.Mail.MailMessage, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: NuvTools.Notification.Mail.IMailService.SendAsync(NuvTools.Notification.Mail.MailMessage,System.Threading.CancellationToken)
+    name: SendAsync
+    href: NuvTools.Notification.Mail.IMailService.html#NuvTools_Notification_Mail_IMailService_SendAsync_NuvTools_Notification_Mail_MailMessage_System_Threading_CancellationToken_
+  - name: (
+  - uid: NuvTools.Notification.Mail.MailMessage
+    name: MailMessage
+    href: NuvTools.Notification.Mail.MailMessage.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Notification.Mail.IMailService.SendAsync(NuvTools.Notification.Mail.MailMessage,System.Threading.CancellationToken)
+    name: SendAsync
+    href: NuvTools.Notification.Mail.IMailService.html#NuvTools_Notification_Mail_IMailService_SendAsync_NuvTools_Notification_Mail_MailMessage_System_Threading_CancellationToken_
+  - name: (
+  - uid: NuvTools.Notification.Mail.MailMessage
+    name: MailMessage
+    href: NuvTools.Notification.Mail.MailMessage.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: NuvTools.Notification.Mail.MailMessage
+  commentId: T:NuvTools.Notification.Mail.MailMessage
+  parent: NuvTools.Notification.Mail
+  href: NuvTools.Notification.Mail.MailMessage.html
+  name: MailMessage
+  nameWithType: MailMessage
+  fullName: NuvTools.Notification.Mail.MailMessage
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{NuvTools.Notification.Mail.MailSendResult}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Notification.Mail.MailSendResult}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<MailSendResult>
+  nameWithType: Task<MailSendResult>
+  fullName: System.Threading.Tasks.Task<NuvTools.Notification.Mail.MailSendResult>
+  nameWithType.vb: Task(Of MailSendResult)
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Notification.Mail.MailSendResult)
+  name.vb: Task(Of MailSendResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Notification.Mail.MailSendResult
+    name: MailSendResult
+    href: NuvTools.Notification.Mail.MailSendResult.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Notification.Mail.MailSendResult
+    name: MailSendResult
+    href: NuvTools.Notification.Mail.MailSendResult.html
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

@@ -1,0 +1,782 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Payment.DTOs.PaymentEventDTO
+  commentId: T:NuvTools.Payment.DTOs.PaymentEventDTO
+  id: PaymentEventDTO
+  parent: NuvTools.Payment.DTOs
+  children:
+  - NuvTools.Payment.DTOs.PaymentEventDTO.#ctor(System.String,NuvTools.Payment.Enumerations.PaymentEventType,System.String,System.String,System.String,System.String,System.String,System.String,System.String)
+  - NuvTools.Payment.DTOs.PaymentEventDTO.CustomerId
+  - NuvTools.Payment.DTOs.PaymentEventDTO.EventId
+  - NuvTools.Payment.DTOs.PaymentEventDTO.FailureReason
+  - NuvTools.Payment.DTOs.PaymentEventDTO.ObjectId
+  - NuvTools.Payment.DTOs.PaymentEventDTO.PayeeAccountId
+  - NuvTools.Payment.DTOs.PaymentEventDTO.PayloadJson
+  - NuvTools.Payment.DTOs.PaymentEventDTO.PaymentMethodId
+  - NuvTools.Payment.DTOs.PaymentEventDTO.ProviderType
+  - NuvTools.Payment.DTOs.PaymentEventDTO.Type
+  langs:
+  - csharp
+  - vb
+  name: PaymentEventDTO
+  nameWithType: PaymentEventDTO
+  fullName: NuvTools.Payment.DTOs.PaymentEventDTO
+  type: Class
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.DTOs
+  summary: A webhook whose signature has been verified, read into the few fields a caller acts on.
+  remarks: >-
+    <p>
+
+    The provider client does the reading, deliberately: which field of which payload holds the
+
+    customer is the provider's business, and a caller that dug it out of
+
+    <code class="paramref">PayloadJson</code> itself would be coupled to a shape it does not control.
+
+    </p>
+
+    <p>
+
+    <code class="paramref">PayloadJson</code> is still carried, for a caller that needs something this record
+
+    does not model. Treat it as the provider's, not as a contract.
+
+    </p>
+  example: []
+  syntax:
+    content: 'public record PaymentEventDTO : IEquatable<PaymentEventDTO>'
+    content.vb: Public Class PaymentEventDTO Implements IEquatable(Of PaymentEventDTO)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{NuvTools.Payment.DTOs.PaymentEventDTO}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NuvTools.Payment.DTOs.PaymentEventDTO.#ctor(System.String,NuvTools.Payment.Enumerations.PaymentEventType,System.String,System.String,System.String,System.String,System.String,System.String,System.String)
+  commentId: M:NuvTools.Payment.DTOs.PaymentEventDTO.#ctor(System.String,NuvTools.Payment.Enumerations.PaymentEventType,System.String,System.String,System.String,System.String,System.String,System.String,System.String)
+  id: '#ctor(System.String,NuvTools.Payment.Enumerations.PaymentEventType,System.String,System.String,System.String,System.String,System.String,System.String,System.String)'
+  parent: NuvTools.Payment.DTOs.PaymentEventDTO
+  langs:
+  - csharp
+  - vb
+  name: PaymentEventDTO(string, PaymentEventType, string, string?, string?, string?, string?, string?, string)
+  nameWithType: PaymentEventDTO.PaymentEventDTO(string, PaymentEventType, string, string?, string?, string?, string?, string?, string)
+  fullName: NuvTools.Payment.DTOs.PaymentEventDTO.PaymentEventDTO(string, NuvTools.Payment.Enumerations.PaymentEventType, string, string?, string?, string?, string?, string?, string)
+  type: Constructor
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.DTOs
+  summary: A webhook whose signature has been verified, read into the few fields a caller acts on.
+  remarks: >-
+    <p>
+
+    The provider client does the reading, deliberately: which field of which payload holds the
+
+    customer is the provider's business, and a caller that dug it out of
+
+    <code class="paramref">PayloadJson</code> itself would be coupled to a shape it does not control.
+
+    </p>
+
+    <p>
+
+    <code class="paramref">PayloadJson</code> is still carried, for a caller that needs something this record
+
+    does not model. Treat it as the provider's, not as a contract.
+
+    </p>
+  example: []
+  syntax:
+    content: public PaymentEventDTO(string EventId, PaymentEventType Type, string ProviderType, string? PayeeAccountId, string? ObjectId, string? CustomerId, string? PaymentMethodId, string? FailureReason, string PayloadJson)
+    parameters:
+    - id: EventId
+      type: System.String
+      description: >-
+        The provider's own event identifier — the one to key idempotency on, because a provider that
+
+        delivers at least once will deliver the same event twice.
+    - id: Type
+      type: NuvTools.Payment.Enumerations.PaymentEventType
+      description: What the event is, in terms a caller can act on.
+    - id: ProviderType
+      type: System.String
+      description: >-
+        The provider's own name for it, kept for the record a caller writes: it says what really arrived,
+
+        including for <xref href="NuvTools.Payment.Enumerations.PaymentEventType.Unknown" data-throw-if-not-resolved="false"></xref>.
+    - id: PayeeAccountId
+      type: System.String
+      description: The payee account the event is about, when it is about one.
+    - id: ObjectId
+      type: System.String
+      description: The identifier of what the event happened to — a payment, an account.
+    - id: CustomerId
+      type: System.String
+      description: The customer the event is about, when it names one.
+    - id: PaymentMethodId
+      type: System.String
+      description: The payment method the event is about, when it names one.
+    - id: FailureReason
+      type: System.String
+      description: Why the provider refused, on an event that reports a refusal.
+    - id: PayloadJson
+      type: System.String
+      description: The raw body, exactly as it was signed.
+    content.vb: Public Sub New(EventId As String, Type As PaymentEventType, ProviderType As String, PayeeAccountId As String, ObjectId As String, CustomerId As String, PaymentMethodId As String, FailureReason As String, PayloadJson As String)
+  overload: NuvTools.Payment.DTOs.PaymentEventDTO.#ctor*
+  nameWithType.vb: PaymentEventDTO.New(String, PaymentEventType, String, String, String, String, String, String, String)
+  fullName.vb: NuvTools.Payment.DTOs.PaymentEventDTO.New(String, NuvTools.Payment.Enumerations.PaymentEventType, String, String, String, String, String, String, String)
+  name.vb: New(String, PaymentEventType, String, String, String, String, String, String, String)
+- uid: NuvTools.Payment.DTOs.PaymentEventDTO.EventId
+  commentId: P:NuvTools.Payment.DTOs.PaymentEventDTO.EventId
+  id: EventId
+  parent: NuvTools.Payment.DTOs.PaymentEventDTO
+  langs:
+  - csharp
+  - vb
+  name: EventId
+  nameWithType: PaymentEventDTO.EventId
+  fullName: NuvTools.Payment.DTOs.PaymentEventDTO.EventId
+  type: Property
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.DTOs
+  summary: >-
+    The provider's own event identifier — the one to key idempotency on, because a provider that
+
+    delivers at least once will deliver the same event twice.
+  example: []
+  syntax:
+    content: public string EventId { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property EventId As String
+  overload: NuvTools.Payment.DTOs.PaymentEventDTO.EventId*
+- uid: NuvTools.Payment.DTOs.PaymentEventDTO.Type
+  commentId: P:NuvTools.Payment.DTOs.PaymentEventDTO.Type
+  id: Type
+  parent: NuvTools.Payment.DTOs.PaymentEventDTO
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: PaymentEventDTO.Type
+  fullName: NuvTools.Payment.DTOs.PaymentEventDTO.Type
+  type: Property
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.DTOs
+  summary: What the event is, in terms a caller can act on.
+  example: []
+  syntax:
+    content: public PaymentEventType Type { get; init; }
+    parameters: []
+    return:
+      type: NuvTools.Payment.Enumerations.PaymentEventType
+    content.vb: Public Property Type As PaymentEventType
+  overload: NuvTools.Payment.DTOs.PaymentEventDTO.Type*
+- uid: NuvTools.Payment.DTOs.PaymentEventDTO.ProviderType
+  commentId: P:NuvTools.Payment.DTOs.PaymentEventDTO.ProviderType
+  id: ProviderType
+  parent: NuvTools.Payment.DTOs.PaymentEventDTO
+  langs:
+  - csharp
+  - vb
+  name: ProviderType
+  nameWithType: PaymentEventDTO.ProviderType
+  fullName: NuvTools.Payment.DTOs.PaymentEventDTO.ProviderType
+  type: Property
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.DTOs
+  summary: >-
+    The provider's own name for it, kept for the record a caller writes: it says what really arrived,
+
+    including for <xref href="NuvTools.Payment.Enumerations.PaymentEventType.Unknown" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public string ProviderType { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ProviderType As String
+  overload: NuvTools.Payment.DTOs.PaymentEventDTO.ProviderType*
+- uid: NuvTools.Payment.DTOs.PaymentEventDTO.PayeeAccountId
+  commentId: P:NuvTools.Payment.DTOs.PaymentEventDTO.PayeeAccountId
+  id: PayeeAccountId
+  parent: NuvTools.Payment.DTOs.PaymentEventDTO
+  langs:
+  - csharp
+  - vb
+  name: PayeeAccountId
+  nameWithType: PaymentEventDTO.PayeeAccountId
+  fullName: NuvTools.Payment.DTOs.PaymentEventDTO.PayeeAccountId
+  type: Property
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.DTOs
+  summary: The payee account the event is about, when it is about one.
+  example: []
+  syntax:
+    content: public string? PayeeAccountId { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property PayeeAccountId As String
+  overload: NuvTools.Payment.DTOs.PaymentEventDTO.PayeeAccountId*
+- uid: NuvTools.Payment.DTOs.PaymentEventDTO.ObjectId
+  commentId: P:NuvTools.Payment.DTOs.PaymentEventDTO.ObjectId
+  id: ObjectId
+  parent: NuvTools.Payment.DTOs.PaymentEventDTO
+  langs:
+  - csharp
+  - vb
+  name: ObjectId
+  nameWithType: PaymentEventDTO.ObjectId
+  fullName: NuvTools.Payment.DTOs.PaymentEventDTO.ObjectId
+  type: Property
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.DTOs
+  summary: The identifier of what the event happened to — a payment, an account.
+  example: []
+  syntax:
+    content: public string? ObjectId { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ObjectId As String
+  overload: NuvTools.Payment.DTOs.PaymentEventDTO.ObjectId*
+- uid: NuvTools.Payment.DTOs.PaymentEventDTO.CustomerId
+  commentId: P:NuvTools.Payment.DTOs.PaymentEventDTO.CustomerId
+  id: CustomerId
+  parent: NuvTools.Payment.DTOs.PaymentEventDTO
+  langs:
+  - csharp
+  - vb
+  name: CustomerId
+  nameWithType: PaymentEventDTO.CustomerId
+  fullName: NuvTools.Payment.DTOs.PaymentEventDTO.CustomerId
+  type: Property
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.DTOs
+  summary: The customer the event is about, when it names one.
+  example: []
+  syntax:
+    content: public string? CustomerId { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property CustomerId As String
+  overload: NuvTools.Payment.DTOs.PaymentEventDTO.CustomerId*
+- uid: NuvTools.Payment.DTOs.PaymentEventDTO.PaymentMethodId
+  commentId: P:NuvTools.Payment.DTOs.PaymentEventDTO.PaymentMethodId
+  id: PaymentMethodId
+  parent: NuvTools.Payment.DTOs.PaymentEventDTO
+  langs:
+  - csharp
+  - vb
+  name: PaymentMethodId
+  nameWithType: PaymentEventDTO.PaymentMethodId
+  fullName: NuvTools.Payment.DTOs.PaymentEventDTO.PaymentMethodId
+  type: Property
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.DTOs
+  summary: The payment method the event is about, when it names one.
+  example: []
+  syntax:
+    content: public string? PaymentMethodId { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property PaymentMethodId As String
+  overload: NuvTools.Payment.DTOs.PaymentEventDTO.PaymentMethodId*
+- uid: NuvTools.Payment.DTOs.PaymentEventDTO.FailureReason
+  commentId: P:NuvTools.Payment.DTOs.PaymentEventDTO.FailureReason
+  id: FailureReason
+  parent: NuvTools.Payment.DTOs.PaymentEventDTO
+  langs:
+  - csharp
+  - vb
+  name: FailureReason
+  nameWithType: PaymentEventDTO.FailureReason
+  fullName: NuvTools.Payment.DTOs.PaymentEventDTO.FailureReason
+  type: Property
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.DTOs
+  summary: Why the provider refused, on an event that reports a refusal.
+  example: []
+  syntax:
+    content: public string? FailureReason { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property FailureReason As String
+  overload: NuvTools.Payment.DTOs.PaymentEventDTO.FailureReason*
+- uid: NuvTools.Payment.DTOs.PaymentEventDTO.PayloadJson
+  commentId: P:NuvTools.Payment.DTOs.PaymentEventDTO.PayloadJson
+  id: PayloadJson
+  parent: NuvTools.Payment.DTOs.PaymentEventDTO
+  langs:
+  - csharp
+  - vb
+  name: PayloadJson
+  nameWithType: PaymentEventDTO.PayloadJson
+  fullName: NuvTools.Payment.DTOs.PaymentEventDTO.PayloadJson
+  type: Property
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.DTOs
+  summary: The raw body, exactly as it was signed.
+  example: []
+  syntax:
+    content: public string PayloadJson { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property PayloadJson As String
+  overload: NuvTools.Payment.DTOs.PaymentEventDTO.PayloadJson*
+references:
+- uid: NuvTools.Payment.Enumerations.PaymentEventType.Unknown
+  commentId: F:NuvTools.Payment.Enumerations.PaymentEventType.Unknown
+  href: NuvTools.Payment.Enumerations.PaymentEventType.html#NuvTools_Payment_Enumerations_PaymentEventType_Unknown
+  name: Unknown
+  nameWithType: PaymentEventType.Unknown
+  fullName: NuvTools.Payment.Enumerations.PaymentEventType.Unknown
+- uid: NuvTools.Payment.DTOs
+  commentId: N:NuvTools.Payment.DTOs
+  name: NuvTools.Payment.DTOs
+  nameWithType: NuvTools.Payment.DTOs
+  fullName: NuvTools.Payment.DTOs
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.DTOs
+    name: DTOs
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.DTOs
+    name: DTOs
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{NuvTools.Payment.DTOs.PaymentEventDTO}
+  commentId: T:System.IEquatable{NuvTools.Payment.DTOs.PaymentEventDTO}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<PaymentEventDTO>
+  nameWithType: IEquatable<PaymentEventDTO>
+  fullName: System.IEquatable<NuvTools.Payment.DTOs.PaymentEventDTO>
+  nameWithType.vb: IEquatable(Of PaymentEventDTO)
+  fullName.vb: System.IEquatable(Of NuvTools.Payment.DTOs.PaymentEventDTO)
+  name.vb: IEquatable(Of PaymentEventDTO)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: NuvTools.Payment.DTOs.PaymentEventDTO
+    name: PaymentEventDTO
+    href: NuvTools.Payment.DTOs.PaymentEventDTO.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.DTOs.PaymentEventDTO
+    name: PaymentEventDTO
+    href: NuvTools.Payment.DTOs.PaymentEventDTO.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NuvTools.Payment.DTOs.PaymentEventDTO.#ctor*
+  commentId: Overload:NuvTools.Payment.DTOs.PaymentEventDTO.#ctor
+  href: NuvTools.Payment.DTOs.PaymentEventDTO.html#NuvTools_Payment_DTOs_PaymentEventDTO__ctor_System_String_NuvTools_Payment_Enumerations_PaymentEventType_System_String_System_String_System_String_System_String_System_String_System_String_System_String_
+  name: PaymentEventDTO
+  nameWithType: PaymentEventDTO.PaymentEventDTO
+  fullName: NuvTools.Payment.DTOs.PaymentEventDTO.PaymentEventDTO
+  nameWithType.vb: PaymentEventDTO.New
+  fullName.vb: NuvTools.Payment.DTOs.PaymentEventDTO.New
+  name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: NuvTools.Payment.Enumerations.PaymentEventType
+  commentId: T:NuvTools.Payment.Enumerations.PaymentEventType
+  parent: NuvTools.Payment.Enumerations
+  href: NuvTools.Payment.Enumerations.PaymentEventType.html
+  name: PaymentEventType
+  nameWithType: PaymentEventType
+  fullName: NuvTools.Payment.Enumerations.PaymentEventType
+- uid: NuvTools.Payment.Enumerations
+  commentId: N:NuvTools.Payment.Enumerations
+  name: NuvTools.Payment.Enumerations
+  nameWithType: NuvTools.Payment.Enumerations
+  fullName: NuvTools.Payment.Enumerations
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Enumerations
+    name: Enumerations
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Enumerations
+    name: Enumerations
+- uid: NuvTools.Payment.DTOs.PaymentEventDTO.EventId*
+  commentId: Overload:NuvTools.Payment.DTOs.PaymentEventDTO.EventId
+  href: NuvTools.Payment.DTOs.PaymentEventDTO.html#NuvTools_Payment_DTOs_PaymentEventDTO_EventId
+  name: EventId
+  nameWithType: PaymentEventDTO.EventId
+  fullName: NuvTools.Payment.DTOs.PaymentEventDTO.EventId
+- uid: NuvTools.Payment.DTOs.PaymentEventDTO.Type*
+  commentId: Overload:NuvTools.Payment.DTOs.PaymentEventDTO.Type
+  href: NuvTools.Payment.DTOs.PaymentEventDTO.html#NuvTools_Payment_DTOs_PaymentEventDTO_Type
+  name: Type
+  nameWithType: PaymentEventDTO.Type
+  fullName: NuvTools.Payment.DTOs.PaymentEventDTO.Type
+- uid: NuvTools.Payment.DTOs.PaymentEventDTO.ProviderType*
+  commentId: Overload:NuvTools.Payment.DTOs.PaymentEventDTO.ProviderType
+  href: NuvTools.Payment.DTOs.PaymentEventDTO.html#NuvTools_Payment_DTOs_PaymentEventDTO_ProviderType
+  name: ProviderType
+  nameWithType: PaymentEventDTO.ProviderType
+  fullName: NuvTools.Payment.DTOs.PaymentEventDTO.ProviderType
+- uid: NuvTools.Payment.DTOs.PaymentEventDTO.PayeeAccountId*
+  commentId: Overload:NuvTools.Payment.DTOs.PaymentEventDTO.PayeeAccountId
+  href: NuvTools.Payment.DTOs.PaymentEventDTO.html#NuvTools_Payment_DTOs_PaymentEventDTO_PayeeAccountId
+  name: PayeeAccountId
+  nameWithType: PaymentEventDTO.PayeeAccountId
+  fullName: NuvTools.Payment.DTOs.PaymentEventDTO.PayeeAccountId
+- uid: NuvTools.Payment.DTOs.PaymentEventDTO.ObjectId*
+  commentId: Overload:NuvTools.Payment.DTOs.PaymentEventDTO.ObjectId
+  href: NuvTools.Payment.DTOs.PaymentEventDTO.html#NuvTools_Payment_DTOs_PaymentEventDTO_ObjectId
+  name: ObjectId
+  nameWithType: PaymentEventDTO.ObjectId
+  fullName: NuvTools.Payment.DTOs.PaymentEventDTO.ObjectId
+- uid: NuvTools.Payment.DTOs.PaymentEventDTO.CustomerId*
+  commentId: Overload:NuvTools.Payment.DTOs.PaymentEventDTO.CustomerId
+  href: NuvTools.Payment.DTOs.PaymentEventDTO.html#NuvTools_Payment_DTOs_PaymentEventDTO_CustomerId
+  name: CustomerId
+  nameWithType: PaymentEventDTO.CustomerId
+  fullName: NuvTools.Payment.DTOs.PaymentEventDTO.CustomerId
+- uid: NuvTools.Payment.DTOs.PaymentEventDTO.PaymentMethodId*
+  commentId: Overload:NuvTools.Payment.DTOs.PaymentEventDTO.PaymentMethodId
+  href: NuvTools.Payment.DTOs.PaymentEventDTO.html#NuvTools_Payment_DTOs_PaymentEventDTO_PaymentMethodId
+  name: PaymentMethodId
+  nameWithType: PaymentEventDTO.PaymentMethodId
+  fullName: NuvTools.Payment.DTOs.PaymentEventDTO.PaymentMethodId
+- uid: NuvTools.Payment.DTOs.PaymentEventDTO.FailureReason*
+  commentId: Overload:NuvTools.Payment.DTOs.PaymentEventDTO.FailureReason
+  href: NuvTools.Payment.DTOs.PaymentEventDTO.html#NuvTools_Payment_DTOs_PaymentEventDTO_FailureReason
+  name: FailureReason
+  nameWithType: PaymentEventDTO.FailureReason
+  fullName: NuvTools.Payment.DTOs.PaymentEventDTO.FailureReason
+- uid: NuvTools.Payment.DTOs.PaymentEventDTO.PayloadJson*
+  commentId: Overload:NuvTools.Payment.DTOs.PaymentEventDTO.PayloadJson
+  href: NuvTools.Payment.DTOs.PaymentEventDTO.html#NuvTools_Payment_DTOs_PaymentEventDTO_PayloadJson
+  name: PayloadJson
+  nameWithType: PaymentEventDTO.PayloadJson
+  fullName: NuvTools.Payment.DTOs.PaymentEventDTO.PayloadJson

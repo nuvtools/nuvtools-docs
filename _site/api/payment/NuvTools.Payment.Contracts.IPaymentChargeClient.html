@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Interface IPaymentChargeClient | Nuv Tools Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Interface IPaymentChargeClient | Nuv Tools Framework ">
+      
+      <meta name="description" content="Moving money: charging a customer, and paying a payee.">
+      <link rel="icon" href="../../images/icon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/nuvtools-brand.svg" alt="Framework">
+            Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="NuvTools.Payment.Contracts.IPaymentChargeClient">
+
+
+
+  <h1 id="NuvTools_Payment_Contracts_IPaymentChargeClient" data-uid="NuvTools.Payment.Contracts.IPaymentChargeClient" class="text-break">
+Interface IPaymentChargeClient  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><span class="xref">NuvTools</span>.<a class="xref" href="NuvTools.Payment.html">Payment</a>.<a class="xref" href="NuvTools.Payment.Contracts.html">Contracts</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NuvTools.Payment.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Moving money: charging a customer, and paying a payee.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IPaymentChargeClient</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 id="NuvTools_Payment_Contracts_IPaymentChargeClient_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>The two are separate calls on purpose. One charge can pay several payees, and a payee is paid for
+what was billed rather than for what each customer happened to pay — a customer who has not paid
+is a debt the platform carries, while a payee paid twice is a mistake nobody can take back.</p>
+</div>
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="NuvTools_Payment_Contracts_IPaymentChargeClient_ChargeAsync_" data-uid="NuvTools.Payment.Contracts.IPaymentChargeClient.ChargeAsync*"></a>
+
+  <h3 id="NuvTools_Payment_Contracts_IPaymentChargeClient_ChargeAsync_NuvTools_Payment_DTOs_Requests_PaymentChargeRequest_System_Threading_CancellationToken_" data-uid="NuvTools.Payment.Contracts.IPaymentChargeClient.ChargeAsync(NuvTools.Payment.DTOs.Requests.PaymentChargeRequest,System.Threading.CancellationToken)">
+  ChargeAsync(PaymentChargeRequest, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Charges a saved payment method off-session — nobody is at a keyboard when a month is billed —
+and returns what the provider made of it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IResult&lt;PaymentDTO&gt;&gt; ChargeAsync(PaymentChargeRequest request, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>request</code> <a class="xref" href="NuvTools.Payment.DTOs.Requests.PaymentChargeRequest.html">PaymentChargeRequest</a></dt>
+    <dd><p>Who is charged, how much, and the key that makes a retry safe.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>Cancels the call.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../foundation/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;<a class="xref" href="NuvTools.Payment.DTOs.PaymentDTO.html">PaymentDTO</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Payment_Contracts_IPaymentChargeClient_TransferAsync_" data-uid="NuvTools.Payment.Contracts.IPaymentChargeClient.TransferAsync*"></a>
+
+  <h3 id="NuvTools_Payment_Contracts_IPaymentChargeClient_TransferAsync_NuvTools_Payment_DTOs_Requests_PaymentTransferRequest_System_Threading_CancellationToken_" data-uid="NuvTools.Payment.Contracts.IPaymentChargeClient.TransferAsync(NuvTools.Payment.DTOs.Requests.PaymentTransferRequest,System.Threading.CancellationToken)">
+  TransferAsync(PaymentTransferRequest, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sends part of what was charged to a payee's account.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IResult&lt;PaymentTransferDTO&gt;&gt; TransferAsync(PaymentTransferRequest request, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>request</code> <a class="xref" href="NuvTools.Payment.DTOs.Requests.PaymentTransferRequest.html">PaymentTransferRequest</a></dt>
+    <dd><p>Who is paid, how much, and the key that makes a retry safe.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>Cancels the call.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../foundation/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;<a class="xref" href="NuvTools.Payment.DTOs.PaymentTransferDTO.html">PaymentTransferDTO</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>© Nuv Tools · <a href="https://nuvtools.com/framework/">nuvtools.com</a> · MIT licence · Built with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

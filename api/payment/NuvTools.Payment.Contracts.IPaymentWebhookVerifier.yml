@@ -1,0 +1,231 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Payment.Contracts.IPaymentWebhookVerifier
+  commentId: T:NuvTools.Payment.Contracts.IPaymentWebhookVerifier
+  id: IPaymentWebhookVerifier
+  parent: NuvTools.Payment.Contracts
+  children:
+  - NuvTools.Payment.Contracts.IPaymentWebhookVerifier.Verify(System.String,System.String,NuvTools.Payment.Enumerations.PaymentWebhookEndpointType)
+  langs:
+  - csharp
+  - vb
+  name: IPaymentWebhookVerifier
+  nameWithType: IPaymentWebhookVerifier
+  fullName: NuvTools.Payment.Contracts.IPaymentWebhookVerifier
+  type: Interface
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.Contracts
+  summary: Checks that a webhook really came from the provider, and reads it.
+  remarks: >-
+    A webhook endpoint is public, so the signature is the whole of its authentication: an unverified
+
+    body is an anonymous stranger's, and acting on one would let anybody mark a bill paid.
+  example: []
+  syntax:
+    content: public interface IPaymentWebhookVerifier
+    content.vb: Public Interface IPaymentWebhookVerifier
+  derivedClasses:
+  - NuvTools.Payment.Stripe.ApiClient.Services.StripeWebhookVerifier
+- uid: NuvTools.Payment.Contracts.IPaymentWebhookVerifier.Verify(System.String,System.String,NuvTools.Payment.Enumerations.PaymentWebhookEndpointType)
+  commentId: M:NuvTools.Payment.Contracts.IPaymentWebhookVerifier.Verify(System.String,System.String,NuvTools.Payment.Enumerations.PaymentWebhookEndpointType)
+  id: Verify(System.String,System.String,NuvTools.Payment.Enumerations.PaymentWebhookEndpointType)
+  parent: NuvTools.Payment.Contracts.IPaymentWebhookVerifier
+  langs:
+  - csharp
+  - vb
+  name: Verify(string, string?, PaymentWebhookEndpointType)
+  nameWithType: IPaymentWebhookVerifier.Verify(string, string?, PaymentWebhookEndpointType)
+  fullName: NuvTools.Payment.Contracts.IPaymentWebhookVerifier.Verify(string, string?, NuvTools.Payment.Enumerations.PaymentWebhookEndpointType)
+  type: Method
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.Contracts
+  summary: The event, when the signature matches; a failure when it does not.
+  example: []
+  syntax:
+    content: IResult<PaymentEventDTO> Verify(string payload, string? signature, PaymentWebhookEndpointType endpoint = PaymentWebhookEndpointType.Platform)
+    parameters:
+    - id: payload
+      type: System.String
+      description: >-
+        The request body exactly as received. Re-serializing it — even into an equivalent document —
+
+        breaks the signature, so it has to be read as a string before anything parses it.
+    - id: signature
+      type: System.String
+      description: The signature header the provider sent it with.
+    - id: endpoint
+      type: NuvTools.Payment.Enumerations.PaymentWebhookEndpointType
+      description: Which endpoint it arrived on, for providers that sign each one separately.
+    return:
+      type: NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.DTOs.PaymentEventDTO}
+    content.vb: Function Verify(payload As String, signature As String, endpoint As PaymentWebhookEndpointType = PaymentWebhookEndpointType.Platform) As IResult(Of PaymentEventDTO)
+  overload: NuvTools.Payment.Contracts.IPaymentWebhookVerifier.Verify*
+  nameWithType.vb: IPaymentWebhookVerifier.Verify(String, String, PaymentWebhookEndpointType)
+  fullName.vb: NuvTools.Payment.Contracts.IPaymentWebhookVerifier.Verify(String, String, NuvTools.Payment.Enumerations.PaymentWebhookEndpointType)
+  name.vb: Verify(String, String, PaymentWebhookEndpointType)
+references:
+- uid: NuvTools.Payment.Contracts
+  commentId: N:NuvTools.Payment.Contracts
+  name: NuvTools.Payment.Contracts
+  nameWithType: NuvTools.Payment.Contracts
+  fullName: NuvTools.Payment.Contracts
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Contracts
+    name: Contracts
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Contracts
+    name: Contracts
+- uid: NuvTools.Payment.Contracts.IPaymentWebhookVerifier.Verify*
+  commentId: Overload:NuvTools.Payment.Contracts.IPaymentWebhookVerifier.Verify
+  href: NuvTools.Payment.Contracts.IPaymentWebhookVerifier.html#NuvTools_Payment_Contracts_IPaymentWebhookVerifier_Verify_System_String_System_String_NuvTools_Payment_Enumerations_PaymentWebhookEndpointType_
+  name: Verify
+  nameWithType: IPaymentWebhookVerifier.Verify
+  fullName: NuvTools.Payment.Contracts.IPaymentWebhookVerifier.Verify
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: NuvTools.Payment.Enumerations.PaymentWebhookEndpointType
+  commentId: T:NuvTools.Payment.Enumerations.PaymentWebhookEndpointType
+  parent: NuvTools.Payment.Enumerations
+  href: NuvTools.Payment.Enumerations.PaymentWebhookEndpointType.html
+  name: PaymentWebhookEndpointType
+  nameWithType: PaymentWebhookEndpointType
+  fullName: NuvTools.Payment.Enumerations.PaymentWebhookEndpointType
+- uid: NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.DTOs.PaymentEventDTO}
+  commentId: T:NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.DTOs.PaymentEventDTO}
+  parent: NuvTools.Common.ResultWrapper
+  definition: NuvTools.Common.ResultWrapper.IResult`1
+  href: NuvTools.Payment.DTOs.PaymentEventDTO.html
+  name: IResult<PaymentEventDTO>
+  nameWithType: IResult<PaymentEventDTO>
+  fullName: NuvTools.Common.ResultWrapper.IResult<NuvTools.Payment.DTOs.PaymentEventDTO>
+  nameWithType.vb: IResult(Of PaymentEventDTO)
+  fullName.vb: NuvTools.Common.ResultWrapper.IResult(Of NuvTools.Payment.DTOs.PaymentEventDTO)
+  name.vb: IResult(Of PaymentEventDTO)
+  spec.csharp:
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - uid: NuvTools.Payment.DTOs.PaymentEventDTO
+    name: PaymentEventDTO
+    href: NuvTools.Payment.DTOs.PaymentEventDTO.html
+  - name: '>'
+  spec.vb:
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.DTOs.PaymentEventDTO
+    name: PaymentEventDTO
+    href: NuvTools.Payment.DTOs.PaymentEventDTO.html
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NuvTools.Payment.Enumerations
+  commentId: N:NuvTools.Payment.Enumerations
+  name: NuvTools.Payment.Enumerations
+  nameWithType: NuvTools.Payment.Enumerations
+  fullName: NuvTools.Payment.Enumerations
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Enumerations
+    name: Enumerations
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Enumerations
+    name: Enumerations
+- uid: NuvTools.Common.ResultWrapper.IResult`1
+  commentId: T:NuvTools.Common.ResultWrapper.IResult`1
+  isExternal: true
+  name: IResult<T>
+  nameWithType: IResult<T>
+  fullName: NuvTools.Common.ResultWrapper.IResult<T>
+  nameWithType.vb: IResult(Of T)
+  fullName.vb: NuvTools.Common.ResultWrapper.IResult(Of T)
+  name.vb: IResult(Of T)
+  spec.csharp:
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NuvTools.Common.ResultWrapper
+  commentId: N:NuvTools.Common.ResultWrapper
+  isExternal: true
+  name: NuvTools.Common.ResultWrapper
+  nameWithType: NuvTools.Common.ResultWrapper
+  fullName: NuvTools.Common.ResultWrapper
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+  - name: .
+  - uid: NuvTools.Common
+    name: Common
+    isExternal: true
+  - name: .
+  - uid: NuvTools.Common.ResultWrapper
+    name: ResultWrapper
+    isExternal: true
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+  - name: .
+  - uid: NuvTools.Common
+    name: Common
+    isExternal: true
+  - name: .
+  - uid: NuvTools.Common.ResultWrapper
+    name: ResultWrapper
+    isExternal: true

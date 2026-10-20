@@ -1,0 +1,915 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Notification.Mail.Twilio.TwilioMailService
+  commentId: T:NuvTools.Notification.Mail.Twilio.TwilioMailService
+  id: TwilioMailService
+  parent: NuvTools.Notification.Mail.Twilio
+  children:
+  - NuvTools.Notification.Mail.Twilio.TwilioMailService.#ctor(System.Net.Http.HttpClient,Microsoft.Extensions.Options.IOptions{NuvTools.Notification.Mail.Twilio.Configuration.TwilioMailConfigurationSection})
+  - NuvTools.Notification.Mail.Twilio.TwilioMailService.EmailsEndpoint
+  - NuvTools.Notification.Mail.Twilio.TwilioMailService.MaxRequestSizeInBytes
+  - NuvTools.Notification.Mail.Twilio.TwilioMailService.SendAsync(NuvTools.Notification.Mail.MailMessage,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: TwilioMailService
+  nameWithType: TwilioMailService
+  fullName: NuvTools.Notification.Mail.Twilio.TwilioMailService
+  type: Class
+  assemblies:
+  - NuvTools.Notification.Mail.Twilio
+  namespace: NuvTools.Notification.Mail.Twilio
+  summary: Twilio Email API implementation of <xref href="NuvTools.Notification.Mail.IMailService" data-throw-if-not-resolved="false"></xref>.
+  remarks: >-
+    This service posts messages to the Twilio Email endpoint (<code>POST /v1/Emails</code>), which processes
+
+    requests asynchronously and answers with <code>202 Accepted</code> plus an operation identifier.
+
+    It supports HTML and plain text content, Base64 attachments, inline images, custom headers, tags,
+
+    Liquid personalization variables and scheduled delivery.
+
+    Register it through <xref href="NuvTools.Notification.Mail.Twilio.Configuration.ServiceCollectionExtensions.AddTwilioMail(Microsoft.Extensions.DependencyInjection.IServiceCollection%2cMicrosoft.Extensions.Configuration.IConfiguration%2cSystem.String%2cSystem.Action%7bMicrosoft.Extensions.Http.Resilience.HttpStandardResilienceOptions%7d)" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: 'public class TwilioMailService : IMailService'
+    content.vb: Public Class TwilioMailService Implements IMailService
+  inheritance:
+  - System.Object
+  implements:
+  - NuvTools.Notification.Mail.IMailService
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NuvTools.Notification.Mail.Twilio.TwilioMailService.#ctor(System.Net.Http.HttpClient,Microsoft.Extensions.Options.IOptions{NuvTools.Notification.Mail.Twilio.Configuration.TwilioMailConfigurationSection})
+  commentId: M:NuvTools.Notification.Mail.Twilio.TwilioMailService.#ctor(System.Net.Http.HttpClient,Microsoft.Extensions.Options.IOptions{NuvTools.Notification.Mail.Twilio.Configuration.TwilioMailConfigurationSection})
+  id: '#ctor(System.Net.Http.HttpClient,Microsoft.Extensions.Options.IOptions{NuvTools.Notification.Mail.Twilio.Configuration.TwilioMailConfigurationSection})'
+  parent: NuvTools.Notification.Mail.Twilio.TwilioMailService
+  langs:
+  - csharp
+  - vb
+  name: TwilioMailService(HttpClient, IOptions<TwilioMailConfigurationSection>)
+  nameWithType: TwilioMailService.TwilioMailService(HttpClient, IOptions<TwilioMailConfigurationSection>)
+  fullName: NuvTools.Notification.Mail.Twilio.TwilioMailService.TwilioMailService(System.Net.Http.HttpClient, Microsoft.Extensions.Options.IOptions<NuvTools.Notification.Mail.Twilio.Configuration.TwilioMailConfigurationSection>)
+  type: Constructor
+  assemblies:
+  - NuvTools.Notification.Mail.Twilio
+  namespace: NuvTools.Notification.Mail.Twilio
+  summary: Twilio Email API implementation of <xref href="NuvTools.Notification.Mail.IMailService" data-throw-if-not-resolved="false"></xref>.
+  remarks: >-
+    This service posts messages to the Twilio Email endpoint (<code>POST /v1/Emails</code>), which processes
+
+    requests asynchronously and answers with <code>202 Accepted</code> plus an operation identifier.
+
+    It supports HTML and plain text content, Base64 attachments, inline images, custom headers, tags,
+
+    Liquid personalization variables and scheduled delivery.
+
+    Register it through <xref href="NuvTools.Notification.Mail.Twilio.Configuration.ServiceCollectionExtensions.AddTwilioMail(Microsoft.Extensions.DependencyInjection.IServiceCollection%2cMicrosoft.Extensions.Configuration.IConfiguration%2cSystem.String%2cSystem.Action%7bMicrosoft.Extensions.Http.Resilience.HttpStandardResilienceOptions%7d)" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public TwilioMailService(HttpClient httpClient, IOptions<TwilioMailConfigurationSection> appMailConfiguration)
+    parameters:
+    - id: httpClient
+      type: System.Net.Http.HttpClient
+      description: The typed client configured with the API base address and Basic authentication.
+    - id: appMailConfiguration
+      type: Microsoft.Extensions.Options.IOptions{NuvTools.Notification.Mail.Twilio.Configuration.TwilioMailConfigurationSection}
+      description: The mail configuration options containing the Twilio credentials and defaults.
+    content.vb: Public Sub New(httpClient As HttpClient, appMailConfiguration As IOptions(Of TwilioMailConfigurationSection))
+  overload: NuvTools.Notification.Mail.Twilio.TwilioMailService.#ctor*
+  nameWithType.vb: TwilioMailService.New(HttpClient, IOptions(Of TwilioMailConfigurationSection))
+  fullName.vb: NuvTools.Notification.Mail.Twilio.TwilioMailService.New(System.Net.Http.HttpClient, Microsoft.Extensions.Options.IOptions(Of NuvTools.Notification.Mail.Twilio.Configuration.TwilioMailConfigurationSection))
+  name.vb: New(HttpClient, IOptions(Of TwilioMailConfigurationSection))
+- uid: NuvTools.Notification.Mail.Twilio.TwilioMailService.EmailsEndpoint
+  commentId: F:NuvTools.Notification.Mail.Twilio.TwilioMailService.EmailsEndpoint
+  id: EmailsEndpoint
+  parent: NuvTools.Notification.Mail.Twilio.TwilioMailService
+  langs:
+  - csharp
+  - vb
+  name: EmailsEndpoint
+  nameWithType: TwilioMailService.EmailsEndpoint
+  fullName: NuvTools.Notification.Mail.Twilio.TwilioMailService.EmailsEndpoint
+  type: Field
+  assemblies:
+  - NuvTools.Notification.Mail.Twilio
+  namespace: NuvTools.Notification.Mail.Twilio
+  summary: Relative path of the Twilio Email send endpoint.
+  example: []
+  syntax:
+    content: public const string EmailsEndpoint = "v1/Emails"
+    return:
+      type: System.String
+    content.vb: Public Const EmailsEndpoint As String = "v1/Emails"
+- uid: NuvTools.Notification.Mail.Twilio.TwilioMailService.MaxRequestSizeInBytes
+  commentId: F:NuvTools.Notification.Mail.Twilio.TwilioMailService.MaxRequestSizeInBytes
+  id: MaxRequestSizeInBytes
+  parent: NuvTools.Notification.Mail.Twilio.TwilioMailService
+  langs:
+  - csharp
+  - vb
+  name: MaxRequestSizeInBytes
+  nameWithType: TwilioMailService.MaxRequestSizeInBytes
+  fullName: NuvTools.Notification.Mail.Twilio.TwilioMailService.MaxRequestSizeInBytes
+  type: Field
+  assemblies:
+  - NuvTools.Notification.Mail.Twilio
+  namespace: NuvTools.Notification.Mail.Twilio
+  summary: Maximum request size accepted by the Twilio Email API, including attachments.
+  example: []
+  syntax:
+    content: public const int MaxRequestSizeInBytes = 10485760
+    return:
+      type: System.Int32
+    content.vb: Public Const MaxRequestSizeInBytes As Integer = 10485760
+- uid: NuvTools.Notification.Mail.Twilio.TwilioMailService.SendAsync(NuvTools.Notification.Mail.MailMessage,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Notification.Mail.Twilio.TwilioMailService.SendAsync(NuvTools.Notification.Mail.MailMessage,System.Threading.CancellationToken)
+  id: SendAsync(NuvTools.Notification.Mail.MailMessage,System.Threading.CancellationToken)
+  parent: NuvTools.Notification.Mail.Twilio.TwilioMailService
+  langs:
+  - csharp
+  - vb
+  name: SendAsync(MailMessage, CancellationToken)
+  nameWithType: TwilioMailService.SendAsync(MailMessage, CancellationToken)
+  fullName: NuvTools.Notification.Mail.Twilio.TwilioMailService.SendAsync(NuvTools.Notification.Mail.MailMessage, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Notification.Mail.Twilio
+  namespace: NuvTools.Notification.Mail.Twilio
+  summary: Sends an email message asynchronously using the Twilio Email API.
+  remarks: >-
+    The returned result means the request was accepted for processing. The delivery status can be
+
+    tracked through <xref href="NuvTools.Notification.Mail.MailSendResult.TrackingLocation" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public Task<MailSendResult> SendAsync(MailMessage mailMessage, CancellationToken cancellationToken = default)
+    parameters:
+    - id: mailMessage
+      type: NuvTools.Notification.Mail.MailMessage
+      description: The mail message to send, including sender, recipients, subject, body, and optional attachments.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: The token to monitor for cancellation requests.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Notification.Mail.MailSendResult}
+      description: The identifier of the asynchronous operation created by the API, along with the URL to track it.
+    content.vb: Public Function SendAsync(mailMessage As MailMessage, cancellationToken As CancellationToken = Nothing) As Task(Of MailSendResult)
+  overload: NuvTools.Notification.Mail.Twilio.TwilioMailService.SendAsync*
+  exceptions:
+  - type: NuvTools.Notification.Mail.Twilio.TwilioMailException
+    commentId: T:NuvTools.Notification.Mail.Twilio.TwilioMailException
+    description: Thrown when the API rejects the request or answers unexpectedly.
+  implements:
+  - NuvTools.Notification.Mail.IMailService.SendAsync(NuvTools.Notification.Mail.MailMessage,System.Threading.CancellationToken)
+references:
+- uid: NuvTools.Notification.Mail.IMailService
+  commentId: T:NuvTools.Notification.Mail.IMailService
+  parent: NuvTools.Notification.Mail
+  href: NuvTools.Notification.Mail.IMailService.html
+  name: IMailService
+  nameWithType: IMailService
+  fullName: NuvTools.Notification.Mail.IMailService
+- uid: NuvTools.Notification.Mail.Twilio.Configuration.ServiceCollectionExtensions.AddTwilioMail(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String,System.Action{Microsoft.Extensions.Http.Resilience.HttpStandardResilienceOptions})
+  commentId: M:NuvTools.Notification.Mail.Twilio.Configuration.ServiceCollectionExtensions.AddTwilioMail(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String,System.Action{Microsoft.Extensions.Http.Resilience.HttpStandardResilienceOptions})
+  isExternal: true
+  href: NuvTools.Notification.Mail.Twilio.Configuration.ServiceCollectionExtensions.html#NuvTools_Notification_Mail_Twilio_Configuration_ServiceCollectionExtensions_AddTwilioMail_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_System_String_System_Action_Microsoft_Extensions_Http_Resilience_HttpStandardResilienceOptions__
+  name: AddTwilioMail(IServiceCollection, IConfiguration, string, Action<HttpStandardResilienceOptions>)
+  nameWithType: ServiceCollectionExtensions.AddTwilioMail(IServiceCollection, IConfiguration, string, Action<HttpStandardResilienceOptions>)
+  fullName: NuvTools.Notification.Mail.Twilio.Configuration.ServiceCollectionExtensions.AddTwilioMail(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration, string, System.Action<Microsoft.Extensions.Http.Resilience.HttpStandardResilienceOptions>)
+  nameWithType.vb: ServiceCollectionExtensions.AddTwilioMail(IServiceCollection, IConfiguration, String, Action(Of HttpStandardResilienceOptions))
+  fullName.vb: NuvTools.Notification.Mail.Twilio.Configuration.ServiceCollectionExtensions.AddTwilioMail(Microsoft.Extensions.DependencyInjection.IServiceCollection, Microsoft.Extensions.Configuration.IConfiguration, String, System.Action(Of Microsoft.Extensions.Http.Resilience.HttpStandardResilienceOptions))
+  name.vb: AddTwilioMail(IServiceCollection, IConfiguration, String, Action(Of HttpStandardResilienceOptions))
+  spec.csharp:
+  - uid: NuvTools.Notification.Mail.Twilio.Configuration.ServiceCollectionExtensions.AddTwilioMail(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String,System.Action{Microsoft.Extensions.Http.Resilience.HttpStandardResilienceOptions})
+    name: AddTwilioMail
+    href: NuvTools.Notification.Mail.Twilio.Configuration.ServiceCollectionExtensions.html#NuvTools_Notification_Mail_Twilio_Configuration_ServiceCollectionExtensions_AddTwilioMail_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_System_String_System_Action_Microsoft_Extensions_Http_Resilience_HttpStandardResilienceOptions__
+  - name: (
+  - uid: Microsoft.Extensions.DependencyInjection.IServiceCollection
+    name: IServiceCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Extensions.Configuration.IConfiguration
+    name: IConfiguration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Microsoft.Extensions.Http.Resilience.HttpStandardResilienceOptions
+    name: HttpStandardResilienceOptions
+    isExternal: true
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Notification.Mail.Twilio.Configuration.ServiceCollectionExtensions.AddTwilioMail(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,System.String,System.Action{Microsoft.Extensions.Http.Resilience.HttpStandardResilienceOptions})
+    name: AddTwilioMail
+    href: NuvTools.Notification.Mail.Twilio.Configuration.ServiceCollectionExtensions.html#NuvTools_Notification_Mail_Twilio_Configuration_ServiceCollectionExtensions_AddTwilioMail_Microsoft_Extensions_DependencyInjection_IServiceCollection_Microsoft_Extensions_Configuration_IConfiguration_System_String_System_Action_Microsoft_Extensions_Http_Resilience_HttpStandardResilienceOptions__
+  - name: (
+  - uid: Microsoft.Extensions.DependencyInjection.IServiceCollection
+    name: IServiceCollection
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection
+  - name: ','
+  - name: " "
+  - uid: Microsoft.Extensions.Configuration.IConfiguration
+    name: IConfiguration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Microsoft.Extensions.Http.Resilience.HttpStandardResilienceOptions
+    name: HttpStandardResilienceOptions
+    isExternal: true
+  - name: )
+  - name: )
+- uid: NuvTools.Notification.Mail.Twilio
+  commentId: N:NuvTools.Notification.Mail.Twilio
+  name: NuvTools.Notification.Mail.Twilio
+  nameWithType: NuvTools.Notification.Mail.Twilio
+  fullName: NuvTools.Notification.Mail.Twilio
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Mail
+    name: Mail
+  - name: .
+  - uid: NuvTools.Notification.Mail.Twilio
+    name: Twilio
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Mail
+    name: Mail
+  - name: .
+  - uid: NuvTools.Notification.Mail.Twilio
+    name: Twilio
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: NuvTools.Notification.Mail
+  commentId: N:NuvTools.Notification.Mail
+  name: NuvTools.Notification.Mail
+  nameWithType: NuvTools.Notification.Mail
+  fullName: NuvTools.Notification.Mail
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Mail
+    name: Mail
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Mail
+    name: Mail
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NuvTools.Notification.Mail.Twilio.TwilioMailService.#ctor*
+  commentId: Overload:NuvTools.Notification.Mail.Twilio.TwilioMailService.#ctor
+  href: NuvTools.Notification.Mail.Twilio.TwilioMailService.html#NuvTools_Notification_Mail_Twilio_TwilioMailService__ctor_System_Net_Http_HttpClient_Microsoft_Extensions_Options_IOptions_NuvTools_Notification_Mail_Twilio_Configuration_TwilioMailConfigurationSection__
+  name: TwilioMailService
+  nameWithType: TwilioMailService.TwilioMailService
+  fullName: NuvTools.Notification.Mail.Twilio.TwilioMailService.TwilioMailService
+  nameWithType.vb: TwilioMailService.New
+  fullName.vb: NuvTools.Notification.Mail.Twilio.TwilioMailService.New
+  name.vb: New
+- uid: System.Net.Http.HttpClient
+  commentId: T:System.Net.Http.HttpClient
+  parent: System.Net.Http
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.net.http.httpclient
+  name: HttpClient
+  nameWithType: HttpClient
+  fullName: System.Net.Http.HttpClient
+- uid: Microsoft.Extensions.Options.IOptions{NuvTools.Notification.Mail.Twilio.Configuration.TwilioMailConfigurationSection}
+  commentId: T:Microsoft.Extensions.Options.IOptions{NuvTools.Notification.Mail.Twilio.Configuration.TwilioMailConfigurationSection}
+  parent: Microsoft.Extensions.Options
+  definition: Microsoft.Extensions.Options.IOptions`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  name: IOptions<TwilioMailConfigurationSection>
+  nameWithType: IOptions<TwilioMailConfigurationSection>
+  fullName: Microsoft.Extensions.Options.IOptions<NuvTools.Notification.Mail.Twilio.Configuration.TwilioMailConfigurationSection>
+  nameWithType.vb: IOptions(Of TwilioMailConfigurationSection)
+  fullName.vb: Microsoft.Extensions.Options.IOptions(Of NuvTools.Notification.Mail.Twilio.Configuration.TwilioMailConfigurationSection)
+  name.vb: IOptions(Of TwilioMailConfigurationSection)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: <
+  - uid: NuvTools.Notification.Mail.Twilio.Configuration.TwilioMailConfigurationSection
+    name: TwilioMailConfigurationSection
+    href: NuvTools.Notification.Mail.Twilio.Configuration.TwilioMailConfigurationSection.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Notification.Mail.Twilio.Configuration.TwilioMailConfigurationSection
+    name: TwilioMailConfigurationSection
+    href: NuvTools.Notification.Mail.Twilio.Configuration.TwilioMailConfigurationSection.html
+  - name: )
+- uid: System.Net.Http
+  commentId: N:System.Net.Http
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Net.Http
+  nameWithType: System.Net.Http
+  fullName: System.Net.Http
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Net
+    name: Net
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net
+  - name: .
+  - uid: System.Net.Http
+    name: Http
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Net
+    name: Net
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net
+  - name: .
+  - uid: System.Net.Http
+    name: Http
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http
+- uid: Microsoft.Extensions.Options.IOptions`1
+  commentId: T:Microsoft.Extensions.Options.IOptions`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  name: IOptions<TOptions>
+  nameWithType: IOptions<TOptions>
+  fullName: Microsoft.Extensions.Options.IOptions<TOptions>
+  nameWithType.vb: IOptions(Of TOptions)
+  fullName.vb: Microsoft.Extensions.Options.IOptions(Of TOptions)
+  name.vb: IOptions(Of TOptions)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: <
+  - name: TOptions
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TOptions
+  - name: )
+- uid: Microsoft.Extensions.Options
+  commentId: N:Microsoft.Extensions.Options
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Options
+  nameWithType: Microsoft.Extensions.Options
+  fullName: Microsoft.Extensions.Options
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Options
+    name: Options
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Options
+    name: Options
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: NuvTools.Notification.Mail.MailSendResult.TrackingLocation
+  commentId: P:NuvTools.Notification.Mail.MailSendResult.TrackingLocation
+  href: NuvTools.Notification.Mail.MailSendResult.html#NuvTools_Notification_Mail_MailSendResult_TrackingLocation
+  name: TrackingLocation
+  nameWithType: MailSendResult.TrackingLocation
+  fullName: NuvTools.Notification.Mail.MailSendResult.TrackingLocation
+- uid: NuvTools.Notification.Mail.Twilio.TwilioMailException
+  commentId: T:NuvTools.Notification.Mail.Twilio.TwilioMailException
+  href: NuvTools.Notification.Mail.Twilio.TwilioMailException.html
+  name: TwilioMailException
+  nameWithType: TwilioMailException
+  fullName: NuvTools.Notification.Mail.Twilio.TwilioMailException
+- uid: NuvTools.Notification.Mail.Twilio.TwilioMailService.SendAsync*
+  commentId: Overload:NuvTools.Notification.Mail.Twilio.TwilioMailService.SendAsync
+  href: NuvTools.Notification.Mail.Twilio.TwilioMailService.html#NuvTools_Notification_Mail_Twilio_TwilioMailService_SendAsync_NuvTools_Notification_Mail_MailMessage_System_Threading_CancellationToken_
+  name: SendAsync
+  nameWithType: TwilioMailService.SendAsync
+  fullName: NuvTools.Notification.Mail.Twilio.TwilioMailService.SendAsync
+- uid: NuvTools.Notification.Mail.IMailService.SendAsync(NuvTools.Notification.Mail.MailMessage,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Notification.Mail.IMailService.SendAsync(NuvTools.Notification.Mail.MailMessage,System.Threading.CancellationToken)
+  parent: NuvTools.Notification.Mail.IMailService
+  isExternal: true
+  href: NuvTools.Notification.Mail.IMailService.html#NuvTools_Notification_Mail_IMailService_SendAsync_NuvTools_Notification_Mail_MailMessage_System_Threading_CancellationToken_
+  name: SendAsync(MailMessage, CancellationToken)
+  nameWithType: IMailService.SendAsync(MailMessage, CancellationToken)
+  fullName: NuvTools.Notification.Mail.IMailService.SendAsync(NuvTools.Notification.Mail.MailMessage, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: NuvTools.Notification.Mail.IMailService.SendAsync(NuvTools.Notification.Mail.MailMessage,System.Threading.CancellationToken)
+    name: SendAsync
+    href: NuvTools.Notification.Mail.IMailService.html#NuvTools_Notification_Mail_IMailService_SendAsync_NuvTools_Notification_Mail_MailMessage_System_Threading_CancellationToken_
+  - name: (
+  - uid: NuvTools.Notification.Mail.MailMessage
+    name: MailMessage
+    href: NuvTools.Notification.Mail.MailMessage.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Notification.Mail.IMailService.SendAsync(NuvTools.Notification.Mail.MailMessage,System.Threading.CancellationToken)
+    name: SendAsync
+    href: NuvTools.Notification.Mail.IMailService.html#NuvTools_Notification_Mail_IMailService_SendAsync_NuvTools_Notification_Mail_MailMessage_System_Threading_CancellationToken_
+  - name: (
+  - uid: NuvTools.Notification.Mail.MailMessage
+    name: MailMessage
+    href: NuvTools.Notification.Mail.MailMessage.html
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: NuvTools.Notification.Mail.MailMessage
+  commentId: T:NuvTools.Notification.Mail.MailMessage
+  parent: NuvTools.Notification.Mail
+  href: NuvTools.Notification.Mail.MailMessage.html
+  name: MailMessage
+  nameWithType: MailMessage
+  fullName: NuvTools.Notification.Mail.MailMessage
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{NuvTools.Notification.Mail.MailSendResult}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Notification.Mail.MailSendResult}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<MailSendResult>
+  nameWithType: Task<MailSendResult>
+  fullName: System.Threading.Tasks.Task<NuvTools.Notification.Mail.MailSendResult>
+  nameWithType.vb: Task(Of MailSendResult)
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Notification.Mail.MailSendResult)
+  name.vb: Task(Of MailSendResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Notification.Mail.MailSendResult
+    name: MailSendResult
+    href: NuvTools.Notification.Mail.MailSendResult.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Notification.Mail.MailSendResult
+    name: MailSendResult
+    href: NuvTools.Notification.Mail.MailSendResult.html
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

@@ -1,0 +1,579 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Context.PostgreSqlTransactionLock
+  commentId: T:NuvTools.Data.EntityFrameworkCore.PostgreSQL.Context.PostgreSqlTransactionLock
+  id: PostgreSqlTransactionLock
+  parent: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Context
+  children:
+  - NuvTools.Data.EntityFrameworkCore.PostgreSQL.Context.PostgreSqlTransactionLock.AcquireAsync(Microsoft.EntityFrameworkCore.DbContext,System.String,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: PostgreSqlTransactionLock
+  nameWithType: PostgreSqlTransactionLock
+  fullName: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Context.PostgreSqlTransactionLock
+  type: Class
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore.PostgreSQL
+  namespace: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Context
+  summary: >-
+    PostgreSQL implementation of <xref href="NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock" data-throw-if-not-resolved="false"></xref>, on top of
+
+    <code>pg_advisory_xact_lock</code>: blocks until the lock is granted and releases it when the transaction ends.
+  remarks: >-
+    PostgreSQL keys advisory locks by a 64-bit integer, so the caller's name is hashed into one. The hash is
+
+    SHA-256 rather than <xref href="System.String.GetHashCode" data-throw-if-not-resolved="false"></xref>, which is randomized per process — two replicas would
+
+    derive different keys for the same name and neither would block the other.
+  example: []
+  syntax:
+    content: 'public sealed class PostgreSqlTransactionLock : IDbContextTransactionLock'
+    content.vb: Public NotInheritable Class PostgreSqlTransactionLock Implements IDbContextTransactionLock
+  inheritance:
+  - System.Object
+  implements:
+  - NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Context.PostgreSqlTransactionLock.AcquireAsync(Microsoft.EntityFrameworkCore.DbContext,System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Data.EntityFrameworkCore.PostgreSQL.Context.PostgreSqlTransactionLock.AcquireAsync(Microsoft.EntityFrameworkCore.DbContext,System.String,System.Threading.CancellationToken)
+  id: AcquireAsync(Microsoft.EntityFrameworkCore.DbContext,System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Context.PostgreSqlTransactionLock
+  langs:
+  - csharp
+  - vb
+  name: AcquireAsync(DbContext, string, CancellationToken)
+  nameWithType: PostgreSqlTransactionLock.AcquireAsync(DbContext, string, CancellationToken)
+  fullName: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Context.PostgreSqlTransactionLock.AcquireAsync(Microsoft.EntityFrameworkCore.DbContext, string, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Data.EntityFrameworkCore.PostgreSQL
+  namespace: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Context
+  summary: >-
+    Acquires the exclusive lock named <code class="paramref">name</code>, blocking until it is granted, and holds it
+
+    until the current transaction of <code class="paramref">context</code> ends.
+  example: []
+  syntax:
+    content: public Task AcquireAsync(DbContext context, string name, CancellationToken cancellationToken = default)
+    parameters:
+    - id: context
+      type: Microsoft.EntityFrameworkCore.DbContext
+      description: The context whose transaction and connection the lock belongs to.
+    - id: name
+      type: System.String
+      description: Lock name, as given by the caller.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: A cancellation token to observe while waiting for the task to complete.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task that completes once the lock is held.
+    content.vb: Public Function AcquireAsync(context As DbContext, name As String, cancellationToken As CancellationToken = Nothing) As Task
+  overload: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Context.PostgreSqlTransactionLock.AcquireAsync*
+  implements:
+  - NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock.AcquireAsync(Microsoft.EntityFrameworkCore.DbContext,System.String,System.Threading.CancellationToken)
+  nameWithType.vb: PostgreSqlTransactionLock.AcquireAsync(DbContext, String, CancellationToken)
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Context.PostgreSqlTransactionLock.AcquireAsync(Microsoft.EntityFrameworkCore.DbContext, String, System.Threading.CancellationToken)
+  name.vb: AcquireAsync(DbContext, String, CancellationToken)
+references:
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock
+  commentId: T:NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock
+  parent: NuvTools.Data.EntityFrameworkCore.Context
+  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock.html
+  name: IDbContextTransactionLock
+  nameWithType: IDbContextTransactionLock
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock
+- uid: System.String.GetHashCode
+  commentId: M:System.String.GetHashCode
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string.gethashcode#system-string-gethashcode
+  name: GetHashCode()
+  nameWithType: string.GetHashCode()
+  fullName: string.GetHashCode()
+  nameWithType.vb: String.GetHashCode()
+  fullName.vb: String.GetHashCode()
+  spec.csharp:
+  - uid: System.String.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string.gethashcode#system-string-gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.String.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string.gethashcode#system-string-gethashcode
+  - name: (
+  - name: )
+- uid: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Context
+  commentId: N:NuvTools.Data.EntityFrameworkCore.PostgreSQL.Context
+  name: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Context
+  nameWithType: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Context
+  fullName: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Context
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Data
+    name: Data
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore
+    name: EntityFrameworkCore
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore.PostgreSQL
+    name: PostgreSQL
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Context
+    name: Context
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Data
+    name: Data
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore
+    name: EntityFrameworkCore
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore.PostgreSQL
+    name: PostgreSQL
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Context
+    name: Context
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: NuvTools.Data.EntityFrameworkCore.Context
+  commentId: N:NuvTools.Data.EntityFrameworkCore.Context
+  name: NuvTools.Data.EntityFrameworkCore.Context
+  nameWithType: NuvTools.Data.EntityFrameworkCore.Context
+  fullName: NuvTools.Data.EntityFrameworkCore.Context
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Data
+    name: Data
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore
+    name: EntityFrameworkCore
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore.Context
+    name: Context
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Data
+    name: Data
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore
+    name: EntityFrameworkCore
+  - name: .
+  - uid: NuvTools.Data.EntityFrameworkCore.Context
+    name: Context
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Context.PostgreSqlTransactionLock.AcquireAsync*
+  commentId: Overload:NuvTools.Data.EntityFrameworkCore.PostgreSQL.Context.PostgreSqlTransactionLock.AcquireAsync
+  href: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Context.PostgreSqlTransactionLock.html#NuvTools_Data_EntityFrameworkCore_PostgreSQL_Context_PostgreSqlTransactionLock_AcquireAsync_Microsoft_EntityFrameworkCore_DbContext_System_String_System_Threading_CancellationToken_
+  name: AcquireAsync
+  nameWithType: PostgreSqlTransactionLock.AcquireAsync
+  fullName: NuvTools.Data.EntityFrameworkCore.PostgreSQL.Context.PostgreSqlTransactionLock.AcquireAsync
+- uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock.AcquireAsync(Microsoft.EntityFrameworkCore.DbContext,System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock.AcquireAsync(Microsoft.EntityFrameworkCore.DbContext,System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock
+  isExternal: true
+  href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock.html#NuvTools_Data_EntityFrameworkCore_Context_IDbContextTransactionLock_AcquireAsync_Microsoft_EntityFrameworkCore_DbContext_System_String_System_Threading_CancellationToken_
+  name: AcquireAsync(DbContext, string, CancellationToken)
+  nameWithType: IDbContextTransactionLock.AcquireAsync(DbContext, string, CancellationToken)
+  fullName: NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock.AcquireAsync(Microsoft.EntityFrameworkCore.DbContext, string, System.Threading.CancellationToken)
+  nameWithType.vb: IDbContextTransactionLock.AcquireAsync(DbContext, String, CancellationToken)
+  fullName.vb: NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock.AcquireAsync(Microsoft.EntityFrameworkCore.DbContext, String, System.Threading.CancellationToken)
+  name.vb: AcquireAsync(DbContext, String, CancellationToken)
+  spec.csharp:
+  - uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock.AcquireAsync(Microsoft.EntityFrameworkCore.DbContext,System.String,System.Threading.CancellationToken)
+    name: AcquireAsync
+    href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock.html#NuvTools_Data_EntityFrameworkCore_Context_IDbContextTransactionLock_AcquireAsync_Microsoft_EntityFrameworkCore_DbContext_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: Microsoft.EntityFrameworkCore.DbContext
+    name: DbContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock.AcquireAsync(Microsoft.EntityFrameworkCore.DbContext,System.String,System.Threading.CancellationToken)
+    name: AcquireAsync
+    href: NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock.html#NuvTools_Data_EntityFrameworkCore_Context_IDbContextTransactionLock_AcquireAsync_Microsoft_EntityFrameworkCore_DbContext_System_String_System_Threading_CancellationToken_
+  - name: (
+  - uid: Microsoft.EntityFrameworkCore.DbContext
+    name: DbContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: Microsoft.EntityFrameworkCore.DbContext
+  commentId: T:Microsoft.EntityFrameworkCore.DbContext
+  parent: Microsoft.EntityFrameworkCore
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext
+  name: DbContext
+  nameWithType: DbContext
+  fullName: Microsoft.EntityFrameworkCore.DbContext
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: Microsoft.EntityFrameworkCore
+  commentId: N:Microsoft.EntityFrameworkCore
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.EntityFrameworkCore
+  nameWithType: Microsoft.EntityFrameworkCore
+  fullName: Microsoft.EntityFrameworkCore
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.EntityFrameworkCore
+    name: EntityFrameworkCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

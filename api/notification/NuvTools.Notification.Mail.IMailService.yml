@@ -1,0 +1,264 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Notification.Mail.IMailService
+  commentId: T:NuvTools.Notification.Mail.IMailService
+  id: IMailService
+  parent: NuvTools.Notification.Mail
+  children:
+  - NuvTools.Notification.Mail.IMailService.SendAsync(NuvTools.Notification.Mail.MailMessage,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: IMailService
+  nameWithType: IMailService
+  fullName: NuvTools.Notification.Mail.IMailService
+  type: Interface
+  assemblies:
+  - NuvTools.Notification.Mail
+  namespace: NuvTools.Notification.Mail
+  summary: Provides email sending, regardless of the underlying infrastructure.
+  remarks: >-
+    This is the only contract the application layer needs to depend on. Provider specific packages
+
+    contain nothing but the implementation and its configuration.
+  example: []
+  syntax:
+    content: public interface IMailService
+    content.vb: Public Interface IMailService
+  derivedClasses:
+  - NuvTools.Notification.Mail.Smtp.SMTPMailService
+  - NuvTools.Notification.Mail.Twilio.TwilioMailService
+- uid: NuvTools.Notification.Mail.IMailService.SendAsync(NuvTools.Notification.Mail.MailMessage,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Notification.Mail.IMailService.SendAsync(NuvTools.Notification.Mail.MailMessage,System.Threading.CancellationToken)
+  id: SendAsync(NuvTools.Notification.Mail.MailMessage,System.Threading.CancellationToken)
+  parent: NuvTools.Notification.Mail.IMailService
+  langs:
+  - csharp
+  - vb
+  name: SendAsync(MailMessage, CancellationToken)
+  nameWithType: IMailService.SendAsync(MailMessage, CancellationToken)
+  fullName: NuvTools.Notification.Mail.IMailService.SendAsync(NuvTools.Notification.Mail.MailMessage, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Notification.Mail
+  namespace: NuvTools.Notification.Mail
+  summary: Send mail based on selected infraestructure.
+  example: []
+  syntax:
+    content: Task<MailSendResult> SendAsync(MailMessage mailMessage, CancellationToken cancellationToken = default)
+    parameters:
+    - id: mailMessage
+      type: NuvTools.Notification.Mail.MailMessage
+      description: Message abstraction containg the content and its recipients.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: The token to monitor for cancellation requests.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Notification.Mail.MailSendResult}
+      description: The provider reference of the accepted send request.
+    content.vb: Function SendAsync(mailMessage As MailMessage, cancellationToken As CancellationToken = Nothing) As Task(Of MailSendResult)
+  overload: NuvTools.Notification.Mail.IMailService.SendAsync*
+  exceptions:
+  - type: System.NotSupportedException
+    commentId: T:System.NotSupportedException
+    description: >-
+      Thrown when the message uses a feature the provider cannot honor, such as
+
+      <xref href="NuvTools.Notification.Mail.MailMessage.ScheduledFor" data-throw-if-not-resolved="false"></xref>, <xref href="NuvTools.Notification.Mail.MailMessage.Tags" data-throw-if-not-resolved="false"></xref> or
+
+      <xref href="NuvTools.Notification.Mail.MailAddress.Variables" data-throw-if-not-resolved="false"></xref>.
+references:
+- uid: NuvTools.Notification.Mail
+  commentId: N:NuvTools.Notification.Mail
+  name: NuvTools.Notification.Mail
+  nameWithType: NuvTools.Notification.Mail
+  fullName: NuvTools.Notification.Mail
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Mail
+    name: Mail
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Mail
+    name: Mail
+- uid: NuvTools.Notification.Mail.MailMessage.ScheduledFor
+  commentId: P:NuvTools.Notification.Mail.MailMessage.ScheduledFor
+  href: NuvTools.Notification.Mail.MailMessage.html#NuvTools_Notification_Mail_MailMessage_ScheduledFor
+  name: ScheduledFor
+  nameWithType: MailMessage.ScheduledFor
+  fullName: NuvTools.Notification.Mail.MailMessage.ScheduledFor
+- uid: NuvTools.Notification.Mail.MailMessage.Tags
+  commentId: P:NuvTools.Notification.Mail.MailMessage.Tags
+  href: NuvTools.Notification.Mail.MailMessage.html#NuvTools_Notification_Mail_MailMessage_Tags
+  name: Tags
+  nameWithType: MailMessage.Tags
+  fullName: NuvTools.Notification.Mail.MailMessage.Tags
+- uid: NuvTools.Notification.Mail.MailAddress.Variables
+  commentId: P:NuvTools.Notification.Mail.MailAddress.Variables
+  href: NuvTools.Notification.Mail.MailAddress.html#NuvTools_Notification_Mail_MailAddress_Variables
+  name: Variables
+  nameWithType: MailAddress.Variables
+  fullName: NuvTools.Notification.Mail.MailAddress.Variables
+- uid: System.NotSupportedException
+  commentId: T:System.NotSupportedException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.notsupportedexception
+  name: NotSupportedException
+  nameWithType: NotSupportedException
+  fullName: System.NotSupportedException
+- uid: NuvTools.Notification.Mail.IMailService.SendAsync*
+  commentId: Overload:NuvTools.Notification.Mail.IMailService.SendAsync
+  href: NuvTools.Notification.Mail.IMailService.html#NuvTools_Notification_Mail_IMailService_SendAsync_NuvTools_Notification_Mail_MailMessage_System_Threading_CancellationToken_
+  name: SendAsync
+  nameWithType: IMailService.SendAsync
+  fullName: NuvTools.Notification.Mail.IMailService.SendAsync
+- uid: NuvTools.Notification.Mail.MailMessage
+  commentId: T:NuvTools.Notification.Mail.MailMessage
+  parent: NuvTools.Notification.Mail
+  href: NuvTools.Notification.Mail.MailMessage.html
+  name: MailMessage
+  nameWithType: MailMessage
+  fullName: NuvTools.Notification.Mail.MailMessage
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{NuvTools.Notification.Mail.MailSendResult}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Notification.Mail.MailSendResult}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<MailSendResult>
+  nameWithType: Task<MailSendResult>
+  fullName: System.Threading.Tasks.Task<NuvTools.Notification.Mail.MailSendResult>
+  nameWithType.vb: Task(Of MailSendResult)
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Notification.Mail.MailSendResult)
+  name.vb: Task(Of MailSendResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Notification.Mail.MailSendResult
+    name: MailSendResult
+    href: NuvTools.Notification.Mail.MailSendResult.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Notification.Mail.MailSendResult
+    name: MailSendResult
+    href: NuvTools.Notification.Mail.MailSendResult.html
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

@@ -1,0 +1,479 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator
+  commentId: T:NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator
+  id: VinKeyboardValidator
+  parent: NuvTools.AspNetCore.Blazor.MudBlazor.Validators
+  children:
+  - NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator.IsKeyBlocked
+  - NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator.IsValidVinKey(System.String)
+  - NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator.OnKeyDown(Microsoft.AspNetCore.Components.Web.KeyboardEventArgs)
+  langs:
+  - csharp
+  - vb
+  name: VinKeyboardValidator
+  nameWithType: VinKeyboardValidator
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator
+  type: Class
+  assemblies:
+  - NuvTools.AspNetCore.Blazor.MudBlazor
+  namespace: NuvTools.AspNetCore.Blazor.MudBlazor.Validators
+  summary: Keyboard validator for Vehicle Identification Number (VIN) input.
+  remarks: >-
+    <p>
+
+    VINs do not use the letters I, O, and Q to avoid confusion with the numbers 1, 0, and 9 respectively.
+
+    This validator blocks these invalid keys during input.
+
+    </p>
+
+    <p>
+
+    Use with MudTextField's OnKeyDown event and PreventDefault property:
+
+    </p>
+
+
+    <pre><code class="lang-csharp">@code {
+        private readonly VinKeyboardValidator _vinValidator = new();
+    }
+
+
+    &lt;MudTextField @bind-Value="Vin"
+                  OnKeyDown="_vinValidator.OnKeyDown"
+                  KeyDownPreventDefault="_vinValidator.IsKeyBlocked" /&gt;</code></pre>
+  example: []
+  syntax:
+    content: public sealed class VinKeyboardValidator
+    content.vb: Public NotInheritable Class VinKeyboardValidator
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator.IsKeyBlocked
+  commentId: P:NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator.IsKeyBlocked
+  id: IsKeyBlocked
+  parent: NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator
+  langs:
+  - csharp
+  - vb
+  name: IsKeyBlocked
+  nameWithType: VinKeyboardValidator.IsKeyBlocked
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator.IsKeyBlocked
+  type: Property
+  assemblies:
+  - NuvTools.AspNetCore.Blazor.MudBlazor
+  namespace: NuvTools.AspNetCore.Blazor.MudBlazor.Validators
+  summary: Gets a value indicating whether the last key pressed should be blocked.
+  example: []
+  syntax:
+    content: public bool IsKeyBlocked { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsKeyBlocked As Boolean
+  overload: NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator.IsKeyBlocked*
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator.OnKeyDown(Microsoft.AspNetCore.Components.Web.KeyboardEventArgs)
+  commentId: M:NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator.OnKeyDown(Microsoft.AspNetCore.Components.Web.KeyboardEventArgs)
+  id: OnKeyDown(Microsoft.AspNetCore.Components.Web.KeyboardEventArgs)
+  parent: NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator
+  langs:
+  - csharp
+  - vb
+  name: OnKeyDown(KeyboardEventArgs)
+  nameWithType: VinKeyboardValidator.OnKeyDown(KeyboardEventArgs)
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator.OnKeyDown(Microsoft.AspNetCore.Components.Web.KeyboardEventArgs)
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor.MudBlazor
+  namespace: NuvTools.AspNetCore.Blazor.MudBlazor.Validators
+  summary: Handles the key down event and determines if the key should be blocked.
+  example: []
+  syntax:
+    content: public void OnKeyDown(KeyboardEventArgs e)
+    parameters:
+    - id: e
+      type: Microsoft.AspNetCore.Components.Web.KeyboardEventArgs
+      description: The keyboard event arguments.
+    content.vb: Public Sub OnKeyDown(e As KeyboardEventArgs)
+  overload: NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator.OnKeyDown*
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator.IsValidVinKey(System.String)
+  commentId: M:NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator.IsValidVinKey(System.String)
+  id: IsValidVinKey(System.String)
+  parent: NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator
+  langs:
+  - csharp
+  - vb
+  name: IsValidVinKey(string)
+  nameWithType: VinKeyboardValidator.IsValidVinKey(string)
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator.IsValidVinKey(string)
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor.MudBlazor
+  namespace: NuvTools.AspNetCore.Blazor.MudBlazor.Validators
+  summary: Checks if the specified key is a valid VIN character.
+  example: []
+  syntax:
+    content: public static bool IsValidVinKey(string key)
+    parameters:
+    - id: key
+      type: System.String
+      description: The key to validate.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if the key is valid for VIN input; otherwise, <code>false</code>.
+    content.vb: Public Shared Function IsValidVinKey(key As String) As Boolean
+  overload: NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator.IsValidVinKey*
+  nameWithType.vb: VinKeyboardValidator.IsValidVinKey(String)
+  fullName.vb: NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator.IsValidVinKey(String)
+  name.vb: IsValidVinKey(String)
+references:
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Validators
+  commentId: N:NuvTools.AspNetCore.Blazor.MudBlazor.Validators
+  name: NuvTools.AspNetCore.Blazor.MudBlazor.Validators
+  nameWithType: NuvTools.AspNetCore.Blazor.MudBlazor.Validators
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Validators
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.AspNetCore
+    name: AspNetCore
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor
+    name: Blazor
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor.MudBlazor
+    name: MudBlazor
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor.MudBlazor.Validators
+    name: Validators
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.AspNetCore
+    name: AspNetCore
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor
+    name: Blazor
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor.MudBlazor
+    name: MudBlazor
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor.MudBlazor.Validators
+    name: Validators
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator.IsKeyBlocked*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator.IsKeyBlocked
+  href: NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator.html#NuvTools_AspNetCore_Blazor_MudBlazor_Validators_VinKeyboardValidator_IsKeyBlocked
+  name: IsKeyBlocked
+  nameWithType: VinKeyboardValidator.IsKeyBlocked
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator.IsKeyBlocked
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator.OnKeyDown*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator.OnKeyDown
+  href: NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator.html#NuvTools_AspNetCore_Blazor_MudBlazor_Validators_VinKeyboardValidator_OnKeyDown_Microsoft_AspNetCore_Components_Web_KeyboardEventArgs_
+  name: OnKeyDown
+  nameWithType: VinKeyboardValidator.OnKeyDown
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator.OnKeyDown
+- uid: Microsoft.AspNetCore.Components.Web.KeyboardEventArgs
+  commentId: T:Microsoft.AspNetCore.Components.Web.KeyboardEventArgs
+  parent: Microsoft.AspNetCore.Components.Web
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.web.keyboardeventargs
+  name: KeyboardEventArgs
+  nameWithType: KeyboardEventArgs
+  fullName: Microsoft.AspNetCore.Components.Web.KeyboardEventArgs
+- uid: Microsoft.AspNetCore.Components.Web
+  commentId: N:Microsoft.AspNetCore.Components.Web
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.AspNetCore.Components.Web
+  nameWithType: Microsoft.AspNetCore.Components.Web
+  fullName: Microsoft.AspNetCore.Components.Web
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Components
+    name: Components
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components
+  - name: .
+  - uid: Microsoft.AspNetCore.Components.Web
+    name: Web
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.web
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Components
+    name: Components
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components
+  - name: .
+  - uid: Microsoft.AspNetCore.Components.Web
+    name: Web
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.web
+- uid: NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator.IsValidVinKey*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator.IsValidVinKey
+  href: NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator.html#NuvTools_AspNetCore_Blazor_MudBlazor_Validators_VinKeyboardValidator_IsValidVinKey_System_String_
+  name: IsValidVinKey
+  nameWithType: VinKeyboardValidator.IsValidVinKey
+  fullName: NuvTools.AspNetCore.Blazor.MudBlazor.Validators.VinKeyboardValidator.IsValidVinKey
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

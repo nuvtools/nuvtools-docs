@@ -1,0 +1,226 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Report.Pdf.IPdfMerger
+  commentId: T:NuvTools.Report.Pdf.IPdfMerger
+  id: IPdfMerger
+  parent: NuvTools.Report.Pdf
+  children:
+  - NuvTools.Report.Pdf.IPdfMerger.Merge(System.Collections.Generic.IEnumerable{System.Byte[]})
+  langs:
+  - csharp
+  - vb
+  name: IPdfMerger
+  nameWithType: IPdfMerger
+  fullName: NuvTools.Report.Pdf.IPdfMerger
+  type: Interface
+  assemblies:
+  - NuvTools.Report
+  namespace: NuvTools.Report.Pdf
+  summary: Merges multiple PDF documents into a single PDF document.
+  example: []
+  syntax:
+    content: public interface IPdfMerger
+    content.vb: Public Interface IPdfMerger
+  derivedClasses:
+  - NuvTools.Report.Pdf.Util.PdfMerger
+- uid: NuvTools.Report.Pdf.IPdfMerger.Merge(System.Collections.Generic.IEnumerable{System.Byte[]})
+  commentId: M:NuvTools.Report.Pdf.IPdfMerger.Merge(System.Collections.Generic.IEnumerable{System.Byte[]})
+  id: Merge(System.Collections.Generic.IEnumerable{System.Byte[]})
+  parent: NuvTools.Report.Pdf.IPdfMerger
+  langs:
+  - csharp
+  - vb
+  name: Merge(IEnumerable<byte[]>)
+  nameWithType: IPdfMerger.Merge(IEnumerable<byte[]>)
+  fullName: NuvTools.Report.Pdf.IPdfMerger.Merge(System.Collections.Generic.IEnumerable<byte[]>)
+  type: Method
+  assemblies:
+  - NuvTools.Report
+  namespace: NuvTools.Report.Pdf
+  summary: Merges multiple PDF documents into a single PDF document.
+  example: []
+  syntax:
+    content: byte[] Merge(IEnumerable<byte[]> pdfs)
+    parameters:
+    - id: pdfs
+      type: System.Collections.Generic.IEnumerable{System.Byte[]}
+      description: An enumerable collection of PDF documents represented as byte arrays.
+    return:
+      type: System.Byte[]
+      description: A byte array representing the merged PDF document.
+    content.vb: Function Merge(pdfs As IEnumerable(Of Byte())) As Byte()
+  overload: NuvTools.Report.Pdf.IPdfMerger.Merge*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: >-
+      No page to merge: the collection is empty or its documents have no pages. A PDF must have at
+
+      least one page, so there is no valid empty result to return.
+  nameWithType.vb: IPdfMerger.Merge(IEnumerable(Of Byte()))
+  fullName.vb: NuvTools.Report.Pdf.IPdfMerger.Merge(System.Collections.Generic.IEnumerable(Of Byte()))
+  name.vb: Merge(IEnumerable(Of Byte()))
+references:
+- uid: NuvTools.Report.Pdf
+  commentId: N:NuvTools.Report.Pdf
+  name: NuvTools.Report.Pdf
+  nameWithType: NuvTools.Report.Pdf
+  fullName: NuvTools.Report.Pdf
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Report
+    name: Report
+  - name: .
+  - uid: NuvTools.Report.Pdf
+    name: Pdf
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Report
+    name: Report
+  - name: .
+  - uid: NuvTools.Report.Pdf
+    name: Pdf
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentexception
+  name: ArgumentException
+  nameWithType: ArgumentException
+  fullName: System.ArgumentException
+- uid: NuvTools.Report.Pdf.IPdfMerger.Merge*
+  commentId: Overload:NuvTools.Report.Pdf.IPdfMerger.Merge
+  href: NuvTools.Report.Pdf.IPdfMerger.html#NuvTools_Report_Pdf_IPdfMerger_Merge_System_Collections_Generic_IEnumerable_System_Byte____
+  name: Merge
+  nameWithType: IPdfMerger.Merge
+  fullName: NuvTools.Report.Pdf.IPdfMerger.Merge
+- uid: System.Collections.Generic.IEnumerable{System.Byte[]}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Byte[]}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<byte[]>
+  nameWithType: IEnumerable<byte[]>
+  fullName: System.Collections.Generic.IEnumerable<byte[]>
+  nameWithType.vb: IEnumerable(Of Byte())
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Byte())
+  name.vb: IEnumerable(Of Byte())
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: System.Byte
+    name: byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: '['
+  - name: ']'
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Byte
+    name: Byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: (
+  - name: )
+  - name: )
+- uid: System.Byte[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.byte
+  name: byte[]
+  nameWithType: byte[]
+  fullName: byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: (
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic

@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Class NuvCamera | Nuv Tools Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class NuvCamera | Nuv Tools Framework ">
+      
+      <meta name="description" content="Renders a live camera preview and captures frames from it.">
+      <link rel="icon" href="../../images/icon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/nuvtools-brand.svg" alt="Framework">
+            Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera">
+
+
+
+  <h1 id="NuvTools_AspNetCore_Blazor_Components_NuvCamera" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera" class="text-break">
+Class NuvCamera  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><span class="xref">NuvTools</span>.<span class="xref">AspNetCore</span>.<span class="xref">Blazor</span>.<a class="xref" href="NuvTools.AspNetCore.Blazor.Components.html">Components</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NuvTools.AspNetCore.Blazor.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Renders a live camera preview and captures frames from it.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class NuvCamera : ComponentBase, IComponent, IHandleEvent, IHandleAfterRender, IAsyncDisposable</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase">ComponentBase</a></div>
+      <div><span class="xref">NuvCamera</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.icomponent">IComponent</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.ihandleevent">IHandleEvent</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.ihandleafterrender">IHandleAfterRender</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iasyncdisposable">IAsyncDisposable</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.oninitialized">ComponentBase.OnInitialized()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.oninitializedasync">ComponentBase.OnInitializedAsync()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onparametersset">ComponentBase.OnParametersSet()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onparameterssetasync">ComponentBase.OnParametersSetAsync()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.statehaschanged">ComponentBase.StateHasChanged()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.shouldrender">ComponentBase.ShouldRender()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onafterrender">ComponentBase.OnAfterRender(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.invokeasync#microsoft-aspnetcore-components-componentbase-invokeasync(system-action)">ComponentBase.InvokeAsync(Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.invokeasync#microsoft-aspnetcore-components-componentbase-invokeasync(system-func((system-threading-tasks-task)))">ComponentBase.InvokeAsync(Func&lt;Task&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.dispatchexceptionasync">ComponentBase.DispatchExceptionAsync(Exception)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.setparametersasync">ComponentBase.SetParametersAsync(ParameterView)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.rendererinfo">ComponentBase.RendererInfo</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.assets">ComponentBase.Assets</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.assignedrendermode">ComponentBase.AssignedRenderMode</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+  <h2 id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_examples">Examples</h2>
+  <pre><code class="lang-csharp">&lt;NuvCamera @ref="_camera" FacingMode="CameraFacingMode.Environment"
+           Style="width:400px;height:300px" OnError="ShowCameraError" /&gt;
+
+@code {
+    private NuvCamera _camera = default!;
+
+    private async Task ScanAsync()
+    {
+        var capture = await _camera.CaptureAsync();
+        if (capture is not null) await ReadAsync(capture.Base64);
+    }
+}</code></pre>
+
+
+  <h2 id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>The component owns the <code>&lt;video&gt;</code> and the capture <code>&lt;canvas&gt;</code>, and keeps its own
+media stream — several instances can run side by side. It renders no layout and no styling of its
+own: size it through <a class="xref" href="NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_Class">Class</a>/<a class="xref" href="NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_Style">Style</a> and draw guides through
+<a class="xref" href="NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_Overlay">Overlay</a>. Capture the component with <code>@ref</code> to drive it.</p>
+</div>
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_AdditionalAttributes_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.AdditionalAttributes*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_AdditionalAttributes" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.AdditionalAttributes">
+  AdditionalAttributes
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Any other attribute is applied to the video element.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter(CaptureUnmatchedValues = true)]
+public IReadOnlyDictionary&lt;string, object&gt;? AdditionalAttributes { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2">IReadOnlyDictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_AutoStart_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.AutoStart*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_AutoStart" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.AutoStart">
+  AutoStart
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether to start the camera as soon as the component renders.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public bool AutoStart { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_CaptureHeight_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.CaptureHeight*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_CaptureHeight" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.CaptureHeight">
+  CaptureHeight
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Height of the captured frame, in pixels. Defaults to the stream's native height.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public int? CaptureHeight { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_CaptureWidth_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.CaptureWidth*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_CaptureWidth" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.CaptureWidth">
+  CaptureWidth
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Width of the captured frame, in pixels. Defaults to the stream's native width.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public int? CaptureWidth { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_Class_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.Class*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_Class" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.Class">
+  Class
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>CSS class applied to the video element.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public string? Class { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_DeviceId_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.DeviceId*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_DeviceId" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.DeviceId">
+  DeviceId
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Identifier of a specific camera, as returned by <a class="xref" href="NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_GetDevicesAsync_System_Threading_CancellationToken_">GetDevicesAsync(CancellationToken)</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public string? DeviceId { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_FacingMode_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.FacingMode*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_FacingMode" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.FacingMode">
+  FacingMode
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Which camera to request. Ignored when <a class="xref" href="NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_DeviceId">DeviceId</a> is set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public CameraFacingMode FacingMode { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NuvTools.AspNetCore.Blazor.Components.CameraFacingMode.html">CameraFacingMode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_Format_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.Format*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_Format" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.Format">
+  Format
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Format of the captured image.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public CameraImageFormat Format { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NuvTools.AspNetCore.Blazor.Components.CameraImageFormat.html">CameraImageFormat</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_Height_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.Height*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_Height" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.Height">
+  Height
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Requested capture height, in pixels. Treated as ideal — the browser may pick another size.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public int? Height { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_IsRunning_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.IsRunning*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_IsRunning" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.IsRunning">
+  IsRunning
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether the stream is currently live.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsRunning { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_Mirrored_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.Mirrored*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_Mirrored" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.Mirrored">
+  Mirrored
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether to mirror the image. Applies to both the preview and the captured frame, so what the
+user sees is what gets saved. Expected for a selfie camera; leave it off for a rear camera.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public bool Mirrored { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_OnCaptured_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnCaptured*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_OnCaptured" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnCaptured">
+  OnCaptured
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Raised for every captured frame.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public EventCallback&lt;CameraCapture&gt; OnCaptured { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.eventcallback-1">EventCallback</a>&lt;<a class="xref" href="NuvTools.AspNetCore.Blazor.Components.CameraCapture.html">CameraCapture</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_OnError_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnError*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_OnError" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnError">
+  OnError
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Raised when the camera cannot be started — permission denied, no camera, and so on.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public EventCallback&lt;CameraError&gt; OnError { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.eventcallback-1">EventCallback</a>&lt;<a class="xref" href="NuvTools.AspNetCore.Blazor.Components.CameraError.html">CameraError</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_OnStarted_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnStarted*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_OnStarted" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnStarted">
+  OnStarted
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Raised once the stream is live.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public EventCallback OnStarted { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.eventcallback">EventCallback</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_Overlay_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.Overlay*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_Overlay" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.Overlay">
+  Overlay
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Content rendered right after the video, for guides, frames or hints.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public RenderFragment? Overlay { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.renderfragment">RenderFragment</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_Quality_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.Quality*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_Quality" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.Quality">
+  Quality
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Compression quality, from 0 to 1. Only used by <a class="xref" href="NuvTools.AspNetCore.Blazor.Components.CameraImageFormat.html#NuvTools_AspNetCore_Blazor_Components_CameraImageFormat_Jpeg">Jpeg</a> and <a class="xref" href="NuvTools.AspNetCore.Blazor.Components.CameraImageFormat.html#NuvTools_AspNetCore_Blazor_Components_CameraImageFormat_Webp">Webp</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public double Quality { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_Style_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.Style*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_Style" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.Style">
+  Style
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Inline style applied to the video element.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public string? Style { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_Width_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.Width*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_Width" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.Width">
+  Width
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Requested capture width, in pixels. Treated as ideal — the browser may pick another size.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Parameter]
+public int? Width { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_BuildRenderTree_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.BuildRenderTree*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_BuildRenderTree_Microsoft_AspNetCore_Components_Rendering_RenderTreeBuilder_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder)">
+  BuildRenderTree(RenderTreeBuilder)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Renders the component to the supplied <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.rendering.rendertreebuilder">RenderTreeBuilder</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void BuildRenderTree(RenderTreeBuilder __builder)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>__builder</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.rendering.rendertreebuilder">RenderTreeBuilder</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_CaptureAsync_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.CaptureAsync*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_CaptureAsync_System_Threading_CancellationToken_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.CaptureAsync(System.Threading.CancellationToken)">
+  CaptureAsync(CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Captures the current frame. Raises <a class="xref" href="NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_OnCaptured">OnCaptured</a> when a frame is produced.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;CameraCapture?&gt; CaptureAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A cancellation token to observe.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="NuvTools.AspNetCore.Blazor.Components.CameraCapture.html">CameraCapture</a>&gt;</dt>
+    <dd><p>The captured frame, or <code>null</code> when the stream has no image yet.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_DisposeAsync_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.DisposeAsync*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_DisposeAsync" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.DisposeAsync">
+  DisposeAsync()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or
+resetting unmanaged resources asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ValueTask DisposeAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask">ValueTask</a></dt>
+    <dd><p>A task that represents the asynchronous dispose operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_GetDevicesAsync_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.GetDevicesAsync*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_GetDevicesAsync_System_Threading_CancellationToken_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.GetDevicesAsync(System.Threading.CancellationToken)">
+  GetDevicesAsync(CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Lists the video input devices available to the browser.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IReadOnlyList&lt;CameraDevice&gt;&gt; GetDevicesAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A cancellation token to observe.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="NuvTools.AspNetCore.Blazor.Components.CameraDevice.html">CameraDevice</a>&gt;&gt;</dt>
+    <dd><p>The available cameras.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_OnAfterRenderAsync_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnAfterRenderAsync*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_OnAfterRenderAsync_System_Boolean_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.OnAfterRenderAsync(System.Boolean)">
+  OnAfterRenderAsync(bool)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Method invoked after each time the component has been rendered interactively and the UI has finished
+updating (for example, after elements have been added to the browser DOM). Any <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.elementreference">ElementReference</a>
+fields will be populated by the time this runs.</p>
+<p>This method is not invoked during prerendering or server-side rendering, because those processes
+are not attached to any live browser DOM and are already complete before the DOM is updated.</p>
+<p>Note that the component does not automatically re-render after the completion of any returned <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a>,
+because that would cause an infinite render loop.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Task OnAfterRenderAsync(bool firstRender)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>firstRender</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>Set to <code>true</code> if this is the first time <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onafterrender">OnAfterRender(bool)</a> has been invoked
+on this component instance; otherwise <code>false</code>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a> representing any asynchronous operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_OnAfterRenderAsync_System_Boolean__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onafterrender">OnAfterRender(bool)</a> and <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onafterrenderasync">OnAfterRenderAsync(bool)</a> lifecycle methods
+are useful for performing interop, or interacting with values received from <code>@ref</code>.
+Use the <code class="paramref">firstRender</code> parameter to ensure that initialization work is only performed
+once.</p>
+</div>
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_StartAsync_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.StartAsync*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_StartAsync_System_Threading_CancellationToken_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.StartAsync(System.Threading.CancellationToken)">
+  StartAsync(CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Starts the camera. Raises <a class="xref" href="NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_OnStarted">OnStarted</a> on success and <a class="xref" href="NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_OnError">OnError</a> on failure.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;bool&gt; StartAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A cancellation token to observe.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd><p><code>true</code> when the stream is live.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_StopAsync_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.StopAsync*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_StopAsync_System_Threading_CancellationToken_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.StopAsync(System.Threading.CancellationToken)">
+  StopAsync(CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Stops the camera and releases the device — every track is stopped, so the camera light goes off.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task StopAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A cancellation token to observe.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a> representing the asynchronous operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_SwitchDeviceAsync_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.SwitchDeviceAsync*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_Components_NuvCamera_SwitchDeviceAsync_System_String_System_Threading_CancellationToken_" data-uid="NuvTools.AspNetCore.Blazor.Components.NuvCamera.SwitchDeviceAsync(System.String,System.Threading.CancellationToken)">
+  SwitchDeviceAsync(string, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Starts the camera on a specific device, without changing <a class="xref" href="NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_DeviceId">DeviceId</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;bool&gt; SwitchDeviceAsync(string deviceId, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>deviceId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The device to use, as returned by <a class="xref" href="NuvTools.AspNetCore.Blazor.Components.NuvCamera.html#NuvTools_AspNetCore_Blazor_Components_NuvCamera_GetDevicesAsync_System_Threading_CancellationToken_">GetDevicesAsync(CancellationToken)</a>.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A cancellation token to observe.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</dt>
+    <dd><p><code>true</code> when the stream is live.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>© Nuv Tools · <a href="https://nuvtools.com/framework/">nuvtools.com</a> · MIT licence · Built with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

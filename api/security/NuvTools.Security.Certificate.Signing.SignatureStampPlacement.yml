@@ -1,0 +1,571 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Security.Certificate.Signing.SignatureStampPlacement
+  commentId: T:NuvTools.Security.Certificate.Signing.SignatureStampPlacement
+  id: SignatureStampPlacement
+  parent: NuvTools.Security.Certificate.Signing
+  children:
+  - NuvTools.Security.Certificate.Signing.SignatureStampPlacement.#ctor(System.Int32,NuvTools.Security.Certificate.Signing.SignatureStampArea,System.Double,System.Double,System.Double)
+  - NuvTools.Security.Certificate.Signing.SignatureStampPlacement.Area
+  - NuvTools.Security.Certificate.Signing.SignatureStampPlacement.Height
+  - NuvTools.Security.Certificate.Signing.SignatureStampPlacement.PageNumber
+  - NuvTools.Security.Certificate.Signing.SignatureStampPlacement.RowSpacing
+  - NuvTools.Security.Certificate.Signing.SignatureStampPlacement.Width
+  langs:
+  - csharp
+  - vb
+  name: SignatureStampPlacement
+  nameWithType: SignatureStampPlacement
+  fullName: NuvTools.Security.Certificate.Signing.SignatureStampPlacement
+  type: Class
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Certificate.Signing
+  summary: >-
+    Where a signature stamp goes: stamps are stacked inside an area of a page, left to right and top to
+
+    bottom, so a later signature lands after the ones already there.
+  example: []
+  syntax:
+    content: 'public sealed record SignatureStampPlacement : IEquatable<SignatureStampPlacement>'
+    content.vb: Public NotInheritable Class SignatureStampPlacement Implements IEquatable(Of SignatureStampPlacement)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{NuvTools.Security.Certificate.Signing.SignatureStampPlacement}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.#ctor(System.Int32,NuvTools.Security.Certificate.Signing.SignatureStampArea,System.Double,System.Double,System.Double)
+  commentId: M:NuvTools.Security.Certificate.Signing.SignatureStampPlacement.#ctor(System.Int32,NuvTools.Security.Certificate.Signing.SignatureStampArea,System.Double,System.Double,System.Double)
+  id: '#ctor(System.Int32,NuvTools.Security.Certificate.Signing.SignatureStampArea,System.Double,System.Double,System.Double)'
+  parent: NuvTools.Security.Certificate.Signing.SignatureStampPlacement
+  langs:
+  - csharp
+  - vb
+  name: SignatureStampPlacement(int, SignatureStampArea, double, double, double)
+  nameWithType: SignatureStampPlacement.SignatureStampPlacement(int, SignatureStampArea, double, double, double)
+  fullName: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.SignatureStampPlacement(int, NuvTools.Security.Certificate.Signing.SignatureStampArea, double, double, double)
+  type: Constructor
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Certificate.Signing
+  summary: >-
+    Where a signature stamp goes: stamps are stacked inside an area of a page, left to right and top to
+
+    bottom, so a later signature lands after the ones already there.
+  example: []
+  syntax:
+    content: public SignatureStampPlacement(int PageNumber, SignatureStampArea Area, double Width, double Height, double RowSpacing = 0)
+    parameters:
+    - id: PageNumber
+      type: System.Int32
+      description: 'The page, starting at 1. A negative number counts from the end: -1 is the last page.'
+    - id: Area
+      type: NuvTools.Security.Certificate.Signing.SignatureStampArea
+      description: The part of the page the stamps are stacked in.
+    - id: Width
+      type: System.Double
+      description: Width of one stamp, in centimeters.
+    - id: Height
+      type: System.Double
+      description: Height of one stamp, in centimeters.
+    - id: RowSpacing
+      type: System.Double
+      description: Space between two rows of stamps, in centimeters.
+    content.vb: Public Sub New(PageNumber As Integer, Area As SignatureStampArea, Width As Double, Height As Double, RowSpacing As Double = 0)
+  overload: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.#ctor*
+  nameWithType.vb: SignatureStampPlacement.New(Integer, SignatureStampArea, Double, Double, Double)
+  fullName.vb: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.New(Integer, NuvTools.Security.Certificate.Signing.SignatureStampArea, Double, Double, Double)
+  name.vb: New(Integer, SignatureStampArea, Double, Double, Double)
+- uid: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.PageNumber
+  commentId: P:NuvTools.Security.Certificate.Signing.SignatureStampPlacement.PageNumber
+  id: PageNumber
+  parent: NuvTools.Security.Certificate.Signing.SignatureStampPlacement
+  langs:
+  - csharp
+  - vb
+  name: PageNumber
+  nameWithType: SignatureStampPlacement.PageNumber
+  fullName: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.PageNumber
+  type: Property
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Certificate.Signing
+  summary: 'The page, starting at 1. A negative number counts from the end: -1 is the last page.'
+  example: []
+  syntax:
+    content: public int PageNumber { get; init; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property PageNumber As Integer
+  overload: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.PageNumber*
+- uid: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.Area
+  commentId: P:NuvTools.Security.Certificate.Signing.SignatureStampPlacement.Area
+  id: Area
+  parent: NuvTools.Security.Certificate.Signing.SignatureStampPlacement
+  langs:
+  - csharp
+  - vb
+  name: Area
+  nameWithType: SignatureStampPlacement.Area
+  fullName: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.Area
+  type: Property
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Certificate.Signing
+  summary: The part of the page the stamps are stacked in.
+  example: []
+  syntax:
+    content: public SignatureStampArea Area { get; init; }
+    parameters: []
+    return:
+      type: NuvTools.Security.Certificate.Signing.SignatureStampArea
+    content.vb: Public Property Area As SignatureStampArea
+  overload: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.Area*
+- uid: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.Width
+  commentId: P:NuvTools.Security.Certificate.Signing.SignatureStampPlacement.Width
+  id: Width
+  parent: NuvTools.Security.Certificate.Signing.SignatureStampPlacement
+  langs:
+  - csharp
+  - vb
+  name: Width
+  nameWithType: SignatureStampPlacement.Width
+  fullName: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.Width
+  type: Property
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Certificate.Signing
+  summary: Width of one stamp, in centimeters.
+  example: []
+  syntax:
+    content: public double Width { get; init; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Width As Double
+  overload: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.Width*
+- uid: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.Height
+  commentId: P:NuvTools.Security.Certificate.Signing.SignatureStampPlacement.Height
+  id: Height
+  parent: NuvTools.Security.Certificate.Signing.SignatureStampPlacement
+  langs:
+  - csharp
+  - vb
+  name: Height
+  nameWithType: SignatureStampPlacement.Height
+  fullName: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.Height
+  type: Property
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Certificate.Signing
+  summary: Height of one stamp, in centimeters.
+  example: []
+  syntax:
+    content: public double Height { get; init; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Height As Double
+  overload: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.Height*
+- uid: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.RowSpacing
+  commentId: P:NuvTools.Security.Certificate.Signing.SignatureStampPlacement.RowSpacing
+  id: RowSpacing
+  parent: NuvTools.Security.Certificate.Signing.SignatureStampPlacement
+  langs:
+  - csharp
+  - vb
+  name: RowSpacing
+  nameWithType: SignatureStampPlacement.RowSpacing
+  fullName: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.RowSpacing
+  type: Property
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Certificate.Signing
+  summary: Space between two rows of stamps, in centimeters.
+  example: []
+  syntax:
+    content: public double RowSpacing { get; init; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property RowSpacing As Double
+  overload: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.RowSpacing*
+references:
+- uid: NuvTools.Security.Certificate.Signing
+  commentId: N:NuvTools.Security.Certificate.Signing
+  name: NuvTools.Security.Certificate.Signing
+  nameWithType: NuvTools.Security.Certificate.Signing
+  fullName: NuvTools.Security.Certificate.Signing
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.Certificate
+    name: Certificate
+  - name: .
+  - uid: NuvTools.Security.Certificate.Signing
+    name: Signing
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.Certificate
+    name: Certificate
+  - name: .
+  - uid: NuvTools.Security.Certificate.Signing
+    name: Signing
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{NuvTools.Security.Certificate.Signing.SignatureStampPlacement}
+  commentId: T:System.IEquatable{NuvTools.Security.Certificate.Signing.SignatureStampPlacement}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<SignatureStampPlacement>
+  nameWithType: IEquatable<SignatureStampPlacement>
+  fullName: System.IEquatable<NuvTools.Security.Certificate.Signing.SignatureStampPlacement>
+  nameWithType.vb: IEquatable(Of SignatureStampPlacement)
+  fullName.vb: System.IEquatable(Of NuvTools.Security.Certificate.Signing.SignatureStampPlacement)
+  name.vb: IEquatable(Of SignatureStampPlacement)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: NuvTools.Security.Certificate.Signing.SignatureStampPlacement
+    name: SignatureStampPlacement
+    href: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Security.Certificate.Signing.SignatureStampPlacement
+    name: SignatureStampPlacement
+    href: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.#ctor*
+  commentId: Overload:NuvTools.Security.Certificate.Signing.SignatureStampPlacement.#ctor
+  href: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.html#NuvTools_Security_Certificate_Signing_SignatureStampPlacement__ctor_System_Int32_NuvTools_Security_Certificate_Signing_SignatureStampArea_System_Double_System_Double_System_Double_
+  name: SignatureStampPlacement
+  nameWithType: SignatureStampPlacement.SignatureStampPlacement
+  fullName: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.SignatureStampPlacement
+  nameWithType.vb: SignatureStampPlacement.New
+  fullName.vb: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.New
+  name.vb: New
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: NuvTools.Security.Certificate.Signing.SignatureStampArea
+  commentId: T:NuvTools.Security.Certificate.Signing.SignatureStampArea
+  parent: NuvTools.Security.Certificate.Signing
+  href: NuvTools.Security.Certificate.Signing.SignatureStampArea.html
+  name: SignatureStampArea
+  nameWithType: SignatureStampArea
+  fullName: NuvTools.Security.Certificate.Signing.SignatureStampArea
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.PageNumber*
+  commentId: Overload:NuvTools.Security.Certificate.Signing.SignatureStampPlacement.PageNumber
+  href: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.html#NuvTools_Security_Certificate_Signing_SignatureStampPlacement_PageNumber
+  name: PageNumber
+  nameWithType: SignatureStampPlacement.PageNumber
+  fullName: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.PageNumber
+- uid: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.Area*
+  commentId: Overload:NuvTools.Security.Certificate.Signing.SignatureStampPlacement.Area
+  href: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.html#NuvTools_Security_Certificate_Signing_SignatureStampPlacement_Area
+  name: Area
+  nameWithType: SignatureStampPlacement.Area
+  fullName: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.Area
+- uid: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.Width*
+  commentId: Overload:NuvTools.Security.Certificate.Signing.SignatureStampPlacement.Width
+  href: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.html#NuvTools_Security_Certificate_Signing_SignatureStampPlacement_Width
+  name: Width
+  nameWithType: SignatureStampPlacement.Width
+  fullName: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.Width
+- uid: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.Height*
+  commentId: Overload:NuvTools.Security.Certificate.Signing.SignatureStampPlacement.Height
+  href: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.html#NuvTools_Security_Certificate_Signing_SignatureStampPlacement_Height
+  name: Height
+  nameWithType: SignatureStampPlacement.Height
+  fullName: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.Height
+- uid: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.RowSpacing*
+  commentId: Overload:NuvTools.Security.Certificate.Signing.SignatureStampPlacement.RowSpacing
+  href: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.html#NuvTools_Security_Certificate_Signing_SignatureStampPlacement_RowSpacing
+  name: RowSpacing
+  nameWithType: SignatureStampPlacement.RowSpacing
+  fullName: NuvTools.Security.Certificate.Signing.SignatureStampPlacement.RowSpacing

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>NuvTools Payment Libraries | Nuv Tools Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="NuvTools Payment Libraries | Nuv Tools Framework ">
+      
+      
+      <link rel="icon" href="../../../images/icon.png">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/nuvtools-brand.svg" alt="Framework">
+            Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="nuvtools-payment-libraries">NuvTools Payment Libraries</h1>
+
+<p>Payment abstraction library and API clients for Brazilian financial services. Part of the <a href="https://nuvtools.com">NuvTools Framework</a>.</p>
+<h2 id="projects">Projects</h2>
+<table>
+<thead>
+<tr>
+<th>Project</th>
+<th>Target</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NuvTools.Payment</strong></td>
+<td>net8.0, net9.0, net10.0</td>
+<td>Core payment abstractions: the card, payee, charge, refund and webhook contracts a card provider implements, their DTOs, and the shared HttpClient infrastructure.</td>
+</tr>
+<tr>
+<td><strong>NuvTools.Payment.BancoDoBrasil.ApiClient</strong></td>
+<td>net10.0</td>
+<td>API client for Banco do Brasil bank slip payment services.</td>
+</tr>
+<tr>
+<td><strong>NuvTools.Payment.Sicoob.ApiClient</strong></td>
+<td>net10.0</td>
+<td>API client for Sicoob bank slip services.</td>
+</tr>
+<tr>
+<td><strong>NuvTools.Payment.Omie.ApiClient</strong></td>
+<td>net10.0</td>
+<td>API client for Omie ERP: service orders, accounts receivable, and bank slip (boleto) generation.</td>
+</tr>
+<tr>
+<td><strong>NuvTools.Payment.Stripe.ApiClient</strong></td>
+<td>net10.0</td>
+<td>Stripe's implementation of the <code>NuvTools.Payment</code> contracts: customers and saved payment methods, Connect Express onboarding, separate charges and transfers, refunds, and webhook signature verification.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nuvtoolspayment--the-card-provider-contracts">NuvTools.Payment — the card-provider contracts</h2>
+<p>A marketplace that charges customers and pays several payees out of the same money needs five
+capabilities, and they are declared here so that the application layer never references a provider:</p>
+<table>
+<thead>
+<tr>
+<th>Contract</th>
+<th>What it is for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IPaymentCustomerClient</code></td>
+<td>Who is charged, and the payment method they saved — including a provider-hosted page, so no card and no provider script reach the caller's own origin</td>
+</tr>
+<tr>
+<td><code>IPayeeAccountClient</code></td>
+<td>An account the platform can pay, and the hosted onboarding that makes it payable</td>
+</tr>
+<tr>
+<td><code>IPaymentChargeClient</code></td>
+<td>Charging a customer, and transferring to a payee — two calls, never one destination charge</td>
+</tr>
+<tr>
+<td><code>IPaymentRefundClient</code></td>
+<td>Giving money back, in whole or in part. Its own contract because refunding is not the inverse of charging: it names a payment rather than a customer, and a caller that may charge is not automatically one that may refund</td>
+</tr>
+<tr>
+<td><code>IPaymentWebhookVerifier</code></td>
+<td>The signature check, and the payload read into the fields a caller acts on</td>
+</tr>
+</tbody>
+</table>
+<p>Amounts are always in the currency's <strong>minor units</strong>; <code>PaymentMoney</code> converts, rounding once.
+<code>PaymentStatusType</code> and <code>PaymentEventType</code> are the provider-neutral vocabularies a client maps its
+own onto — four payment outcomes and five kinds of event, because those are the ones that change what
+the caller does next.</p>
+<p><strong>Refunding does not claw back a payee.</strong> The money already transferred is the caller's to reconcile,
+by netting it off what that payee is owed next. Providers do offer a transfer reversal, and using it
+would take money out of an account the payee may have already spent from — so who absorbs a refund
+stays a decision the caller makes in its own records.</p>
+<p><strong>The provider-shaped reading belongs in the provider's package.</strong> <code>IPaymentWebhookVerifier</code> answers
+a <code>PaymentEventDTO</code> whose <code>CustomerId</code>, <code>PaymentMethodId</code> and <code>FailureReason</code> are already extracted:
+which field of which payload holds the customer is the provider's business, and a caller that dug it
+out itself would be coupled to a shape it does not control.</p>
+<blockquote>
+<p>These contracts are for <strong>card and marketplace</strong> providers. The bank-slip clients below stay
+direct, for the reason given under <em>Common Patterns</em>.</p>
+</blockquote>
+<h2 id="nuvtoolspaymentstripeapiclient">NuvTools.Payment.Stripe.ApiClient</h2>
+<p>Stripe's implementation of those contracts, over the official <code>Stripe.net</code> SDK.</p>
+<h3 id="features">Features</h3>
+<ul>
+<li>Customers and saved payment methods (<code>SetupIntent</code>, off-session, and a hosted Checkout page)</li>
+<li>Connect <strong>Express</strong> onboarding: account, hosted account link, and account status</li>
+<li><strong>Separate charges and transfers</strong> - one charge can pay several connected accounts, which a
+destination charge cannot express</li>
+<li>Full and partial <strong>refunds</strong>, deliberately without <code>ReverseTransfer</code></li>
+<li>Caller-supplied idempotency keys on every money-moving call</li>
+<li>Webhook signature verification, with a separate secret for the Connect endpoint</li>
+</ul>
+<h3 id="configuration">Configuration</h3>
+<pre><code class="lang-json">{
+  &quot;Stripe&quot;: {
+    &quot;SecretKey&quot;: &quot;sk_test_...&quot;,
+    &quot;WebhookSecret&quot;: &quot;whsec_...&quot;,
+    &quot;ConnectWebhookSecret&quot;: &quot;&quot;,
+    &quot;ConnectAccountType&quot;: &quot;express&quot;,
+    &quot;ConnectCapabilities&quot;: [ &quot;transfers&quot; ],
+    &quot;PaymentMethodTypes&quot;: [],
+    &quot;RequestTimeoutSeconds&quot;: 30,
+    &quot;MaxNetworkRetries&quot;: 2
+  }
+}
+</code></pre>
+<p>The key and both webhook secrets are secrets: they are what authenticate a call and make an incoming
+webhook trustworthy.</p>
+<p>The rest are <strong>the application's decisions, not this package's</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ConnectAccountType</code></td>
+<td><code>express</code></td>
+<td>The kind of connected account created for a payee: <code>express</code>, <code>standard</code> or <code>custom</code>.</td>
+</tr>
+<tr>
+<td><code>ConnectCapabilities</code></td>
+<td><code>transfers</code></td>
+<td>What a connected account asks for, by Stripe's names. Stripe decides per country which combinations it accepts — Brazil refuses <code>transfers</code> without <code>card_payments</code> — so an application lists what its payees' countries need.</td>
+</tr>
+<tr>
+<td><code>PaymentMethodTypes</code></td>
+<td>empty</td>
+<td>The methods a customer may save on the hosted page, by Stripe's names. Empty offers whatever the Stripe account has enabled for the currency of the request; an application that can only charge cards afterwards lists <code>card</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>The currency is not a setting: it changes per customer, so it travels in
+<code>HostedPaymentMethodPageRequest.CurrencyCode</code>.</p>
+<h3 id="registration">Registration</h3>
+<pre><code class="lang-csharp">services.AddStripeApiClient(configuration);
+</code></pre>
+<p>Injects Stripe behind <code>IPaymentCustomerClient</code>, <code>IPayeeAccountClient</code>, <code>IPaymentChargeClient</code>,
+<code>IPaymentRefundClient</code> and <code>IPaymentWebhookVerifier</code> — so this call, in the composition root, is the
+only place the application names Stripe. Each method returns <code>IResult&lt;T&gt;</code>, so a declined card is a result to read rather than an
+exception to catch.</p>
+<h2 id="nuvtoolspaymentbancodobrasilapiclient">NuvTools.Payment.BancoDoBrasil.ApiClient</h2>
+<p>Typed HTTP client for the Banco do Brasil Payments API with OAuth2 authentication.</p>
+<h3 id="features-1">Features</h3>
+<ul>
+<li>OAuth2 token generation (<code>client_credentials</code>)</li>
+<li>Batch bank slip payment creation</li>
+<li>Payment query by ID</li>
+</ul>
+<h3 id="configuration-1">Configuration</h3>
+<pre><code class="lang-json">{
+  &quot;BancoDoBrasil&quot;: {
+    &quot;AuthUrl&quot;: &quot;https://...&quot;,
+    &quot;BaseUrl&quot;: &quot;https://...&quot;,
+    &quot;ClientId&quot;: &quot;&quot;,
+    &quot;ClientSecret&quot;: &quot;&quot;,
+    &quot;ApiKey&quot;: &quot;&quot;
+  }
+}
+</code></pre>
+<h3 id="registration-1">Registration</h3>
+<pre><code class="lang-csharp">services.AddBancoDoBrasilApiClient(configuration);
+</code></pre>
+<h2 id="nuvtoolspaymentsicoobapiclient">NuvTools.Payment.Sicoob.ApiClient</h2>
+<p>Typed HTTP client for the Sicoob Banking API (bank slips).</p>
+<h3 id="features-2">Features</h3>
+<ul>
+<li>Bank slip query by number or period</li>
+<li>Bank slip creation</li>
+<li>Second copy generation</li>
+<li>Cancellation, due date extension, and amount change</li>
+</ul>
+<h3 id="configuration-2">Configuration</h3>
+<pre><code class="lang-json">{
+  &quot;Sicoob&quot;: {
+    &quot;BaseUrl&quot;: &quot;https://...&quot;,
+    &quot;ClientId&quot;: &quot;&quot;,
+    &quot;Token&quot;: &quot;&quot;
+  }
+}
+</code></pre>
+<h3 id="registration-2">Registration</h3>
+<pre><code class="lang-csharp">services.AddSicoobApiClient(configuration);
+</code></pre>
+<h2 id="nuvtoolspaymentomieapiclient">NuvTools.Payment.Omie.ApiClient</h2>
+<p>Typed HTTP client for the Omie ERP API (service orders, accounts receivable, and bank slip issuance).</p>
+<h3 id="features-3">Features</h3>
+<ul>
+<li>Client lookup</li>
+<li>Service registration query</li>
+<li>Service order (OS) creation</li>
+<li>Accounts receivable entry creation</li>
+<li>Bank slip (boleto) generation and retrieval</li>
+</ul>
+<h3 id="configuration-3">Configuration</h3>
+<pre><code class="lang-json">{
+  &quot;Omie&quot;: {
+    &quot;AppKey&quot;: &quot;&quot;,
+    &quot;AppSecret&quot;: &quot;&quot;,
+    &quot;BaseUrlClient&quot;: &quot;https://...&quot;,
+    &quot;BaseUrlService&quot;: &quot;https://...&quot;,
+    &quot;BaseUrlOrderService&quot;: &quot;https://...&quot;,
+    &quot;BaseUrlOrderBilling&quot;: &quot;https://...&quot;
+  }
+}
+</code></pre>
+<h3 id="registration-3">Registration</h3>
+<pre><code class="lang-csharp">services.AddOmieApiClient(configuration);
+</code></pre>
+<h2 id="common-patterns">Common Patterns</h2>
+<p>All API clients share the same infrastructure, provided by <code>NuvTools.Payment</code>:</p>
+<ul>
+<li><strong>Result pattern</strong>: every method returns <code>IResult&lt;T&gt;</code> from <code>NuvTools.Common.ResultWrapper</code> (<code>Succeeded</code>, <code>Data</code>, <code>Message</code>, <code>Messages</code>, <code>ResultType</code>).</li>
+<li><strong>Standard resilience</strong>: registered via <code>services.AddPaymentResilientHttpClient&lt;TInterface, TImpl&gt;(name)</code> — applies retry, circuit breaker, and timeout policy across all providers.</li>
+<li><strong>Configuration binding</strong> from <code>IConfiguration</code> sections using the Options pattern.</li>
+</ul>
+<p>The bank-slip and ERP clients expose their own contracts (<code>ISicoobBankSlipApiClient</code>, <code>IBbBankSlipPaymentApiClient</code>, <code>IOmieApiClient</code>) and return provider-specific DTOs, deliberately: Brazilian banking integrations are intrinsically provider-shaped, and a neutral layer over them would have to invent a domain none of them share. The card and marketplace side is different — the four capabilities are the same everywhere — so it is declared in <code>NuvTools.Payment</code> and implemented by the provider's package.</p>
+<blockquote>
+<p><strong>Note (Omie):</strong> <code>OmieApiClient</code> is registered as a singleton and uses an internal static <code>HttpClient</code>. It intentionally bypasses <code>HttpClientFactory</code> and the standard resilience pipeline — Omie's gateway misbehaves with HTTP/2 and Polly retry. Do not change this without re-validating against the Omie sandbox.</p>
+</blockquote>
+<h2 id="build">Build</h2>
+<pre><code class="lang-bash">dotnet build NuvTools.Payment.slnx
+</code></pre>
+<h2 id="releasing">Releasing</h2>
+<p>Publishing to nuget.org is irreversible per version, so the workflow makes it the last and smallest
+step.</p>
+<p><strong>One workflow per library.</strong> Each package has its own, so a run and an approval each concern
+exactly one package. The steps themselves are shared, in the reusable <code>package-publish.yml</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Workflow</th>
+<th>Release tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NuvTools.Payment</code></td>
+<td><code>payment-publish.yml</code></td>
+<td><code>payment-vX.Y.Z</code></td>
+</tr>
+<tr>
+<td><code>NuvTools.Payment.Stripe.ApiClient</code></td>
+<td><code>stripe-publish.yml</code></td>
+<td><code>stripe-vX.Y.Z</code></td>
+</tr>
+<tr>
+<td><code>NuvTools.Payment.BancoDoBrasil.ApiClient</code></td>
+<td><code>bancodobrasil-publish.yml</code></td>
+<td><code>bancodobrasil-vX.Y.Z</code></td>
+</tr>
+<tr>
+<td><code>NuvTools.Payment.Omie.ApiClient</code></td>
+<td><code>omie-publish.yml</code></td>
+<td><code>omie-vX.Y.Z</code></td>
+</tr>
+<tr>
+<td><code>NuvTools.Payment.Sicoob.ApiClient</code></td>
+<td><code>sicoob-publish.yml</code></td>
+<td><code>sicoob-vX.Y.Z</code></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Set the package's <code>&lt;Version&gt;</code> in its <code>.csproj</code> and merge it. That is the version that gets
+published; the workflow reads it and never computes one.</li>
+<li>Run the library's workflow by hand (<em>Actions → Stripe Publish → Run workflow</em>) with <em>push</em>
+checked.</li>
+<li>The workflow builds the solution with <code>-warnaserror</code>, runs the tests, takes <strong>that package only</strong>
+from the build output, verifies it carries its README, licence, icon, symbols and every target
+framework, and then waits for approval on the <code>nuget</code> GitHub Environment before pushing.</li>
+<li><strong>After the push succeeds, the workflow tags the commit</strong> with the tag in the table above. The tag is a
+record of what is on nuget.org, never what starts a release, so it cannot exist for a version
+that did not get there. A run whose tag already exists stops before building: the version has
+been released and <code>&lt;Version&gt;</code> needs a bump.</li>
+</ol>
+<p><strong><code>NuvTools.Payment</code> goes first.</strong> The Stripe, Banco do Brasil and Sicoob clients reference it as a
+project, so each of their packages depends on whatever <code>&lt;Version&gt;</code> <code>NuvTools.Payment</code> has in that
+commit. The workflow checks that version is on nuget.org and refuses to push a client whose
+dependency is not there yet.</p>
+<p><strong>No API key is stored.</strong> The push uses nuget.org's trusted publishing: the job presents a GitHub
+OIDC token, nuget.org checks it against the policy registered for this repository and answers with a
+key that lives for one hour. The repository needs one secret, <code>NUGET_USER</code> — the nuget.org profile
+name the policy belongs to — and the policy itself, registered under <em>Trusted Publishing</em> on
+nuget.org with the owner <code>nuvtools</code>, the repository <code>nuvtools-payment</code>, the workflow file and the
+environment <code>nuget</code>.</p>
+<p>A version that is already on nuget.org is skipped, not replaced: the push uses <code>--skip-duplicate</code>,
+so re-running a release is harmless and publishing a change always needs a new <code>&lt;Version&gt;</code>.</p>
+<p>Run a library's workflow by hand with <em>push</em> unchecked for a dry run that stops after the
+verification.</p>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>© Nuv Tools · <a href="https://nuvtools.com/framework/">nuvtools.com</a> · MIT licence · Built with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

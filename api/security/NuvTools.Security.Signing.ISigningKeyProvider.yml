@@ -1,0 +1,287 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Security.Signing.ISigningKeyProvider
+  commentId: T:NuvTools.Security.Signing.ISigningKeyProvider
+  id: ISigningKeyProvider
+  parent: NuvTools.Security.Signing
+  children:
+  - NuvTools.Security.Signing.ISigningKeyProvider.GetSigningCredentialsAsync(System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: ISigningKeyProvider
+  nameWithType: ISigningKeyProvider
+  fullName: NuvTools.Security.Signing.ISigningKeyProvider
+  type: Interface
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Signing
+  summary: Supplies the keys a token issuer signs with, wherever they are kept.
+  remarks: >-
+    The contract is neutral on purpose: an issuer depends on this and on
+
+    <xref href="Microsoft.IdentityModel.Tokens.SigningCredentials" data-throw-if-not-resolved="false"></xref>, and the package that knows a particular key store — a vault, a
+
+    hardware module — implements it. Changing store is changing the registration.
+  example: []
+  syntax:
+    content: public interface ISigningKeyProvider
+    content.vb: Public Interface ISigningKeyProvider
+  derivedClasses:
+  - NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider
+- uid: NuvTools.Security.Signing.ISigningKeyProvider.GetSigningCredentialsAsync(System.Threading.CancellationToken)
+  commentId: M:NuvTools.Security.Signing.ISigningKeyProvider.GetSigningCredentialsAsync(System.Threading.CancellationToken)
+  id: GetSigningCredentialsAsync(System.Threading.CancellationToken)
+  parent: NuvTools.Security.Signing.ISigningKeyProvider
+  langs:
+  - csharp
+  - vb
+  name: GetSigningCredentialsAsync(CancellationToken)
+  nameWithType: ISigningKeyProvider.GetSigningCredentialsAsync(CancellationToken)
+  fullName: NuvTools.Security.Signing.ISigningKeyProvider.GetSigningCredentialsAsync(System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Signing
+  summary: Returns the current signing credentials.
+  example: []
+  syntax:
+    content: Task<IReadOnlyList<SigningCredentials>> GetSigningCredentialsAsync(CancellationToken cancellationToken = default)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancels the lookup.
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Microsoft.IdentityModel.Tokens.SigningCredentials}}
+      description: >-
+        The credentials in order of preference: the first is the one to sign with, and every one
+
+        of them must be published, because tokens signed by the others may still be in use.
+
+        Never empty.
+    content.vb: Function GetSigningCredentialsAsync(cancellationToken As CancellationToken = Nothing) As Task(Of IReadOnlyList(Of SigningCredentials))
+  overload: NuvTools.Security.Signing.ISigningKeyProvider.GetSigningCredentialsAsync*
+references:
+- uid: Microsoft.IdentityModel.Tokens.SigningCredentials
+  commentId: T:Microsoft.IdentityModel.Tokens.SigningCredentials
+  parent: Microsoft.IdentityModel.Tokens
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.identitymodel.tokens.signingcredentials
+  name: SigningCredentials
+  nameWithType: SigningCredentials
+  fullName: Microsoft.IdentityModel.Tokens.SigningCredentials
+- uid: NuvTools.Security.Signing
+  commentId: N:NuvTools.Security.Signing
+  name: NuvTools.Security.Signing
+  nameWithType: NuvTools.Security.Signing
+  fullName: NuvTools.Security.Signing
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.Signing
+    name: Signing
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.Signing
+    name: Signing
+- uid: Microsoft.IdentityModel.Tokens
+  commentId: N:Microsoft.IdentityModel.Tokens
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.IdentityModel.Tokens
+  nameWithType: Microsoft.IdentityModel.Tokens
+  fullName: Microsoft.IdentityModel.Tokens
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.IdentityModel
+    name: IdentityModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.identitymodel
+  - name: .
+  - uid: Microsoft.IdentityModel.Tokens
+    name: Tokens
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.identitymodel.tokens
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.IdentityModel
+    name: IdentityModel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.identitymodel
+  - name: .
+  - uid: Microsoft.IdentityModel.Tokens
+    name: Tokens
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.identitymodel.tokens
+- uid: NuvTools.Security.Signing.ISigningKeyProvider.GetSigningCredentialsAsync*
+  commentId: Overload:NuvTools.Security.Signing.ISigningKeyProvider.GetSigningCredentialsAsync
+  href: NuvTools.Security.Signing.ISigningKeyProvider.html#NuvTools_Security_Signing_ISigningKeyProvider_GetSigningCredentialsAsync_System_Threading_CancellationToken_
+  name: GetSigningCredentialsAsync
+  nameWithType: ISigningKeyProvider.GetSigningCredentialsAsync
+  fullName: NuvTools.Security.Signing.ISigningKeyProvider.GetSigningCredentialsAsync
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Microsoft.IdentityModel.Tokens.SigningCredentials}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Microsoft.IdentityModel.Tokens.SigningCredentials}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IReadOnlyList<SigningCredentials>>
+  nameWithType: Task<IReadOnlyList<SigningCredentials>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<Microsoft.IdentityModel.Tokens.SigningCredentials>>
+  nameWithType.vb: Task(Of IReadOnlyList(Of SigningCredentials))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IReadOnlyList(Of Microsoft.IdentityModel.Tokens.SigningCredentials))
+  name.vb: Task(Of IReadOnlyList(Of SigningCredentials))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: Microsoft.IdentityModel.Tokens.SigningCredentials
+    name: SigningCredentials
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.identitymodel.tokens.signingcredentials
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Microsoft.IdentityModel.Tokens.SigningCredentials
+    name: SigningCredentials
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.identitymodel.tokens.signingcredentials
+  - name: )
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

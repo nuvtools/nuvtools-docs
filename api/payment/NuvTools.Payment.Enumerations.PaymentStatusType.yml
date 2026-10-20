@@ -1,0 +1,146 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Payment.Enumerations.PaymentStatusType
+  commentId: T:NuvTools.Payment.Enumerations.PaymentStatusType
+  id: PaymentStatusType
+  parent: NuvTools.Payment.Enumerations
+  children:
+  - NuvTools.Payment.Enumerations.PaymentStatusType.Failed
+  - NuvTools.Payment.Enumerations.PaymentStatusType.Pending
+  - NuvTools.Payment.Enumerations.PaymentStatusType.RequiresAction
+  - NuvTools.Payment.Enumerations.PaymentStatusType.Succeeded
+  langs:
+  - csharp
+  - vb
+  name: PaymentStatusType
+  nameWithType: PaymentStatusType
+  fullName: NuvTools.Payment.Enumerations.PaymentStatusType
+  type: Enum
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.Enumerations
+  summary: What became of one payment, in the few outcomes a caller can act on.
+  remarks: >-
+    Providers report far more states than this, and they all name them differently. These four are
+
+    the ones that change what the caller does next, so a provider client maps its own vocabulary onto
+
+    them and keeps the rest to itself.
+  example: []
+  syntax:
+    content: public enum PaymentStatusType
+    content.vb: Public Enum PaymentStatusType
+- uid: NuvTools.Payment.Enumerations.PaymentStatusType.Pending
+  commentId: F:NuvTools.Payment.Enumerations.PaymentStatusType.Pending
+  id: Pending
+  parent: NuvTools.Payment.Enumerations.PaymentStatusType
+  langs:
+  - csharp
+  - vb
+  name: Pending
+  nameWithType: PaymentStatusType.Pending
+  fullName: NuvTools.Payment.Enumerations.PaymentStatusType.Pending
+  type: Field
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.Enumerations
+  summary: 'Taken, not settled: the provider has it and has not said yes or no yet.'
+  example: []
+  syntax:
+    content: Pending = 1
+    return:
+      type: NuvTools.Payment.Enumerations.PaymentStatusType
+- uid: NuvTools.Payment.Enumerations.PaymentStatusType.Succeeded
+  commentId: F:NuvTools.Payment.Enumerations.PaymentStatusType.Succeeded
+  id: Succeeded
+  parent: NuvTools.Payment.Enumerations.PaymentStatusType
+  langs:
+  - csharp
+  - vb
+  name: Succeeded
+  nameWithType: PaymentStatusType.Succeeded
+  fullName: NuvTools.Payment.Enumerations.PaymentStatusType.Succeeded
+  type: Field
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.Enumerations
+  summary: The money arrived. The only outcome that clears a debt.
+  example: []
+  syntax:
+    content: Succeeded = 2
+    return:
+      type: NuvTools.Payment.Enumerations.PaymentStatusType
+- uid: NuvTools.Payment.Enumerations.PaymentStatusType.RequiresAction
+  commentId: F:NuvTools.Payment.Enumerations.PaymentStatusType.RequiresAction
+  id: RequiresAction
+  parent: NuvTools.Payment.Enumerations.PaymentStatusType
+  langs:
+  - csharp
+  - vb
+  name: RequiresAction
+  nameWithType: PaymentStatusType.RequiresAction
+  fullName: NuvTools.Payment.Enumerations.PaymentStatusType.RequiresAction
+  type: Field
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.Enumerations
+  summary: >-
+    The customer has to finish it — a card asking for its owner to be present, typically. Not a
+
+    refusal: charging again would be charging twice.
+  example: []
+  syntax:
+    content: RequiresAction = 3
+    return:
+      type: NuvTools.Payment.Enumerations.PaymentStatusType
+- uid: NuvTools.Payment.Enumerations.PaymentStatusType.Failed
+  commentId: F:NuvTools.Payment.Enumerations.PaymentStatusType.Failed
+  id: Failed
+  parent: NuvTools.Payment.Enumerations.PaymentStatusType
+  langs:
+  - csharp
+  - vb
+  name: Failed
+  nameWithType: PaymentStatusType.Failed
+  fullName: NuvTools.Payment.Enumerations.PaymentStatusType.Failed
+  type: Field
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.Enumerations
+  summary: Refused, and nothing was taken. Retrying needs a new attempt.
+  example: []
+  syntax:
+    content: Failed = 4
+    return:
+      type: NuvTools.Payment.Enumerations.PaymentStatusType
+references:
+- uid: NuvTools.Payment.Enumerations
+  commentId: N:NuvTools.Payment.Enumerations
+  name: NuvTools.Payment.Enumerations
+  nameWithType: NuvTools.Payment.Enumerations
+  fullName: NuvTools.Payment.Enumerations
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Enumerations
+    name: Enumerations
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Enumerations
+    name: Enumerations
+- uid: NuvTools.Payment.Enumerations.PaymentStatusType
+  commentId: T:NuvTools.Payment.Enumerations.PaymentStatusType
+  parent: NuvTools.Payment.Enumerations
+  href: NuvTools.Payment.Enumerations.PaymentStatusType.html
+  name: PaymentStatusType
+  nameWithType: PaymentStatusType
+  fullName: NuvTools.Payment.Enumerations.PaymentStatusType

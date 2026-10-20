@@ -1,0 +1,907 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider
+  commentId: T:NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider
+  id: OmieServiceCatalogProvider
+  parent: NuvTools.Payment.Omie.ApiClient.Services
+  children:
+  - NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.#ctor(NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient,Microsoft.Extensions.Caching.Memory.IMemoryCache)
+  - NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.GetByCodeAsync(System.Boolean,System.Threading.CancellationToken)
+  - NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.GetByServiceCodeAsync(System.Threading.CancellationToken)
+  - NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.GetServiceDetailAsync(System.Int64,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: OmieServiceCatalogProvider
+  nameWithType: OmieServiceCatalogProvider
+  fullName: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider
+  type: Class
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.Services
+  summary: >-
+    Omie service catalog, read whole (<code>ListarCadastroServico</code>, paginated) and indexed by the business code
+
+    (<code>cCodigo</code>) — the code applications store in their own configuration. This is how the <code>nCodServico</code>,
+
+    the description and the unit price of a service are discovered: Omie exposes no search by <code>cCodigo</code>, so the
+
+    catalog is listed and searched in memory.
+
+
+    <p>
+
+    The result is cached for <xref href="NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.CacheDuration" data-throw-if-not-resolved="false"></xref> because Omie refuses repeated <code>ListarCadastroServico</code>
+
+    calls in a short window ("Consumo redundante detectado") — without the cache, opening a screen and generating a
+
+    service order right after would drop the second call.
+
+    </p>
+  example: []
+  syntax:
+    content: public class OmieServiceCatalogProvider
+    content.vb: Public Class OmieServiceCatalogProvider
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.#ctor(NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient,Microsoft.Extensions.Caching.Memory.IMemoryCache)
+  commentId: M:NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.#ctor(NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient,Microsoft.Extensions.Caching.Memory.IMemoryCache)
+  id: '#ctor(NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient,Microsoft.Extensions.Caching.Memory.IMemoryCache)'
+  parent: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider
+  langs:
+  - csharp
+  - vb
+  name: OmieServiceCatalogProvider(IOmieApiClient, IMemoryCache)
+  nameWithType: OmieServiceCatalogProvider.OmieServiceCatalogProvider(IOmieApiClient, IMemoryCache)
+  fullName: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.OmieServiceCatalogProvider(NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient, Microsoft.Extensions.Caching.Memory.IMemoryCache)
+  type: Constructor
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.Services
+  summary: >-
+    Omie service catalog, read whole (<code>ListarCadastroServico</code>, paginated) and indexed by the business code
+
+    (<code>cCodigo</code>) — the code applications store in their own configuration. This is how the <code>nCodServico</code>,
+
+    the description and the unit price of a service are discovered: Omie exposes no search by <code>cCodigo</code>, so the
+
+    catalog is listed and searched in memory.
+
+
+    <p>
+
+    The result is cached for <xref href="NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.CacheDuration" data-throw-if-not-resolved="false"></xref> because Omie refuses repeated <code>ListarCadastroServico</code>
+
+    calls in a short window ("Consumo redundante detectado") — without the cache, opening a screen and generating a
+
+    service order right after would drop the second call.
+
+    </p>
+  example: []
+  syntax:
+    content: public OmieServiceCatalogProvider(IOmieApiClient omie, IMemoryCache cache)
+    parameters:
+    - id: omie
+      type: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient
+    - id: cache
+      type: Microsoft.Extensions.Caching.Memory.IMemoryCache
+    content.vb: Public Sub New(omie As IOmieApiClient, cache As IMemoryCache)
+  overload: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.#ctor*
+  nameWithType.vb: OmieServiceCatalogProvider.New(IOmieApiClient, IMemoryCache)
+  fullName.vb: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.New(NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient, Microsoft.Extensions.Caching.Memory.IMemoryCache)
+  name.vb: New(IOmieApiClient, IMemoryCache)
+- uid: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.GetByCodeAsync(System.Boolean,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.GetByCodeAsync(System.Boolean,System.Threading.CancellationToken)
+  id: GetByCodeAsync(System.Boolean,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider
+  langs:
+  - csharp
+  - vb
+  name: GetByCodeAsync(bool, CancellationToken)
+  nameWithType: OmieServiceCatalogProvider.GetByCodeAsync(bool, CancellationToken)
+  fullName: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.GetByCodeAsync(bool, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.Services
+  summary: >-
+    Catalog indexed by <code>cCodigo</code>. With <code class="paramref">forceRefresh</code> the cache is ignored and rewritten
+
+    with whatever Omie returns.
+  example: []
+  syntax:
+    content: public Task<IResult<IReadOnlyDictionary<string, OmieServiceInfo>>> GetByCodeAsync(bool forceRefresh, CancellationToken cancellationToken)
+    parameters:
+    - id: forceRefresh
+      type: System.Boolean
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.Collections.Generic.IReadOnlyDictionary{System.String,NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInfo}}}
+    content.vb: Public Function GetByCodeAsync(forceRefresh As Boolean, cancellationToken As CancellationToken) As Task(Of IResult(Of IReadOnlyDictionary(Of String, OmieServiceInfo)))
+  overload: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.GetByCodeAsync*
+  nameWithType.vb: OmieServiceCatalogProvider.GetByCodeAsync(Boolean, CancellationToken)
+  fullName.vb: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.GetByCodeAsync(Boolean, System.Threading.CancellationToken)
+  name.vb: GetByCodeAsync(Boolean, CancellationToken)
+- uid: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.GetServiceDetailAsync(System.Int64,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.GetServiceDetailAsync(System.Int64,System.Threading.CancellationToken)
+  id: GetServiceDetailAsync(System.Int64,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider
+  langs:
+  - csharp
+  - vb
+  name: GetServiceDetailAsync(long, CancellationToken)
+  nameWithType: OmieServiceCatalogProvider.GetServiceDetailAsync(long, CancellationToken)
+  fullName: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.GetServiceDetailAsync(long, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.Services
+  summary: >-
+    Full registration of a service (<code>ConsultarCadastroServico</code>) — it carries what the listing does not and
+
+    the service order inclusion requires: LC 116, municipal code and tax classification. Cached per service,
+
+    because the same two or three services repeat across every client.
+  example: []
+  syntax:
+    content: public Task<IResult<OmieServiceDetail>> GetServiceDetailAsync(long serviceCode, CancellationToken cancellationToken)
+    parameters:
+    - id: serviceCode
+      type: System.Int64
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail}}
+    content.vb: Public Function GetServiceDetailAsync(serviceCode As Long, cancellationToken As CancellationToken) As Task(Of IResult(Of OmieServiceDetail))
+  overload: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.GetServiceDetailAsync*
+  nameWithType.vb: OmieServiceCatalogProvider.GetServiceDetailAsync(Long, CancellationToken)
+  fullName.vb: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.GetServiceDetailAsync(Long, System.Threading.CancellationToken)
+  name.vb: GetServiceDetailAsync(Long, CancellationToken)
+- uid: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.GetByServiceCodeAsync(System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.GetByServiceCodeAsync(System.Threading.CancellationToken)
+  id: GetByServiceCodeAsync(System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider
+  langs:
+  - csharp
+  - vb
+  name: GetByServiceCodeAsync(CancellationToken)
+  nameWithType: OmieServiceCatalogProvider.GetByServiceCodeAsync(CancellationToken)
+  fullName: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.GetByServiceCodeAsync(System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.Services
+  summary: >-
+    The same catalog indexed by the internal identifier (<code>nCodServico</code>) — the way back, used when reading a
+
+    service order from Omie, where items carry only the <code>nCodServico</code> and the caller needs the service name.
+  example: []
+  syntax:
+    content: public Task<IResult<IReadOnlyDictionary<long, OmieServiceInfo>>> GetByServiceCodeAsync(CancellationToken cancellationToken)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.Collections.Generic.IReadOnlyDictionary{System.Int64,NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInfo}}}
+    content.vb: Public Function GetByServiceCodeAsync(cancellationToken As CancellationToken) As Task(Of IResult(Of IReadOnlyDictionary(Of Long, OmieServiceInfo)))
+  overload: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.GetByServiceCodeAsync*
+references:
+- uid: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.CacheDuration
+  commentId: F:NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.CacheDuration
+  name: CacheDuration
+  nameWithType: OmieServiceCatalogProvider.CacheDuration
+  fullName: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.CacheDuration
+- uid: NuvTools.Payment.Omie.ApiClient.Services
+  commentId: N:NuvTools.Payment.Omie.ApiClient.Services
+  name: NuvTools.Payment.Omie.ApiClient.Services
+  nameWithType: NuvTools.Payment.Omie.ApiClient.Services
+  fullName: NuvTools.Payment.Omie.ApiClient.Services
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Omie
+    name: Omie
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient
+    name: ApiClient
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient.Services
+    name: Services
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Omie
+    name: Omie
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient
+    name: ApiClient
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient.Services
+    name: Services
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.#ctor*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.#ctor
+  href: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.html#NuvTools_Payment_Omie_ApiClient_Services_OmieServiceCatalogProvider__ctor_NuvTools_Payment_Omie_ApiClient_Contracts_IOmieApiClient_Microsoft_Extensions_Caching_Memory_IMemoryCache_
+  name: OmieServiceCatalogProvider
+  nameWithType: OmieServiceCatalogProvider.OmieServiceCatalogProvider
+  fullName: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.OmieServiceCatalogProvider
+  nameWithType.vb: OmieServiceCatalogProvider.New
+  fullName.vb: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.New
+  name.vb: New
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient
+  commentId: T:NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient
+  parent: NuvTools.Payment.Omie.ApiClient.Contracts
+  href: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient.html
+  name: IOmieApiClient
+  nameWithType: IOmieApiClient
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts.IOmieApiClient
+- uid: Microsoft.Extensions.Caching.Memory.IMemoryCache
+  commentId: T:Microsoft.Extensions.Caching.Memory.IMemoryCache
+  parent: Microsoft.Extensions.Caching.Memory
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.caching.memory.imemorycache
+  name: IMemoryCache
+  nameWithType: IMemoryCache
+  fullName: Microsoft.Extensions.Caching.Memory.IMemoryCache
+- uid: NuvTools.Payment.Omie.ApiClient.Contracts
+  commentId: N:NuvTools.Payment.Omie.ApiClient.Contracts
+  name: NuvTools.Payment.Omie.ApiClient.Contracts
+  nameWithType: NuvTools.Payment.Omie.ApiClient.Contracts
+  fullName: NuvTools.Payment.Omie.ApiClient.Contracts
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Omie
+    name: Omie
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient
+    name: ApiClient
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient.Contracts
+    name: Contracts
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Omie
+    name: Omie
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient
+    name: ApiClient
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient.Contracts
+    name: Contracts
+- uid: Microsoft.Extensions.Caching.Memory
+  commentId: N:Microsoft.Extensions.Caching.Memory
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Caching.Memory
+  nameWithType: Microsoft.Extensions.Caching.Memory
+  fullName: Microsoft.Extensions.Caching.Memory
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Caching
+    name: Caching
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.caching
+  - name: .
+  - uid: Microsoft.Extensions.Caching.Memory
+    name: Memory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.caching.memory
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Caching
+    name: Caching
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.caching
+  - name: .
+  - uid: Microsoft.Extensions.Caching.Memory
+    name: Memory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.caching.memory
+- uid: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.GetByCodeAsync*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.GetByCodeAsync
+  href: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.html#NuvTools_Payment_Omie_ApiClient_Services_OmieServiceCatalogProvider_GetByCodeAsync_System_Boolean_System_Threading_CancellationToken_
+  name: GetByCodeAsync
+  nameWithType: OmieServiceCatalogProvider.GetByCodeAsync
+  fullName: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.GetByCodeAsync
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.Collections.Generic.IReadOnlyDictionary{System.String,NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInfo}}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.Collections.Generic.IReadOnlyDictionary{System.String,NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInfo}}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<IReadOnlyDictionary<string, OmieServiceInfo>>>
+  nameWithType: Task<IResult<IReadOnlyDictionary<string, OmieServiceInfo>>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<System.Collections.Generic.IReadOnlyDictionary<string, NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInfo>>>
+  nameWithType.vb: Task(Of IResult(Of IReadOnlyDictionary(Of String, OmieServiceInfo)))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of System.Collections.Generic.IReadOnlyDictionary(Of String, NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInfo)))
+  name.vb: Task(Of IResult(Of IReadOnlyDictionary(Of String, OmieServiceInfo)))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInfo
+    name: OmieServiceInfo
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInfo.html
+  - name: '>'
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInfo
+    name: OmieServiceInfo
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInfo.html
+  - name: )
+  - name: )
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.GetServiceDetailAsync*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.GetServiceDetailAsync
+  href: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.html#NuvTools_Payment_Omie_ApiClient_Services_OmieServiceCatalogProvider_GetServiceDetailAsync_System_Int64_System_Threading_CancellationToken_
+  name: GetServiceDetailAsync
+  nameWithType: OmieServiceCatalogProvider.GetServiceDetailAsync
+  fullName: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.GetServiceDetailAsync
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long
+  nameWithType: long
+  fullName: long
+  nameWithType.vb: Long
+  fullName.vb: Long
+  name.vb: Long
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<OmieServiceDetail>>
+  nameWithType: Task<IResult<OmieServiceDetail>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail>>
+  nameWithType.vb: Task(Of IResult(Of OmieServiceDetail))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail))
+  name.vb: Task(Of IResult(Of OmieServiceDetail))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail
+    name: OmieServiceDetail
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail
+    name: OmieServiceDetail
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceDetail.html
+  - name: )
+  - name: )
+- uid: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.GetByServiceCodeAsync*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.GetByServiceCodeAsync
+  href: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.html#NuvTools_Payment_Omie_ApiClient_Services_OmieServiceCatalogProvider_GetByServiceCodeAsync_System_Threading_CancellationToken_
+  name: GetByServiceCodeAsync
+  nameWithType: OmieServiceCatalogProvider.GetByServiceCodeAsync
+  fullName: NuvTools.Payment.Omie.ApiClient.Services.OmieServiceCatalogProvider.GetByServiceCodeAsync
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.Collections.Generic.IReadOnlyDictionary{System.Int64,NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInfo}}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.Collections.Generic.IReadOnlyDictionary{System.Int64,NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInfo}}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<IReadOnlyDictionary<long, OmieServiceInfo>>>
+  nameWithType: Task<IResult<IReadOnlyDictionary<long, OmieServiceInfo>>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<System.Collections.Generic.IReadOnlyDictionary<long, NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInfo>>>
+  nameWithType.vb: Task(Of IResult(Of IReadOnlyDictionary(Of Long, OmieServiceInfo)))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of System.Collections.Generic.IReadOnlyDictionary(Of Long, NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInfo)))
+  name.vb: Task(Of IResult(Of IReadOnlyDictionary(Of Long, OmieServiceInfo)))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: <
+  - uid: System.Int64
+    name: long
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int64
+  - name: ','
+  - name: " "
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInfo
+    name: OmieServiceInfo
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInfo.html
+  - name: '>'
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int64
+    name: Long
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int64
+  - name: ','
+  - name: " "
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInfo
+    name: OmieServiceInfo
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInfo.html
+  - name: )
+  - name: )
+  - name: )

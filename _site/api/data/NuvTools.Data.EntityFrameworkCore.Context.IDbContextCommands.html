@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Interface IDbContextCommands | Nuv Tools Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Interface IDbContextCommands | Nuv Tools Framework ">
+      
+      <meta name="description" content="Defines common database context operations for transaction management, CRUD operations with Result pattern, and execution strategies.">
+      <link rel="icon" href="../../images/icon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/nuvtools-brand.svg" alt="Framework">
+            Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands">
+
+
+
+  <h1 id="NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands" data-uid="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands" class="text-break">
+Interface IDbContextCommands  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><span class="xref">NuvTools</span>.<span class="xref">Data</span>.<span class="xref">EntityFrameworkCore</span>.<a class="xref" href="NuvTools.Data.EntityFrameworkCore.Context.html">Context</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NuvTools.Data.EntityFrameworkCore.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Defines common database context operations for transaction management, CRUD operations with Result pattern, and execution strategies.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IDbContextCommands</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_CurrentTransaction_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CurrentTransaction*"></a>
+
+  <h3 id="NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_CurrentTransaction" data-uid="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CurrentTransaction">
+  CurrentTransaction
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the current active transaction, or null if no transaction is active.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IDbContextTransaction? CurrentTransaction { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.storage.idbcontexttransaction">IDbContextTransaction</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_AcquireTransactionLockAsync_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AcquireTransactionLockAsync*"></a>
+
+  <h3 id="NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_AcquireTransactionLockAsync_System_String_System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AcquireTransactionLockAsync(System.String,System.Threading.CancellationToken)">
+  AcquireTransactionLockAsync(string, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Acquires an exclusive, database-wide lock identified by <code class="paramref">name</code>, held until the current
+transaction commits or rolls back. Callers competing for the same name are serialized; different names
+never block each other.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task AcquireTransactionLockAsync(string name, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>name</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Lock name. Identifies what is being serialized, e.g. <code>&quot;contract-number:53&quot;</code>.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A cancellation token to observe while waiting for the task to complete.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>A task that completes once the lock is held.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_AcquireTransactionLockAsync_System_String_System_Threading_CancellationToken__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Use it to serialize a read-then-write that the schema alone cannot make atomic — allocating the next
+value of a per-tenant sequence, for instance, where every writer reads the same maximum and collides on a
+unique index. It is an advisory lock: it guards nothing by itself, only callers that ask for the same name.</p>
+<p><b>A transaction must be active</b> (see <a class="xref" href="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.html#NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_BeginTransactionAsync_System_Threading_CancellationToken_">BeginTransactionAsync(CancellationToken)</a>). Without one the lock is
+released as soon as the statement ends and protects nothing, so the call throws instead.</p>
+<p>The statement itself lives in the provider package — <code>pg_advisory_xact_lock</code> in
+<code>NuvTools.Data.EntityFrameworkCore.PostgreSQL</code>, <code>sp_getapplock</code> (LockOwner <code>Transaction</code>) in
+<code>NuvTools.Data.EntityFrameworkCore.SqlServer</code> — behind <a class="xref" href="NuvTools.Data.EntityFrameworkCore.Context.IDbContextTransactionLock.html">IDbContextTransactionLock</a>, and is
+registered by that package's <code>AddDatabase</code> helpers. With no such package in play (an in-memory context
+built by hand in a test) there is nothing to serialize and the call does nothing.</p>
+</div>
+
+
+
+
+  <a id="NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_AddAndSaveAsync_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveAsync*"></a>
+
+  <h3 id="NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_AddAndSaveAsync__2___0_System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveAsync``2(``0,System.Threading.CancellationToken)">
+  AddAndSaveAsync&lt;TEntity, TKey&gt;(TEntity, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Adds a new entity to the database and saves changes, returning the entity's primary key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IResult&lt;TKey&gt;&gt; AddAndSaveAsync&lt;TEntity, TKey&gt;(TEntity entity, CancellationToken cancellationToken = default) where TEntity : class</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entity</code> <span class="xref">TEntity</span></dt>
+    <dd><p>The entity to add.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A cancellation token to observe while waiting for the task to complete.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../foundation/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;TKey&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous operation, containing the result with the primary key.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TEntity</code></dt>
+    <dd><p>The type of the entity.</p>
+</dd>
+    <dt><code>TKey</code></dt>
+    <dd><p>The type of the primary key.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_AddAndSaveWithCompositeKeyAsync_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveWithCompositeKeyAsync*"></a>
+
+  <h3 id="NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_AddAndSaveWithCompositeKeyAsync__1___0_System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.AddAndSaveWithCompositeKeyAsync``1(``0,System.Threading.CancellationToken)">
+  AddAndSaveWithCompositeKeyAsync&lt;TEntity&gt;(TEntity, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Adds a new entity with a composite key to the database and saves changes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IResult&lt;object[]&gt;&gt; AddAndSaveWithCompositeKeyAsync&lt;TEntity&gt;(TEntity entity, CancellationToken cancellationToken = default) where TEntity : class</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entity</code> <span class="xref">TEntity</span></dt>
+    <dd><p>The entity to add.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A cancellation token to observe while waiting for the task to complete.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../foundation/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]&gt;&gt;</dt>
+    <dd><p>A task that represents the asynchronous operation, containing the result with the composite key values.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TEntity</code></dt>
+    <dd><p>The type of the entity.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_BeginTransactionAsync_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.BeginTransactionAsync*"></a>
+
+  <h3 id="NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_BeginTransactionAsync_System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.BeginTransactionAsync(System.Threading.CancellationToken)">
+  BeginTransactionAsync(CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Begins a new database transaction asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IDbContextTransaction&gt; BeginTransactionAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A cancellation token to observe while waiting for the task to complete.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.storage.idbcontexttransaction">IDbContextTransaction</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous operation, containing the database transaction.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_CommitTransactionAsync_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CommitTransactionAsync*"></a>
+
+  <h3 id="NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_CommitTransactionAsync_System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.CommitTransactionAsync(System.Threading.CancellationToken)">
+  CommitTransactionAsync(CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Commits the current transaction asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task CommitTransactionAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A cancellation token to observe while waiting for the task to complete.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>A task that represents the asynchronous operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_ExecuteWithStrategyAsync_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.ExecuteWithStrategyAsync*"></a>
+
+  <h3 id="NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_ExecuteWithStrategyAsync_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task__System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.ExecuteWithStrategyAsync(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},System.Threading.CancellationToken)">
+  ExecuteWithStrategyAsync(Func&lt;CancellationToken, Task&gt;, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Executes an action within the database execution strategy for connection resiliency.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task ExecuteWithStrategyAsync(Func&lt;CancellationToken, Task&gt; action, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a>&gt;</dt>
+    <dd><p>The action to execute within the strategy.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A cancellation token to observe while waiting for the task to complete.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>A task that represents the asynchronous operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <dl class="typelist seealso">
+    <dt>See Also</dt>
+    <dd>
+    <div><span><a href="https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency">https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency</a></span></div>
+    </dd>
+  </dl>
+
+
+  <a id="NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_ExecuteWithStrategyAsync_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.ExecuteWithStrategyAsync*"></a>
+
+  <h3 id="NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_ExecuteWithStrategyAsync__1_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task___0___System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.ExecuteWithStrategyAsync``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)">
+  ExecuteWithStrategyAsync&lt;T&gt;(Func&lt;CancellationToken, Task&lt;T&gt;&gt;, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Executes an action within the database execution strategy for connection resiliency and returns a result.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;T&gt; ExecuteWithStrategyAsync&lt;T&gt;(Func&lt;CancellationToken, Task&lt;T&gt;&gt; action, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-2">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T&gt;&gt;</dt>
+    <dd><p>The action to execute within the strategy.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A cancellation token to observe while waiting for the task to complete.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T&gt;</dt>
+    <dd><p>A task that represents the asynchronous operation, containing the result of the action.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The type of the result returned by the action.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <dl class="typelist seealso">
+    <dt>See Also</dt>
+    <dd>
+    <div><span><a href="https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency">https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency</a></span></div>
+    </dd>
+  </dl>
+
+
+  <a id="NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_RemoveAndSaveAsync_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RemoveAndSaveAsync*"></a>
+
+  <h3 id="NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_RemoveAndSaveAsync__1_System_Object___" data-uid="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RemoveAndSaveAsync``1(System.Object[])">
+  RemoveAndSaveAsync&lt;TEntity&gt;(params object[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Removes an entity from the database and saves changes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IResult&gt; RemoveAndSaveAsync&lt;TEntity&gt;(params object[] keyValues) where TEntity : class</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>keyValues</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
+    <dd><p>The primary key values of the entity to remove.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../foundation/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous operation, containing the result of the remove operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TEntity</code></dt>
+    <dd><p>The type of the entity.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_RemoveAndSaveAsync_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RemoveAndSaveAsync*"></a>
+
+  <h3 id="NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_RemoveAndSaveAsync__1_System_Object___System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RemoveAndSaveAsync``1(System.Object[],System.Threading.CancellationToken)">
+  RemoveAndSaveAsync&lt;TEntity&gt;(object[], CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Removes an entity from the database and saves changes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IResult&gt; RemoveAndSaveAsync&lt;TEntity&gt;(object[] keyValues, CancellationToken cancellationToken = default) where TEntity : class</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>keyValues</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
+    <dd><p>The primary key values of the entity to remove.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A cancellation token to observe while waiting for the task to complete.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../foundation/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous operation, containing the result of the remove operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TEntity</code></dt>
+    <dd><p>The type of the entity.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_RollbackTransactionAsync_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RollbackTransactionAsync*"></a>
+
+  <h3 id="NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_RollbackTransactionAsync_System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.RollbackTransactionAsync(System.Threading.CancellationToken)">
+  RollbackTransactionAsync(CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Rolls back the current transaction asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task RollbackTransactionAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A cancellation token to observe while waiting for the task to complete.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>A task that represents the asynchronous operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_SaveChangesAsync_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.SaveChangesAsync*"></a>
+
+  <h3 id="NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_SaveChangesAsync_System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.SaveChangesAsync(System.Threading.CancellationToken)">
+  SaveChangesAsync(CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Saves all changes made in this context to the database asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;int&gt; SaveChangesAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A cancellation token to observe while waiting for the task to complete.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous operation, containing the number of state entries written to the database.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_UpdateAndSaveAsync_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.UpdateAndSaveAsync*"></a>
+
+  <h3 id="NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_UpdateAndSaveAsync__1___0_System_Object___" data-uid="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.UpdateAndSaveAsync``1(``0,System.Object[])">
+  UpdateAndSaveAsync&lt;TEntity&gt;(TEntity, params object[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Updates an existing entity in the database and saves changes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IResult&gt; UpdateAndSaveAsync&lt;TEntity&gt;(TEntity entity, params object[] keyValues) where TEntity : class</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entity</code> <span class="xref">TEntity</span></dt>
+    <dd><p>The entity with updated values.</p>
+</dd>
+    <dt><code>keyValues</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
+    <dd><p>The primary key values of the entity to update.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../foundation/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous operation, containing the result of the update operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TEntity</code></dt>
+    <dd><p>The type of the entity.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_UpdateAndSaveAsync_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.UpdateAndSaveAsync*"></a>
+
+  <h3 id="NuvTools_Data_EntityFrameworkCore_Context_IDbContextCommands_UpdateAndSaveAsync__1___0_System_Object___System_Threading_CancellationToken_" data-uid="NuvTools.Data.EntityFrameworkCore.Context.IDbContextCommands.UpdateAndSaveAsync``1(``0,System.Object[],System.Threading.CancellationToken)">
+  UpdateAndSaveAsync&lt;TEntity&gt;(TEntity, object[], CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Updates an existing entity in the database and saves changes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IResult&gt; UpdateAndSaveAsync&lt;TEntity&gt;(TEntity entity, object[] keyValues, CancellationToken cancellationToken = default) where TEntity : class</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>entity</code> <span class="xref">TEntity</span></dt>
+    <dd><p>The entity with updated values.</p>
+</dd>
+    <dt><code>keyValues</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</dt>
+    <dd><p>The primary key values of the entity to update.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>A cancellation token to observe while waiting for the task to complete.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../foundation/NuvTools.Common.ResultWrapper.IResult.html">IResult</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous operation, containing the result of the update operation.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TEntity</code></dt>
+    <dd><p>The type of the entity.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>© Nuv Tools · <a href="https://nuvtools.com/framework/">nuvtools.com</a> · MIT licence · Built with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,561 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Storage.FileDescriptor
+  commentId: T:NuvTools.Storage.FileDescriptor
+  id: FileDescriptor
+  parent: NuvTools.Storage
+  children:
+  - NuvTools.Storage.FileDescriptor.#ctor(System.String,System.Int64,System.Nullable{System.DateTimeOffset},System.String)
+  - NuvTools.Storage.FileDescriptor.ContentType
+  - NuvTools.Storage.FileDescriptor.LastModified
+  - NuvTools.Storage.FileDescriptor.Path
+  - NuvTools.Storage.FileDescriptor.Size
+  langs:
+  - csharp
+  - vb
+  name: FileDescriptor
+  nameWithType: FileDescriptor
+  fullName: NuvTools.Storage.FileDescriptor
+  type: Class
+  assemblies:
+  - NuvTools.Storage
+  namespace: NuvTools.Storage
+  summary: Describes a file in the storage repository without its content, as a listing returns it.
+  example: []
+  syntax:
+    content: 'public sealed record FileDescriptor : IEquatable<FileDescriptor>'
+    content.vb: Public NotInheritable Class FileDescriptor Implements IEquatable(Of FileDescriptor)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{NuvTools.Storage.FileDescriptor}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NuvTools.Storage.FileDescriptor.#ctor(System.String,System.Int64,System.Nullable{System.DateTimeOffset},System.String)
+  commentId: M:NuvTools.Storage.FileDescriptor.#ctor(System.String,System.Int64,System.Nullable{System.DateTimeOffset},System.String)
+  id: '#ctor(System.String,System.Int64,System.Nullable{System.DateTimeOffset},System.String)'
+  parent: NuvTools.Storage.FileDescriptor
+  langs:
+  - csharp
+  - vb
+  name: FileDescriptor(string, long, DateTimeOffset?, string?)
+  nameWithType: FileDescriptor.FileDescriptor(string, long, DateTimeOffset?, string?)
+  fullName: NuvTools.Storage.FileDescriptor.FileDescriptor(string, long, System.DateTimeOffset?, string?)
+  type: Constructor
+  assemblies:
+  - NuvTools.Storage
+  namespace: NuvTools.Storage
+  summary: Describes a file in the storage repository without its content, as a listing returns it.
+  example: []
+  syntax:
+    content: public FileDescriptor(string Path, long Size, DateTimeOffset? LastModified, string? ContentType)
+    parameters:
+    - id: Path
+      type: System.String
+      description: The full path of the file in the repository, which is also its identifier.
+    - id: Size
+      type: System.Int64
+      description: The size of the file, in bytes.
+    - id: LastModified
+      type: System.Nullable{System.DateTimeOffset}
+      description: When the file was last written, if the provider reports it.
+    - id: ContentType
+      type: System.String
+      description: The MIME type of the file, if the provider reports it.
+    content.vb: Public Sub New(Path As String, Size As Long, LastModified As DateTimeOffset?, ContentType As String)
+  overload: NuvTools.Storage.FileDescriptor.#ctor*
+  nameWithType.vb: FileDescriptor.New(String, Long, DateTimeOffset?, String)
+  fullName.vb: NuvTools.Storage.FileDescriptor.New(String, Long, System.DateTimeOffset?, String)
+  name.vb: New(String, Long, DateTimeOffset?, String)
+- uid: NuvTools.Storage.FileDescriptor.Path
+  commentId: P:NuvTools.Storage.FileDescriptor.Path
+  id: Path
+  parent: NuvTools.Storage.FileDescriptor
+  langs:
+  - csharp
+  - vb
+  name: Path
+  nameWithType: FileDescriptor.Path
+  fullName: NuvTools.Storage.FileDescriptor.Path
+  type: Property
+  assemblies:
+  - NuvTools.Storage
+  namespace: NuvTools.Storage
+  summary: The full path of the file in the repository, which is also its identifier.
+  example: []
+  syntax:
+    content: public string Path { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Path As String
+  overload: NuvTools.Storage.FileDescriptor.Path*
+- uid: NuvTools.Storage.FileDescriptor.Size
+  commentId: P:NuvTools.Storage.FileDescriptor.Size
+  id: Size
+  parent: NuvTools.Storage.FileDescriptor
+  langs:
+  - csharp
+  - vb
+  name: Size
+  nameWithType: FileDescriptor.Size
+  fullName: NuvTools.Storage.FileDescriptor.Size
+  type: Property
+  assemblies:
+  - NuvTools.Storage
+  namespace: NuvTools.Storage
+  summary: The size of the file, in bytes.
+  example: []
+  syntax:
+    content: public long Size { get; init; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public Property Size As Long
+  overload: NuvTools.Storage.FileDescriptor.Size*
+- uid: NuvTools.Storage.FileDescriptor.LastModified
+  commentId: P:NuvTools.Storage.FileDescriptor.LastModified
+  id: LastModified
+  parent: NuvTools.Storage.FileDescriptor
+  langs:
+  - csharp
+  - vb
+  name: LastModified
+  nameWithType: FileDescriptor.LastModified
+  fullName: NuvTools.Storage.FileDescriptor.LastModified
+  type: Property
+  assemblies:
+  - NuvTools.Storage
+  namespace: NuvTools.Storage
+  summary: When the file was last written, if the provider reports it.
+  example: []
+  syntax:
+    content: public DateTimeOffset? LastModified { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTimeOffset}
+    content.vb: Public Property LastModified As DateTimeOffset?
+  overload: NuvTools.Storage.FileDescriptor.LastModified*
+- uid: NuvTools.Storage.FileDescriptor.ContentType
+  commentId: P:NuvTools.Storage.FileDescriptor.ContentType
+  id: ContentType
+  parent: NuvTools.Storage.FileDescriptor
+  langs:
+  - csharp
+  - vb
+  name: ContentType
+  nameWithType: FileDescriptor.ContentType
+  fullName: NuvTools.Storage.FileDescriptor.ContentType
+  type: Property
+  assemblies:
+  - NuvTools.Storage
+  namespace: NuvTools.Storage
+  summary: The MIME type of the file, if the provider reports it.
+  example: []
+  syntax:
+    content: public string? ContentType { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ContentType As String
+  overload: NuvTools.Storage.FileDescriptor.ContentType*
+references:
+- uid: NuvTools.Storage
+  commentId: N:NuvTools.Storage
+  name: NuvTools.Storage
+  nameWithType: NuvTools.Storage
+  fullName: NuvTools.Storage
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Storage
+    name: Storage
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Storage
+    name: Storage
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{NuvTools.Storage.FileDescriptor}
+  commentId: T:System.IEquatable{NuvTools.Storage.FileDescriptor}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<FileDescriptor>
+  nameWithType: IEquatable<FileDescriptor>
+  fullName: System.IEquatable<NuvTools.Storage.FileDescriptor>
+  nameWithType.vb: IEquatable(Of FileDescriptor)
+  fullName.vb: System.IEquatable(Of NuvTools.Storage.FileDescriptor)
+  name.vb: IEquatable(Of FileDescriptor)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: NuvTools.Storage.FileDescriptor
+    name: FileDescriptor
+    href: NuvTools.Storage.FileDescriptor.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Storage.FileDescriptor
+    name: FileDescriptor
+    href: NuvTools.Storage.FileDescriptor.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NuvTools.Storage.FileDescriptor.#ctor*
+  commentId: Overload:NuvTools.Storage.FileDescriptor.#ctor
+  href: NuvTools.Storage.FileDescriptor.html#NuvTools_Storage_FileDescriptor__ctor_System_String_System_Int64_System_Nullable_System_DateTimeOffset__System_String_
+  name: FileDescriptor
+  nameWithType: FileDescriptor.FileDescriptor
+  fullName: NuvTools.Storage.FileDescriptor.FileDescriptor
+  nameWithType.vb: FileDescriptor.New
+  fullName.vb: NuvTools.Storage.FileDescriptor.New
+  name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long
+  nameWithType: long
+  fullName: long
+  nameWithType.vb: Long
+  fullName.vb: Long
+  name.vb: Long
+- uid: System.Nullable{System.DateTimeOffset}
+  commentId: T:System.Nullable{System.DateTimeOffset}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.datetimeoffset
+  name: DateTimeOffset?
+  nameWithType: DateTimeOffset?
+  fullName: System.DateTimeOffset?
+  spec.csharp:
+  - uid: System.DateTimeOffset
+    name: DateTimeOffset
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetimeoffset
+  - name: '?'
+  spec.vb:
+  - uid: System.DateTimeOffset
+    name: DateTimeOffset
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetimeoffset
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NuvTools.Storage.FileDescriptor.Path*
+  commentId: Overload:NuvTools.Storage.FileDescriptor.Path
+  href: NuvTools.Storage.FileDescriptor.html#NuvTools_Storage_FileDescriptor_Path
+  name: Path
+  nameWithType: FileDescriptor.Path
+  fullName: NuvTools.Storage.FileDescriptor.Path
+- uid: NuvTools.Storage.FileDescriptor.Size*
+  commentId: Overload:NuvTools.Storage.FileDescriptor.Size
+  href: NuvTools.Storage.FileDescriptor.html#NuvTools_Storage_FileDescriptor_Size
+  name: Size
+  nameWithType: FileDescriptor.Size
+  fullName: NuvTools.Storage.FileDescriptor.Size
+- uid: NuvTools.Storage.FileDescriptor.LastModified*
+  commentId: Overload:NuvTools.Storage.FileDescriptor.LastModified
+  href: NuvTools.Storage.FileDescriptor.html#NuvTools_Storage_FileDescriptor_LastModified
+  name: LastModified
+  nameWithType: FileDescriptor.LastModified
+  fullName: NuvTools.Storage.FileDescriptor.LastModified
+- uid: NuvTools.Storage.FileDescriptor.ContentType*
+  commentId: Overload:NuvTools.Storage.FileDescriptor.ContentType
+  href: NuvTools.Storage.FileDescriptor.html#NuvTools_Storage_FileDescriptor_ContentType
+  name: ContentType
+  nameWithType: FileDescriptor.ContentType
+  fullName: NuvTools.Storage.FileDescriptor.ContentType

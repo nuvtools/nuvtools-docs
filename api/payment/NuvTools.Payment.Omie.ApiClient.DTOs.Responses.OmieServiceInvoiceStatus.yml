@@ -1,0 +1,734 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus
+  commentId: T:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus
+  id: OmieServiceInvoiceStatus
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  children:
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.#ctor(System.String,System.String,System.String,System.String,System.String,System.String)
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.BatchStatus
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.IsCancelled
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.IsIssued
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.IsRejected
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.Message
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.Number
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.RpsStatus
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.Url
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.VerificationCode
+  langs:
+  - csharp
+  - vb
+  name: OmieServiceInvoiceStatus
+  nameWithType: OmieServiceInvoiceStatus
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus
+  type: Class
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: >-
+    The service invoice (NFS-e) of a service order and the progress of the RPS it came from. Issuing is a process,
+
+    not an instant: Omie transmits the RPS and the city hall authorizes it later, so there is a window in which the
+
+    invoice exists as a request and has no number yet.
+  example: []
+  syntax:
+    content: 'public record OmieServiceInvoiceStatus : IEquatable<OmieServiceInvoiceStatus>'
+    content.vb: Public Class OmieServiceInvoiceStatus Implements IEquatable(Of OmieServiceInvoiceStatus)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.#ctor(System.String,System.String,System.String,System.String,System.String,System.String)
+  commentId: M:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.#ctor(System.String,System.String,System.String,System.String,System.String,System.String)
+  id: '#ctor(System.String,System.String,System.String,System.String,System.String,System.String)'
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus
+  langs:
+  - csharp
+  - vb
+  name: OmieServiceInvoiceStatus(string?, string?, string?, string?, string?, string?)
+  nameWithType: OmieServiceInvoiceStatus.OmieServiceInvoiceStatus(string?, string?, string?, string?, string?, string?)
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.OmieServiceInvoiceStatus(string?, string?, string?, string?, string?, string?)
+  type: Constructor
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: >-
+    The service invoice (NFS-e) of a service order and the progress of the RPS it came from. Issuing is a process,
+
+    not an instant: Omie transmits the RPS and the city hall authorizes it later, so there is a window in which the
+
+    invoice exists as a request and has no number yet.
+  example: []
+  syntax:
+    content: public OmieServiceInvoiceStatus(string? Number, string? RpsStatus, string? BatchStatus, string? VerificationCode, string? Url, string? Message)
+    parameters:
+    - id: Number
+      type: System.String
+      description: Number of the authorized NFS-e (<code>nNfse</code>). Empty until the city hall authorizes it.
+    - id: RpsStatus
+      type: System.String
+      description: RPS status (<code>cStatusRps</code>) — see <xref href="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieInvoiceRpsStatus" data-throw-if-not-resolved="false"></xref>.
+    - id: BatchStatus
+      type: System.String
+      description: Submission batch status (<code>cStatusLote</code>), using the same codes as the RPS.
+    - id: VerificationCode
+      type: System.String
+      description: NFS-e verification code (<code>cCodVerif</code>).
+    - id: Url
+      type: System.String
+      description: Link to the invoice on the city hall site (<code>cUrlNfse</code>).
+    - id: Message
+      type: System.String
+      description: City hall/Omie messages about the RPS, concatenated — the reason, when it was rejected.
+    content.vb: Public Sub New(Number As String, RpsStatus As String, BatchStatus As String, VerificationCode As String, Url As String, Message As String)
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.#ctor*
+  nameWithType.vb: OmieServiceInvoiceStatus.New(String, String, String, String, String, String)
+  fullName.vb: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.New(String, String, String, String, String, String)
+  name.vb: New(String, String, String, String, String, String)
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.Number
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.Number
+  id: Number
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus
+  langs:
+  - csharp
+  - vb
+  name: Number
+  nameWithType: OmieServiceInvoiceStatus.Number
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.Number
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: Number of the authorized NFS-e (<code>nNfse</code>). Empty until the city hall authorizes it.
+  example: []
+  syntax:
+    content: public string? Number { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Number As String
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.Number*
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.RpsStatus
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.RpsStatus
+  id: RpsStatus
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus
+  langs:
+  - csharp
+  - vb
+  name: RpsStatus
+  nameWithType: OmieServiceInvoiceStatus.RpsStatus
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.RpsStatus
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: RPS status (<code>cStatusRps</code>) — see <xref href="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieInvoiceRpsStatus" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public string? RpsStatus { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property RpsStatus As String
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.RpsStatus*
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.BatchStatus
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.BatchStatus
+  id: BatchStatus
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus
+  langs:
+  - csharp
+  - vb
+  name: BatchStatus
+  nameWithType: OmieServiceInvoiceStatus.BatchStatus
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.BatchStatus
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: Submission batch status (<code>cStatusLote</code>), using the same codes as the RPS.
+  example: []
+  syntax:
+    content: public string? BatchStatus { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property BatchStatus As String
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.BatchStatus*
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.VerificationCode
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.VerificationCode
+  id: VerificationCode
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus
+  langs:
+  - csharp
+  - vb
+  name: VerificationCode
+  nameWithType: OmieServiceInvoiceStatus.VerificationCode
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.VerificationCode
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: NFS-e verification code (<code>cCodVerif</code>).
+  example: []
+  syntax:
+    content: public string? VerificationCode { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property VerificationCode As String
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.VerificationCode*
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.Url
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.Url
+  id: Url
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus
+  langs:
+  - csharp
+  - vb
+  name: Url
+  nameWithType: OmieServiceInvoiceStatus.Url
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.Url
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: Link to the invoice on the city hall site (<code>cUrlNfse</code>).
+  example: []
+  syntax:
+    content: public string? Url { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Url As String
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.Url*
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.Message
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.Message
+  id: Message
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus
+  langs:
+  - csharp
+  - vb
+  name: Message
+  nameWithType: OmieServiceInvoiceStatus.Message
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.Message
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: City hall/Omie messages about the RPS, concatenated — the reason, when it was rejected.
+  example: []
+  syntax:
+    content: public string? Message { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Message As String
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.Message*
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.IsIssued
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.IsIssued
+  id: IsIssued
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus
+  langs:
+  - csharp
+  - vb
+  name: IsIssued
+  nameWithType: OmieServiceInvoiceStatus.IsIssued
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.IsIssued
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: 'The invoice is authorized: it has a number, which the city hall only grants at the end.'
+  example: []
+  syntax:
+    content: public bool IsIssued { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsIssued As Boolean
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.IsIssued*
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.IsRejected
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.IsRejected
+  id: IsRejected
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus
+  langs:
+  - csharp
+  - vb
+  name: IsRejected
+  nameWithType: OmieServiceInvoiceStatus.IsRejected
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.IsRejected
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: The city hall (or the batch) rejected the RPS. Without a registration fix there is no invoice.
+  example: []
+  syntax:
+    content: public bool IsRejected { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsRejected As Boolean
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.IsRejected*
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.IsCancelled
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.IsCancelled
+  id: IsCancelled
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus
+  langs:
+  - csharp
+  - vb
+  name: IsCancelled
+  nameWithType: OmieServiceInvoiceStatus.IsCancelled
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.IsCancelled
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: The RPS was cancelled — no invoice will come out of it.
+  example: []
+  syntax:
+    content: public bool IsCancelled { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsCancelled As Boolean
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.IsCancelled*
+references:
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieInvoiceRpsStatus
+  commentId: T:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieInvoiceRpsStatus
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieInvoiceRpsStatus.html
+  name: OmieInvoiceRpsStatus
+  nameWithType: OmieInvoiceRpsStatus
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieInvoiceRpsStatus
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  commentId: N:NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  name: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  nameWithType: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Omie
+    name: Omie
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient
+    name: ApiClient
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs
+    name: DTOs
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+    name: Responses
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Omie
+    name: Omie
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient
+    name: ApiClient
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs
+    name: DTOs
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+    name: Responses
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus}
+  commentId: T:System.IEquatable{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<OmieServiceInvoiceStatus>
+  nameWithType: IEquatable<OmieServiceInvoiceStatus>
+  fullName: System.IEquatable<NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus>
+  nameWithType.vb: IEquatable(Of OmieServiceInvoiceStatus)
+  fullName.vb: System.IEquatable(Of NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus)
+  name.vb: IEquatable(Of OmieServiceInvoiceStatus)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus
+    name: OmieServiceInvoiceStatus
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus
+    name: OmieServiceInvoiceStatus
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.#ctor*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.#ctor
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceInvoiceStatus__ctor_System_String_System_String_System_String_System_String_System_String_System_String_
+  name: OmieServiceInvoiceStatus
+  nameWithType: OmieServiceInvoiceStatus.OmieServiceInvoiceStatus
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.OmieServiceInvoiceStatus
+  nameWithType.vb: OmieServiceInvoiceStatus.New
+  fullName.vb: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.New
+  name.vb: New
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.Number*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.Number
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceInvoiceStatus_Number
+  name: Number
+  nameWithType: OmieServiceInvoiceStatus.Number
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.Number
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.RpsStatus*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.RpsStatus
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceInvoiceStatus_RpsStatus
+  name: RpsStatus
+  nameWithType: OmieServiceInvoiceStatus.RpsStatus
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.RpsStatus
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.BatchStatus*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.BatchStatus
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceInvoiceStatus_BatchStatus
+  name: BatchStatus
+  nameWithType: OmieServiceInvoiceStatus.BatchStatus
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.BatchStatus
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.VerificationCode*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.VerificationCode
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceInvoiceStatus_VerificationCode
+  name: VerificationCode
+  nameWithType: OmieServiceInvoiceStatus.VerificationCode
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.VerificationCode
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.Url*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.Url
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceInvoiceStatus_Url
+  name: Url
+  nameWithType: OmieServiceInvoiceStatus.Url
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.Url
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.Message*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.Message
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceInvoiceStatus_Message
+  name: Message
+  nameWithType: OmieServiceInvoiceStatus.Message
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.Message
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.IsIssued*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.IsIssued
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceInvoiceStatus_IsIssued
+  name: IsIssued
+  nameWithType: OmieServiceInvoiceStatus.IsIssued
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.IsIssued
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.IsRejected*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.IsRejected
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceInvoiceStatus_IsRejected
+  name: IsRejected
+  nameWithType: OmieServiceInvoiceStatus.IsRejected
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.IsRejected
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.IsCancelled*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.IsCancelled
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieServiceInvoiceStatus_IsCancelled
+  name: IsCancelled
+  nameWithType: OmieServiceInvoiceStatus.IsCancelled
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieServiceInvoiceStatus.IsCancelled

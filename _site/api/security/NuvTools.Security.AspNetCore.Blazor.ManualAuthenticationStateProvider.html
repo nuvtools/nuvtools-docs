@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Class ManualAuthenticationStateProvider | Nuv Tools Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class ManualAuthenticationStateProvider | Nuv Tools Framework ">
+      
+      <meta name="description" content="Provides a manual implementation of  that manages user authentication state using JWT tokens stored in browser local storage.">
+      <link rel="icon" href="../../images/icon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/nuvtools-brand.svg" alt="Framework">
+            Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="NuvTools.Security.AspNetCore.Blazor.ManualAuthenticationStateProvider">
+
+
+
+  <h1 id="NuvTools_Security_AspNetCore_Blazor_ManualAuthenticationStateProvider" data-uid="NuvTools.Security.AspNetCore.Blazor.ManualAuthenticationStateProvider" class="text-break">
+Class ManualAuthenticationStateProvider  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><span class="xref">NuvTools</span>.<span class="xref">Security</span>.<span class="xref">AspNetCore</span>.<a class="xref" href="NuvTools.Security.AspNetCore.Blazor.html">Blazor</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NuvTools.Security.AspNetCore.Blazor.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Provides a manual implementation of <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.authorization.authenticationstateprovider">AuthenticationStateProvider</a> that manages user authentication state
+using JWT tokens stored in browser local storage.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ManualAuthenticationStateProvider : AuthenticationStateProvider</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.authorization.authenticationstateprovider">AuthenticationStateProvider</a></div>
+      <div><span class="xref">ManualAuthenticationStateProvider</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.authorization.authenticationstateprovider.notifyauthenticationstatechanged">AuthenticationStateProvider.NotifyAuthenticationStateChanged(Task&lt;AuthenticationState&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.authorization.authenticationstateprovider.authenticationstatechanged">AuthenticationStateProvider.AuthenticationStateChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="NuvTools_Security_AspNetCore_Blazor_ManualAuthenticationStateProvider_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This provider enables custom authentication logic in Blazor applications, typically used when not relying on built-in
+authentication mechanisms like OpenID Connect or Azure AD.</p>
+</div>
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="NuvTools_Security_AspNetCore_Blazor_ManualAuthenticationStateProvider__ctor_" data-uid="NuvTools.Security.AspNetCore.Blazor.ManualAuthenticationStateProvider.#ctor*"></a>
+
+  <h3 id="NuvTools_Security_AspNetCore_Blazor_ManualAuthenticationStateProvider__ctor_NuvTools_AspNetCore_Blazor_JSInterop_ILocalStorageService_" data-uid="NuvTools.Security.AspNetCore.Blazor.ManualAuthenticationStateProvider.#ctor(NuvTools.AspNetCore.Blazor.JSInterop.ILocalStorageService)">
+  ManualAuthenticationStateProvider(ILocalStorageService)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Provides a manual implementation of <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.authorization.authenticationstateprovider">AuthenticationStateProvider</a> that manages user authentication state
+using JWT tokens stored in browser local storage.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ManualAuthenticationStateProvider(ILocalStorageService storage)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>storage</code> <a class="xref" href="../web/NuvTools.AspNetCore.Blazor.JSInterop.ILocalStorageService.html">ILocalStorageService</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="NuvTools_Security_AspNetCore_Blazor_ManualAuthenticationStateProvider__ctor_NuvTools_AspNetCore_Blazor_JSInterop_ILocalStorageService__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This provider enables custom authentication logic in Blazor applications, typically used when not relying on built-in
+authentication mechanisms like OpenID Connect or Azure AD.</p>
+</div>
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="NuvTools_Security_AspNetCore_Blazor_ManualAuthenticationStateProvider_CurrentUser_" data-uid="NuvTools.Security.AspNetCore.Blazor.ManualAuthenticationStateProvider.CurrentUser*"></a>
+
+  <h3 id="NuvTools_Security_AspNetCore_Blazor_ManualAuthenticationStateProvider_CurrentUser" data-uid="NuvTools.Security.AspNetCore.Blazor.ManualAuthenticationStateProvider.CurrentUser">
+  CurrentUser
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the current authenticated user.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ClaimsPrincipal? CurrentUser { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.security.claims.claimsprincipal">ClaimsPrincipal</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="NuvTools_Security_AspNetCore_Blazor_ManualAuthenticationStateProvider_GetAuthenticationStateAsync_" data-uid="NuvTools.Security.AspNetCore.Blazor.ManualAuthenticationStateProvider.GetAuthenticationStateAsync*"></a>
+
+  <h3 id="NuvTools_Security_AspNetCore_Blazor_ManualAuthenticationStateProvider_GetAuthenticationStateAsync" data-uid="NuvTools.Security.AspNetCore.Blazor.ManualAuthenticationStateProvider.GetAuthenticationStateAsync">
+  GetAuthenticationStateAsync()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the current authentication state by reading the JWT token from local storage.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override Task&lt;AuthenticationState&gt; GetAuthenticationStateAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.authorization.authenticationstate">AuthenticationState</a>&gt;</dt>
+    <dd><p>An <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.authorization.authenticationstate">AuthenticationState</a> representing the current user or an anonymous identity if no valid token exists.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Security_AspNetCore_Blazor_ManualAuthenticationStateProvider_SignInAsync_" data-uid="NuvTools.Security.AspNetCore.Blazor.ManualAuthenticationStateProvider.SignInAsync*"></a>
+
+  <h3 id="NuvTools_Security_AspNetCore_Blazor_ManualAuthenticationStateProvider_SignInAsync_System_String_" data-uid="NuvTools.Security.AspNetCore.Blazor.ManualAuthenticationStateProvider.SignInAsync(System.String)">
+  SignInAsync(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Signs the user in by validating the provided JWT token and updating the authentication state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task SignInAsync(string token)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>token</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The JWT token used to authenticate the user.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="NuvTools_Security_AspNetCore_Blazor_ManualAuthenticationStateProvider_SignInAsync_System_String__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>If the token is expired or invalid, the user will be automatically signed out.</p>
+</div>
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Thrown if <code class="paramref">token</code> is null or empty.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="NuvTools_Security_AspNetCore_Blazor_ManualAuthenticationStateProvider_SignOutAsync_" data-uid="NuvTools.Security.AspNetCore.Blazor.ManualAuthenticationStateProvider.SignOutAsync*"></a>
+
+  <h3 id="NuvTools_Security_AspNetCore_Blazor_ManualAuthenticationStateProvider_SignOutAsync" data-uid="NuvTools.Security.AspNetCore.Blazor.ManualAuthenticationStateProvider.SignOutAsync">
+  SignOutAsync()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Signs the user out by removing the stored token and setting the authentication state to anonymous.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task SignOutAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>© Nuv Tools · <a href="https://nuvtools.com/framework/">nuvtools.com</a> · MIT licence · Built with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

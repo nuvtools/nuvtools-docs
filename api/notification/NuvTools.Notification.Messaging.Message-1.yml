@@ -1,0 +1,917 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Notification.Messaging.Message`1
+  commentId: T:NuvTools.Notification.Messaging.Message`1
+  id: Message`1
+  parent: NuvTools.Notification.Messaging
+  children:
+  - NuvTools.Notification.Messaging.Message`1.#ctor(`0)
+  - NuvTools.Notification.Messaging.Message`1.Body
+  - NuvTools.Notification.Messaging.Message`1.CorrelationId
+  - NuvTools.Notification.Messaging.Message`1.MessageId
+  - NuvTools.Notification.Messaging.Message`1.Properties
+  - NuvTools.Notification.Messaging.Message`1.ScheduledEnqueueTime
+  - NuvTools.Notification.Messaging.Message`1.SessionId
+  - NuvTools.Notification.Messaging.Message`1.Subject
+  - NuvTools.Notification.Messaging.Message`1.TimeToLive
+  langs:
+  - csharp
+  - vb
+  name: Message<T>
+  nameWithType: Message<T>
+  fullName: NuvTools.Notification.Messaging.Message<T>
+  type: Class
+  assemblies:
+  - NuvTools.Notification.Messaging
+  namespace: NuvTools.Notification.Messaging
+  summary: Represents a message envelope that wraps a strongly-typed payload and common messaging metadata.
+  remarks: >-
+    This class is intended as a lightweight envelope used by message producers and consumers within
+
+    the NuvTools.Notification.Messaging library. It carries the payload in <xref href="NuvTools.Notification.Messaging.Message%601.Body" data-throw-if-not-resolved="false"></xref> and common
+
+    metadata such as <xref href="NuvTools.Notification.Messaging.Message%601.MessageId" data-throw-if-not-resolved="false"></xref>, <xref href="NuvTools.Notification.Messaging.Message%601.CorrelationId" data-throw-if-not-resolved="false"></xref>, <xref href="NuvTools.Notification.Messaging.Message%601.Subject" data-throw-if-not-resolved="false"></xref>,
+
+    <xref href="NuvTools.Notification.Messaging.Message%601.TimeToLive" data-throw-if-not-resolved="false"></xref>, and a flexible <xref href="NuvTools.Notification.Messaging.Message%601.Properties" data-throw-if-not-resolved="false"></xref> map for custom headers.
+
+
+    The default constructor generates a new <xref href="NuvTools.Notification.Messaging.Message%601.MessageId" data-throw-if-not-resolved="false"></xref>. The class itself does not impose
+
+    any serialization or transport requirements — those are handled by the concrete sender/consumer
+
+    implementations.
+  example:
+  - >-
+    <pre><code class="lang-c#">var msg = new Message&lt;Order&gt;(order)
+
+    {
+        Subject = "order.created",
+        CorrelationId = correlationId,
+        TimeToLive = TimeSpan.FromMinutes(30),
+        Properties = { ["priority"] = "high" }
+    };</code></pre>
+  syntax:
+    content: 'public class Message<T> where T : class'
+    typeParameters:
+    - id: T
+      description: The type of the message body. Must be a reference type.
+    content.vb: Public Class Message(Of T As Class)
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  nameWithType.vb: Message(Of T)
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of T)
+  name.vb: Message(Of T)
+- uid: NuvTools.Notification.Messaging.Message`1.#ctor(`0)
+  commentId: M:NuvTools.Notification.Messaging.Message`1.#ctor(`0)
+  id: '#ctor(`0)'
+  parent: NuvTools.Notification.Messaging.Message`1
+  langs:
+  - csharp
+  - vb
+  name: Message(T)
+  nameWithType: Message<T>.Message(T)
+  fullName: NuvTools.Notification.Messaging.Message<T>.Message(T)
+  type: Constructor
+  assemblies:
+  - NuvTools.Notification.Messaging
+  namespace: NuvTools.Notification.Messaging
+  summary: Represents a message envelope that wraps a strongly-typed payload and common messaging metadata.
+  remarks: >-
+    This class is intended as a lightweight envelope used by message producers and consumers within
+
+    the NuvTools.Notification.Messaging library. It carries the payload in <xref href="NuvTools.Notification.Messaging.Message%601.Body" data-throw-if-not-resolved="false"></xref> and common
+
+    metadata such as <xref href="NuvTools.Notification.Messaging.Message%601.MessageId" data-throw-if-not-resolved="false"></xref>, <xref href="NuvTools.Notification.Messaging.Message%601.CorrelationId" data-throw-if-not-resolved="false"></xref>, <xref href="NuvTools.Notification.Messaging.Message%601.Subject" data-throw-if-not-resolved="false"></xref>,
+
+    <xref href="NuvTools.Notification.Messaging.Message%601.TimeToLive" data-throw-if-not-resolved="false"></xref>, and a flexible <xref href="NuvTools.Notification.Messaging.Message%601.Properties" data-throw-if-not-resolved="false"></xref> map for custom headers.
+
+
+    The default constructor generates a new <xref href="NuvTools.Notification.Messaging.Message%601.MessageId" data-throw-if-not-resolved="false"></xref>. The class itself does not impose
+
+    any serialization or transport requirements — those are handled by the concrete sender/consumer
+
+    implementations.
+  example:
+  - >-
+    <pre><code class="lang-c#">var msg = new Message&lt;Order&gt;(order)
+
+    {
+        Subject = "order.created",
+        CorrelationId = correlationId,
+        TimeToLive = TimeSpan.FromMinutes(30),
+        Properties = { ["priority"] = "high" }
+    };</code></pre>
+  syntax:
+    content: public Message(T body)
+    parameters:
+    - id: body
+      type: '{T}'
+      description: The message payload.
+    content.vb: Public Sub New(body As T)
+  overload: NuvTools.Notification.Messaging.Message`1.#ctor*
+  nameWithType.vb: Message(Of T).New(T)
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of T).New(T)
+  name.vb: New(T)
+- uid: NuvTools.Notification.Messaging.Message`1.MessageId
+  commentId: P:NuvTools.Notification.Messaging.Message`1.MessageId
+  id: MessageId
+  parent: NuvTools.Notification.Messaging.Message`1
+  langs:
+  - csharp
+  - vb
+  name: MessageId
+  nameWithType: Message<T>.MessageId
+  fullName: NuvTools.Notification.Messaging.Message<T>.MessageId
+  type: Property
+  assemblies:
+  - NuvTools.Notification.Messaging
+  namespace: NuvTools.Notification.Messaging
+  summary: A unique identifier for this message. Defaults to a newly generated GUID string.
+  example: []
+  syntax:
+    content: public string MessageId { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property MessageId As String
+  overload: NuvTools.Notification.Messaging.Message`1.MessageId*
+  nameWithType.vb: Message(Of T).MessageId
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of T).MessageId
+- uid: NuvTools.Notification.Messaging.Message`1.CorrelationId
+  commentId: P:NuvTools.Notification.Messaging.Message`1.CorrelationId
+  id: CorrelationId
+  parent: NuvTools.Notification.Messaging.Message`1
+  langs:
+  - csharp
+  - vb
+  name: CorrelationId
+  nameWithType: Message<T>.CorrelationId
+  fullName: NuvTools.Notification.Messaging.Message<T>.CorrelationId
+  type: Property
+  assemblies:
+  - NuvTools.Notification.Messaging
+  namespace: NuvTools.Notification.Messaging
+  summary: Optional correlation identifier used to group related messages or correlate request/response flows.
+  example: []
+  syntax:
+    content: public string? CorrelationId { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property CorrelationId As String
+  overload: NuvTools.Notification.Messaging.Message`1.CorrelationId*
+  nameWithType.vb: Message(Of T).CorrelationId
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of T).CorrelationId
+- uid: NuvTools.Notification.Messaging.Message`1.Subject
+  commentId: P:NuvTools.Notification.Messaging.Message`1.Subject
+  id: Subject
+  parent: NuvTools.Notification.Messaging.Message`1
+  langs:
+  - csharp
+  - vb
+  name: Subject
+  nameWithType: Message<T>.Subject
+  fullName: NuvTools.Notification.Messaging.Message<T>.Subject
+  type: Property
+  assemblies:
+  - NuvTools.Notification.Messaging
+  namespace: NuvTools.Notification.Messaging
+  summary: Optional subject or routing key describing the purpose or category of the message.
+  example: []
+  syntax:
+    content: public string? Subject { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Subject As String
+  overload: NuvTools.Notification.Messaging.Message`1.Subject*
+  nameWithType.vb: Message(Of T).Subject
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of T).Subject
+- uid: NuvTools.Notification.Messaging.Message`1.SessionId
+  commentId: P:NuvTools.Notification.Messaging.Message`1.SessionId
+  id: SessionId
+  parent: NuvTools.Notification.Messaging.Message`1
+  langs:
+  - csharp
+  - vb
+  name: SessionId
+  nameWithType: Message<T>.SessionId
+  fullName: NuvTools.Notification.Messaging.Message<T>.SessionId
+  type: Property
+  assemblies:
+  - NuvTools.Notification.Messaging
+  namespace: NuvTools.Notification.Messaging
+  summary: >-
+    Optional session identifier for session-enabled queues/topics.
+
+    Messages with the same SessionId are processed sequentially.
+  example: []
+  syntax:
+    content: public string? SessionId { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property SessionId As String
+  overload: NuvTools.Notification.Messaging.Message`1.SessionId*
+  nameWithType.vb: Message(Of T).SessionId
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of T).SessionId
+- uid: NuvTools.Notification.Messaging.Message`1.TimeToLive
+  commentId: P:NuvTools.Notification.Messaging.Message`1.TimeToLive
+  id: TimeToLive
+  parent: NuvTools.Notification.Messaging.Message`1
+  langs:
+  - csharp
+  - vb
+  name: TimeToLive
+  nameWithType: Message<T>.TimeToLive
+  fullName: NuvTools.Notification.Messaging.Message<T>.TimeToLive
+  type: Property
+  assemblies:
+  - NuvTools.Notification.Messaging
+  namespace: NuvTools.Notification.Messaging
+  summary: Optional time-to-live for the message. When set, senders or transports may discard the message after this interval.
+  example: []
+  syntax:
+    content: public TimeSpan? TimeToLive { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.TimeSpan}
+    content.vb: Public Property TimeToLive As TimeSpan?
+  overload: NuvTools.Notification.Messaging.Message`1.TimeToLive*
+  nameWithType.vb: Message(Of T).TimeToLive
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of T).TimeToLive
+- uid: NuvTools.Notification.Messaging.Message`1.ScheduledEnqueueTime
+  commentId: P:NuvTools.Notification.Messaging.Message`1.ScheduledEnqueueTime
+  id: ScheduledEnqueueTime
+  parent: NuvTools.Notification.Messaging.Message`1
+  langs:
+  - csharp
+  - vb
+  name: ScheduledEnqueueTime
+  nameWithType: Message<T>.ScheduledEnqueueTime
+  fullName: NuvTools.Notification.Messaging.Message<T>.ScheduledEnqueueTime
+  type: Property
+  assemblies:
+  - NuvTools.Notification.Messaging
+  namespace: NuvTools.Notification.Messaging
+  summary: Optional scheduled enqueue time. When set, the message will not be available for delivery until this time.
+  example: []
+  syntax:
+    content: public DateTimeOffset? ScheduledEnqueueTime { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTimeOffset}
+    content.vb: Public Property ScheduledEnqueueTime As DateTimeOffset?
+  overload: NuvTools.Notification.Messaging.Message`1.ScheduledEnqueueTime*
+  nameWithType.vb: Message(Of T).ScheduledEnqueueTime
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of T).ScheduledEnqueueTime
+- uid: NuvTools.Notification.Messaging.Message`1.Properties
+  commentId: P:NuvTools.Notification.Messaging.Message`1.Properties
+  id: Properties
+  parent: NuvTools.Notification.Messaging.Message`1
+  langs:
+  - csharp
+  - vb
+  name: Properties
+  nameWithType: Message<T>.Properties
+  fullName: NuvTools.Notification.Messaging.Message<T>.Properties
+  type: Property
+  assemblies:
+  - NuvTools.Notification.Messaging
+  namespace: NuvTools.Notification.Messaging
+  summary: >-
+    Free-form dictionary for additional metadata/headers. Keys are strings and values can be any object.
+
+    Consumers and transports may interpret these entries as needed.
+  example: []
+  syntax:
+    content: public Dictionary<string, object> Properties { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,System.Object}
+    content.vb: Public Property Properties As Dictionary(Of String, Object)
+  overload: NuvTools.Notification.Messaging.Message`1.Properties*
+  nameWithType.vb: Message(Of T).Properties
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of T).Properties
+- uid: NuvTools.Notification.Messaging.Message`1.Body
+  commentId: P:NuvTools.Notification.Messaging.Message`1.Body
+  id: Body
+  parent: NuvTools.Notification.Messaging.Message`1
+  langs:
+  - csharp
+  - vb
+  name: Body
+  nameWithType: Message<T>.Body
+  fullName: NuvTools.Notification.Messaging.Message<T>.Body
+  type: Property
+  assemblies:
+  - NuvTools.Notification.Messaging
+  namespace: NuvTools.Notification.Messaging
+  summary: The strongly-typed message payload.
+  example: []
+  syntax:
+    content: public T Body { get; set; }
+    parameters: []
+    return:
+      type: '{T}'
+    content.vb: Public Property Body As T
+  overload: NuvTools.Notification.Messaging.Message`1.Body*
+  nameWithType.vb: Message(Of T).Body
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of T).Body
+references:
+- uid: NuvTools.Notification.Messaging.Message`1.Body
+  commentId: P:NuvTools.Notification.Messaging.Message`1.Body
+  href: NuvTools.Notification.Messaging.Message-1.html#NuvTools_Notification_Messaging_Message_1_Body
+  name: Body
+  nameWithType: Message<T>.Body
+  fullName: NuvTools.Notification.Messaging.Message<T>.Body
+  nameWithType.vb: Message(Of T).Body
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of T).Body
+- uid: NuvTools.Notification.Messaging.Message`1.MessageId
+  commentId: P:NuvTools.Notification.Messaging.Message`1.MessageId
+  href: NuvTools.Notification.Messaging.Message-1.html#NuvTools_Notification_Messaging_Message_1_MessageId
+  name: MessageId
+  nameWithType: Message<T>.MessageId
+  fullName: NuvTools.Notification.Messaging.Message<T>.MessageId
+  nameWithType.vb: Message(Of T).MessageId
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of T).MessageId
+- uid: NuvTools.Notification.Messaging.Message`1.CorrelationId
+  commentId: P:NuvTools.Notification.Messaging.Message`1.CorrelationId
+  href: NuvTools.Notification.Messaging.Message-1.html#NuvTools_Notification_Messaging_Message_1_CorrelationId
+  name: CorrelationId
+  nameWithType: Message<T>.CorrelationId
+  fullName: NuvTools.Notification.Messaging.Message<T>.CorrelationId
+  nameWithType.vb: Message(Of T).CorrelationId
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of T).CorrelationId
+- uid: NuvTools.Notification.Messaging.Message`1.Subject
+  commentId: P:NuvTools.Notification.Messaging.Message`1.Subject
+  href: NuvTools.Notification.Messaging.Message-1.html#NuvTools_Notification_Messaging_Message_1_Subject
+  name: Subject
+  nameWithType: Message<T>.Subject
+  fullName: NuvTools.Notification.Messaging.Message<T>.Subject
+  nameWithType.vb: Message(Of T).Subject
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of T).Subject
+- uid: NuvTools.Notification.Messaging.Message`1.TimeToLive
+  commentId: P:NuvTools.Notification.Messaging.Message`1.TimeToLive
+  href: NuvTools.Notification.Messaging.Message-1.html#NuvTools_Notification_Messaging_Message_1_TimeToLive
+  name: TimeToLive
+  nameWithType: Message<T>.TimeToLive
+  fullName: NuvTools.Notification.Messaging.Message<T>.TimeToLive
+  nameWithType.vb: Message(Of T).TimeToLive
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of T).TimeToLive
+- uid: NuvTools.Notification.Messaging.Message`1.Properties
+  commentId: P:NuvTools.Notification.Messaging.Message`1.Properties
+  href: NuvTools.Notification.Messaging.Message-1.html#NuvTools_Notification_Messaging_Message_1_Properties
+  name: Properties
+  nameWithType: Message<T>.Properties
+  fullName: NuvTools.Notification.Messaging.Message<T>.Properties
+  nameWithType.vb: Message(Of T).Properties
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of T).Properties
+- uid: NuvTools.Notification.Messaging
+  commentId: N:NuvTools.Notification.Messaging
+  name: NuvTools.Notification.Messaging
+  nameWithType: NuvTools.Notification.Messaging
+  fullName: NuvTools.Notification.Messaging
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Messaging
+    name: Messaging
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Messaging
+    name: Messaging
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NuvTools.Notification.Messaging.Message`1.#ctor*
+  commentId: Overload:NuvTools.Notification.Messaging.Message`1.#ctor
+  href: NuvTools.Notification.Messaging.Message-1.html#NuvTools_Notification_Messaging_Message_1__ctor__0_
+  name: Message
+  nameWithType: Message<T>.Message
+  fullName: NuvTools.Notification.Messaging.Message<T>.Message
+  nameWithType.vb: Message(Of T).New
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of T).New
+  name.vb: New
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: NuvTools.Notification.Messaging.Message`1.MessageId*
+  commentId: Overload:NuvTools.Notification.Messaging.Message`1.MessageId
+  href: NuvTools.Notification.Messaging.Message-1.html#NuvTools_Notification_Messaging_Message_1_MessageId
+  name: MessageId
+  nameWithType: Message<T>.MessageId
+  fullName: NuvTools.Notification.Messaging.Message<T>.MessageId
+  nameWithType.vb: Message(Of T).MessageId
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of T).MessageId
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: NuvTools.Notification.Messaging.Message`1.CorrelationId*
+  commentId: Overload:NuvTools.Notification.Messaging.Message`1.CorrelationId
+  href: NuvTools.Notification.Messaging.Message-1.html#NuvTools_Notification_Messaging_Message_1_CorrelationId
+  name: CorrelationId
+  nameWithType: Message<T>.CorrelationId
+  fullName: NuvTools.Notification.Messaging.Message<T>.CorrelationId
+  nameWithType.vb: Message(Of T).CorrelationId
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of T).CorrelationId
+- uid: NuvTools.Notification.Messaging.Message`1.Subject*
+  commentId: Overload:NuvTools.Notification.Messaging.Message`1.Subject
+  href: NuvTools.Notification.Messaging.Message-1.html#NuvTools_Notification_Messaging_Message_1_Subject
+  name: Subject
+  nameWithType: Message<T>.Subject
+  fullName: NuvTools.Notification.Messaging.Message<T>.Subject
+  nameWithType.vb: Message(Of T).Subject
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of T).Subject
+- uid: NuvTools.Notification.Messaging.Message`1.SessionId*
+  commentId: Overload:NuvTools.Notification.Messaging.Message`1.SessionId
+  href: NuvTools.Notification.Messaging.Message-1.html#NuvTools_Notification_Messaging_Message_1_SessionId
+  name: SessionId
+  nameWithType: Message<T>.SessionId
+  fullName: NuvTools.Notification.Messaging.Message<T>.SessionId
+  nameWithType.vb: Message(Of T).SessionId
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of T).SessionId
+- uid: NuvTools.Notification.Messaging.Message`1.TimeToLive*
+  commentId: Overload:NuvTools.Notification.Messaging.Message`1.TimeToLive
+  href: NuvTools.Notification.Messaging.Message-1.html#NuvTools_Notification_Messaging_Message_1_TimeToLive
+  name: TimeToLive
+  nameWithType: Message<T>.TimeToLive
+  fullName: NuvTools.Notification.Messaging.Message<T>.TimeToLive
+  nameWithType.vb: Message(Of T).TimeToLive
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of T).TimeToLive
+- uid: System.Nullable{System.TimeSpan}
+  commentId: T:System.Nullable{System.TimeSpan}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.timespan
+  name: TimeSpan?
+  nameWithType: TimeSpan?
+  fullName: System.TimeSpan?
+  spec.csharp:
+  - uid: System.TimeSpan
+    name: TimeSpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.timespan
+  - name: '?'
+  spec.vb:
+  - uid: System.TimeSpan
+    name: TimeSpan
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.timespan
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NuvTools.Notification.Messaging.Message`1.ScheduledEnqueueTime*
+  commentId: Overload:NuvTools.Notification.Messaging.Message`1.ScheduledEnqueueTime
+  href: NuvTools.Notification.Messaging.Message-1.html#NuvTools_Notification_Messaging_Message_1_ScheduledEnqueueTime
+  name: ScheduledEnqueueTime
+  nameWithType: Message<T>.ScheduledEnqueueTime
+  fullName: NuvTools.Notification.Messaging.Message<T>.ScheduledEnqueueTime
+  nameWithType.vb: Message(Of T).ScheduledEnqueueTime
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of T).ScheduledEnqueueTime
+- uid: System.Nullable{System.DateTimeOffset}
+  commentId: T:System.Nullable{System.DateTimeOffset}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.datetimeoffset
+  name: DateTimeOffset?
+  nameWithType: DateTimeOffset?
+  fullName: System.DateTimeOffset?
+  spec.csharp:
+  - uid: System.DateTimeOffset
+    name: DateTimeOffset
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetimeoffset
+  - name: '?'
+  spec.vb:
+  - uid: System.DateTimeOffset
+    name: DateTimeOffset
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.datetimeoffset
+  - name: '?'
+- uid: NuvTools.Notification.Messaging.Message`1.Properties*
+  commentId: Overload:NuvTools.Notification.Messaging.Message`1.Properties
+  href: NuvTools.Notification.Messaging.Message-1.html#NuvTools_Notification_Messaging_Message_1_Properties
+  name: Properties
+  nameWithType: Message<T>.Properties
+  fullName: NuvTools.Notification.Messaging.Message<T>.Properties
+  nameWithType.vb: Message(Of T).Properties
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of T).Properties
+- uid: System.Collections.Generic.Dictionary{System.String,System.Object}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.Object}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, object>
+  nameWithType: Dictionary<string, object>
+  fullName: System.Collections.Generic.Dictionary<string, object>
+  nameWithType.vb: Dictionary(Of String, Object)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, Object)
+  name.vb: Dictionary(Of String, Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: NuvTools.Notification.Messaging.Message`1.Body*
+  commentId: Overload:NuvTools.Notification.Messaging.Message`1.Body
+  href: NuvTools.Notification.Messaging.Message-1.html#NuvTools_Notification_Messaging_Message_1_Body
+  name: Body
+  nameWithType: Message<T>.Body
+  fullName: NuvTools.Notification.Messaging.Message<T>.Body
+  nameWithType.vb: Message(Of T).Body
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of T).Body

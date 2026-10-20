@@ -1,0 +1,507 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest
+  commentId: T:NuvTools.Security.Certificate.Signing.DocumentSignatureRequest
+  id: DocumentSignatureRequest
+  parent: NuvTools.Security.Certificate.Signing
+  children:
+  - NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.#ctor(System.ReadOnlyMemory{System.Byte},NuvTools.Security.Certificate.Signing.SignatureStamp)
+  - NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.Document
+  - NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.Stamp
+  langs:
+  - csharp
+  - vb
+  name: DocumentSignatureRequest
+  nameWithType: DocumentSignatureRequest
+  fullName: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest
+  type: Class
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Certificate.Signing
+  summary: A PDF to be signed.
+  example: []
+  syntax:
+    content: 'public sealed record DocumentSignatureRequest : IEquatable<DocumentSignatureRequest>'
+    content.vb: Public NotInheritable Class DocumentSignatureRequest Implements IEquatable(Of DocumentSignatureRequest)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{NuvTools.Security.Certificate.Signing.DocumentSignatureRequest}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.#ctor(System.ReadOnlyMemory{System.Byte},NuvTools.Security.Certificate.Signing.SignatureStamp)
+  commentId: M:NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.#ctor(System.ReadOnlyMemory{System.Byte},NuvTools.Security.Certificate.Signing.SignatureStamp)
+  id: '#ctor(System.ReadOnlyMemory{System.Byte},NuvTools.Security.Certificate.Signing.SignatureStamp)'
+  parent: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest
+  langs:
+  - csharp
+  - vb
+  name: DocumentSignatureRequest(ReadOnlyMemory<byte>, SignatureStamp?)
+  nameWithType: DocumentSignatureRequest.DocumentSignatureRequest(ReadOnlyMemory<byte>, SignatureStamp?)
+  fullName: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.DocumentSignatureRequest(System.ReadOnlyMemory<byte>, NuvTools.Security.Certificate.Signing.SignatureStamp?)
+  type: Constructor
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Certificate.Signing
+  summary: A PDF to be signed.
+  example: []
+  syntax:
+    content: public DocumentSignatureRequest(ReadOnlyMemory<byte> Document, SignatureStamp? Stamp = null)
+    parameters:
+    - id: Document
+      type: System.ReadOnlyMemory{System.Byte}
+      description: The PDF, which may already carry other signatures.
+    - id: Stamp
+      type: NuvTools.Security.Certificate.Signing.SignatureStamp
+      description: The visible mark of this signature on the document, or <code>null</code> for an invisible signature.
+    content.vb: Public Sub New(Document As ReadOnlyMemory(Of Byte), Stamp As SignatureStamp = Nothing)
+  overload: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.#ctor*
+  nameWithType.vb: DocumentSignatureRequest.New(ReadOnlyMemory(Of Byte), SignatureStamp)
+  fullName.vb: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.New(System.ReadOnlyMemory(Of Byte), NuvTools.Security.Certificate.Signing.SignatureStamp)
+  name.vb: New(ReadOnlyMemory(Of Byte), SignatureStamp)
+- uid: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.Document
+  commentId: P:NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.Document
+  id: Document
+  parent: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest
+  langs:
+  - csharp
+  - vb
+  name: Document
+  nameWithType: DocumentSignatureRequest.Document
+  fullName: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.Document
+  type: Property
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Certificate.Signing
+  summary: The PDF, which may already carry other signatures.
+  example: []
+  syntax:
+    content: public ReadOnlyMemory<byte> Document { get; init; }
+    parameters: []
+    return:
+      type: System.ReadOnlyMemory{System.Byte}
+    content.vb: Public Property Document As ReadOnlyMemory(Of Byte)
+  overload: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.Document*
+- uid: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.Stamp
+  commentId: P:NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.Stamp
+  id: Stamp
+  parent: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest
+  langs:
+  - csharp
+  - vb
+  name: Stamp
+  nameWithType: DocumentSignatureRequest.Stamp
+  fullName: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.Stamp
+  type: Property
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Certificate.Signing
+  summary: The visible mark of this signature on the document, or <code>null</code> for an invisible signature.
+  example: []
+  syntax:
+    content: public SignatureStamp? Stamp { get; init; }
+    parameters: []
+    return:
+      type: NuvTools.Security.Certificate.Signing.SignatureStamp
+    content.vb: Public Property Stamp As SignatureStamp
+  overload: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.Stamp*
+references:
+- uid: NuvTools.Security.Certificate.Signing
+  commentId: N:NuvTools.Security.Certificate.Signing
+  name: NuvTools.Security.Certificate.Signing
+  nameWithType: NuvTools.Security.Certificate.Signing
+  fullName: NuvTools.Security.Certificate.Signing
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.Certificate
+    name: Certificate
+  - name: .
+  - uid: NuvTools.Security.Certificate.Signing
+    name: Signing
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.Certificate
+    name: Certificate
+  - name: .
+  - uid: NuvTools.Security.Certificate.Signing
+    name: Signing
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{NuvTools.Security.Certificate.Signing.DocumentSignatureRequest}
+  commentId: T:System.IEquatable{NuvTools.Security.Certificate.Signing.DocumentSignatureRequest}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<DocumentSignatureRequest>
+  nameWithType: IEquatable<DocumentSignatureRequest>
+  fullName: System.IEquatable<NuvTools.Security.Certificate.Signing.DocumentSignatureRequest>
+  nameWithType.vb: IEquatable(Of DocumentSignatureRequest)
+  fullName.vb: System.IEquatable(Of NuvTools.Security.Certificate.Signing.DocumentSignatureRequest)
+  name.vb: IEquatable(Of DocumentSignatureRequest)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest
+    name: DocumentSignatureRequest
+    href: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest
+    name: DocumentSignatureRequest
+    href: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.#ctor*
+  commentId: Overload:NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.#ctor
+  href: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.html#NuvTools_Security_Certificate_Signing_DocumentSignatureRequest__ctor_System_ReadOnlyMemory_System_Byte__NuvTools_Security_Certificate_Signing_SignatureStamp_
+  name: DocumentSignatureRequest
+  nameWithType: DocumentSignatureRequest.DocumentSignatureRequest
+  fullName: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.DocumentSignatureRequest
+  nameWithType.vb: DocumentSignatureRequest.New
+  fullName.vb: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.New
+  name.vb: New
+- uid: System.ReadOnlyMemory{System.Byte}
+  commentId: T:System.ReadOnlyMemory{System.Byte}
+  parent: System
+  definition: System.ReadOnlyMemory`1
+  href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  name: ReadOnlyMemory<byte>
+  nameWithType: ReadOnlyMemory<byte>
+  fullName: System.ReadOnlyMemory<byte>
+  nameWithType.vb: ReadOnlyMemory(Of Byte)
+  fullName.vb: System.ReadOnlyMemory(Of Byte)
+  name.vb: ReadOnlyMemory(Of Byte)
+  spec.csharp:
+  - uid: System.ReadOnlyMemory`1
+    name: ReadOnlyMemory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  - name: <
+  - uid: System.Byte
+    name: byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: '>'
+  spec.vb:
+  - uid: System.ReadOnlyMemory`1
+    name: ReadOnlyMemory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Byte
+    name: Byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: )
+- uid: NuvTools.Security.Certificate.Signing.SignatureStamp
+  commentId: T:NuvTools.Security.Certificate.Signing.SignatureStamp
+  parent: NuvTools.Security.Certificate.Signing
+  href: NuvTools.Security.Certificate.Signing.SignatureStamp.html
+  name: SignatureStamp
+  nameWithType: SignatureStamp
+  fullName: NuvTools.Security.Certificate.Signing.SignatureStamp
+- uid: System.ReadOnlyMemory`1
+  commentId: T:System.ReadOnlyMemory`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  name: ReadOnlyMemory<T>
+  nameWithType: ReadOnlyMemory<T>
+  fullName: System.ReadOnlyMemory<T>
+  nameWithType.vb: ReadOnlyMemory(Of T)
+  fullName.vb: System.ReadOnlyMemory(Of T)
+  name.vb: ReadOnlyMemory(Of T)
+  spec.csharp:
+  - uid: System.ReadOnlyMemory`1
+    name: ReadOnlyMemory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.ReadOnlyMemory`1
+    name: ReadOnlyMemory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.Document*
+  commentId: Overload:NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.Document
+  href: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.html#NuvTools_Security_Certificate_Signing_DocumentSignatureRequest_Document
+  name: Document
+  nameWithType: DocumentSignatureRequest.Document
+  fullName: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.Document
+- uid: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.Stamp*
+  commentId: Overload:NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.Stamp
+  href: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.html#NuvTools_Security_Certificate_Signing_DocumentSignatureRequest_Stamp
+  name: Stamp
+  nameWithType: DocumentSignatureRequest.Stamp
+  fullName: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.Stamp

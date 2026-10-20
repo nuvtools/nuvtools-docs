@@ -1,0 +1,1260 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient
+  commentId: T:NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient
+  id: StripeConnectApiClient
+  parent: NuvTools.Payment.Stripe.ApiClient.Services
+  children:
+  - NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.#ctor(Stripe.IStripeClient,Microsoft.Extensions.Options.IOptions{NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig},Microsoft.Extensions.Logging.ILogger{NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient})
+  - NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.CreateAccountAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)
+  - NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.CreateOnboardingLinkAsync(System.String,System.String,System.String,System.Threading.CancellationToken)
+  - NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.GetAccountAsync(System.String,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: StripeConnectApiClient
+  nameWithType: StripeConnectApiClient
+  fullName: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient
+  type: Class
+  assemblies:
+  - NuvTools.Payment.Stripe.ApiClient
+  namespace: NuvTools.Payment.Stripe.ApiClient.Services
+  summary: 'The receiving side: an account the platform can pay, and the onboarding that makes it payable.'
+  remarks: >-
+    A marketplace pays people it has not vetted itself. The provider collects the identity and bank
+
+    details, decides whether the account may be paid out, and hosts the screens that ask — so none of
+
+    that reaches the platform, which is the point of using one.
+  example: []
+  syntax:
+    content: 'public class StripeConnectApiClient : IPayeeAccountClient'
+    content.vb: Public Class StripeConnectApiClient Implements IPayeeAccountClient
+  inheritance:
+  - System.Object
+  implements:
+  - NuvTools.Payment.Contracts.IPayeeAccountClient
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.#ctor(Stripe.IStripeClient,Microsoft.Extensions.Options.IOptions{NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig},Microsoft.Extensions.Logging.ILogger{NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient})
+  commentId: M:NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.#ctor(Stripe.IStripeClient,Microsoft.Extensions.Options.IOptions{NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig},Microsoft.Extensions.Logging.ILogger{NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient})
+  id: '#ctor(Stripe.IStripeClient,Microsoft.Extensions.Options.IOptions{NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig},Microsoft.Extensions.Logging.ILogger{NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient})'
+  parent: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient
+  langs:
+  - csharp
+  - vb
+  name: StripeConnectApiClient(IStripeClient, IOptions<StripeApiClientConfig>, ILogger<StripeConnectApiClient>)
+  nameWithType: StripeConnectApiClient.StripeConnectApiClient(IStripeClient, IOptions<StripeApiClientConfig>, ILogger<StripeConnectApiClient>)
+  fullName: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.StripeConnectApiClient(Stripe.IStripeClient, Microsoft.Extensions.Options.IOptions<NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig>, Microsoft.Extensions.Logging.ILogger<NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient>)
+  type: Constructor
+  assemblies:
+  - NuvTools.Payment.Stripe.ApiClient
+  namespace: NuvTools.Payment.Stripe.ApiClient.Services
+  summary: 'The receiving side: an account the platform can pay, and the onboarding that makes it payable.'
+  remarks: >-
+    A marketplace pays people it has not vetted itself. The provider collects the identity and bank
+
+    details, decides whether the account may be paid out, and hosts the screens that ask — so none of
+
+    that reaches the platform, which is the point of using one.
+  example: []
+  syntax:
+    content: public StripeConnectApiClient(IStripeClient client, IOptions<StripeApiClientConfig> config, ILogger<StripeConnectApiClient> logger)
+    parameters:
+    - id: client
+      type: Stripe.IStripeClient
+    - id: config
+      type: Microsoft.Extensions.Options.IOptions{NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig}
+    - id: logger
+      type: Microsoft.Extensions.Logging.ILogger{NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient}
+    content.vb: Public Sub New(client As IStripeClient, config As IOptions(Of StripeApiClientConfig), logger As ILogger(Of StripeConnectApiClient))
+  overload: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.#ctor*
+  nameWithType.vb: StripeConnectApiClient.New(IStripeClient, IOptions(Of StripeApiClientConfig), ILogger(Of StripeConnectApiClient))
+  fullName.vb: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.New(Stripe.IStripeClient, Microsoft.Extensions.Options.IOptions(Of NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig), Microsoft.Extensions.Logging.ILogger(Of NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient))
+  name.vb: New(IStripeClient, IOptions(Of StripeApiClientConfig), ILogger(Of StripeConnectApiClient))
+- uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.CreateAccountAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.CreateAccountAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)
+  id: CreateAccountAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient
+  langs:
+  - csharp
+  - vb
+  name: CreateAccountAsync(string, string, IDictionary<string, string>?, CancellationToken)
+  nameWithType: StripeConnectApiClient.CreateAccountAsync(string, string, IDictionary<string, string>?, CancellationToken)
+  fullName: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.CreateAccountAsync(string, string, System.Collections.Generic.IDictionary<string, string>?, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Stripe.ApiClient
+  namespace: NuvTools.Payment.Stripe.ApiClient.Services
+  summary: Creates an account able to receive transfers, and returns the provider's identifier for it.
+  example: []
+  syntax:
+    content: public Task<IResult<string>> CreateAccountAsync(string countryCode, string email, IDictionary<string, string>? metadata = null, CancellationToken cancellationToken = default)
+    parameters:
+    - id: countryCode
+      type: System.String
+      description: ISO 3166-1 alpha-2, the country the payee is paid in.
+    - id: email
+      type: System.String
+      description: Where the provider writes to the payee.
+    - id: metadata
+      type: System.Collections.Generic.IDictionary{System.String,System.String}
+      description: Carried on the provider's object; the caller's own identifiers belong here.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancels the call.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.String}}
+    content.vb: Public Function CreateAccountAsync(countryCode As String, email As String, metadata As IDictionary(Of String, String) = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of String))
+  overload: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.CreateAccountAsync*
+  implements:
+  - NuvTools.Payment.Contracts.IPayeeAccountClient.CreateAccountAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)
+  nameWithType.vb: StripeConnectApiClient.CreateAccountAsync(String, String, IDictionary(Of String, String), CancellationToken)
+  fullName.vb: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.CreateAccountAsync(String, String, System.Collections.Generic.IDictionary(Of String, String), System.Threading.CancellationToken)
+  name.vb: CreateAccountAsync(String, String, IDictionary(Of String, String), CancellationToken)
+- uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.CreateOnboardingLinkAsync(System.String,System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.CreateOnboardingLinkAsync(System.String,System.String,System.String,System.Threading.CancellationToken)
+  id: CreateOnboardingLinkAsync(System.String,System.String,System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient
+  langs:
+  - csharp
+  - vb
+  name: CreateOnboardingLinkAsync(string, string, string, CancellationToken)
+  nameWithType: StripeConnectApiClient.CreateOnboardingLinkAsync(string, string, string, CancellationToken)
+  fullName: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.CreateOnboardingLinkAsync(string, string, string, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Stripe.ApiClient
+  namespace: NuvTools.Payment.Stripe.ApiClient.Services
+  summary: >-
+    A link to the provider's hosted onboarding. Single-use and short-lived by design, so it is
+
+    created when the payee asks rather than stored.
+  example: []
+  syntax:
+    content: public Task<IResult<string>> CreateOnboardingLinkAsync(string accountId, string refreshUrl, string returnUrl, CancellationToken cancellationToken = default)
+    parameters:
+    - id: accountId
+      type: System.String
+      description: The account being onboarded.
+    - id: refreshUrl
+      type: System.String
+      description: Where the provider sends the payee when the link has expired.
+    - id: returnUrl
+      type: System.String
+      description: Where it returns them when they are done.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancels the call.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.String}}
+    content.vb: Public Function CreateOnboardingLinkAsync(accountId As String, refreshUrl As String, returnUrl As String, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of String))
+  overload: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.CreateOnboardingLinkAsync*
+  implements:
+  - NuvTools.Payment.Contracts.IPayeeAccountClient.CreateOnboardingLinkAsync(System.String,System.String,System.String,System.Threading.CancellationToken)
+  nameWithType.vb: StripeConnectApiClient.CreateOnboardingLinkAsync(String, String, String, CancellationToken)
+  fullName.vb: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.CreateOnboardingLinkAsync(String, String, String, System.Threading.CancellationToken)
+  name.vb: CreateOnboardingLinkAsync(String, String, String, CancellationToken)
+- uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.GetAccountAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.GetAccountAsync(System.String,System.Threading.CancellationToken)
+  id: GetAccountAsync(System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient
+  langs:
+  - csharp
+  - vb
+  name: GetAccountAsync(string, CancellationToken)
+  nameWithType: StripeConnectApiClient.GetAccountAsync(string, CancellationToken)
+  fullName: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.GetAccountAsync(string, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Stripe.ApiClient
+  namespace: NuvTools.Payment.Stripe.ApiClient.Services
+  summary: What the provider currently says about the account.
+  example: []
+  syntax:
+    content: public Task<IResult<PayeeAccountDTO>> GetAccountAsync(string accountId, CancellationToken cancellationToken = default)
+    parameters:
+    - id: accountId
+      type: System.String
+      description: The account to read.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancels the call.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.DTOs.PayeeAccountDTO}}
+    content.vb: Public Function GetAccountAsync(accountId As String, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of PayeeAccountDTO))
+  overload: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.GetAccountAsync*
+  implements:
+  - NuvTools.Payment.Contracts.IPayeeAccountClient.GetAccountAsync(System.String,System.Threading.CancellationToken)
+  nameWithType.vb: StripeConnectApiClient.GetAccountAsync(String, CancellationToken)
+  fullName.vb: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.GetAccountAsync(String, System.Threading.CancellationToken)
+  name.vb: GetAccountAsync(String, CancellationToken)
+references:
+- uid: NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig
+  commentId: T:NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig
+  href: NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig.html
+  name: StripeApiClientConfig
+  nameWithType: StripeApiClientConfig
+  fullName: NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig
+- uid: NuvTools.Payment.Stripe.ApiClient.Services
+  commentId: N:NuvTools.Payment.Stripe.ApiClient.Services
+  name: NuvTools.Payment.Stripe.ApiClient.Services
+  nameWithType: NuvTools.Payment.Stripe.ApiClient.Services
+  fullName: NuvTools.Payment.Stripe.ApiClient.Services
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Stripe
+    name: Stripe
+  - name: .
+  - uid: NuvTools.Payment.Stripe.ApiClient
+    name: ApiClient
+  - name: .
+  - uid: NuvTools.Payment.Stripe.ApiClient.Services
+    name: Services
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Stripe
+    name: Stripe
+  - name: .
+  - uid: NuvTools.Payment.Stripe.ApiClient
+    name: ApiClient
+  - name: .
+  - uid: NuvTools.Payment.Stripe.ApiClient.Services
+    name: Services
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: NuvTools.Payment.Contracts.IPayeeAccountClient
+  commentId: T:NuvTools.Payment.Contracts.IPayeeAccountClient
+  parent: NuvTools.Payment.Contracts
+  href: NuvTools.Payment.Contracts.IPayeeAccountClient.html
+  name: IPayeeAccountClient
+  nameWithType: IPayeeAccountClient
+  fullName: NuvTools.Payment.Contracts.IPayeeAccountClient
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NuvTools.Payment.Contracts
+  commentId: N:NuvTools.Payment.Contracts
+  name: NuvTools.Payment.Contracts
+  nameWithType: NuvTools.Payment.Contracts
+  fullName: NuvTools.Payment.Contracts
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Contracts
+    name: Contracts
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Contracts
+    name: Contracts
+- uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.#ctor*
+  commentId: Overload:NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.#ctor
+  href: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.html#NuvTools_Payment_Stripe_ApiClient_Services_StripeConnectApiClient__ctor_Stripe_IStripeClient_Microsoft_Extensions_Options_IOptions_NuvTools_Payment_Stripe_ApiClient_Configuration_StripeApiClientConfig__Microsoft_Extensions_Logging_ILogger_NuvTools_Payment_Stripe_ApiClient_Services_StripeConnectApiClient__
+  name: StripeConnectApiClient
+  nameWithType: StripeConnectApiClient.StripeConnectApiClient
+  fullName: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.StripeConnectApiClient
+  nameWithType.vb: StripeConnectApiClient.New
+  fullName.vb: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.New
+  name.vb: New
+- uid: Stripe.IStripeClient
+  commentId: T:Stripe.IStripeClient
+  parent: Stripe
+  isExternal: true
+  name: IStripeClient
+  nameWithType: IStripeClient
+  fullName: Stripe.IStripeClient
+- uid: Microsoft.Extensions.Options.IOptions{NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig}
+  commentId: T:Microsoft.Extensions.Options.IOptions{NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig}
+  parent: Microsoft.Extensions.Options
+  definition: Microsoft.Extensions.Options.IOptions`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  name: IOptions<StripeApiClientConfig>
+  nameWithType: IOptions<StripeApiClientConfig>
+  fullName: Microsoft.Extensions.Options.IOptions<NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig>
+  nameWithType.vb: IOptions(Of StripeApiClientConfig)
+  fullName.vb: Microsoft.Extensions.Options.IOptions(Of NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig)
+  name.vb: IOptions(Of StripeApiClientConfig)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: <
+  - uid: NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig
+    name: StripeApiClientConfig
+    href: NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig
+    name: StripeApiClientConfig
+    href: NuvTools.Payment.Stripe.ApiClient.Configuration.StripeApiClientConfig.html
+  - name: )
+- uid: Microsoft.Extensions.Logging.ILogger{NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient}
+  commentId: T:Microsoft.Extensions.Logging.ILogger{NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient}
+  parent: Microsoft.Extensions.Logging
+  definition: Microsoft.Extensions.Logging.ILogger`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  name: ILogger<StripeConnectApiClient>
+  nameWithType: ILogger<StripeConnectApiClient>
+  fullName: Microsoft.Extensions.Logging.ILogger<NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient>
+  nameWithType.vb: ILogger(Of StripeConnectApiClient)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient)
+  name.vb: ILogger(Of StripeConnectApiClient)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: <
+  - uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient
+    name: StripeConnectApiClient
+    href: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient
+    name: StripeConnectApiClient
+    href: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.html
+  - name: )
+- uid: Stripe
+  commentId: N:Stripe
+  isExternal: true
+  name: Stripe
+  nameWithType: Stripe
+  fullName: Stripe
+- uid: Microsoft.Extensions.Options.IOptions`1
+  commentId: T:Microsoft.Extensions.Options.IOptions`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  name: IOptions<TOptions>
+  nameWithType: IOptions<TOptions>
+  fullName: Microsoft.Extensions.Options.IOptions<TOptions>
+  nameWithType.vb: IOptions(Of TOptions)
+  fullName.vb: Microsoft.Extensions.Options.IOptions(Of TOptions)
+  name.vb: IOptions(Of TOptions)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: <
+  - name: TOptions
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TOptions
+  - name: )
+- uid: Microsoft.Extensions.Options
+  commentId: N:Microsoft.Extensions.Options
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Options
+  nameWithType: Microsoft.Extensions.Options
+  fullName: Microsoft.Extensions.Options
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Options
+    name: Options
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Options
+    name: Options
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options
+- uid: Microsoft.Extensions.Logging.ILogger`1
+  commentId: T:Microsoft.Extensions.Logging.ILogger`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  name: ILogger<TCategoryName>
+  nameWithType: ILogger<TCategoryName>
+  fullName: Microsoft.Extensions.Logging.ILogger<TCategoryName>
+  nameWithType.vb: ILogger(Of TCategoryName)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of TCategoryName)
+  name.vb: ILogger(Of TCategoryName)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: <
+  - name: TCategoryName
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TCategoryName
+  - name: )
+- uid: Microsoft.Extensions.Logging
+  commentId: N:Microsoft.Extensions.Logging
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Logging
+  nameWithType: Microsoft.Extensions.Logging
+  fullName: Microsoft.Extensions.Logging
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Logging
+    name: Logging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Logging
+    name: Logging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+- uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.CreateAccountAsync*
+  commentId: Overload:NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.CreateAccountAsync
+  href: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.html#NuvTools_Payment_Stripe_ApiClient_Services_StripeConnectApiClient_CreateAccountAsync_System_String_System_String_System_Collections_Generic_IDictionary_System_String_System_String__System_Threading_CancellationToken_
+  name: CreateAccountAsync
+  nameWithType: StripeConnectApiClient.CreateAccountAsync
+  fullName: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.CreateAccountAsync
+- uid: NuvTools.Payment.Contracts.IPayeeAccountClient.CreateAccountAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Contracts.IPayeeAccountClient.CreateAccountAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Contracts.IPayeeAccountClient
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: CreateAccountAsync(string, string, IDictionary<string, string>, CancellationToken)
+  nameWithType: IPayeeAccountClient.CreateAccountAsync(string, string, IDictionary<string, string>, CancellationToken)
+  fullName: NuvTools.Payment.Contracts.IPayeeAccountClient.CreateAccountAsync(string, string, System.Collections.Generic.IDictionary<string, string>, System.Threading.CancellationToken)
+  nameWithType.vb: IPayeeAccountClient.CreateAccountAsync(String, String, IDictionary(Of String, String), CancellationToken)
+  fullName.vb: NuvTools.Payment.Contracts.IPayeeAccountClient.CreateAccountAsync(String, String, System.Collections.Generic.IDictionary(Of String, String), System.Threading.CancellationToken)
+  name.vb: CreateAccountAsync(String, String, IDictionary(Of String, String), CancellationToken)
+  spec.csharp:
+  - uid: NuvTools.Payment.Contracts.IPayeeAccountClient.CreateAccountAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)
+    name: CreateAccountAsync
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Payment.Contracts.IPayeeAccountClient.CreateAccountAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)
+    name: CreateAccountAsync
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Collections.Generic.IDictionary{System.String,System.String}
+  commentId: T:System.Collections.Generic.IDictionary{System.String,System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<string, string>
+  nameWithType: IDictionary<string, string>
+  fullName: System.Collections.Generic.IDictionary<string, string>
+  nameWithType.vb: IDictionary(Of String, String)
+  fullName.vb: System.Collections.Generic.IDictionary(Of String, String)
+  name.vb: IDictionary(Of String, String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.String}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.String}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<string>>
+  nameWithType: Task<IResult<string>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<string>>
+  nameWithType.vb: Task(Of IResult(Of String))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of String))
+  name.vb: Task(Of IResult(Of String))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.IDictionary`2
+  commentId: T:System.Collections.Generic.IDictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<TKey, TValue>
+  nameWithType: IDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>
+  nameWithType.vb: IDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue)
+  name.vb: IDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.CreateOnboardingLinkAsync*
+  commentId: Overload:NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.CreateOnboardingLinkAsync
+  href: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.html#NuvTools_Payment_Stripe_ApiClient_Services_StripeConnectApiClient_CreateOnboardingLinkAsync_System_String_System_String_System_String_System_Threading_CancellationToken_
+  name: CreateOnboardingLinkAsync
+  nameWithType: StripeConnectApiClient.CreateOnboardingLinkAsync
+  fullName: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.CreateOnboardingLinkAsync
+- uid: NuvTools.Payment.Contracts.IPayeeAccountClient.CreateOnboardingLinkAsync(System.String,System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Contracts.IPayeeAccountClient.CreateOnboardingLinkAsync(System.String,System.String,System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Contracts.IPayeeAccountClient
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: CreateOnboardingLinkAsync(string, string, string, CancellationToken)
+  nameWithType: IPayeeAccountClient.CreateOnboardingLinkAsync(string, string, string, CancellationToken)
+  fullName: NuvTools.Payment.Contracts.IPayeeAccountClient.CreateOnboardingLinkAsync(string, string, string, System.Threading.CancellationToken)
+  nameWithType.vb: IPayeeAccountClient.CreateOnboardingLinkAsync(String, String, String, CancellationToken)
+  fullName.vb: NuvTools.Payment.Contracts.IPayeeAccountClient.CreateOnboardingLinkAsync(String, String, String, System.Threading.CancellationToken)
+  name.vb: CreateOnboardingLinkAsync(String, String, String, CancellationToken)
+  spec.csharp:
+  - uid: NuvTools.Payment.Contracts.IPayeeAccountClient.CreateOnboardingLinkAsync(System.String,System.String,System.String,System.Threading.CancellationToken)
+    name: CreateOnboardingLinkAsync
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Payment.Contracts.IPayeeAccountClient.CreateOnboardingLinkAsync(System.String,System.String,System.String,System.Threading.CancellationToken)
+    name: CreateOnboardingLinkAsync
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.GetAccountAsync*
+  commentId: Overload:NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.GetAccountAsync
+  href: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.html#NuvTools_Payment_Stripe_ApiClient_Services_StripeConnectApiClient_GetAccountAsync_System_String_System_Threading_CancellationToken_
+  name: GetAccountAsync
+  nameWithType: StripeConnectApiClient.GetAccountAsync
+  fullName: NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient.GetAccountAsync
+- uid: NuvTools.Payment.Contracts.IPayeeAccountClient.GetAccountAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Contracts.IPayeeAccountClient.GetAccountAsync(System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Contracts.IPayeeAccountClient
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: GetAccountAsync(string, CancellationToken)
+  nameWithType: IPayeeAccountClient.GetAccountAsync(string, CancellationToken)
+  fullName: NuvTools.Payment.Contracts.IPayeeAccountClient.GetAccountAsync(string, System.Threading.CancellationToken)
+  nameWithType.vb: IPayeeAccountClient.GetAccountAsync(String, CancellationToken)
+  fullName.vb: NuvTools.Payment.Contracts.IPayeeAccountClient.GetAccountAsync(String, System.Threading.CancellationToken)
+  name.vb: GetAccountAsync(String, CancellationToken)
+  spec.csharp:
+  - uid: NuvTools.Payment.Contracts.IPayeeAccountClient.GetAccountAsync(System.String,System.Threading.CancellationToken)
+    name: GetAccountAsync
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Payment.Contracts.IPayeeAccountClient.GetAccountAsync(System.String,System.Threading.CancellationToken)
+    name: GetAccountAsync
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.DTOs.PayeeAccountDTO}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.DTOs.PayeeAccountDTO}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<PayeeAccountDTO>>
+  nameWithType: Task<IResult<PayeeAccountDTO>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<NuvTools.Payment.DTOs.PayeeAccountDTO>>
+  nameWithType.vb: Task(Of IResult(Of PayeeAccountDTO))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of NuvTools.Payment.DTOs.PayeeAccountDTO))
+  name.vb: Task(Of IResult(Of PayeeAccountDTO))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - uid: NuvTools.Payment.DTOs.PayeeAccountDTO
+    name: PayeeAccountDTO
+    href: NuvTools.Payment.DTOs.PayeeAccountDTO.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.DTOs.PayeeAccountDTO
+    name: PayeeAccountDTO
+    href: NuvTools.Payment.DTOs.PayeeAccountDTO.html
+  - name: )
+  - name: )

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>NuvTools Validation Library | Nuv Tools Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="NuvTools Validation Library | Nuv Tools Framework ">
+      
+      
+      <link rel="icon" href="../../../images/icon.png">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/nuvtools-brand.svg" alt="Framework">
+            Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="nuvtools-validation-library">NuvTools Validation Library</h1>
+
+<p><a href="https://www.nuget.org/packages/NuvTools.Validation/"><img src="https://img.shields.io/nuget/v/NuvTools.Validation.svg" alt="NuGet"></a>
+<a href="https://github.com/nuvtools/nuvtools-validation/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a></p>
+<p>A validation library for .NET applications, providing robust validation features for Web, Desktop, and Mobile (MAUI) applications. Includes email and numeric validators, specialized Brazilian document validators (CPF, CNPJ, phone, CEP), password complexity attributes, and data annotations. This library targets modern .NET platforms, including .NET 8, .NET 9, and .NET 10.</p>
+<h2 id="installation">Installation</h2>
+<p>Install via NuGet Package Manager:</p>
+<pre><code class="lang-bash">dotnet add package NuvTools.Validation
+</code></pre>
+<p>Or via Package Manager Console:</p>
+<pre><code class="lang-powershell">Install-Package NuvTools.Validation
+</code></pre>
+<h2 id="key-features">Key Features</h2>
+<ul>
+<li><strong>General Validators</strong>: Email, numeric types (int, long, decimal), Base64/Data URI validation</li>
+<li><strong>Brazilian Document Validators</strong>: CPF, CNPJ (including the new RFB alphanumeric format), mobile phone, and ZIP code (CEP) validation</li>
+<li><strong>Document Formatting</strong>: CPF and CNPJ formatting helpers</li>
+<li><strong>Data Annotations</strong>: CPF/CNPJ validation attributes, password complexity attributes</li>
+<li><strong>Localized Messages</strong>: Validation messages in English and Portuguese (pt-BR)</li>
+</ul>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="general-validation">General Validation</h3>
+<pre><code class="lang-csharp">using NuvTools.Validation;
+
+// Email validation
+bool isValid = &quot;user@example.com&quot;.IsEmail();
+
+// Numeric validation
+bool isInt = &quot;12345&quot;.IsIntNumber();
+bool isPositive = &quot;12345&quot;.IsIntNumber(positiveOnly: true);
+bool isLong = &quot;12345&quot;.IsLongNumber();
+
+// Decimal validation
+bool isDecimal = &quot;123.45&quot;.IsDecimalNumber();
+</code></pre>
+<h3 id="brazilian-document-validation">Brazilian Document Validation</h3>
+<pre><code class="lang-csharp">using NuvTools.Validation.Brazil;
+
+// Validate CPF
+bool isValid = &quot;123.456.789-01&quot;.IsCPF();
+
+// Validate CNPJ (numeric)
+bool isValid = &quot;12.345.678/0001-95&quot;.IsCNPJ();
+
+// Validate CNPJ (new RFB alphanumeric format — uppercase A–Z and 0–9 in positions 1–12)
+bool isValidAlpha = &quot;12.ABC.345/01DE-35&quot;.IsCNPJ();
+
+// Auto-detect CPF or CNPJ
+bool isValid = &quot;12345678901&quot;.IsCPForCNPJ();
+
+// Validate mobile phone
+bool isValid = &quot;11987654321&quot;.IsMobileNumber();
+
+// Validate ZIP code (CEP)
+bool isValid = &quot;01310-100&quot;.IsZipCodeNumber();
+</code></pre>
+<h3 id="document-formatting">Document Formatting</h3>
+<pre><code class="lang-csharp">using NuvTools.Validation.Brazil;
+
+// Format CPF
+string formatted = &quot;12345678901&quot;.FormatCPF();
+// Output: 123.456.789-01
+
+// Format CNPJ
+string formatted = &quot;12345678000195&quot;.FormatCNPJ();
+// Output: 12.345.678/0001-95
+</code></pre>
+<h3 id="data-annotations">Data Annotations</h3>
+<pre><code class="lang-csharp">using NuvTools.Validation.Brazil.Annotations;
+using NuvTools.Validation.Annotations;
+
+public class UserRegistrationModel
+{
+    [Required]
+    [CPF]
+    public string CPF { get; set; }
+
+    [Required]
+    [PasswordComplexityCapitalLetters(2)]
+    [PasswordComplexityLowerCaseLetters(2)]
+    [PasswordComplexityDigits(2)]
+    public string Password { get; set; }
+}
+
+public class CompanyModel
+{
+    [Required]
+    [CNPJ]
+    public string CNPJ { get; set; }
+}
+
+// Validate using data annotations
+var model = new UserRegistrationModel
+{
+    CPF = &quot;123.456.789-01&quot;,
+    Password = &quot;MyPass123&quot;
+};
+
+var errors = model.Validate(); // Returns null if valid, or list of error messages
+</code></pre>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>Multi-targeting</strong>: Compatible with .NET 8, .NET 9, and .NET 10</li>
+<li><strong>Comprehensive documentation</strong>: Full XML documentation for IntelliSense</li>
+<li><strong>Modern C# features</strong>: Uses nullable reference types, implicit usings, and source-generated regex</li>
+</ul>
+<h2 id="building-from-source">Building from Source</h2>
+<p>This project uses the modern <code>.slnx</code> solution format (Visual Studio 2022 v17.11+).</p>
+<pre><code class="lang-bash"># Clone the repository
+git clone https://github.com/nuvtools/nuvtools-validation.git
+cd nuvtools-validation
+
+# Build the solution
+dotnet build NuvTools.Validation.slnx
+
+# Run tests
+dotnet test NuvTools.Validation.slnx
+
+# Create release packages
+dotnet build NuvTools.Validation.slnx --configuration Release
+</code></pre>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>.NET 8.0 SDK or higher</li>
+<li>Visual Studio 2022 (v17.11+) or Visual Studio Code with C# extension</li>
+</ul>
+<h2 id="contributing">Contributing</h2>
+<p>Contributions are welcome! Please feel free to submit a Pull Request.</p>
+<h2 id="releasing">Releasing</h2>
+<p>Publishing to nuget.org is irreversible per version, so the workflow makes it the last and smallest
+step.</p>
+<p>The package has its own workflow, and the steps live in the reusable <code>package-publish.yml</code>, the
+same layout as the other NuvTools repositories.</p>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Workflow</th>
+<th>Release tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NuvTools.Validation</code></td>
+<td><code>validation-publish.yml</code></td>
+<td><code>validation-vX.Y.Z</code></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Set the package's <code>&lt;Version&gt;</code> in its <code>.csproj</code> and merge it. That is the version that gets
+published; the workflow reads it and never computes one.</li>
+<li>Run the library's workflow by hand (<em>Actions → Validation Publish → Run workflow</em>) with <em>push</em>
+checked.</li>
+<li>The workflow builds the solution with <code>-warnaserror</code>, runs the tests, takes <strong>that package only</strong>
+from the build output, verifies it carries its README, licence, icon, symbols and every target
+framework, and then waits for approval on the <code>nuget</code> GitHub Environment before pushing.</li>
+<li><strong>After the push succeeds, the workflow tags the commit</strong> with the tag in the table above. The tag is a
+record of what is on nuget.org, never what starts a release, so it cannot exist for a version
+that did not get there. A run whose tag already exists stops before building: the version has
+been released and <code>&lt;Version&gt;</code> needs a bump.</li>
+</ol>
+<p><strong>Versions published by hand are refused.</strong> Releases made before these workflows exist on nuget.org
+with no tag. Pushing one again would skip the duplicate and then tag the current commit as a
+release it is not, so a version that is already on nuget.org stops the run. The exception is a
+re-run of the same run, which is how a push that succeeded and a tag that failed gets finished.</p>
+<p><strong>No API key is stored.</strong> The push uses nuget.org's trusted publishing: the job presents a GitHub
+OIDC token, nuget.org checks it against the policy registered for this repository and answers with a
+key that lives for one hour. The repository needs one secret, <code>NUGET_USER</code> — the nuget.org profile
+name the policy belongs to — and the policy itself, registered under <em>Trusted Publishing</em> on
+nuget.org with the owner <code>nuvtools</code>, the repository <code>nuvtools-validation</code>, the workflow file and the
+environment <code>nuget</code>.</p>
+<p>Run a library's workflow by hand with <em>push</em> unchecked for a dry run that stops after the
+verification.</p>
+<h2 id="license">License</h2>
+<p>This project is licensed under the MIT License - see the <a href="https://github.com/nuvtools/nuvtools-validation/blob/main/LICENSE">LICENSE</a> file for details.</p>
+<h2 id="links">Links</h2>
+<ul>
+<li><a href="https://github.com/nuvtools/nuvtools-validation">GitHub Repository</a></li>
+<li><a href="https://www.nuget.org/packages/NuvTools.Validation/">NuGet Package - NuvTools.Validation</a></li>
+<li><a href="https://nuvtools.com">Official Website</a></li>
+</ul>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>© Nuv Tools · <a href="https://nuvtools.com/framework/">nuvtools.com</a> · MIT licence · Built with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

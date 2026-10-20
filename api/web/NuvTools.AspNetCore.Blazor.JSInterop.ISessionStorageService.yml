@@ -1,0 +1,631 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService
+  commentId: T:NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService
+  id: ISessionStorageService
+  parent: NuvTools.AspNetCore.Blazor.JSInterop
+  children:
+  - NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.ClearAsync
+  - NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.ContainKeyAsync(System.String)
+  - NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.GetItemAsStringAsync(System.String)
+  - NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.GetItemAsync``1(System.String)
+  - NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.KeyAsync(System.Int32)
+  - NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.LengthAsync
+  - NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.RemoveItemAsync(System.String)
+  - NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.SetItemAsStringAsync(System.String,System.String)
+  - NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.SetItemAsync``1(System.String,``0)
+  langs:
+  - csharp
+  - vb
+  name: ISessionStorageService
+  nameWithType: ISessionStorageService
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService
+  type: Interface
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.JSInterop
+  summary: Provides JavaScript interop functionality for browser sessionStorage operations.
+  example: []
+  syntax:
+    content: public interface ISessionStorageService
+    content.vb: Public Interface ISessionStorageService
+  derivedClasses:
+  - NuvTools.AspNetCore.Blazor.JSInterop.SessionStorageService
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.GetItemAsync``1(System.String)
+  commentId: M:NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.GetItemAsync``1(System.String)
+  id: GetItemAsync``1(System.String)
+  parent: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService
+  langs:
+  - csharp
+  - vb
+  name: GetItemAsync<T>(string)
+  nameWithType: ISessionStorageService.GetItemAsync<T>(string)
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.GetItemAsync<T>(string)
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.JSInterop
+  summary: Gets an item from sessionStorage and deserializes it from JSON.
+  example: []
+  syntax:
+    content: ValueTask<T?> GetItemAsync<T>(string key)
+    parameters:
+    - id: key
+      type: System.String
+      description: The key of the item to retrieve.
+    typeParameters:
+    - id: T
+      description: The type to deserialize the stored value to.
+    return:
+      type: System.Threading.Tasks.ValueTask{{T}}
+      description: A <xref href="System.Threading.Tasks.ValueTask%601" data-throw-if-not-resolved="false"></xref> representing the asynchronous operation, containing the deserialized value or default if not found.
+    content.vb: Function GetItemAsync(Of T)(key As String) As ValueTask(Of T)
+  overload: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.GetItemAsync*
+  nameWithType.vb: ISessionStorageService.GetItemAsync(Of T)(String)
+  fullName.vb: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.GetItemAsync(Of T)(String)
+  name.vb: GetItemAsync(Of T)(String)
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.GetItemAsStringAsync(System.String)
+  commentId: M:NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.GetItemAsStringAsync(System.String)
+  id: GetItemAsStringAsync(System.String)
+  parent: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService
+  langs:
+  - csharp
+  - vb
+  name: GetItemAsStringAsync(string)
+  nameWithType: ISessionStorageService.GetItemAsStringAsync(string)
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.GetItemAsStringAsync(string)
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.JSInterop
+  summary: Gets an item from sessionStorage as a raw string.
+  example: []
+  syntax:
+    content: ValueTask<string?> GetItemAsStringAsync(string key)
+    parameters:
+    - id: key
+      type: System.String
+      description: The key of the item to retrieve.
+    return:
+      type: System.Threading.Tasks.ValueTask{System.String}
+      description: A <xref href="System.Threading.Tasks.ValueTask%601" data-throw-if-not-resolved="false"></xref> representing the asynchronous operation, containing the stored string value or null if not found.
+    content.vb: Function GetItemAsStringAsync(key As String) As ValueTask(Of String)
+  overload: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.GetItemAsStringAsync*
+  nameWithType.vb: ISessionStorageService.GetItemAsStringAsync(String)
+  fullName.vb: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.GetItemAsStringAsync(String)
+  name.vb: GetItemAsStringAsync(String)
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.SetItemAsync``1(System.String,``0)
+  commentId: M:NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.SetItemAsync``1(System.String,``0)
+  id: SetItemAsync``1(System.String,``0)
+  parent: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService
+  langs:
+  - csharp
+  - vb
+  name: SetItemAsync<T>(string, T)
+  nameWithType: ISessionStorageService.SetItemAsync<T>(string, T)
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.SetItemAsync<T>(string, T)
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.JSInterop
+  summary: Sets an item in sessionStorage by serializing the value to JSON.
+  example: []
+  syntax:
+    content: ValueTask SetItemAsync<T>(string key, T value)
+    parameters:
+    - id: key
+      type: System.String
+      description: The key of the item to set.
+    - id: value
+      type: '{T}'
+      description: The value to serialize and store.
+    typeParameters:
+    - id: T
+      description: The type of the value to store.
+    return:
+      type: System.Threading.Tasks.ValueTask
+      description: A <xref href="System.Threading.Tasks.ValueTask" data-throw-if-not-resolved="false"></xref> representing the asynchronous operation.
+    content.vb: Function SetItemAsync(Of T)(key As String, value As T) As ValueTask
+  overload: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.SetItemAsync*
+  nameWithType.vb: ISessionStorageService.SetItemAsync(Of T)(String, T)
+  fullName.vb: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.SetItemAsync(Of T)(String, T)
+  name.vb: SetItemAsync(Of T)(String, T)
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.SetItemAsStringAsync(System.String,System.String)
+  commentId: M:NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.SetItemAsStringAsync(System.String,System.String)
+  id: SetItemAsStringAsync(System.String,System.String)
+  parent: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService
+  langs:
+  - csharp
+  - vb
+  name: SetItemAsStringAsync(string, string)
+  nameWithType: ISessionStorageService.SetItemAsStringAsync(string, string)
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.SetItemAsStringAsync(string, string)
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.JSInterop
+  summary: Sets an item in sessionStorage as a raw string.
+  example: []
+  syntax:
+    content: ValueTask SetItemAsStringAsync(string key, string value)
+    parameters:
+    - id: key
+      type: System.String
+      description: The key of the item to set.
+    - id: value
+      type: System.String
+      description: The string value to store.
+    return:
+      type: System.Threading.Tasks.ValueTask
+      description: A <xref href="System.Threading.Tasks.ValueTask" data-throw-if-not-resolved="false"></xref> representing the asynchronous operation.
+    content.vb: Function SetItemAsStringAsync(key As String, value As String) As ValueTask
+  overload: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.SetItemAsStringAsync*
+  nameWithType.vb: ISessionStorageService.SetItemAsStringAsync(String, String)
+  fullName.vb: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.SetItemAsStringAsync(String, String)
+  name.vb: SetItemAsStringAsync(String, String)
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.RemoveItemAsync(System.String)
+  commentId: M:NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.RemoveItemAsync(System.String)
+  id: RemoveItemAsync(System.String)
+  parent: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService
+  langs:
+  - csharp
+  - vb
+  name: RemoveItemAsync(string)
+  nameWithType: ISessionStorageService.RemoveItemAsync(string)
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.RemoveItemAsync(string)
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.JSInterop
+  summary: Removes an item from sessionStorage.
+  example: []
+  syntax:
+    content: ValueTask RemoveItemAsync(string key)
+    parameters:
+    - id: key
+      type: System.String
+      description: The key of the item to remove.
+    return:
+      type: System.Threading.Tasks.ValueTask
+      description: A <xref href="System.Threading.Tasks.ValueTask" data-throw-if-not-resolved="false"></xref> representing the asynchronous operation.
+    content.vb: Function RemoveItemAsync(key As String) As ValueTask
+  overload: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.RemoveItemAsync*
+  nameWithType.vb: ISessionStorageService.RemoveItemAsync(String)
+  fullName.vb: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.RemoveItemAsync(String)
+  name.vb: RemoveItemAsync(String)
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.ClearAsync
+  commentId: M:NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.ClearAsync
+  id: ClearAsync
+  parent: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService
+  langs:
+  - csharp
+  - vb
+  name: ClearAsync()
+  nameWithType: ISessionStorageService.ClearAsync()
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.ClearAsync()
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.JSInterop
+  summary: Clears all items from sessionStorage.
+  example: []
+  syntax:
+    content: ValueTask ClearAsync()
+    return:
+      type: System.Threading.Tasks.ValueTask
+      description: A <xref href="System.Threading.Tasks.ValueTask" data-throw-if-not-resolved="false"></xref> representing the asynchronous operation.
+    content.vb: Function ClearAsync() As ValueTask
+  overload: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.ClearAsync*
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.LengthAsync
+  commentId: M:NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.LengthAsync
+  id: LengthAsync
+  parent: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService
+  langs:
+  - csharp
+  - vb
+  name: LengthAsync()
+  nameWithType: ISessionStorageService.LengthAsync()
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.LengthAsync()
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.JSInterop
+  summary: Gets the number of items stored in sessionStorage.
+  example: []
+  syntax:
+    content: ValueTask<int> LengthAsync()
+    return:
+      type: System.Threading.Tasks.ValueTask{System.Int32}
+      description: A <xref href="System.Threading.Tasks.ValueTask%601" data-throw-if-not-resolved="false"></xref> representing the asynchronous operation, containing the number of stored items.
+    content.vb: Function LengthAsync() As ValueTask(Of Integer)
+  overload: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.LengthAsync*
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.KeyAsync(System.Int32)
+  commentId: M:NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.KeyAsync(System.Int32)
+  id: KeyAsync(System.Int32)
+  parent: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService
+  langs:
+  - csharp
+  - vb
+  name: KeyAsync(int)
+  nameWithType: ISessionStorageService.KeyAsync(int)
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.KeyAsync(int)
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.JSInterop
+  summary: Gets the key at the specified index in sessionStorage.
+  example: []
+  syntax:
+    content: ValueTask<string?> KeyAsync(int index)
+    parameters:
+    - id: index
+      type: System.Int32
+      description: The zero-based index of the key to retrieve.
+    return:
+      type: System.Threading.Tasks.ValueTask{System.String}
+      description: A <xref href="System.Threading.Tasks.ValueTask%601" data-throw-if-not-resolved="false"></xref> representing the asynchronous operation, containing the key at the specified index or null if the index is out of range.
+    content.vb: Function KeyAsync(index As Integer) As ValueTask(Of String)
+  overload: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.KeyAsync*
+  nameWithType.vb: ISessionStorageService.KeyAsync(Integer)
+  fullName.vb: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.KeyAsync(Integer)
+  name.vb: KeyAsync(Integer)
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.ContainKeyAsync(System.String)
+  commentId: M:NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.ContainKeyAsync(System.String)
+  id: ContainKeyAsync(System.String)
+  parent: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService
+  langs:
+  - csharp
+  - vb
+  name: ContainKeyAsync(string)
+  nameWithType: ISessionStorageService.ContainKeyAsync(string)
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.ContainKeyAsync(string)
+  type: Method
+  assemblies:
+  - NuvTools.AspNetCore.Blazor
+  namespace: NuvTools.AspNetCore.Blazor.JSInterop
+  summary: Checks if a key exists in sessionStorage.
+  example: []
+  syntax:
+    content: ValueTask<bool> ContainKeyAsync(string key)
+    parameters:
+    - id: key
+      type: System.String
+      description: The key to check for existence.
+    return:
+      type: System.Threading.Tasks.ValueTask{System.Boolean}
+      description: A <xref href="System.Threading.Tasks.ValueTask%601" data-throw-if-not-resolved="false"></xref> representing the asynchronous operation, containing true if the key exists, otherwise false.
+    content.vb: Function ContainKeyAsync(key As String) As ValueTask(Of Boolean)
+  overload: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.ContainKeyAsync*
+  nameWithType.vb: ISessionStorageService.ContainKeyAsync(String)
+  fullName.vb: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.ContainKeyAsync(String)
+  name.vb: ContainKeyAsync(String)
+references:
+- uid: NuvTools.AspNetCore.Blazor.JSInterop
+  commentId: N:NuvTools.AspNetCore.Blazor.JSInterop
+  name: NuvTools.AspNetCore.Blazor.JSInterop
+  nameWithType: NuvTools.AspNetCore.Blazor.JSInterop
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.AspNetCore
+    name: AspNetCore
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor
+    name: Blazor
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor.JSInterop
+    name: JSInterop
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.AspNetCore
+    name: AspNetCore
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor
+    name: Blazor
+  - name: .
+  - uid: NuvTools.AspNetCore.Blazor.JSInterop
+    name: JSInterop
+- uid: System.Threading.Tasks.ValueTask`1
+  commentId: T:System.Threading.Tasks.ValueTask`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  name: ValueTask<TResult>
+  nameWithType: ValueTask<TResult>
+  fullName: System.Threading.Tasks.ValueTask<TResult>
+  nameWithType.vb: ValueTask(Of TResult)
+  fullName.vb: System.Threading.Tasks.ValueTask(Of TResult)
+  name.vb: ValueTask(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.ValueTask`1
+    name: ValueTask
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.ValueTask`1
+    name: ValueTask
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.GetItemAsync*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.GetItemAsync
+  href: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.html#NuvTools_AspNetCore_Blazor_JSInterop_ISessionStorageService_GetItemAsync__1_System_String_
+  name: GetItemAsync
+  nameWithType: ISessionStorageService.GetItemAsync
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.GetItemAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.Tasks.ValueTask{{T}}
+  commentId: T:System.Threading.Tasks.ValueTask{``0}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.ValueTask`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  name: ValueTask<T>
+  nameWithType: ValueTask<T>
+  fullName: System.Threading.Tasks.ValueTask<T>
+  nameWithType.vb: ValueTask(Of T)
+  fullName.vb: System.Threading.Tasks.ValueTask(Of T)
+  name.vb: ValueTask(Of T)
+  spec.csharp:
+  - uid: System.Threading.Tasks.ValueTask`1
+    name: ValueTask
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.ValueTask`1
+    name: ValueTask
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.GetItemAsStringAsync*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.GetItemAsStringAsync
+  href: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.html#NuvTools_AspNetCore_Blazor_JSInterop_ISessionStorageService_GetItemAsStringAsync_System_String_
+  name: GetItemAsStringAsync
+  nameWithType: ISessionStorageService.GetItemAsStringAsync
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.GetItemAsStringAsync
+- uid: System.Threading.Tasks.ValueTask{System.String}
+  commentId: T:System.Threading.Tasks.ValueTask{System.String}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.ValueTask`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  name: ValueTask<string>
+  nameWithType: ValueTask<string>
+  fullName: System.Threading.Tasks.ValueTask<string>
+  nameWithType.vb: ValueTask(Of String)
+  fullName.vb: System.Threading.Tasks.ValueTask(Of String)
+  name.vb: ValueTask(Of String)
+  spec.csharp:
+  - uid: System.Threading.Tasks.ValueTask`1
+    name: ValueTask
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.ValueTask`1
+    name: ValueTask
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Threading.Tasks.ValueTask
+  commentId: T:System.Threading.Tasks.ValueTask
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask
+  name: ValueTask
+  nameWithType: ValueTask
+  fullName: System.Threading.Tasks.ValueTask
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.SetItemAsync*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.SetItemAsync
+  href: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.html#NuvTools_AspNetCore_Blazor_JSInterop_ISessionStorageService_SetItemAsync__1_System_String___0_
+  name: SetItemAsync
+  nameWithType: ISessionStorageService.SetItemAsync
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.SetItemAsync
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.SetItemAsStringAsync*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.SetItemAsStringAsync
+  href: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.html#NuvTools_AspNetCore_Blazor_JSInterop_ISessionStorageService_SetItemAsStringAsync_System_String_System_String_
+  name: SetItemAsStringAsync
+  nameWithType: ISessionStorageService.SetItemAsStringAsync
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.SetItemAsStringAsync
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.RemoveItemAsync*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.RemoveItemAsync
+  href: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.html#NuvTools_AspNetCore_Blazor_JSInterop_ISessionStorageService_RemoveItemAsync_System_String_
+  name: RemoveItemAsync
+  nameWithType: ISessionStorageService.RemoveItemAsync
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.RemoveItemAsync
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.ClearAsync*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.ClearAsync
+  href: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.html#NuvTools_AspNetCore_Blazor_JSInterop_ISessionStorageService_ClearAsync
+  name: ClearAsync
+  nameWithType: ISessionStorageService.ClearAsync
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.ClearAsync
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.LengthAsync*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.LengthAsync
+  href: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.html#NuvTools_AspNetCore_Blazor_JSInterop_ISessionStorageService_LengthAsync
+  name: LengthAsync
+  nameWithType: ISessionStorageService.LengthAsync
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.LengthAsync
+- uid: System.Threading.Tasks.ValueTask{System.Int32}
+  commentId: T:System.Threading.Tasks.ValueTask{System.Int32}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.ValueTask`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  name: ValueTask<int>
+  nameWithType: ValueTask<int>
+  fullName: System.Threading.Tasks.ValueTask<int>
+  nameWithType.vb: ValueTask(Of Integer)
+  fullName.vb: System.Threading.Tasks.ValueTask(Of Integer)
+  name.vb: ValueTask(Of Integer)
+  spec.csharp:
+  - uid: System.Threading.Tasks.ValueTask`1
+    name: ValueTask
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.ValueTask`1
+    name: ValueTask
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.KeyAsync*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.KeyAsync
+  href: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.html#NuvTools_AspNetCore_Blazor_JSInterop_ISessionStorageService_KeyAsync_System_Int32_
+  name: KeyAsync
+  nameWithType: ISessionStorageService.KeyAsync
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.KeyAsync
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.ContainKeyAsync*
+  commentId: Overload:NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.ContainKeyAsync
+  href: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.html#NuvTools_AspNetCore_Blazor_JSInterop_ISessionStorageService_ContainKeyAsync_System_String_
+  name: ContainKeyAsync
+  nameWithType: ISessionStorageService.ContainKeyAsync
+  fullName: NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.ContainKeyAsync
+- uid: System.Threading.Tasks.ValueTask{System.Boolean}
+  commentId: T:System.Threading.Tasks.ValueTask{System.Boolean}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.ValueTask`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  name: ValueTask<bool>
+  nameWithType: ValueTask<bool>
+  fullName: System.Threading.Tasks.ValueTask<bool>
+  nameWithType.vb: ValueTask(Of Boolean)
+  fullName.vb: System.Threading.Tasks.ValueTask(Of Boolean)
+  name.vb: ValueTask(Of Boolean)
+  spec.csharp:
+  - uid: System.Threading.Tasks.ValueTask`1
+    name: ValueTask
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.ValueTask`1
+    name: ValueTask
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )

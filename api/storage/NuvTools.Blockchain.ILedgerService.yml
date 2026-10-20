@@ -1,0 +1,355 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Blockchain.ILedgerService
+  commentId: T:NuvTools.Blockchain.ILedgerService
+  id: ILedgerService
+  parent: NuvTools.Blockchain
+  children:
+  - NuvTools.Blockchain.ILedgerService.ReadAsync``1(System.String,System.String,System.Int32,System.Int32,System.Threading.CancellationToken)
+  - NuvTools.Blockchain.ILedgerService.WriteAsync``1(``0,System.String,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: ILedgerService
+  nameWithType: ILedgerService
+  fullName: NuvTools.Blockchain.ILedgerService
+  type: Interface
+  assemblies:
+  - NuvTools.Blockchain
+  namespace: NuvTools.Blockchain
+  summary: Defines the contract for blockchain ledger operations.
+  example: []
+  syntax:
+    content: public interface ILedgerService
+    content.vb: Public Interface ILedgerService
+  derivedClasses:
+  - NuvTools.Blockchain.Azure.AzureConfidentialLedgerService
+- uid: NuvTools.Blockchain.ILedgerService.WriteAsync``1(``0,System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Blockchain.ILedgerService.WriteAsync``1(``0,System.String,System.Threading.CancellationToken)
+  id: WriteAsync``1(``0,System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Blockchain.ILedgerService
+  langs:
+  - csharp
+  - vb
+  name: WriteAsync<T>(T, string?, CancellationToken)
+  nameWithType: ILedgerService.WriteAsync<T>(T, string?, CancellationToken)
+  fullName: NuvTools.Blockchain.ILedgerService.WriteAsync<T>(T, string?, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Blockchain
+  namespace: NuvTools.Blockchain
+  summary: Writes an entry to the ledger.
+  example: []
+  syntax:
+    content: 'Task<string> WriteAsync<T>(T entry, string? collectionId = null, CancellationToken cancellationToken = default) where T : class'
+    parameters:
+    - id: entry
+      type: '{T}'
+      description: The entry to write.
+    - id: collectionId
+      type: System.String
+      description: Optional collection/sub-ledger identifier.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token.
+    typeParameters:
+    - id: T
+      description: The type of the entry content.
+    return:
+      type: System.Threading.Tasks.Task{System.String}
+      description: The transaction ID of the written entry.
+    content.vb: Function WriteAsync(Of T As Class)(entry As T, collectionId As String = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of String)
+  overload: NuvTools.Blockchain.ILedgerService.WriteAsync*
+  nameWithType.vb: ILedgerService.WriteAsync(Of T)(T, String, CancellationToken)
+  fullName.vb: NuvTools.Blockchain.ILedgerService.WriteAsync(Of T)(T, String, System.Threading.CancellationToken)
+  name.vb: WriteAsync(Of T)(T, String, CancellationToken)
+- uid: NuvTools.Blockchain.ILedgerService.ReadAsync``1(System.String,System.String,System.Int32,System.Int32,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Blockchain.ILedgerService.ReadAsync``1(System.String,System.String,System.Int32,System.Int32,System.Threading.CancellationToken)
+  id: ReadAsync``1(System.String,System.String,System.Int32,System.Int32,System.Threading.CancellationToken)
+  parent: NuvTools.Blockchain.ILedgerService
+  langs:
+  - csharp
+  - vb
+  name: ReadAsync<T>(string, string?, int, int, CancellationToken)
+  nameWithType: ILedgerService.ReadAsync<T>(string, string?, int, int, CancellationToken)
+  fullName: NuvTools.Blockchain.ILedgerService.ReadAsync<T>(string, string?, int, int, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Blockchain
+  namespace: NuvTools.Blockchain
+  summary: Reads an entry from the ledger.
+  example: []
+  syntax:
+    content: 'Task<LedgerEntry<T>?> ReadAsync<T>(string transactionId, string? collectionId = null, int maxRetries = 10, int delayMilliseconds = 500, CancellationToken cancellationToken = default) where T : class'
+    parameters:
+    - id: transactionId
+      type: System.String
+      description: The transaction ID to read.
+    - id: collectionId
+      type: System.String
+      description: Optional collection/sub-ledger identifier.
+    - id: maxRetries
+      type: System.Int32
+      description: Maximum retry attempts for pending entries.
+    - id: delayMilliseconds
+      type: System.Int32
+      description: Base delay between retries in milliseconds.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token.
+    typeParameters:
+    - id: T
+      description: The type of the entry content.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Blockchain.LedgerEntry{{T}}}
+      description: The ledger entry if found; otherwise, null.
+    content.vb: Function ReadAsync(Of T As Class)(transactionId As String, collectionId As String = Nothing, maxRetries As Integer = 10, delayMilliseconds As Integer = 500, cancellationToken As CancellationToken = Nothing) As Task(Of LedgerEntry(Of T))
+  overload: NuvTools.Blockchain.ILedgerService.ReadAsync*
+  nameWithType.vb: ILedgerService.ReadAsync(Of T)(String, String, Integer, Integer, CancellationToken)
+  fullName.vb: NuvTools.Blockchain.ILedgerService.ReadAsync(Of T)(String, String, Integer, Integer, System.Threading.CancellationToken)
+  name.vb: ReadAsync(Of T)(String, String, Integer, Integer, CancellationToken)
+references:
+- uid: NuvTools.Blockchain
+  commentId: N:NuvTools.Blockchain
+  name: NuvTools.Blockchain
+  nameWithType: NuvTools.Blockchain
+  fullName: NuvTools.Blockchain
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Blockchain
+    name: Blockchain
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Blockchain
+    name: Blockchain
+- uid: NuvTools.Blockchain.ILedgerService.WriteAsync*
+  commentId: Overload:NuvTools.Blockchain.ILedgerService.WriteAsync
+  href: NuvTools.Blockchain.ILedgerService.html#NuvTools_Blockchain_ILedgerService_WriteAsync__1___0_System_String_System_Threading_CancellationToken_
+  name: WriteAsync
+  nameWithType: ILedgerService.WriteAsync
+  fullName: NuvTools.Blockchain.ILedgerService.WriteAsync
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.String}
+  commentId: T:System.Threading.Tasks.Task{System.String}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<string>
+  nameWithType: Task<string>
+  fullName: System.Threading.Tasks.Task<string>
+  nameWithType.vb: Task(Of String)
+  fullName.vb: System.Threading.Tasks.Task(Of String)
+  name.vb: Task(Of String)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NuvTools.Blockchain.ILedgerService.ReadAsync*
+  commentId: Overload:NuvTools.Blockchain.ILedgerService.ReadAsync
+  href: NuvTools.Blockchain.ILedgerService.html#NuvTools_Blockchain_ILedgerService_ReadAsync__1_System_String_System_String_System_Int32_System_Int32_System_Threading_CancellationToken_
+  name: ReadAsync
+  nameWithType: ILedgerService.ReadAsync
+  fullName: NuvTools.Blockchain.ILedgerService.ReadAsync
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Threading.Tasks.Task{NuvTools.Blockchain.LedgerEntry{{T}}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Blockchain.LedgerEntry{``0}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<LedgerEntry<T>>
+  nameWithType: Task<LedgerEntry<T>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Blockchain.LedgerEntry<T>>
+  nameWithType.vb: Task(Of LedgerEntry(Of T))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Blockchain.LedgerEntry(Of T))
+  name.vb: Task(Of LedgerEntry(Of T))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Blockchain.LedgerEntry`1
+    name: LedgerEntry
+    href: NuvTools.Blockchain.LedgerEntry-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Blockchain.LedgerEntry`1
+    name: LedgerEntry
+    href: NuvTools.Blockchain.LedgerEntry-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )

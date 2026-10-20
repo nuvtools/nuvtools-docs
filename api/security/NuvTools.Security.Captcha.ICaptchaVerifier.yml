@@ -1,0 +1,265 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Security.Captcha.ICaptchaVerifier
+  commentId: T:NuvTools.Security.Captcha.ICaptchaVerifier
+  id: ICaptchaVerifier
+  parent: NuvTools.Security.Captcha
+  children:
+  - NuvTools.Security.Captcha.ICaptchaVerifier.VerifyAsync(System.String,System.Boolean,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: ICaptchaVerifier
+  nameWithType: ICaptchaVerifier
+  fullName: NuvTools.Security.Captcha.ICaptchaVerifier
+  type: Interface
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Captcha
+  summary: Verifies a CAPTCHA token against the provider (Google reCAPTCHA Enterprise).
+  example: []
+  syntax:
+    content: public interface ICaptchaVerifier
+    content.vb: Public Interface ICaptchaVerifier
+  derivedClasses:
+  - NuvTools.Security.AspNetCore.Captcha.ReCaptchaEnterpriseVerifier
+- uid: NuvTools.Security.Captcha.ICaptchaVerifier.VerifyAsync(System.String,System.Boolean,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Security.Captcha.ICaptchaVerifier.VerifyAsync(System.String,System.Boolean,System.Threading.CancellationToken)
+  id: VerifyAsync(System.String,System.Boolean,System.Threading.CancellationToken)
+  parent: NuvTools.Security.Captcha.ICaptchaVerifier
+  langs:
+  - csharp
+  - vb
+  name: VerifyAsync(string?, bool, CancellationToken)
+  nameWithType: ICaptchaVerifier.VerifyAsync(string?, bool, CancellationToken)
+  fullName: NuvTools.Security.Captcha.ICaptchaVerifier.VerifyAsync(string?, bool, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Captcha
+  summary: Creates an assessment for the token.
+  example: []
+  syntax:
+    content: Task<CaptchaVerification> VerifyAsync(string? token, bool checkboxMode, CancellationToken cancellationToken = default)
+    parameters:
+    - id: token
+      type: System.String
+      description: The token produced by the client.
+    - id: checkboxMode
+      type: System.Boolean
+      description: >-
+        <code>true</code> uses the checkbox key (step-up challenge); <code>false</code> uses the score key
+
+        (invisible).
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Token to cancel the operation.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Security.Captcha.CaptchaVerification}
+      description: >-
+        The verification result. An empty token or a communication failure yields
+
+        <xref href="NuvTools.Security.Captcha.CaptchaVerification.Valid" data-throw-if-not-resolved="false"></xref> = <code>false</code> (fail-closed).
+    content.vb: Function VerifyAsync(token As String, checkboxMode As Boolean, cancellationToken As CancellationToken = Nothing) As Task(Of CaptchaVerification)
+  overload: NuvTools.Security.Captcha.ICaptchaVerifier.VerifyAsync*
+  nameWithType.vb: ICaptchaVerifier.VerifyAsync(String, Boolean, CancellationToken)
+  fullName.vb: NuvTools.Security.Captcha.ICaptchaVerifier.VerifyAsync(String, Boolean, System.Threading.CancellationToken)
+  name.vb: VerifyAsync(String, Boolean, CancellationToken)
+references:
+- uid: NuvTools.Security.Captcha
+  commentId: N:NuvTools.Security.Captcha
+  name: NuvTools.Security.Captcha
+  nameWithType: NuvTools.Security.Captcha
+  fullName: NuvTools.Security.Captcha
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.Captcha
+    name: Captcha
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.Captcha
+    name: Captcha
+- uid: NuvTools.Security.Captcha.CaptchaVerification.Valid
+  commentId: P:NuvTools.Security.Captcha.CaptchaVerification.Valid
+  href: NuvTools.Security.Captcha.CaptchaVerification.html#NuvTools_Security_Captcha_CaptchaVerification_Valid
+  name: Valid
+  nameWithType: CaptchaVerification.Valid
+  fullName: NuvTools.Security.Captcha.CaptchaVerification.Valid
+- uid: NuvTools.Security.Captcha.ICaptchaVerifier.VerifyAsync*
+  commentId: Overload:NuvTools.Security.Captcha.ICaptchaVerifier.VerifyAsync
+  href: NuvTools.Security.Captcha.ICaptchaVerifier.html#NuvTools_Security_Captcha_ICaptchaVerifier_VerifyAsync_System_String_System_Boolean_System_Threading_CancellationToken_
+  name: VerifyAsync
+  nameWithType: ICaptchaVerifier.VerifyAsync
+  fullName: NuvTools.Security.Captcha.ICaptchaVerifier.VerifyAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{NuvTools.Security.Captcha.CaptchaVerification}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Security.Captcha.CaptchaVerification}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<CaptchaVerification>
+  nameWithType: Task<CaptchaVerification>
+  fullName: System.Threading.Tasks.Task<NuvTools.Security.Captcha.CaptchaVerification>
+  nameWithType.vb: Task(Of CaptchaVerification)
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Security.Captcha.CaptchaVerification)
+  name.vb: Task(Of CaptchaVerification)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Security.Captcha.CaptchaVerification
+    name: CaptchaVerification
+    href: NuvTools.Security.Captcha.CaptchaVerification.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Security.Captcha.CaptchaVerification
+    name: CaptchaVerification
+    href: NuvTools.Security.Captcha.CaptchaVerification.html
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

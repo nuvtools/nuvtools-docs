@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Class MudTablePageBase&lt;TItem, TFilter, TOrdering&gt; | Nuv Tools Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class MudTablePageBase&lt;TItem, TFilter, TOrdering&gt; | Nuv Tools Framework ">
+      
+      <meta name="description" content="Abstract base class for pages with server-side paged lists using MudBlazor MudTable.">
+      <link rel="icon" href="../../images/icon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/nuvtools-brand.svg" alt="Framework">
+            Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3">
+
+
+
+  <h1 id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3" class="text-break">
+Class MudTablePageBase&lt;TItem, TFilter, TOrdering&gt;  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><span class="xref">NuvTools</span>.<span class="xref">AspNetCore</span>.<span class="xref">Blazor</span>.<span class="xref">MudBlazor</span>.<a class="xref" href="NuvTools.AspNetCore.Blazor.MudBlazor.Components.html">Components</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NuvTools.AspNetCore.Blazor.MudBlazor.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Abstract base class for pages with server-side paged lists using MudBlazor MudTable.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class MudTablePageBase&lt;TItem, TFilter, TOrdering&gt; : ComponentBase, IComponent, IHandleEvent, IHandleAfterRender where TFilter : PagingFilter&lt;TOrdering&gt; where TOrdering : struct, Enum</code></pre>
+  </div>
+
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TItem</code></dt>
+    <dd><p>The type of DTO displayed in the table.</p>
+</dd>
+    <dt><code>TFilter</code></dt>
+    <dd><p>The filter type that inherits from <a class="xref" href="../data/NuvTools.Data.Paging.PagingFilter-1.html">PagingFilter&lt;T&gt;</a>.</p>
+</dd>
+    <dt><code>TOrdering</code></dt>
+    <dd><p>The enum type for sorting options.</p>
+</dd>
+  </dl>
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase">ComponentBase</a></div>
+      <div><span class="xref">MudTablePageBase&lt;TItem, TFilter, TOrdering&gt;</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.icomponent">IComponent</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.ihandleevent">IHandleEvent</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.ihandleafterrender">IHandleAfterRender</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.buildrendertree">ComponentBase.BuildRenderTree(RenderTreeBuilder)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.oninitialized">ComponentBase.OnInitialized()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onparametersset">ComponentBase.OnParametersSet()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onparameterssetasync">ComponentBase.OnParametersSetAsync()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.statehaschanged">ComponentBase.StateHasChanged()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.shouldrender">ComponentBase.ShouldRender()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onafterrender">ComponentBase.OnAfterRender(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.onafterrenderasync">ComponentBase.OnAfterRenderAsync(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.invokeasync#microsoft-aspnetcore-components-componentbase-invokeasync(system-action)">ComponentBase.InvokeAsync(Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.invokeasync#microsoft-aspnetcore-components-componentbase-invokeasync(system-func((system-threading-tasks-task)))">ComponentBase.InvokeAsync(Func&lt;Task&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.dispatchexceptionasync">ComponentBase.DispatchExceptionAsync(Exception)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.setparametersasync">ComponentBase.SetParametersAsync(ParameterView)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.rendererinfo">ComponentBase.RendererInfo</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.assets">ComponentBase.Assets</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.components.componentbase.assignedrendermode">ComponentBase.AssignedRenderMode</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+  <h2 id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_examples">Examples</h2>
+  <pre><code class="lang-csharp">public class UserListPage : MudTablePageBase&lt;UserDto, UserFilter, UserSortColumn&gt;
+{
+    [Inject] private IUserService UserService { get; set; } = default!;
+
+    protected override string SessionStorageKey =&gt; "user-list-filter";
+
+    protected override UserFilter CreateDefaultFilter() =&gt; new()
+    {
+        SortColumn = UserSortColumn.Name,
+        PageSize = 25
+    };
+
+    protected override async Task&lt;IResult&lt;PagingWithEnumerableList&lt;UserDto&gt;&gt;&gt; FetchDataAsync(
+        UserFilter filter, CancellationToken cancellationToken)
+    {
+        return await UserService.GetUsersAsync(filter, cancellationToken);
+    }
+
+    protected override UserSortColumn MapSortLabelToOrdering(string sortLabel)
+    {
+        return Enum.Parse&lt;UserSortColumn&gt;(sortLabel);
+    }
+}</code></pre>
+
+
+  <h2 id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This base class provides:</p>
+<ul><li>Session storage persistence for filter state</li><li>Integration with <a class="xref" href="NuvTools.AspNetCore.Blazor.Services.ILoadingService.html">ILoadingService</a> for loading indicators</li><li>MudTable server-side data binding</li><li>Sort direction mapping between NuvTools and MudBlazor</li><li>Support for <a class="xref" href="../data/NuvTools.Data.Paging.Enumerations.PagingCountMode.html#NuvTools_Data_Paging_Enumerations_PagingCountMode_SkipCount">SkipCount</a> to avoid expensive COUNT queries on large datasets</li></ul>
+</div>
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_CurrentPage_" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.CurrentPage*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_CurrentPage" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.CurrentPage">
+  CurrentPage
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the current page index (0-based, same as MudBlazor and NuvTools.Data).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CurrentPage { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_HasNextPage_" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.HasNextPage*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_HasNextPage" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.HasNextPage">
+  HasNextPage
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets whether the current paged data has more items beyond the current page.
+Useful for infinite scroll or forward-only navigation scenarios with <a class="xref" href="../data/NuvTools.Data.Paging.Enumerations.PagingCountMode.html#NuvTools_Data_Paging_Enumerations_PagingCountMode_SkipCount">SkipCount</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasNextPage { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_IsFirstPage_" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.IsFirstPage*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_IsFirstPage" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.IsFirstPage">
+  IsFirstPage
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets whether the current page is the first page (page index is 0).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsFirstPage { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_LoadingService_" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.LoadingService*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_LoadingService" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.LoadingService">
+  LoadingService
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the loading service for managing loading indicator state.
+This service is optional and null-safe.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Inject]
+protected ILoadingService? LoadingService { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NuvTools.AspNetCore.Blazor.Services.ILoadingService.html">ILoadingService</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_ModelFilter_" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.ModelFilter*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_ModelFilter" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.ModelFilter">
+  ModelFilter
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the current filter model.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TFilter ModelFilter { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">TFilter</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_PagedData_" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.PagedData*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_PagedData" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.PagedData">
+  PagedData
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the paged data returned from the API.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PagingWithEnumerableList&lt;TItem&gt;? PagedData { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="../data/NuvTools.Data.Paging.PagingWithEnumerableList-1.html">PagingWithEnumerableList</a>&lt;TItem&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_SessionStorage_" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.SessionStorage*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_SessionStorage" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.SessionStorage">
+  SessionStorage
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the session storage service for persisting filter state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Inject]
+protected ISessionStorageService SessionStorage { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="NuvTools.AspNetCore.Blazor.JSInterop.ISessionStorageService.html">ISessionStorageService</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_SessionStorageKey_" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.SessionStorageKey*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_SessionStorageKey" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.SessionStorageKey">
+  SessionStorageKey
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the session storage key for persisting the filter state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract string SessionStorageKey { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_Table_" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.Table*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_Table" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.Table">
+  Table
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets the reference to the MudTable component.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MudTable&lt;TItem&gt; Table { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><span class="xref">MudTable</span>&lt;TItem&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_CreateDefaultFilter_" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.CreateDefaultFilter*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_CreateDefaultFilter" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.CreateDefaultFilter">
+  CreateDefaultFilter()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates the default filter when no stored filter exists.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract TFilter CreateDefaultFilter()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">TFilter</span></dt>
+    <dd><p>A new instance of the filter with default values.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_FetchDataAsync_" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.FetchDataAsync*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_FetchDataAsync__1_System_Threading_CancellationToken_" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.FetchDataAsync(`1,System.Threading.CancellationToken)">
+  FetchDataAsync(TFilter, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Fetches data from the API service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract Task&lt;IResult&lt;PagingWithEnumerableList&lt;TItem&gt;&gt;&gt; FetchDataAsync(TFilter filter, CancellationToken cancellationToken)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>filter</code> <span class="xref">TFilter</span></dt>
+    <dd><p>The filter to apply.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>The cancellation token.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../foundation/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;<a class="xref" href="../data/NuvTools.Data.Paging.PagingWithEnumerableList-1.html">PagingWithEnumerableList</a>&lt;TItem&gt;&gt;&gt;</dt>
+    <dd><p>The paged result containing the data.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_GetSortDirection_" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.GetSortDirection*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_GetSortDirection" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.GetSortDirection">
+  GetSortDirection()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Converts NuvTools SortDirection to MudBlazor SortDirection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SortDirection GetSortDirection()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">SortDirection</span></dt>
+    <dd><p>The MudBlazor sort direction.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_GetSortLabel_" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.GetSortLabel*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_GetSortLabel" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.GetSortLabel">
+  GetSortLabel()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Converts the current ordering enum value to a sort label string.
+Default implementation uses <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.enum.tostring#system-enum-tostring">ToString()</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string GetSortLabel()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The sort label string.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_MapSortLabelToOrdering_" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.MapSortLabelToOrdering*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_MapSortLabelToOrdering_System_String_" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.MapSortLabelToOrdering(System.String)">
+  MapSortLabelToOrdering(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Maps a MudBlazor sort label string to the ordering enum value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract TOrdering MapSortLabelToOrdering(string sortLabel)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>sortLabel</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The sort label from MudBlazor.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">TOrdering</span></dt>
+    <dd><p>The corresponding enum value.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_NextPageAsync_" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.NextPageAsync*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_NextPageAsync" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.NextPageAsync">
+  NextPageAsync()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Navigates to the next page. Useful for custom navigation with <a class="xref" href="../data/NuvTools.Data.Paging.Enumerations.PagingCountMode.html#NuvTools_Data_Paging_Enumerations_PagingCountMode_SkipCount">SkipCount</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Task NextPageAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>A task representing the asynchronous operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_OnDataLoadedAsync_" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnDataLoadedAsync*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_OnDataLoadedAsync_NuvTools_Data_Paging_PagingWithEnumerableList__0__" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnDataLoadedAsync(NuvTools.Data.Paging.PagingWithEnumerableList{`0})">
+  OnDataLoadedAsync(PagingWithEnumerableList&lt;TItem&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Called after data is successfully loaded.
+Override to perform post-load operations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual Task OnDataLoadedAsync(PagingWithEnumerableList&lt;TItem&gt; data)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>data</code> <a class="xref" href="../data/NuvTools.Data.Paging.PagingWithEnumerableList-1.html">PagingWithEnumerableList</a>&lt;TItem&gt;</dt>
+    <dd><p>The loaded paged data.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>A task representing the asynchronous operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_OnFetchDataFailed_" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnFetchDataFailed*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_OnFetchDataFailed_NuvTools_Common_ResultWrapper_IResult_" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnFetchDataFailed(NuvTools.Common.ResultWrapper.IResult)">
+  OnFetchDataFailed(IResult)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Called when data fetch fails. Override to customize error handling.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnFetchDataFailed(IResult result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>result</code> <a class="xref" href="../foundation/NuvTools.Common.ResultWrapper.IResult.html">IResult</a></dt>
+    <dd><p>The failed result containing error details.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_OnInitializedAsync_" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnInitializedAsync*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_OnInitializedAsync" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnInitializedAsync">
+  OnInitializedAsync()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Method invoked when the component is ready to start, having received its
+initial parameters from its parent in the render tree.</p>
+<p>Override this method if you will perform an asynchronous operation and
+want the component to refresh when that operation is completed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override Task OnInitializedAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a> representing any asynchronous operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_OnInitializedFilterAsync_" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnInitializedFilterAsync*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_OnInitializedFilterAsync" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnInitializedFilterAsync">
+  OnInitializedFilterAsync()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Called during <a class="xref" href="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase-3.html#NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_OnInitializedAsync">OnInitializedAsync()</a> after filter initialization.
+Override to load lookup data, breadcrumbs, etc.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual Task OnInitializedFilterAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>A task representing the asynchronous operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_OnInitializingAsync_" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnInitializingAsync*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_OnInitializingAsync" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.OnInitializingAsync">
+  OnInitializingAsync()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Called during <a class="xref" href="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase-3.html#NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_OnInitializedAsync">OnInitializedAsync()</a> before filter initialization.
+Override to perform additional setup.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual Task OnInitializingAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>A task representing the asynchronous operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_PreviousPageAsync_" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.PreviousPageAsync*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_PreviousPageAsync" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.PreviousPageAsync">
+  PreviousPageAsync()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Navigates to the previous page. Useful for custom navigation with <a class="xref" href="../data/NuvTools.Data.Paging.Enumerations.PagingCountMode.html#NuvTools_Data_Paging_Enumerations_PagingCountMode_SkipCount">SkipCount</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Task PreviousPageAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>A task representing the asynchronous operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_ReloadTableAsync_" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.ReloadTableAsync*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_ReloadTableAsync" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.ReloadTableAsync">
+  ReloadTableAsync()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Helper method to reload the table data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Task ReloadTableAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>A task representing the asynchronous operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_SaveFilterAsync_" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.SaveFilterAsync*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_SaveFilterAsync" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.SaveFilterAsync">
+  SaveFilterAsync()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Called to save the filter to session storage.
+Override to customize save behavior (e.g., exclude transient properties from filter).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual Task SaveFilterAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>A task representing the asynchronous operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_ServerReload_" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.ServerReload*"></a>
+
+  <h3 id="NuvTools_AspNetCore_Blazor_MudBlazor_Components_MudTablePageBase_3_ServerReload_MudBlazor_TableState_System_Threading_CancellationToken_" data-uid="NuvTools.AspNetCore.Blazor.MudBlazor.Components.MudTablePageBase`3.ServerReload(MudBlazor.TableState,System.Threading.CancellationToken)">
+  ServerReload(TableState, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Server reload method for MudTable binding.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;TableData&lt;TItem&gt;&gt; ServerReload(TableState state, CancellationToken cancellationToken)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>state</code> <span class="xref">TableState</span></dt>
+    <dd><p>The table state from MudBlazor.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>The cancellation token.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<span class="xref">TableData</span>&lt;TItem&gt;&gt;</dt>
+    <dd><p>The table data for MudBlazor.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>© Nuv Tools · <a href="https://nuvtools.com/framework/">nuvtools.com</a> · MIT licence · Built with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

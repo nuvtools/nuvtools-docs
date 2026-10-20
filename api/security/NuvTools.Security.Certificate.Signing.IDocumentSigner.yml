@@ -1,0 +1,568 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Security.Certificate.Signing.IDocumentSigner
+  commentId: T:NuvTools.Security.Certificate.Signing.IDocumentSigner
+  id: IDocumentSigner
+  parent: NuvTools.Security.Certificate.Signing
+  children:
+  - NuvTools.Security.Certificate.Signing.IDocumentSigner.CompleteAsync(System.String,System.Threading.CancellationToken)
+  - NuvTools.Security.Certificate.Signing.IDocumentSigner.GetSignersAsync(System.ReadOnlyMemory{System.Byte},System.Threading.CancellationToken)
+  - NuvTools.Security.Certificate.Signing.IDocumentSigner.ReadCertificateAsync(System.ReadOnlyMemory{System.Byte},System.Threading.CancellationToken)
+  - NuvTools.Security.Certificate.Signing.IDocumentSigner.StartAsync(NuvTools.Security.Certificate.Signing.DocumentSignatureRequest,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: IDocumentSigner
+  nameWithType: IDocumentSigner
+  fullName: NuvTools.Security.Certificate.Signing.IDocumentSigner
+  type: Interface
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Certificate.Signing
+  summary: >-
+    Signs a PDF with a digital certificate whose private key stays with the person, in two steps: the
+
+    server prepares the document and opens a challenge, the client signs it, and the server completes
+
+    the signature.
+  remarks: >-
+    <p>
+
+    Whatever the application needs to know about who signed — to check it is the expected person, or to
+
+    print it on the document — comes from the certificate the provider read, never from a value the
+
+    client sends.
+
+    </p>
+
+    <p>
+
+    Provider failures propagate as exceptions. Signing is not an access decision, so there is no safe
+
+    outcome to fall back to: the caller reports that the document was not signed.
+
+    </p>
+  example: []
+  syntax:
+    content: public interface IDocumentSigner
+    content.vb: Public Interface IDocumentSigner
+  derivedClasses:
+  - NuvTools.Security.Certificate.Lacuna.RestPkiDocumentSigner
+- uid: NuvTools.Security.Certificate.Signing.IDocumentSigner.ReadCertificateAsync(System.ReadOnlyMemory{System.Byte},System.Threading.CancellationToken)
+  commentId: M:NuvTools.Security.Certificate.Signing.IDocumentSigner.ReadCertificateAsync(System.ReadOnlyMemory{System.Byte},System.Threading.CancellationToken)
+  id: ReadCertificateAsync(System.ReadOnlyMemory{System.Byte},System.Threading.CancellationToken)
+  parent: NuvTools.Security.Certificate.Signing.IDocumentSigner
+  langs:
+  - csharp
+  - vb
+  name: ReadCertificateAsync(ReadOnlyMemory<byte>, CancellationToken)
+  nameWithType: IDocumentSigner.ReadCertificateAsync(ReadOnlyMemory<byte>, CancellationToken)
+  fullName: NuvTools.Security.Certificate.Signing.IDocumentSigner.ReadCertificateAsync(System.ReadOnlyMemory<byte>, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Certificate.Signing
+  summary: Reads who a certificate was issued to, without validating it.
+  example: []
+  syntax:
+    content: Task<CertificateDetails> ReadCertificateAsync(ReadOnlyMemory<byte> certificate, CancellationToken cancellationToken = default)
+    parameters:
+    - id: certificate
+      type: System.ReadOnlyMemory{System.Byte}
+      description: The certificate, DER-encoded.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Token to cancel the operation.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Security.Certificate.Signing.CertificateDetails}
+      description: What the certificate says about its holder and issuer.
+    content.vb: Function ReadCertificateAsync(certificate As ReadOnlyMemory(Of Byte), cancellationToken As CancellationToken = Nothing) As Task(Of CertificateDetails)
+  overload: NuvTools.Security.Certificate.Signing.IDocumentSigner.ReadCertificateAsync*
+  nameWithType.vb: IDocumentSigner.ReadCertificateAsync(ReadOnlyMemory(Of Byte), CancellationToken)
+  fullName.vb: NuvTools.Security.Certificate.Signing.IDocumentSigner.ReadCertificateAsync(System.ReadOnlyMemory(Of Byte), System.Threading.CancellationToken)
+  name.vb: ReadCertificateAsync(ReadOnlyMemory(Of Byte), CancellationToken)
+- uid: NuvTools.Security.Certificate.Signing.IDocumentSigner.GetSignersAsync(System.ReadOnlyMemory{System.Byte},System.Threading.CancellationToken)
+  commentId: M:NuvTools.Security.Certificate.Signing.IDocumentSigner.GetSignersAsync(System.ReadOnlyMemory{System.Byte},System.Threading.CancellationToken)
+  id: GetSignersAsync(System.ReadOnlyMemory{System.Byte},System.Threading.CancellationToken)
+  parent: NuvTools.Security.Certificate.Signing.IDocumentSigner
+  langs:
+  - csharp
+  - vb
+  name: GetSignersAsync(ReadOnlyMemory<byte>, CancellationToken)
+  nameWithType: IDocumentSigner.GetSignersAsync(ReadOnlyMemory<byte>, CancellationToken)
+  fullName: NuvTools.Security.Certificate.Signing.IDocumentSigner.GetSignersAsync(System.ReadOnlyMemory<byte>, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Certificate.Signing
+  summary: Reads the certificates a document was already signed with, without validating the signatures.
+  example: []
+  syntax:
+    content: Task<IReadOnlyList<CertificateDetails>> GetSignersAsync(ReadOnlyMemory<byte> signedDocument, CancellationToken cancellationToken = default)
+    parameters:
+    - id: signedDocument
+      type: System.ReadOnlyMemory{System.Byte}
+      description: The signed PDF.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Token to cancel the operation.
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{NuvTools.Security.Certificate.Signing.CertificateDetails}}
+      description: One entry per signature, in the order the provider reports them. Document timestamps are left out.
+    content.vb: Function GetSignersAsync(signedDocument As ReadOnlyMemory(Of Byte), cancellationToken As CancellationToken = Nothing) As Task(Of IReadOnlyList(Of CertificateDetails))
+  overload: NuvTools.Security.Certificate.Signing.IDocumentSigner.GetSignersAsync*
+  nameWithType.vb: IDocumentSigner.GetSignersAsync(ReadOnlyMemory(Of Byte), CancellationToken)
+  fullName.vb: NuvTools.Security.Certificate.Signing.IDocumentSigner.GetSignersAsync(System.ReadOnlyMemory(Of Byte), System.Threading.CancellationToken)
+  name.vb: GetSignersAsync(ReadOnlyMemory(Of Byte), CancellationToken)
+- uid: NuvTools.Security.Certificate.Signing.IDocumentSigner.StartAsync(NuvTools.Security.Certificate.Signing.DocumentSignatureRequest,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Security.Certificate.Signing.IDocumentSigner.StartAsync(NuvTools.Security.Certificate.Signing.DocumentSignatureRequest,System.Threading.CancellationToken)
+  id: StartAsync(NuvTools.Security.Certificate.Signing.DocumentSignatureRequest,System.Threading.CancellationToken)
+  parent: NuvTools.Security.Certificate.Signing.IDocumentSigner
+  langs:
+  - csharp
+  - vb
+  name: StartAsync(DocumentSignatureRequest, CancellationToken)
+  nameWithType: IDocumentSigner.StartAsync(DocumentSignatureRequest, CancellationToken)
+  fullName: NuvTools.Security.Certificate.Signing.IDocumentSigner.StartAsync(NuvTools.Security.Certificate.Signing.DocumentSignatureRequest, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Certificate.Signing
+  summary: Prepares the document for signing and opens the challenge the client signs.
+  example: []
+  syntax:
+    content: Task<DocumentSignatureChallenge> StartAsync(DocumentSignatureRequest request, CancellationToken cancellationToken = default)
+    parameters:
+    - id: request
+      type: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest
+      description: The PDF and, optionally, the visible stamp of this signature.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Token to cancel the operation.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Security.Certificate.Signing.DocumentSignatureChallenge}
+      description: The challenge the client signs and sends back.
+    content.vb: Function StartAsync(request As DocumentSignatureRequest, cancellationToken As CancellationToken = Nothing) As Task(Of DocumentSignatureChallenge)
+  overload: NuvTools.Security.Certificate.Signing.IDocumentSigner.StartAsync*
+- uid: NuvTools.Security.Certificate.Signing.IDocumentSigner.CompleteAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Security.Certificate.Signing.IDocumentSigner.CompleteAsync(System.String,System.Threading.CancellationToken)
+  id: CompleteAsync(System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Security.Certificate.Signing.IDocumentSigner
+  langs:
+  - csharp
+  - vb
+  name: CompleteAsync(string, CancellationToken)
+  nameWithType: IDocumentSigner.CompleteAsync(string, CancellationToken)
+  fullName: NuvTools.Security.Certificate.Signing.IDocumentSigner.CompleteAsync(string, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Security
+  namespace: NuvTools.Security.Certificate.Signing
+  summary: Completes the signature the client signed the challenge for.
+  example: []
+  syntax:
+    content: Task<SignedDocument> CompleteAsync(string token, CancellationToken cancellationToken = default)
+    parameters:
+    - id: token
+      type: System.String
+      description: The token of the challenge the client signed.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Token to cancel the operation.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Security.Certificate.Signing.SignedDocument}
+      description: The signed PDF and the certificate it was actually signed with.
+    content.vb: Function CompleteAsync(token As String, cancellationToken As CancellationToken = Nothing) As Task(Of SignedDocument)
+  overload: NuvTools.Security.Certificate.Signing.IDocumentSigner.CompleteAsync*
+  nameWithType.vb: IDocumentSigner.CompleteAsync(String, CancellationToken)
+  fullName.vb: NuvTools.Security.Certificate.Signing.IDocumentSigner.CompleteAsync(String, System.Threading.CancellationToken)
+  name.vb: CompleteAsync(String, CancellationToken)
+references:
+- uid: NuvTools.Security.Certificate.Signing
+  commentId: N:NuvTools.Security.Certificate.Signing
+  name: NuvTools.Security.Certificate.Signing
+  nameWithType: NuvTools.Security.Certificate.Signing
+  fullName: NuvTools.Security.Certificate.Signing
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.Certificate
+    name: Certificate
+  - name: .
+  - uid: NuvTools.Security.Certificate.Signing
+    name: Signing
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.Certificate
+    name: Certificate
+  - name: .
+  - uid: NuvTools.Security.Certificate.Signing
+    name: Signing
+- uid: NuvTools.Security.Certificate.Signing.IDocumentSigner.ReadCertificateAsync*
+  commentId: Overload:NuvTools.Security.Certificate.Signing.IDocumentSigner.ReadCertificateAsync
+  href: NuvTools.Security.Certificate.Signing.IDocumentSigner.html#NuvTools_Security_Certificate_Signing_IDocumentSigner_ReadCertificateAsync_System_ReadOnlyMemory_System_Byte__System_Threading_CancellationToken_
+  name: ReadCertificateAsync
+  nameWithType: IDocumentSigner.ReadCertificateAsync
+  fullName: NuvTools.Security.Certificate.Signing.IDocumentSigner.ReadCertificateAsync
+- uid: System.ReadOnlyMemory{System.Byte}
+  commentId: T:System.ReadOnlyMemory{System.Byte}
+  parent: System
+  definition: System.ReadOnlyMemory`1
+  href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  name: ReadOnlyMemory<byte>
+  nameWithType: ReadOnlyMemory<byte>
+  fullName: System.ReadOnlyMemory<byte>
+  nameWithType.vb: ReadOnlyMemory(Of Byte)
+  fullName.vb: System.ReadOnlyMemory(Of Byte)
+  name.vb: ReadOnlyMemory(Of Byte)
+  spec.csharp:
+  - uid: System.ReadOnlyMemory`1
+    name: ReadOnlyMemory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  - name: <
+  - uid: System.Byte
+    name: byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: '>'
+  spec.vb:
+  - uid: System.ReadOnlyMemory`1
+    name: ReadOnlyMemory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Byte
+    name: Byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: )
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{NuvTools.Security.Certificate.Signing.CertificateDetails}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Security.Certificate.Signing.CertificateDetails}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<CertificateDetails>
+  nameWithType: Task<CertificateDetails>
+  fullName: System.Threading.Tasks.Task<NuvTools.Security.Certificate.Signing.CertificateDetails>
+  nameWithType.vb: Task(Of CertificateDetails)
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Security.Certificate.Signing.CertificateDetails)
+  name.vb: Task(Of CertificateDetails)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Security.Certificate.Signing.CertificateDetails
+    name: CertificateDetails
+    href: NuvTools.Security.Certificate.Signing.CertificateDetails.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Security.Certificate.Signing.CertificateDetails
+    name: CertificateDetails
+    href: NuvTools.Security.Certificate.Signing.CertificateDetails.html
+  - name: )
+- uid: System.ReadOnlyMemory`1
+  commentId: T:System.ReadOnlyMemory`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  name: ReadOnlyMemory<T>
+  nameWithType: ReadOnlyMemory<T>
+  fullName: System.ReadOnlyMemory<T>
+  nameWithType.vb: ReadOnlyMemory(Of T)
+  fullName.vb: System.ReadOnlyMemory(Of T)
+  name.vb: ReadOnlyMemory(Of T)
+  spec.csharp:
+  - uid: System.ReadOnlyMemory`1
+    name: ReadOnlyMemory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.ReadOnlyMemory`1
+    name: ReadOnlyMemory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.readonlymemory-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NuvTools.Security.Certificate.Signing.IDocumentSigner.GetSignersAsync*
+  commentId: Overload:NuvTools.Security.Certificate.Signing.IDocumentSigner.GetSignersAsync
+  href: NuvTools.Security.Certificate.Signing.IDocumentSigner.html#NuvTools_Security_Certificate_Signing_IDocumentSigner_GetSignersAsync_System_ReadOnlyMemory_System_Byte__System_Threading_CancellationToken_
+  name: GetSignersAsync
+  nameWithType: IDocumentSigner.GetSignersAsync
+  fullName: NuvTools.Security.Certificate.Signing.IDocumentSigner.GetSignersAsync
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{NuvTools.Security.Certificate.Signing.CertificateDetails}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{NuvTools.Security.Certificate.Signing.CertificateDetails}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IReadOnlyList<CertificateDetails>>
+  nameWithType: Task<IReadOnlyList<CertificateDetails>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<NuvTools.Security.Certificate.Signing.CertificateDetails>>
+  nameWithType.vb: Task(Of IReadOnlyList(Of CertificateDetails))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IReadOnlyList(Of NuvTools.Security.Certificate.Signing.CertificateDetails))
+  name.vb: Task(Of IReadOnlyList(Of CertificateDetails))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: NuvTools.Security.Certificate.Signing.CertificateDetails
+    name: CertificateDetails
+    href: NuvTools.Security.Certificate.Signing.CertificateDetails.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Security.Certificate.Signing.CertificateDetails
+    name: CertificateDetails
+    href: NuvTools.Security.Certificate.Signing.CertificateDetails.html
+  - name: )
+  - name: )
+- uid: NuvTools.Security.Certificate.Signing.IDocumentSigner.StartAsync*
+  commentId: Overload:NuvTools.Security.Certificate.Signing.IDocumentSigner.StartAsync
+  href: NuvTools.Security.Certificate.Signing.IDocumentSigner.html#NuvTools_Security_Certificate_Signing_IDocumentSigner_StartAsync_NuvTools_Security_Certificate_Signing_DocumentSignatureRequest_System_Threading_CancellationToken_
+  name: StartAsync
+  nameWithType: IDocumentSigner.StartAsync
+  fullName: NuvTools.Security.Certificate.Signing.IDocumentSigner.StartAsync
+- uid: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest
+  commentId: T:NuvTools.Security.Certificate.Signing.DocumentSignatureRequest
+  parent: NuvTools.Security.Certificate.Signing
+  href: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest.html
+  name: DocumentSignatureRequest
+  nameWithType: DocumentSignatureRequest
+  fullName: NuvTools.Security.Certificate.Signing.DocumentSignatureRequest
+- uid: System.Threading.Tasks.Task{NuvTools.Security.Certificate.Signing.DocumentSignatureChallenge}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Security.Certificate.Signing.DocumentSignatureChallenge}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<DocumentSignatureChallenge>
+  nameWithType: Task<DocumentSignatureChallenge>
+  fullName: System.Threading.Tasks.Task<NuvTools.Security.Certificate.Signing.DocumentSignatureChallenge>
+  nameWithType.vb: Task(Of DocumentSignatureChallenge)
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Security.Certificate.Signing.DocumentSignatureChallenge)
+  name.vb: Task(Of DocumentSignatureChallenge)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Security.Certificate.Signing.DocumentSignatureChallenge
+    name: DocumentSignatureChallenge
+    href: NuvTools.Security.Certificate.Signing.DocumentSignatureChallenge.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Security.Certificate.Signing.DocumentSignatureChallenge
+    name: DocumentSignatureChallenge
+    href: NuvTools.Security.Certificate.Signing.DocumentSignatureChallenge.html
+  - name: )
+- uid: NuvTools.Security.Certificate.Signing.IDocumentSigner.CompleteAsync*
+  commentId: Overload:NuvTools.Security.Certificate.Signing.IDocumentSigner.CompleteAsync
+  href: NuvTools.Security.Certificate.Signing.IDocumentSigner.html#NuvTools_Security_Certificate_Signing_IDocumentSigner_CompleteAsync_System_String_System_Threading_CancellationToken_
+  name: CompleteAsync
+  nameWithType: IDocumentSigner.CompleteAsync
+  fullName: NuvTools.Security.Certificate.Signing.IDocumentSigner.CompleteAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.Tasks.Task{NuvTools.Security.Certificate.Signing.SignedDocument}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Security.Certificate.Signing.SignedDocument}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<SignedDocument>
+  nameWithType: Task<SignedDocument>
+  fullName: System.Threading.Tasks.Task<NuvTools.Security.Certificate.Signing.SignedDocument>
+  nameWithType.vb: Task(Of SignedDocument)
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Security.Certificate.Signing.SignedDocument)
+  name.vb: Task(Of SignedDocument)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Security.Certificate.Signing.SignedDocument
+    name: SignedDocument
+    href: NuvTools.Security.Certificate.Signing.SignedDocument.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Security.Certificate.Signing.SignedDocument
+    name: SignedDocument
+    href: NuvTools.Security.Certificate.Signing.SignedDocument.html
+  - name: )

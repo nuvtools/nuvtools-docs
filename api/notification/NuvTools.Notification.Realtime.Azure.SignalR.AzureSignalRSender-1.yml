@@ -1,0 +1,738 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Notification.Realtime.Azure.SignalR.AzureSignalRSender`1
+  commentId: T:NuvTools.Notification.Realtime.Azure.SignalR.AzureSignalRSender`1
+  id: AzureSignalRSender`1
+  parent: NuvTools.Notification.Realtime.Azure.SignalR
+  children:
+  - NuvTools.Notification.Realtime.Azure.SignalR.AzureSignalRSender`1.#ctor(Microsoft.AspNetCore.SignalR.IHubContext{NuvTools.Notification.Realtime.Azure.SignalR.SignalRHub})
+  - NuvTools.Notification.Realtime.Azure.SignalR.AzureSignalRSender`1.SendAsync(`0,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: AzureSignalRSender<T>
+  nameWithType: AzureSignalRSender<T>
+  fullName: NuvTools.Notification.Realtime.Azure.SignalR.AzureSignalRSender<T>
+  type: Class
+  assemblies:
+  - NuvTools.Notification.Realtime.Azure.SignalR
+  namespace: NuvTools.Notification.Realtime.Azure.SignalR
+  summary: Azure SignalR implementation of <xref href="NuvTools.Notification.Realtime.Interfaces.IMessageSender%601" data-throw-if-not-resolved="false"></xref> for broadcasting real-time messages to all connected clients.
+  remarks: >-
+    This sender broadcasts messages to all connected clients using a method name pattern of "Consume_{TypeName}".
+
+    Clients must register a handler for this method name to receive messages.
+  example: []
+  syntax:
+    content: 'public class AzureSignalRSender<T> : IMessageSender<T> where T : class'
+    typeParameters:
+    - id: T
+      description: The type of message to send. Must be a reference type.
+    content.vb: Public Class AzureSignalRSender(Of T As Class) Implements IMessageSender(Of T)
+  inheritance:
+  - System.Object
+  implements:
+  - NuvTools.Notification.Realtime.Interfaces.IMessageSender{{T}}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  nameWithType.vb: AzureSignalRSender(Of T)
+  fullName.vb: NuvTools.Notification.Realtime.Azure.SignalR.AzureSignalRSender(Of T)
+  name.vb: AzureSignalRSender(Of T)
+- uid: NuvTools.Notification.Realtime.Azure.SignalR.AzureSignalRSender`1.#ctor(Microsoft.AspNetCore.SignalR.IHubContext{NuvTools.Notification.Realtime.Azure.SignalR.SignalRHub})
+  commentId: M:NuvTools.Notification.Realtime.Azure.SignalR.AzureSignalRSender`1.#ctor(Microsoft.AspNetCore.SignalR.IHubContext{NuvTools.Notification.Realtime.Azure.SignalR.SignalRHub})
+  id: '#ctor(Microsoft.AspNetCore.SignalR.IHubContext{NuvTools.Notification.Realtime.Azure.SignalR.SignalRHub})'
+  parent: NuvTools.Notification.Realtime.Azure.SignalR.AzureSignalRSender`1
+  langs:
+  - csharp
+  - vb
+  name: AzureSignalRSender(IHubContext<SignalRHub>)
+  nameWithType: AzureSignalRSender<T>.AzureSignalRSender(IHubContext<SignalRHub>)
+  fullName: NuvTools.Notification.Realtime.Azure.SignalR.AzureSignalRSender<T>.AzureSignalRSender(Microsoft.AspNetCore.SignalR.IHubContext<NuvTools.Notification.Realtime.Azure.SignalR.SignalRHub>)
+  type: Constructor
+  assemblies:
+  - NuvTools.Notification.Realtime.Azure.SignalR
+  namespace: NuvTools.Notification.Realtime.Azure.SignalR
+  summary: Azure SignalR implementation of <xref href="NuvTools.Notification.Realtime.Interfaces.IMessageSender%601" data-throw-if-not-resolved="false"></xref> for broadcasting real-time messages to all connected clients.
+  remarks: >-
+    This sender broadcasts messages to all connected clients using a method name pattern of "Consume_{TypeName}".
+
+    Clients must register a handler for this method name to receive messages.
+  example: []
+  syntax:
+    content: public AzureSignalRSender(IHubContext<SignalRHub> hubContext)
+    parameters:
+    - id: hubContext
+      type: Microsoft.AspNetCore.SignalR.IHubContext{NuvTools.Notification.Realtime.Azure.SignalR.SignalRHub}
+      description: The SignalR hub context used to send messages to clients.
+    content.vb: Public Sub New(hubContext As IHubContext(Of SignalRHub))
+  overload: NuvTools.Notification.Realtime.Azure.SignalR.AzureSignalRSender`1.#ctor*
+  nameWithType.vb: AzureSignalRSender(Of T).New(IHubContext(Of SignalRHub))
+  fullName.vb: NuvTools.Notification.Realtime.Azure.SignalR.AzureSignalRSender(Of T).New(Microsoft.AspNetCore.SignalR.IHubContext(Of NuvTools.Notification.Realtime.Azure.SignalR.SignalRHub))
+  name.vb: New(IHubContext(Of SignalRHub))
+- uid: NuvTools.Notification.Realtime.Azure.SignalR.AzureSignalRSender`1.SendAsync(`0,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Notification.Realtime.Azure.SignalR.AzureSignalRSender`1.SendAsync(`0,System.Threading.CancellationToken)
+  id: SendAsync(`0,System.Threading.CancellationToken)
+  parent: NuvTools.Notification.Realtime.Azure.SignalR.AzureSignalRSender`1
+  langs:
+  - csharp
+  - vb
+  name: SendAsync(T, CancellationToken)
+  nameWithType: AzureSignalRSender<T>.SendAsync(T, CancellationToken)
+  fullName: NuvTools.Notification.Realtime.Azure.SignalR.AzureSignalRSender<T>.SendAsync(T, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Notification.Realtime.Azure.SignalR
+  namespace: NuvTools.Notification.Realtime.Azure.SignalR
+  summary: Sends a message asynchronously to all connected SignalR clients.
+  remarks: >-
+    The message is sent using the method name "Consume_{TypeName}" where {TypeName} is the name of type <code class="typeparamref">T</code>.
+
+    All connected clients that have registered a handler for this method will receive the message.
+  example: []
+  syntax:
+    content: public Task SendAsync(T message, CancellationToken cancellationToken)
+    parameters:
+    - id: message
+      type: '{T}'
+      description: The message to broadcast to all clients.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: A token to observe while waiting for the operation to complete.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task representing the asynchronous send operation.
+    content.vb: Public Function SendAsync(message As T, cancellationToken As CancellationToken) As Task
+  overload: NuvTools.Notification.Realtime.Azure.SignalR.AzureSignalRSender`1.SendAsync*
+  implements:
+  - NuvTools.Notification.Realtime.Interfaces.IMessageSender{{T}}.SendAsync({T},System.Threading.CancellationToken)
+  nameWithType.vb: AzureSignalRSender(Of T).SendAsync(T, CancellationToken)
+  fullName.vb: NuvTools.Notification.Realtime.Azure.SignalR.AzureSignalRSender(Of T).SendAsync(T, System.Threading.CancellationToken)
+references:
+- uid: NuvTools.Notification.Realtime.Interfaces.IMessageSender`1
+  commentId: T:NuvTools.Notification.Realtime.Interfaces.IMessageSender`1
+  href: NuvTools.Notification.Realtime.Interfaces.IMessageSender-1.html
+  name: IMessageSender<T>
+  nameWithType: IMessageSender<T>
+  fullName: NuvTools.Notification.Realtime.Interfaces.IMessageSender<T>
+  nameWithType.vb: IMessageSender(Of T)
+  fullName.vb: NuvTools.Notification.Realtime.Interfaces.IMessageSender(Of T)
+  name.vb: IMessageSender(Of T)
+  spec.csharp:
+  - uid: NuvTools.Notification.Realtime.Interfaces.IMessageSender`1
+    name: IMessageSender
+    href: NuvTools.Notification.Realtime.Interfaces.IMessageSender-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: NuvTools.Notification.Realtime.Interfaces.IMessageSender`1
+    name: IMessageSender
+    href: NuvTools.Notification.Realtime.Interfaces.IMessageSender-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NuvTools.Notification.Realtime.Azure.SignalR
+  commentId: N:NuvTools.Notification.Realtime.Azure.SignalR
+  name: NuvTools.Notification.Realtime.Azure.SignalR
+  nameWithType: NuvTools.Notification.Realtime.Azure.SignalR
+  fullName: NuvTools.Notification.Realtime.Azure.SignalR
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Realtime
+    name: Realtime
+  - name: .
+  - uid: NuvTools.Notification.Realtime.Azure
+    name: Azure
+  - name: .
+  - uid: NuvTools.Notification.Realtime.Azure.SignalR
+    name: SignalR
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Realtime
+    name: Realtime
+  - name: .
+  - uid: NuvTools.Notification.Realtime.Azure
+    name: Azure
+  - name: .
+  - uid: NuvTools.Notification.Realtime.Azure.SignalR
+    name: SignalR
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: NuvTools.Notification.Realtime.Interfaces.IMessageSender{{T}}
+  commentId: T:NuvTools.Notification.Realtime.Interfaces.IMessageSender{`0}
+  parent: NuvTools.Notification.Realtime.Interfaces
+  definition: NuvTools.Notification.Realtime.Interfaces.IMessageSender`1
+  name: IMessageSender<T>
+  nameWithType: IMessageSender<T>
+  fullName: NuvTools.Notification.Realtime.Interfaces.IMessageSender<T>
+  nameWithType.vb: IMessageSender(Of T)
+  fullName.vb: NuvTools.Notification.Realtime.Interfaces.IMessageSender(Of T)
+  name.vb: IMessageSender(Of T)
+  spec.csharp:
+  - uid: NuvTools.Notification.Realtime.Interfaces.IMessageSender`1
+    name: IMessageSender
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: NuvTools.Notification.Realtime.Interfaces.IMessageSender`1
+    name: IMessageSender
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NuvTools.Notification.Realtime.Interfaces
+  commentId: N:NuvTools.Notification.Realtime.Interfaces
+  name: NuvTools.Notification.Realtime.Interfaces
+  nameWithType: NuvTools.Notification.Realtime.Interfaces
+  fullName: NuvTools.Notification.Realtime.Interfaces
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Realtime
+    name: Realtime
+  - name: .
+  - uid: NuvTools.Notification.Realtime.Interfaces
+    name: Interfaces
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Realtime
+    name: Realtime
+  - name: .
+  - uid: NuvTools.Notification.Realtime.Interfaces
+    name: Interfaces
+- uid: NuvTools.Notification.Realtime.Azure.SignalR.AzureSignalRSender`1.#ctor*
+  commentId: Overload:NuvTools.Notification.Realtime.Azure.SignalR.AzureSignalRSender`1.#ctor
+  href: NuvTools.Notification.Realtime.Azure.SignalR.AzureSignalRSender-1.html#NuvTools_Notification_Realtime_Azure_SignalR_AzureSignalRSender_1__ctor_Microsoft_AspNetCore_SignalR_IHubContext_NuvTools_Notification_Realtime_Azure_SignalR_SignalRHub__
+  name: AzureSignalRSender
+  nameWithType: AzureSignalRSender<T>.AzureSignalRSender
+  fullName: NuvTools.Notification.Realtime.Azure.SignalR.AzureSignalRSender<T>.AzureSignalRSender
+  nameWithType.vb: AzureSignalRSender(Of T).New
+  fullName.vb: NuvTools.Notification.Realtime.Azure.SignalR.AzureSignalRSender(Of T).New
+  name.vb: New
+- uid: Microsoft.AspNetCore.SignalR.IHubContext{NuvTools.Notification.Realtime.Azure.SignalR.SignalRHub}
+  commentId: T:Microsoft.AspNetCore.SignalR.IHubContext{NuvTools.Notification.Realtime.Azure.SignalR.SignalRHub}
+  parent: Microsoft.AspNetCore.SignalR
+  definition: Microsoft.AspNetCore.SignalR.IHubContext`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.signalr.ihubcontext-1
+  name: IHubContext<SignalRHub>
+  nameWithType: IHubContext<SignalRHub>
+  fullName: Microsoft.AspNetCore.SignalR.IHubContext<NuvTools.Notification.Realtime.Azure.SignalR.SignalRHub>
+  nameWithType.vb: IHubContext(Of SignalRHub)
+  fullName.vb: Microsoft.AspNetCore.SignalR.IHubContext(Of NuvTools.Notification.Realtime.Azure.SignalR.SignalRHub)
+  name.vb: IHubContext(Of SignalRHub)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.SignalR.IHubContext`1
+    name: IHubContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.signalr.ihubcontext-1
+  - name: <
+  - uid: NuvTools.Notification.Realtime.Azure.SignalR.SignalRHub
+    name: SignalRHub
+    href: NuvTools.Notification.Realtime.Azure.SignalR.SignalRHub.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.AspNetCore.SignalR.IHubContext`1
+    name: IHubContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.signalr.ihubcontext-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Notification.Realtime.Azure.SignalR.SignalRHub
+    name: SignalRHub
+    href: NuvTools.Notification.Realtime.Azure.SignalR.SignalRHub.html
+  - name: )
+- uid: Microsoft.AspNetCore.SignalR.IHubContext`1
+  commentId: T:Microsoft.AspNetCore.SignalR.IHubContext`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.signalr.ihubcontext-1
+  name: IHubContext<THub>
+  nameWithType: IHubContext<THub>
+  fullName: Microsoft.AspNetCore.SignalR.IHubContext<THub>
+  nameWithType.vb: IHubContext(Of THub)
+  fullName.vb: Microsoft.AspNetCore.SignalR.IHubContext(Of THub)
+  name.vb: IHubContext(Of THub)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.SignalR.IHubContext`1
+    name: IHubContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.signalr.ihubcontext-1
+  - name: <
+  - name: THub
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.AspNetCore.SignalR.IHubContext`1
+    name: IHubContext
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.signalr.ihubcontext-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: THub
+  - name: )
+- uid: Microsoft.AspNetCore.SignalR
+  commentId: N:Microsoft.AspNetCore.SignalR
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.AspNetCore.SignalR
+  nameWithType: Microsoft.AspNetCore.SignalR
+  fullName: Microsoft.AspNetCore.SignalR
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.SignalR
+    name: SignalR
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.signalr
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.SignalR
+    name: SignalR
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.signalr
+- uid: NuvTools.Notification.Realtime.Azure.SignalR.AzureSignalRSender`1.SendAsync*
+  commentId: Overload:NuvTools.Notification.Realtime.Azure.SignalR.AzureSignalRSender`1.SendAsync
+  href: NuvTools.Notification.Realtime.Azure.SignalR.AzureSignalRSender-1.html#NuvTools_Notification_Realtime_Azure_SignalR_AzureSignalRSender_1_SendAsync__0_System_Threading_CancellationToken_
+  name: SendAsync
+  nameWithType: AzureSignalRSender<T>.SendAsync
+  fullName: NuvTools.Notification.Realtime.Azure.SignalR.AzureSignalRSender<T>.SendAsync
+  nameWithType.vb: AzureSignalRSender(Of T).SendAsync
+  fullName.vb: NuvTools.Notification.Realtime.Azure.SignalR.AzureSignalRSender(Of T).SendAsync
+- uid: NuvTools.Notification.Realtime.Interfaces.IMessageSender{{T}}.SendAsync({T},System.Threading.CancellationToken)
+  commentId: M:NuvTools.Notification.Realtime.Interfaces.IMessageSender{`0}.SendAsync(`0,System.Threading.CancellationToken)
+  parent: NuvTools.Notification.Realtime.Interfaces.IMessageSender{{T}}
+  definition: NuvTools.Notification.Realtime.Interfaces.IMessageSender`1.SendAsync(`0,System.Threading.CancellationToken)
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: SendAsync(T, CancellationToken)
+  nameWithType: IMessageSender<T>.SendAsync(T, CancellationToken)
+  fullName: NuvTools.Notification.Realtime.Interfaces.IMessageSender<T>.SendAsync(T, System.Threading.CancellationToken)
+  nameWithType.vb: IMessageSender(Of T).SendAsync(T, CancellationToken)
+  fullName.vb: NuvTools.Notification.Realtime.Interfaces.IMessageSender(Of T).SendAsync(T, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: NuvTools.Notification.Realtime.Interfaces.IMessageSender{`0}.SendAsync(`0,System.Threading.CancellationToken)
+    name: SendAsync
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Notification.Realtime.Interfaces.IMessageSender{`0}.SendAsync(`0,System.Threading.CancellationToken)
+    name: SendAsync
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: NuvTools.Notification.Realtime.Interfaces.IMessageSender`1.SendAsync(`0,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Notification.Realtime.Interfaces.IMessageSender`1.SendAsync(`0,System.Threading.CancellationToken)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: SendAsync(T, CancellationToken)
+  nameWithType: IMessageSender<T>.SendAsync(T, CancellationToken)
+  fullName: NuvTools.Notification.Realtime.Interfaces.IMessageSender<T>.SendAsync(T, System.Threading.CancellationToken)
+  nameWithType.vb: IMessageSender(Of T).SendAsync(T, CancellationToken)
+  fullName.vb: NuvTools.Notification.Realtime.Interfaces.IMessageSender(Of T).SendAsync(T, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: NuvTools.Notification.Realtime.Interfaces.IMessageSender`1.SendAsync(`0,System.Threading.CancellationToken)
+    name: SendAsync
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Notification.Realtime.Interfaces.IMessageSender`1.SendAsync(`0,System.Threading.CancellationToken)
+    name: SendAsync
+  - name: (
+  - name: T
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

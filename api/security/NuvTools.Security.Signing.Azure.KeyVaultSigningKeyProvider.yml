@@ -1,0 +1,993 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider
+  commentId: T:NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider
+  id: KeyVaultSigningKeyProvider
+  parent: NuvTools.Security.Signing.Azure
+  children:
+  - NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.#ctor(Azure.Security.KeyVault.Keys.KeyClient,Azure.Core.TokenCredential,Microsoft.Extensions.Options.IOptions{NuvTools.Security.Signing.Azure.KeyVaultSigningOptions},System.TimeProvider,Microsoft.Extensions.Logging.ILogger{NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider})
+  - NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.Dispose
+  - NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.GetSigningCredentialsAsync(System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: KeyVaultSigningKeyProvider
+  nameWithType: KeyVaultSigningKeyProvider
+  fullName: NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider
+  type: Class
+  assemblies:
+  - NuvTools.Security.Signing.Azure
+  namespace: NuvTools.Security.Signing.Azure
+  summary: >-
+    Signs with an RSA key kept in Azure Key Vault. The private key never leaves the vault: this
+
+    process holds the public half of each version and asks the vault for every signature.
+  remarks: >-
+    <p>
+
+    Every enabled version of the key that is within its validity period is offered, so tokens
+
+    signed before a rotation keep validating. A new version starts signing once it has been
+
+    published for <xref href="NuvTools.Security.Signing.Azure.KeyVaultSigningOptions.ActivationDelay" data-throw-if-not-resolved="false"></xref>.
+
+    </p>
+
+    <p>
+
+    The list of versions is read again every <xref href="NuvTools.Security.Signing.Azure.KeyVaultSigningOptions.RefreshInterval" data-throw-if-not-resolved="false"></xref>.
+
+    When the vault cannot be reached for that, the last list read keeps being served: a rotation
+
+    noticed late is better than no token at all.
+
+    </p>
+
+    <p>
+
+    The identity used needs to list and read the key and to sign with it — the
+
+    <code>Key Vault Crypto User</code> role covers both.
+
+    </p>
+  example: []
+  syntax:
+    content: 'public class KeyVaultSigningKeyProvider : ISigningKeyProvider, IDisposable'
+    content.vb: Public Class KeyVaultSigningKeyProvider Implements ISigningKeyProvider, IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - NuvTools.Security.Signing.ISigningKeyProvider
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.#ctor(Azure.Security.KeyVault.Keys.KeyClient,Azure.Core.TokenCredential,Microsoft.Extensions.Options.IOptions{NuvTools.Security.Signing.Azure.KeyVaultSigningOptions},System.TimeProvider,Microsoft.Extensions.Logging.ILogger{NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider})
+  commentId: M:NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.#ctor(Azure.Security.KeyVault.Keys.KeyClient,Azure.Core.TokenCredential,Microsoft.Extensions.Options.IOptions{NuvTools.Security.Signing.Azure.KeyVaultSigningOptions},System.TimeProvider,Microsoft.Extensions.Logging.ILogger{NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider})
+  id: '#ctor(Azure.Security.KeyVault.Keys.KeyClient,Azure.Core.TokenCredential,Microsoft.Extensions.Options.IOptions{NuvTools.Security.Signing.Azure.KeyVaultSigningOptions},System.TimeProvider,Microsoft.Extensions.Logging.ILogger{NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider})'
+  parent: NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider
+  langs:
+  - csharp
+  - vb
+  name: KeyVaultSigningKeyProvider(KeyClient, TokenCredential, IOptions<KeyVaultSigningOptions>, TimeProvider, ILogger<KeyVaultSigningKeyProvider>)
+  nameWithType: KeyVaultSigningKeyProvider.KeyVaultSigningKeyProvider(KeyClient, TokenCredential, IOptions<KeyVaultSigningOptions>, TimeProvider, ILogger<KeyVaultSigningKeyProvider>)
+  fullName: NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.KeyVaultSigningKeyProvider(Azure.Security.KeyVault.Keys.KeyClient, Azure.Core.TokenCredential, Microsoft.Extensions.Options.IOptions<NuvTools.Security.Signing.Azure.KeyVaultSigningOptions>, System.TimeProvider, Microsoft.Extensions.Logging.ILogger<NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider>)
+  type: Constructor
+  assemblies:
+  - NuvTools.Security.Signing.Azure
+  namespace: NuvTools.Security.Signing.Azure
+  summary: Creates the provider.
+  example: []
+  syntax:
+    content: public KeyVaultSigningKeyProvider(KeyClient keys, TokenCredential credential, IOptions<KeyVaultSigningOptions> options, TimeProvider time, ILogger<KeyVaultSigningKeyProvider> logger)
+    parameters:
+    - id: keys
+      type: Azure.Security.KeyVault.Keys.KeyClient
+      description: The client for the vault holding the key.
+    - id: credential
+      type: Azure.Core.TokenCredential
+      description: The identity the signatures are requested with.
+    - id: options
+      type: Microsoft.Extensions.Options.IOptions{NuvTools.Security.Signing.Azure.KeyVaultSigningOptions}
+      description: Which key to use and how its rotation is followed.
+    - id: time
+      type: System.TimeProvider
+      description: The clock the activation delay and the refresh are measured on.
+    - id: logger
+      type: Microsoft.Extensions.Logging.ILogger{NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider}
+      description: Where a failed refresh is reported.
+    content.vb: Public Sub New(keys As KeyClient, credential As TokenCredential, options As IOptions(Of KeyVaultSigningOptions), time As TimeProvider, logger As ILogger(Of KeyVaultSigningKeyProvider))
+  overload: NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.#ctor*
+  nameWithType.vb: KeyVaultSigningKeyProvider.New(KeyClient, TokenCredential, IOptions(Of KeyVaultSigningOptions), TimeProvider, ILogger(Of KeyVaultSigningKeyProvider))
+  fullName.vb: NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.New(Azure.Security.KeyVault.Keys.KeyClient, Azure.Core.TokenCredential, Microsoft.Extensions.Options.IOptions(Of NuvTools.Security.Signing.Azure.KeyVaultSigningOptions), System.TimeProvider, Microsoft.Extensions.Logging.ILogger(Of NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider))
+  name.vb: New(KeyClient, TokenCredential, IOptions(Of KeyVaultSigningOptions), TimeProvider, ILogger(Of KeyVaultSigningKeyProvider))
+- uid: NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.GetSigningCredentialsAsync(System.Threading.CancellationToken)
+  commentId: M:NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.GetSigningCredentialsAsync(System.Threading.CancellationToken)
+  id: GetSigningCredentialsAsync(System.Threading.CancellationToken)
+  parent: NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider
+  langs:
+  - csharp
+  - vb
+  name: GetSigningCredentialsAsync(CancellationToken)
+  nameWithType: KeyVaultSigningKeyProvider.GetSigningCredentialsAsync(CancellationToken)
+  fullName: NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.GetSigningCredentialsAsync(System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Security.Signing.Azure
+  namespace: NuvTools.Security.Signing.Azure
+  summary: Returns the current signing credentials.
+  example: []
+  syntax:
+    content: public Task<IReadOnlyList<SigningCredentials>> GetSigningCredentialsAsync(CancellationToken cancellationToken = default)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancels the lookup.
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Microsoft.IdentityModel.Tokens.SigningCredentials}}
+      description: >-
+        The credentials in order of preference: the first is the one to sign with, and every one
+
+        of them must be published, because tokens signed by the others may still be in use.
+
+        Never empty.
+    content.vb: Public Function GetSigningCredentialsAsync(cancellationToken As CancellationToken = Nothing) As Task(Of IReadOnlyList(Of SigningCredentials))
+  overload: NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.GetSigningCredentialsAsync*
+  implements:
+  - NuvTools.Security.Signing.ISigningKeyProvider.GetSigningCredentialsAsync(System.Threading.CancellationToken)
+- uid: NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.Dispose
+  commentId: M:NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.Dispose
+  id: Dispose
+  parent: NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: KeyVaultSigningKeyProvider.Dispose()
+  fullName: NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.Dispose()
+  type: Method
+  assemblies:
+  - NuvTools.Security.Signing.Azure
+  namespace: NuvTools.Security.Signing.Azure
+  summary: Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose()
+  overload: NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+references:
+- uid: NuvTools.Security.Signing.Azure.KeyVaultSigningOptions.ActivationDelay
+  commentId: P:NuvTools.Security.Signing.Azure.KeyVaultSigningOptions.ActivationDelay
+  href: NuvTools.Security.Signing.Azure.KeyVaultSigningOptions.html#NuvTools_Security_Signing_Azure_KeyVaultSigningOptions_ActivationDelay
+  name: ActivationDelay
+  nameWithType: KeyVaultSigningOptions.ActivationDelay
+  fullName: NuvTools.Security.Signing.Azure.KeyVaultSigningOptions.ActivationDelay
+- uid: NuvTools.Security.Signing.Azure.KeyVaultSigningOptions.RefreshInterval
+  commentId: P:NuvTools.Security.Signing.Azure.KeyVaultSigningOptions.RefreshInterval
+  href: NuvTools.Security.Signing.Azure.KeyVaultSigningOptions.html#NuvTools_Security_Signing_Azure_KeyVaultSigningOptions_RefreshInterval
+  name: RefreshInterval
+  nameWithType: KeyVaultSigningOptions.RefreshInterval
+  fullName: NuvTools.Security.Signing.Azure.KeyVaultSigningOptions.RefreshInterval
+- uid: NuvTools.Security.Signing.Azure
+  commentId: N:NuvTools.Security.Signing.Azure
+  name: NuvTools.Security.Signing.Azure
+  nameWithType: NuvTools.Security.Signing.Azure
+  fullName: NuvTools.Security.Signing.Azure
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.Signing
+    name: Signing
+  - name: .
+  - uid: NuvTools.Security.Signing.Azure
+    name: Azure
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.Signing
+    name: Signing
+  - name: .
+  - uid: NuvTools.Security.Signing.Azure
+    name: Azure
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: NuvTools.Security.Signing.ISigningKeyProvider
+  commentId: T:NuvTools.Security.Signing.ISigningKeyProvider
+  parent: NuvTools.Security.Signing
+  href: NuvTools.Security.Signing.ISigningKeyProvider.html
+  name: ISigningKeyProvider
+  nameWithType: ISigningKeyProvider
+  fullName: NuvTools.Security.Signing.ISigningKeyProvider
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NuvTools.Security.Signing
+  commentId: N:NuvTools.Security.Signing
+  name: NuvTools.Security.Signing
+  nameWithType: NuvTools.Security.Signing
+  fullName: NuvTools.Security.Signing
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.Signing
+    name: Signing
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Security
+    name: Security
+  - name: .
+  - uid: NuvTools.Security.Signing
+    name: Signing
+- uid: NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.#ctor*
+  commentId: Overload:NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.#ctor
+  href: NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.html#NuvTools_Security_Signing_Azure_KeyVaultSigningKeyProvider__ctor_Azure_Security_KeyVault_Keys_KeyClient_Azure_Core_TokenCredential_Microsoft_Extensions_Options_IOptions_NuvTools_Security_Signing_Azure_KeyVaultSigningOptions__System_TimeProvider_Microsoft_Extensions_Logging_ILogger_NuvTools_Security_Signing_Azure_KeyVaultSigningKeyProvider__
+  name: KeyVaultSigningKeyProvider
+  nameWithType: KeyVaultSigningKeyProvider.KeyVaultSigningKeyProvider
+  fullName: NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.KeyVaultSigningKeyProvider
+  nameWithType.vb: KeyVaultSigningKeyProvider.New
+  fullName.vb: NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.New
+  name.vb: New
+- uid: Azure.Security.KeyVault.Keys.KeyClient
+  commentId: T:Azure.Security.KeyVault.Keys.KeyClient
+  parent: Azure.Security.KeyVault.Keys
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/azure.security.keyvault.keys.keyclient
+  name: KeyClient
+  nameWithType: KeyClient
+  fullName: Azure.Security.KeyVault.Keys.KeyClient
+- uid: Azure.Core.TokenCredential
+  commentId: T:Azure.Core.TokenCredential
+  parent: Azure.Core
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/azure.core.tokencredential
+  name: TokenCredential
+  nameWithType: TokenCredential
+  fullName: Azure.Core.TokenCredential
+- uid: Microsoft.Extensions.Options.IOptions{NuvTools.Security.Signing.Azure.KeyVaultSigningOptions}
+  commentId: T:Microsoft.Extensions.Options.IOptions{NuvTools.Security.Signing.Azure.KeyVaultSigningOptions}
+  parent: Microsoft.Extensions.Options
+  definition: Microsoft.Extensions.Options.IOptions`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  name: IOptions<KeyVaultSigningOptions>
+  nameWithType: IOptions<KeyVaultSigningOptions>
+  fullName: Microsoft.Extensions.Options.IOptions<NuvTools.Security.Signing.Azure.KeyVaultSigningOptions>
+  nameWithType.vb: IOptions(Of KeyVaultSigningOptions)
+  fullName.vb: Microsoft.Extensions.Options.IOptions(Of NuvTools.Security.Signing.Azure.KeyVaultSigningOptions)
+  name.vb: IOptions(Of KeyVaultSigningOptions)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: <
+  - uid: NuvTools.Security.Signing.Azure.KeyVaultSigningOptions
+    name: KeyVaultSigningOptions
+    href: NuvTools.Security.Signing.Azure.KeyVaultSigningOptions.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Security.Signing.Azure.KeyVaultSigningOptions
+    name: KeyVaultSigningOptions
+    href: NuvTools.Security.Signing.Azure.KeyVaultSigningOptions.html
+  - name: )
+- uid: System.TimeProvider
+  commentId: T:System.TimeProvider
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.timeprovider
+  name: TimeProvider
+  nameWithType: TimeProvider
+  fullName: System.TimeProvider
+- uid: Microsoft.Extensions.Logging.ILogger{NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider}
+  commentId: T:Microsoft.Extensions.Logging.ILogger{NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider}
+  parent: Microsoft.Extensions.Logging
+  definition: Microsoft.Extensions.Logging.ILogger`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  name: ILogger<KeyVaultSigningKeyProvider>
+  nameWithType: ILogger<KeyVaultSigningKeyProvider>
+  fullName: Microsoft.Extensions.Logging.ILogger<NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider>
+  nameWithType.vb: ILogger(Of KeyVaultSigningKeyProvider)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider)
+  name.vb: ILogger(Of KeyVaultSigningKeyProvider)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: <
+  - uid: NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider
+    name: KeyVaultSigningKeyProvider
+    href: NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider
+    name: KeyVaultSigningKeyProvider
+    href: NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.html
+  - name: )
+- uid: Azure.Security.KeyVault.Keys
+  commentId: N:Azure.Security.KeyVault.Keys
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/azure
+  name: Azure.Security.KeyVault.Keys
+  nameWithType: Azure.Security.KeyVault.Keys
+  fullName: Azure.Security.KeyVault.Keys
+  spec.csharp:
+  - uid: Azure
+    name: Azure
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/azure
+  - name: .
+  - uid: Azure.Security
+    name: Security
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/azure.security
+  - name: .
+  - uid: Azure.Security.KeyVault
+    name: KeyVault
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/azure.security.keyvault
+  - name: .
+  - uid: Azure.Security.KeyVault.Keys
+    name: Keys
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/azure.security.keyvault.keys
+  spec.vb:
+  - uid: Azure
+    name: Azure
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/azure
+  - name: .
+  - uid: Azure.Security
+    name: Security
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/azure.security
+  - name: .
+  - uid: Azure.Security.KeyVault
+    name: KeyVault
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/azure.security.keyvault
+  - name: .
+  - uid: Azure.Security.KeyVault.Keys
+    name: Keys
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/azure.security.keyvault.keys
+- uid: Azure.Core
+  commentId: N:Azure.Core
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/azure
+  name: Azure.Core
+  nameWithType: Azure.Core
+  fullName: Azure.Core
+  spec.csharp:
+  - uid: Azure
+    name: Azure
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/azure
+  - name: .
+  - uid: Azure.Core
+    name: Core
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/azure.core
+  spec.vb:
+  - uid: Azure
+    name: Azure
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/azure
+  - name: .
+  - uid: Azure.Core
+    name: Core
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/azure.core
+- uid: Microsoft.Extensions.Options.IOptions`1
+  commentId: T:Microsoft.Extensions.Options.IOptions`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  name: IOptions<TOptions>
+  nameWithType: IOptions<TOptions>
+  fullName: Microsoft.Extensions.Options.IOptions<TOptions>
+  nameWithType.vb: IOptions(Of TOptions)
+  fullName.vb: Microsoft.Extensions.Options.IOptions(Of TOptions)
+  name.vb: IOptions(Of TOptions)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: <
+  - name: TOptions
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Options.IOptions`1
+    name: IOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options.ioptions-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TOptions
+  - name: )
+- uid: Microsoft.Extensions.Options
+  commentId: N:Microsoft.Extensions.Options
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Options
+  nameWithType: Microsoft.Extensions.Options
+  fullName: Microsoft.Extensions.Options
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Options
+    name: Options
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Options
+    name: Options
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options
+- uid: Microsoft.Extensions.Logging.ILogger`1
+  commentId: T:Microsoft.Extensions.Logging.ILogger`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  name: ILogger<TCategoryName>
+  nameWithType: ILogger<TCategoryName>
+  fullName: Microsoft.Extensions.Logging.ILogger<TCategoryName>
+  nameWithType.vb: ILogger(Of TCategoryName)
+  fullName.vb: Microsoft.Extensions.Logging.ILogger(Of TCategoryName)
+  name.vb: ILogger(Of TCategoryName)
+  spec.csharp:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: <
+  - name: TCategoryName
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.Extensions.Logging.ILogger`1
+    name: ILogger
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TCategoryName
+  - name: )
+- uid: Microsoft.Extensions.Logging
+  commentId: N:Microsoft.Extensions.Logging
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Logging
+  nameWithType: Microsoft.Extensions.Logging
+  fullName: Microsoft.Extensions.Logging
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Logging
+    name: Logging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Logging
+    name: Logging
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging
+- uid: NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.GetSigningCredentialsAsync*
+  commentId: Overload:NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.GetSigningCredentialsAsync
+  href: NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.html#NuvTools_Security_Signing_Azure_KeyVaultSigningKeyProvider_GetSigningCredentialsAsync_System_Threading_CancellationToken_
+  name: GetSigningCredentialsAsync
+  nameWithType: KeyVaultSigningKeyProvider.GetSigningCredentialsAsync
+  fullName: NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.GetSigningCredentialsAsync
+- uid: NuvTools.Security.Signing.ISigningKeyProvider.GetSigningCredentialsAsync(System.Threading.CancellationToken)
+  commentId: M:NuvTools.Security.Signing.ISigningKeyProvider.GetSigningCredentialsAsync(System.Threading.CancellationToken)
+  parent: NuvTools.Security.Signing.ISigningKeyProvider
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: GetSigningCredentialsAsync(CancellationToken)
+  nameWithType: ISigningKeyProvider.GetSigningCredentialsAsync(CancellationToken)
+  fullName: NuvTools.Security.Signing.ISigningKeyProvider.GetSigningCredentialsAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: NuvTools.Security.Signing.ISigningKeyProvider.GetSigningCredentialsAsync(System.Threading.CancellationToken)
+    name: GetSigningCredentialsAsync
+  - name: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: NuvTools.Security.Signing.ISigningKeyProvider.GetSigningCredentialsAsync(System.Threading.CancellationToken)
+    name: GetSigningCredentialsAsync
+  - name: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Microsoft.IdentityModel.Tokens.SigningCredentials}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IReadOnlyList{Microsoft.IdentityModel.Tokens.SigningCredentials}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IReadOnlyList<SigningCredentials>>
+  nameWithType: Task<IReadOnlyList<SigningCredentials>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IReadOnlyList<Microsoft.IdentityModel.Tokens.SigningCredentials>>
+  nameWithType.vb: Task(Of IReadOnlyList(Of SigningCredentials))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IReadOnlyList(Of Microsoft.IdentityModel.Tokens.SigningCredentials))
+  name.vb: Task(Of IReadOnlyList(Of SigningCredentials))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: Microsoft.IdentityModel.Tokens.SigningCredentials
+    name: SigningCredentials
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.identitymodel.tokens.signingcredentials
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Microsoft.IdentityModel.Tokens.SigningCredentials
+    name: SigningCredentials
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.identitymodel.tokens.signingcredentials
+  - name: )
+  - name: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.Dispose*
+  commentId: Overload:NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.Dispose
+  href: NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.html#NuvTools_Security_Signing_Azure_KeyVaultSigningKeyProvider_Dispose
+  name: Dispose
+  nameWithType: KeyVaultSigningKeyProvider.Dispose
+  fullName: NuvTools.Security.Signing.Azure.KeyVaultSigningKeyProvider.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.idisposable.dispose
+  - name: (
+  - name: )

@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>NuvTools.Report | Nuv Tools Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="NuvTools.Report | Nuv Tools Framework ">
+      
+      
+      <link rel="icon" href="../../../images/icon.png">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/nuvtools-brand.svg" alt="Framework">
+            Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="nuvtoolsreport">NuvTools.Report</h1>
+
+<p><a href="https://www.nuget.org/packages/NuvTools.Report/"><img src="https://img.shields.io/nuget/v/NuvTools.Report.svg" alt="NuGet"></a>
+<a href="https://github.com/nuvtools/nuvtools-report/blob/main/LICENSE"><img src="https://img.shields.io/github/license/nuvtools/nuvtools-report.svg" alt="License"></a></p>
+<p>A .NET library suite for generating reports in PDF, Excel, and CSV formats, plus reading/importing CSV and fixed-length (positional) files. Build structured table-based reports with styling, company branding, and reflection-based data binding. Targets .NET 8, .NET 9, and .NET 10.</p>
+<h2 id="libraries">Libraries</h2>
+<table>
+<thead>
+<tr>
+<th>Library</th>
+<th>Description</th>
+<th>NuGet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NuvTools.Report</strong></td>
+<td>Core report model, PDF abstractions, Sheet abstractions (CSV, Excel), FixedLength abstractions, and shared parsing utilities — with attribute-based field mapping and custom converters</td>
+<td><a href="https://www.nuget.org/packages/NuvTools.Report/"><img src="https://img.shields.io/nuget/v/NuvTools.Report.svg" alt="NuGet"></a></td>
+</tr>
+<tr>
+<td><strong>NuvTools.Report.Pdf</strong></td>
+<td>PDF generation implementation using QuestPDF and PDFsharp</td>
+<td><a href="https://www.nuget.org/packages/NuvTools.Report.Pdf/"><img src="https://img.shields.io/nuget/v/NuvTools.Report.Pdf.svg" alt="NuGet"></a></td>
+</tr>
+<tr>
+<td><strong>NuvTools.Report.Sheet</strong></td>
+<td>Excel and CSV implementation using ClosedXML</td>
+<td><a href="https://www.nuget.org/packages/NuvTools.Report.Sheet/"><img src="https://img.shields.io/nuget/v/NuvTools.Report.Sheet.svg" alt="NuGet"></a></td>
+</tr>
+<tr>
+<td><strong>NuvTools.Report.FixedLength</strong></td>
+<td>Fixed-length (positional) file reader implementation</td>
+<td><a href="https://www.nuget.org/packages/NuvTools.Report.FixedLength/"><img src="https://img.shields.io/nuget/v/NuvTools.Report.FixedLength.svg" alt="NuGet"></a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="installation">Installation</h2>
+<pre><code class="lang-bash"># For PDF export
+dotnet add package NuvTools.Report.Pdf
+
+# For Excel and CSV export/reading
+dotnet add package NuvTools.Report.Sheet
+
+# For fixed-length (positional) file reading
+dotnet add package NuvTools.Report.FixedLength
+
+# Or install the base library only (abstractions and models)
+dotnet add package NuvTools.Report
+</code></pre>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>Export</strong>: PDF (landscape A4), Excel (.xlsx), CSV with configurable delimiters</li>
+<li><strong>Import</strong>: CSV and fixed-length (positional) file reading with attribute-based mapping</li>
+<li><strong>Data binding</strong>: Automatic population from object collections via reflection</li>
+<li><strong>Custom converters</strong>: Extensible field conversion with <code>IFieldConverter</code> / <code>FieldConverter&lt;T&gt;</code></li>
+<li><strong>Styling</strong>: Customizable colors, fonts, and formatting</li>
+<li><strong>Branding</strong>: Company logos, names, and URLs in headers</li>
+<li><strong>Metadata</strong>: Titles, filter descriptions, issue dates, user info</li>
+<li><strong>Output</strong>: Base64-encoded output for API transmission</li>
+<li><strong>Multi-table</strong>: Documents with separate worksheets/pages</li>
+<li><strong>PDF merging</strong>: Combine multiple PDFs into one</li>
+<li><strong>DI integration</strong>: <code>AddReportServices()</code> and <code>AddPdfReportServices()</code> extensions</li>
+</ul>
+<h2 id="architecture">Architecture</h2>
+<h3 id="namespace-structure">Namespace Structure</h3>
+<p>The library follows an <strong>abstraction-implementation</strong> pattern:</p>
+<table>
+<thead>
+<tr>
+<th>Abstraction (NuvTools.Report)</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NuvTools.Report.Pdf</code></td>
+<td><code>NuvTools.Report.Pdf.*</code> (QuestPDF + PDFsharp)</td>
+</tr>
+<tr>
+<td><code>NuvTools.Report.Sheet.Csv</code></td>
+<td><code>NuvTools.Report.Sheet.Csv</code> (ClosedXML)</td>
+</tr>
+<tr>
+<td><code>NuvTools.Report.Sheet.Excel</code></td>
+<td><code>NuvTools.Report.Sheet.Excel</code> (ClosedXML)</td>
+</tr>
+<tr>
+<td><code>NuvTools.Report.FixedLength</code></td>
+<td><code>NuvTools.Report.FixedLength</code></td>
+</tr>
+<tr>
+<td><code>NuvTools.Report.Parsing</code></td>
+<td>Shared parsing utilities and converters (consumed by Csv and FixedLength readers)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="document-model">Document Model</h3>
+<p>The library uses a document-table-component hierarchy:</p>
+<pre><code>Document
+└── Tables (List&lt;Table&gt;)
+    ├── Info (metadata: name, title, company info, issue date/user)
+    ├── Style (formatting: colors, fonts)
+    └── Content (Body)
+        ├── Header
+        │   └── Columns (List&lt;Column&gt;)
+        └── Rows (List&lt;Row&gt;)
+            └── Cells (List&lt;Cell&gt;)
+</code></pre>
+<h2 id="usage">Usage</h2>
+<h3 id="dependency-injection-setup">Dependency Injection Setup</h3>
+<pre><code class="lang-csharp">using NuvTools.Report.Sheet.Extensions;
+using NuvTools.Report.Pdf.Extensions;
+
+builder.Services.AddSheetReportServices();       // ICsvReader, ICsvExporter, IExcelExporter
+builder.Services.AddFixedLengthReportServices(); // IFixedLengthReader
+builder.Services.AddPdfReportServices();         // IPdfExporter, IPdfMerger
+</code></pre>
+<h3 id="building-a-document">Building a Document</h3>
+<pre><code class="lang-csharp">using NuvTools.Report.Table.Models;
+using NuvTools.Report.Table.Models.Components;
+
+// Define columns
+var columns = new List&lt;Column&gt;
+{
+    new() { Name = &quot;Id&quot;, Label = &quot;ID&quot;, Order = 1, Format = &quot;&quot; },
+    new() { Name = &quot;Name&quot;, Label = &quot;Product Name&quot;, Order = 2, Format = &quot;&quot; },
+    new() { Name = &quot;Price&quot;, Label = &quot;Price&quot;, Order = 3, Format = &quot;C2&quot; },
+    new() { Name = &quot;Date&quot;, Label = &quot;Date&quot;, Order = 4, Format = &quot;yyyy-MM-dd&quot; }
+};
+
+// Create a table
+var table = new Table
+{
+    Info = new Info
+    {
+        Name = &quot;Products&quot;,
+        Title = &quot;Product Catalog&quot;,
+        CompanyAbbreviation = &quot;ACME Corp&quot;,
+        CompanyUrl = &quot;https://acme.com&quot;,
+        FilterDescription = &quot;All Products&quot;,
+        IssueDate = DateTime.Now,
+        IssueUser = &quot;john.doe&quot;
+    },
+    Style = new Style
+    {
+        BackgroundHeaderColor = &quot;#003366&quot;,
+        FontHeaderColor = &quot;#FFFFFF&quot;
+    },
+    Content = new Body()
+};
+
+// Populate rows from objects using reflection
+table.SetRows(columns, products);
+
+// Create document
+var document = new Document
+{
+    BackgroundDocumentHeaderColor = &quot;#003366&quot;,
+    Tables = [table]
+};
+</code></pre>
+<h3 id="pdf-export">PDF Export</h3>
+<pre><code class="lang-csharp">using NuvTools.Report.Pdf;
+
+// Via DI
+public class ReportService(IPdfExporter pdfExporter, IPdfMerger pdfMerger)
+{
+    public string GeneratePdf(Document document)
+    {
+        // Export first table as base64 PDF
+        return pdfExporter.ExportFirstSheetToPdf(document);
+    }
+
+    public List&lt;string&gt; GenerateAllPdfs(Document document)
+    {
+        // Export all tables as separate base64 PDFs
+        return pdfExporter.ExportSheetToPdf(document);
+    }
+
+    public byte[] MergePdfs(IEnumerable&lt;byte[]&gt; pdfs)
+    {
+        return pdfMerger.Merge(pdfs);
+    }
+}
+</code></pre>
+<p><strong>QuestPDF license.</strong> QuestPDF refuses to render until the application declares which of its
+licenses applies, and that choice belongs to the application, not to this package. Set it once at
+startup, before the first export:</p>
+<pre><code class="lang-csharp">QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community; // or Professional / Enterprise
+</code></pre>
+<p>See <a href="https://www.questpdf.com/license/">QuestPDF licensing</a> for which one applies to you.</p>
+<h3 id="excel-export">Excel Export</h3>
+<pre><code class="lang-csharp">using NuvTools.Report.Sheet.Excel;
+
+// Via DI
+public class ReportService(IExcelExporter excelExporter)
+{
+    public string GenerateExcel(Document document)
+    {
+        // Returns base64-encoded .xlsx with styled headers, column definitions, and data rows
+        string base64 = excelExporter.ExportToExcel(document);
+
+        // Save to file
+        byte[] bytes = Convert.FromBase64String(base64);
+        File.WriteAllBytes(&quot;report.xlsx&quot;, bytes);
+
+        return base64;
+    }
+}
+</code></pre>
+<h3 id="csv-export">CSV Export</h3>
+<pre><code class="lang-csharp">using NuvTools.Report.Sheet.Csv;
+
+// Via DI
+public class ReportService(ICsvExporter csvExporter)
+{
+    public void ExportCsv(Document document)
+    {
+        // Default delimiter is comma (,) per RFC 4180
+        // Header row (column labels) is included by default
+        List&lt;string&gt; csvFiles = csvExporter.ExportToCsv(document);
+        string csvBase64 = csvExporter.ExportFirstSheetToCsv(document);
+
+        // Use a different delimiter
+        string csvSemicolon = csvExporter.ExportFirstSheetToCsv(document, CsvDelimiter.Semicolon);
+        string csvTab = csvExporter.ExportFirstSheetToCsv(document, CsvDelimiter.Tab);
+
+        // Use a custom delimiter
+        string csvPipe = csvExporter.ExportFirstSheetToCsv(document, CsvDelimiter.Custom, &quot;||&quot;);
+
+        // Export without the header row
+        string csvNoHeader = csvExporter.ExportFirstSheetToCsv(document, includeHeader: false);
+
+        // By default, delimiter occurrences in values/headers are removed to prevent CSV corruption
+        // Disable sanitization if you want to keep raw values
+        string csvRaw = csvExporter.ExportFirstSheetToCsv(document, sanitizeDelimiter: false);
+    }
+}
+</code></pre>
+<p>The output is UTF-8 with a byte order mark, so Excel opens non-ASCII text correctly. Date values are written with <code>Column.Format</code> when one is set; give date columns an explicit format (e.g. <code>yyyy-MM-dd HH:mm:ss</code>) so the output does not depend on the server culture.</p>
+<h3 id="csv-reading--importing">CSV Reading / Importing</h3>
+<p>Map CSV content to strongly-typed objects using attributes:</p>
+<pre><code class="lang-csharp">using NuvTools.Report.Sheet.Csv;
+using NuvTools.Report.Sheet.Csv.Attributes;
+using NuvTools.Report.Parsing;
+
+// Define your record model
+[CsvRecord(Delimiter = CsvDelimiter.Semicolon)]
+public class ProductRecord
+{
+    [CsvField(0, Caption = &quot;ID&quot;)]
+    public int Id { get; set; }
+
+    [CsvField(1, Caption = &quot;Name&quot;)]
+    public string Name { get; set; } = &quot;&quot;;
+
+    [CsvField(2, Caption = &quot;Price&quot;, Trim = TrimMode.Both)]
+    public decimal Price { get; set; }
+
+    [CsvField(3, Caption = &quot;Date&quot;, Format = &quot;yyyy-MM-dd&quot;)]
+    public DateTime Date { get; set; }
+
+    [CsvField(4)]
+    public string? OptionalNote { get; set; }
+}
+
+// Read CSV via DI
+public class ImportService(ICsvReader csvReader)
+{
+    public List&lt;ProductRecord&gt; ImportFromString(string csvContent)
+    {
+        return csvReader.ReadString&lt;ProductRecord&gt;(csvContent);
+    }
+
+    public List&lt;ProductRecord&gt; ImportFromBase64(string base64)
+    {
+        return csvReader.ReadBase64&lt;ProductRecord&gt;(base64);
+    }
+
+    public List&lt;ProductRecord&gt; ImportFromStream(Stream stream)
+    {
+        return csvReader.ReadStream&lt;ProductRecord&gt;(stream, new CsvReaderOptions
+        {
+            SkipHeader = true,
+            IgnoreEmptyLines = true,
+            HandleQuotedFields = true
+        });
+    }
+
+    public List&lt;ProductRecord&gt; ImportWithDelimiterOverride(string csvContent)
+    {
+        // Override the attribute-level delimiter at runtime
+        return csvReader.ReadString&lt;ProductRecord&gt;(csvContent, new CsvReaderOptions
+        {
+            Delimiter = CsvDelimiter.Comma
+        });
+    }
+}
+</code></pre>
+<h4 id="generating-csv-headers">Generating CSV Headers</h4>
+<pre><code class="lang-csharp">using NuvTools.Report.Sheet.Csv;
+
+// Get ordered captions from CsvField attributes
+IEnumerable&lt;string&gt; captions = typeof(ProductRecord).GetFieldCaptions();
+// [&quot;ID&quot;, &quot;Name&quot;, &quot;Price&quot;, &quot;Date&quot;, &quot;OptionalNote&quot;]
+
+// Get a formatted header line
+string header = typeof(ProductRecord).GetCsvHeader(CsvDelimiter.Semicolon);
+// &quot;ID;Name;Price;Date;OptionalNote&quot;
+</code></pre>
+<h3 id="fixed-length-positional-file-reading">Fixed-Length (Positional) File Reading</h3>
+<p>Map fixed-width columns to objects using attributes:</p>
+<pre><code class="lang-csharp">using NuvTools.Report.FixedLength;
+using NuvTools.Report.FixedLength.Attributes;
+using NuvTools.Report.Parsing;
+
+// Define your record model
+[FixedLengthRecord(AllowShorterLines = true)]
+public class BankRecord
+{
+    [FixedLengthField(0, 3)]                          // positions 0-2 (3 chars)
+    public string BankCode { get; set; } = &quot;&quot;;
+
+    [FixedLengthField(1, 5, Trim = TrimMode.Both)]    // positions 3-7 (5 chars)
+    public string BranchCode { get; set; } = &quot;&quot;;
+
+    [FixedLengthField(2, 15, Trim = TrimMode.Both)]   // positions 8-22 (15 chars)
+    public decimal Amount { get; set; }
+
+    [FixedLengthField(3, 8, Format = &quot;yyyyMMdd&quot;)]      // positions 23-30 (8 chars)
+    public DateTime TransactionDate { get; set; }
+
+    [FixedLengthField(4, 30, Optional = true, Trim = TrimMode.Right)] // positions 31-60 (optional)
+    public string? Description { get; set; }
+}
+
+// Read via DI
+public class BankImportService(IFixedLengthReader reader)
+{
+    public List&lt;BankRecord&gt; Import(string content)
+    {
+        return reader.ReadString&lt;BankRecord&gt;(content);
+    }
+
+    public List&lt;BankRecord&gt; ImportWithFilter(Stream stream)
+    {
+        return reader.ReadStream&lt;BankRecord&gt;(stream, new FixedLengthReaderOptions
+        {
+            IgnoreEmptyLines = true,
+            LineFilter = line =&gt; line.StartsWith(&quot;D&quot;) // only detail lines
+        });
+    }
+
+    public List&lt;BankRecord&gt; ImportFromBase64(string base64)
+    {
+        return reader.ReadBase64&lt;BankRecord&gt;(base64);
+    }
+}
+</code></pre>
+<h3 id="custom-field-converters">Custom Field Converters</h3>
+<p>Create custom converters for special parsing logic:</p>
+<pre><code class="lang-csharp">using NuvTools.Report.Parsing.Converters;
+
+// Implement IFieldConverter directly
+public class BrazilianDecimalConverter : IFieldConverter
+{
+    public object? Convert(string value, string? format)
+    {
+        // &quot;000000150&quot; with format &quot;2&quot; → 1.50
+        var decimalPlaces = int.Parse(format ?? &quot;2&quot;);
+        var raw = long.Parse(value);
+        return raw / (decimal)Math.Pow(10, decimalPlaces);
+    }
+}
+
+// Or use the generic base class for type safety
+public class PercentageConverter : FieldConverter&lt;decimal&gt;
+{
+    public override decimal Convert(string value, string? format)
+    {
+        return decimal.Parse(value) / 100m;
+    }
+}
+
+// Use in attributes
+public class FinancialRecord
+{
+    [CsvField(0)]
+    public string Code { get; set; } = &quot;&quot;;
+
+    [CsvField(1, Converter = typeof(BrazilianDecimalConverter), Format = &quot;2&quot;)]
+    public decimal Amount { get; set; }
+
+    [FixedLengthField(0, 10, Converter = typeof(PercentageConverter))]
+    public decimal Rate { get; set; }
+}
+</code></pre>
+<h3 id="built-in-type-conversions">Built-in Type Conversions</h3>
+<p>The following types are supported out of the box (no custom converter needed):</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>string</code></td>
+<td>Passed through as-is</td>
+</tr>
+<tr>
+<td><code>int</code>, <code>long</code>, <code>short</code></td>
+<td>Parsed with <code>InvariantCulture</code></td>
+</tr>
+<tr>
+<td><code>decimal</code>, <code>double</code>, <code>float</code></td>
+<td>Parsed with <code>InvariantCulture</code></td>
+</tr>
+<tr>
+<td><code>bool</code></td>
+<td>Supports <code>true</code>/<code>false</code> and <code>1</code>/<code>0</code></td>
+</tr>
+<tr>
+<td><code>DateTime</code></td>
+<td>Supports optional format string (e.g. <code>&quot;yyyyMMdd&quot;</code>)</td>
+</tr>
+<tr>
+<td><code>DateOnly</code></td>
+<td>Supports optional format string</td>
+</tr>
+<tr>
+<td><code>Guid</code></td>
+<td>Standard GUID parsing</td>
+</tr>
+<tr>
+<td>Enums</td>
+<td>Case-insensitive <code>Enum.Parse</code></td>
+</tr>
+<tr>
+<td>Nullable versions</td>
+<td>All above types supported as <code>T?</code> (empty/whitespace → <code>null</code>)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dependencies">Dependencies</h2>
+<h3 id="nuvtoolsreportpdf">NuvTools.Report.Pdf</h3>
+<ul>
+<li>QuestPDF — the application must declare its license (see <em>PDF Export</em>)</li>
+<li>PDFsharp — held at 6.2.4, the last MIT release; 6.5.0 onwards is AGPL-3.0-only</li>
+</ul>
+<h3 id="nuvtoolsreportsheet">NuvTools.Report.Sheet</h3>
+<ul>
+<li>ClosedXML</li>
+</ul>
+<h3 id="nuvtoolsreportfixedlength">NuvTools.Report.FixedLength</h3>
+<ul>
+<li>No external runtime dependencies (only the base <code>NuvTools.Report</code> package)</li>
+</ul>
+<h2 id="building">Building</h2>
+<p>This solution uses the <code>.slnx</code> (XML-based solution) format.</p>
+<pre><code class="lang-bash">dotnet build NuvTools.Report.slnx
+dotnet build NuvTools.Report.slnx -c Release
+dotnet test NuvTools.Report.slnx
+</code></pre>
+<h2 id="project-structure">Project Structure</h2>
+<pre><code>nuvtools-report/
+├── src/
+│   ├── NuvTools.Report/                # Core models and abstractions
+│   │   ├── Pdf/                        # IPdfExporter, IPdfMerger
+│   │   ├── Sheet/
+│   │   │   ├── Csv/                    # ICsvReader, ICsvExporter, attributes, options
+│   │   │   └── Excel/                  # IExcelExporter
+│   │   ├── FixedLength/                # IFixedLengthReader, attributes, options
+│   │   ├── Parsing/                    # TrimMode, ParseException, converters (shared)
+│   │   └── Table/Models/               # Document, Table, Info, Style, Body, Row, Cell, Column
+│   ├── NuvTools.Report.Pdf/            # PDF implementation (QuestPDF + PDFsharp)
+│   ├── NuvTools.Report.Sheet/          # Sheet implementation (ClosedXML)
+│   └── NuvTools.Report.FixedLength/    # Fixed-length reader implementation
+├── tests/
+│   ├── NuvTools.Report.Pdf.Tests/
+│   ├── NuvTools.Report.Sheet.Tests/
+│   └── NuvTools.Report.FixedLength.Tests/
+├── NuvTools.Report.slnx
+└── README.md
+</code></pre>
+<h2 id="releasing">Releasing</h2>
+<p>Publishing to nuget.org is irreversible per version, so the workflow makes it the last and smallest
+step.</p>
+<p><strong>One workflow per library.</strong> Each package has its own, so a run and an approval each concern
+exactly one package. The steps themselves are shared, in the reusable <code>package-publish.yml</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Workflow</th>
+<th>Release tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NuvTools.Report</code></td>
+<td><code>report-publish.yml</code></td>
+<td><code>report-vX.Y.Z</code></td>
+</tr>
+<tr>
+<td><code>NuvTools.Report.FixedLength</code></td>
+<td><code>fixedlength-publish.yml</code></td>
+<td><code>fixedlength-vX.Y.Z</code></td>
+</tr>
+<tr>
+<td><code>NuvTools.Report.Pdf</code></td>
+<td><code>pdf-publish.yml</code></td>
+<td><code>pdf-vX.Y.Z</code></td>
+</tr>
+<tr>
+<td><code>NuvTools.Report.Sheet</code></td>
+<td><code>sheet-publish.yml</code></td>
+<td><code>sheet-vX.Y.Z</code></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Set the package's <code>&lt;Version&gt;</code> in its <code>.csproj</code> and merge it. That is the version that gets
+published; the workflow reads it and never computes one.</li>
+<li>Run the library's workflow by hand (<em>Actions → Report Publish → Run workflow</em>) with <em>push</em>
+checked.</li>
+<li>The workflow builds the solution with <code>-warnaserror</code>, runs the tests, takes <strong>that package only</strong>
+from the build output, verifies it carries its README, licence, icon, symbols and every target
+framework, and then waits for approval on the <code>nuget</code> GitHub Environment before pushing.</li>
+<li><strong>After the push succeeds, the workflow tags the commit</strong> with the tag in the table above. The tag is a
+record of what is on nuget.org, never what starts a release, so it cannot exist for a version
+that did not get there. A run whose tag already exists stops before building: the version has
+been released and <code>&lt;Version&gt;</code> needs a bump.</li>
+</ol>
+<p><strong>A referenced package goes first.</strong> A package that references another of this repository as a
+project depends on whatever <code>&lt;Version&gt;</code> that one has in the commit. The workflow checks that
+version is on nuget.org and refuses to push a package whose dependency is not there yet. So:</p>
+<ul>
+<li><code>NuvTools.Report</code> before <code>NuvTools.Report.FixedLength</code>, <code>NuvTools.Report.Pdf</code> and <code>NuvTools.Report.Sheet</code>.</li>
+</ul>
+<p>That check knows a version exists, not what is in it: when a referenced package changes its public
+API, bump and publish it first, then bump and publish the packages built on it.</p>
+<p><strong>Versions published by hand are refused.</strong> Releases made before these workflows exist on nuget.org
+with no tag. Pushing one again would skip the duplicate and then tag the current commit as a
+release it is not, so a version that is already on nuget.org stops the run. The exception is a
+re-run of the same run, which is how a push that succeeded and a tag that failed gets finished.</p>
+<p><strong>No API key is stored.</strong> The push uses nuget.org's trusted publishing: the job presents a GitHub
+OIDC token, nuget.org checks it against the policy registered for this repository and answers with a
+key that lives for one hour. The repository needs one secret, <code>NUGET_USER</code> — the nuget.org profile
+name the policy belongs to — and the policy itself, registered under <em>Trusted Publishing</em> on
+nuget.org with the owner <code>nuvtools</code>, the repository <code>nuvtools-report</code>, the workflow file and the
+environment <code>nuget</code>.</p>
+<p>Run a library's workflow by hand with <em>push</em> unchecked for a dry run that stops after the
+verification.</p>
+<h2 id="license">License</h2>
+<p>This project requires license acceptance. See the <a href="https://github.com/nuvtools/nuvtools-report/blob/main/LICENSE">LICENSE</a> file for details.</p>
+<h2 id="links">Links</h2>
+<ul>
+<li><a href="https://nuvtools.com">Website</a></li>
+<li><a href="https://github.com/nuvtools/nuvtools-report">GitHub Repository</a></li>
+<li><a href="https://www.nuget.org/profiles/NuvTools">NuGet Packages</a></li>
+</ul>
+
+</article>
+
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>© Nuv Tools · <a href="https://nuvtools.com/framework/">nuvtools.com</a> · MIT licence · Built with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

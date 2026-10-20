@@ -1,0 +1,883 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo
+  commentId: T:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo
+  id: OmieContractInfo
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  children:
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.#ctor(System.Int64,System.String,System.Int64,System.Nullable{System.DateOnly},System.Nullable{System.DateOnly},System.Nullable{System.Decimal},System.Collections.Generic.IReadOnlyDictionary{System.Int64,System.Decimal})
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ClientCode
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ContractCode
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ContractNumber
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.MonthlyValue
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.UnitValueByServiceCode
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.UnitValueOf(System.Int64)
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ValidFrom
+  - NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ValidTo
+  langs:
+  - csharp
+  - vb
+  name: OmieContractInfo
+  nameWithType: OmieContractInfo
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo
+  type: Class
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: >-
+    A Service Contract of Omie as callers consume it: the number the user knows, the validity period and the
+
+    negotiated value, with the dates already parsed. Projected from the listing so no caller has to deal with Omie's
+
+    dd/MM/yyyy strings or with which key carries what.
+  example: []
+  syntax:
+    content: 'public sealed record OmieContractInfo : IEquatable<OmieContractInfo>'
+    content.vb: Public NotInheritable Class OmieContractInfo Implements IEquatable(Of OmieContractInfo)
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo}
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.#ctor(System.Int64,System.String,System.Int64,System.Nullable{System.DateOnly},System.Nullable{System.DateOnly},System.Nullable{System.Decimal},System.Collections.Generic.IReadOnlyDictionary{System.Int64,System.Decimal})
+  commentId: M:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.#ctor(System.Int64,System.String,System.Int64,System.Nullable{System.DateOnly},System.Nullable{System.DateOnly},System.Nullable{System.Decimal},System.Collections.Generic.IReadOnlyDictionary{System.Int64,System.Decimal})
+  id: '#ctor(System.Int64,System.String,System.Int64,System.Nullable{System.DateOnly},System.Nullable{System.DateOnly},System.Nullable{System.Decimal},System.Collections.Generic.IReadOnlyDictionary{System.Int64,System.Decimal})'
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo
+  langs:
+  - csharp
+  - vb
+  name: OmieContractInfo(long, string?, long, DateOnly?, DateOnly?, decimal?, IReadOnlyDictionary<long, decimal>)
+  nameWithType: OmieContractInfo.OmieContractInfo(long, string?, long, DateOnly?, DateOnly?, decimal?, IReadOnlyDictionary<long, decimal>)
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.OmieContractInfo(long, string?, long, System.DateOnly?, System.DateOnly?, decimal?, System.Collections.Generic.IReadOnlyDictionary<long, decimal>)
+  type: Constructor
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: >-
+    A Service Contract of Omie as callers consume it: the number the user knows, the validity period and the
+
+    negotiated value, with the dates already parsed. Projected from the listing so no caller has to deal with Omie's
+
+    dd/MM/yyyy strings or with which key carries what.
+  example: []
+  syntax:
+    content: public OmieContractInfo(long ContractCode, string? ContractNumber, long ClientCode, DateOnly? ValidFrom, DateOnly? ValidTo, decimal? MonthlyValue, IReadOnlyDictionary<long, decimal> UnitValueByServiceCode)
+    parameters:
+    - id: ContractCode
+      type: System.Int64
+      description: Omie's internal identifier (nCodCtr).
+    - id: ContractNumber
+      type: System.String
+      description: The contract number as the user reads it in Omie (cNumCtr).
+    - id: ClientCode
+      type: System.Int64
+      description: Client the contract belongs to (nCodCli).
+    - id: ValidFrom
+      type: System.Nullable{System.DateOnly}
+      description: Start of the validity period; null when Omie sent none.
+    - id: ValidTo
+      type: System.Nullable{System.DateOnly}
+      description: End of the validity period; null on contracts with no end date.
+    - id: MonthlyValue
+      type: System.Nullable{System.Decimal}
+      description: Negotiated monthly value; null when Omie sent none.
+    - id: UnitValueByServiceCode
+      type: System.Collections.Generic.IReadOnlyDictionary{System.Int64,System.Decimal}
+      description: >-
+        Negotiated unit price of each service in the contract, keyed by Omie's service identifier (<code>nCodServico</code>) —
+
+        the same key the service catalog uses, so a caller holding a service code can ask what this client pays for it.
+
+        Empty when the contract carries no items.
+    content.vb: Public Sub New(ContractCode As Long, ContractNumber As String, ClientCode As Long, ValidFrom As DateOnly?, ValidTo As DateOnly?, MonthlyValue As Decimal?, UnitValueByServiceCode As IReadOnlyDictionary(Of Long, Decimal))
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.#ctor*
+  nameWithType.vb: OmieContractInfo.New(Long, String, Long, DateOnly?, DateOnly?, Decimal?, IReadOnlyDictionary(Of Long, Decimal))
+  fullName.vb: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.New(Long, String, Long, System.DateOnly?, System.DateOnly?, Decimal?, System.Collections.Generic.IReadOnlyDictionary(Of Long, Decimal))
+  name.vb: New(Long, String, Long, DateOnly?, DateOnly?, Decimal?, IReadOnlyDictionary(Of Long, Decimal))
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ContractCode
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ContractCode
+  id: ContractCode
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo
+  langs:
+  - csharp
+  - vb
+  name: ContractCode
+  nameWithType: OmieContractInfo.ContractCode
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ContractCode
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: Omie's internal identifier (nCodCtr).
+  example: []
+  syntax:
+    content: public long ContractCode { get; init; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public Property ContractCode As Long
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ContractCode*
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ContractNumber
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ContractNumber
+  id: ContractNumber
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo
+  langs:
+  - csharp
+  - vb
+  name: ContractNumber
+  nameWithType: OmieContractInfo.ContractNumber
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ContractNumber
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: The contract number as the user reads it in Omie (cNumCtr).
+  example: []
+  syntax:
+    content: public string? ContractNumber { get; init; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ContractNumber As String
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ContractNumber*
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ClientCode
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ClientCode
+  id: ClientCode
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo
+  langs:
+  - csharp
+  - vb
+  name: ClientCode
+  nameWithType: OmieContractInfo.ClientCode
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ClientCode
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: Client the contract belongs to (nCodCli).
+  example: []
+  syntax:
+    content: public long ClientCode { get; init; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public Property ClientCode As Long
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ClientCode*
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ValidFrom
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ValidFrom
+  id: ValidFrom
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo
+  langs:
+  - csharp
+  - vb
+  name: ValidFrom
+  nameWithType: OmieContractInfo.ValidFrom
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ValidFrom
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: Start of the validity period; null when Omie sent none.
+  example: []
+  syntax:
+    content: public DateOnly? ValidFrom { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateOnly}
+    content.vb: Public Property ValidFrom As DateOnly?
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ValidFrom*
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ValidTo
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ValidTo
+  id: ValidTo
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo
+  langs:
+  - csharp
+  - vb
+  name: ValidTo
+  nameWithType: OmieContractInfo.ValidTo
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ValidTo
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: End of the validity period; null on contracts with no end date.
+  example: []
+  syntax:
+    content: public DateOnly? ValidTo { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateOnly}
+    content.vb: Public Property ValidTo As DateOnly?
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ValidTo*
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.MonthlyValue
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.MonthlyValue
+  id: MonthlyValue
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo
+  langs:
+  - csharp
+  - vb
+  name: MonthlyValue
+  nameWithType: OmieContractInfo.MonthlyValue
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.MonthlyValue
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: Negotiated monthly value; null when Omie sent none.
+  example: []
+  syntax:
+    content: public decimal? MonthlyValue { get; init; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Decimal}
+    content.vb: Public Property MonthlyValue As Decimal?
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.MonthlyValue*
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.UnitValueByServiceCode
+  commentId: P:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.UnitValueByServiceCode
+  id: UnitValueByServiceCode
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo
+  langs:
+  - csharp
+  - vb
+  name: UnitValueByServiceCode
+  nameWithType: OmieContractInfo.UnitValueByServiceCode
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.UnitValueByServiceCode
+  type: Property
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: >-
+    Negotiated unit price of each service in the contract, keyed by Omie's service identifier (<code>nCodServico</code>) —
+
+    the same key the service catalog uses, so a caller holding a service code can ask what this client pays for it.
+
+    Empty when the contract carries no items.
+  example: []
+  syntax:
+    content: public IReadOnlyDictionary<long, decimal> UnitValueByServiceCode { get; init; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyDictionary{System.Int64,System.Decimal}
+    content.vb: Public Property UnitValueByServiceCode As IReadOnlyDictionary(Of Long, Decimal)
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.UnitValueByServiceCode*
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.UnitValueOf(System.Int64)
+  commentId: M:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.UnitValueOf(System.Int64)
+  id: UnitValueOf(System.Int64)
+  parent: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo
+  langs:
+  - csharp
+  - vb
+  name: UnitValueOf(long)
+  nameWithType: OmieContractInfo.UnitValueOf(long)
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.UnitValueOf(long)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  summary: >-
+    What this contract charges for a service, or null when the service is not in it — which is the normal case:
+
+    a contract covers the services that were negotiated, and the rest stay on the standard price list.
+  example: []
+  syntax:
+    content: public decimal? UnitValueOf(long serviceCode)
+    parameters:
+    - id: serviceCode
+      type: System.Int64
+    return:
+      type: System.Nullable{System.Decimal}
+    content.vb: Public Function UnitValueOf(serviceCode As Long) As Decimal?
+  overload: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.UnitValueOf*
+  nameWithType.vb: OmieContractInfo.UnitValueOf(Long)
+  fullName.vb: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.UnitValueOf(Long)
+  name.vb: UnitValueOf(Long)
+references:
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  commentId: N:NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  name: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  nameWithType: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Omie
+    name: Omie
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient
+    name: ApiClient
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs
+    name: DTOs
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+    name: Responses
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Omie
+    name: Omie
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient
+    name: ApiClient
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs
+    name: DTOs
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses
+    name: Responses
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.IEquatable{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo}
+  commentId: T:System.IEquatable{NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<OmieContractInfo>
+  nameWithType: IEquatable<OmieContractInfo>
+  fullName: System.IEquatable<NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo>
+  nameWithType.vb: IEquatable(Of OmieContractInfo)
+  fullName.vb: System.IEquatable(Of NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo)
+  name.vb: IEquatable(Of OmieContractInfo)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo
+    name: OmieContractInfo
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo
+    name: OmieContractInfo
+    href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.html
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.#ctor*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.#ctor
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieContractInfo__ctor_System_Int64_System_String_System_Int64_System_Nullable_System_DateOnly__System_Nullable_System_DateOnly__System_Nullable_System_Decimal__System_Collections_Generic_IReadOnlyDictionary_System_Int64_System_Decimal__
+  name: OmieContractInfo
+  nameWithType: OmieContractInfo.OmieContractInfo
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.OmieContractInfo
+  nameWithType.vb: OmieContractInfo.New
+  fullName.vb: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.New
+  name.vb: New
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long
+  nameWithType: long
+  fullName: long
+  nameWithType.vb: Long
+  fullName.vb: Long
+  name.vb: Long
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Nullable{System.DateOnly}
+  commentId: T:System.Nullable{System.DateOnly}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.dateonly
+  name: DateOnly?
+  nameWithType: DateOnly?
+  fullName: System.DateOnly?
+  spec.csharp:
+  - uid: System.DateOnly
+    name: DateOnly
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.dateonly
+  - name: '?'
+  spec.vb:
+  - uid: System.DateOnly
+    name: DateOnly
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.dateonly
+  - name: '?'
+- uid: System.Nullable{System.Decimal}
+  commentId: T:System.Nullable{System.Decimal}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.decimal
+  name: decimal?
+  nameWithType: decimal?
+  fullName: decimal?
+  nameWithType.vb: Decimal?
+  fullName.vb: Decimal?
+  name.vb: Decimal?
+  spec.csharp:
+  - uid: System.Decimal
+    name: decimal
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.decimal
+  - name: '?'
+  spec.vb:
+  - uid: System.Decimal
+    name: Decimal
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.decimal
+  - name: '?'
+- uid: System.Collections.Generic.IReadOnlyDictionary{System.Int64,System.Decimal}
+  commentId: T:System.Collections.Generic.IReadOnlyDictionary{System.Int64,System.Decimal}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  name: IReadOnlyDictionary<long, decimal>
+  nameWithType: IReadOnlyDictionary<long, decimal>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<long, decimal>
+  nameWithType.vb: IReadOnlyDictionary(Of Long, Decimal)
+  fullName.vb: System.Collections.Generic.IReadOnlyDictionary(Of Long, Decimal)
+  name.vb: IReadOnlyDictionary(Of Long, Decimal)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: <
+  - uid: System.Int64
+    name: long
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int64
+  - name: ','
+  - name: " "
+  - uid: System.Decimal
+    name: decimal
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.decimal
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int64
+    name: Long
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int64
+  - name: ','
+  - name: " "
+  - uid: System.Decimal
+    name: Decimal
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.decimal
+  - name: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyDictionary`2
+  commentId: T:System.Collections.Generic.IReadOnlyDictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  name: IReadOnlyDictionary<TKey, TValue>
+  nameWithType: IReadOnlyDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<TKey, TValue>
+  nameWithType.vb: IReadOnlyDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IReadOnlyDictionary(Of TKey, TValue)
+  name.vb: IReadOnlyDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ContractCode*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ContractCode
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieContractInfo_ContractCode
+  name: ContractCode
+  nameWithType: OmieContractInfo.ContractCode
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ContractCode
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ContractNumber*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ContractNumber
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieContractInfo_ContractNumber
+  name: ContractNumber
+  nameWithType: OmieContractInfo.ContractNumber
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ContractNumber
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ClientCode*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ClientCode
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieContractInfo_ClientCode
+  name: ClientCode
+  nameWithType: OmieContractInfo.ClientCode
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ClientCode
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ValidFrom*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ValidFrom
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieContractInfo_ValidFrom
+  name: ValidFrom
+  nameWithType: OmieContractInfo.ValidFrom
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ValidFrom
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ValidTo*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ValidTo
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieContractInfo_ValidTo
+  name: ValidTo
+  nameWithType: OmieContractInfo.ValidTo
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.ValidTo
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.MonthlyValue*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.MonthlyValue
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieContractInfo_MonthlyValue
+  name: MonthlyValue
+  nameWithType: OmieContractInfo.MonthlyValue
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.MonthlyValue
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.UnitValueByServiceCode*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.UnitValueByServiceCode
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieContractInfo_UnitValueByServiceCode
+  name: UnitValueByServiceCode
+  nameWithType: OmieContractInfo.UnitValueByServiceCode
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.UnitValueByServiceCode
+- uid: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.UnitValueOf*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.UnitValueOf
+  href: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.html#NuvTools_Payment_Omie_ApiClient_DTOs_Responses_OmieContractInfo_UnitValueOf_System_Int64_
+  name: UnitValueOf
+  nameWithType: OmieContractInfo.UnitValueOf
+  fullName: NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieContractInfo.UnitValueOf

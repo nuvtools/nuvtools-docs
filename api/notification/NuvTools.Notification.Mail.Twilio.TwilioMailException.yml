@@ -1,0 +1,726 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Notification.Mail.Twilio.TwilioMailException
+  commentId: T:NuvTools.Notification.Mail.Twilio.TwilioMailException
+  id: TwilioMailException
+  parent: NuvTools.Notification.Mail.Twilio
+  children:
+  - NuvTools.Notification.Mail.Twilio.TwilioMailException.#ctor(System.Net.HttpStatusCode,System.String)
+  - NuvTools.Notification.Mail.Twilio.TwilioMailException.#ctor(System.String)
+  - NuvTools.Notification.Mail.Twilio.TwilioMailException.#ctor(System.String,System.Exception)
+  - NuvTools.Notification.Mail.Twilio.TwilioMailException.ResponseContent
+  - NuvTools.Notification.Mail.Twilio.TwilioMailException.StatusCode
+  langs:
+  - csharp
+  - vb
+  name: TwilioMailException
+  nameWithType: TwilioMailException
+  fullName: NuvTools.Notification.Mail.Twilio.TwilioMailException
+  type: Class
+  assemblies:
+  - NuvTools.Notification.Mail.Twilio
+  namespace: NuvTools.Notification.Mail.Twilio
+  summary: Represents an error returned by the Twilio Email API.
+  remarks: >-
+    Twilio validates the whole payload before sending, returning as many issues as possible in a single
+
+    response. The raw response body is preserved in <xref href="NuvTools.Notification.Mail.Twilio.TwilioMailException.ResponseContent" data-throw-if-not-resolved="false"></xref> so the validation
+
+    details are not lost.
+  example: []
+  syntax:
+    content: 'public class TwilioMailException : Exception, ISerializable'
+    content.vb: Public Class TwilioMailException Inherits Exception Implements ISerializable
+  inheritance:
+  - System.Object
+  - System.Exception
+  implements:
+  - System.Runtime.Serialization.ISerializable
+  inheritedMembers:
+  - System.Exception.GetBaseException
+  - System.Exception.GetType
+  - System.Exception.ToString
+  - System.Exception.Data
+  - System.Exception.HelpLink
+  - System.Exception.HResult
+  - System.Exception.InnerException
+  - System.Exception.Message
+  - System.Exception.Source
+  - System.Exception.StackTrace
+  - System.Exception.TargetSite
+  - System.Exception.SerializeObjectState
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: NuvTools.Notification.Mail.Twilio.TwilioMailException.#ctor(System.Net.HttpStatusCode,System.String)
+  commentId: M:NuvTools.Notification.Mail.Twilio.TwilioMailException.#ctor(System.Net.HttpStatusCode,System.String)
+  id: '#ctor(System.Net.HttpStatusCode,System.String)'
+  parent: NuvTools.Notification.Mail.Twilio.TwilioMailException
+  langs:
+  - csharp
+  - vb
+  name: TwilioMailException(HttpStatusCode, string?)
+  nameWithType: TwilioMailException.TwilioMailException(HttpStatusCode, string?)
+  fullName: NuvTools.Notification.Mail.Twilio.TwilioMailException.TwilioMailException(System.Net.HttpStatusCode, string?)
+  type: Constructor
+  assemblies:
+  - NuvTools.Notification.Mail.Twilio
+  namespace: NuvTools.Notification.Mail.Twilio
+  summary: Initializes a new instance of the <xref href="NuvTools.Notification.Mail.Twilio.TwilioMailException" data-throw-if-not-resolved="false"></xref> class.
+  example: []
+  syntax:
+    content: public TwilioMailException(HttpStatusCode statusCode, string? responseContent)
+    parameters:
+    - id: statusCode
+      type: System.Net.HttpStatusCode
+      description: The HTTP status code returned by the API.
+    - id: responseContent
+      type: System.String
+      description: The raw response body returned by the API.
+    content.vb: Public Sub New(statusCode As HttpStatusCode, responseContent As String)
+  overload: NuvTools.Notification.Mail.Twilio.TwilioMailException.#ctor*
+  nameWithType.vb: TwilioMailException.New(HttpStatusCode, String)
+  fullName.vb: NuvTools.Notification.Mail.Twilio.TwilioMailException.New(System.Net.HttpStatusCode, String)
+  name.vb: New(HttpStatusCode, String)
+- uid: NuvTools.Notification.Mail.Twilio.TwilioMailException.#ctor(System.String)
+  commentId: M:NuvTools.Notification.Mail.Twilio.TwilioMailException.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: NuvTools.Notification.Mail.Twilio.TwilioMailException
+  langs:
+  - csharp
+  - vb
+  name: TwilioMailException(string)
+  nameWithType: TwilioMailException.TwilioMailException(string)
+  fullName: NuvTools.Notification.Mail.Twilio.TwilioMailException.TwilioMailException(string)
+  type: Constructor
+  assemblies:
+  - NuvTools.Notification.Mail.Twilio
+  namespace: NuvTools.Notification.Mail.Twilio
+  summary: Initializes a new instance of the <xref href="NuvTools.Notification.Mail.Twilio.TwilioMailException" data-throw-if-not-resolved="false"></xref> class with a custom message.
+  example: []
+  syntax:
+    content: public TwilioMailException(string message)
+    parameters:
+    - id: message
+      type: System.String
+      description: The message that describes the error.
+    content.vb: Public Sub New(message As String)
+  overload: NuvTools.Notification.Mail.Twilio.TwilioMailException.#ctor*
+  nameWithType.vb: TwilioMailException.New(String)
+  fullName.vb: NuvTools.Notification.Mail.Twilio.TwilioMailException.New(String)
+  name.vb: New(String)
+- uid: NuvTools.Notification.Mail.Twilio.TwilioMailException.#ctor(System.String,System.Exception)
+  commentId: M:NuvTools.Notification.Mail.Twilio.TwilioMailException.#ctor(System.String,System.Exception)
+  id: '#ctor(System.String,System.Exception)'
+  parent: NuvTools.Notification.Mail.Twilio.TwilioMailException
+  langs:
+  - csharp
+  - vb
+  name: TwilioMailException(string, Exception)
+  nameWithType: TwilioMailException.TwilioMailException(string, Exception)
+  fullName: NuvTools.Notification.Mail.Twilio.TwilioMailException.TwilioMailException(string, System.Exception)
+  type: Constructor
+  assemblies:
+  - NuvTools.Notification.Mail.Twilio
+  namespace: NuvTools.Notification.Mail.Twilio
+  summary: Initializes a new instance of the <xref href="NuvTools.Notification.Mail.Twilio.TwilioMailException" data-throw-if-not-resolved="false"></xref> class with a custom message and inner exception.
+  example: []
+  syntax:
+    content: public TwilioMailException(string message, Exception innerException)
+    parameters:
+    - id: message
+      type: System.String
+      description: The message that describes the error.
+    - id: innerException
+      type: System.Exception
+      description: The exception that caused the current exception.
+    content.vb: Public Sub New(message As String, innerException As Exception)
+  overload: NuvTools.Notification.Mail.Twilio.TwilioMailException.#ctor*
+  nameWithType.vb: TwilioMailException.New(String, Exception)
+  fullName.vb: NuvTools.Notification.Mail.Twilio.TwilioMailException.New(String, System.Exception)
+  name.vb: New(String, Exception)
+- uid: NuvTools.Notification.Mail.Twilio.TwilioMailException.StatusCode
+  commentId: P:NuvTools.Notification.Mail.Twilio.TwilioMailException.StatusCode
+  id: StatusCode
+  parent: NuvTools.Notification.Mail.Twilio.TwilioMailException
+  langs:
+  - csharp
+  - vb
+  name: StatusCode
+  nameWithType: TwilioMailException.StatusCode
+  fullName: NuvTools.Notification.Mail.Twilio.TwilioMailException.StatusCode
+  type: Property
+  assemblies:
+  - NuvTools.Notification.Mail.Twilio
+  namespace: NuvTools.Notification.Mail.Twilio
+  summary: Gets the HTTP status code returned by the API, when available.
+  example: []
+  syntax:
+    content: public HttpStatusCode? StatusCode { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Net.HttpStatusCode}
+    content.vb: Public ReadOnly Property StatusCode As HttpStatusCode?
+  overload: NuvTools.Notification.Mail.Twilio.TwilioMailException.StatusCode*
+- uid: NuvTools.Notification.Mail.Twilio.TwilioMailException.ResponseContent
+  commentId: P:NuvTools.Notification.Mail.Twilio.TwilioMailException.ResponseContent
+  id: ResponseContent
+  parent: NuvTools.Notification.Mail.Twilio.TwilioMailException
+  langs:
+  - csharp
+  - vb
+  name: ResponseContent
+  nameWithType: TwilioMailException.ResponseContent
+  fullName: NuvTools.Notification.Mail.Twilio.TwilioMailException.ResponseContent
+  type: Property
+  assemblies:
+  - NuvTools.Notification.Mail.Twilio
+  namespace: NuvTools.Notification.Mail.Twilio
+  summary: Gets the raw response body returned by the API, when available.
+  example: []
+  syntax:
+    content: public string? ResponseContent { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property ResponseContent As String
+  overload: NuvTools.Notification.Mail.Twilio.TwilioMailException.ResponseContent*
+references:
+- uid: NuvTools.Notification.Mail.Twilio.TwilioMailException.ResponseContent
+  commentId: P:NuvTools.Notification.Mail.Twilio.TwilioMailException.ResponseContent
+  href: NuvTools.Notification.Mail.Twilio.TwilioMailException.html#NuvTools_Notification_Mail_Twilio_TwilioMailException_ResponseContent
+  name: ResponseContent
+  nameWithType: TwilioMailException.ResponseContent
+  fullName: NuvTools.Notification.Mail.Twilio.TwilioMailException.ResponseContent
+- uid: NuvTools.Notification.Mail.Twilio
+  commentId: N:NuvTools.Notification.Mail.Twilio
+  name: NuvTools.Notification.Mail.Twilio
+  nameWithType: NuvTools.Notification.Mail.Twilio
+  fullName: NuvTools.Notification.Mail.Twilio
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Mail
+    name: Mail
+  - name: .
+  - uid: NuvTools.Notification.Mail.Twilio
+    name: Twilio
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Mail
+    name: Mail
+  - name: .
+  - uid: NuvTools.Notification.Mail.Twilio
+    name: Twilio
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
+- uid: System.Runtime.Serialization.ISerializable
+  commentId: T:System.Runtime.Serialization.ISerializable
+  parent: System.Runtime.Serialization
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.runtime.serialization.iserializable
+  name: ISerializable
+  nameWithType: ISerializable
+  fullName: System.Runtime.Serialization.ISerializable
+- uid: System.Exception.GetBaseException
+  commentId: M:System.Exception.GetBaseException
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.getbaseexception
+  name: GetBaseException()
+  nameWithType: Exception.GetBaseException()
+  fullName: System.Exception.GetBaseException()
+  spec.csharp:
+  - uid: System.Exception.GetBaseException
+    name: GetBaseException
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.getbaseexception
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Exception.GetBaseException
+    name: GetBaseException
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.getbaseexception
+  - name: (
+  - name: )
+- uid: System.Exception.GetType
+  commentId: M:System.Exception.GetType
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.gettype
+  name: GetType()
+  nameWithType: Exception.GetType()
+  fullName: System.Exception.GetType()
+  spec.csharp:
+  - uid: System.Exception.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Exception.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.gettype
+  - name: (
+  - name: )
+- uid: System.Exception.ToString
+  commentId: M:System.Exception.ToString
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.tostring
+  name: ToString()
+  nameWithType: Exception.ToString()
+  fullName: System.Exception.ToString()
+  spec.csharp:
+  - uid: System.Exception.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Exception.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.exception.tostring
+  - name: (
+  - name: )
+- uid: System.Exception.Data
+  commentId: P:System.Exception.Data
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.data
+  name: Data
+  nameWithType: Exception.Data
+  fullName: System.Exception.Data
+- uid: System.Exception.HelpLink
+  commentId: P:System.Exception.HelpLink
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.helplink
+  name: HelpLink
+  nameWithType: Exception.HelpLink
+  fullName: System.Exception.HelpLink
+- uid: System.Exception.HResult
+  commentId: P:System.Exception.HResult
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.hresult
+  name: HResult
+  nameWithType: Exception.HResult
+  fullName: System.Exception.HResult
+- uid: System.Exception.InnerException
+  commentId: P:System.Exception.InnerException
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.innerexception
+  name: InnerException
+  nameWithType: Exception.InnerException
+  fullName: System.Exception.InnerException
+- uid: System.Exception.Message
+  commentId: P:System.Exception.Message
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.message
+  name: Message
+  nameWithType: Exception.Message
+  fullName: System.Exception.Message
+- uid: System.Exception.Source
+  commentId: P:System.Exception.Source
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.source
+  name: Source
+  nameWithType: Exception.Source
+  fullName: System.Exception.Source
+- uid: System.Exception.StackTrace
+  commentId: P:System.Exception.StackTrace
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.stacktrace
+  name: StackTrace
+  nameWithType: Exception.StackTrace
+  fullName: System.Exception.StackTrace
+- uid: System.Exception.TargetSite
+  commentId: P:System.Exception.TargetSite
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.targetsite
+  name: TargetSite
+  nameWithType: Exception.TargetSite
+  fullName: System.Exception.TargetSite
+- uid: System.Exception.SerializeObjectState
+  commentId: E:System.Exception.SerializeObjectState
+  parent: System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception.serializeobjectstate
+  name: SerializeObjectState
+  nameWithType: Exception.SerializeObjectState
+  fullName: System.Exception.SerializeObjectState
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Runtime.Serialization
+  commentId: N:System.Runtime.Serialization
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Runtime.Serialization
+  nameWithType: System.Runtime.Serialization
+  fullName: System.Runtime.Serialization
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Runtime
+    name: Runtime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime
+  - name: .
+  - uid: System.Runtime.Serialization
+    name: Serialization
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.serialization
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Runtime
+    name: Runtime
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime
+  - name: .
+  - uid: System.Runtime.Serialization
+    name: Serialization
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.runtime.serialization
+- uid: NuvTools.Notification.Mail.Twilio.TwilioMailException
+  commentId: T:NuvTools.Notification.Mail.Twilio.TwilioMailException
+  href: NuvTools.Notification.Mail.Twilio.TwilioMailException.html
+  name: TwilioMailException
+  nameWithType: TwilioMailException
+  fullName: NuvTools.Notification.Mail.Twilio.TwilioMailException
+- uid: NuvTools.Notification.Mail.Twilio.TwilioMailException.#ctor*
+  commentId: Overload:NuvTools.Notification.Mail.Twilio.TwilioMailException.#ctor
+  href: NuvTools.Notification.Mail.Twilio.TwilioMailException.html#NuvTools_Notification_Mail_Twilio_TwilioMailException__ctor_System_Net_HttpStatusCode_System_String_
+  name: TwilioMailException
+  nameWithType: TwilioMailException.TwilioMailException
+  fullName: NuvTools.Notification.Mail.Twilio.TwilioMailException.TwilioMailException
+  nameWithType.vb: TwilioMailException.New
+  fullName.vb: NuvTools.Notification.Mail.Twilio.TwilioMailException.New
+  name.vb: New
+- uid: System.Net.HttpStatusCode
+  commentId: T:System.Net.HttpStatusCode
+  parent: System.Net
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.net.httpstatuscode
+  name: HttpStatusCode
+  nameWithType: HttpStatusCode
+  fullName: System.Net.HttpStatusCode
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Net
+  commentId: N:System.Net
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Net
+  nameWithType: System.Net
+  fullName: System.Net
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Net
+    name: Net
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Net
+    name: Net
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net
+- uid: NuvTools.Notification.Mail.Twilio.TwilioMailException.StatusCode*
+  commentId: Overload:NuvTools.Notification.Mail.Twilio.TwilioMailException.StatusCode
+  href: NuvTools.Notification.Mail.Twilio.TwilioMailException.html#NuvTools_Notification_Mail_Twilio_TwilioMailException_StatusCode
+  name: StatusCode
+  nameWithType: TwilioMailException.StatusCode
+  fullName: NuvTools.Notification.Mail.Twilio.TwilioMailException.StatusCode
+- uid: System.Nullable{System.Net.HttpStatusCode}
+  commentId: T:System.Nullable{System.Net.HttpStatusCode}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.net.httpstatuscode
+  name: HttpStatusCode?
+  nameWithType: HttpStatusCode?
+  fullName: System.Net.HttpStatusCode?
+  spec.csharp:
+  - uid: System.Net.HttpStatusCode
+    name: HttpStatusCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.httpstatuscode
+  - name: '?'
+  spec.vb:
+  - uid: System.Net.HttpStatusCode
+    name: HttpStatusCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.httpstatuscode
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NuvTools.Notification.Mail.Twilio.TwilioMailException.ResponseContent*
+  commentId: Overload:NuvTools.Notification.Mail.Twilio.TwilioMailException.ResponseContent
+  href: NuvTools.Notification.Mail.Twilio.TwilioMailException.html#NuvTools_Notification_Mail_Twilio_TwilioMailException_ResponseContent
+  name: ResponseContent
+  nameWithType: TwilioMailException.ResponseContent
+  fullName: NuvTools.Notification.Mail.Twilio.TwilioMailException.ResponseContent

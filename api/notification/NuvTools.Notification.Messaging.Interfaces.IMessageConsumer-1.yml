@@ -1,0 +1,263 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Notification.Messaging.Interfaces.IMessageConsumer`1
+  commentId: T:NuvTools.Notification.Messaging.Interfaces.IMessageConsumer`1
+  id: IMessageConsumer`1
+  parent: NuvTools.Notification.Messaging.Interfaces
+  children:
+  - NuvTools.Notification.Messaging.Interfaces.IMessageConsumer`1.ConsumeAsync(NuvTools.Notification.Messaging.Message{`0},NuvTools.Notification.Messaging.Interfaces.IMessageContext,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: IMessageConsumer<TBody>
+  nameWithType: IMessageConsumer<TBody>
+  fullName: NuvTools.Notification.Messaging.Interfaces.IMessageConsumer<TBody>
+  type: Interface
+  assemblies:
+  - NuvTools.Notification.Messaging
+  namespace: NuvTools.Notification.Messaging.Interfaces
+  summary: Defines a contract for consuming messages of a specific type.
+  example: []
+  syntax:
+    content: 'public interface IMessageConsumer<TBody> where TBody : class'
+    typeParameters:
+    - id: TBody
+    content.vb: Public Interface IMessageConsumer(Of TBody As Class)
+  nameWithType.vb: IMessageConsumer(Of TBody)
+  fullName.vb: NuvTools.Notification.Messaging.Interfaces.IMessageConsumer(Of TBody)
+  name.vb: IMessageConsumer(Of TBody)
+- uid: NuvTools.Notification.Messaging.Interfaces.IMessageConsumer`1.ConsumeAsync(NuvTools.Notification.Messaging.Message{`0},NuvTools.Notification.Messaging.Interfaces.IMessageContext,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Notification.Messaging.Interfaces.IMessageConsumer`1.ConsumeAsync(NuvTools.Notification.Messaging.Message{`0},NuvTools.Notification.Messaging.Interfaces.IMessageContext,System.Threading.CancellationToken)
+  id: ConsumeAsync(NuvTools.Notification.Messaging.Message{`0},NuvTools.Notification.Messaging.Interfaces.IMessageContext,System.Threading.CancellationToken)
+  parent: NuvTools.Notification.Messaging.Interfaces.IMessageConsumer`1
+  langs:
+  - csharp
+  - vb
+  name: ConsumeAsync(Message<TBody>, IMessageContext, CancellationToken)
+  nameWithType: IMessageConsumer<TBody>.ConsumeAsync(Message<TBody>, IMessageContext, CancellationToken)
+  fullName: NuvTools.Notification.Messaging.Interfaces.IMessageConsumer<TBody>.ConsumeAsync(NuvTools.Notification.Messaging.Message<TBody>, NuvTools.Notification.Messaging.Interfaces.IMessageContext, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Notification.Messaging
+  namespace: NuvTools.Notification.Messaging.Interfaces
+  summary: Consumes a message asynchronously.
+  example: []
+  syntax:
+    content: Task ConsumeAsync(Message<TBody> message, IMessageContext context, CancellationToken cancellationToken)
+    parameters:
+    - id: message
+      type: NuvTools.Notification.Messaging.Message{{TBody}}
+      description: The message to consume.
+    - id: context
+      type: NuvTools.Notification.Messaging.Interfaces.IMessageContext
+      description: The operational context for managing message lifecycle.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: A token for cancellation.
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function ConsumeAsync(message As Message(Of TBody), context As IMessageContext, cancellationToken As CancellationToken) As Task
+  overload: NuvTools.Notification.Messaging.Interfaces.IMessageConsumer`1.ConsumeAsync*
+  nameWithType.vb: IMessageConsumer(Of TBody).ConsumeAsync(Message(Of TBody), IMessageContext, CancellationToken)
+  fullName.vb: NuvTools.Notification.Messaging.Interfaces.IMessageConsumer(Of TBody).ConsumeAsync(NuvTools.Notification.Messaging.Message(Of TBody), NuvTools.Notification.Messaging.Interfaces.IMessageContext, System.Threading.CancellationToken)
+  name.vb: ConsumeAsync(Message(Of TBody), IMessageContext, CancellationToken)
+references:
+- uid: NuvTools.Notification.Messaging.Interfaces
+  commentId: N:NuvTools.Notification.Messaging.Interfaces
+  name: NuvTools.Notification.Messaging.Interfaces
+  nameWithType: NuvTools.Notification.Messaging.Interfaces
+  fullName: NuvTools.Notification.Messaging.Interfaces
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Messaging
+    name: Messaging
+  - name: .
+  - uid: NuvTools.Notification.Messaging.Interfaces
+    name: Interfaces
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Messaging
+    name: Messaging
+  - name: .
+  - uid: NuvTools.Notification.Messaging.Interfaces
+    name: Interfaces
+- uid: NuvTools.Notification.Messaging.Interfaces.IMessageConsumer`1.ConsumeAsync*
+  commentId: Overload:NuvTools.Notification.Messaging.Interfaces.IMessageConsumer`1.ConsumeAsync
+  href: NuvTools.Notification.Messaging.Interfaces.IMessageConsumer-1.html#NuvTools_Notification_Messaging_Interfaces_IMessageConsumer_1_ConsumeAsync_NuvTools_Notification_Messaging_Message__0__NuvTools_Notification_Messaging_Interfaces_IMessageContext_System_Threading_CancellationToken_
+  name: ConsumeAsync
+  nameWithType: IMessageConsumer<TBody>.ConsumeAsync
+  fullName: NuvTools.Notification.Messaging.Interfaces.IMessageConsumer<TBody>.ConsumeAsync
+  nameWithType.vb: IMessageConsumer(Of TBody).ConsumeAsync
+  fullName.vb: NuvTools.Notification.Messaging.Interfaces.IMessageConsumer(Of TBody).ConsumeAsync
+- uid: NuvTools.Notification.Messaging.Message{{TBody}}
+  commentId: T:NuvTools.Notification.Messaging.Message{`0}
+  parent: NuvTools.Notification.Messaging
+  definition: NuvTools.Notification.Messaging.Message`1
+  href: NuvTools.Notification.Messaging.Message-1.html
+  name: Message<TBody>
+  nameWithType: Message<TBody>
+  fullName: NuvTools.Notification.Messaging.Message<TBody>
+  nameWithType.vb: Message(Of TBody)
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of TBody)
+  name.vb: Message(Of TBody)
+  spec.csharp:
+  - uid: NuvTools.Notification.Messaging.Message`1
+    name: Message
+    href: NuvTools.Notification.Messaging.Message-1.html
+  - name: <
+  - name: TBody
+  - name: '>'
+  spec.vb:
+  - uid: NuvTools.Notification.Messaging.Message`1
+    name: Message
+    href: NuvTools.Notification.Messaging.Message-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TBody
+  - name: )
+- uid: NuvTools.Notification.Messaging.Interfaces.IMessageContext
+  commentId: T:NuvTools.Notification.Messaging.Interfaces.IMessageContext
+  parent: NuvTools.Notification.Messaging.Interfaces
+  href: NuvTools.Notification.Messaging.Interfaces.IMessageContext.html
+  name: IMessageContext
+  nameWithType: IMessageContext
+  fullName: NuvTools.Notification.Messaging.Interfaces.IMessageContext
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: NuvTools.Notification.Messaging.Message`1
+  commentId: T:NuvTools.Notification.Messaging.Message`1
+  href: NuvTools.Notification.Messaging.Message-1.html
+  name: Message<T>
+  nameWithType: Message<T>
+  fullName: NuvTools.Notification.Messaging.Message<T>
+  nameWithType.vb: Message(Of T)
+  fullName.vb: NuvTools.Notification.Messaging.Message(Of T)
+  name.vb: Message(Of T)
+  spec.csharp:
+  - uid: NuvTools.Notification.Messaging.Message`1
+    name: Message
+    href: NuvTools.Notification.Messaging.Message-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: NuvTools.Notification.Messaging.Message`1
+    name: Message
+    href: NuvTools.Notification.Messaging.Message-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: NuvTools.Notification.Messaging
+  commentId: N:NuvTools.Notification.Messaging
+  name: NuvTools.Notification.Messaging
+  nameWithType: NuvTools.Notification.Messaging
+  fullName: NuvTools.Notification.Messaging
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Messaging
+    name: Messaging
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Notification
+    name: Notification
+  - name: .
+  - uid: NuvTools.Notification.Messaging
+    name: Messaging
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

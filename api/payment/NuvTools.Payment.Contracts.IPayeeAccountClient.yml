@@ -1,0 +1,514 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Payment.Contracts.IPayeeAccountClient
+  commentId: T:NuvTools.Payment.Contracts.IPayeeAccountClient
+  id: IPayeeAccountClient
+  parent: NuvTools.Payment.Contracts
+  children:
+  - NuvTools.Payment.Contracts.IPayeeAccountClient.CreateAccountAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)
+  - NuvTools.Payment.Contracts.IPayeeAccountClient.CreateOnboardingLinkAsync(System.String,System.String,System.String,System.Threading.CancellationToken)
+  - NuvTools.Payment.Contracts.IPayeeAccountClient.GetAccountAsync(System.String,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: IPayeeAccountClient
+  nameWithType: IPayeeAccountClient
+  fullName: NuvTools.Payment.Contracts.IPayeeAccountClient
+  type: Interface
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.Contracts
+  summary: 'The receiving side: an account the platform can pay, and the onboarding that makes it payable.'
+  remarks: >-
+    A marketplace pays people it has not vetted itself. The provider collects the identity and bank
+
+    details, decides whether the account may be paid out, and hosts the screens that ask — so none of
+
+    that reaches the platform, which is the point of using one.
+  example: []
+  syntax:
+    content: public interface IPayeeAccountClient
+    content.vb: Public Interface IPayeeAccountClient
+  derivedClasses:
+  - NuvTools.Payment.Stripe.ApiClient.Services.StripeConnectApiClient
+- uid: NuvTools.Payment.Contracts.IPayeeAccountClient.CreateAccountAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Contracts.IPayeeAccountClient.CreateAccountAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)
+  id: CreateAccountAsync(System.String,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Contracts.IPayeeAccountClient
+  langs:
+  - csharp
+  - vb
+  name: CreateAccountAsync(string, string, IDictionary<string, string>?, CancellationToken)
+  nameWithType: IPayeeAccountClient.CreateAccountAsync(string, string, IDictionary<string, string>?, CancellationToken)
+  fullName: NuvTools.Payment.Contracts.IPayeeAccountClient.CreateAccountAsync(string, string, System.Collections.Generic.IDictionary<string, string>?, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.Contracts
+  summary: Creates an account able to receive transfers, and returns the provider's identifier for it.
+  example: []
+  syntax:
+    content: Task<IResult<string>> CreateAccountAsync(string countryCode, string email, IDictionary<string, string>? metadata = null, CancellationToken cancellationToken = default)
+    parameters:
+    - id: countryCode
+      type: System.String
+      description: ISO 3166-1 alpha-2, the country the payee is paid in.
+    - id: email
+      type: System.String
+      description: Where the provider writes to the payee.
+    - id: metadata
+      type: System.Collections.Generic.IDictionary{System.String,System.String}
+      description: Carried on the provider's object; the caller's own identifiers belong here.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancels the call.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.String}}
+    content.vb: Function CreateAccountAsync(countryCode As String, email As String, metadata As IDictionary(Of String, String) = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of String))
+  overload: NuvTools.Payment.Contracts.IPayeeAccountClient.CreateAccountAsync*
+  nameWithType.vb: IPayeeAccountClient.CreateAccountAsync(String, String, IDictionary(Of String, String), CancellationToken)
+  fullName.vb: NuvTools.Payment.Contracts.IPayeeAccountClient.CreateAccountAsync(String, String, System.Collections.Generic.IDictionary(Of String, String), System.Threading.CancellationToken)
+  name.vb: CreateAccountAsync(String, String, IDictionary(Of String, String), CancellationToken)
+- uid: NuvTools.Payment.Contracts.IPayeeAccountClient.CreateOnboardingLinkAsync(System.String,System.String,System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Contracts.IPayeeAccountClient.CreateOnboardingLinkAsync(System.String,System.String,System.String,System.Threading.CancellationToken)
+  id: CreateOnboardingLinkAsync(System.String,System.String,System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Contracts.IPayeeAccountClient
+  langs:
+  - csharp
+  - vb
+  name: CreateOnboardingLinkAsync(string, string, string, CancellationToken)
+  nameWithType: IPayeeAccountClient.CreateOnboardingLinkAsync(string, string, string, CancellationToken)
+  fullName: NuvTools.Payment.Contracts.IPayeeAccountClient.CreateOnboardingLinkAsync(string, string, string, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.Contracts
+  summary: >-
+    A link to the provider's hosted onboarding. Single-use and short-lived by design, so it is
+
+    created when the payee asks rather than stored.
+  example: []
+  syntax:
+    content: Task<IResult<string>> CreateOnboardingLinkAsync(string accountId, string refreshUrl, string returnUrl, CancellationToken cancellationToken = default)
+    parameters:
+    - id: accountId
+      type: System.String
+      description: The account being onboarded.
+    - id: refreshUrl
+      type: System.String
+      description: Where the provider sends the payee when the link has expired.
+    - id: returnUrl
+      type: System.String
+      description: Where it returns them when they are done.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancels the call.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.String}}
+    content.vb: Function CreateOnboardingLinkAsync(accountId As String, refreshUrl As String, returnUrl As String, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of String))
+  overload: NuvTools.Payment.Contracts.IPayeeAccountClient.CreateOnboardingLinkAsync*
+  nameWithType.vb: IPayeeAccountClient.CreateOnboardingLinkAsync(String, String, String, CancellationToken)
+  fullName.vb: NuvTools.Payment.Contracts.IPayeeAccountClient.CreateOnboardingLinkAsync(String, String, String, System.Threading.CancellationToken)
+  name.vb: CreateOnboardingLinkAsync(String, String, String, CancellationToken)
+- uid: NuvTools.Payment.Contracts.IPayeeAccountClient.GetAccountAsync(System.String,System.Threading.CancellationToken)
+  commentId: M:NuvTools.Payment.Contracts.IPayeeAccountClient.GetAccountAsync(System.String,System.Threading.CancellationToken)
+  id: GetAccountAsync(System.String,System.Threading.CancellationToken)
+  parent: NuvTools.Payment.Contracts.IPayeeAccountClient
+  langs:
+  - csharp
+  - vb
+  name: GetAccountAsync(string, CancellationToken)
+  nameWithType: IPayeeAccountClient.GetAccountAsync(string, CancellationToken)
+  fullName: NuvTools.Payment.Contracts.IPayeeAccountClient.GetAccountAsync(string, System.Threading.CancellationToken)
+  type: Method
+  assemblies:
+  - NuvTools.Payment
+  namespace: NuvTools.Payment.Contracts
+  summary: What the provider currently says about the account.
+  example: []
+  syntax:
+    content: Task<IResult<PayeeAccountDTO>> GetAccountAsync(string accountId, CancellationToken cancellationToken = default)
+    parameters:
+    - id: accountId
+      type: System.String
+      description: The account to read.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancels the call.
+    return:
+      type: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.DTOs.PayeeAccountDTO}}
+    content.vb: Function GetAccountAsync(accountId As String, cancellationToken As CancellationToken = Nothing) As Task(Of IResult(Of PayeeAccountDTO))
+  overload: NuvTools.Payment.Contracts.IPayeeAccountClient.GetAccountAsync*
+  nameWithType.vb: IPayeeAccountClient.GetAccountAsync(String, CancellationToken)
+  fullName.vb: NuvTools.Payment.Contracts.IPayeeAccountClient.GetAccountAsync(String, System.Threading.CancellationToken)
+  name.vb: GetAccountAsync(String, CancellationToken)
+references:
+- uid: NuvTools.Payment.Contracts
+  commentId: N:NuvTools.Payment.Contracts
+  name: NuvTools.Payment.Contracts
+  nameWithType: NuvTools.Payment.Contracts
+  fullName: NuvTools.Payment.Contracts
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Contracts
+    name: Contracts
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Contracts
+    name: Contracts
+- uid: NuvTools.Payment.Contracts.IPayeeAccountClient.CreateAccountAsync*
+  commentId: Overload:NuvTools.Payment.Contracts.IPayeeAccountClient.CreateAccountAsync
+  href: NuvTools.Payment.Contracts.IPayeeAccountClient.html#NuvTools_Payment_Contracts_IPayeeAccountClient_CreateAccountAsync_System_String_System_String_System_Collections_Generic_IDictionary_System_String_System_String__System_Threading_CancellationToken_
+  name: CreateAccountAsync
+  nameWithType: IPayeeAccountClient.CreateAccountAsync
+  fullName: NuvTools.Payment.Contracts.IPayeeAccountClient.CreateAccountAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Collections.Generic.IDictionary{System.String,System.String}
+  commentId: T:System.Collections.Generic.IDictionary{System.String,System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<string, string>
+  nameWithType: IDictionary<string, string>
+  fullName: System.Collections.Generic.IDictionary<string, string>
+  nameWithType.vb: IDictionary(Of String, String)
+  fullName.vb: System.Collections.Generic.IDictionary(Of String, String)
+  name.vb: IDictionary(Of String, String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.String}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{System.String}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<string>>
+  nameWithType: Task<IResult<string>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<string>>
+  nameWithType.vb: Task(Of IResult(Of String))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of String))
+  name.vb: Task(Of IResult(Of String))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections.Generic.IDictionary`2
+  commentId: T:System.Collections.Generic.IDictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  name: IDictionary<TKey, TValue>
+  nameWithType: IDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>
+  nameWithType.vb: IDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue)
+  name.vb: IDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.idictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NuvTools.Payment.Contracts.IPayeeAccountClient.CreateOnboardingLinkAsync*
+  commentId: Overload:NuvTools.Payment.Contracts.IPayeeAccountClient.CreateOnboardingLinkAsync
+  href: NuvTools.Payment.Contracts.IPayeeAccountClient.html#NuvTools_Payment_Contracts_IPayeeAccountClient_CreateOnboardingLinkAsync_System_String_System_String_System_String_System_Threading_CancellationToken_
+  name: CreateOnboardingLinkAsync
+  nameWithType: IPayeeAccountClient.CreateOnboardingLinkAsync
+  fullName: NuvTools.Payment.Contracts.IPayeeAccountClient.CreateOnboardingLinkAsync
+- uid: NuvTools.Payment.Contracts.IPayeeAccountClient.GetAccountAsync*
+  commentId: Overload:NuvTools.Payment.Contracts.IPayeeAccountClient.GetAccountAsync
+  href: NuvTools.Payment.Contracts.IPayeeAccountClient.html#NuvTools_Payment_Contracts_IPayeeAccountClient_GetAccountAsync_System_String_System_Threading_CancellationToken_
+  name: GetAccountAsync
+  nameWithType: IPayeeAccountClient.GetAccountAsync
+  fullName: NuvTools.Payment.Contracts.IPayeeAccountClient.GetAccountAsync
+- uid: System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.DTOs.PayeeAccountDTO}}
+  commentId: T:System.Threading.Tasks.Task{NuvTools.Common.ResultWrapper.IResult{NuvTools.Payment.DTOs.PayeeAccountDTO}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IResult<PayeeAccountDTO>>
+  nameWithType: Task<IResult<PayeeAccountDTO>>
+  fullName: System.Threading.Tasks.Task<NuvTools.Common.ResultWrapper.IResult<NuvTools.Payment.DTOs.PayeeAccountDTO>>
+  nameWithType.vb: Task(Of IResult(Of PayeeAccountDTO))
+  fullName.vb: System.Threading.Tasks.Task(Of NuvTools.Common.ResultWrapper.IResult(Of NuvTools.Payment.DTOs.PayeeAccountDTO))
+  name.vb: Task(Of IResult(Of PayeeAccountDTO))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: <
+  - uid: NuvTools.Payment.DTOs.PayeeAccountDTO
+    name: PayeeAccountDTO
+    href: NuvTools.Payment.DTOs.PayeeAccountDTO.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Common.ResultWrapper.IResult`1
+    name: IResult
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NuvTools.Payment.DTOs.PayeeAccountDTO
+    name: PayeeAccountDTO
+    href: NuvTools.Payment.DTOs.PayeeAccountDTO.html
+  - name: )
+  - name: )

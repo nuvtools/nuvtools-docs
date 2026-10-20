@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+      <title>Class OmieCategoryProvider | Nuv Tools Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class OmieCategoryProvider | Nuv Tools Framework ">
+      
+      <meta name="description" content="Resolves the category (cCodCateg) a service order carries in Omie. Omie requires the category on inclusion and every account has its own chart of accounts — which is why it is discovered in the registration instead of hardcoded: the categories are listed and the first of the configured preferences is picked by name.  Only accounts that can take a revenue entry are considered: conta_receita = &quot;S&quot;, active, not a totalizer (totalizers are just groupings of the chart of accounts) and not a transfer account. Filtering by name alone could land on an expense account with a similar name.">
+      <link rel="icon" href="../../images/icon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/nuvtools-brand.svg" alt="Framework">
+            Framework
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="NuvTools.Payment.Omie.ApiClient.Services.OmieCategoryProvider">
+
+
+
+  <h1 id="NuvTools_Payment_Omie_ApiClient_Services_OmieCategoryProvider" data-uid="NuvTools.Payment.Omie.ApiClient.Services.OmieCategoryProvider" class="text-break">
+Class OmieCategoryProvider  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><span class="xref">NuvTools</span>.<a class="xref" href="NuvTools.Payment.html">Payment</a>.<span class="xref">Omie</span>.<a class="xref" href="NuvTools.Payment.Omie.ApiClient.html">ApiClient</a>.<a class="xref" href="NuvTools.Payment.Omie.ApiClient.Services.html">Services</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>NuvTools.Payment.Omie.ApiClient.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Resolves the category (<code>cCodCateg</code>) a service order carries in Omie. Omie requires the category on
+inclusion and every account has its own chart of accounts — which is why it is discovered in the registration
+instead of hardcoded: the categories are listed and the first of the configured preferences is picked by name.</p>
+<p>
+Only accounts that can take a <b>revenue</b> entry are considered: <code>conta_receita = "S"</code>, active, not a
+totalizer (totalizers are just groupings of the chart of accounts) and not a transfer account. Filtering by name
+alone could land on an expense account with a similar name.
+</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class OmieCategoryProvider</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">OmieCategoryProvider</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="NuvTools_Payment_Omie_ApiClient_Services_OmieCategoryProvider__ctor_" data-uid="NuvTools.Payment.Omie.ApiClient.Services.OmieCategoryProvider.#ctor*"></a>
+
+  <h3 id="NuvTools_Payment_Omie_ApiClient_Services_OmieCategoryProvider__ctor_NuvTools_Payment_Omie_ApiClient_Services_OmieDirectApiClient_Microsoft_Extensions_Caching_Memory_IMemoryCache_Microsoft_Extensions_Logging_ILogger_NuvTools_Payment_Omie_ApiClient_Services_OmieCategoryProvider__" data-uid="NuvTools.Payment.Omie.ApiClient.Services.OmieCategoryProvider.#ctor(NuvTools.Payment.Omie.ApiClient.Services.OmieDirectApiClient,Microsoft.Extensions.Caching.Memory.IMemoryCache,Microsoft.Extensions.Logging.ILogger{NuvTools.Payment.Omie.ApiClient.Services.OmieCategoryProvider})">
+  OmieCategoryProvider(OmieDirectApiClient, IMemoryCache, ILogger&lt;OmieCategoryProvider&gt;)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Resolves the category (<code>cCodCateg</code>) a service order carries in Omie. Omie requires the category on
+inclusion and every account has its own chart of accounts — which is why it is discovered in the registration
+instead of hardcoded: the categories are listed and the first of the configured preferences is picked by name.</p>
+<p>
+Only accounts that can take a <b>revenue</b> entry are considered: <code>conta_receita = "S"</code>, active, not a
+totalizer (totalizers are just groupings of the chart of accounts) and not a transfer account. Filtering by name
+alone could land on an expense account with a similar name.
+</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public OmieCategoryProvider(OmieDirectApiClient omie, IMemoryCache cache, ILogger&lt;OmieCategoryProvider&gt; logger)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>omie</code> <a class="xref" href="NuvTools.Payment.Omie.ApiClient.Services.OmieDirectApiClient.html">OmieDirectApiClient</a></dt>
+    <dd></dd>
+    <dt><code>cache</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.caching.memory.imemorycache">IMemoryCache</a></dt>
+    <dd></dd>
+    <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;<a class="xref" href="NuvTools.Payment.Omie.ApiClient.Services.OmieCategoryProvider.html">OmieCategoryProvider</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="NuvTools_Payment_Omie_ApiClient_Services_OmieCategoryProvider_GetRevenueCategoriesAsync_" data-uid="NuvTools.Payment.Omie.ApiClient.Services.OmieCategoryProvider.GetRevenueCategoriesAsync*"></a>
+
+  <h3 id="NuvTools_Payment_Omie_ApiClient_Services_OmieCategoryProvider_GetRevenueCategoriesAsync_System_Boolean_System_Threading_CancellationToken_" data-uid="NuvTools.Payment.Omie.ApiClient.Services.OmieCategoryProvider.GetRevenueCategoriesAsync(System.Boolean,System.Threading.CancellationToken)">
+  GetRevenueCategoriesAsync(bool, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Usable revenue categories of the chart of accounts — the list an application offers for selection.
+With <code class="paramref">forceRefresh</code> the cache is ignored and rewritten with whatever Omie returns, which is
+what a &quot;reload from the ERP&quot; action needs: without it the button would serve the cached list for the next
+30 minutes and look like it did nothing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IResult&lt;IReadOnlyList&lt;OmieCategory&gt;&gt;&gt; GetRevenueCategoriesAsync(bool forceRefresh, CancellationToken cancellationToken)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>forceRefresh</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../foundation/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="NuvTools.Payment.Omie.ApiClient.DTOs.Responses.OmieCategory.html">OmieCategory</a>&gt;&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="NuvTools_Payment_Omie_ApiClient_Services_OmieCategoryProvider_ResolveCategoryCodeAsync_" data-uid="NuvTools.Payment.Omie.ApiClient.Services.OmieCategoryProvider.ResolveCategoryCodeAsync*"></a>
+
+  <h3 id="NuvTools_Payment_Omie_ApiClient_Services_OmieCategoryProvider_ResolveCategoryCodeAsync_System_String_System_Collections_Generic_IReadOnlyList_System_String__System_Threading_CancellationToken_" data-uid="NuvTools.Payment.Omie.ApiClient.Services.OmieCategoryProvider.ResolveCategoryCodeAsync(System.String,System.Collections.Generic.IReadOnlyList{System.String},System.Threading.CancellationToken)">
+  ResolveCategoryCodeAsync(string?, IReadOnlyList&lt;string&gt;, CancellationToken)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>Category code for the service order. <code class="paramref">configuredCode</code> wins when informed — whoever
+configured it knows which account they want. Without it, the <code class="paramref">preferences</code> are searched in
+order.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IResult&lt;string&gt;&gt; ResolveCategoryCodeAsync(string? configuredCode, IReadOnlyList&lt;string&gt; preferences, CancellationToken cancellationToken)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>configuredCode</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>preferences</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="../foundation/NuvTools.Common.ResultWrapper.IResult-1.html">IResult</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>© Nuv Tools · <a href="https://nuvtools.com/framework/">nuvtools.com</a> · MIT licence · Built with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

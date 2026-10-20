@@ -1,0 +1,666 @@
+### YamlMime:ManagedReference
+items:
+- uid: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier
+  commentId: T:NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier
+  id: OmieFaultClassifier
+  parent: NuvTools.Payment.Omie.ApiClient
+  children:
+  - NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.DescribeThrottle(System.String)
+  - NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsDuplicateIntegrationCode(NuvTools.Common.ResultWrapper.IResult)
+  - NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsDuplicateIntegrationCode(System.String)
+  - NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsMissingOrderIdentification(NuvTools.Common.ResultWrapper.IResult)
+  - NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsMissingOrderIdentification(System.String)
+  - NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsNotFound(NuvTools.Common.ResultWrapper.IResult)
+  - NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsNotFound(System.String)
+  - NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsThrottled(NuvTools.Common.ResultWrapper.IResult)
+  - NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsThrottled(System.String)
+  langs:
+  - csharp
+  - vb
+  name: OmieFaultClassifier
+  nameWithType: OmieFaultClassifier
+  fullName: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier
+  type: Class
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient
+  summary: >-
+    Classifies Omie failure messages so callers can react programmatically (e.g. switch an OS create to an
+
+    update when the integration code already exists) instead of string-matching Omie text themselves. This
+
+    component surfaces faults as failed <xref href="NuvTools.Common.ResultWrapper.IResult" data-throw-if-not-resolved="false"></xref> (it deliberately does not throw — see the
+
+    comment on <code>OmieApiClient._staticClient</code>), so the markers live here in one place.
+
+
+    VERIFY (Omie test app): confirm the exact faultstring wording for the duplicate-integration-code and
+
+    not-found cases against the current Omie responses and adjust the markers below if needed.
+  example: []
+  syntax:
+    content: public static class OmieFaultClassifier
+    content.vb: Public Module OmieFaultClassifier
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsDuplicateIntegrationCode(System.String)
+  commentId: M:NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsDuplicateIntegrationCode(System.String)
+  id: IsDuplicateIntegrationCode(System.String)
+  parent: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier
+  langs:
+  - csharp
+  - vb
+  name: IsDuplicateIntegrationCode(string?)
+  nameWithType: OmieFaultClassifier.IsDuplicateIntegrationCode(string?)
+  fullName: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsDuplicateIntegrationCode(string?)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient
+  summary: True when the failure indicates the integration code (cCodIntOS) already exists in Omie.
+  example: []
+  syntax:
+    content: public static bool IsDuplicateIntegrationCode(string? message)
+    parameters:
+    - id: message
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function IsDuplicateIntegrationCode(message As String) As Boolean
+  overload: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsDuplicateIntegrationCode*
+  nameWithType.vb: OmieFaultClassifier.IsDuplicateIntegrationCode(String)
+  fullName.vb: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsDuplicateIntegrationCode(String)
+  name.vb: IsDuplicateIntegrationCode(String)
+- uid: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsMissingOrderIdentification(System.String)
+  commentId: M:NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsMissingOrderIdentification(System.String)
+  id: IsMissingOrderIdentification(System.String)
+  parent: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier
+  langs:
+  - csharp
+  - vb
+  name: IsMissingOrderIdentification(string?)
+  nameWithType: OmieFaultClassifier.IsMissingOrderIdentification(string?)
+  fullName: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsMissingOrderIdentification(string?)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient
+  summary: >-
+    True when AlterarOS refused the change claiming the OS identification tags were not informed. Intermittent:
+
+    the same body, byte for byte, has been accepted and refused by Omie minutes apart. Retrying later is the
+
+    only remedy — but not immediately, since an identical repeated call is what Omie punishes as redundant
+
+    consumption.
+  example: []
+  syntax:
+    content: public static bool IsMissingOrderIdentification(string? message)
+    parameters:
+    - id: message
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function IsMissingOrderIdentification(message As String) As Boolean
+  overload: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsMissingOrderIdentification*
+  nameWithType.vb: OmieFaultClassifier.IsMissingOrderIdentification(String)
+  fullName.vb: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsMissingOrderIdentification(String)
+  name.vb: IsMissingOrderIdentification(String)
+- uid: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsNotFound(System.String)
+  commentId: M:NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsNotFound(System.String)
+  id: IsNotFound(System.String)
+  parent: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier
+  langs:
+  - csharp
+  - vb
+  name: IsNotFound(string?)
+  nameWithType: OmieFaultClassifier.IsNotFound(string?)
+  fullName: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsNotFound(string?)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient
+  summary: True when the failure indicates the requested record was not found in Omie.
+  example: []
+  syntax:
+    content: public static bool IsNotFound(string? message)
+    parameters:
+    - id: message
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function IsNotFound(message As String) As Boolean
+  overload: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsNotFound*
+  nameWithType.vb: OmieFaultClassifier.IsNotFound(String)
+  fullName.vb: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsNotFound(String)
+  name.vb: IsNotFound(String)
+- uid: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsDuplicateIntegrationCode(NuvTools.Common.ResultWrapper.IResult)
+  commentId: M:NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsDuplicateIntegrationCode(NuvTools.Common.ResultWrapper.IResult)
+  id: IsDuplicateIntegrationCode(NuvTools.Common.ResultWrapper.IResult)
+  parent: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier
+  langs:
+  - csharp
+  - vb
+  name: IsDuplicateIntegrationCode(IResult)
+  nameWithType: OmieFaultClassifier.IsDuplicateIntegrationCode(IResult)
+  fullName: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsDuplicateIntegrationCode(NuvTools.Common.ResultWrapper.IResult)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient
+  summary: Convenience overload over a failed <xref href="NuvTools.Common.ResultWrapper.IResult" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static bool IsDuplicateIntegrationCode(IResult result)
+    parameters:
+    - id: result
+      type: NuvTools.Common.ResultWrapper.IResult
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function IsDuplicateIntegrationCode(result As IResult) As Boolean
+  overload: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsDuplicateIntegrationCode*
+- uid: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsNotFound(NuvTools.Common.ResultWrapper.IResult)
+  commentId: M:NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsNotFound(NuvTools.Common.ResultWrapper.IResult)
+  id: IsNotFound(NuvTools.Common.ResultWrapper.IResult)
+  parent: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier
+  langs:
+  - csharp
+  - vb
+  name: IsNotFound(IResult)
+  nameWithType: OmieFaultClassifier.IsNotFound(IResult)
+  fullName: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsNotFound(NuvTools.Common.ResultWrapper.IResult)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient
+  summary: Convenience overload over a failed <xref href="NuvTools.Common.ResultWrapper.IResult" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static bool IsNotFound(IResult result)
+    parameters:
+    - id: result
+      type: NuvTools.Common.ResultWrapper.IResult
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function IsNotFound(result As IResult) As Boolean
+  overload: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsNotFound*
+- uid: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsMissingOrderIdentification(NuvTools.Common.ResultWrapper.IResult)
+  commentId: M:NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsMissingOrderIdentification(NuvTools.Common.ResultWrapper.IResult)
+  id: IsMissingOrderIdentification(NuvTools.Common.ResultWrapper.IResult)
+  parent: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier
+  langs:
+  - csharp
+  - vb
+  name: IsMissingOrderIdentification(IResult)
+  nameWithType: OmieFaultClassifier.IsMissingOrderIdentification(IResult)
+  fullName: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsMissingOrderIdentification(NuvTools.Common.ResultWrapper.IResult)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient
+  summary: Convenience overload over a failed <xref href="NuvTools.Common.ResultWrapper.IResult" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static bool IsMissingOrderIdentification(IResult result)
+    parameters:
+    - id: result
+      type: NuvTools.Common.ResultWrapper.IResult
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function IsMissingOrderIdentification(result As IResult) As Boolean
+  overload: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsMissingOrderIdentification*
+- uid: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsThrottled(System.String)
+  commentId: M:NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsThrottled(System.String)
+  id: IsThrottled(System.String)
+  parent: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier
+  langs:
+  - csharp
+  - vb
+  name: IsThrottled(string?)
+  nameWithType: OmieFaultClassifier.IsThrottled(string?)
+  fullName: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsThrottled(string?)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient
+  summary: >-
+    True when Omie refused the call to control consumption rather than because of the request itself — either a
+
+    redundant call (the same parameters again within about a minute) or an app key temporarily blocked for
+
+    excessive calls. Neither is fixed by changing the request: only by waiting.
+  example: []
+  syntax:
+    content: public static bool IsThrottled(string? message)
+    parameters:
+    - id: message
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function IsThrottled(message As String) As Boolean
+  overload: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsThrottled*
+  nameWithType.vb: OmieFaultClassifier.IsThrottled(String)
+  fullName.vb: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsThrottled(String)
+  name.vb: IsThrottled(String)
+- uid: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsThrottled(NuvTools.Common.ResultWrapper.IResult)
+  commentId: M:NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsThrottled(NuvTools.Common.ResultWrapper.IResult)
+  id: IsThrottled(NuvTools.Common.ResultWrapper.IResult)
+  parent: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier
+  langs:
+  - csharp
+  - vb
+  name: IsThrottled(IResult)
+  nameWithType: OmieFaultClassifier.IsThrottled(IResult)
+  fullName: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsThrottled(NuvTools.Common.ResultWrapper.IResult)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient
+  summary: Convenience overload over a failed <xref href="NuvTools.Common.ResultWrapper.IResult" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public static bool IsThrottled(IResult result)
+    parameters:
+    - id: result
+      type: NuvTools.Common.ResultWrapper.IResult
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Function IsThrottled(result As IResult) As Boolean
+  overload: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsThrottled*
+- uid: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.DescribeThrottle(System.String)
+  commentId: M:NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.DescribeThrottle(System.String)
+  id: DescribeThrottle(System.String)
+  parent: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier
+  langs:
+  - csharp
+  - vb
+  name: DescribeThrottle(string?)
+  nameWithType: OmieFaultClassifier.DescribeThrottle(string?)
+  fullName: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.DescribeThrottle(string?)
+  type: Method
+  assemblies:
+  - NuvTools.Payment.Omie.ApiClient
+  namespace: NuvTools.Payment.Omie.ApiClient
+  summary: >-
+    A message for the end user about a throttled call, preserving the wait Omie reported when there is one.
+
+    Telling someone to wait is a different instruction from telling them to fix something, which is why the
+
+    refusal is worth distinguishing.
+  example: []
+  syntax:
+    content: public static string DescribeThrottle(string? message)
+    parameters:
+    - id: message
+      type: System.String
+    return:
+      type: System.String
+    content.vb: Public Shared Function DescribeThrottle(message As String) As String
+  overload: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.DescribeThrottle*
+  nameWithType.vb: OmieFaultClassifier.DescribeThrottle(String)
+  fullName.vb: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.DescribeThrottle(String)
+  name.vb: DescribeThrottle(String)
+references:
+- uid: NuvTools.Common.ResultWrapper.IResult
+  commentId: T:NuvTools.Common.ResultWrapper.IResult
+  parent: NuvTools.Common.ResultWrapper
+  isExternal: true
+  name: IResult
+  nameWithType: IResult
+  fullName: NuvTools.Common.ResultWrapper.IResult
+- uid: NuvTools.Payment.Omie.ApiClient
+  commentId: N:NuvTools.Payment.Omie.ApiClient
+  name: NuvTools.Payment.Omie.ApiClient
+  nameWithType: NuvTools.Payment.Omie.ApiClient
+  fullName: NuvTools.Payment.Omie.ApiClient
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Omie
+    name: Omie
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient
+    name: ApiClient
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+  - name: .
+  - uid: NuvTools.Payment
+    name: Payment
+  - name: .
+  - uid: NuvTools.Payment.Omie
+    name: Omie
+  - name: .
+  - uid: NuvTools.Payment.Omie.ApiClient
+    name: ApiClient
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: NuvTools.Common.ResultWrapper
+  commentId: N:NuvTools.Common.ResultWrapper
+  isExternal: true
+  name: NuvTools.Common.ResultWrapper
+  nameWithType: NuvTools.Common.ResultWrapper
+  fullName: NuvTools.Common.ResultWrapper
+  spec.csharp:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+  - name: .
+  - uid: NuvTools.Common
+    name: Common
+    isExternal: true
+  - name: .
+  - uid: NuvTools.Common.ResultWrapper
+    name: ResultWrapper
+    isExternal: true
+  spec.vb:
+  - uid: NuvTools
+    name: NuvTools
+    isExternal: true
+  - name: .
+  - uid: NuvTools.Common
+    name: Common
+    isExternal: true
+  - name: .
+  - uid: NuvTools.Common.ResultWrapper
+    name: ResultWrapper
+    isExternal: true
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsDuplicateIntegrationCode*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsDuplicateIntegrationCode
+  href: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.html#NuvTools_Payment_Omie_ApiClient_OmieFaultClassifier_IsDuplicateIntegrationCode_System_String_
+  name: IsDuplicateIntegrationCode
+  nameWithType: OmieFaultClassifier.IsDuplicateIntegrationCode
+  fullName: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsDuplicateIntegrationCode
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsMissingOrderIdentification*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsMissingOrderIdentification
+  href: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.html#NuvTools_Payment_Omie_ApiClient_OmieFaultClassifier_IsMissingOrderIdentification_System_String_
+  name: IsMissingOrderIdentification
+  nameWithType: OmieFaultClassifier.IsMissingOrderIdentification
+  fullName: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsMissingOrderIdentification
+- uid: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsNotFound*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsNotFound
+  href: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.html#NuvTools_Payment_Omie_ApiClient_OmieFaultClassifier_IsNotFound_System_String_
+  name: IsNotFound
+  nameWithType: OmieFaultClassifier.IsNotFound
+  fullName: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsNotFound
+- uid: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsThrottled*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsThrottled
+  href: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.html#NuvTools_Payment_Omie_ApiClient_OmieFaultClassifier_IsThrottled_System_String_
+  name: IsThrottled
+  nameWithType: OmieFaultClassifier.IsThrottled
+  fullName: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.IsThrottled
+- uid: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.DescribeThrottle*
+  commentId: Overload:NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.DescribeThrottle
+  href: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.html#NuvTools_Payment_Omie_ApiClient_OmieFaultClassifier_DescribeThrottle_System_String_
+  name: DescribeThrottle
+  nameWithType: OmieFaultClassifier.DescribeThrottle
+  fullName: NuvTools.Payment.Omie.ApiClient.OmieFaultClassifier.DescribeThrottle
